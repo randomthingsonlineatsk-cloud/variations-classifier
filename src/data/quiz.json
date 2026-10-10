@@ -40,6 +40,10 @@
   {
    "id": "eu-procedures",
    "label": "EU: procedures, grouping and timing"
+  },
+  {
+   "id": "india",
+   "label": "India"
   }
  ],
  "questions": [
@@ -1162,6 +1166,146 @@
    "answer": 1,
    "why": "EMA's grouping Q&A says safety updates must not be delayed by a Type II in the same group.",
    "cite": "EMA grouping Q&A"
+  },
+  {
+   "id": "i1",
+   "topic": "india",
+   "q": "Which CDSCO guidance classifies post-approval changes to biological products?",
+   "options": [
+    "PAC/2024, Post Approval Changes in Biological Products",
+    "Schedule M",
+    "The NDCT Rules, rule 25",
+    "Form CT-21"
+   ],
+   "answer": 0,
+   "why": "CDSCO's guidance PAC/2024 (version 1.2) was adopted and implemented on 16 May 2024.",
+   "cite": "CDSCO PAC/2024"
+  },
+  {
+   "id": "i2",
+   "topic": "india",
+   "q": "Under PAC/2024, a Level III change is:",
+   "options": [
+    "Approved before implementation",
+    "Implemented, then reported in the annual notification in the first quarter",
+    "Never reported",
+    "An extension"
+   ],
+   "answer": 1,
+   "why": "Level III is an annual notification; data are due within 30 days if CDSCO asks.",
+   "cite": "CDSCO PAC/2024"
+  },
+  {
+   "id": "i3",
+   "topic": "india",
+   "q": "Which Level III change still needs approval before it is used?",
+   "options": [
+    "A new working cell bank",
+    "A shelf-life extension",
+    "An editorial label change",
+    "A tightened specification"
+   ],
+   "answer": 1,
+   "why": "Shelf-life extensions need a post-approval change application and approval first.",
+   "cite": "CDSCO PAC/2024, general notes"
+  },
+  {
+   "id": "i4",
+   "topic": "india",
+   "q": "A new geographic site for a biological drug substance is:",
+   "options": [
+    "Level I (supplement)",
+    "Level II",
+    "Level III",
+    "Level IV"
+   ],
+   "answer": 0,
+   "why": "A new site or manufacturer is a supplement and needs an application in Form CT-21 or CT-18.",
+   "cite": "CDSCO PAC/2024, 3.2.S.2.1"
+  },
+  {
+   "id": "i5",
+   "topic": "india",
+   "q": "A new master cell bank for a recombinant product is:",
+   "options": [
+    "Level I",
+    "Level II (notifiable change)",
+    "Level III",
+    "No report"
+   ],
+   "answer": 1,
+   "why": "PAC/2024 lists it as a notifiable change.",
+   "cite": "CDSCO PAC/2024"
+  },
+  {
+   "id": "i6",
+   "topic": "india",
+   "q": "Why does a new indication need a new permission in India?",
+   "options": [
+    "Because of the four-year rule",
+    "Because a drug with new claims is a new drug under rule 2(w)(ii)",
+    "Because labels are national",
+    "It does not"
+   ],
+   "answer": 1,
+   "why": "Rule 2(w)(ii) of the NDCT Rules makes a drug with new or modified claims a new drug.",
+   "cite": "NDCT Rules 2019, rule 2(w)"
+  },
+  {
+   "id": "i7",
+   "topic": "india",
+   "q": "In 2026, how are post-approval quality changes to chemical new drugs handled in India?",
+   "options": [
+    "By Level I to IV in the NDCT Rules",
+    "Case by case, with no codified categories; draft rules propose Levels I to III",
+    "By the EU guidelines",
+    "By FDA's categories"
+   ],
+   "answer": 1,
+   "why": "The draft G.S.R. 97(E) of 2 February 2026 would add Levels I to III; until then CDSCO decides case by case.",
+   "cite": "Draft G.S.R. 97(E)"
+  },
+  {
+   "id": "i8",
+   "topic": "india",
+   "q": "Under the draft rules G.S.R. 97(E), what happens to Level II changes?",
+   "options": [
+    "Annual report",
+    "Prior approval",
+    "No report",
+    "30-day notification"
+   ],
+   "answer": 1,
+   "why": "Levels I and II need prior approval; Level III goes in the annual submission.",
+   "cite": "Draft G.S.R. 97(E)"
+  },
+  {
+   "id": "i9",
+   "topic": "india",
+   "q": "For an imported product, what extra document does a post-approval change application need?",
+   "options": [
+    "A clinical trial protocol",
+    "The change's approval in the country of origin and the list of countries where it is approved",
+    "A price certificate",
+    "None"
+   ],
+   "answer": 1,
+   "why": "CDSCO's checklist asks importers for the approval of the variation in the country of origin and the countries where it is approved.",
+   "cite": "CDSCO post-approval change checklist"
+  },
+  {
+   "id": "i10",
+   "topic": "india",
+   "q": "Through which portal are post-approval change applications made?",
+   "options": [
+    "SUGAM",
+    "CESP",
+    "ESG",
+    "IRIS"
+   ],
+   "answer": 0,
+   "why": "Applications to CDSCO go through the SUGAM portal.",
+   "cite": "CDSCO"
   }
  ]
 }

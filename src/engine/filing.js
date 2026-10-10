@@ -6,12 +6,13 @@ import { classify, productAnswers, mostRestrictive } from './classify.js';
 const KIND_ORDER = { admin: 0, cmc: 1, labeling: 2, efficacy: 3 };
 const kindOf = (items) => items.map((i) => i.def.kind).sort((a, b) => KIND_ORDER[b] - KIND_ORDER[a])[0] ?? 'cmc';
 export const isEU = (pack) => pack?.id === 'eu';
+export const isIN = (pack) => pack?.id === 'in';
 
 export const answersFor = (product, change) => ({ ...productAnswers(product), ...(change.answers ?? {}) });
 
 // The pack edition a case uses in a region: US has one; the EU edition follows the case date
 // (Type IB and II by submission date, Type IA by implementation date: both are the case date).
-export const packForCase = (kase, region) => packFor(region, { date: kase.submitDate || undefined });
+export const packForCase = (kase, region) => packFor(region, { date: kase.submitDate || undefined, draft: region === 'in' && !!kase.options?.inDraft });
 
 export function resultsFor(pack, product, kase) {
   return kase.changes.map((c) => ({ change: c, def: CHANGE[c.changeId], result: classify(pack, c.changeId, answersFor(product, c)) }));
@@ -29,8 +30,8 @@ export function filingsFor(pack, product, kase) {
   const pending = rows.filter((r) => r.result.status !== 'done');
   const filings = [];
   const make = (items, category, extra = {}) => ({ id: '', category, kind: kindOf(items), items, mode: items.length > 1 ? 'grouping' : 'single', warnings: [], ...extra });
-  const shared = isEU(pack) ? ['IA', 'IAIN', 'NONE'] : ['AR', 'LETTER'];
-  const apart = isEU(pack) ? ['NONE', 'OTHER'] : [];
+  const shared = isEU(pack) ? ['IA', 'IAIN', 'NONE'] : isIN(pack) ? ['L3'] : ['AR', 'LETTER'];
+  const apart = isEU(pack) ? ['NONE', 'OTHER'] : isIN(pack) ? ['REC'] : [];
   const variations = done.filter((d) => !apart.includes(d.result.category));
   if (kase.related && variations.length > 1) {
     const f = make(variations, mostRestrictive(pack, variations.map((d) => d.result.category)));
@@ -42,6 +43,11 @@ export function filingsFor(pack, product, kase) {
       const items = variations.filter((d) => d.result.category === cat);
       if (items.length) filings.push(make(items, cat, { mode: items.length > 1 ? 'single-notification' : 'single' }));
     }
+  }
+  if (isIN(pack)) {
+    const rec = done.filter((d) => d.result.category === 'REC');
+    if (rec.length) filings.push(make(rec, 'REC', { mode: 'none' }));
+    filings.forEach((f) => { f.importRoute = product.in?.route === 'import'; });
   }
   if (isEU(pack)) {
     const none = done.filter((d) => d.result.category === 'NONE');
@@ -84,6 +90,10 @@ function applyWorksharing(f, also) {
 }
 
 export function ectdFor(pack, filing) {
+  if (isIN(pack)) {
+    if (filing.category === 'NEWDRUG') return { submissionType: filing.importRoute ? 'new-drug-import' : 'new-drug-manufacture', subType: 'application' };
+    return pack.ectd[filing.category] ?? pack.ectd.CDSCO;
+  }
   if (isEU(pack)) {
     const base = pack.ectd[filing.category] ?? pack.ectd.II;
     const submissionMode = filing.mode === 'worksharing' ? 'worksharing' : ['grouping', 'super-grouping', 'single-notification'].includes(filing.mode) && filing.items.length > 1 ? 'grouping' : 'single';
@@ -97,6 +107,12 @@ export const changesProductInfo = (filing) => filing.items.some((i) => i.result.
 
 export function m1For(pack, filing) {
   const ids = filing.items.map((i) => i.change.changeId);
+  if (isIN(pack)) {
+    if (filing.category === 'REC') return [];
+    if (filing.category === 'L3') return pack.m1.annual;
+    if (filing.category === 'NEWDRUG') return [...pack.m1.newdrug, ...(changesProductInfo(filing) ? pack.m1.pi : [])];
+    return [...pack.m1.pac, ...(filing.importRoute ? pack.m1.import : []), ...(changesProductInfo(filing) ? pack.m1.pi : [])];
+  }
   if (isEU(pack)) {
     if (filing.category === 'NONE') return [];
     if (filing.category === 'OTHER') return pack.m1.other;
@@ -133,7 +149,7 @@ export function cmpCode(a, b) {
 
 // Sections a filing touches: the Module 1 documents plus the evidence for each change.
 export function impactFor(pack, filing) {
-  if (filing.category === 'NONE' || filing.category === 'OTHER') return m1For(pack, filing).map((d) => ({ code: d.code, label: d.label, op: 'new', why: ['Regional Module 1'] }));
+  if (['NONE', 'OTHER', 'REC'].includes(filing.category)) return m1For(pack, filing).map((d) => ({ code: d.code, label: d.label, op: 'new', why: ['Regional Module 1'] }));
   const map = new Map();
   const add = (code, label, op, why) => {
     const e = map.get(code) ?? { code, label, op, why: [] };
@@ -174,7 +190,47 @@ export const appKey = (product) => (product.appType === 'anda' ? 'anda' : produc
 // Dates for one filing. US goal dates are user-fee goals, not legal deadlines; EU clocks leave
 // out validation and fixed start dates, and add any clock stop the learner enters.
 export function timelineFor(pack, product, filing, opts = {}) {
+  if (isIN(pack)) return timelineIN(pack, product, filing, opts);
   return isEU(pack) ? timelineEU(pack, product, filing, opts) : timelineUS(pack, product, filing, opts);
+}
+
+export function addWorkingDays(s, n) {
+  const d = D(s);
+  let left = n;
+  while (left > 0) { d.setUTCDate(d.getUTCDate() + 1); const w = d.getUTCDay(); if (w !== 0 && w !== 6) left -= 1; }
+  return iso(d);
+}
+
+function timelineIN(pack, product, filing, opts) {
+  const d0 = opts.submitDate || iso(new Date());
+  const events = [];
+  const notes = [];
+  let earliestUse = null;
+  const cat = filing.category;
+  if (cat === 'REC') {
+    events.push({ date: d0, label: 'Change made and recorded under GMP (no submission)', kind: 'implement' });
+    return finish(events, d0, notes, opts);
+  }
+  if (cat === 'L3') {
+    events.push({ date: d0, label: 'Change implemented', kind: 'implement' });
+    earliestUse = d0;
+    const due = `${Number(d0.slice(0, 4)) + 1}-03-31`;
+    events.push({ date: due, label: 'Annual notification due: end of the first quarter of the next calendar year', kind: 'due', src: pack.clocks.L3.src });
+    notes.push('If CDSCO asks for the supporting data, it is due within 30 days.');
+    return finish(events, earliestUse, notes, opts);
+  }
+  events.push({ date: d0, label: cat === 'NEWDRUG' ? `Application in Form ${filing.importRoute ? 'CT-18' : 'CT-21'} submitted on SUGAM` : 'Post-approval change application submitted on SUGAM', kind: 'submit' });
+  if (cat === 'ADMIN') {
+    earliestUse = addDays(d0, 30);
+    events.push({ date: earliestUse, label: 'About 30 days: typical review of an administrative change', kind: 'goal', src: pack.clocks.ADMIN.src });
+  } else if (cat === 'NEWDRUG') {
+    earliestUse = addWorkingDays(d0, 90);
+    events.push({ date: earliestUse, label: 'Decision due within 90 working days', kind: 'goal', src: pack.clocks.NEWDRUG.src });
+  } else {
+    notes.push('The rules set no fixed review time for this application; implement only after CDSCO approves.');
+  }
+  if (pack.draft) notes.push('Draft rules: timings may change when the rules are final.');
+  return finish(events, earliestUse, notes, opts);
 }
 
 function finish(events, earliestUse, notes, opts) {
@@ -288,7 +344,26 @@ export function euAuthority(product) {
 
 // ---------- cover letter ----------
 export function coverLetter(pack, product, filing, kase) {
+  if (isIN(pack)) return coverLetterIN(pack, product, filing, kase);
   return isEU(pack) ? coverLetterEU(pack, product, filing, kase) : coverLetterUS(pack, product, filing, kase);
+}
+
+function coverLetterIN(pack, product, filing, kase) {
+  const cat = categoryOf(pack, filing.category);
+  const today = kase.submitDate || iso(new Date());
+  const who = product.in?.agent ? `${product.in.agent}, authorised agent of ${product.holder.name}` : product.holder.name;
+  const lines = [who, '', today, '', 'To: The Drugs Controller General (India), Central Drugs Standard Control Organisation (training letter; not for submission)', ''];
+  if (filing.category === 'REC') return [...lines, 'No submission is needed; the changes are recorded under GMP and mentioned in the next submission.', '', 'Training material. Fictional company and product.'].join('\n');
+  lines.push(`Subject: ${filing.category === 'L3' ? 'Annual notification of minor changes' : filing.category === 'NEWDRUG' ? `Application for permission (Form ${filing.importRoute ? 'CT-18' : 'CT-21'})` : 'Post-approval change application'} for ${product.brandName} (${product.inn}), permission ${product.in?.permission ?? '[number]'}`);
+  lines.push(`Category: ${cat.label}`, '');
+  lines.push('We submit the following change(s) with the supporting documents on SUGAM:');
+  filing.items.forEach((it, i) => lines.push(`${i + 1}. ${it.def.title}${it.change.note ? `: ${it.change.note}` : ''} (${categoryOf(pack, it.result.category).label}; ${it.result.outcome.at})`));
+  lines.push('');
+  if (filing.importRoute && filing.category !== 'L3') lines.push('The approval of the change by the regulator of the country of origin and the list of countries where it is approved are enclosed.');
+  if (['L1', 'L2', 'L3SL', 'CDSCO', 'ADMIN'].includes(filing.category)) lines.push('The change will not be implemented for commercial supply until CDSCO approves it.');
+  if (filing.category === 'L3') lines.push('These changes have been implemented; supporting data will be provided within 30 days if requested.');
+  lines.push('', 'Training material. Fictional company and product.');
+  return lines.join('\n');
 }
 
 function coverLetterUS(pack, product, filing, kase) {

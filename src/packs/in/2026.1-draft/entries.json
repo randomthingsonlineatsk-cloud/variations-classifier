@@ -1,0 +1,2447 @@
+{
+ "_about": "India 2026.1-draft. Biologicals follow the CDSCO guidance PAC/2024 (in force since 16 May 2024). Chemical drugs: levels from the draft G.S.R. 97(E), inferred from the matching FDA entry.",
+ "dp-site-move": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "ask": "existingSite",
+     "on": {
+      "yes": {
+       "cat": "L2",
+       "src": "pac24",
+       "at": "3.2.S.2.1 (facilities)",
+       "why": "A new facility within an existing approved site is a notifiable change (Level II).",
+       "note": "The app applies the drug substance entry of the guidance to the drug product by analogy; check the drug product tables."
+      },
+      "no": {
+       "cat": "L1",
+       "src": "pac24",
+       "at": "3.2.S.2.1 (facilities)",
+       "why": "A facility at a new geographic site is a supplement (Level I) and needs an application in Form CT-21 or CT-18.",
+       "note": "The app applies the drug substance entry of the guidance to the drug product by analogy; check the drug product tables."
+      }
+     }
+    },
+    "no": {
+     "ask": "siteNeverInspected",
+     "on": {
+      "yes": {
+       "cat": "L1",
+       "src": "gsr97",
+       "at": "Rules 77(x) and 82(ix) (draft)",
+       "why": "Level I (major): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VI.B.1).",
+       "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+      },
+      "no": {
+       "ask": "siteCgmp",
+       "on": {
+        "no": {
+         "cat": "L1",
+         "src": "gsr97",
+         "at": "Rules 77(x) and 82(ix) (draft)",
+         "why": "Level I (major): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VI.B.2).",
+         "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+        },
+        "yes": {
+         "ask": "sterile",
+         "on": {
+          "yes": {
+           "ask": "aseptic",
+           "on": {
+            "yes": {
+             "ask": "asepticNewOrDissimilar",
+             "on": {
+              "yes": {
+               "cat": "L1",
+               "src": "gsr97",
+               "at": "Rules 77(x) and 82(ix) (draft)",
+               "why": "Level I (major): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VI.B.4).",
+               "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+              },
+              "no": {
+               "cat": "L2",
+               "src": "gsr97",
+               "at": "Rules 77(x) and 82(ix) (draft)",
+               "why": "Level II (moderate): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VI.C.1.b).",
+               "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+              }
+             }
+            },
+            "no": {
+             "ask": "sameSiteBuilding",
+             "on": {
+              "yes": {
+               "cat": "L3",
+               "src": "gsr97",
+               "at": "Rules 77(x) and 82(ix) (draft)",
+               "why": "Level III (minor): implement, then report in the annual submission in the first quarter. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VI.D.5).",
+               "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+              },
+              "no": {
+               "ask": "termNewFacilityOtherSite",
+               "on": {
+                "yes": {
+                 "cat": "L1",
+                 "src": "gsr97",
+                 "at": "Rules 77(x) and 82(ix) (draft)",
+                 "why": "Level I (major): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VI.B.5).",
+                 "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+                },
+                "no": {
+                 "cat": "L2",
+                 "src": "gsr97",
+                 "at": "Rules 77(x) and 82(ix) (draft)",
+                 "why": "Level II (moderate): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VI.C.1.a).",
+                 "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+                }
+               }
+              }
+             }
+            }
+           }
+          },
+          "no": {
+           "ask": "mr",
+           "on": {
+            "yes": {
+             "cat": "L1",
+             "src": "gsr97",
+             "at": "Rules 77(x) and 82(ix) (draft)",
+             "why": "Level I (major): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VI.B.3).",
+             "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+            },
+            "no": {
+             "ask": "doseControl",
+             "on": {
+              "yes": {
+               "cat": "L1",
+               "src": "gsr97",
+               "at": "Rules 77(x) and 82(ix) (draft)",
+               "why": "Level I (major): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VI.B.3).",
+               "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+              },
+              "no": {
+               "cat": "L2",
+               "src": "gsr97",
+               "at": "Rules 77(x) and 82(ix) (draft)",
+               "why": "Level II (moderate): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VI.C.1.a).",
+               "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+              }
+             }
+            }
+           }
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "ds-site-move": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "ask": "existingSite",
+     "on": {
+      "yes": {
+       "cat": "L2",
+       "src": "pac24",
+       "at": "3.2.S.2.1 (facilities)",
+       "why": "Adding a facility within an existing site is a notifiable change (Level II); Level III if the guidance conditions are met."
+      },
+      "no": {
+       "cat": "L1",
+       "src": "pac24",
+       "at": "3.2.S.2.1 (facilities)",
+       "why": "A new geographic site or a new manufacturer is a supplement (Level I) and needs an application in Form CT-21 or CT-18."
+      }
+     }
+    },
+    "no": {
+     "ask": "siteNeverInspected",
+     "on": {
+      "yes": {
+       "cat": "L1",
+       "src": "gsr97",
+       "at": "Rules 77(x) and 82(ix) (draft)",
+       "why": "Level I (major): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VI.B.1).",
+       "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+      },
+      "no": {
+       "ask": "siteCgmp",
+       "on": {
+        "no": {
+         "cat": "L1",
+         "src": "gsr97",
+         "at": "Rules 77(x) and 82(ix) (draft)",
+         "why": "Level I (major): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VI.B.2).",
+         "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+        },
+        "yes": {
+         "cat": "L2",
+         "src": "gsr97",
+         "at": "Rules 77(x) and 82(ix) (draft)",
+         "why": "Level II (moderate): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VI.C.1.a).",
+         "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "ds-intermediate-site": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "ask": "finalIntermediate",
+     "on": {
+      "yes": {
+       "cat": "L2",
+       "src": "gsr97",
+       "at": "Rules 77(x) and 82(ix) (draft)",
+       "why": "Level II (moderate): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VI.C.2).",
+       "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+      },
+      "no": {
+       "cat": "L3",
+       "src": "gsr97",
+       "at": "Rules 77(x) and 82(ix) (draft)",
+       "why": "Level III (minor): implement, then report in the annual submission in the first quarter. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VI.D.3).",
+       "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+      }
+     }
+    }
+   }
+  }
+ },
+ "primary-pack-site": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "ask": "siteNeverInspected",
+     "on": {
+      "yes": {
+       "cat": "L1",
+       "src": "gsr97",
+       "at": "Rules 77(x) and 82(ix) (draft)",
+       "why": "Level I (major): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VI.B.1).",
+       "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+      },
+      "no": {
+       "ask": "siteCgmp",
+       "on": {
+        "no": {
+         "cat": "L1",
+         "src": "gsr97",
+         "at": "Rules 77(x) and 82(ix) (draft)",
+         "why": "Level I (major): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VI.B.2).",
+         "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+        },
+        "yes": {
+         "ask": "doseControl",
+         "on": {
+          "yes": {
+           "cat": "L1",
+           "src": "gsr97",
+           "at": "Rules 77(x) and 82(ix) (draft)",
+           "why": "Level I (major): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VI.B.3).",
+           "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+          },
+          "no": {
+           "cat": "L2",
+           "src": "gsr97",
+           "at": "Rules 77(x) and 82(ix) (draft)",
+           "why": "Level II (moderate): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VI.C.1.c).",
+           "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "secondary-pack-site": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "cat": "L3",
+     "src": "gsr97",
+     "at": "Rules 77(x) and 82(ix) (draft)",
+     "why": "Level III (minor): implement, then report in the annual submission in the first quarter. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VI.D.1).",
+     "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+    }
+   }
+  }
+ },
+ "labeling-site": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "cat": "L3",
+     "src": "gsr97",
+     "at": "Rules 77(x) and 82(ix) (draft)",
+     "why": "Level III (minor): implement, then report in the annual submission in the first quarter. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VI.D.2).",
+     "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+    }
+   }
+  }
+ },
+ "testing-site": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L2",
+     "src": "pac24",
+     "at": "3.2.S.4 (QC testing transfer)",
+     "why": "Transferring QC testing to another site is a notifiable change (Level II); Level III with conditions, but never for potency or bioassays."
+    },
+    "no": {
+     "ask": "testingConditions",
+     "on": {
+      "yes": {
+       "cat": "L2",
+       "src": "gsr97",
+       "at": "Rules 77(x) and 82(ix) (draft)",
+       "why": "Level II (moderate): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VI.C.1.d).",
+       "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+      },
+      "no": {
+       "cat": "L1",
+       "src": "gsr97",
+       "at": "Rules 77(x) and 82(ix) (draft)",
+       "why": "Level I (major): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VI.C.1.d).",
+       "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+      }
+     }
+    }
+   }
+  }
+ },
+ "ink-imprint-site": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "cat": "L3",
+     "src": "gsr97",
+     "at": "Rules 77(x) and 82(ix) (draft)",
+     "why": "Level III (minor): implement, then report in the annual submission in the first quarter. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VI.D.6).",
+     "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+    }
+   }
+  }
+ },
+ "component-sterilization-site": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "ask": "componentSterilizationSame",
+     "on": {
+      "yes": {
+       "cat": "L3",
+       "src": "gsr97",
+       "at": "Rules 77(x) and 82(ix) (draft)",
+       "why": "Level III (minor): implement, then report in the annual submission in the first quarter. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VI.D.4).",
+       "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+      },
+      "no": {
+       "ask": "affectsSterility",
+       "on": {
+        "yes": {
+         "cat": "L1",
+         "src": "gsr97",
+         "at": "Rules 77(x) and 82(ix) (draft)",
+         "why": "Level I (major): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VII.B.2).",
+         "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+        },
+        "no": {
+         "cat": "L2",
+         "src": "gsr97",
+         "at": "Rules 77(x) and 82(ix) (draft)",
+         "why": "Level II (moderate): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VII.C.1.d).",
+         "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "fill-line-add": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "ask": "existingSite",
+     "on": {
+      "yes": {
+       "cat": "L2",
+       "src": "pac24",
+       "at": "3.2.S.2.1 (facilities)",
+       "why": "A new line or suite within an existing approved site is a notifiable change (Level II).",
+       "note": "The app applies the drug substance entry of the guidance to the drug product by analogy; check the drug product tables."
+      },
+      "no": {
+       "cat": "L1",
+       "src": "pac24",
+       "at": "3.2.S.2.1 (facilities)",
+       "why": "A new site is a supplement (Level I).",
+       "note": "The app applies the drug substance entry of the guidance to the drug product by analogy; check the drug product tables."
+      }
+     }
+    },
+    "no": {
+     "ask": "aseptic",
+     "on": {
+      "yes": {
+       "ask": "asepticNewOrDissimilar",
+       "on": {
+        "yes": {
+         "cat": "L1",
+         "src": "gsr97",
+         "at": "Rules 77(x) and 82(ix) (draft)",
+         "why": "Level I (major): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VI.B.4).",
+         "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+        },
+        "no": {
+         "ask": "affectsSterility",
+         "on": {
+          "yes": {
+           "cat": "L1",
+           "src": "gsr97",
+           "at": "Rules 77(x) and 82(ix) (draft)",
+           "why": "Level I (major): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VII.B.2).",
+           "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+          },
+          "no": {
+           "cat": "L2",
+           "src": "gsr97",
+           "at": "Rules 77(x) and 82(ix) (draft)",
+           "why": "Level II (moderate): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VII.C.1.a).",
+           "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+          }
+         }
+        }
+       }
+      },
+      "no": {
+       "ask": "affectsSterility",
+       "on": {
+        "yes": {
+         "cat": "L1",
+         "src": "gsr97",
+         "at": "Rules 77(x) and 82(ix) (draft)",
+         "why": "Level I (major): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VII.B.2).",
+         "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+        },
+        "no": {
+         "cat": "L2",
+         "src": "gsr97",
+         "at": "Rules 77(x) and 82(ix) (draft)",
+         "why": "Level II (moderate): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VII.C.1.a).",
+         "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "dp-equipment-same": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L3",
+     "src": "pac24",
+     "at": "3.2.S.2.2 (equipment)",
+     "why": "Like-for-like equipment replacement is an annual notification (Level III).",
+     "note": "The app applies the drug substance entry of the guidance to the drug product by analogy; check the drug product tables."
+    },
+    "no": {
+     "ask": "sterile",
+     "on": {
+      "yes": {
+       "ask": "affectsSterility",
+       "on": {
+        "yes": {
+         "cat": "L1",
+         "src": "gsr97",
+         "at": "Rules 77(x) and 82(ix) (draft)",
+         "why": "Level I (major): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VII.B.2).",
+         "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+        },
+        "no": {
+         "cat": "L3",
+         "src": "gsr97",
+         "at": "Rules 77(x) and 82(ix) (draft)",
+         "why": "Level III (minor): implement, then report in the annual submission in the first quarter. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VII.D.1).",
+         "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+        }
+       }
+      },
+      "no": {
+       "cat": "L3",
+       "src": "gsr97",
+       "at": "Rules 77(x) and 82(ix) (draft)",
+       "why": "Level III (minor): implement, then report in the annual submission in the first quarter. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VII.D.1).",
+       "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+      }
+     }
+    }
+   }
+  }
+ },
+ "dp-process-change": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "ask": "majorImpact",
+     "on": {
+      "yes": {
+       "cat": "L1",
+       "src": "pac24",
+       "at": "3.2.S.2.2 (process)",
+       "why": "A critical process change is a supplement (Level I).",
+       "note": "The app applies the drug substance entry of the guidance to the drug product by analogy; check the drug product tables."
+      },
+      "no": {
+       "cat": "L2",
+       "src": "pac24",
+       "at": "3.2.S.2.2 (process)",
+       "why": "A moderate process change is a notifiable change (Level II).",
+       "note": "The app applies the drug substance entry of the guidance to the drug product by analogy; check the drug product tables."
+      }
+     }
+    },
+    "no": {
+     "ask": "fundamentalTech",
+     "on": {
+      "yes": {
+       "cat": "L1",
+       "src": "gsr97",
+       "at": "Rules 77(x) and 82(ix) (draft)",
+       "why": "Level I (major): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VII.B.4).",
+       "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+      },
+      "no": {
+       "ask": "mr",
+       "on": {
+        "yes": {
+         "ask": "affectsRelease",
+         "on": {
+          "yes": {
+           "cat": "L1",
+           "src": "gsr97",
+           "at": "Rules 77(x) and 82(ix) (draft)",
+           "why": "Level I (major): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VII.B.1).",
+           "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+          },
+          "no": {
+           "cat": "L2",
+           "src": "gsr97",
+           "at": "Rules 77(x) and 82(ix) (draft)",
+           "why": "Level II (moderate): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VII.C.1.a).",
+           "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+          }
+         }
+        },
+        "no": {
+         "ask": "sterile",
+         "on": {
+          "yes": {
+           "ask": "affectsSterility",
+           "on": {
+            "yes": {
+             "cat": "L1",
+             "src": "gsr97",
+             "at": "Rules 77(x) and 82(ix) (draft)",
+             "why": "Level I (major): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VII.B.2).",
+             "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+            },
+            "no": {
+             "cat": "L2",
+             "src": "gsr97",
+             "at": "Rules 77(x) and 82(ix) (draft)",
+             "why": "Level II (moderate): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VII.C.1.a).",
+             "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+            }
+           }
+          },
+          "no": {
+           "cat": "L2",
+           "src": "gsr97",
+           "at": "Rules 77(x) and 82(ix) (draft)",
+           "why": "Level II (moderate): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VII.C.1.a).",
+           "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "dp-scale": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L2",
+     "src": "pac24",
+     "at": "3.2.S.2.2 (scale)",
+     "why": "A scale change is a notifiable change (Level II); Level III when the guidance conditions are met.",
+     "note": "The app does not model the Level III conditions; read the guidance."
+    },
+    "no": {
+     "ask": "sterile",
+     "on": {
+      "yes": {
+       "ask": "aseptic",
+       "on": {
+        "yes": {
+         "ask": "affectsSterility",
+         "on": {
+          "yes": {
+           "cat": "L1",
+           "src": "gsr97",
+           "at": "Rules 77(x) and 82(ix) (draft)",
+           "why": "Level I (major): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VII.B.2).",
+           "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+          },
+          "no": {
+           "cat": "L3",
+           "src": "gsr97",
+           "at": "Rules 77(x) and 82(ix) (draft)",
+           "why": "Level III (minor): implement, then report in the annual submission in the first quarter. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VII.D.1).",
+           "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+          }
+         }
+        },
+        "no": {
+         "ask": "bulkHold50",
+         "on": {
+          "yes": {
+           "cat": "L2",
+           "src": "gsr97",
+           "at": "Rules 77(x) and 82(ix) (draft)",
+           "why": "Level II (moderate): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VII.C.1.d).",
+           "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+          },
+          "no": {
+           "cat": "L3",
+           "src": "gsr97",
+           "at": "Rules 77(x) and 82(ix) (draft)",
+           "why": "Level III (minor): implement, then report in the annual submission in the first quarter. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VII.D.6).",
+           "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+          }
+         }
+        }
+       }
+      },
+      "no": {
+       "ask": "mr",
+       "on": {
+        "yes": {
+         "ask": "affectsRelease",
+         "on": {
+          "yes": {
+           "cat": "L1",
+           "src": "gsr97",
+           "at": "Rules 77(x) and 82(ix) (draft)",
+           "why": "Level I (major): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VII.B.1).",
+           "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+          },
+          "no": {
+           "cat": "L3",
+           "src": "gsr97",
+           "at": "Rules 77(x) and 82(ix) (draft)",
+           "why": "Level III (minor): implement, then report in the annual submission in the first quarter. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VII.D.1).",
+           "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+          }
+         }
+        },
+        "no": {
+         "cat": "L3",
+         "src": "gsr97",
+         "at": "Rules 77(x) and 82(ix) (draft)",
+         "why": "Level III (minor): implement, then report in the annual submission in the first quarter. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VII.D.1).",
+         "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "ds-route-new": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "cat": "L1",
+     "src": "gsr97",
+     "at": "Rules 77(x) and 82(ix) (draft)",
+     "why": "Level I (major): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VII.B.4).",
+     "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+    }
+   }
+  }
+ },
+ "ds-process-change": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "ask": "dsAfterFinalOrImpurity",
+     "on": {
+      "yes": {
+       "cat": "L1",
+       "src": "gsr97",
+       "at": "Rules 77(x) and 82(ix) (draft)",
+       "why": "Level I (major): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VII.B.5).",
+       "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+      },
+      "no": {
+       "cat": "L2",
+       "src": "gsr97",
+       "at": "Rules 77(x) and 82(ix) (draft)",
+       "why": "Level II (moderate): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VII.C.1.b).",
+       "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+      }
+     }
+    }
+   }
+  }
+ },
+ "ds-starting-material": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "ask": "finalIntermediate",
+     "on": {
+      "yes": {
+       "cat": "L1",
+       "src": "gsr97",
+       "at": "Rules 77(x) and 82(ix) (draft)",
+       "why": "Level I (major): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VII.C.1.e).",
+       "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+      },
+      "no": {
+       "cat": "L2",
+       "src": "gsr97",
+       "at": "Rules 77(x) and 82(ix) (draft)",
+       "why": "Level II (moderate): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VII.C.1.e).",
+       "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+      }
+     }
+    }
+   }
+  }
+ },
+ "dp-reprocessing": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "cat": "L1",
+     "src": "gsr97",
+     "at": "Rules 77(x) and 82(ix) (draft)",
+     "why": "Level I (major): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VII.B.7).",
+     "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+    }
+   }
+  }
+ },
+ "dp-ink": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "ask": "inkApproved",
+     "on": {
+      "yes": {
+       "cat": "L3",
+       "src": "gsr97",
+       "at": "Rules 77(x) and 82(ix) (draft)",
+       "why": "Level III (minor): implement, then report in the annual submission in the first quarter. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VII.D.3).",
+       "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+      },
+      "no": {
+       "cat": "L1",
+       "src": "gsr97",
+       "at": "Rules 77(x) and 82(ix) (draft)",
+       "why": "Level I (major): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VII.B.6).",
+       "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+      }
+     }
+    }
+   }
+  }
+ },
+ "dp-emboss": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "ask": "mr",
+     "on": {
+      "yes": {
+       "cat": "L1",
+       "src": "gsr97",
+       "at": "Rules 77(x) and 82(ix) (draft)",
+       "why": "Level I (major): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VII.B.1).",
+       "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+      },
+      "no": {
+       "cat": "L3",
+       "src": "gsr97",
+       "at": "Rules 77(x) and 82(ix) (draft)",
+       "why": "Level III (minor): implement, then report in the annual submission in the first quarter. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VII.D.4).",
+       "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+      }
+     }
+    }
+   }
+  }
+ },
+ "dp-order-addition": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "cat": "L3",
+     "src": "gsr97",
+     "at": "Rules 77(x) and 82(ix) (draft)",
+     "why": "Level III (minor): implement, then report in the annual submission in the first quarter. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VII.D.5).",
+     "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+    }
+   }
+  }
+ },
+ "sterile-filter": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "ask": "filterMaterialPore",
+     "on": {
+      "yes": {
+       "cat": "L1",
+       "src": "gsr97",
+       "at": "Rules 77(x) and 82(ix) (draft)",
+       "why": "Level I (major): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VII.B.2).",
+       "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+      },
+      "no": {
+       "cat": "L2",
+       "src": "gsr97",
+       "at": "Rules 77(x) and 82(ix) (draft)",
+       "why": "Level II (moderate): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VII.C.1.d).",
+       "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+      }
+     }
+    }
+   }
+  }
+ },
+ "sterilization-method": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "cat": "L1",
+     "src": "gsr97",
+     "at": "Rules 77(x) and 82(ix) (draft)",
+     "why": "Level I (major): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VII.B.2).",
+     "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+    }
+   }
+  }
+ },
+ "depyrogenation": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "cat": "L2",
+     "src": "gsr97",
+     "at": "Rules 77(x) and 82(ix) (draft)",
+     "why": "Level II (moderate): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VII.C.1.d).",
+     "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+    }
+   }
+  }
+ },
+ "inprocess-filtration-remove": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "cat": "L2",
+     "src": "gsr97",
+     "at": "Rules 77(x) and 82(ix) (draft)",
+     "why": "Level II (moderate): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VII.C.2.b).",
+     "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+    }
+   }
+  }
+ },
+ "control-increase": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "cat": "L2",
+     "src": "gsr97",
+     "at": "Rules 77(x) and 82(ix) (draft)",
+     "why": "Level II (moderate): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VII.C.2.a).",
+     "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+    }
+   }
+  }
+ },
+ "excipient-change": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L1",
+     "src": "pac24",
+     "at": "3.2.P.1 (composition)",
+     "why": "A change in the formulation is a supplement (Level I)."
+    },
+    "no": {
+     "ask": "supacLevel",
+     "on": {
+      "1": {
+       "cat": "L3",
+       "src": "gsr97",
+       "at": "Rules 77(x) and 82(ix) (draft)",
+       "why": "Level III (minor): implement, then report in the annual submission in the first quarter. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (III.A, Level 1).",
+       "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+      },
+      "2": {
+       "cat": "L1",
+       "src": "gsr97",
+       "at": "Rules 77(x) and 82(ix) (draft)",
+       "why": "Level I (major): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (III.B, Level 2).",
+       "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+      },
+      "3": {
+       "cat": "L1",
+       "src": "gsr97",
+       "at": "Rules 77(x) and 82(ix) (draft)",
+       "why": "Level I (major): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (III.C, Level 3).",
+       "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+      }
+     }
+    }
+   }
+  }
+ },
+ "colour-flavour-delete": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "cat": "L3",
+     "src": "gsr97",
+     "at": "Rules 77(x) and 82(ix) (draft)",
+     "why": "Level III (minor): implement, then report in the annual submission in the first quarter. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (III.A, Level 1).",
+     "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+    }
+   }
+  }
+ },
+ "new-strength": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L1",
+     "src": "pac24",
+     "at": "3.2.P.1 (composition)",
+     "why": "A new strength is a supplement (Level I); some cases can be a notifiable change when the conditions are met."
+    },
+    "no": {
+     "cat": "NEWDRUG",
+     "src": "ndct",
+     "at": "Rule 2(w)(ii)",
+     "why": "A new claim (indication, dosage, dosage form or route) makes the product a new drug again, so it needs a new permission (Form CT-18 to import, CT-21 to manufacture).",
+     "pi": true
+    }
+   }
+  }
+ },
+ "spec-tighten": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L3",
+     "src": "pac24",
+     "at": "3.2.S.4 (specifications)",
+     "why": "Tightening an acceptance criterion is an annual notification (Level III)."
+    },
+    "no": {
+     "cat": "L3",
+     "src": "gsr97",
+     "at": "Rules 77(x) and 82(ix) (draft)",
+     "why": "Level III (minor): implement, then report in the annual submission in the first quarter. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VIII.D.3).",
+     "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+    }
+   }
+  }
+ },
+ "spec-relax": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L2",
+     "src": "pac24",
+     "at": "3.2.S.4 (specifications)",
+     "why": "Relaxing an acceptance criterion is a notifiable change (Level II)."
+    },
+    "no": {
+     "ask": "adventitious",
+     "on": {
+      "yes": {
+       "cat": "L1",
+       "src": "gsr97",
+       "at": "Rules 77(x) and 82(ix) (draft)",
+       "why": "Level I (major): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VIII.B.6).",
+       "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+      },
+      "no": {
+       "ask": "compendial",
+       "on": {
+        "yes": {
+         "cat": "L2",
+         "src": "gsr97",
+         "at": "Rules 77(x) and 82(ix) (draft)",
+         "why": "Level II (moderate): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VIII.C.1.e).",
+         "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+        },
+        "no": {
+         "ask": "rawMaterialPreFinal",
+         "on": {
+          "yes": {
+           "cat": "L2",
+           "src": "gsr97",
+           "at": "Rules 77(x) and 82(ix) (draft)",
+           "why": "Level II (moderate): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VIII.C.1.b).",
+           "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+          },
+          "no": {
+           "ask": "envMicro",
+           "on": {
+            "yes": {
+             "cat": "L2",
+             "src": "gsr97",
+             "at": "Rules 77(x) and 82(ix) (draft)",
+             "why": "Level II (moderate): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VIII.C.1.d).",
+             "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+            },
+            "no": {
+             "cat": "L1",
+             "src": "gsr97",
+             "at": "Rules 77(x) and 82(ix) (draft)",
+             "why": "Level I (major): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VIII.B.1).",
+             "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+            }
+           }
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "spec-delete-test": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L2",
+     "src": "pac24",
+     "at": "3.2.S.4 (specifications)",
+     "why": "Deleting a test is a notifiable change (Level II); Level III if it is redundant with the remaining tests."
+    },
+    "no": {
+     "ask": "adventitious",
+     "on": {
+      "yes": {
+       "cat": "L1",
+       "src": "gsr97",
+       "at": "Rules 77(x) and 82(ix) (draft)",
+       "why": "Level I (major): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VIII.B.6).",
+       "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+      },
+      "no": {
+       "ask": "compendial",
+       "on": {
+        "yes": {
+         "cat": "L2",
+         "src": "gsr97",
+         "at": "Rules 77(x) and 82(ix) (draft)",
+         "why": "Level II (moderate): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VIII.C.1.e).",
+         "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+        },
+        "no": {
+         "ask": "rawMaterialPreFinal",
+         "on": {
+          "yes": {
+           "cat": "L2",
+           "src": "gsr97",
+           "at": "Rules 77(x) and 82(ix) (draft)",
+           "why": "Level II (moderate): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VIII.C.1.b).",
+           "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+          },
+          "no": {
+           "cat": "L1",
+           "src": "gsr97",
+           "at": "Rules 77(x) and 82(ix) (draft)",
+           "why": "Level I (major): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VIII.B.2).",
+           "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "spec-add-test": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L2",
+     "src": "pac24",
+     "at": "3.2.S.4 (specifications)",
+     "why": "Adding a test is a notifiable change (Level II); Level III when the guidance conditions are met."
+    },
+    "no": {
+     "cat": "L2",
+     "src": "gsr97",
+     "at": "Rules 77(x) and 82(ix) (draft)",
+     "why": "Level II (moderate): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VIII.C.2.a).",
+     "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+    }
+   }
+  }
+ },
+ "spec-compendial": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L3",
+     "src": "pac24",
+     "at": "3.2.S.4 (specifications)",
+     "why": "An update to an updated pharmacopoeial monograph is an annual notification (Level III)."
+    },
+    "no": {
+     "cat": "L3",
+     "src": "gsr97",
+     "at": "Rules 77(x) and 82(ix) (draft)",
+     "why": "Level III (minor): implement, then report in the annual submission in the first quarter. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VIII.D.1).",
+     "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+    }
+   }
+  }
+ },
+ "method-change": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "ask": "editorialOnly",
+     "on": {
+      "yes": {
+       "cat": "L3",
+       "src": "gsr97",
+       "at": "Rules 77(x) and 82(ix) (draft)",
+       "why": "Level III (minor): implement, then report in the annual submission in the first quarter. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VIII.C.1.a).",
+       "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+      },
+      "no": {
+       "ask": "sameOrBetter",
+       "on": {
+        "no": {
+         "cat": "L1",
+         "src": "gsr97",
+         "at": "Rules 77(x) and 82(ix) (draft)",
+         "why": "Level I (major): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VIII.B.4).",
+         "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+        },
+        "yes": {
+         "cat": "L2",
+         "src": "gsr97",
+         "at": "Rules 77(x) and 82(ix) (draft)",
+         "why": "Level II (moderate): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VIII.C.1.a).",
+         "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "method-new-regulatory": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "cat": "L1",
+     "src": "gsr97",
+     "at": "Rules 77(x) and 82(ix) (draft)",
+     "why": "Level I (major): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VIII.B.3).",
+     "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+    }
+   }
+  }
+ },
+ "method-alternative": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "ask": "sameOrBetter",
+     "on": {
+      "yes": {
+       "cat": "L3",
+       "src": "gsr97",
+       "at": "Rules 77(x) and 82(ix) (draft)",
+       "why": "Level III (minor): implement, then report in the annual submission in the first quarter. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VIII.D.2).",
+       "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+      },
+      "no": {
+       "cat": "L1",
+       "src": "gsr97",
+       "at": "Rules 77(x) and 82(ix) (draft)",
+       "why": "Level I (major): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VIII.B.3).",
+       "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+      }
+     }
+    }
+   }
+  }
+ },
+ "method-components": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "ask": "sameOrBetter",
+     "on": {
+      "yes": {
+       "cat": "L2",
+       "src": "gsr97",
+       "at": "Rules 77(x) and 82(ix) (draft)",
+       "why": "Level II (moderate): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VIII.C.2.b).",
+       "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+      },
+      "no": {
+       "cat": "L1",
+       "src": "gsr97",
+       "at": "Rules 77(x) and 82(ix) (draft)",
+       "why": "Level I (major): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VIII.B.5).",
+       "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+      }
+     }
+    }
+   }
+  }
+ },
+ "method-raw-material": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "ask": "sameOrBetter",
+     "on": {
+      "yes": {
+       "cat": "L3",
+       "src": "gsr97",
+       "at": "Rules 77(x) and 82(ix) (draft)",
+       "why": "Level III (minor): implement, then report in the annual submission in the first quarter. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VIII.D.4).",
+       "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+      },
+      "no": {
+       "ask": "adventitious",
+       "on": {
+        "yes": {
+         "cat": "L1",
+         "src": "gsr97",
+         "at": "Rules 77(x) and 82(ix) (draft)",
+         "why": "Level I (major): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VIII.B.6).",
+         "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+        },
+        "no": {
+         "cat": "L2",
+         "src": "gsr97",
+         "at": "Rules 77(x) and 82(ix) (draft)",
+         "why": "Level II (moderate): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VIII.C.1.c).",
+         "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "cc-polymer": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "ask": "polymerNew",
+     "on": {
+      "yes": {
+       "cat": "L1",
+       "src": "gsr97",
+       "at": "Rules 77(x) and 82(ix) (draft)",
+       "why": "Level I (major): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (IX.B.1).",
+       "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+      },
+      "no": {
+       "cat": "L2",
+       "src": "gsr97",
+       "at": "Rules 77(x) and 82(ix) (draft)",
+       "why": "Level II (moderate): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (IX.C.1.a).",
+       "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+      }
+     }
+    }
+   }
+  }
+ },
+ "cc-sterile": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "ask": "appliesToDS",
+     "on": {
+      "yes": {
+       "cat": "L2",
+       "src": "gsr97",
+       "at": "Rules 77(x) and 82(ix) (draft)",
+       "why": "Level II (moderate): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (IX.C.1.b).",
+       "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+      },
+      "no": {
+       "cat": "L1",
+       "src": "gsr97",
+       "at": "Rules 77(x) and 82(ix) (draft)",
+       "why": "Level I (major): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (IX.B.4).",
+       "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+      }
+     }
+    }
+   }
+  }
+ },
+ "cc-dose-device": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "cat": "L1",
+     "src": "gsr97",
+     "at": "Rules 77(x) and 82(ix) (draft)",
+     "why": "Level I (major): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (IX.B.3).",
+     "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+    }
+   }
+  }
+ },
+ "cc-closure-solid": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "ask": "sameOrBetterProtection",
+     "on": {
+      "yes": {
+       "cat": "L3",
+       "src": "gsr97",
+       "at": "Rules 77(x) and 82(ix) (draft)",
+       "why": "Level III (minor): implement, then report in the annual submission in the first quarter. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (IX.D.4).",
+       "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+      },
+      "no": {
+       "cat": "L1",
+       "src": "gsr97",
+       "at": "Rules 77(x) and 82(ix) (draft)",
+       "why": "Level I (major): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (IX.B.6).",
+       "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+      }
+     }
+    }
+   }
+  }
+ },
+ "cc-closure-liquid": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "ask": "sameOrBetterProtection",
+     "on": {
+      "yes": {
+       "cat": "L3",
+       "src": "gsr97",
+       "at": "Rules 77(x) and 82(ix) (draft)",
+       "why": "Level III (minor): implement, then report in the annual submission in the first quarter. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (IX.D.5).",
+       "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+      },
+      "no": {
+       "cat": "L1",
+       "src": "gsr97",
+       "at": "Rules 77(x) and 82(ix) (draft)",
+       "why": "Level I (major): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (IX.B.6).",
+       "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+      }
+     }
+    }
+   }
+  }
+ },
+ "cc-size-shape": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "ask": "sterile",
+     "on": {
+      "yes": {
+       "ask": "appliesToDS",
+       "on": {
+        "yes": {
+         "cat": "L2",
+         "src": "gsr97",
+         "at": "Rules 77(x) and 82(ix) (draft)",
+         "why": "Level II (moderate): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (IX.C.1.b).",
+         "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+        },
+        "no": {
+         "cat": "L1",
+         "src": "gsr97",
+         "at": "Rules 77(x) and 82(ix) (draft)",
+         "why": "Level I (major): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (IX.B.4).",
+         "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+        }
+       }
+      },
+      "no": {
+       "ask": "solidOral",
+       "on": {
+        "yes": {
+         "cat": "L3",
+         "src": "gsr97",
+         "at": "Rules 77(x) and 82(ix) (draft)",
+         "why": "Level III (minor): implement, then report in the annual submission in the first quarter. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (IX.D.2).",
+         "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+        },
+        "no": {
+         "cat": "L2",
+         "src": "gsr97",
+         "at": "Rules 77(x) and 82(ix) (draft)",
+         "why": "Level II (moderate): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (IX.C.2.a).",
+         "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "cc-count": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "ask": "sterile",
+     "on": {
+      "yes": {
+       "cat": "L2",
+       "src": "gsr97",
+       "at": "Rules 77(x) and 82(ix) (draft)",
+       "why": "Level II (moderate): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (IX.C.1.a).",
+       "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+      },
+      "no": {
+       "ask": "unitOfUse",
+       "on": {
+        "yes": {
+         "cat": "L2",
+         "src": "gsr97",
+         "at": "Rules 77(x) and 82(ix) (draft)",
+         "why": "Level II (moderate): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (IX.C.1.c).",
+         "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+        },
+        "no": {
+         "ask": "solidOral",
+         "on": {
+          "yes": {
+           "cat": "L3",
+           "src": "gsr97",
+           "at": "Rules 77(x) and 82(ix) (draft)",
+           "why": "Level III (minor): implement, then report in the annual submission in the first quarter. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (IX.D.3).",
+           "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+          },
+          "no": {
+           "cat": "L2",
+           "src": "gsr97",
+           "at": "Rules 77(x) and 82(ix) (draft)",
+           "why": "Level II (moderate): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (IX.C.2.b).",
+           "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "cc-desiccant": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "cat": "L2",
+     "src": "gsr97",
+     "at": "Rules 77(x) and 82(ix) (draft)",
+     "why": "Level II (moderate): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (IX.C.2.c).",
+     "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+    }
+   }
+  }
+ },
+ "cc-blister": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "ask": "blisterMaterialsApproved",
+     "on": {
+      "yes": {
+       "cat": "L3",
+       "src": "gsr97",
+       "at": "Rules 77(x) and 82(ix) (draft)",
+       "why": "Level III (minor): implement, then report in the annual submission in the first quarter. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (IX.D.6).",
+       "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+      },
+      "no": {
+       "cat": "L2",
+       "src": "gsr97",
+       "at": "Rules 77(x) and 82(ix) (draft)",
+       "why": "Level II (moderate): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (IX.C.1.a).",
+       "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+      }
+     }
+    }
+   }
+  }
+ },
+ "cc-secondary-protective": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "cat": "L1",
+     "src": "gsr97",
+     "at": "Rules 77(x) and 82(ix) (draft)",
+     "why": "Level I (major): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (IX.B.5).",
+     "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+    }
+   }
+  }
+ },
+ "cc-cap-colour": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "cat": "L3",
+     "src": "gsr97",
+     "at": "Rules 77(x) and 82(ix) (draft)",
+     "why": "Level III (minor): implement, then report in the annual submission in the first quarter. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (IX.D.8).",
+     "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+    }
+   }
+  }
+ },
+ "shelf-life-extend": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L3SL",
+     "src": "pac24",
+     "at": "General notes (shelf life)",
+     "why": "A shelf-life extension is a minor change but needs a post-approval change application and approval before it is used."
+    },
+    "no": {
+     "ask": "approvedProtocolFullData",
+     "on": {
+      "yes": {
+       "cat": "L3SL",
+       "src": "gsr97",
+       "at": "Rules 77(x) and 82(ix) (draft)",
+       "why": "Level III, but shelf-life changes need approval first. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (XI.C.1).",
+       "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+      },
+      "no": {
+       "cat": "L1",
+       "src": "gsr97",
+       "at": "Rules 77(x) and 82(ix) (draft)",
+       "why": "Level I (major): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (XI.A.4).",
+       "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+      }
+     }
+    }
+   }
+  }
+ },
+ "shelf-life-reduce": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "cat": "L2",
+     "src": "gsr97",
+     "at": "Rules 77(x) and 82(ix) (draft)",
+     "why": "Level II (moderate): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (XI.B.1).",
+     "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+    }
+   }
+  }
+ },
+ "stability-protocol": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "ask": "stabilityTimepointsOnly",
+     "on": {
+      "yes": {
+       "cat": "L3",
+       "src": "gsr97",
+       "at": "Rules 77(x) and 82(ix) (draft)",
+       "why": "Level III (minor): implement, then report in the annual submission in the first quarter. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (XI.C.2).",
+       "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+      },
+      "no": {
+       "cat": "L1",
+       "src": "gsr97",
+       "at": "Rules 77(x) and 82(ix) (draft)",
+       "why": "Level I (major): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (XI.A.3).",
+       "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+      }
+     }
+    }
+   }
+  }
+ },
+ "storage-conditions": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "cat": "CDSCO",
+     "src": "cdsco",
+     "at": "Case by case",
+     "why": "The draft covers quality changes only; labelling and administrative changes stay case by case.",
+     "note": "Switch on the draft rules (G.S.R. 97(E)) to see the levels they propose."
+    }
+   }
+  }
+ },
+ "reference-standard": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "cat": "L3",
+     "src": "gsr97",
+     "at": "Rules 77(x) and 82(ix) (draft)",
+     "why": "Level III (minor): implement, then report in the annual submission in the first quarter. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (XI.C.4).",
+     "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+    }
+   }
+  }
+ },
+ "lab-new-indication": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L1",
+     "src": "pac24",
+     "at": "Safety and efficacy changes",
+     "why": "A new or revised indication is a supplement (Level I).",
+     "pi": true
+    },
+    "no": {
+     "cat": "NEWDRUG",
+     "src": "ndct",
+     "at": "Rule 2(w)(ii)",
+     "why": "A new claim (indication, dosage, dosage form or route) makes the product a new drug again, so it needs a new permission (Form CT-18 to import, CT-21 to manufacture).",
+     "pi": true
+    }
+   }
+  }
+ },
+ "lab-population": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L1",
+     "src": "pac24",
+     "at": "Safety and efficacy changes",
+     "why": "A change in dose, dosing range or schedule is a supplement (Level I).",
+     "pi": true
+    },
+    "no": {
+     "cat": "NEWDRUG",
+     "src": "ndct",
+     "at": "Rule 2(w)(ii)",
+     "why": "A new dosage or population claim makes the product a new drug again, so it needs a new permission.",
+     "pi": true
+    }
+   }
+  }
+ },
+ "lab-clinical-section": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "cat": "CDSCO",
+     "src": "cdsco",
+     "at": "Case by case",
+     "why": "The draft covers quality changes only; labelling and administrative changes stay case by case.",
+     "note": "Switch on the draft rules (G.S.R. 97(E)) to see the levels they propose."
+    }
+   }
+  }
+ },
+ "lab-safety-add": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "ask": "seriousWarning",
+     "on": {
+      "yes": {
+       "cat": "L1",
+       "src": "pac24",
+       "at": "Safety and efficacy changes",
+       "why": "A new contraindication or a serious new warning is a supplement (Level I).",
+       "pi": true
+      },
+      "no": {
+       "cat": "L2",
+       "src": "pac24",
+       "at": "Safety and efficacy changes",
+       "why": "Adding or strengthening risk-management text is a notifiable change (Level II).",
+       "pi": true
+      }
+     }
+    },
+    "no": {
+     "cat": "CDSCO",
+     "src": "cdsco",
+     "at": "Case by case",
+     "why": "The draft covers quality changes only; labelling and administrative changes stay case by case.",
+     "note": "Switch on the draft rules (G.S.R. 97(E)) to see the levels they propose."
+    }
+   }
+  }
+ },
+ "lab-dosing-safety": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L2",
+     "src": "pac24",
+     "at": "Safety and efficacy changes",
+     "why": "Rewording dosage instructions to improve safe use is a notifiable change (Level II).",
+     "pi": true
+    },
+    "no": {
+     "cat": "CDSCO",
+     "src": "cdsco",
+     "at": "Case by case",
+     "why": "The draft covers quality changes only; labelling and administrative changes stay case by case.",
+     "note": "Switch on the draft rules (G.S.R. 97(E)) to see the levels they propose."
+    }
+   }
+  }
+ },
+ "lab-delete-claim": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "cat": "CDSCO",
+     "src": "cdsco",
+     "at": "Case by case",
+     "why": "The draft covers quality changes only; labelling and administrative changes stay case by case.",
+     "note": "Switch on the draft rules (G.S.R. 97(E)) to see the levels they propose."
+    }
+   }
+  }
+ },
+ "lab-505o4": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "cat": "CDSCO",
+     "src": "cdsco",
+     "at": "Case by case",
+     "why": "The draft covers quality changes only; labelling and administrative changes stay case by case.",
+     "note": "Switch on the draft rules (G.S.R. 97(E)) to see the levels they propose."
+    }
+   }
+  }
+ },
+ "lab-rld-update": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "cat": "CDSCO",
+     "src": "cdsco",
+     "at": "Case by case",
+     "why": "The draft covers quality changes only; labelling and administrative changes stay case by case.",
+     "note": "Switch on the draft rules (G.S.R. 97(E)) to see the levels they propose."
+    }
+   }
+  }
+ },
+ "lab-editorial": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L3",
+     "src": "pac24",
+     "at": "Safety and efficacy changes",
+     "why": "Editorial label changes (spelling, phrasing, contact details, barcodes) are an annual notification (Level III).",
+     "pi": true
+    },
+    "no": {
+     "cat": "CDSCO",
+     "src": "cdsco",
+     "at": "Case by case",
+     "why": "The draft covers quality changes only; labelling and administrative changes stay case by case.",
+     "note": "Switch on the draft rules (G.S.R. 97(E)) to see the levels they propose."
+    }
+   }
+  }
+ },
+ "lab-layout": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "cat": "CDSCO",
+     "src": "cdsco",
+     "at": "Case by case",
+     "why": "The draft covers quality changes only; labelling and administrative changes stay case by case.",
+     "note": "Switch on the draft rules (G.S.R. 97(E)) to see the levels they propose."
+    }
+   }
+  }
+ },
+ "cp-submit": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "cat": "L1",
+     "src": "gsr97",
+     "at": "Rules 77(x) and 82(ix) (draft)",
+     "why": "Level I (major): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (V).",
+     "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+    }
+   }
+  }
+ },
+ "cp-use": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "ask": "cpCategory",
+     "on": {
+      "CBE30": {
+       "cat": "L2",
+       "src": "gsr97",
+       "at": "Rules 77(x) and 82(ix) (draft)",
+       "why": "Level II (moderate): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VI).",
+       "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+      },
+      "CBE0": {
+       "cat": "L2",
+       "src": "gsr97",
+       "at": "Rules 77(x) and 82(ix) (draft)",
+       "why": "Level II (moderate): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VI).",
+       "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+      },
+      "AR": {
+       "cat": "L3",
+       "src": "gsr97",
+       "at": "Rules 77(x) and 82(ix) (draft)",
+       "why": "Level III (minor): implement, then report in the annual submission in the first quarter. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (VI).",
+       "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+      }
+     }
+    }
+   }
+  }
+ },
+ "be-study-change": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "cat": "L1",
+     "src": "gsr97",
+     "at": "Rules 77(x) and 82(ix) (draft)",
+     "why": "Level I (major): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (XI.A.1).",
+     "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+    }
+   }
+  }
+ },
+ "bio-mcb": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L2",
+     "src": "pac24",
+     "at": "3.2.S.2.3 (cell banks)",
+     "why": "A new master cell bank for a recombinant product is a notifiable change (Level II)."
+    },
+    "no": {
+     "cat": "L1",
+     "src": "gsr97",
+     "at": "Rules 77(x) and 82(ix) (draft)",
+     "why": "Level I (major): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (Appendix, cell banks).",
+     "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+    }
+   }
+  }
+ },
+ "bio-wcb": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L3",
+     "src": "pac24",
+     "at": "3.2.S.2.3 (cell banks)",
+     "why": "A new working cell bank is an annual notification (Level III)."
+    },
+    "no": {
+     "ask": "wcbApprovedProtocol",
+     "on": {
+      "yes": {
+       "cat": "L3",
+       "src": "gsr97",
+       "at": "Rules 77(x) and 82(ix) (draft)",
+       "why": "Level III (minor): implement, then report in the annual submission in the first quarter. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (Appendix, cell banks).",
+       "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+      },
+      "no": {
+       "cat": "L1",
+       "src": "gsr97",
+       "at": "Rules 77(x) and 82(ix) (draft)",
+       "why": "Level I (major): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (Appendix, cell banks).",
+       "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+      }
+     }
+    }
+   }
+  }
+ },
+ "bio-purification": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "ask": "bioResinMinor",
+     "on": {
+      "yes": {
+       "cat": "L3",
+       "src": "pac24",
+       "at": "3.2.S.2.2 (purification)",
+       "why": "A non-critical purification change (for example an equivalent in-line filter) is an annual notification (Level III)."
+      },
+      "no": {
+       "cat": "L2",
+       "src": "pac24",
+       "at": "3.2.S.2.2 (purification)",
+       "why": "A moderate purification change (for example a different chromatography method) is a notifiable change (Level II).",
+       "note": "A critical change that may affect viral clearance is Level I."
+      }
+     }
+    },
+    "no": {
+     "ask": "bioResinMinor",
+     "on": {
+      "yes": {
+       "cat": "L3",
+       "src": "gsr97",
+       "at": "Rules 77(x) and 82(ix) (draft)",
+       "why": "Level III (minor): implement, then report in the annual submission in the first quarter. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (Appendix, purification).",
+       "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+      },
+      "no": {
+       "cat": "L1",
+       "src": "gsr97",
+       "at": "Rules 77(x) and 82(ix) (draft)",
+       "why": "Level I (major): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (Appendix, purification).",
+       "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+      }
+     }
+    }
+   }
+  }
+ },
+ "bio-viral": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L1",
+     "src": "pac24",
+     "at": "3.2.S.2.2 (purification)",
+     "why": "A critical change, such as one affecting viral clearance, is a supplement (Level I)."
+    },
+    "no": {
+     "cat": "L1",
+     "src": "gsr97",
+     "at": "Rules 77(x) and 82(ix) (draft)",
+     "why": "Level I (major): prior approval. The draft defines the levels by substantial, moderate and minimal potential to affect quality; the app reads the potential from the matching FDA entry (Appendix, viral safety).",
+     "note": "Assumption: the draft gives definitions but no examples, so the level is inferred from the FDA guidance, which uses the same three tests. Final rules or guidance may differ."
+    }
+   }
+  }
+ },
+ "admin-ownership": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "ADMIN",
+     "src": "pac24",
+     "at": "Administrative changes",
+     "why": "A transfer is handled with the licence amendment and needs approval before implementation.",
+     "note": "Simplified."
+    },
+    "no": {
+     "cat": "CDSCO",
+     "src": "cdsco",
+     "at": "Case by case",
+     "why": "The draft covers quality changes only; labelling and administrative changes stay case by case.",
+     "note": "Switch on the draft rules (G.S.R. 97(E)) to see the levels they propose."
+    }
+   }
+  }
+ },
+ "admin-name-address": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "ADMIN",
+     "src": "pac24",
+     "at": "Administrative changes",
+     "why": "A change in the name of the authorisation holder needs CDSCO approval before implementation; review takes about 30 days.",
+     "pi": true
+    },
+    "no": {
+     "cat": "CDSCO",
+     "src": "cdsco",
+     "at": "Case by case",
+     "why": "The draft covers quality changes only; labelling and administrative changes stay case by case.",
+     "note": "Switch on the draft rules (G.S.R. 97(E)) to see the levels they propose."
+    }
+   }
+  }
+ }
+}

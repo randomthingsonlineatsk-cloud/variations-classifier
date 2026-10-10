@@ -15,7 +15,8 @@ const TIMING = [
 
 export default function Compare() {
   const { products, productById, user, saveCase } = useApp();
-  const packs = Object.fromEntries(READY.map((r) => [r, packFor(r)]));
+  const [inDraft, setInDraft] = useState(false);
+  const packs = Object.fromEntries(READY.map((r) => [r, packFor(r, { draft: r === 'in' && inDraft })]));
   const [q, setQ] = useState('');
   const [group, setGroup] = useState('');
   const [diffOnly, setDiffOnly] = useState(false);
@@ -50,7 +51,7 @@ export default function Compare() {
             </tbody>
           </table>
         </div>
-        <p className="small muted" style={{ marginBottom: 0 }}>The US CBE-0 lets you distribute on receipt; the EU has no exact match (Type IA-IN is implemented before it is notified). The EU also has extensions and changes that need no variation at all.</p>
+        <p className="small muted" style={{ marginBottom: 0 }}>India's "Ask CDSCO" means no codified category for chemical drugs in force. The US CBE-0 lets you distribute on receipt; the EU has no exact match (Type IA-IN is implemented before it is notified). The EU also has extensions and changes that need no variation at all.</p>
       </section>
       <div className="grid-2 panel" style={{ marginBottom: '1rem' }}>
         <label className="field">Search<input type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="words such as site, shelf life" /></label>
@@ -63,6 +64,7 @@ export default function Compare() {
         <label className="field">Product for side-by-side cases
           <select value={productId} onChange={(e) => setProductId(e.target.value)}>{products.map((p) => <option key={p.id} value={p.id}>{p.label ?? p.brandName}</option>)}</select>
         </label>
+        <label className="row small" style={{ alignSelf: 'end' }}><input type="checkbox" checked={inDraft} onChange={(e) => setInDraft(e.target.checked)} /> India: show the February 2026 draft rules</label>
         <label className="row small" style={{ alignSelf: 'end' }}><input type="checkbox" checked={diffOnly} onChange={(e) => setDiffOnly(e.target.checked)} /> Only changes whose lightest route differs in timing</label>
       </div>
       <p className="small muted" aria-live="polite">{list.length} change(s).</p>

@@ -43,8 +43,14 @@
    },
    "regions": [
     "us",
-    "eu"
-   ]
+    "eu",
+    "in"
+   ],
+   "in": {
+    "route": "import",
+    "permission": "CT-19 fictional 99/2023",
+    "agent": "Halcyon Ridge India Pvt. Ltd."
+   }
   },
   {
    "id": "generic-tablet",
@@ -94,8 +100,14 @@
    },
    "regions": [
     "us",
-    "eu"
-   ]
+    "eu",
+    "in"
+   ],
+   "in": {
+    "route": "manufacture",
+    "permission": "CT-23 fictional 98/2022",
+    "agent": null
+   }
   },
   {
    "id": "talmisartan-er",
@@ -145,8 +157,14 @@
    },
    "regions": [
     "us",
-    "eu"
-   ]
+    "eu",
+    "in"
+   ],
+   "in": {
+    "route": "import",
+    "permission": "CT-19 fictional 97/2025",
+    "agent": "Meridian Pharma Services Pvt. Ltd."
+   }
   },
   {
    "id": "sterile-injectable",
@@ -189,8 +207,14 @@
    },
    "regions": [
     "us",
-    "eu"
-   ]
+    "eu",
+    "in"
+   ],
+   "in": {
+    "route": "import",
+    "permission": "CT-19 fictional 96/2022",
+    "agent": "Meridale India Pvt. Ltd."
+   }
   },
   {
    "id": "mab-infusion",
@@ -238,8 +262,14 @@
    },
    "regions": [
     "us",
-    "eu"
-   ]
+    "eu",
+    "in"
+   ],
+   "in": {
+    "route": "import",
+    "permission": "CT-19 fictional 95/2023",
+    "agent": "Lumenfield India Pvt. Ltd."
+   }
   },
   {
    "id": "biosimilar-mab",
@@ -282,8 +312,14 @@
    },
    "regions": [
     "us",
-    "eu"
-   ]
+    "eu",
+    "in"
+   ],
+   "in": {
+    "route": "import",
+    "permission": "CT-19 fictional 94/2025",
+    "agent": "Brightmere India Pvt. Ltd."
+   }
   },
   {
    "id": "mdi-aerosol",
@@ -332,8 +368,14 @@
    },
    "regions": [
     "us",
-    "eu"
-   ]
+    "eu",
+    "in"
+   ],
+   "in": {
+    "route": "import",
+    "permission": "CT-19 fictional 93/2021",
+    "agent": "Northvale India Pvt. Ltd."
+   }
   }
  ]
 }

@@ -11,7 +11,7 @@ Live site: https://randomthingsonlineatsk-cloud.github.io/variations-classifier/
 
 **Training only.** Every product, company and person is fictional, and application numbers are invented. Real regulation, guidance, category and form names are used so the practice is realistic; nothing here imitates an agency portal or form, and results are not regulatory advice.
 
-## What is in this release (Phases 1 and 2: United States and European Union)
+## What is in this release (Phases 1 to 3: United States, European Union and India)
 
 **US pack, edition 2026.1.** Prior approval supplement, CBE-30, CBE-0, annual report and letters, for NDAs, ANDAs and BLAs, built from:
 
@@ -42,15 +42,25 @@ The annex conditions are shown as checklists (paraphrased; read the official tex
 
 **EU procedures.** Grouping (the group follows its highest type, with warnings for groupings EMA generally does not accept), the Type IA annual update, worksharing and super-grouping across authorisations, Type IB 30-day and Type II 30/60/90-day clocks with clock stops, implementation after the opinion or the decision, and EU cover letters.
 
-**Both regions at once.** A case can cover the US and the EU: shared questions are answered once and the answers sit side by side, with a filing plan per region. The Compare page lists every category each change can reach in each region.
+**India pack, edition 2026.1, with the 2026 draft as a what-if.** Biological products follow CDSCO's guidance PAC/2024 (version 1.2, implemented 16 May 2024): Level I supplement, Level II notifiable change, Level III annual notification in the first quarter (shelf-life changes still need approval), Level IV record. Chemical new drugs have no codified categories in force, so the answer is a case-by-case application through SUGAM; new claims make a product a new drug again (NDCT Rules, rule 2(w)), with a decision within 90 working days. A per-case switch applies the draft G.S.R. 97(E) of 2 February 2026 (Levels I to III); because the draft gives definitions but no examples, levels for chemical drugs are inferred from the matching FDA entry, which uses the same three tests, and the result says so. Not every PAC/2024 table is modelled yet; uncovered biologic changes say so.
+
+**Labelling rollout.** One company core data sheet (CCDS) change tracked into the US prescribing information, the EU SmPC and leaflet and the Indian prescribing information: the label section, the classification in each region, a company target date, the lag and the status.
+
+**Change requests.** A training change request (present and proposed state, reason, planned date) that suggests catalogue changes from its description, writes a regulatory impact statement for every market, records the sign-off with the pack editions used, and moves across a status board.
+
+**Rollout planner.** For a case covering several markets: when each can use the change, the date every market can, which markets hold it back, how long old and new product overlap, and the lower routes that would shorten it.
+
+**Drills.** Timed sets of ten classification cases per region, generated from the decision trees so each has one right answer.
+
+**All regions at once.** A case can cover the US and the EU: shared questions are answered once and the answers sit side by side, with a filing plan per region. The Compare page lists every category each change can reach in each region.
 
 Where the app simplifies a rule, the result says so; the Sources page lists every simplification.
 
 **Change catalogue.** 73 region-neutral changes in ten groups (sites, process, composition, specifications and methods, container closure, stability, labeling and safety, protocols, biologics, administrative), each with a decision tree in the US pack, plain-language help and the supporting documents with their CTD sections.
 
-**Products.** Seven fictional products with US and EU registration profiles: six shared with the eCTD Dossier Builder (Ostrevia tablets, Talmisartan generic tablets, Talvera XR capsules, Nelvaprox injection, Arventa and Selvanta antibodies) and Brezovent, a metered-dose inhaler. A product can also be added from an eCTD Dossier Builder project file.
+**Products.** Seven fictional products with US, EU and India registration profiles: six shared with the eCTD Dossier Builder (Ostrevia tablets, Talmisartan generic tablets, Talvera XR capsules, Nelvaprox injection, Arventa and Selvanta antibodies) and Brezovent, a metered-dose inhaler. A product can also be added from an eCTD Dossier Builder project file.
 
-**Learning.** Nine lessons with checks (six US, three EU), sixteen scored missions at three levels (guided, standard, expert), an 80-question quiz bank with flashcards, a glossary and a progress page.
+**Learning.** Eleven lessons with checks, twenty scored missions at three levels (guided, standard, expert) across the US, the EU and India, a 90-question quiz bank with flashcards, timed drills, a glossary and a progress page.
 
 **Data.** Everything stays in the browser (IndexedDB). Cases, attempts and products carry a user ID and a class ID; export and import the whole project as a `.vcproj.json` file.
 
@@ -58,7 +68,6 @@ Where the app simplifies a rule, the result says so; the Sources page lists ever
 
 | Phase | Content |
 |---|---|
-| 3 | India pack (rules in force, with the February 2026 draft as a what-if); core data sheet to regional labeling; change control intake; global rollout planner; drills |
 | 4 | ICH Q12 tools (established conditions, PACMP builder, PLCM document), Q5E checklist; Canada, Switzerland, Japan and WHO PQ packs; certificate; classroom on the shared Cloudflare Worker |
 
 ## How it works

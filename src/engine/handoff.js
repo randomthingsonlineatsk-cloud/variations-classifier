@@ -23,6 +23,7 @@ export function buildChangePackage({ pack, product, kase, filing, user = null })
     product: {
       id: product.id, ectdProductId: product.ectdProductId ?? null, brandName: product.brandName, inn: product.inn,
       appType: product.appType, applicationNumber: product.applicationNumber, holder: product.holder.name,
+      in: pack.id === 'in' ? { route: product.in?.route ?? null, permission: product.in?.permission ?? null, agent: product.in?.agent ?? null, draftRules: !!pack.draft } : null,
       eu: pack.id === 'eu' ? { route: product.eu?.route ?? null, maNumber: product.eu?.maNumber ?? null, holder: (product.eu?.holder ?? product.holder).name } : null,
     },
     region: pack.region,
