@@ -1,0 +1,41 @@
+{
+ "lessons": [
+  { "id": 1, "topic": "categories", "title": "The four US reporting categories", "minutes": 6,
+    "sections": [
+     { "h": "One question decides the category", "p": ["FDA asks how much potential a change has to have an adverse effect on the identity, strength, quality, purity or potency of the product, as these relate to its safety or effectiveness. Substantial potential makes a major change; moderate potential a moderate change; minimal potential a minor change.", "The same three tests apply to NDAs and ANDAs (21 CFR 314.70, applied to ANDAs by 314.97) and to BLAs (21 CFR 601.12)."] },
+     { "h": "Four ways to tell FDA", "p": ["Prior approval supplement (PAS): major changes. Product made with the change is distributed only after FDA approves.", "Supplement - Changes Being Effected in 30 Days (CBE-30): moderate changes. Distribution can start 30 days after FDA receives the supplement, unless FDA says otherwise in that time.", "Supplement - Changes Being Effected (CBE-0): moderate changes FDA allows at once. Distribution can start when FDA receives the supplement.", "Annual report (AR): minor changes. Make the change, then describe it in the next annual report, due within 60 days of the anniversary of approval."] },
+     { "h": "Do and tell, or tell and wait", "p": ["The app shows a badge on every result: do and tell (annual report), tell then do at once (CBE-0), tell, wait 30 days, then do (CBE-30), or wait for approval (PAS). It is the first thing a change control board needs to know."] },
+     { "h": "Several changes at once", "p": ["When related changes are filed together, use the most restrictive category of the individual changes (guidance section XII). Unrelated changes can go separately, so a minor change does not have to wait for a major one."] } ],
+    "tryChange": "spec-tighten" },
+  { "id": 2, "topic": "sites", "title": "Site changes", "minutes": 7,
+    "sections": [
+     { "h": "Inspection history comes first", "p": ["A move to a site that FDA has never inspected for the type of operation, or that restarts an operation stopped for more than two years, is a prior approval supplement (VI.B.1). So is a move to a site without a satisfactory CGMP inspection for that operation (VI.B.2)."] },
+     { "h": "Then the product", "p": ["Some products make a move major even to a good site: modified-release products, products whose primary packaging controls the dose (VI.B.3), aseptic processing into a new or dissimilar area (VI.B.4) and terminally sterilized products into a newly built facility at a different site (VI.B.5).", "Otherwise a move is a CBE-30 (VI.C.1.a), with special cases for aseptic areas that already make similar products (VI.C.1.b), primary packaging (VI.C.1.c) and testing labs (VI.C.1.d)."] },
+     { "h": "Minor moves", "p": ["Secondary packaging, labeling, ink imprinting and early intermediates are annual report items (VI.D)."] } ],
+    "tryChange": "dp-site-move" },
+  { "id": 3, "topic": "process", "title": "Process, scale and composition", "minutes": 7,
+    "sections": [
+     { "h": "Fundamental changes", "p": ["A change of technology (wet to dry granulation, a new drying method, a new synthetic route) is a prior approval supplement (VII.B.4). So are changes that may affect controlled release (VII.B.1) or sterility assurance (VII.B.2)."] },
+     { "h": "Everything else in the process", "p": ["Other changes to process, parameters or equipment are CBE-30 (VII.C.1.a). Equipment of the same design and operating principle, and changes in scale, are annual report items (VII.D.1) unless another rule applies."] },
+     { "h": "Composition still follows SUPAC", "p": ["The 2004 guidance keeps the SUPAC categories for components and composition. For immediate-release solids, SUPAC-IR Level 1 changes are annual report items; Levels 2 and 3 need prior approval, Level 3 usually with an in vivo bioequivalence study."] } ],
+    "tryChange": "dp-process-change" },
+  { "id": 4, "topic": "specs", "title": "Specifications and analytical procedures", "minutes": 6,
+    "sections": [
+     { "h": "Direction matters", "p": ["Tightening a limit is minor (VIII.D.3). Adding a test that increases assurance is a CBE-0 (VIII.C.2.a). Relaxing a limit or deleting a test needs prior approval (VIII.B.1, VIII.B.2), except where it follows a compendium (CBE-30, VIII.C.1.e) or concerns early raw materials (CBE-30, VIII.C.1.b)."] },
+     { "h": "Methods", "p": ["A new regulatory procedure, or one that gives less assurance, needs prior approval (VIII.B.3, VIII.B.4). Other changes to a regulatory procedure are CBE-30. Alternative procedures with the same or greater assurance are annual report items (VIII.D.2)."] } ],
+    "tryChange": "spec-relax" },
+  { "id": 5, "topic": "labeling", "title": "Labeling and safety changes", "minutes": 7,
+    "sections": [
+     { "h": "Most labeling changes need prior approval", "p": ["21 CFR 314.70(b)(2)(v) makes labeling changes prior approval supplements, except the safety and editorial changes the rule lists. New indications and population changes come as efficacy supplements with clinical data."] },
+     { "h": "Safety first: CBE-0", "p": ["Adding or strengthening a contraindication, warning, precaution or adverse reaction, an instruction for safer use, or deleting misleading claims can go in at once as a CBE-0, when based on newly acquired information with reasonable evidence of a causal association (314.70(c)(6)(iii); 601.12(f)(2) for biologics)."] },
+     { "h": "When FDA asks: 505(o)(4)", "p": ["If FDA becomes aware of new safety information that it believes should be in the labeling, it notifies the holder. The holder has 30 days to submit a supplement with the change or a statement of why it is not warranted; disagreements follow a set timetable, after which FDA can order the change."] },
+     { "h": "Generics follow the brand", "p": ["ANDA labeling must be the same as the reference listed drug's, apart from permitted differences, so generic holders update their labeling when the brand's changes."] } ],
+    "tryChange": "lab-safety-add" },
+  { "id": 6, "topic": "tools", "title": "Protocols, biologics and lifecycle tools", "minutes": 7,
+    "sections": [
+     { "h": "Comparability protocols", "p": ["A comparability protocol (FDA's name for a post-approval change management protocol under ICH Q12) describes a future change, the studies and the acceptance criteria. It is approved first, in a prior approval supplement; afterwards the change it covers can be filed in the lower category it sets."] },
+     { "h": "Biologics are stricter", "p": ["FDA's 2021 guidance for certain biological products treats many process, facility and specification changes as prior approval: new master cell banks, new purification steps or resins, viral clearance changes. The app shows when a result comes from guidance written for small molecules."] },
+     { "h": "Established conditions", "p": ["ICH Q12 lets a holder agree with FDA which elements are established conditions. Changes to other elements are managed in the quality system without a filing. The app adds established conditions and the product lifecycle management document in a later phase."] } ],
+    "tryChange": "cp-use" }
+ ]
+}
