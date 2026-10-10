@@ -1,56 +1,355 @@
 {
  "_about": "Shared question bank. A question has one id across every region pack, so a learner answers once and each pack's tree uses the answer. Questions with fromProduct are answered from the product profile; they can still be flipped in what-if.",
- "bio": { "text": "Is the product a biological product licensed under a BLA?", "help": "Biologics follow 21 CFR 601.12 and FDA's 2021 guidance for certain biological products, which treat many process changes more strictly than for small molecules.", "fromProduct": "bio" },
- "anda": { "text": "Is the application an ANDA (a generic)?", "help": "ANDA holders report changes under 21 CFR 314.97, which applies 314.70; labeling must stay the same as the reference listed drug.", "fromProduct": "anda" },
- "sterile": { "text": "Is the drug product sterile?", "fromProduct": "sterile" },
- "aseptic": { "text": "Is the sterile product made by aseptic processing (not terminally sterilized)?", "help": "Aseptic processing has less margin for error than terminal sterilization, so moves and equipment changes are classified more strictly.", "fromProduct": "aseptic" },
- "mr": { "text": "Is it a modified-release dosage form (extended or delayed release)?", "help": "Changes that may affect controlled release are major changes in the US guidance.", "fromProduct": "mr" },
- "solidOral": { "text": "Is it a solid oral dosage form (tablet or capsule)?", "fromProduct": "solidOral" },
- "doseControl": { "text": "Does the primary packaging control the dose delivered to the patient (for example a metered-dose valve or an auto-injector)?", "fromProduct": "doseControl" },
-
- "siteNeverInspected": { "text": "Has FDA never inspected the new site for this type of operation, or would the move restart an operation stopped there for more than two years?", "help": "Either one makes a site move a prior approval supplement (guidance section VI.B.1)." },
- "siteCgmp": { "text": "Does the new site have a satisfactory CGMP inspection for this type of operation?", "help": "If the last inspection for this operation was not satisfactory, the move needs prior approval (VI.B.2)." },
- "asepticNewOrDissimilar": { "text": "Is the aseptic facility or area newly built or refurbished, or does it not yet make similar approved products (same container types and sizes)?", "help": "VI.B.4 sets prior approval for both cases; a move into an existing aseptic area that already makes similar approved products is a CBE-30 (VI.C.1.b)." },
- "termNewFacilityOtherSite": { "text": "Is the product moving to a newly constructed facility at a different site?", "help": "VI.B.5. A move to a new or existing building on the same site is an annual report item (VI.D.5)." },
- "sameSiteBuilding": { "text": "Is the move to a new or existing building on the same manufacturing site?" },
- "bioAltLineApproved": { "text": "Is the new filling line already approved for aseptic manufacture of other products, with no change to the validated process?", "help": "FDA's 2021 biologics guidance lists that case as a CBE-30; other fill-line additions that may affect sterility assurance need prior approval." },
- "finalIntermediate": { "text": "Is the material the final intermediate of the drug substance synthesis?", "help": "The final intermediate is the last compound before the reaction that forms the drug substance." },
- "testingConditions": { "text": "Will the new laboratory use the approved test procedures, are all commitments on those procedures fulfilled, and can it do the testing?", "help": "All three are conditions of VI.C.1.d." },
- "componentSterilizationSame": { "text": "Is the sterilization process for the packaging components materially the same as the approved one?" },
- "affectsSterility": { "text": "Could the change affect sterility assurance (sterilization method, sterilizer load, aseptic equipment, lyophilizer, filter)?", "help": "VII.B.2 makes these prior approval supplements." },
- "fundamentalTech": { "text": "Is it a fundamental change in process or technology (for example wet to dry granulation, or a new type of drying)?", "help": "VII.B.4." },
- "affectsRelease": { "text": "Could the change affect the controlled release, metering or other dose-delivery characteristics?", "help": "VII.B.1." },
- "bioMinorParam": { "text": "Is it only a minor change on the same equipment, within validated ranges, with no change in process parameters?", "help": "FDA's 2021 biologics guidance lists these as annual report changes; other process or scale changes for biologics usually need prior approval." },
- "bulkHold50": { "text": "Does the scale change increase bulk solution storage time by more than 50% beyond validated limits?", "help": "Terminally sterilized products only: more than 50% is a CBE-30 (VII.C.1.d), up to 50% an annual report item (VII.D.6)." },
- "dsAfterFinalOrImpurity": { "text": "Does the change affect steps after the final intermediate, or could it change the impurity profile of the drug substance?", "help": "VII.B.5." },
- "inkApproved": { "text": "Is the ink already used in products approved by CDER?", "help": "Yes: annual report (VII.D.3). No: prior approval (VII.B.6)." },
- "filterMaterialPore": { "text": "Does the change involve the sterilizing filter material or pore size (not only filtration parameters such as flow, pressure or time)?" },
- "supacLevel": { "text": "What SUPAC level is the composition change?", "type": "choice", "options": [
-   { "value": "1", "label": "Level 1: deletion of a colour or flavour, or excipient changes within the Level 1 ranges (total additive effect up to 5%)" },
-   { "value": "2", "label": "Level 2: excipient changes beyond Level 1 but within the Level 2 ranges (total up to 10%)" },
-   { "value": "3", "label": "Level 3: changes beyond Level 2, a qualitative change, or a narrow therapeutic index drug beyond Level 1" } ],
-   "help": "From SUPAC-IR, which still governs components and composition. Modified-release and semisolid products have their own SUPAC tables; the app simplifies them to the same three levels." },
- "compendial": { "text": "Is the change made to comply with an official compendium (USP–NF)?" },
- "rawMaterialPreFinal": { "text": "Does it concern raw materials, starting materials or in-process materials used before the final intermediate in drug substance manufacture?" },
- "envMicro": { "text": "Is it an in-process acceptance criterion for microbiological monitoring of the production environment, materials or components?", "help": "Relaxing such a criterion is a CBE-30 (VIII.C.1.d)." },
- "adventitious": { "text": "Does it concern testing raw materials for viruses or adventitious agents?", "help": "Relaxing, deleting or weakening these tests needs prior approval (VIII.B.6)." },
- "sameOrBetter": { "text": "Does the new or changed analytical procedure give the same or greater assurance than the approved one?" },
- "bioMethodMajor": { "text": "Does the change alter the technique, the acceptance criteria or the method performance?", "help": "For biologics, such changes (for example to a potency assay) need prior approval; minor modifications are annual report changes." },
- "polymerNew": { "text": "Is the new polymeric material (or ink or adhesive) new to approved products of the same dosage form and route?", "help": "IX.B.1 and IX.B.2." },
- "sameOrBetterProtection": { "text": "Does the new container closure give the same or better protection than the approved one?" },
- "appliesToDS": { "text": "Is the container for the drug substance (not the drug product)?" },
- "unitOfUse": { "text": "Is the product in a unit-of-use container?" },
- "blisterMaterialsApproved": { "text": "Are the blister materials already used in approved products of the same type?" },
- "productContactChange": { "text": "Does the change alter product-contact materials or the container dimensions?" },
- "approvedProtocolFullData": { "text": "Is the extension based on full shelf-life data from production batches, under the stability protocol approved in the application?", "help": "Yes: annual report (XI.C.1). An extension based on a new or revised protocol, or on accelerated or partial data, needs prior approval (XI.A.4)." },
- "stabilityTimepointsOnly": { "text": "Is the change only adding time points, or deleting time points beyond the approved expiry date?" },
- "newlyAcquired": { "text": "Is it based on newly acquired information with reasonable evidence of a causal association?", "help": "Under 21 CFR 314.70(c)(6)(iii) and 601.12(f)(2), safety labeling that adds or strengthens information on this basis may be put in place when FDA receives the supplement." },
- "rldUpdate": { "text": "Is the change only to match updated labeling of the reference listed drug?" },
- "cpCategory": { "text": "Which reporting category did the approved comparability protocol set for this change?", "type": "choice", "options": [
-   { "value": "CBE30", "label": "Supplement - Changes Being Effected in 30 Days" },
-   { "value": "CBE0", "label": "Supplement - Changes Being Effected" },
-   { "value": "AR", "label": "Annual report" } ] },
- "wcbApprovedProtocol": { "text": "Is the new working cell bank made from the approved master cell bank under an approved protocol?" },
- "bioResinMinor": { "text": "Is it only a minor change to purification parameters (no new resin, step, column size or loading scale)?" },
- "editorialOnly": { "text": "Is the change editorial only (no change in meaning or data)?" }
+ "bio": {
+  "text": "Is the product a biological product licensed under a BLA?",
+  "help": "Biologics follow 21 CFR 601.12 and FDA's 2021 guidance for certain biological products, which treat many process changes more strictly than for small molecules.",
+  "fromProduct": "bio"
+ },
+ "anda": {
+  "text": "Is the application an ANDA (a generic)?",
+  "help": "ANDA holders report changes under 21 CFR 314.97, which applies 314.70; labeling must stay the same as the reference listed drug.",
+  "fromProduct": "anda"
+ },
+ "sterile": {
+  "text": "Is the drug product sterile?",
+  "fromProduct": "sterile"
+ },
+ "aseptic": {
+  "text": "Is the sterile product made by aseptic processing (not terminally sterilized)?",
+  "help": "Aseptic processing has less margin for error than terminal sterilization, so moves and equipment changes are classified more strictly.",
+  "fromProduct": "aseptic"
+ },
+ "mr": {
+  "text": "Is it a modified-release dosage form (extended or delayed release)?",
+  "help": "Changes that may affect controlled release are major changes in the US guidance.",
+  "fromProduct": "mr"
+ },
+ "solidOral": {
+  "text": "Is it a solid oral dosage form (tablet or capsule)?",
+  "fromProduct": "solidOral"
+ },
+ "doseControl": {
+  "text": "Does the primary packaging control the dose delivered to the patient (for example a metered-dose valve or an auto-injector)?",
+  "fromProduct": "doseControl"
+ },
+ "siteNeverInspected": {
+  "text": "Has FDA never inspected the new site for this type of operation, or would the move restart an operation stopped there for more than two years?",
+  "help": "Either one makes a site move a prior approval supplement (guidance section VI.B.1)."
+ },
+ "siteCgmp": {
+  "text": "Does the new site have a satisfactory CGMP inspection for this type of operation?",
+  "help": "If the last inspection for this operation was not satisfactory, the move needs prior approval (VI.B.2)."
+ },
+ "asepticNewOrDissimilar": {
+  "text": "Is the aseptic facility or area newly built or refurbished, or does it not yet make similar approved products (same container types and sizes)?",
+  "help": "VI.B.4 sets prior approval for both cases; a move into an existing aseptic area that already makes similar approved products is a CBE-30 (VI.C.1.b)."
+ },
+ "termNewFacilityOtherSite": {
+  "text": "Is the product moving to a newly constructed facility at a different site?",
+  "help": "VI.B.5. A move to a new or existing building on the same site is an annual report item (VI.D.5)."
+ },
+ "sameSiteBuilding": {
+  "text": "Is the move to a new or existing building on the same manufacturing site?"
+ },
+ "bioAltLineApproved": {
+  "text": "Is the new filling line already approved for aseptic manufacture of other products, with no change to the validated process?",
+  "help": "FDA's 2021 biologics guidance lists that case as a CBE-30; other fill-line additions that may affect sterility assurance need prior approval."
+ },
+ "finalIntermediate": {
+  "text": "Is the material the final intermediate of the drug substance synthesis?",
+  "help": "The final intermediate is the last compound before the reaction that forms the drug substance."
+ },
+ "testingConditions": {
+  "text": "Will the new laboratory use the approved test procedures, are all commitments on those procedures fulfilled, and can it do the testing?",
+  "help": "All three are conditions of VI.C.1.d."
+ },
+ "componentSterilizationSame": {
+  "text": "Is the sterilization process for the packaging components materially the same as the approved one?"
+ },
+ "affectsSterility": {
+  "text": "Could the change affect sterility assurance (sterilization method, sterilizer load, aseptic equipment, lyophilizer, filter)?",
+  "help": "VII.B.2 makes these prior approval supplements."
+ },
+ "fundamentalTech": {
+  "text": "Is it a fundamental change in process or technology (for example wet to dry granulation, or a new type of drying)?",
+  "help": "VII.B.4."
+ },
+ "affectsRelease": {
+  "text": "Could the change affect the controlled release, metering or other dose-delivery characteristics?",
+  "help": "VII.B.1."
+ },
+ "bioMinorParam": {
+  "text": "Is it only a minor change on the same equipment, within validated ranges, with no change in process parameters?",
+  "help": "FDA's 2021 biologics guidance lists these as annual report changes; other process or scale changes for biologics usually need prior approval."
+ },
+ "bulkHold50": {
+  "text": "Does the scale change increase bulk solution storage time by more than 50% beyond validated limits?",
+  "help": "Terminally sterilized products only: more than 50% is a CBE-30 (VII.C.1.d), up to 50% an annual report item (VII.D.6)."
+ },
+ "dsAfterFinalOrImpurity": {
+  "text": "Does the change affect steps after the final intermediate, or could it change the impurity profile of the drug substance?",
+  "help": "VII.B.5."
+ },
+ "inkApproved": {
+  "text": "Is the ink already used in products approved by CDER?",
+  "help": "Yes: annual report (VII.D.3). No: prior approval (VII.B.6)."
+ },
+ "filterMaterialPore": {
+  "text": "Does the change involve the sterilizing filter material or pore size (not only filtration parameters such as flow, pressure or time)?"
+ },
+ "supacLevel": {
+  "text": "What SUPAC level is the composition change?",
+  "type": "choice",
+  "options": [
+   {
+    "value": "1",
+    "label": "Level 1: deletion of a colour or flavour, or excipient changes within the Level 1 ranges (total additive effect up to 5%)"
+   },
+   {
+    "value": "2",
+    "label": "Level 2: excipient changes beyond Level 1 but within the Level 2 ranges (total up to 10%)"
+   },
+   {
+    "value": "3",
+    "label": "Level 3: changes beyond Level 2, a qualitative change, or a narrow therapeutic index drug beyond Level 1"
+   }
+  ],
+  "help": "From SUPAC-IR, which still governs components and composition. Modified-release and semisolid products have their own SUPAC tables; the app simplifies them to the same three levels."
+ },
+ "compendial": {
+  "text": "Is the change made only to comply with an official pharmacopoeia (USP–NF, Ph. Eur.)?"
+ },
+ "rawMaterialPreFinal": {
+  "text": "Does it concern raw materials, starting materials or in-process materials used before the final intermediate in drug substance manufacture?"
+ },
+ "envMicro": {
+  "text": "Is it an in-process acceptance criterion for microbiological monitoring of the production environment, materials or components?",
+  "help": "Relaxing such a criterion is a CBE-30 (VIII.C.1.d)."
+ },
+ "adventitious": {
+  "text": "Does it concern testing raw materials for viruses or adventitious agents?",
+  "help": "Relaxing, deleting or weakening these tests needs prior approval (VIII.B.6)."
+ },
+ "sameOrBetter": {
+  "text": "Does the new or changed analytical procedure give the same or greater assurance than the approved one?"
+ },
+ "bioMethodMajor": {
+  "text": "Does the change alter the technique, the acceptance criteria or the method performance?",
+  "help": "For biologics, such changes (for example to a potency assay) need prior approval; minor modifications are annual report changes."
+ },
+ "polymerNew": {
+  "text": "Is the new polymeric material (or ink or adhesive) new to approved products of the same dosage form and route?",
+  "help": "IX.B.1 and IX.B.2."
+ },
+ "sameOrBetterProtection": {
+  "text": "Does the new container closure give the same or better protection than the approved one?"
+ },
+ "appliesToDS": {
+  "text": "Is the container for the drug substance (not the drug product)?"
+ },
+ "unitOfUse": {
+  "text": "Is the product in a unit-of-use container?"
+ },
+ "blisterMaterialsApproved": {
+  "text": "Are the blister materials already used in approved products of the same type?"
+ },
+ "productContactChange": {
+  "text": "Does the change alter product-contact materials or the container dimensions?"
+ },
+ "approvedProtocolFullData": {
+  "text": "Is the extension based on full shelf-life data from production batches, under the stability protocol approved in the application?",
+  "help": "Yes: annual report (XI.C.1). An extension based on a new or revised protocol, or on accelerated or partial data, needs prior approval (XI.A.4)."
+ },
+ "stabilityTimepointsOnly": {
+  "text": "Is the change only adding time points, or deleting time points beyond the approved expiry date?"
+ },
+ "newlyAcquired": {
+  "text": "Is it based on newly acquired information with reasonable evidence of a causal association?",
+  "help": "Under 21 CFR 314.70(c)(6)(iii) and 601.12(f)(2), safety labeling that adds or strengthens information on this basis may be put in place when FDA receives the supplement."
+ },
+ "rldUpdate": {
+  "text": "Is the change only to match updated labeling of the reference listed drug?"
+ },
+ "cpCategory": {
+  "text": "Which reporting category did the approved comparability protocol set for this change?",
+  "type": "choice",
+  "options": [
+   {
+    "value": "CBE30",
+    "label": "Supplement - Changes Being Effected in 30 Days"
+   },
+   {
+    "value": "CBE0",
+    "label": "Supplement - Changes Being Effected"
+   },
+   {
+    "value": "AR",
+    "label": "Annual report"
+   }
+  ]
+ },
+ "wcbApprovedProtocol": {
+  "text": "Is the new working cell bank made from the approved master cell bank under an approved qualification protocol?"
+ },
+ "bioResinMinor": {
+  "text": "Is it only a minor change to purification parameters (no new resin, step, column size or loading scale)?"
+ },
+ "editorialOnly": {
+  "text": "Is the change editorial only (no change in meaning or data)?"
+ },
+ "notSterile": {
+  "text": "Is the finished product non-sterile?",
+  "fromProduct": "notSterile"
+ },
+ "notBio": {
+  "text": "Is the product not a biological product?",
+  "fromProduct": "notBio"
+ },
+ "irOral": {
+  "text": "Is it an immediate-release oral dosage form?",
+  "fromProduct": "irOral"
+ },
+ "irFct": {
+  "text": "Is it an immediate-release film-coated tablet?",
+  "fromProduct": "irFct"
+ },
+ "siteNeedsInspection": {
+  "text": "Does the new site need an initial or product-specific GMP inspection before it can be used?",
+  "help": "In the EU this makes a site change Type II (Q.II.b.1(d))."
+ },
+ "novelComplex": {
+  "text": "Is the finished product made by a novel or complex manufacturing process?",
+  "help": "Q.II.b.1(c) and Q.II.b.4(d) make these Type II. The guidelines and EMA Q&A describe what counts; the app does not decide it for you."
+ },
+ "asmfNew": {
+  "text": "Is the new active substance manufacturer supported by an Active Substance Master File (ASMF)?",
+  "help": "A new ASMF-supported manufacturer is Type II (Q.I.a.1(f))."
+ },
+ "significantDossierUpdate": {
+  "text": "Does the new site use a substantially different route or conditions, needing a significant update of the active substance part of the dossier?"
+ },
+ "bioProcedure": {
+  "text": "Is the analytical procedure biological, immunological or immunochemical?"
+ },
+ "lineDuplicate": {
+  "text": "Is the new line a duplicate of an approved line, with no change to the process?",
+  "help": "For biologics, a scale change without process change (such as duplicating a line) is Type IB (Q.II.b.4(f))."
+ },
+ "majorImpact": {
+  "text": "Could the change significantly affect the quality, safety or efficacy of the product?",
+  "help": "Major changes are Type II. Use the guideline text and your risk assessment, not convenience."
+ },
+ "comparabilityNeeded": {
+  "text": "Does the change need a comparability assessment (biologics) or a new bioequivalence study?"
+ },
+ "scaleWithin10": {
+  "text": "Is the new batch size within ten times the originally approved size (up or down)?"
+ },
+ "significantQuality": {
+  "text": "Could deleting it significantly affect the overall quality of the product?"
+ },
+ "excipientKind": {
+  "text": "What kind of excipient change is it?",
+  "type": "choice",
+  "options": [
+   {
+    "value": "minor-quant",
+    "label": "A minor quantitative adjustment of excipients"
+   },
+   {
+    "value": "comparable",
+    "label": "Replacement with a comparable excipient with the same function"
+   },
+   {
+    "value": "other",
+    "label": "Another qualitative or quantitative change"
+   }
+  ]
+ },
+ "colourAction": {
+  "text": "What happens to the colouring or flavouring component?",
+  "type": "choice",
+  "options": [
+   {
+    "value": "delete",
+    "label": "It is deleted (or added or replaced)"
+   },
+   {
+    "value": "reduce",
+    "label": "Its amount is increased or reduced"
+   }
+  ]
+ },
+ "minorMethodChange": {
+  "text": "Is it a minor change to the approved procedure (same method type; for example column length or temperature)?"
+ },
+ "altAction": {
+  "text": "Is the alternative procedure being added (or revised), or deleted?",
+  "type": "choice",
+  "options": [
+   {
+    "value": "add",
+    "label": "Added or revised"
+   },
+   {
+    "value": "delete",
+    "label": "Deleted"
+   }
+  ]
+ },
+ "containerTypeChange": {
+  "text": "Is it a change of container type, or a new container (for example vial to prefilled syringe, or bottle to blister)?"
+ },
+ "withinPackRange": {
+  "text": "Is the new pack size within the approved range of pack sizes?"
+ },
+ "piAffected": {
+  "text": "Does the change affect the product information (SmPC, labelling or package leaflet)?"
+ },
+ "realTimeData": {
+  "text": "Is the extension supported by real-time data in line with the approved stability protocol?"
+ },
+ "extrapolationPerGuideline": {
+  "text": "Is the extrapolation done in line with the relevant stability guidelines?"
+ },
+ "agencyOutcome": {
+  "text": "Does the change implement an outcome already assessed by the authorities (for example a PRAC signal, PSUSA or referral outcome)?"
+ },
+ "agreedExact": {
+  "text": "Is the wording exactly as agreed by the authorities, with agreed translations, needing no further assessment?"
+ },
+ "newData": {
+  "text": "Does the change need new data to be assessed?"
+ },
+ "pacmpType": {
+  "text": "Which category did the approved PACMP set for implementing this change?",
+  "type": "choice",
+  "options": [
+   {
+    "value": "IA",
+    "label": "Type IA"
+   },
+   {
+    "value": "IAIN",
+    "label": "Type IA-IN"
+   },
+   {
+    "value": "IB",
+    "label": "Type IB"
+   }
+  ]
+ },
+ "refStdProtocol": {
+  "text": "Is the new reference standard qualified under a qualification protocol approved in the dossier?"
+ },
+ "refStdComparable": {
+  "text": "Are comparability results between the current and the new reference standard available?"
+ },
+ "nonStandardSterilisation": {
+  "text": "Is the new method a non-standard terminal sterilisation method (not a Ph. Eur. reference condition)?"
+ },
+ "sameGroup": {
+  "text": "Is the new manufacturer part of the same pharmaceutical group as the current one?",
+  "help": "Under the 2013 guidelines this made a new active substance manufacturer Type IA-IN (B.I.a.1(a))."
+ }
 }

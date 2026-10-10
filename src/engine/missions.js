@@ -1,8 +1,8 @@
 // Missions: the expected answers come from the engine, run on the mission's hidden facts.
 import data from '../data/missions.json' with { type: 'json' };
-import { packFor, rankOf, CHANGE, categoryOf } from './packs.js';
-import { classify, FROM_PRODUCT } from './classify.js';
-import { filingsFor, impactFor, timelineFor, answersFor, addDays } from './filing.js';
+import { rankOf, CHANGE, categoryOf } from './packs.js';
+import { classify, isFromProduct } from './classify.js';
+import { filingsFor, impactFor, timelineFor, answersFor, addDays, packForCase } from './filing.js';
 import { BUILTIN_PRODUCTS, newCase, addChange } from './model.js';
 
 export const MISSIONS = data.missions;
@@ -16,27 +16,29 @@ const productOf = (m) => BUILTIN_PRODUCTS.find((p) => p.id === m.product);
 
 export function missionCase(m, user, difficulty = 'standard') {
   const product = productOf(m);
-  const k = newCase({ product, user, region: m.region, name: `Mission ${m.id}: ${m.title}`, missionId: m.id, difficulty, submitDate: m.submitDate });
+  const k = newCase({ product, user, regions: [m.region], name: `Mission ${m.id}: ${m.title}`, missionId: m.id, difficulty, submitDate: m.submitDate });
   for (const c of m.changes) addChange(k, c.changeId, c.note);
   k.related = m.related ?? (m.changes.length > 1);
   if (m.notificationDate) k.options.notificationDate = m.notificationDate;
+  if (m.alsoProducts) k.alsoProducts = [...m.alsoProducts];
+  if (m.clockStop) k.options.clockStop = m.clockStop;
   k.mission = { ctd: [], date: '', submitted: null };
   return k;
 }
 
 export function missionTruth(m) {
-  const pack = packFor(m.region);
   const product = productOf(m);
   const k = missionCase(m, null);
+  const pack = packForCase(k, m.region);
   k.related = m.related ?? false;
   k.changes.forEach((c, i) => { c.answers = { ...m.changes[i].facts }; });
   const { filings, pending } = filingsFor(pack, product, k);
   if (pending.length) throw new Error(`Mission ${m.id}: facts do not settle every change`);
   const perChange = k.changes.map((c) => classify(pack, c.changeId, answersFor(product, c)));
   const main = filings[0];
-  const tl = timelineFor(pack, product, main, { submitDate: m.submitDate, notificationDate: m.notificationDate });
-  const date = m.timeline === 'due505' ? addDays(m.notificationDate, pack.clocks['505o4'].days) : tl.earliestUse;
-  return { pack, product, perChange, filings, main, ctd: impactFor(pack, main).map((e) => e.code), date, dateLabel: m.timeline === 'due505' ? 'Response due' : main.category === 'PAS' ? 'FDA goal date' : 'Earliest date of use' };
+  const tl = timelineFor(pack, product, main, { submitDate: m.submitDate, notificationDate: m.notificationDate, clockStop: m.clockStop ?? 0 });
+  const date = m.timeline === 'due505' ? addDays(m.notificationDate, pack.clocks['505o4'].days) : m.timeline === 'notify' ? tl.events.find((e) => e.kind === 'due')?.date : tl.earliestUse;
+  return { pack, product, perChange, filings, main, ctd: impactFor(pack, main).map((e) => e.code), date, dateLabel: m.timeline === 'due505' ? 'Response due' : m.timeline === 'notify' ? 'Latest date to notify' : main.category === 'PAS' ? 'FDA goal date' : 'Earliest date of use' };
 }
 
 const jaccard = (a, b) => {
@@ -75,7 +77,7 @@ export function scoreMission(m, kase) {
   let asked = 0; let right = 0;
   kase.changes.forEach((c, i) => {
     for (const s of t.perChange[i].outcome.path) {
-      if (FROM_PRODUCT.has(s.q)) continue;
+      if (s.assumed || isFromProduct(pack, s.q)) continue;
       asked += 1;
       if (c.answers?.[s.q] === s.a) right += 1;
     }

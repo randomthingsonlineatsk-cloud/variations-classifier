@@ -1,24 +1,24 @@
 import React, { useMemo, useRef, useState } from 'react';
 import { useApp, go } from '../ctx.js';
-import { packFor, changesFor, searchChanges, GROUP, REGIONS } from '../engine/packs.js';
+import { packFor, changesFor, searchChanges, GROUP, REGIONS, READY, regionOf } from '../engine/packs.js';
 import { newCase, addChange } from '../engine/model.js';
-import { filingsFor } from '../engine/filing.js';
+import { filingsFor, packForCase } from '../engine/filing.js';
 import { exportProject, parseProjectFile, download, readFile } from '../engine/io.js';
 import { Cat, Range } from '../components/ui.jsx';
 
 export default function Home() {
   const { user, cases, attempts, products, lessons, saveCase, deleteCase, productById, importAll, toast } = useApp();
-  const pack = packFor('us');
   const [productId, setProductId] = useState(products[0].id);
   const [q, setQ] = useState('');
   const [changeId, setChangeId] = useState('');
+  const [regions, setRegions] = useState(['us', 'eu']);
   const product = productById(productId) ?? products[0];
   const list = useMemo(() => searchChanges(changesFor(product), q), [product, q]);
   const fileRef = useRef(null);
 
   const start = async (e) => {
     e.preventDefault();
-    const k = newCase({ product, user });
+    const k = newCase({ product, user, regions });
     if (changeId) { addChange(k, changeId); k.name = `${product.brandName}: ${list.find((c) => c.id === changeId)?.title ?? 'change'}`; }
     await saveCase(k);
     go(`/case/${k.id}`);
@@ -42,7 +42,7 @@ export default function Home() {
         <div>
           <h1>Classify a post-approval change</h1>
           <p className="lede">Describe a change to an approved product and answer the questions the rules ask. You get the reporting category, every reason with the rule behind it, the documents, the CTD sections, the dates and a filing package for the eCTD Dossier Builder.</p>
-          <p className="small muted">This edition has the US pack (NDA, ANDA, BLA). EU, India and other regions follow. Every product and company is fictional; results are for training, not regulatory advice.</p>
+          <p className="small muted">This edition has the US pack (NDA, ANDA, BLA) and the EU pack on the 2025 classification guidelines, with the 2013 guidelines kept for earlier dates. India and other regions follow. Every product and company is fictional; results are for training, not regulatory advice.</p>
         </div>
         <form className="panel stack" onSubmit={start} aria-label="Start a case">
           <h2 style={{ fontSize: 'var(--step-1)' }}>Start a case</h2>
@@ -52,12 +52,19 @@ export default function Home() {
             </select>
             <small>{product.summary}</small>
           </label>
-          <label className="field">Region
-            <select value="us" onChange={() => {}} aria-describedby="region-help">
-              {REGIONS.map((r) => <option key={r.id} value={r.id} disabled={!r.ready}>{r.label}{r.ready ? '' : ` (phase ${r.phase})`}</option>)}
-            </select>
-            <small id="region-help">Pack {pack.label}, edition {pack.edition}.</small>
-          </label>
+          <fieldset className="field" style={{ border: 0, padding: 0, margin: 0 }}>
+            <legend style={{ fontWeight: 600, fontSize: 'var(--step--1)', color: 'var(--ink-2)', marginBottom: '.25rem' }}>Regions</legend>
+            <div className="row">
+              {REGIONS.map((r) => (
+                <label key={r.id} className="row small" style={{ gap: '.3rem', fontWeight: 400 }}>
+                  <input type="checkbox" disabled={!r.ready || (regions.includes(r.id) && regions.length === 1)} checked={regions.includes(r.id)}
+                    onChange={(e) => setRegions(READY.filter((x) => (x === r.id ? e.target.checked : regions.includes(x))))} />
+                  {r.short}{r.ready ? '' : <span className="muted"> (phase {r.phase})</span>}
+                </label>
+              ))}
+            </div>
+            <small className="muted" style={{ fontWeight: 400 }}>{regions.map((r) => `${regionOf(r).label}: edition ${packFor(r).edition}`).join(' · ')}</small>
+          </fieldset>
           <label className="field">Find the change
             <input type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="for example: new site, shelf life, dissolution" />
           </label>
@@ -92,17 +99,25 @@ export default function Home() {
 }
 
 function CaseRow({ k, product, onDelete }) {
-  const pack = packFor(k.pack.id, { edition: k.pack.edition }) ?? packFor('us');
-  const res = product ? filingsFor(pack, product, k) : null;
+  const multi = k.regions.length > 1;
   return (
     <div className="list-item">
       <div style={{ minWidth: 0 }}>
         <h3><a href={`#/case/${k.id}`}>{k.name}</a></h3>
-        <div className="small muted">{product ? `${product.brandName} · ${product.appType.toUpperCase()} ${product.applicationNumber}` : 'Product missing'} · {k.changes.length} change(s) · updated {new Date(k.updatedAt).toLocaleDateString()}</div>
+        <div className="small muted">{product ? `${product.brandName} · ${k.regions.map((r) => regionOf(r).short).join(' + ')}` : 'Product missing'} · {k.changes.length} change(s) · updated {new Date(k.updatedAt).toLocaleDateString()}</div>
       </div>
       <div className="row">
-        {res?.filings.map((f) => <Cat key={f.id} pack={pack} id={f.category} />)}
-        {res?.pending.map((p) => p.result.status === 'range' ? <Range key={p.change.id} pack={pack} min={p.result.min} max={p.result.max} /> : null)}
+        {product && k.regions.map((r) => {
+          const pack = packForCase(k, r);
+          const res = filingsFor(pack, product, k);
+          return (
+            <span key={r} className="row" style={{ gap: '.25rem' }}>
+              {multi && <span className="small muted">{regionOf(r).short}</span>}
+              {res.filings.map((f) => <Cat key={f.id} pack={pack} id={f.category} />)}
+              {res.pending.map((p) => p.result.status === 'range' ? <Range key={p.change.id} pack={pack} min={p.result.min} max={p.result.max} /> : null)}
+            </span>
+          );
+        })}
         <a className="btn small" href={`#/case/${k.id}`}>Open</a>
         <button className="btn small danger" onClick={onDelete}>Delete</button>
       </div>

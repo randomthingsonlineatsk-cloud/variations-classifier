@@ -409,3 +409,10 @@ table.data tr.me td { font-weight: 600; }
 .legend-row { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; }
 @media (max-width: 760px) { .case-grid { grid-template-columns: 1fr; } .events li { grid-template-columns: 1fr; } }
 @media print { .topbar, .footer, .no-print, .tabs { display: none !important; } body { background: #fff; } .panel, .result, .filing { break-inside: avoid; } }
+
+.conditions .cond { padding: .45rem 0; border-top: 1px dashed var(--line); }
+.conditions .cond:first-of-type { border-top: 0; }
+.conditions .cond.next > p:first-child::before { content: 'Next: '; color: var(--accent); font-weight: 700; }
+.cat-NONE { --cc: var(--c-letter); } .cat-OTHER { --cc: var(--c-letter); } .cat-IA { --cc: var(--c-ar); } .cat-IAIN { --cc: var(--c-cbe0); } .cat-IB { --cc: var(--c-cbe30); } .cat-II { --cc: var(--c-pas); } .cat-EXT { --cc: #6b3fa0; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .cat-EXT { --cc: #c3a3ee; } }
+:root[data-theme="dark"] .cat-EXT { --cc: #c3a3ee; }

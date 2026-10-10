@@ -1,20 +1,13 @@
 import React, { useMemo, useState } from 'react';
 import { useApp, go } from '../ctx.js';
-import { packFor, GROUP, CHANGES, searchChanges, rankOf } from '../engine/packs.js';
+import { packFor, GROUP, CHANGES, searchChanges, READY, regionOf } from '../engine/packs.js';
+import { reachable } from '../engine/classify.js';
 import { newCase, addChange } from '../engine/model.js';
 import { Cat } from '../components/ui.jsx';
 
-// Every category a change can reach in a pack, lowest first.
-function reachable(pack, changeId) {
-  const out = new Set();
-  const walk = (n) => { if (!n) return; if (n.cat) { out.add(n.cat); return; } Object.values(n.on).forEach(walk); };
-  walk(pack.entries[changeId]?.tree);
-  return [...out].sort((a, b) => rankOf(pack, a) - rankOf(pack, b));
-}
-
 export default function Catalogue() {
   const { products, productById, user, saveCase } = useApp();
-  const pack = packFor('us');
+  const packs = Object.fromEntries(READY.map((r) => [r, packFor(r)]));
   const [q, setQ] = useState('');
   const [group, setGroup] = useState('');
   const [productId, setProductId] = useState(products[0].id);
@@ -22,7 +15,7 @@ export default function Catalogue() {
   const list = useMemo(() => searchChanges(CHANGES, q).filter((c) => !group || c.group === group), [q, group]);
   const applies = (c) => c.scope === 'all' || (c.scope === 'bio' && product.facts.bio) || (c.scope === 'small' && !product.facts.bio) || (c.scope === 'sterile' && product.facts.sterile);
   const start = async (c) => {
-    const k = newCase({ product, user, name: `${product.brandName}: ${c.title}` });
+    const k = newCase({ product, user, regions: READY, name: `${product.brandName}: ${c.title}` });
     addChange(k, c.id);
     await saveCase(k);
     go(`/case/${k.id}`);
@@ -30,7 +23,7 @@ export default function Catalogue() {
   return (
     <div className="page" style={{ maxWidth: 1200 }}>
       <h1>Change catalogue</h1>
-      <p>{CHANGES.length} changes, each with a decision tree in the US pack. The coloured pills show every category the change can reach; the questions decide which one applies.</p>
+      <p>{CHANGES.length} region-neutral changes, each with a decision tree in every region pack. The pills show every category a change can reach in each region; the questions decide which one applies. <a href="#/compare">Compare regions side by side</a>.</p>
       <div className="grid-2 panel" style={{ marginBottom: '1rem' }}>
         <label className="field">Search<input type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="words such as site, shelf life, resin" /></label>
         <label className="field">Group
@@ -57,7 +50,12 @@ export default function Catalogue() {
                 <article key={c.id} className="cat-card">
                   <h3>{c.title}</h3>
                   <p className="small muted" style={{ margin: 0 }}>{c.help}</p>
-                  <div className="row">{reachable(pack, c.id).map((x) => <Cat key={x} pack={pack} id={x} />)}</div>
+                  {READY.map((r) => (
+                    <div key={r} className="row" style={{ gap: '.3rem' }}>
+                      <span className="small muted" style={{ minWidth: '2.2rem' }}>{regionOf(r).short}</span>
+                      {reachable(packs[r], c.id).map((x) => <Cat key={x} pack={packs[r]} id={x} />)}
+                    </div>
+                  ))}
                   <div className="row">
                     {applies(c)
                       ? <button className="btn small primary" onClick={() => start(c)}>Classify for {product.brandName}</button>

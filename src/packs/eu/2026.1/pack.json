@@ -1,0 +1,524 @@
+{
+ "id": "eu",
+ "region": "EU",
+ "label": "European Union: centralised, MRP/DCP and national",
+ "edition": "2026.1",
+ "appliesFrom": "2026-01-15",
+ "appliesTo": null,
+ "status": "in force",
+ "summary": "Variations under Regulation (EC) No 1234/2008 as amended by Regulation (EU) 2024/1701, classified with the Commission guidelines C/2025/5045 that apply from 15 January 2026.",
+ "sources": {
+  "reg": {
+   "title": "Commission Regulation (EC) No 1234/2008, as amended by Delegated Regulation (EU) 2024/1701",
+   "version": "Consolidated",
+   "date": "amendment applies from 1 January 2025",
+   "url": "https://eur-lex.europa.eu/eli/reg/2024/1701/oj",
+   "status": "final"
+  },
+  "gl25": {
+   "title": "Guidelines on the details of the various categories of variations (C/2025/5045)",
+   "version": "22 September 2025",
+   "date": "applies from 15 January 2026",
+   "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025XC05045",
+   "status": "final"
+  },
+  "emaqa": {
+   "title": "EMA: Classification of changes, questions and answers",
+   "version": "Web edition",
+   "date": "read 2026-10-11",
+   "url": "https://www.ema.europa.eu/en/human-regulatory-overview/post-authorisation/classification-changes-questions-and-answers",
+   "status": "final"
+  },
+  "emagroup": {
+   "title": "EMA: Grouping of variations, questions and answers",
+   "version": "Web edition",
+   "date": "read 2026-10-11",
+   "url": "https://www.ema.europa.eu/en/human-regulatory-overview/post-authorisation/variations-including-extensions-marketing-authorisations/grouping-variations-questions-answers",
+   "status": "final"
+  },
+  "emaproc": {
+   "title": "EMA: Post-authorisation procedural advice (Type IA, IB and II timetables)",
+   "version": "Web edition",
+   "date": "read 2026-10-11",
+   "url": "https://www.ema.europa.eu/en/human-regulatory-overview/post-authorisation/variations",
+   "status": "final"
+  },
+  "pacmp": {
+   "title": "EMA: Questions and answers on post-approval change management protocols",
+   "version": "Rev. 1",
+   "date": "11 December 2025, effective 15 January 2026",
+   "url": "https://www.ema.europa.eu/en/human-regulatory-overview/post-authorisation/variations-including-extensions-marketing-authorisations",
+   "status": "final"
+  },
+  "dir": {
+   "title": "Directive 2001/83/EC, Article 61(3)",
+   "version": "Consolidated",
+   "date": "current",
+   "url": "https://eur-lex.europa.eu/eli/dir/2001/83/oj",
+   "status": "final"
+  },
+  "transfer": {
+   "title": "Commission Regulation (EC) No 2141/96 (transfer of a centralised marketing authorisation)",
+   "version": "Consolidated",
+   "date": "current",
+   "url": "https://eur-lex.europa.eu/eli/reg/1996/2141/oj",
+   "status": "final"
+  }
+ },
+ "categories": [
+  {
+   "id": "NONE",
+   "rank": 0,
+   "short": "No variation",
+   "label": "No variation needed",
+   "implement": "do",
+   "badge": "Managed in the quality system",
+   "rule": "No submission: the change is managed under the quality system (or an approved protocol).",
+   "src": "emaqa",
+   "at": "Q&A"
+  },
+  {
+   "id": "OTHER",
+   "rank": 0,
+   "short": "Other procedure",
+   "label": "Separate procedure (not a variation)",
+   "implement": "other",
+   "badge": "Different procedure",
+   "rule": "Use the procedure named in the result (for example a transfer or an Article 61(3) notification).",
+   "src": "reg",
+   "at": "Article 2"
+  },
+  {
+   "id": "IA",
+   "rank": 1,
+   "short": "IA",
+   "label": "Type IA",
+   "implement": "do-and-tell",
+   "badge": "Do and tell within 12 months",
+   "rule": "Implement, then notify within 12 months (for example in the Type IA annual update). The authority checks it within 30 days.",
+   "src": "reg",
+   "at": "Articles 8 and 13a"
+  },
+  {
+   "id": "IAIN",
+   "rank": 2,
+   "short": "IA-IN",
+   "label": "Type IA-IN",
+   "implement": "do-and-tell",
+   "badge": "Do and tell at once",
+   "rule": "Implement, then notify immediately. The authority checks it within 30 days.",
+   "src": "reg",
+   "at": "Articles 8 and 13a"
+  },
+  {
+   "id": "IB",
+   "rank": 3,
+   "short": "IB",
+   "label": "Type IB",
+   "implement": "tell-and-wait",
+   "badge": "Tell, wait 30 days, then do",
+   "rule": "Notify before implementing; if the authority raises no objection within 30 days of a valid notification, the change is accepted.",
+   "src": "reg",
+   "at": "Articles 9 and 13b"
+  },
+  {
+   "id": "II",
+   "rank": 4,
+   "short": "II",
+   "label": "Type II",
+   "implement": "wait-for-approval",
+   "badge": "Wait for approval",
+   "rule": "Implement only after approval: quality-only changes once the opinion or outcome is received; changes to the product information once the decision is amended.",
+   "src": "reg",
+   "at": "Articles 10, 13c, 23 and 24"
+  },
+  {
+   "id": "EXT",
+   "rank": 5,
+   "short": "Extension",
+   "label": "Extension application",
+   "implement": "wait-for-approval",
+   "badge": "New application",
+   "rule": "An extension is assessed like a new application and needs a decision before marketing.",
+   "src": "reg",
+   "at": "Article 19 and Annex I"
+  }
+ ],
+ "conditions": {
+  "Q.II.b.1:1": {
+   "text": "The site was satisfactorily inspected in the last three years by an EU/EEA authority or an authority with a GMP mutual recognition agreement with the EU."
+  },
+  "Q.II.b.1:2": {
+   "text": "The site is appropriately authorised for the pharmaceutical form or product concerned."
+  },
+  "Q.II.b.1:3": {
+   "text": "The product is not sterile.",
+   "auto": "notSterile"
+  },
+  "Q.II.b.1:4": {
+   "text": "Where relevant, a validation scheme is in place, or validation at the new site was done on at least three production-scale batches."
+  },
+  "Q.II.b.2:2": {
+   "text": "The site is appropriately authorised."
+  },
+  "Q.II.b.2:4": {
+   "text": "Method transfer to the new site or laboratory is complete."
+  },
+  "Q.II.b.2:5": {
+   "text": "At least one testing site stays in the EU/EEA or in a country with a suitable GMP agreement."
+  },
+  "Q.II.b.3:1": {
+   "text": "No change in the qualitative or quantitative impurity profile or in physicochemical properties."
+  },
+  "Q.II.b.3:2": {
+   "text": "The product is an immediate-release oral form or a non-sterile solution, or the change is to a non-critical parameter already assessed as having no quality impact."
+  },
+  "Q.II.b.3:3": {
+   "text": "The manufacturing principle and individual steps stay the same, with no change of solvents."
+  },
+  "Q.II.b.3:4": {
+   "text": "The process stays under the existing in-process controls, with no widened or deleted limits."
+  },
+  "Q.II.b.3:5": {
+   "text": "Finished product and intermediate specifications are unchanged."
+  },
+  "Q.II.b.3:6": {
+   "text": "The new process gives a product identical in quality, safety and efficacy."
+  },
+  "Q.II.b.3:7": {
+   "text": "Stability studies have started on at least one pilot or industrial batch, with a commitment to finish them."
+  },
+  "Q.II.b.3:8": {
+   "text": "The change does not come from unexpected manufacturing events, stability concerns or a safety or quality issue."
+  },
+  "Q.II.b.4:1": {
+   "text": "Reproducibility and consistency of the product are unaffected."
+  },
+  "Q.II.b.4:2": {
+   "text": "The product is an immediate-release oral form or a non-sterile solution.",
+   "auto": "irOral"
+  },
+  "Q.II.b.4:3": {
+   "text": "Method and in-process control changes are only those the new size needs."
+  },
+  "Q.II.b.4:4": {
+   "text": "A validation scheme is in place, or validation was done on at least three batches at the new size."
+  },
+  "Q.II.b.4:5": {
+   "text": "The product is not a biological product.",
+   "auto": "notBio"
+  },
+  "Q.II.b.4:6": {
+   "text": "The change does not come from unexpected manufacturing events or stability concerns."
+  },
+  "Q.II.b.4:7": {
+   "text": "The new size is within ten times the size foreseen at approval (or after a later change not made as Type IA)."
+  },
+  "Q.II.b.5:1": {
+   "text": "The change does not follow from an earlier commitment to review the in-process control."
+  },
+  "Q.II.b.5:2": {
+   "text": "The change does not come from unexpected manufacturing events, stability concerns or a safety or quality issue."
+  },
+  "Q.II.b.5:5": {
+   "text": "A new analytical procedure is not a novel technique or a standard technique used in a novel way."
+  },
+  "Q.II.b.5:7": {
+   "text": "The control does not cover a critical attribute (assay, purity, impurities, critical physical characteristics, identity, required microbiological controls)."
+  },
+  "Q.II.b.5:9": {
+   "text": "The change is not part of a control strategy revision aimed at reducing testing."
+  },
+  "Q.II.b.5(f):2": {
+   "text": "The change does not come from unexpected manufacturing events or a safety or quality issue."
+  },
+  "Q.II.b.5(f):4": {
+   "text": "The analytical procedure stays the same or changes only in minor ways (no different column type or method)."
+  },
+  "Q.II.b.5(f):6": {
+   "text": "The procedure is not biological, immunological or immunochemical."
+  },
+  "Q.II.b.5(f):8": {
+   "text": "Studies show the updated procedure is at least equivalent to the former one."
+  },
+  "Q.I.a.1:1": {
+   "text": "Specifications, in-process controls, method of preparation (including batch size) and route of synthesis are the same as approved."
+  },
+  "Q.I.a.1:2": {
+   "text": "The active substance is neither biological nor sterile."
+  },
+  "Q.I.a.1:3": {
+   "text": "No new supplier of materials of human or animal origin needing viral safety or TSE assessment."
+  },
+  "Q.I.a.2:1": {
+   "text": "No adverse change in the impurity profile or physicochemical properties."
+  },
+  "Q.I.a.2:2": {
+   "text": "Same route, intermediates, reagents, catalysts and solvents (for biologics: same steps, parameters, controls and specifications)."
+  },
+  "Q.I.a.2:3": {
+   "text": "Active substance and intermediate specifications are unchanged."
+  },
+  "Q.I.a.2:5": {
+   "text": "The change does not come from unexpected manufacturing events, stability issues or a safety or quality problem."
+  },
+  "Q.I.b.2:1": {
+   "text": "Validation shows the updated procedure is at least equivalent to the former one."
+  },
+  "Q.I.b.2:2": {
+   "text": "Total impurity limits are unchanged and no new unqualified impurities are found."
+  },
+  "Q.I.b.2:4": {
+   "text": "The change is fully described in the open part of the ASMF, if there is one."
+  },
+  "Q.II.a.1:1": {
+   "text": "Release and end-of-shelf-life specifications are unchanged apart from appearance."
+  },
+  "Q.II.a.1:2": {
+   "text": "Any ink meets the relevant pharmaceutical rules."
+  },
+  "Q.II.a.1:4": {
+   "text": "Markings that tell strengths apart are not removed."
+  },
+  "Q.II.a.3:1": {
+   "text": "Functional characteristics of the dosage form (disintegration, dissolution) are unchanged."
+  },
+  "Q.II.a.3:2": {
+   "text": "Any weight adjustment uses an excipient that is already a major part of the formulation."
+  },
+  "Q.II.a.3:3": {
+   "text": "The finished product specification changes only for appearance, odour or taste (and removal of an identification test if relevant)."
+  },
+  "Q.II.a.3:4": {
+   "text": "ICH stability studies have started on at least two pilot or industrial batches, with at least three months of satisfactory data at implementation."
+  },
+  "Q.II.a.3:5": {
+   "text": "New components comply with EU food additive and flavouring rules."
+  },
+  "Q.II.a.3:6": {
+   "text": "No new components of human or animal origin needing viral safety or TSE data."
+  },
+  "Q.II.a.3:7": {
+   "text": "Strength differentiation is unaffected and paediatric taste acceptability is not made worse."
+  },
+  "Q.II.a.3:8": {
+   "text": "Dissolution of the new product on at least two pilot batches is comparable to the old one."
+  },
+  "Q.II.a.3:9": {
+   "text": "The change does not come from stability problems and raises no safety concern."
+  },
+  "Q.II.a.3:10": {
+   "text": "The product is not a biological product.",
+   "auto": "notBio"
+  },
+  "Q.II.d.1:1": {
+   "text": "The change does not come from an earlier commitment to review acceptance criteria."
+  },
+  "Q.II.d.1:2": {
+   "text": "The change does not come from unexpected manufacturing events, stability concerns or a safety or quality issue."
+  },
+  "Q.II.d.1:3": {
+   "text": "The change is not part of a control strategy revision aimed at reducing testing."
+  },
+  "Q.II.d.1:4": {
+   "text": "The analytical procedure remains unchanged."
+  },
+  "Q.II.d.1:5": {
+   "text": "A new analytical procedure is not a novel technique or a standard technique used in a novel way."
+  },
+  "Q.II.d.1:6": {
+   "text": "The change does not involve impurities (including genotoxic ones) or dissolution."
+  },
+  "Q.II.d.1:7": {
+   "text": "The attribute is not critical (identity, assay, purity, impurities, critical physical characteristics, tests required by the Ph. Eur. for the dosage form)."
+  },
+  "Q.II.d.2:1": {
+   "text": "Validation shows the updated procedure is at least equivalent to the former one."
+  },
+  "Q.II.d.2:2": {
+   "text": "Total impurity limits are unchanged and no new unqualified impurities are found."
+  },
+  "Q.II.d.2:3": {
+   "text": "The method of analysis stays the same (parameters such as column length or temperature only)."
+  },
+  "Q.II.d.2:4": {
+   "text": "An alternative analytical procedure is already authorised for the attribute."
+  },
+  "Q.II.e.1:1": {
+   "text": "The change involves the same container type only (for example blister to blister)."
+  },
+  "Q.II.e.1:2": {
+   "text": "The proposed material is at least equivalent to the approved one in the relevant properties."
+  },
+  "Q.II.e.1:3": {
+   "text": "ICH stability studies have started on at least two pilot or industrial batches, with at least three months of data at implementation (not needed for a more protective pack)."
+  },
+  "Q.II.e.1:5": {
+   "text": "The product is not a biological product.",
+   "auto": "notBio"
+  },
+  "Q.II.e.1:6": {
+   "text": "The product is not sterile.",
+   "auto": "notSterile"
+  },
+  "Q.II.e.2:1": {
+   "text": "No change to the qualitative or quantitative composition of the container."
+  },
+  "Q.II.e.2:2": {
+   "text": "The change does not affect a fundamental part of the packaging that affects delivery, use, safety or stability."
+  },
+  "Q.II.e.2:3": {
+   "text": "If headspace or surface-to-volume ratio changes, stability studies have started with at least three months of data."
+  },
+  "Q.II.e.3:1": {
+   "text": "The change does not involve a part of the packaging that affects delivery, use, safety or stability."
+  },
+  "Q.II.e.6:1": {
+   "text": "The new pack size fits the posology and treatment duration in the SmPC."
+  },
+  "Q.II.e.6:2": {
+   "text": "The immediate packaging material is unchanged."
+  },
+  "Q.II.e.8:1": {
+   "text": "The secondary packaging has no functional stability role, or the new one is not less protective."
+  },
+  "Q.II.e.8:2": {
+   "text": "The changed component suits storage at the authorised conditions."
+  },
+  "Q.II.e.8:3": {
+   "text": "The change is not due to critical deficiencies of the former component."
+  },
+  "Q.II.e.8:4": {
+   "text": "The change does not result from unexpected events during manufacture or storage."
+  },
+  "Q.II.f.1:1": {
+   "text": "The change does not come from unexpected manufacturing events or stability concerns."
+  },
+  "Q.II.f.1:2": {
+   "text": "No widening of acceptance criteria, no removal of stability-indicating parameters and no reduced testing frequency."
+  },
+  "Q.II.f.1:3": {
+   "text": "Studies follow the approved protocol, real-time data are submitted, all batches meet specification at all time points, with no unexpected trends."
+  },
+  "Q.II.f.1:4": {
+   "text": "The product is not a biological or herbal product.",
+   "auto": "notBio"
+  },
+  "Q.II.f.1:5": {
+   "text": "The product is an immediate-release film-coated tablet.",
+   "auto": "irFct"
+  },
+  "Q.II.f.1:6": {
+   "text": "The product is not on the Union list of critical medicines (or a similar national list)."
+  },
+  "Q.II.g.5:1": {
+   "text": "The change was made fully in line with the PACMP, and its acceptance criteria are met."
+  },
+  "E.4:1": {
+   "text": "The holder remains the same legal entity."
+  }
+ },
+ "multipleChanges": {
+  "rule": "A group follows the procedure of its highest variation type. Groups are allowed for related changes in the cases of Annex III, or when the authority agrees.",
+  "src": "reg",
+  "at": "Article 7 and Annex III"
+ },
+ "clocks": {
+  "IA": {
+   "label": "Notify within 12 months of implementation (annual update)",
+   "months": 12,
+   "src": "reg"
+  },
+  "IAIN": {
+   "label": "Notify immediately after implementation",
+   "days": 0,
+   "src": "reg"
+  },
+  "IB": {
+   "days": 30,
+   "label": "Accepted if no objection within 30 days of a valid notification",
+   "src": "reg"
+  },
+  "II": {
+   "days": 60,
+   "daysEfficacy": 90,
+   "daysSafety": 30,
+   "decisionDays": 60,
+   "label": "Standard 60-day evaluation (90 days for indication changes, 30 for some safety changes), plus clock stops",
+   "src": "emaproc"
+  },
+  "EXT": {
+   "days": 210,
+   "decisionDays": 67,
+   "label": "Assessed like an initial application: 210 days plus clock stops, then the decision",
+   "src": "emaproc"
+  }
+ },
+ "m1": {
+  "variation": [
+   {
+    "code": "eu:1.0",
+    "label": "Cover letter listing the variations, their classification and the procedure"
+   },
+   {
+    "code": "eu:1.2",
+    "label": "Variation application form (eAF), with the present/proposed table and the declaration of conditions met"
+   }
+  ],
+  "pi": [
+   {
+    "code": "eu:1.3.1",
+    "label": "Product information (SmPC, labelling, package leaflet), clean and with changes highlighted"
+   }
+  ],
+  "extension": [
+   {
+    "code": "eu:1.0",
+    "label": "Cover letter"
+   },
+   {
+    "code": "eu:1.2",
+    "label": "Application form for the extension"
+   }
+  ],
+  "other": [
+   {
+    "code": "eu:1.0",
+    "label": "Cover letter or notification for the procedure named in the result"
+   }
+  ]
+ },
+ "ectd": {
+  "IA": {
+   "submissionType": "var-type1a",
+   "subType": "initial"
+  },
+  "IAIN": {
+   "submissionType": "var-type1ain",
+   "subType": "initial"
+  },
+  "IB": {
+   "submissionType": "var-type1b",
+   "subType": "initial"
+  },
+  "II": {
+   "submissionType": "var-type2",
+   "subType": "initial"
+  },
+  "EXT": {
+   "submissionType": "extension",
+   "subType": "initial"
+  },
+  "OTHER": {
+   "submissionType": "none",
+   "subType": "initial"
+  }
+ },
+ "changeLog": [
+  {
+   "edition": "2026.1",
+   "date": "2026-10-11",
+   "text": "First EU edition: 73 changes classified with the Commission guidelines C/2025/5045 (applying from 15 January 2026), with the annex conditions as checklists, grouping, the Type IA annual update, worksharing and super-grouping."
+  }
+ ]
+}

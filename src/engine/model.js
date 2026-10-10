@@ -11,20 +11,32 @@ export function uid(prefix = '') {
 }
 export const today = () => { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`; };
 
-export function newCase({ product, user = null, region = 'us', name = '', missionId = null, difficulty = null, submitDate = null }) {
-  const pack = packFor(region);
+export function newCase({ product, user = null, region = 'us', regions = null, name = '', missionId = null, difficulty = null, submitDate = null }) {
+  regions = regions?.length ? regions : [region];
   const now = new Date().toISOString();
+  const date = submitDate ?? today();
   return {
     id: uid('c'), schema: SCHEMA_VERSION,
     userId: user?.userId ?? null, classId: user?.classId ?? null,
     name: name || `${product.brandName}: change`,
-    productId: product.id, region, pack: { id: pack.id, edition: pack.edition },
-    changes: [], related: true,
-    submitDate: submitDate ?? today(), plannedUse: '',
-    options: { priority: false, inspection: false, notificationDate: '' },
+    productId: product.id, regions, region: regions[0],
+    packs: Object.fromEntries(regions.map((r) => { const p = packFor(r, { date }); return [r, { id: p.id, edition: p.edition }]; })),
+    changes: [], related: true, alsoProducts: [],
+    submitDate: date, plannedUse: '',
+    options: { priority: false, inspection: false, notificationDate: '', clockStop: 0 },
     checks: {}, missionId, difficulty, mission: null,
     createdAt: now, updatedAt: now,
   };
+}
+
+// Cases saved before the EU pack had one region.
+export function migrateCase(k) {
+  if (!k.regions) k.regions = [k.region ?? 'us'];
+  k.region = k.regions[0];
+  k.alsoProducts ??= [];
+  k.options = { priority: false, inspection: false, notificationDate: '', clockStop: 0, ...(k.options ?? {}) };
+  k.packs ??= Object.fromEntries(k.regions.map((r) => { const p = packFor(r, { date: k.submitDate }); return [r, { id: p.id, edition: p.edition }]; }));
+  return k;
 }
 
 export function addChange(kase, changeId, note = '') {

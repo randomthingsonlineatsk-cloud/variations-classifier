@@ -25,7 +25,7 @@ export default function Quiz() {
   return (
     <div className="page">
       <h1>Quiz bank</h1>
-      <p>{data.questions.length} questions on US post-approval changes, each with its source. Ten at a time.{past.length ? ` You have saved ${past.length} round(s); best ${Math.max(...past.map((a) => a.score))}%.` : ''}</p>
+      <p>{data.questions.length} questions on US and EU post-approval changes, each with its source. Ten at a time.{past.length ? ` You have saved ${past.length} round(s); best ${Math.max(...past.map((a) => a.score))}%.` : ''}</p>
       <div className="row panel" style={{ marginBottom: '1rem' }}>
         <label className="field" style={{ minWidth: 240 }}>Topic
           <select value={topic} onChange={(e) => { setTopic(e.target.value); setAns({}); setFlip({}); }}>

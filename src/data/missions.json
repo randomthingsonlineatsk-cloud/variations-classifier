@@ -1,55 +1,399 @@
 {
  "_about": "Scenario missions. facts are the true answers hidden in the brief; the expected categories, filings, CTD sections and dates are computed by the engine from them, so missions always agree with the pack.",
  "missions": [
-  { "id": 1, "region": "us", "title": "A second tablet plant", "product": "nce-tablet", "submitDate": "2026-11-02", "timeline": "earliestUse",
-    "brief": "Halcyon Ridge wants to make Ostrevia tablets at its sister plant in Fictionburg, Pennsylvania, as well as at the approved New Jersey plant. FDA inspected the Fictionburg plant last year for tablet compression and film coating, with a satisfactory outcome. The process, equipment type and formulation stay the same. The supplement goes to FDA on 2 November 2026.",
-    "goal": "Classify the change, list the CTD sections the supplement updates, and give the earliest date tablets made in Fictionburg can be distributed.",
-    "changes": [ { "changeId": "dp-site-move", "note": "Add Halcyon Ridge Fictionburg plant for tablet manufacture", "facts": { "siteNeverInspected": "no", "siteCgmp": "yes" } } ],
-    "debrief": "A move to a satisfactorily inspected site is a moderate change for an immediate-release tablet: a CBE-30 under section VI.C.1.a. Distribution can start 30 days after FDA receives the supplement unless FDA objects." },
-  { "id": 2, "region": "us", "title": "A plant FDA has never seen", "product": "nce-tablet", "submitDate": "2026-11-02", "timeline": "earliestUse",
-    "brief": "Halcyon Ridge plans to move Ostrevia tablet manufacture to Quillmoor Contract Manufacturing, a new contract site. Quillmoor makes tablets for other markets, but FDA has never inspected it for any type of operation. Nothing else changes. The supplement goes to FDA on 2 November 2026.",
-    "goal": "Classify the change, list the CTD sections, and give the FDA goal date for the supplement.",
-    "changes": [ { "changeId": "dp-site-move", "note": "Move tablet manufacture to Quillmoor Contract Manufacturing", "facts": { "siteNeverInspected": "yes" } } ],
-    "debrief": "A site FDA has never inspected for the operation makes any move a prior approval supplement (VI.B.1). The PDUFA goal for prior approval manufacturing supplements is 4 months; the change waits for approval." },
-  { "id": 3, "region": "us", "title": "Same move, extended release", "product": "talmisartan-er", "submitDate": "2026-11-16", "timeline": "earliestUse",
-    "brief": "Calderon Therapeutics wants to add a second site for Talvera XR capsules: Ridgeline Pharma Services, which FDA inspected in 2025 for extended-release capsule manufacture with a satisfactory outcome. Process and formulation are unchanged. The supplement goes in on 16 November 2026.",
-    "goal": "Classify the change, list the CTD sections, and give the FDA goal date.",
-    "changes": [ { "changeId": "dp-site-move", "note": "Add Ridgeline Pharma Services for capsule manufacture", "facts": { "siteNeverInspected": "no", "siteCgmp": "yes" } } ],
-    "debrief": "The same move that was a CBE-30 for an immediate-release tablet needs prior approval here, because the formulation modifies the rate of release (VI.B.3)." },
-  { "id": 4, "region": "us", "title": "Specification clean-up", "product": "generic-tablet", "submitDate": "2026-12-01", "timeline": "earliestUse",
-    "brief": "Ashvale Generics is revising the drug product specification for Talmisartan Tablets in one go: (1) the assay limit is tightened from 95.0-105.0% to 96.0-104.0%; (2) a new test for a nitrosamine impurity is added, with a validated method; (3) the dissolution acceptance criterion is relaxed from Q = 80% at 30 minutes to Q = 75% at 30 minutes, which is not a USP change. The team wants the three changes reviewed together because they come from one specification review. The supplement goes in on 1 December 2026.",
-    "goal": "Classify each change, decide how they are filed, list the CTD sections, and give the GDUFA goal date (no inspection needed).",
-    "related": true,
-    "changes": [
-      { "changeId": "spec-tighten", "note": "Assay limit tightened to 96.0-104.0%", "facts": {} },
-      { "changeId": "spec-add-test", "note": "New nitrosamine impurity test", "facts": {} },
-      { "changeId": "spec-relax", "note": "Dissolution relaxed to Q = 75% at 30 minutes", "facts": { "adventitious": "no", "compendial": "no", "rawMaterialPreFinal": "no", "envMicro": "no" } } ],
-    "debrief": "Alone, the three would be an annual report item, a CBE-0 and a prior approval supplement. Filed together as related changes, they go in the most restrictive category: one prior approval supplement (guidance section XII). For an ANDA the GDUFA goal is 6 months without an inspection." },
-  { "id": 5, "region": "us", "title": "A new adverse reaction", "product": "nce-tablet", "submitDate": "2026-10-20", "timeline": "earliestUse",
-    "brief": "Postmarketing reports and a published case series show a consistent pattern of photosensitivity reactions with Ostrevia. The safety team concludes there is reasonable evidence of a causal association; this information was not available at approval. Halcyon Ridge wants to add photosensitivity to the Adverse Reactions section and a precaution on sun exposure. The supplement goes in on 20 October 2026.",
-    "goal": "Classify the labeling change, list what goes in the submission, and give the date the new labeling can be used.",
-    "changes": [ { "changeId": "lab-safety-add", "note": "Add photosensitivity reactions and a sun-exposure precaution", "facts": { "newlyAcquired": "yes" } } ],
-    "debrief": "Adding or strengthening safety information based on newly acquired information with reasonable evidence of a causal association can go in at once as a CBE supplement (314.70(c)(6)(iii)(A)). FDA may still ask for changes." },
-  { "id": 6, "region": "us", "title": "FDA's safety labeling letter", "product": "sterile-injectable", "submitDate": "2026-10-28", "notificationDate": "2026-10-05", "timeline": "due505",
-    "brief": "On 5 October 2026 FDA notified Meridale Therapeutics under section 505(o)(4) that new information on QT prolongation should be added to the Nelvaprox labeling, with proposed wording. Meridale agrees with most of the wording and is preparing its response.",
-    "goal": "Classify the response, list what goes in it, and give the date the response is due.",
-    "changes": [ { "changeId": "lab-505o4", "note": "Add QT prolongation to Warnings and Precautions as notified by FDA", "facts": {} } ],
-    "debrief": "The holder has 30 days from the notification to submit a labeling supplement with the change, or a statement of why it is not warranted. If FDA and the holder disagree, discussions follow on a fixed timetable before FDA can order the change." },
-  { "id": 7, "region": "us", "title": "Two biologic changes", "product": "mab-infusion", "submitDate": "2027-01-11", "timeline": "earliestUse",
-    "brief": "Lumenfield Biologics has two unrelated changes for Arventa. First, a new working cell bank has been made from the approved master cell bank, following the cell bank protocol approved in the BLA. Second, the anion-exchange chromatography step will use a new resin from a different supplier, with a larger column. They are separate projects. Both are ready on 11 January 2027.",
-    "goal": "Classify each change, decide the filings, list the CTD sections for the larger filing, and give its FDA goal date.",
-    "related": false,
-    "changes": [
-      { "changeId": "bio-wcb", "note": "Working cell bank WCB-04 from MCB-01 under the approved protocol", "facts": { "wcbApprovedProtocol": "yes" } },
-      { "changeId": "bio-purification", "note": "New anion-exchange resin and larger column", "facts": { "bioResinMinor": "no" } } ],
-    "debrief": "The working cell bank made under an approved protocol is a lower-category change (the app uses the annual report). The new resin is a prior approval supplement. Unrelated changes are filed on their own; the PAS has a 4-month PDUFA goal." },
-  { "id": 8, "region": "us", "title": "Under the protocol", "product": "generic-tablet", "submitDate": "2027-02-15", "timeline": "earliestUse",
-    "brief": "Two years ago FDA approved Ashvale's comparability protocol for moving blending and compression to Unit III. The protocol sets a CBE-30 for that move once its acceptance criteria are met, and they are. Separately, Ashvale will remove the debossed logo from the 20 mg tablet (it is an immediate-release tablet). Both are ready on 15 February 2027 and are not related.",
-    "goal": "Classify both changes, decide the filings, list the CTD sections for the supplement, and give the earliest distribution date for tablets from Unit III.",
-    "related": false,
-    "changes": [
-      { "changeId": "cp-use", "note": "Move blending and compression to Unit III under the approved protocol", "facts": { "cpCategory": "CBE30" } },
-      { "changeId": "dp-emboss", "note": "Remove the debossed logo from the 20 mg tablet", "facts": {} } ],
-    "debrief": "An approved comparability protocol lowers the category to the one it sets: here a CBE-30, so distribution can begin 30 days after receipt. Removing a debossed code from an immediate-release tablet is an annual report item." }
+  {
+   "id": 1,
+   "region": "us",
+   "title": "A second tablet plant",
+   "product": "nce-tablet",
+   "submitDate": "2026-11-02",
+   "timeline": "earliestUse",
+   "brief": "Halcyon Ridge wants to make Ostrevia tablets at its sister plant in Fictionburg, Pennsylvania, as well as at the approved New Jersey plant. FDA inspected the Fictionburg plant last year for tablet compression and film coating, with a satisfactory outcome. The process, equipment type and formulation stay the same. The supplement goes to FDA on 2 November 2026.",
+   "goal": "Classify the change, list the CTD sections the supplement updates, and give the earliest date tablets made in Fictionburg can be distributed.",
+   "changes": [
+    {
+     "changeId": "dp-site-move",
+     "note": "Add Halcyon Ridge Fictionburg plant for tablet manufacture",
+     "facts": {
+      "siteNeverInspected": "no",
+      "siteCgmp": "yes"
+     }
+    }
+   ],
+   "debrief": "A move to a satisfactorily inspected site is a moderate change for an immediate-release tablet: a CBE-30 under section VI.C.1.a. Distribution can start 30 days after FDA receives the supplement unless FDA objects."
+  },
+  {
+   "id": 2,
+   "region": "us",
+   "title": "A plant FDA has never seen",
+   "product": "nce-tablet",
+   "submitDate": "2026-11-02",
+   "timeline": "earliestUse",
+   "brief": "Halcyon Ridge plans to move Ostrevia tablet manufacture to Quillmoor Contract Manufacturing, a new contract site. Quillmoor makes tablets for other markets, but FDA has never inspected it for any type of operation. Nothing else changes. The supplement goes to FDA on 2 November 2026.",
+   "goal": "Classify the change, list the CTD sections, and give the FDA goal date for the supplement.",
+   "changes": [
+    {
+     "changeId": "dp-site-move",
+     "note": "Move tablet manufacture to Quillmoor Contract Manufacturing",
+     "facts": {
+      "siteNeverInspected": "yes"
+     }
+    }
+   ],
+   "debrief": "A site FDA has never inspected for the operation makes any move a prior approval supplement (VI.B.1). The PDUFA goal for prior approval manufacturing supplements is 4 months; the change waits for approval."
+  },
+  {
+   "id": 3,
+   "region": "us",
+   "title": "Same move, extended release",
+   "product": "talmisartan-er",
+   "submitDate": "2026-11-16",
+   "timeline": "earliestUse",
+   "brief": "Calderon Therapeutics wants to add a second site for Talvera XR capsules: Ridgeline Pharma Services, which FDA inspected in 2025 for extended-release capsule manufacture with a satisfactory outcome. Process and formulation are unchanged. The supplement goes in on 16 November 2026.",
+   "goal": "Classify the change, list the CTD sections, and give the FDA goal date.",
+   "changes": [
+    {
+     "changeId": "dp-site-move",
+     "note": "Add Ridgeline Pharma Services for capsule manufacture",
+     "facts": {
+      "siteNeverInspected": "no",
+      "siteCgmp": "yes"
+     }
+    }
+   ],
+   "debrief": "The same move that was a CBE-30 for an immediate-release tablet needs prior approval here, because the formulation modifies the rate of release (VI.B.3)."
+  },
+  {
+   "id": 4,
+   "region": "us",
+   "title": "Specification clean-up",
+   "product": "generic-tablet",
+   "submitDate": "2026-12-01",
+   "timeline": "earliestUse",
+   "brief": "Ashvale Generics is revising the drug product specification for Talmisartan Tablets in one go: (1) the assay limit is tightened from 95.0-105.0% to 96.0-104.0%; (2) a new test for a nitrosamine impurity is added, with a validated method; (3) the dissolution acceptance criterion is relaxed from Q = 80% at 30 minutes to Q = 75% at 30 minutes, which is not a USP change. The team wants the three changes reviewed together because they come from one specification review. The supplement goes in on 1 December 2026.",
+   "goal": "Classify each change, decide how they are filed, list the CTD sections, and give the GDUFA goal date (no inspection needed).",
+   "related": true,
+   "changes": [
+    {
+     "changeId": "spec-tighten",
+     "note": "Assay limit tightened to 96.0-104.0%",
+     "facts": {}
+    },
+    {
+     "changeId": "spec-add-test",
+     "note": "New nitrosamine impurity test",
+     "facts": {}
+    },
+    {
+     "changeId": "spec-relax",
+     "note": "Dissolution relaxed to Q = 75% at 30 minutes",
+     "facts": {
+      "adventitious": "no",
+      "compendial": "no",
+      "rawMaterialPreFinal": "no",
+      "envMicro": "no"
+     }
+    }
+   ],
+   "debrief": "Alone, the three would be an annual report item, a CBE-0 and a prior approval supplement. Filed together as related changes, they go in the most restrictive category: one prior approval supplement (guidance section XII). For an ANDA the GDUFA goal is 6 months without an inspection."
+  },
+  {
+   "id": 5,
+   "region": "us",
+   "title": "A new adverse reaction",
+   "product": "nce-tablet",
+   "submitDate": "2026-10-20",
+   "timeline": "earliestUse",
+   "brief": "Postmarketing reports and a published case series show a consistent pattern of photosensitivity reactions with Ostrevia. The safety team concludes there is reasonable evidence of a causal association; this information was not available at approval. Halcyon Ridge wants to add photosensitivity to the Adverse Reactions section and a precaution on sun exposure. The supplement goes in on 20 October 2026.",
+   "goal": "Classify the labeling change, list what goes in the submission, and give the date the new labeling can be used.",
+   "changes": [
+    {
+     "changeId": "lab-safety-add",
+     "note": "Add photosensitivity reactions and a sun-exposure precaution",
+     "facts": {
+      "newlyAcquired": "yes"
+     }
+    }
+   ],
+   "debrief": "Adding or strengthening safety information based on newly acquired information with reasonable evidence of a causal association can go in at once as a CBE supplement (314.70(c)(6)(iii)(A)). FDA may still ask for changes."
+  },
+  {
+   "id": 6,
+   "region": "us",
+   "title": "FDA's safety labeling letter",
+   "product": "sterile-injectable",
+   "submitDate": "2026-10-28",
+   "notificationDate": "2026-10-05",
+   "timeline": "due505",
+   "brief": "On 5 October 2026 FDA notified Meridale Therapeutics under section 505(o)(4) that new information on QT prolongation should be added to the Nelvaprox labeling, with proposed wording. Meridale agrees with most of the wording and is preparing its response.",
+   "goal": "Classify the response, list what goes in it, and give the date the response is due.",
+   "changes": [
+    {
+     "changeId": "lab-505o4",
+     "note": "Add QT prolongation to Warnings and Precautions as notified by FDA",
+     "facts": {}
+    }
+   ],
+   "debrief": "The holder has 30 days from the notification to submit a labeling supplement with the change, or a statement of why it is not warranted. If FDA and the holder disagree, discussions follow on a fixed timetable before FDA can order the change."
+  },
+  {
+   "id": 7,
+   "region": "us",
+   "title": "Two biologic changes",
+   "product": "mab-infusion",
+   "submitDate": "2027-01-11",
+   "timeline": "earliestUse",
+   "brief": "Lumenfield Biologics has two unrelated changes for Arventa. First, a new working cell bank has been made from the approved master cell bank, following the cell bank protocol approved in the BLA. Second, the anion-exchange chromatography step will use a new resin from a different supplier, with a larger column. They are separate projects. Both are ready on 11 January 2027.",
+   "goal": "Classify each change, decide the filings, list the CTD sections for the larger filing, and give its FDA goal date.",
+   "related": false,
+   "changes": [
+    {
+     "changeId": "bio-wcb",
+     "note": "Working cell bank WCB-04 from MCB-01 under the approved protocol",
+     "facts": {
+      "wcbApprovedProtocol": "yes"
+     }
+    },
+    {
+     "changeId": "bio-purification",
+     "note": "New anion-exchange resin and larger column",
+     "facts": {
+      "bioResinMinor": "no"
+     }
+    }
+   ],
+   "debrief": "The working cell bank made under an approved protocol is a lower-category change (the app uses the annual report). The new resin is a prior approval supplement. Unrelated changes are filed on their own; the PAS has a 4-month PDUFA goal."
+  },
+  {
+   "id": 8,
+   "region": "us",
+   "title": "Under the protocol",
+   "product": "generic-tablet",
+   "submitDate": "2027-02-15",
+   "timeline": "earliestUse",
+   "brief": "Two years ago FDA approved Ashvale's comparability protocol for moving blending and compression to Unit III. The protocol sets a CBE-30 for that move once its acceptance criteria are met, and they are. Separately, Ashvale will remove the debossed logo from the 20 mg tablet (it is an immediate-release tablet). Both are ready on 15 February 2027 and are not related.",
+   "goal": "Classify both changes, decide the filings, list the CTD sections for the supplement, and give the earliest distribution date for tablets from Unit III.",
+   "related": false,
+   "changes": [
+    {
+     "changeId": "cp-use",
+     "note": "Move blending and compression to Unit III under the approved protocol",
+     "facts": {
+      "cpCategory": "CBE30"
+     }
+    },
+    {
+     "changeId": "dp-emboss",
+     "note": "Remove the debossed logo from the 20 mg tablet",
+     "facts": {}
+    }
+   ],
+   "debrief": "An approved comparability protocol lowers the category to the one it sets: here a CBE-30, so distribution can begin 30 days after receipt. Removing a debossed code from an immediate-release tablet is an annual report item."
+  },
+  {
+   "id": 9,
+   "region": "eu",
+   "title": "A second site in the EU",
+   "product": "nce-tablet",
+   "submitDate": "2026-11-02",
+   "timeline": "earliestUse",
+   "brief": "Halcyon Ridge wants to add Valmont Pharma in Belgium as a second manufacturing site for Ostrevia film-coated tablets (centrally authorised). Valmont was inspected by the Belgian authority in 2025 for tablet compression and coating, with a satisfactory outcome, and needs no product-specific inspection. The process is conventional. The submission goes to EMA on 2 November 2026.",
+   "goal": "Classify the change under the 2025 guidelines, list the CTD and Module 1 sections, and give the earliest date the new site can be used.",
+   "changes": [
+    {
+     "changeId": "dp-site-move",
+     "note": "Add Valmont Pharma, Belgium, for compression and coating",
+     "facts": {
+      "siteNeedsInspection": "no",
+      "novelComplex": "no"
+     }
+    }
+   ],
+   "debrief": "Under the 2025 guidelines a new site for a manufacturing operation on the finished product is Type IB (Q.II.b.1(e)); it is Type II only when the site needs an initial or product-specific inspection, or the product is made by a novel or complex process. Type IB can be implemented when 30 days pass without objection."
+  },
+  {
+   "id": 10,
+   "region": "eu",
+   "title": "Packaging site, but sterile",
+   "product": "sterile-injectable",
+   "submitDate": "2026-11-09",
+   "timeline": "earliestUse",
+   "brief": "Meridale wants a second site for filling Nelvaprox into vials, the immediate packaging step. The site was inspected last year by an EU authority with a good outcome, is authorised for sterile solutions, and has completed validation on three production batches. The notification goes in on 9 November 2026.",
+   "goal": "Check the conditions, classify the change, list the sections, and give the earliest implementation date.",
+   "changes": [
+    {
+     "changeId": "primary-pack-site",
+     "note": "Second immediate packaging (filling) site for vials",
+     "facts": {
+      "Q.II.b.1:1": "yes",
+      "Q.II.b.1:2": "yes",
+      "Q.II.b.1:4": "yes"
+     }
+    }
+   ],
+   "debrief": "An immediate packaging site is Type IA-IN only if every condition is met, and condition 3 requires a non-sterile product. Nelvaprox is sterile, so the change falls to Type IB (Q.II.b.1(e)). The app answers that condition from the product profile."
+  },
+  {
+   "id": 11,
+   "region": "eu",
+   "title": "Shelf life: IA-IN or IB?",
+   "product": "generic-tablet",
+   "submitDate": "2026-11-16",
+   "timeline": "earliestUse",
+   "brief": "Ashvale wants to extend the shelf life of Talmisartan Tablets (uncoated tablets, decentralised procedure with the Netherlands as RMS) from 24 to 36 months. Real-time data from three batches under the approved stability protocol meet the specification at every time point with no trends. The product is not on any critical medicines list. The notification goes in on 16 November 2026.",
+   "goal": "Classify the extension, list the sections, and give the earliest implementation date.",
+   "changes": [
+    {
+     "changeId": "shelf-life-extend",
+     "note": "Shelf life 24 to 36 months, real-time data",
+     "facts": {
+      "realTimeData": "yes",
+      "Q.II.f.1:3": "yes"
+     }
+    }
+   ],
+   "debrief": "The new Type IA-IN route for shelf-life extensions (Q.II.f.1(b)1) is limited to immediate-release film-coated tablets. These tablets are uncoated, so the extension is Type IB, and the product information changes too."
+  },
+  {
+   "id": 12,
+   "region": "eu",
+   "title": "The annual update",
+   "product": "nce-tablet",
+   "submitDate": "2026-12-07",
+   "timeline": "notify",
+   "brief": "Over one week Halcyon Ridge implements three unrelated minor changes for Ostrevia: the assay limit is tightened within the approved range with the same method; time points are added to the stability protocol; and the batch size is doubled with the same process. Every condition in the guidelines is met (the change is not from a commitment, unexpected events or stability concerns; method and in-process controls change only as the scale needs; validation is done). The first change is made on 7 December 2026.",
+   "goal": "Classify the changes, decide how they are filed, list the sections, and give the latest date to notify them.",
+   "related": false,
+   "changes": [
+    {
+     "changeId": "spec-tighten",
+     "note": "Assay limit tightened within the approved range",
+     "facts": {
+      "Q.II.d.1:1": "yes",
+      "Q.II.d.1:2": "yes",
+      "Q.II.d.1:4": "yes"
+     }
+    },
+    {
+     "changeId": "stability-protocol",
+     "note": "Time points added to the stability protocol",
+     "facts": {
+      "Q.II.f.1:1": "yes",
+      "Q.II.f.1:2": "yes"
+     }
+    },
+    {
+     "changeId": "dp-scale",
+     "note": "Batch size doubled",
+     "facts": {
+      "comparabilityNeeded": "no",
+      "novelComplex": "no",
+      "scaleWithin10": "yes",
+      "Q.II.b.4:1": "yes",
+      "Q.II.b.4:3": "yes",
+      "Q.II.b.4:4": "yes",
+      "Q.II.b.4:6": "yes",
+      "Q.II.b.4:7": "yes"
+     }
+    }
+   ],
+   "debrief": "All three are Type IA. Type IA changes are implemented first and can be notified together in the annual update, within 12 months of the first implementation."
+  },
+  {
+   "id": 13,
+   "region": "eu",
+   "title": "Filed before the switch",
+   "product": "nce-tablet",
+   "submitDate": "2025-12-01",
+   "timeline": "earliestUse",
+   "brief": "On 1 December 2025 Halcyon Ridge submitted an extension of the Ostrevia shelf life from 36 to 48 months, supported by real-time data under the approved protocol. Which rules apply to it?",
+   "goal": "Classify the extension under the rules in force on the submission date, list the sections, and give the earliest implementation date.",
+   "changes": [
+    {
+     "changeId": "shelf-life-extend",
+     "note": "Shelf life 36 to 48 months, real-time data",
+     "facts": {
+      "realTimeData": "yes",
+      "Q.II.f.1:3": "yes"
+     }
+    }
+   ],
+   "debrief": "Type IB and II variations follow the guidelines in force on the submission date. Before 15 January 2026 that was the 2013 text, where a real-time extension was Type IB (B.II.f.1(b)1). Submitted after the switch, the same change for this immediate-release film-coated tablet would be Type IA-IN."
+  },
+  {
+   "id": 14,
+   "region": "eu",
+   "title": "PRAC's wording, word for word",
+   "product": "mab-infusion",
+   "submitDate": "2026-11-23",
+   "timeline": "notify",
+   "brief": "PRAC assessed a signal of infusion-related reactions for olvecitamab and agreed new wording for section 4.8 of the SmPC and the package leaflet, with translations agreed for all languages. Lumenfield will implement the wording exactly as agreed, starting 23 November 2026.",
+   "goal": "Classify the change, list the sections, and give the latest date to notify it.",
+   "changes": [
+    {
+     "changeId": "lab-safety-add",
+     "note": "Add infusion-related reactions to section 4.8 as agreed by PRAC",
+     "facts": {
+      "agencyOutcome": "yes",
+      "agreedExact": "yes"
+     }
+    }
+   ],
+   "debrief": "Implementing wording already assessed and agreed by the authorities, exactly and with agreed translations, is Type IA-IN (C.3(a)): implement, then notify immediately."
+  },
+  {
+   "id": 15,
+   "region": "eu",
+   "title": "A new indication",
+   "product": "mab-infusion",
+   "submitDate": "2027-01-29",
+   "clockStop": 60,
+   "timeline": "earliestUse",
+   "brief": "Lumenfield applies to extend the Arventa indication to moderately to severely active Crohn's disease, with two pivotal studies. The application goes to EMA on 29 January 2027. Plan for a 60-day clock stop to answer the CHMP's questions.",
+   "goal": "Classify the change, list the sections, and give the earliest date the new indication can be used (after the Commission decision).",
+   "changes": [
+    {
+     "changeId": "lab-new-indication",
+     "note": "New indication: Crohn's disease",
+     "facts": {}
+    }
+   ],
+   "debrief": "Adding an indication is Type II (C.6(a)) on the extended 90-day timetable. With a 60-day clock stop the opinion comes about 150 days after the start, and the Commission decision within about two months more."
+  },
+  {
+   "id": 16,
+   "region": "eu",
+   "title": "Substance and product together",
+   "product": "nce-tablet",
+   "submitDate": "2026-11-30",
+   "timeline": "earliestUse",
+   "brief": "Halcyon Ridge adds Ferrant Chimie, part of the Corvane group, as a second lumiravostat manufacturer using the approved route, specifications and controls; the substance is not sterile and no materials of animal origin are involved; no ASMF is used. At the same time it adds a nitrosamine impurity test to the Ostrevia finished product specification. The team wants one submission on 30 November 2026.",
+   "goal": "Classify both changes, decide the filing, list the sections, and give the earliest implementation date.",
+   "related": true,
+   "changes": [
+    {
+     "changeId": "ds-site-move",
+     "note": "Add Ferrant Chimie as active substance manufacturer",
+     "facts": {
+      "asmfNew": "no",
+      "significantDossierUpdate": "no",
+      "Q.I.a.1:1": "yes",
+      "Q.I.a.1:2": "yes",
+      "Q.I.a.1:3": "yes"
+     }
+    },
+    {
+     "changeId": "spec-add-test",
+     "note": "Add a nitrosamine impurity test to the finished product specification",
+     "facts": {
+      "Q.II.d.1:1": "yes",
+      "Q.II.d.1:2": "yes",
+      "Q.II.d.1:5": "yes",
+      "Q.II.d.1:6": "no"
+     }
+    }
+   ],
+   "debrief": "The new manufacturer is Type IA-IN; the nitrosamine test fails condition 6 (it concerns an impurity), so it is Type IB. Grouped, they follow the highest type: Type IB. EMA's Q&A says active substance and finished product changes are generally not grouped unless justified, so explain why they belong together."
+  }
  ]
 }

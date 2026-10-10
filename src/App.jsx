@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { AppCtx } from './ctx.js';
 import { db, getUser, getMeta, setMeta } from './engine/db.js';
-import { BUILTIN_PRODUCTS, touch } from './engine/model.js';
+import { BUILTIN_PRODUCTS, touch, migrateCase } from './engine/model.js';
 import Home from './screens/Home.jsx';
 import CaseView from './screens/CaseView.jsx';
 import Catalogue from './screens/Catalogue.jsx';
@@ -13,6 +13,7 @@ import Quiz from './screens/Quiz.jsx';
 import Progress from './screens/Progress.jsx';
 import Sources from './screens/Sources.jsx';
 import Glossary from './screens/Glossary.jsx';
+import Compare from './screens/Compare.jsx';
 
 function useHashRoute() {
   const read = () => (window.location.hash.replace(/^#/, '') || '/').split('/').filter(Boolean);
@@ -26,7 +27,7 @@ function useHashRoute() {
 }
 
 const NAV = [
-  ['', 'Cases'], ['catalogue', 'Catalogue'], ['products', 'Products'], ['learn', 'Learn'],
+  ['', 'Cases'], ['catalogue', 'Catalogue'], ['compare', 'Compare'], ['products', 'Products'], ['learn', 'Learn'],
   ['missions', 'Missions'], ['quiz', 'Quiz'], ['progress', 'Progress'], ['sources', 'Sources'],
 ];
 
@@ -49,6 +50,7 @@ export default function App() {
 
   const reload = useCallback(async () => {
     const [c, a, p] = await Promise.all([db.all('cases'), db.all('attempts'), db.all('products')]);
+    c.forEach(migrateCase);
     c.sort((x, y) => y.updatedAt.localeCompare(x.updatedAt));
     setCases(c); setAttempts(a); setCustom(p);
   }, []);
@@ -88,8 +90,8 @@ export default function App() {
       const next = { ...lessons, [id]: { best: Math.max(score, lessons[id]?.best ?? 0), at: new Date().toISOString(), userId: user?.userId, classId: user?.classId ?? null } };
       setLessons(next); await setMeta('lessons', next);
     },
-    importAll: async ({ cases: cs, attempts: as, products: ps, lessons: ls }) => {
-      for (const c of cs) await db.put('cases', c);
+    importAll: async ({ cases: cs0, attempts: as, products: ps, lessons: ls }) => {
+      for (const c of cs0) await db.put('cases', migrateCase(c));
       for (const a of as) await db.put('attempts', a);
       for (const p of ps) await db.put('products', p);
       if (ls && Object.keys(ls).length) { const next = { ...ls, ...lessons }; setLessons(next); await setMeta('lessons', next); }
@@ -110,6 +112,7 @@ export default function App() {
   else if (section === 'progress') screen = <Progress />;
   else if (section === 'sources') screen = <Sources />;
   else if (section === 'glossary') screen = <Glossary />;
+  else if (section === 'compare') screen = <Compare />;
   else screen = <div className="page"><h1>Page not found</h1><p><a href="#/">Go to your cases</a></p></div>;
 
   const cycleTheme = async () => {
