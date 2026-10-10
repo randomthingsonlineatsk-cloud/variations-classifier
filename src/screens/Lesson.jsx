@@ -8,14 +8,14 @@ import { newCase, addChange } from '../engine/model.js';
 export default function Lesson({ id }) {
   const { saveLesson, toast, products, user, saveCase } = useApp();
   const l = data.lessons.find((x) => x.id === id);
-  const qs = useMemo(() => quiz.questions.filter((q) => q.topic === l?.topic).slice(0, 3), [l]);
+  const qs = useMemo(() => quiz.questions.filter((q) => q.topic === l?.topic).slice(0, 4), [l]);
   const [ans, setAns] = useState({});
   if (!l) return <div className="page"><h1>Lesson not found</h1></div>;
   const done = Object.keys(ans).length === qs.length;
   const right = qs.filter((q) => ans[q.id] === q.answer).length;
   const tryIt = async () => {
     const product = products.find((p) => (CHANGE[l.tryChange].scope === 'bio' ? p.facts.bio : !p.facts.bio)) ?? products[0];
-    const k = newCase({ product, user, name: `Lesson ${l.id}: ${CHANGE[l.tryChange].title}` });
+    const k = newCase({ product, user, regions: [l.region ?? 'us'], name: `Lesson ${l.id}: ${CHANGE[l.tryChange].title}` });
     addChange(k, l.tryChange);
     await saveCase(k);
     go(`/case/${k.id}`);

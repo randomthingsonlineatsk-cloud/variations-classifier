@@ -8,7 +8,7 @@ export const PACKAGE_SCHEMA = 1;
 
 export function buildChangePackage({ pack, product, kase, filing, user = null }) {
   const cat = categoryOf(pack, filing.category);
-  const tl = timelineFor(pack, product, filing, { submitDate: kase.submitDate, priority: kase.options?.priority, inspection: kase.options?.inspection, notificationDate: kase.options?.notificationDate });
+  const tl = timelineFor(pack, product, filing, { submitDate: kase.submitDate, priority: kase.options?.priority, inspection: kase.options?.inspection, notificationDate: kase.options?.notificationDate, clockStop: kase.options?.clockStop });
   const ectd = ectdFor(pack, filing);
   const description = filing.items.map((i) => i.def.title).join('; ');
   return {
@@ -23,12 +23,14 @@ export function buildChangePackage({ pack, product, kase, filing, user = null })
     product: {
       id: product.id, ectdProductId: product.ectdProductId ?? null, brandName: product.brandName, inn: product.inn,
       appType: product.appType, applicationNumber: product.applicationNumber, holder: product.holder.name,
+      eu: pack.id === 'eu' ? { route: product.eu?.route ?? null, maNumber: product.eu?.maNumber ?? null, holder: (product.eu?.holder ?? product.holder).name } : null,
     },
     region: pack.region,
     pack: { id: pack.id, edition: pack.edition },
     submission: {
       category: filing.category, categoryLabel: cat.label, kind: filing.kind,
-      ectd: { submissionType: ectd.submissionType, subType: ectd.subType },
+      ectd: { submissionType: ectd.submissionType, subType: ectd.subType, submissionMode: ectd.submissionMode ?? 'single' },
+      mode: filing.mode ?? 'single', alsoProducts: filing.alsoProducts ?? [],
       description,
       implementation: { badge: cat.badge, rule: cat.rule },
       submitDate: kase.submitDate ?? null,
@@ -37,7 +39,7 @@ export function buildChangePackage({ pack, product, kase, filing, user = null })
     },
     changes: filing.items.map((i) => ({
       id: i.change.id, changeId: i.change.changeId, title: i.def.title, note: i.change.note ?? '',
-      category: i.result.category,
+      category: i.result.category, categoryLabel: categoryOf(pack, i.result.category)?.label ?? i.result.category,
       entry: { src: i.result.outcome.src, source: sourceOf(pack, i.result.outcome.src).title, at: i.result.outcome.at },
       why: i.result.outcome.why,
     })),

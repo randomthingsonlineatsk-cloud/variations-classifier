@@ -5,6 +5,10 @@ import questions from '../data/questions.json' with { type: 'json' };
 import evidence from '../data/evidence.json' with { type: 'json' };
 import usPack from '../packs/us/2026.1/pack.json' with { type: 'json' };
 import usEntries from '../packs/us/2026.1/entries.json' with { type: 'json' };
+import eu13Pack from '../packs/eu/2013.1/pack.json' with { type: 'json' };
+import eu13Entries from '../packs/eu/2013.1/entries.json' with { type: 'json' };
+import eu26Pack from '../packs/eu/2026.1/pack.json' with { type: 'json' };
+import eu26Entries from '../packs/eu/2026.1/entries.json' with { type: 'json' };
 
 const strip = (o) => Object.fromEntries(Object.entries(o).filter(([k]) => !k.startsWith('_')));
 
@@ -17,12 +21,13 @@ export const EVIDENCE = strip(evidence);
 
 // Every edition of every pack, newest last. A classification stores pack id + edition.
 export const PACKS = {
-  us: [{ ...usPack, entries: strip(usEntries) }],
+  us: [{ ...usPack, entries: strip(usEntries), conditions: {} }],
+  eu: [{ ...eu13Pack, entries: strip(eu13Entries) }, { ...eu26Pack, entries: strip(eu26Entries) }],
 };
 
 export const REGIONS = [
   { id: 'us', label: 'United States', short: 'US', ready: true },
-  { id: 'eu', label: 'European Union', short: 'EU', ready: false, phase: 2 },
+  { id: 'eu', label: 'European Union', short: 'EU', ready: true },
   { id: 'in', label: 'India', short: 'India', ready: false, phase: 3 },
   { id: 'ca', label: 'Canada', short: 'Canada', ready: false, phase: 4 },
   { id: 'ch', label: 'Switzerland', short: 'Switzerland', ready: false, phase: 4 },
@@ -45,6 +50,19 @@ export function packFor(id, { edition = null, date = null } = {}) {
 export const categoryOf = (pack, id) => pack.categories.find((c) => c.id === id) ?? null;
 export const rankOf = (pack, id) => categoryOf(pack, id)?.rank ?? -1;
 export const sourceOf = (pack, id) => pack.sources[id] ?? { title: id };
+
+export const regionOf = (id) => REGIONS.find((r) => r.id === id);
+export const READY = REGIONS.filter((r) => r.ready).map((r) => r.id);
+
+// Condition ids (from a pack's annex conditions) look like "Q.II.b.1:2" or "13:B.II.b.1:2".
+export const isCondition = (qid) => /:\d+$/.test(qid);
+export const conditionCode = (qid) => qid.replace(/^13:/, '').replace(/:(\d+)$/, ' condition $1');
+export function questionText(pack, qid) {
+  if (QUESTIONS[qid]) return QUESTIONS[qid].text;
+  const c = pack?.conditions?.[qid];
+  return c ? c.text : qid;
+}
+export const questionHelp = (pack, qid) => QUESTIONS[qid]?.help ?? '';
 
 // Options for a question: yes/no unless it is a choice question.
 export function optionsFor(qid) {

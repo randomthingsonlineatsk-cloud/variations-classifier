@@ -4,7 +4,7 @@ import { Cat } from '../components/ui.jsx';
 
 function notesOf(pack) {
   const out = [];
-  const walk = (n, id) => { if (!n) return; if (n.cat) { if (n.note) out.push({ id, note: n.note }); return; } Object.values(n.on).forEach((c) => walk(c, id)); };
+  const walk = (n, id) => { if (!n) return; if (n.cat) { if (n.note && !out.some((o) => o.id === id && o.note === n.note)) out.push({ id, note: n.note }); return; } if (n.allOf) { walk(n.pass, id); walk(n.fail, id); return; } Object.values(n.on).forEach((c) => walk(c, id)); };
   for (const c of CHANGES) walk(pack.entries[c.id]?.tree, c.id);
   return out;
 }
@@ -26,7 +26,7 @@ export default function Sources() {
         return (
           <section key={`${p.id}-${p.edition}`} style={{ marginTop: '2rem' }}>
             <h2 style={{ fontSize: 'var(--step-2)' }}>{p.label}: edition {p.edition}</h2>
-            <p className="small">Applies from {p.appliesFrom}{p.appliesTo ? ` to ${p.appliesTo}` : ' (current)'} · status: {p.status}. {p.summary}</p>
+            <p className="small">Applies from {p.appliesFrom}{p.appliesTo ? ` until ${p.appliesTo}` : ' (current)'} · status: {p.status} · {Object.keys(p.entries).length} changes modelled{Object.keys(p.conditions ?? {}).length ? ` · ${Object.keys(p.conditions).length} annex conditions (paraphrased; read the official text for exact wording)` : ''}. {p.summary}</p>
             <h3>Categories</h3>
             <div className="table-wrap">
               <table className="data">
@@ -43,7 +43,8 @@ export default function Sources() {
             </div>
             <h3 style={{ marginTop: '1rem' }}>Simplifications and cautions ({notes.length})</h3>
             <ul className="small">{notes.map((n) => <li key={n.id + n.note}><strong>{CHANGES.find((c) => c.id === n.id)?.title}:</strong> {n.note}</li>)}</ul>
-            <p className="small">Also: when a biologic reaches an outcome taken from FDA guidance written for NDAs and ANDAs, the result carries a caution to check the 2021 biologics guidance.</p>
+            {p.id === 'us' && <p className="small">Also: when a biologic reaches an outcome taken from FDA guidance written for NDAs and ANDAs, the result carries a caution to check the 2021 biologics guidance.</p>}
+            {p.id === 'eu' && <p className="small">Codes ending in .z (for example Q.II.b.z) mark changes that are Type IB by default because no listed condition set fits.</p>}
             <h3 style={{ marginTop: '1rem' }}>Change log</h3>
             <ul className="small">{p.changeLog.map((c) => <li key={c.edition}>{c.edition} ({c.date}): {c.text}</li>)}</ul>
           </section>

@@ -18,7 +18,7 @@ export default function Products() {
   return (
     <div className="page">
       <h1>Products</h1>
-      <p>Fictional products with a US registration profile. The profile answers some classifier questions for you (biologic, sterile, modified release and so on). Six products are the same as in the eCTD Dossier Builder, so a change package goes straight into a dossier for the same product.</p>
+      <p>Fictional products with US and EU registration profiles. The profile answers some classifier questions for you (biologic, sterile, modified release and so on). Six products are the same as in the eCTD Dossier Builder, so a change package goes straight into a dossier for the same product.</p>
       <div className="row" style={{ marginBottom: '1rem' }}>
         <button className="btn" onClick={() => ref.current?.click()}>Add a product from an eCTD Dossier Builder project file</button>
         <input ref={ref} type="file" accept=".json,application/json" hidden onChange={(e) => { if (e.target.files[0]) importEctd(e.target.files[0]); e.target.value = ''; }} />
@@ -30,6 +30,7 @@ export default function Products() {
             <p className="small" style={{ margin: 0 }}>{p.summary}</p>
             <dl className="small" style={{ display: 'grid', gridTemplateColumns: 'auto 1fr', gap: '.2rem .6rem', margin: 0 }}>
               <dt className="muted">Application</dt><dd style={{ margin: 0 }}>{p.appType.toUpperCase()} {p.applicationNumber} (fictional), approved {p.approvalDate}</dd>
+              {p.eu && <><dt className="muted">EU</dt><dd style={{ margin: 0 }}>{p.eu.maNumber} (fictional), {p.eu.route}{p.eu.rms ? `, RMS ${p.eu.rms}` : ''}</dd></>}
               <dt className="muted">Holder</dt><dd style={{ margin: 0 }}>{p.holder.name}</dd>
               <dt className="muted">Form</dt><dd style={{ margin: 0 }}>{p.dosageForm}, {p.strengths.join(', ')}</dd>
               <dt className="muted">Drug product site</dt><dd style={{ margin: 0 }}>{p.sites.drugProduct}</dd>
