@@ -1,0 +1,246 @@
+{
+ "id": "in",
+ "region": "IN",
+ "label": "India: CDSCO",
+ "appliesFrom": "2024-05-16",
+ "appliesTo": null,
+ "categories": [
+  {
+   "id": "REC",
+   "rank": 0,
+   "short": "Level IV",
+   "label": "Level IV: record of change",
+   "implement": "do",
+   "badge": "Record under GMP",
+   "rule": "Implement and keep the record under GMP; mention it in the next submission.",
+   "src": "pac24",
+   "at": "Reporting categories"
+  },
+  {
+   "id": "L3",
+   "rank": 1,
+   "short": "Level III",
+   "label": "Level III: annual notification",
+   "implement": "do-and-tell",
+   "badge": "Do, then report in Q1",
+   "rule": "Implement, then report in the annual notification in the first quarter of the next calendar year; supply data within 30 days if asked.",
+   "src": "pac24",
+   "at": "Reporting categories"
+  },
+  {
+   "id": "CDSCO",
+   "rank": 2,
+   "short": "Ask CDSCO",
+   "label": "Post-approval change application (case by case)",
+   "implement": "wait-for-approval",
+   "badge": "Ask CDSCO first",
+   "rule": "Apply to CDSCO through SUGAM and implement only when CDSCO agrees.",
+   "src": "cdsco",
+   "at": "Practice"
+  },
+  {
+   "id": "L3SL",
+   "rank": 2,
+   "short": "Level III*",
+   "label": "Level III, approval needed first (shelf life)",
+   "implement": "wait-for-approval",
+   "badge": "Wait for approval",
+   "rule": "A minor change, but shelf-life changes need a post-approval change application and approval before use.",
+   "src": "pac24",
+   "at": "General notes"
+  },
+  {
+   "id": "ADMIN",
+   "rank": 2,
+   "short": "Admin",
+   "label": "Administrative change: approval (about 30 days)",
+   "implement": "wait-for-approval",
+   "badge": "Wait for approval",
+   "rule": "Needs CDSCO approval before implementation; review takes about 30 days.",
+   "src": "pac24",
+   "at": "Administrative changes"
+  },
+  {
+   "id": "L2",
+   "rank": 3,
+   "short": "Level II",
+   "label": "Level II: notifiable change",
+   "implement": "wait-for-approval",
+   "badge": "Wait for approval",
+   "rule": "Submit with supporting data; do not implement commercially before CDSCO approves.",
+   "src": "pac24",
+   "at": "Reporting categories"
+  },
+  {
+   "id": "L1",
+   "rank": 4,
+   "short": "Level I",
+   "label": "Level I: supplement",
+   "implement": "wait-for-approval",
+   "badge": "Wait for approval",
+   "rule": "Submit a supplement with supporting data and the fee; implement only after CDSCO approves.",
+   "src": "pac24",
+   "at": "Reporting categories"
+  },
+  {
+   "id": "NEWDRUG",
+   "rank": 5,
+   "short": "New drug",
+   "label": "New drug permission",
+   "implement": "wait-for-approval",
+   "badge": "New application",
+   "rule": "Apply for permission as a new drug (Form CT-18 or CT-21); CDSCO decides within 90 working days.",
+   "src": "ndct",
+   "at": "Rules 2(w), 75 to 82"
+  }
+ ],
+ "conditions": {},
+ "multipleChanges": {
+  "rule": "Each change is applied for on its own unless CDSCO agrees otherwise; related changes can be explained together in one application.",
+  "src": "cdsco",
+  "at": "Practice"
+ },
+ "clocks": {
+  "L3": {
+   "label": "Annual notification due in the first quarter of the next calendar year",
+   "src": "pac24"
+  },
+  "ADMIN": {
+   "days": 30,
+   "label": "Review takes about 30 days",
+   "src": "pac24"
+  },
+  "NEWDRUG": {
+   "workingDays": 90,
+   "label": "Decision within 90 working days",
+   "src": "ndct"
+  },
+  "L1": {
+   "label": "No fixed review time in the rules",
+   "src": "pac24"
+  },
+  "L2": {
+   "label": "No fixed review time in the rules",
+   "src": "pac24"
+  },
+  "CDSCO": {
+   "label": "No fixed review time",
+   "src": "cdsco"
+  }
+ },
+ "m1": {
+  "pac": [
+   {
+    "code": "in:1.1",
+    "label": "Covering letter stating the change category"
+   },
+   {
+    "code": "in:1.2.2",
+    "label": "Application with the fee receipt (TR-6 challan) on SUGAM"
+   },
+   {
+    "code": "in:1.2.3",
+    "label": "Copy of the marketing authorisation and an undertaking that the conditions are met"
+   }
+  ],
+  "import": [
+   {
+    "code": "in:1.5",
+    "label": "Approval of the change in the country of origin and the list of countries where it is approved"
+   }
+  ],
+  "pi": [
+   {
+    "code": "in:1.3",
+    "label": "Revised prescribing information, labels and package insert (clean and with changes marked)"
+   }
+  ],
+  "annual": [
+   {
+    "code": "in:1.1",
+    "label": "Covering letter for the annual notification"
+   },
+   {
+    "code": "in:1.2.2",
+    "label": "Annual report of minor changes (January to December)"
+   }
+  ],
+  "newdrug": [
+   {
+    "code": "in:1.1",
+    "label": "Covering letter"
+   },
+   {
+    "code": "in:1.2.2",
+    "label": "Application in Form CT-18 (import) or CT-21 (manufacture) with the fee receipt"
+   },
+   {
+    "code": "in:1.5",
+    "label": "Regulatory status in other countries"
+   }
+  ]
+ },
+ "ectd": {
+  "L1": {
+   "submissionType": "post-approval-change",
+   "subType": "application"
+  },
+  "L2": {
+   "submissionType": "post-approval-change",
+   "subType": "application"
+  },
+  "L3SL": {
+   "submissionType": "post-approval-change",
+   "subType": "application"
+  },
+  "ADMIN": {
+   "submissionType": "post-approval-change",
+   "subType": "application"
+  },
+  "CDSCO": {
+   "submissionType": "post-approval-change",
+   "subType": "application"
+  },
+  "L3": {
+   "submissionType": "annual-notification",
+   "subType": "application"
+  },
+  "NEWDRUG": {
+   "submissionType": "new-drug-import",
+   "subType": "application"
+  }
+ },
+ "edition": "2026.1",
+ "status": "in force",
+ "sources": {
+  "ndct": {
+   "title": "New Drugs and Clinical Trials Rules, 2019",
+   "version": "As amended",
+   "date": "in force",
+   "url": "https://cdsco.gov.in/opencms/resources/UploadCDSCOWeb/2022/new_DC_rules/NEW%20DRUGS%20ANDctrS%20RULE,%202019.pdf",
+   "status": "final"
+  },
+  "pac24": {
+   "title": "CDSCO guidance: Post Approval Changes in Biological Products: Quality, Safety and Efficacy Documents (PAC/2024)",
+   "version": "Version 1.2, revised 28 February 2024",
+   "date": "adopted and implemented 16 May 2024",
+   "url": "https://cdsco.gov.in/opencms/resources/UploadCDSCOWeb/2018/UploadPostApproval/PAC%20Guidance.pdf",
+   "status": "final"
+  },
+  "cdsco": {
+   "title": "CDSCO practice for post-approval changes (SUGAM applications)",
+   "version": "Practice",
+   "date": "2026",
+   "url": "https://cdsco.gov.in/",
+   "status": "practice"
+  }
+ },
+ "summary": "Rules in force in 2026: biologicals follow CDSCO's PAC/2024 guidance (Levels I to IV); chemical drugs have no codified categories, so CDSCO decides case by case; new claims make a product a new drug again.",
+ "changeLog": [
+  {
+   "edition": "2026.1",
+   "date": "2026-10-11",
+   "text": "First India edition: PAC/2024 levels for biologicals, case-by-case for chemical drugs, new drug permission for new claims."
+  }
+ ]
+}

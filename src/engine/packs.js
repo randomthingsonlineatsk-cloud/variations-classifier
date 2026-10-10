@@ -9,6 +9,10 @@ import eu13Pack from '../packs/eu/2013.1/pack.json' with { type: 'json' };
 import eu13Entries from '../packs/eu/2013.1/entries.json' with { type: 'json' };
 import eu26Pack from '../packs/eu/2026.1/pack.json' with { type: 'json' };
 import eu26Entries from '../packs/eu/2026.1/entries.json' with { type: 'json' };
+import inPack from '../packs/in/2026.1/pack.json' with { type: 'json' };
+import inEntries from '../packs/in/2026.1/entries.json' with { type: 'json' };
+import inDraftPack from '../packs/in/2026.1-draft/pack.json' with { type: 'json' };
+import inDraftEntries from '../packs/in/2026.1-draft/entries.json' with { type: 'json' };
 
 const strip = (o) => Object.fromEntries(Object.entries(o).filter(([k]) => !k.startsWith('_')));
 
@@ -23,12 +27,13 @@ export const EVIDENCE = strip(evidence);
 export const PACKS = {
   us: [{ ...usPack, entries: strip(usEntries), conditions: {} }],
   eu: [{ ...eu13Pack, entries: strip(eu13Entries) }, { ...eu26Pack, entries: strip(eu26Entries) }],
+  in: [{ ...inPack, entries: strip(inEntries) }, { ...inDraftPack, entries: strip(inDraftEntries) }],
 };
 
 export const REGIONS = [
   { id: 'us', label: 'United States', short: 'US', ready: true },
   { id: 'eu', label: 'European Union', short: 'EU', ready: true },
-  { id: 'in', label: 'India', short: 'India', ready: false, phase: 3 },
+  { id: 'in', label: 'India', short: 'India', ready: true },
   { id: 'ca', label: 'Canada', short: 'Canada', ready: false, phase: 4 },
   { id: 'ch', label: 'Switzerland', short: 'Switzerland', ready: false, phase: 4 },
   { id: 'jp', label: 'Japan', short: 'Japan', ready: false, phase: 4 },
@@ -36,8 +41,10 @@ export const REGIONS = [
 ];
 
 // The edition in force on a date (ISO yyyy-mm-dd), or the newest one.
-export function packFor(id, { edition = null, date = null } = {}) {
-  const eds = PACKS[id];
+export function packFor(id, { edition = null, date = null, draft = false } = {}) {
+  const all = PACKS[id];
+  if (edition) return all?.find((p) => p.edition === edition) ?? null;
+  const eds = all?.filter((p) => !!p.draft === !!draft);
   if (!eds?.length) return null;
   if (edition) return eds.find((p) => p.edition === edition) ?? null;
   if (date) {

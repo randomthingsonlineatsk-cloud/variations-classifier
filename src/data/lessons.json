@@ -258,6 +258,58 @@
     }
    ],
    "tryChange": "lab-safety-add"
+  },
+  {
+   "id": 10,
+   "topic": "india",
+   "region": "in",
+   "title": "Post-approval changes in India",
+   "minutes": 7,
+   "sections": [
+    {
+     "h": "Two situations in 2026",
+     "p": [
+      "For biological products, CDSCO's guidance PAC/2024 (version 1.2, implemented 16 May 2024) sorts quality, safety and efficacy changes into four levels: Level I supplement and Level II notifiable change need approval before commercial use; Level III is an annual notification in the first quarter; Level IV is a record kept under GMP.",
+      "For chemical new drugs there is no codified classification in force: CDSCO decides case by case on a post-approval change application through SUGAM."
+     ]
+    },
+    {
+     "h": "New claims are new drugs",
+     "p": [
+      "Under rule 2(w)(ii) of the NDCT Rules, a drug with new or modified claims, such as a new indication, dosage, dosage form or route, is a new drug again and needs a new permission (Form CT-18 to import, CT-21 to manufacture). CDSCO decides within 90 working days."
+     ]
+    },
+    {
+     "h": "The 2026 drafts",
+     "p": [
+      "The draft G.S.R. 97(E) of 2 February 2026 would add Level I, II and III for quality changes to new drugs, defined by substantial, moderate and minimal potential to affect quality, the same three tests FDA uses. Levels I and II would need prior approval; Level III would go in an annual submission in the first quarter, except shelf-life changes. A draft of 9 March 2026 would extend this to licences under the Drugs Rules, 1945. The app shows the draft as a what-if."
+     ]
+    }
+   ],
+   "tryChange": "dp-site-move"
+  },
+  {
+   "id": 11,
+   "topic": "labeling",
+   "region": "in",
+   "title": "One core data sheet, many labels",
+   "minutes": 6,
+   "sections": [
+    {
+     "h": "The core data sheet",
+     "p": [
+      "Companies keep a company core data sheet (CCDS) with the core safety information. When it changes, every regional label must follow: the US prescribing information, the EU SmPC and package leaflet, the Indian prescribing information and others."
+     ]
+    },
+    {
+     "h": "Same change, different routes",
+     "p": [
+      "A new adverse reaction based on new information is a CBE-0 supplement in the US, a Type II variation in the EU unless it implements wording the authorities already agreed (then Type IA-IN), and in India a Level I or II change for biologicals or a case-by-case application for chemical drugs.",
+      "The Labelling page tracks one CCDS change across regions: where it goes in each label, its category, the company's target date and how far each region lags."
+     ]
+    }
+   ],
+   "tryChange": "lab-safety-add"
   }
  ]
 }

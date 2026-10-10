@@ -22,6 +22,7 @@ export function missionCase(m, user, difficulty = 'standard') {
   if (m.notificationDate) k.options.notificationDate = m.notificationDate;
   if (m.alsoProducts) k.alsoProducts = [...m.alsoProducts];
   if (m.clockStop) k.options.clockStop = m.clockStop;
+  if (m.inDraft) k.options.inDraft = true;
   k.mission = { ctd: [], date: '', submitted: null };
   return k;
 }

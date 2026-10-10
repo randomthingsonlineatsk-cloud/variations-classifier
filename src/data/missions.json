@@ -394,6 +394,79 @@
     }
    ],
    "debrief": "The new manufacturer is Type IA-IN; the nitrosamine test fails condition 6 (it concerns an impurity), so it is Type IB. Grouped, they follow the highest type: Type IB. EMA's Q&A says active substance and finished product changes are generally not grouped unless justified, so explain why they belong together."
+  },
+  {
+   "id": 17,
+   "region": "in",
+   "title": "A new working cell bank in India",
+   "product": "mab-infusion",
+   "submitDate": "2026-11-10",
+   "timeline": "notify",
+   "brief": "Lumenfield's Indian agent tells you that a new working cell bank (WCB-05) was made from the approved master cell bank and released on 10 November 2026. Arventa is imported into India as a biological product.",
+   "goal": "Classify the change under the rules in force in India, list what goes in the submission, and give the latest date to report it.",
+   "changes": [
+    {
+     "changeId": "bio-wcb",
+     "note": "New working cell bank WCB-05 from MCB-01",
+     "facts": {}
+    }
+   ],
+   "debrief": "CDSCO's biologics guidance (PAC/2024) lists a new working cell bank as Level III: implement, then report it in the annual notification in the first quarter of the next calendar year, with data within 30 days if CDSCO asks."
+  },
+  {
+   "id": 18,
+   "region": "in",
+   "title": "A new indication in India",
+   "product": "nce-tablet",
+   "submitDate": "2026-11-02",
+   "timeline": "earliestUse",
+   "brief": "Ostrevia is imported into India under a new drug permission for chronic hand eczema. Halcyon Ridge's agent wants to add atopic dermatitis of the hands in adolescents, already approved in the US and the EU. The application goes in on 2 November 2026.",
+   "goal": "Classify the change, list the Module 1 documents, and give the date by which CDSCO should decide.",
+   "changes": [
+    {
+     "changeId": "lab-new-indication",
+     "note": "New indication: hand atopic dermatitis in adolescents",
+     "facts": {}
+    }
+   ],
+   "debrief": "A new indication makes the product a new drug again under rule 2(w)(ii) of the NDCT Rules, so it needs a new permission (Form CT-18 for import). CDSCO decides within 90 working days."
+  },
+  {
+   "id": 19,
+   "region": "in",
+   "title": "The holder changes its name",
+   "product": "mab-infusion",
+   "submitDate": "2026-12-01",
+   "timeline": "earliestUse",
+   "brief": "After a merger, Lumenfield Biologics changes its company name. The permission for Arventa in India must show the new name. The application goes in on 1 December 2026.",
+   "goal": "Classify the change and give the earliest date it can be implemented.",
+   "changes": [
+    {
+     "changeId": "admin-name-address",
+     "note": "Change of the holder's name after a merger",
+     "facts": {}
+    }
+   ],
+   "debrief": "PAC/2024 treats a change in the holder's name as an administrative change that needs CDSCO approval before implementation; the review takes about 30 days."
+  },
+  {
+   "id": 20,
+   "region": "in",
+   "title": "What the draft rules would change",
+   "product": "generic-tablet",
+   "submitDate": "2026-12-01",
+   "inDraft": true,
+   "timeline": "notify",
+   "brief": "Ashvale manufactures Talmisartan Tablets in India. It tightens the assay limit on 1 December 2026 with the same method. Today such changes go to CDSCO case by case. Classify it as if the February 2026 draft rules (G.S.R. 97(E)) were in force.",
+   "goal": "Classify the change under the draft rules, list what goes in the submission, and give the latest date to report it.",
+   "changes": [
+    {
+     "changeId": "spec-tighten",
+     "note": "Assay limit tightened to 96.0-104.0%",
+     "facts": {}
+    }
+   ],
+   "debrief": "Under the draft, a change with minimal potential to affect quality is Level III: implement, then report it in the annual submission in the first quarter of the next calendar year. The app reads the potential from the FDA entry, because the draft uses the same three tests; final rules may differ."
   }
  ]
 }

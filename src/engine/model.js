@@ -21,9 +21,10 @@ export function newCase({ product, user = null, region = 'us', regions = null, n
     name: name || `${product.brandName}: change`,
     productId: product.id, regions, region: regions[0],
     packs: Object.fromEntries(regions.map((r) => { const p = packFor(r, { date }); return [r, { id: p.id, edition: p.edition }]; })),
+
     changes: [], related: true, alsoProducts: [],
     submitDate: date, plannedUse: '',
-    options: { priority: false, inspection: false, notificationDate: '', clockStop: 0 },
+    options: { priority: false, inspection: false, notificationDate: '', clockStop: 0, inDraft: false },
     checks: {}, missionId, difficulty, mission: null,
     createdAt: now, updatedAt: now,
   };
@@ -34,7 +35,7 @@ export function migrateCase(k) {
   if (!k.regions) k.regions = [k.region ?? 'us'];
   k.region = k.regions[0];
   k.alsoProducts ??= [];
-  k.options = { priority: false, inspection: false, notificationDate: '', clockStop: 0, ...(k.options ?? {}) };
+  k.options = { priority: false, inspection: false, notificationDate: '', clockStop: 0, inDraft: false, ...(k.options ?? {}) };
   k.packs ??= Object.fromEntries(k.regions.map((r) => { const p = packFor(r, { date: k.submitDate }); return [r, { id: p.id, edition: p.edition }]; }));
   return k;
 }

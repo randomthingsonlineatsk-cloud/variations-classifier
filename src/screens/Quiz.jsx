@@ -25,6 +25,7 @@ export default function Quiz() {
   return (
     <div className="page">
       <h1>Quiz bank</h1>
+      <p className="small">Want speed practice? Try the <a href="#/drills">classification drills</a>.</p>
       <p>{data.questions.length} questions on US and EU post-approval changes, each with its source. Ten at a time.{past.length ? ` You have saved ${past.length} round(s); best ${Math.max(...past.map((a) => a.score))}%.` : ''}</p>
       <div className="row panel" style={{ marginBottom: '1rem' }}>
         <label className="field" style={{ minWidth: 240 }}>Topic

@@ -1,0 +1,19 @@
+{
+ "_about": "How a company core data sheet (CCDS) change maps to each region's label sections, and which catalogue change carries it. Company targets are training defaults, not regulatory deadlines.",
+ "kinds": [
+  { "id": "adr", "label": "New adverse reaction", "change": "lab-safety-add", "safety": true,
+    "sections": { "us": "Section 6 Adverse Reactions (and the Medication Guide or patient information if it lists side effects)", "eu": "SmPC section 4.8 Undesirable effects; package leaflet section 4", "in": "Adverse reactions section of the prescribing information and package insert" } },
+  { "id": "warning", "label": "New or strengthened warning or precaution", "change": "lab-safety-add", "safety": true,
+    "sections": { "us": "Section 5 Warnings and Precautions, and Highlights", "eu": "SmPC section 4.4; package leaflet section 2", "in": "Warnings and precautions section" } },
+  { "id": "contra", "label": "New contraindication", "change": "lab-safety-add", "safety": true, "serious": true,
+    "sections": { "us": "Section 4 Contraindications, and Highlights", "eu": "SmPC section 4.3; package leaflet section 2", "in": "Contraindications section" } },
+  { "id": "dosing", "label": "Dosing instruction for safer use", "change": "lab-dosing-safety", "safety": true,
+    "sections": { "us": "Section 2 Dosage and Administration", "eu": "SmPC section 4.2; package leaflet section 3", "in": "Dosage and administration section" } },
+  { "id": "indication", "label": "New indication", "change": "lab-new-indication", "safety": false,
+    "sections": { "us": "Section 1 Indications and Usage (and sections 2, 6, 14)", "eu": "SmPC sections 4.1, 4.2, 4.8, 5.1", "in": "Indications section (a new claim needs a new drug permission)" } },
+  { "id": "editorial", "label": "Editorial change", "change": "lab-editorial", "safety": false,
+    "sections": { "us": "Affected section only", "eu": "Affected section only (usually with the next procedure)", "in": "Affected section only" } }
+ ],
+ "statuses": ["Not started", "Wording drafted", "Submitted", "Approved", "Implemented"],
+ "targetDays": { "safety": 30, "other": 90 }
+}

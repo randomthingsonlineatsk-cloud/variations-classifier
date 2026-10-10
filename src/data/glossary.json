@@ -36,6 +36,11 @@
    "def": "Supplement - Changes Being Effected in 30 Days. Distribution can start 30 days after FDA receives the supplement, unless FDA objects in that time."
   },
   {
+   "term": "CCDS",
+   "region": "All",
+   "def": "Company core data sheet: the company's reference safety and prescribing information that regional labels follow."
+  },
+  {
    "term": "CGMP inspection",
    "region": "US",
    "def": "FDA's inspection of a site against current good manufacturing practice. Whether a new site has a satisfactory one for the operation drives the category of a site move."
@@ -76,6 +81,11 @@
    "def": "The last compound synthesized before the reaction that produces the drug substance."
   },
   {
+   "term": "Form CT-18, CT-21",
+   "region": "India",
+   "def": "Applications for permission to import (CT-18) or manufacture (CT-21) a new drug."
+  },
+  {
    "term": "Form FDA 2252",
    "region": "US",
    "def": "The transmittal form for periodic reports, including annual reports."
@@ -86,6 +96,11 @@
    "def": "The application form for new applications and supplements."
   },
   {
+   "term": "G.S.R. 97(E)",
+   "region": "India",
+   "def": "Draft amendment of 2 February 2026 to the NDCT Rules that would add Level I to III for post-approval quality changes."
+  },
+  {
    "term": "GDUFA",
    "region": "US",
    "def": "Generic Drug User Fee Amendments. GDUFA III sets FDA's review goals for ANDA supplements in fiscal years 2023 to 2027."
@@ -94,6 +109,11 @@
    "term": "Grouping",
    "region": "EU",
    "def": "Several related variations to one authorisation in one submission; the group follows its highest type (Article 7)."
+  },
+  {
+   "term": "Level I, II, III, IV",
+   "region": "India",
+   "def": "PAC/2024 levels: supplement and notifiable change need approval; annual notification is reported in the first quarter; record of change is kept under GMP."
   },
   {
    "term": "Major change",
@@ -124,6 +144,11 @@
    "term": "NDA",
    "region": "US",
    "def": "New drug application, including 505(b)(2) applications. Changes follow 21 CFR 314.70."
+  },
+  {
+   "term": "PAC/2024",
+   "region": "India",
+   "def": "CDSCO's guidance on post-approval changes in biological products (version 1.2, implemented 16 May 2024)."
   },
   {
    "term": "PACMP",
@@ -159,6 +184,11 @@
    "term": "Safety labeling change notification",
    "region": "US",
    "def": "FDA's notice under section 505(o)(4) of the FD&C Act that new safety information should be added to the labeling; the holder responds within 30 days."
+  },
+  {
+   "term": "SUGAM",
+   "region": "India",
+   "def": "CDSCO's online portal for applications, including post-approval changes."
   },
   {
    "term": "SUPAC",

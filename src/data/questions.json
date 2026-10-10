@@ -33,7 +33,7 @@
   "fromProduct": "doseControl"
  },
  "siteNeverInspected": {
-  "text": "Has FDA never inspected the new site for this type of operation, or would the move restart an operation stopped there for more than two years?",
+  "text": "Has the regulator (FDA in the US) never inspected the new site for this type of operation, or would the move restart an operation stopped there for more than two years?",
   "help": "Either one makes a site move a prior approval supplement (guidance section VI.B.1)."
  },
  "siteCgmp": {
@@ -351,5 +351,13 @@
  "sameGroup": {
   "text": "Is the new manufacturer part of the same pharmaceutical group as the current one?",
   "help": "Under the 2013 guidelines this made a new active substance manufacturer Type IA-IN (B.I.a.1(a))."
+ },
+ "existingSite": {
+  "text": "Is the new facility (or line) within an existing approved site?",
+  "help": "In India's biologics guidance a new geographic site is Level I; a new facility within an existing site is Level II."
+ },
+ "seriousWarning": {
+  "text": "Is it a new contraindication or a serious new warning or precaution?",
+  "help": "In India's biologics guidance these are Level I; adding or strengthening other risk-management text is Level II."
  }
 }

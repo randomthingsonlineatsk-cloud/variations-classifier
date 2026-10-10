@@ -14,6 +14,9 @@ import Progress from './screens/Progress.jsx';
 import Sources from './screens/Sources.jsx';
 import Glossary from './screens/Glossary.jsx';
 import Compare from './screens/Compare.jsx';
+import Requests from './screens/Requests.jsx';
+import Labelling from './screens/Labelling.jsx';
+import Drills from './screens/Drills.jsx';
 
 function useHashRoute() {
   const read = () => (window.location.hash.replace(/^#/, '') || '/').split('/').filter(Boolean);
@@ -27,7 +30,7 @@ function useHashRoute() {
 }
 
 const NAV = [
-  ['', 'Cases'], ['catalogue', 'Catalogue'], ['compare', 'Compare'], ['products', 'Products'], ['learn', 'Learn'],
+  ['', 'Cases'], ['requests', 'Requests'], ['labelling', 'Labelling'], ['catalogue', 'Catalogue'], ['compare', 'Compare'], ['products', 'Products'], ['learn', 'Learn'],
   ['missions', 'Missions'], ['quiz', 'Quiz'], ['progress', 'Progress'], ['sources', 'Sources'],
 ];
 
@@ -113,13 +116,16 @@ export default function App() {
   else if (section === 'sources') screen = <Sources />;
   else if (section === 'glossary') screen = <Glossary />;
   else if (section === 'compare') screen = <Compare />;
+  else if (section === 'requests') screen = <Requests />;
+  else if (section === 'labelling') screen = <Labelling />;
+  else if (section === 'drills') screen = <Drills />;
   else screen = <div className="page"><h1>Page not found</h1><p><a href="#/">Go to your cases</a></p></div>;
 
   const cycleTheme = async () => {
     const next = theme === 'system' ? 'dark' : theme === 'dark' ? 'light' : 'system';
     setTheme(next); try { await setMeta('theme', next); } catch { /* storage blocked */ }
   };
-  const current = section === 'case' ? '' : section === 'glossary' ? 'learn' : (section ?? '');
+  const current = section === 'case' ? '' : section === 'glossary' ? 'learn' : section === 'drills' ? 'quiz' : (section ?? '');
 
   return (
     <AppCtx.Provider value={ctx}>

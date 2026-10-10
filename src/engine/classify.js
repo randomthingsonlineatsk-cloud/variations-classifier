@@ -189,7 +189,7 @@ export function lowerRoutes(pack, changeId, answers) {
     .map((w) => ({ kind: 'answer', text: w.cond ? `If the condition "${w.text}" were met, the change would be ${categoryOf(pack, w.category).label}.` : `If "${w.text}" were "${w.toLabel}", the change would be ${categoryOf(pack, w.category).label}.`, category: w.category }));
   const change = CHANGE[changeId];
   const high = rankOf(pack, base.category) >= rankOf(pack, pack.id === 'us' ? 'CBE30' : 'IB');
-  if (change?.kind === 'cmc' && high && !['cp-submit', 'cp-use'].includes(changeId) && pack.entries['cp-use']) {
+  if (['us', 'eu'].includes(pack.id) && change?.kind === 'cmc' && high && !['cp-submit', 'cp-use'].includes(changeId) && pack.entries['cp-use']) {
     routes.push({ kind: 'protocol', text: pack.id === 'us'
       ? 'Submit a comparability protocol first (itself a prior approval supplement). Once approved, this change and later ones like it can be filed in the lower category the protocol sets.'
       : 'Submit a PACMP first (Type II, Q.II.g.2). Once approved, the change can be implemented in the lower category the protocol sets (Q.II.g.5).', category: null });

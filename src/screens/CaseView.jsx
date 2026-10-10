@@ -7,6 +7,7 @@ import { buildChangePackage } from '../engine/handoff.js';
 import { addChange } from '../engine/model.js';
 import { download } from '../engine/io.js';
 import { missionById, scoreMission, LEVELS } from '../engine/missions.js';
+import { IntakeTab, RolloutTab, LabellingTab } from './CaseExtras.jsx';
 import { Cat, Range, Ladder, Cite, Badge } from '../components/ui.jsx';
 
 const short = (r) => regionOf(r)?.short ?? r.toUpperCase();
@@ -15,7 +16,7 @@ export default function CaseView({ id }) {
   const { cases, productById, saveCase } = useApp();
   const stored = cases.find((c) => c.id === id);
   const [k, setK] = useState(() => (stored ? structuredClone(stored) : null));
-  const [tab, setTab] = useState('classify');
+  const [tab, setTab] = useState(() => (stored?.intake ? 'intake' : stored?.ccds ? 'labelling' : 'classify'));
   const [sel, setSel] = useState(() => stored?.changes[0]?.id ?? null);
   if (!k) return <div className="page"><h1>Case not found</h1><p><a href="#/">Back to your cases</a></p></div>;
   const product = productById(k.productId);
@@ -36,7 +37,13 @@ export default function CaseView({ id }) {
     saveCase(next);
   };
   const selected = k.changes.find((c) => c.id === sel) ?? k.changes[0];
-  const tabs = [['classify', 'Classify'], ['plan', 'Filing plan'], ...(mission ? [['mission', submitted ? 'Mission result' : 'Submit mission']] : [])];
+  const tabs = [
+    ...(k.intake ? [['intake', 'Change request']] : []),
+    ...(k.ccds ? [['labelling', 'Labelling rollout']] : []),
+    ['classify', 'Classify'], ['plan', 'Filing plan'],
+    ...(k.regions.length > 1 ? [['rollout', 'Rollout']] : []),
+    ...(mission ? [['mission', submitted ? 'Mission result' : 'Submit mission']] : []),
+  ];
   const toggleRegion = (r) => mutate((x) => {
     const has = x.regions.includes(r);
     if (has && x.regions.length === 1) return;
@@ -66,6 +73,12 @@ export default function CaseView({ id }) {
                   {regionOf(r).label}{packs[r] ? <span className="muted">(edition {packs[r].edition})</span> : null}
                 </label>
               ))}
+              {k.regions.includes('in') && (
+                <label className="row" style={{ gap: '.3rem' }}>
+                  <input type="checkbox" checked={!!k.options?.inDraft} disabled={!!mission} onChange={(e) => mutate((x) => { x.options.inDraft = e.target.checked; })} />
+                  India: use the February 2026 draft rules (what-if)
+                </label>
+              )}
             </div>
           </div>
           <div className="row no-print">
@@ -85,6 +98,9 @@ export default function CaseView({ id }) {
         </div>
       )}
       <div className="ws-body">
+        {packs.in?.draft && (
+          <p className="callout warn small">India answers use the draft rules G.S.R. 97(E) of 2 February 2026, which are not in force. Levels for chemical drugs are inferred from the matching FDA entries; untick the box above for the rules in force.</p>
+        )}
         {packs.eu?.status === 'superseded' && (
           <p className="callout warn small">The case date ({k.submitDate}) is before 15 January 2026, so the EU answer uses the 2013 guidelines that were in force then. Change the date on the filing plan to see the 2025 guidelines.</p>
         )}
@@ -95,6 +111,9 @@ export default function CaseView({ id }) {
             <p className="small"><strong>Your task:</strong> {mission.goal}</p>
           </details>
         )}
+        {tab === 'intake' && k.intake && <IntakeTab {...{ k, product, mutate, goClassify: () => setTab('classify'), setSel }} />}
+        {tab === 'labelling' && k.ccds && <LabellingTab {...{ k, product, mutate }} />}
+        {tab === 'rollout' && <RolloutTab {...{ k, product }} />}
         {tab === 'classify' && <ClassifyTab {...{ k, packs, product, selected, setSel, mutate, showHelp, showCites, mission }} />}
         {tab === 'plan' && <PlanTab {...{ k, packs, product, mutate, reveal, mission }} />}
         {tab === 'mission' && mission && <MissionTab {...{ k, pack: packs[mission.region], product, mission, mutate }} />}
@@ -450,6 +469,7 @@ function PlanTab({ k, packs, product, mutate, reveal, mission }) {
 }
 
 const FILING_LABEL = {
+  IN: (f) => ({ REC: 'Record of change (no submission)', L3: 'Annual notification', NEWDRUG: 'New drug permission application', ADMIN: 'Administrative change application' })[f.category] ?? 'Post-approval change application',
   US: (f) => (f.category === 'AR' ? 'Annual report' : f.category === 'LETTER' ? 'Letter' : f.kind === 'efficacy' ? 'Efficacy supplement' : f.kind === 'labeling' ? 'Labeling supplement' : 'CMC supplement'),
   EU: (f) => ({ NONE: 'No submission', OTHER: 'Other procedure', IA: f.items.length > 1 ? 'Type IA notification (annual update)' : 'Type IA notification', IAIN: 'Type IA-IN notification', IB: 'Type IB notification', II: 'Type II variation', EXT: 'Extension application' })[f.category],
 };
@@ -463,7 +483,7 @@ function Filing({ f, k, pack, product, mutate, reveal, exportPkg, region }) {
   const key = (code) => `${region}:${f.items.map((i) => i.change.id).join('+')}:${code}`;
   const done = impact.filter((e) => k.checks?.[key(e.code)]).length;
   const label = FILING_LABEL[pack.region]?.(f) ?? cat.label;
-  const submits = !['NONE'].includes(f.category);
+  const submits = !['NONE', 'REC'].includes(f.category);
   return (
     <section className={`filing cat-${f.category}`} aria-label={`${label}: ${cat.label}`}>
       <div className="row" style={{ justifyContent: 'space-between' }}>
