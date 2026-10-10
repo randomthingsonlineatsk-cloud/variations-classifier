@@ -7,7 +7,7 @@
   --surface-2: #e9eeec;
   --ink: #1d2433;
   --ink-2: #4a5568;
-  --ink-3: #6b7689;
+  --ink-3: #5a6477;
   --line: #d6dde1;
   --accent: #23548c;
   --accent-ink: #ffffff;
@@ -18,15 +18,15 @@
   --m3: #a86f12;
   --m4: #4e8a3e;
   --m5: #b04a5a;
-  --c-letter: #6b7689;
-  --c-ar: #2f7a45;
-  --c-cbe0: #2f6fb0;
-  --c-cbe30: #9a6a00;
+  --c-letter: #5a6477;
+  --c-ar: #276a3b;
+  --c-cbe0: #255d96;
+  --c-cbe30: #7f5700;
   --c-pas: #b8322a;
 
   --high: #b8322a;
   --high-bg: #fbe9e7;
-  --medium: #9a6a00;
+  --medium: #7f5700;
   --medium-bg: #fdf3dc;
   --low: #4d5d7a;
   --low-bg: #e8edf5;
@@ -51,7 +51,7 @@
   :root:not([data-theme="light"]) {
     --paper: #12161e; --surface: #1a202b; --surface-2: #232b38; --ink: #e5e9ef; --ink-2: #b6bfcc; --ink-3: #8b96a8;
     --line: #2f3846; --accent: #7fb0ea; --accent-ink: #0f1520; --focus: #8fbaff;
-    --m1: #a497db; --m2: #5fb7c4; --m3: #dca74a; --m4: #86c272; --m5: #e0848f; --c-letter: #8b96a8; --c-ar: #79c991; --c-cbe0: #8fbaff; --c-cbe30: #f0c060; --c-pas: #ff8a7f;
+    --m1: #a497db; --m2: #5fb7c4; --m3: #dca74a; --m4: #86c272; --m5: #e0848f; --c-letter: #a9b3c2; --c-ar: #79c991; --c-cbe0: #8fbaff; --c-cbe30: #f0c060; --c-pas: #ff8a7f;
     --high: #ff8a7f; --high-bg: #3a1d1b; --medium: #f0c060; --medium-bg: #36290f; --low: #a9b8d4; --low-bg: #232c3b; --ok: #79c991; --ok-bg: #1b3022;
     --shadow: 0 1px 2px rgba(0,0,0,.3), 0 4px 16px rgba(0,0,0,.25);
     color-scheme: dark;
@@ -60,7 +60,7 @@
 :root[data-theme="dark"] {
   --paper: #12161e; --surface: #1a202b; --surface-2: #232b38; --ink: #e5e9ef; --ink-2: #b6bfcc; --ink-3: #8b96a8;
   --line: #2f3846; --accent: #7fb0ea; --accent-ink: #0f1520; --focus: #8fbaff;
-  --m1: #a497db; --m2: #5fb7c4; --m3: #dca74a; --m4: #86c272; --m5: #e0848f; --c-letter: #8b96a8; --c-ar: #79c991; --c-cbe0: #8fbaff; --c-cbe30: #f0c060; --c-pas: #ff8a7f;
+  --m1: #a497db; --m2: #5fb7c4; --m3: #dca74a; --m4: #86c272; --m5: #e0848f; --c-letter: #a9b3c2; --c-ar: #79c991; --c-cbe0: #8fbaff; --c-cbe30: #f0c060; --c-pas: #ff8a7f;
   --high: #ff8a7f; --high-bg: #3a1d1b; --medium: #f0c060; --medium-bg: #36290f; --low: #a9b8d4; --low-bg: #232c3b; --ok: #79c991; --ok-bg: #1b3022;
   --shadow: 0 1px 2px rgba(0,0,0,.3), 0 4px 16px rgba(0,0,0,.25);
   color-scheme: dark;
