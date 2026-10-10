@@ -1,0 +1,1702 @@
+{
+ "_about": "US decision trees, one per catalogue change. A node either asks a question (ask + on) or gives an outcome (cat + src + at + why). bioSrc/bioAt replace the citation when the product is a biologic. note marks a simplification the learner sees.",
+ "dp-site-move": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "ask": "sterile",
+     "on": {
+      "yes": {
+       "ask": "bioAltLineApproved",
+       "on": {
+        "yes": {
+         "cat": "CBE30",
+         "src": "gbio21",
+         "at": "Appendix, drug product facilities",
+         "why": "A filling line already approved for aseptic manufacture of other products, with no change to the validated process, is a CBE-30 for a biologic."
+        },
+        "no": {
+         "cat": "PAS",
+         "src": "gbio21",
+         "at": "Appendix, drug product facilities",
+         "why": "A new or changed facility or filling line that may affect sterility assurance needs prior approval for a biologic."
+        }
+       }
+      },
+      "no": {
+       "cat": "PAS",
+       "src": "gbio21",
+       "at": "Appendix, facilities",
+       "why": "Adding or replacing a manufacturing facility for a biologic needs prior approval.",
+       "note": "Simplified: the guidance has a few lower-category facility cases; the app treats non-sterile biologic facility moves as prior approval."
+      }
+     }
+    },
+    "no": {
+     "ask": "siteNeverInspected",
+     "on": {
+      "yes": {
+       "cat": "PAS",
+       "src": "g04",
+       "at": "VI.B.1",
+       "why": "The new site has never been inspected by FDA for this type of operation (or restarts it after more than two years), so the move needs prior approval."
+      },
+      "no": {
+       "ask": "siteCgmp",
+       "on": {
+        "no": {
+         "cat": "PAS",
+         "src": "g04",
+         "at": "VI.B.2",
+         "why": "The new site does not have a satisfactory CGMP inspection for this type of operation."
+        },
+        "yes": {
+         "ask": "sterile",
+         "on": {
+          "yes": {
+           "ask": "aseptic",
+           "on": {
+            "yes": {
+             "ask": "asepticNewOrDissimilar",
+             "on": {
+              "yes": {
+               "cat": "PAS",
+               "src": "g04",
+               "at": "VI.B.4",
+               "why": "Aseptic manufacture moves to a new or refurbished area, or to one that does not make similar approved products."
+              },
+              "no": {
+               "cat": "CBE30",
+               "src": "g04",
+               "at": "VI.C.1.b",
+               "why": "A move to an existing aseptic area that already makes similar approved products is a moderate change."
+              }
+             }
+            },
+            "no": {
+             "ask": "sameSiteBuilding",
+             "on": {
+              "yes": {
+               "cat": "AR",
+               "src": "g04",
+               "at": "VI.D.5",
+               "why": "A terminally sterilized product moving to a new or existing building on the same site is a minor change."
+              },
+              "no": {
+               "ask": "termNewFacilityOtherSite",
+               "on": {
+                "yes": {
+                 "cat": "PAS",
+                 "src": "g04",
+                 "at": "VI.B.5",
+                 "why": "A terminally sterilized product moving to a newly constructed facility at a different site needs prior approval."
+                },
+                "no": {
+                 "cat": "CBE30",
+                 "src": "g04",
+                 "at": "VI.C.1.a",
+                 "why": "A move to an existing, satisfactorily inspected facility at another site is a moderate change."
+                }
+               }
+              }
+             }
+            }
+           }
+          },
+          "no": {
+           "ask": "mr",
+           "on": {
+            "yes": {
+             "cat": "PAS",
+             "src": "g04",
+             "at": "VI.B.3",
+             "why": "The product's formulation modifies the rate of availability (modified release), so a move of its manufacture needs prior approval."
+            },
+            "no": {
+             "ask": "doseControl",
+             "on": {
+              "yes": {
+               "cat": "PAS",
+               "src": "g04",
+               "at": "VI.B.3",
+               "why": "The primary packaging controls the dose delivered, so a move needs prior approval."
+              },
+              "no": {
+               "cat": "CBE30",
+               "src": "g04",
+               "at": "VI.C.1.a",
+               "why": "A move to a satisfactorily inspected site, not otherwise provided for in the guidance, is a moderate change."
+              }
+             }
+            }
+           }
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "ds-site-move": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "PAS",
+     "src": "gbio21",
+     "at": "Appendix, drug substance facilities",
+     "why": "Adding or replacing a drug substance manufacturing facility for a biologic needs prior approval."
+    },
+    "no": {
+     "ask": "siteNeverInspected",
+     "on": {
+      "yes": {
+       "cat": "PAS",
+       "src": "g04",
+       "at": "VI.B.1",
+       "why": "The new site has never been inspected for this type of operation, or restarts it after more than two years."
+      },
+      "no": {
+       "ask": "siteCgmp",
+       "on": {
+        "no": {
+         "cat": "PAS",
+         "src": "g04",
+         "at": "VI.B.2",
+         "why": "The new site lacks a satisfactory CGMP inspection for this operation."
+        },
+        "yes": {
+         "cat": "CBE30",
+         "src": "g04",
+         "at": "VI.C.1.a",
+         "why": "A move of drug substance manufacture to a satisfactorily inspected site is a moderate change."
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "ds-intermediate-site": {
+  "tree": {
+   "ask": "finalIntermediate",
+   "on": {
+    "yes": {
+     "cat": "CBE0",
+     "src": "g04",
+     "at": "VI.C.2",
+     "why": "A move of the final intermediate's manufacture is a CBE supplement."
+    },
+    "no": {
+     "cat": "AR",
+     "src": "g04",
+     "at": "VI.D.3",
+     "why": "A move for intermediates other than the final intermediate is a minor change."
+    }
+   }
+  }
+ },
+ "primary-pack-site": {
+  "tree": {
+   "ask": "siteNeverInspected",
+   "on": {
+    "yes": {
+     "cat": "PAS",
+     "src": "g04",
+     "at": "VI.B.1",
+     "why": "The new site has never been inspected for this type of operation."
+    },
+    "no": {
+     "ask": "siteCgmp",
+     "on": {
+      "no": {
+       "cat": "PAS",
+       "src": "g04",
+       "at": "VI.B.2",
+       "why": "The new site lacks a satisfactory CGMP inspection for packaging."
+      },
+      "yes": {
+       "ask": "doseControl",
+       "on": {
+        "yes": {
+         "cat": "PAS",
+         "src": "g04",
+         "at": "VI.B.3",
+         "why": "The primary packaging controls the dose delivered."
+        },
+        "no": {
+         "cat": "CBE30",
+         "src": "g04",
+         "at": "VI.C.1.c",
+         "why": "A primary packaging move not listed as major (including modified-release solid oral products) is a CBE-30."
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "secondary-pack-site": {
+  "tree": {
+   "cat": "AR",
+   "src": "g04",
+   "at": "VI.D.1",
+   "why": "A move of secondary packaging is a minor change."
+  }
+ },
+ "labeling-site": {
+  "tree": {
+   "cat": "AR",
+   "src": "g04",
+   "at": "VI.D.2",
+   "why": "A move of labeling operations is a minor change."
+  }
+ },
+ "testing-site": {
+  "tree": {
+   "ask": "testingConditions",
+   "on": {
+    "yes": {
+     "cat": "CBE30",
+     "src": "g04",
+     "at": "VI.C.1.d",
+     "why": "The new lab uses the approved procedures, commitments are met and it can do the testing, so the move is a CBE-30."
+    },
+    "no": {
+     "cat": "PAS",
+     "src": "g04",
+     "at": "VI.C.1.d",
+     "why": "The conditions for the CBE-30 route are not all met.",
+     "note": "Simplified: the guidance lists the move as CBE-30 only when all three conditions hold. The app treats other cases as prior approval; in practice, meet the conditions first or classify a method change on its own."
+    }
+   }
+  }
+ },
+ "ink-imprint-site": {
+  "tree": {
+   "cat": "AR",
+   "src": "g04",
+   "at": "VI.D.6",
+   "why": "A move of ink imprinting for solid oral products is a minor change."
+  }
+ },
+ "component-sterilization-site": {
+  "tree": {
+   "ask": "componentSterilizationSame",
+   "on": {
+    "yes": {
+     "cat": "AR",
+     "src": "g04",
+     "at": "VI.D.4",
+     "why": "A new contract sterilizer for packaging components, with a process not materially different, is a minor change."
+    },
+    "no": {
+     "ask": "affectsSterility",
+     "on": {
+      "yes": {
+       "cat": "PAS",
+       "src": "g04",
+       "at": "VII.B.2",
+       "why": "A different sterilization process that may affect sterility assurance needs prior approval."
+      },
+      "no": {
+       "cat": "CBE30",
+       "src": "g04",
+       "at": "VII.C.1.d",
+       "why": "Changes to sterilization of components that alter validated parameters are CBE-30 changes."
+      }
+     }
+    }
+   }
+  }
+ },
+ "fill-line-add": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "ask": "bioAltLineApproved",
+     "on": {
+      "yes": {
+       "cat": "CBE30",
+       "src": "gbio21",
+       "at": "Appendix, drug product facilities",
+       "why": "An alternate filling line already approved for aseptic manufacture, with no change to the validated process, is a CBE-30."
+      },
+      "no": {
+       "cat": "PAS",
+       "src": "gbio21",
+       "at": "Appendix, drug product facilities",
+       "why": "Adding or modifying a filling line that affects sterility assurance needs prior approval."
+      }
+     }
+    },
+    "no": {
+     "ask": "aseptic",
+     "on": {
+      "yes": {
+       "ask": "asepticNewOrDissimilar",
+       "on": {
+        "yes": {
+         "cat": "PAS",
+         "src": "g04",
+         "at": "VI.B.4",
+         "why": "The line is in a new or refurbished aseptic area, or one that does not make similar approved products."
+        },
+        "no": {
+         "ask": "affectsSterility",
+         "on": {
+          "yes": {
+           "cat": "PAS",
+           "src": "g04",
+           "at": "VII.B.2",
+           "why": "Changes to aseptic processing equipment that may affect sterility assurance need prior approval."
+          },
+          "no": {
+           "cat": "CBE30",
+           "src": "g04",
+           "at": "VII.C.1.a",
+           "why": "An equipment change not otherwise provided for is a CBE-30."
+          }
+         }
+        }
+       }
+      },
+      "no": {
+       "ask": "affectsSterility",
+       "on": {
+        "yes": {
+         "cat": "PAS",
+         "src": "g04",
+         "at": "VII.B.2",
+         "why": "The change may affect sterility assurance."
+        },
+        "no": {
+         "cat": "CBE30",
+         "src": "g04",
+         "at": "VII.C.1.a",
+         "why": "An equipment change not otherwise provided for is a CBE-30."
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "dp-equipment-same": {
+  "tree": {
+   "ask": "sterile",
+   "on": {
+    "yes": {
+     "ask": "affectsSterility",
+     "on": {
+      "yes": {
+       "cat": "PAS",
+       "src": "g04",
+       "at": "VII.B.2",
+       "why": "Even like-for-like equipment needs prior approval when the change may affect sterility assurance."
+      },
+      "no": {
+       "ask": "bio",
+       "on": {
+        "yes": {
+         "cat": "AR",
+         "src": "gbio21",
+         "at": "Appendix, equipment",
+         "why": "Replacing equipment with equipment of the same design, operating principle and capacity is an annual report change."
+        },
+        "no": {
+         "cat": "AR",
+         "src": "g04",
+         "at": "VII.D.1",
+         "why": "Equipment of the same design and operating principle is a minor change."
+        }
+       }
+      }
+     }
+    },
+    "no": {
+     "ask": "bio",
+     "on": {
+      "yes": {
+       "cat": "AR",
+       "src": "gbio21",
+       "at": "Appendix, equipment",
+       "why": "Replacing equipment with equipment of the same design, operating principle and capacity is an annual report change."
+      },
+      "no": {
+       "cat": "AR",
+       "src": "g04",
+       "at": "VII.D.1",
+       "why": "Equipment of the same design and operating principle is a minor change."
+      }
+     }
+    }
+   }
+  }
+ },
+ "dp-process-change": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "ask": "bioMinorParam",
+     "on": {
+      "yes": {
+       "cat": "AR",
+       "src": "gbio21",
+       "at": "Appendix, manufacturing process",
+       "why": "A minor change within validated ranges, on the same equipment, is an annual report change."
+      },
+      "no": {
+       "cat": "PAS",
+       "src": "gbio21",
+       "at": "Appendix, manufacturing process",
+       "why": "Process changes for a biologic that go beyond minor adjustments need prior approval."
+      }
+     }
+    },
+    "no": {
+     "ask": "fundamentalTech",
+     "on": {
+      "yes": {
+       "cat": "PAS",
+       "src": "g04",
+       "at": "VII.B.4",
+       "why": "A fundamental change in manufacturing technology needs prior approval."
+      },
+      "no": {
+       "ask": "mr",
+       "on": {
+        "yes": {
+         "ask": "affectsRelease",
+         "on": {
+          "yes": {
+           "cat": "PAS",
+           "src": "g04",
+           "at": "VII.B.1",
+           "why": "The change may affect the controlled release."
+          },
+          "no": {
+           "cat": "CBE30",
+           "src": "g04",
+           "at": "VII.C.1.a",
+           "why": "A process, parameter or equipment change not otherwise provided for is a CBE-30."
+          }
+         }
+        },
+        "no": {
+         "ask": "sterile",
+         "on": {
+          "yes": {
+           "ask": "affectsSterility",
+           "on": {
+            "yes": {
+             "cat": "PAS",
+             "src": "g04",
+             "at": "VII.B.2",
+             "why": "The change may affect sterility assurance."
+            },
+            "no": {
+             "cat": "CBE30",
+             "src": "g04",
+             "at": "VII.C.1.a",
+             "why": "A process, parameter or equipment change not otherwise provided for is a CBE-30."
+            }
+           }
+          },
+          "no": {
+           "cat": "CBE30",
+           "src": "g04",
+           "at": "VII.C.1.a",
+           "why": "A process, parameter or equipment change not otherwise provided for is a CBE-30."
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "dp-scale": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "ask": "bioMinorParam",
+     "on": {
+      "yes": {
+       "cat": "AR",
+       "src": "gbio21",
+       "at": "Appendix, scale",
+       "why": "A minor batch size change on the same equipment, with no parameter change, is an annual report change."
+      },
+      "no": {
+       "cat": "PAS",
+       "src": "gbio21",
+       "at": "Appendix, scale",
+       "why": "A batch size increase using different equipment or changed parameters needs prior approval."
+      }
+     }
+    },
+    "no": {
+     "ask": "sterile",
+     "on": {
+      "yes": {
+       "ask": "aseptic",
+       "on": {
+        "yes": {
+         "ask": "affectsSterility",
+         "on": {
+          "yes": {
+           "cat": "PAS",
+           "src": "g04",
+           "at": "VII.B.2",
+           "why": "The scale change may affect sterility assurance."
+          },
+          "no": {
+           "cat": "AR",
+           "src": "g04",
+           "at": "VII.D.1",
+           "why": "A change in scale not otherwise provided for is a minor change."
+          }
+         }
+        },
+        "no": {
+         "ask": "bulkHold50",
+         "on": {
+          "yes": {
+           "cat": "CBE30",
+           "src": "g04",
+           "at": "VII.C.1.d",
+           "why": "Bulk solution storage time rises by more than 50% beyond validated limits."
+          },
+          "no": {
+           "cat": "AR",
+           "src": "g04",
+           "at": "VII.D.6",
+           "why": "Bulk solution storage time rises by no more than 50%."
+          }
+         }
+        }
+       }
+      },
+      "no": {
+       "ask": "mr",
+       "on": {
+        "yes": {
+         "ask": "affectsRelease",
+         "on": {
+          "yes": {
+           "cat": "PAS",
+           "src": "g04",
+           "at": "VII.B.1",
+           "why": "The scale change may affect the controlled release."
+          },
+          "no": {
+           "cat": "AR",
+           "src": "g04",
+           "at": "VII.D.1",
+           "why": "A change in scale not otherwise provided for is a minor change."
+          }
+         }
+        },
+        "no": {
+         "cat": "AR",
+         "src": "g04",
+         "at": "VII.D.1",
+         "why": "A change in scale not otherwise provided for is a minor change.",
+         "note": "The 2004 guidance supersedes SUPAC-IR's reporting categories for scale; keep the dissolution and stability data SUPAC describes as support."
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "ds-route-new": {
+  "tree": {
+   "cat": "PAS",
+   "src": "g04",
+   "at": "VII.B.4",
+   "why": "A change in the synthetic route is a fundamental change in manufacturing technology."
+  }
+ },
+ "ds-process-change": {
+  "tree": {
+   "ask": "dsAfterFinalOrImpurity",
+   "on": {
+    "yes": {
+     "cat": "PAS",
+     "src": "g04",
+     "at": "VII.B.5",
+     "why": "Changes after the final intermediate, or that may change the impurity profile, need prior approval."
+    },
+    "no": {
+     "cat": "CBE30",
+     "src": "g04",
+     "at": "VII.C.1.b",
+     "why": "Other drug substance process or parameter changes are CBE-30."
+    }
+   }
+  }
+ },
+ "ds-starting-material": {
+  "tree": {
+   "ask": "finalIntermediate",
+   "on": {
+    "yes": {
+     "cat": "PAS",
+     "src": "g04",
+     "at": "VII.C.1.e",
+     "why": "The CBE-30 route excludes the final intermediate; redefining it as a starting material needs prior approval.",
+     "note": "Simplified: the guidance only states the exclusion; the app treats it as prior approval."
+    },
+    "no": {
+     "cat": "CBE30",
+     "src": "g04",
+     "at": "VII.C.1.e",
+     "why": "Redefining an intermediate (not the final one) as a starting material is a CBE-30."
+    }
+   }
+  }
+ },
+ "dp-reprocessing": {
+  "tree": {
+   "cat": "PAS",
+   "src": "g04",
+   "at": "VII.B.7",
+   "why": "A new reprocessing procedure for batches that fail specification needs prior approval."
+  }
+ },
+ "dp-ink": {
+  "tree": {
+   "ask": "inkApproved",
+   "on": {
+    "yes": {
+     "cat": "AR",
+     "src": "g04",
+     "at": "VII.D.3",
+     "why": "The ink is already used in CDER-approved products."
+    },
+    "no": {
+     "cat": "PAS",
+     "src": "g04",
+     "at": "VII.B.6",
+     "why": "The ink is not used in any CDER-approved product."
+    }
+   }
+  }
+ },
+ "dp-emboss": {
+  "tree": {
+   "ask": "mr",
+   "on": {
+    "yes": {
+     "cat": "PAS",
+     "src": "g04",
+     "at": "VII.B.1",
+     "why": "For modified-release products, a pressed code can affect release."
+    },
+    "no": {
+     "cat": "AR",
+     "src": "g04",
+     "at": "VII.D.4",
+     "why": "Adding or deleting a pressed code on a solid product that is not modified release is minor."
+    }
+   }
+  }
+ },
+ "dp-order-addition": {
+  "tree": {
+   "cat": "AR",
+   "src": "g04",
+   "at": "VII.D.5",
+   "why": "The order of addition for solutions is a minor change."
+  }
+ },
+ "sterile-filter": {
+  "tree": {
+   "ask": "filterMaterialPore",
+   "on": {
+    "yes": {
+     "cat": "PAS",
+     "src": "g04",
+     "at": "VII.B.2",
+     "why": "Filter material or pore size changes may affect sterility assurance."
+    },
+    "no": {
+     "cat": "CBE30",
+     "src": "g04",
+     "at": "VII.C.1.d",
+     "why": "Changes to filtration parameters (flow, pressure, time, volume) are CBE-30."
+    }
+   }
+  }
+ },
+ "sterilization-method": {
+  "tree": {
+   "cat": "PAS",
+   "src": "g04",
+   "at": "VII.B.2",
+   "why": "A change in sterilization method may affect sterility assurance."
+  }
+ },
+ "depyrogenation": {
+  "tree": {
+   "cat": "CBE30",
+   "src": "g04",
+   "at": "VII.C.1.d",
+   "why": "Changes to depyrogenation of components are CBE-30."
+  }
+ },
+ "inprocess-filtration-remove": {
+  "tree": {
+   "cat": "CBE0",
+   "src": "g04",
+   "at": "VII.C.2.b",
+   "why": "Eliminating an in-process filtration that is not the sterilizing filtration is a CBE supplement."
+  }
+ },
+ "control-increase": {
+  "tree": {
+   "cat": "CBE0",
+   "src": "g04",
+   "at": "VII.C.2.a",
+   "why": "Methods or controls that give more assurance are a CBE supplement."
+  }
+ },
+ "excipient-change": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "PAS",
+     "src": "gbio21",
+     "at": "Appendix, formulation",
+     "why": "A formulation change for a biologic needs prior approval."
+    },
+    "no": {
+     "ask": "supacLevel",
+     "on": {
+      "1": {
+       "cat": "AR",
+       "src": "supacir",
+       "at": "III.A, Level 1",
+       "why": "SUPAC-IR Level 1 composition changes are reported in the annual report."
+      },
+      "2": {
+       "cat": "PAS",
+       "src": "supacir",
+       "at": "III.B, Level 2",
+       "why": "SUPAC-IR Level 2 composition changes need prior approval, with comparative dissolution data."
+      },
+      "3": {
+       "cat": "PAS",
+       "src": "supacir",
+       "at": "III.C, Level 3",
+       "why": "SUPAC-IR Level 3 changes need prior approval and an in vivo bioequivalence study unless waived."
+      }
+     }
+    }
+   }
+  }
+ },
+ "colour-flavour-delete": {
+  "tree": {
+   "cat": "AR",
+   "src": "supacir",
+   "at": "III.A, Level 1",
+   "why": "Deleting or reducing a colour or flavour is a SUPAC-IR Level 1 change."
+  }
+ },
+ "new-strength": {
+  "tree": {
+   "cat": "PAS",
+   "src": "g04",
+   "at": "V",
+   "why": "A new strength changes the formulation, which needs prior approval.",
+   "note": "Simplified: the 2004 guidance does not list new strengths; the app follows its composition rule."
+  }
+ },
+ "spec-tighten": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CBE30",
+     "src": "gbio21",
+     "at": "Appendix, specifications",
+     "why": "Tightening criteria for a biologic because the process or assay improved is a CBE-30."
+    },
+    "no": {
+     "cat": "AR",
+     "src": "g04",
+     "at": "VIII.D.3",
+     "why": "Tightening of acceptance criteria is a minor change."
+    }
+   }
+  }
+ },
+ "spec-relax": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "PAS",
+     "src": "gbio21",
+     "at": "Appendix, specifications",
+     "why": "Broadening or shifting acceptance criteria for a biologic needs prior approval."
+    },
+    "no": {
+     "ask": "adventitious",
+     "on": {
+      "yes": {
+       "cat": "PAS",
+       "src": "g04",
+       "at": "VIII.B.6",
+       "why": "Relaxing a criterion for virus or adventitious agent testing needs prior approval."
+      },
+      "no": {
+       "ask": "compendial",
+       "on": {
+        "yes": {
+         "cat": "CBE30",
+         "src": "g04",
+         "at": "VIII.C.1.e",
+         "why": "Relaxing a criterion to comply with an official compendium is a CBE-30."
+        },
+        "no": {
+         "ask": "rawMaterialPreFinal",
+         "on": {
+          "yes": {
+           "cat": "CBE30",
+           "src": "g04",
+           "at": "VIII.C.1.b",
+           "why": "Relaxing a criterion for raw materials used before the final intermediate is a CBE-30."
+          },
+          "no": {
+           "ask": "envMicro",
+           "on": {
+            "yes": {
+             "cat": "CBE30",
+             "src": "g04",
+             "at": "VIII.C.1.d",
+             "why": "Relaxing an environmental or component microbiological monitoring criterion is a CBE-30."
+            },
+            "no": {
+             "cat": "PAS",
+             "src": "g04",
+             "at": "VIII.B.1",
+             "why": "Relaxing an acceptance criterion needs prior approval."
+            }
+           }
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "spec-delete-test": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "PAS",
+     "src": "gbio21",
+     "at": "Appendix, specifications",
+     "why": "Deleting a test for a biologic needs prior approval."
+    },
+    "no": {
+     "ask": "adventitious",
+     "on": {
+      "yes": {
+       "cat": "PAS",
+       "src": "g04",
+       "at": "VIII.B.6",
+       "why": "Deleting a virus or adventitious agent test needs prior approval."
+      },
+      "no": {
+       "ask": "compendial",
+       "on": {
+        "yes": {
+         "cat": "CBE30",
+         "src": "g04",
+         "at": "VIII.C.1.e",
+         "why": "Deleting a test to comply with an official compendium is a CBE-30."
+        },
+        "no": {
+         "ask": "rawMaterialPreFinal",
+         "on": {
+          "yes": {
+           "cat": "CBE30",
+           "src": "g04",
+           "at": "VIII.C.1.b",
+           "why": "Deleting a test for raw materials used before the final intermediate is a CBE-30."
+          },
+          "no": {
+           "cat": "PAS",
+           "src": "g04",
+           "at": "VIII.B.2",
+           "why": "Deleting any part of a specification needs prior approval."
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "spec-add-test": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "PAS",
+     "src": "gbio21",
+     "at": "Appendix, specifications",
+     "why": "Adding or replacing a test in a biologic's specification is listed as a prior approval change.",
+     "note": "Check the guidance table for your product class; some additions to biologics specifications fall into a lower category."
+    },
+    "no": {
+     "cat": "CBE0",
+     "src": "g04",
+     "at": "VIII.C.2.a",
+     "why": "Adding a test that gives more assurance is a CBE supplement."
+    }
+   }
+  }
+ },
+ "spec-compendial": {
+  "tree": {
+   "cat": "AR",
+   "src": "g04",
+   "at": "VIII.D.1",
+   "why": "A change to comply with an official compendium (other than relaxing or deleting) is minor."
+  }
+ },
+ "method-change": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "ask": "bioMethodMajor",
+     "on": {
+      "yes": {
+       "cat": "PAS",
+       "src": "gbio21",
+       "at": "Appendix, analytical procedures",
+       "why": "Replacing or modifying a procedure in technique, acceptance criteria or performance needs prior approval."
+      },
+      "no": {
+       "cat": "AR",
+       "src": "gbio21",
+       "at": "Appendix, analytical procedures",
+       "why": "Minor modifications to a procedure are annual report changes."
+      }
+     }
+    },
+    "no": {
+     "ask": "editorialOnly",
+     "on": {
+      "yes": {
+       "cat": "AR",
+       "src": "g04",
+       "at": "VIII.C.1.a",
+       "why": "Editorial changes are excluded from the CBE-30 route and go in the annual report.",
+       "note": "Simplified: the guidance excludes editorial changes from VIII.C.1.a without naming a category."
+      },
+      "no": {
+       "ask": "sameOrBetter",
+       "on": {
+        "no": {
+         "cat": "PAS",
+         "src": "g04",
+         "at": "VIII.B.4",
+         "why": "The changed procedure does not give the same or greater assurance."
+        },
+        "yes": {
+         "cat": "CBE30",
+         "src": "g04",
+         "at": "VIII.C.1.a",
+         "why": "Other changes to a regulatory analytical procedure are CBE-30."
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "method-new-regulatory": {
+  "tree": {
+   "cat": "PAS",
+   "src": "g04",
+   "at": "VIII.B.3",
+   "why": "Establishing a new regulatory analytical procedure needs prior approval."
+  }
+ },
+ "method-alternative": {
+  "tree": {
+   "ask": "sameOrBetter",
+   "on": {
+    "yes": {
+     "cat": "AR",
+     "src": "g04",
+     "at": "VIII.D.2",
+     "why": "An alternative procedure with the same or greater assurance is a minor change."
+    },
+    "no": {
+     "cat": "PAS",
+     "src": "g04",
+     "at": "VIII.B.3",
+     "why": "An alternative procedure that gives less assurance cannot be added as minor.",
+     "note": "Simplified: treated like a new regulatory procedure."
+    }
+   }
+  }
+ },
+ "method-components": {
+  "tree": {
+   "ask": "sameOrBetter",
+   "on": {
+    "yes": {
+     "cat": "CBE0",
+     "src": "g04",
+     "at": "VIII.C.2.b",
+     "why": "A method change for components, packaging, the final intermediate or in-process materials with the same or greater assurance is a CBE supplement."
+    },
+    "no": {
+     "cat": "PAS",
+     "src": "g04",
+     "at": "VIII.B.5",
+     "why": "The method gives less assurance than the approved one."
+    }
+   }
+  }
+ },
+ "method-raw-material": {
+  "tree": {
+   "ask": "sameOrBetter",
+   "on": {
+    "yes": {
+     "cat": "AR",
+     "src": "g04",
+     "at": "VIII.D.4",
+     "why": "A raw material method with the same or greater assurance is a minor change."
+    },
+    "no": {
+     "ask": "adventitious",
+     "on": {
+      "yes": {
+       "cat": "PAS",
+       "src": "g04",
+       "at": "VIII.B.6",
+       "why": "A weaker method for virus or adventitious agent testing needs prior approval."
+      },
+      "no": {
+       "cat": "CBE30",
+       "src": "g04",
+       "at": "VIII.C.1.c",
+       "why": "Other raw material method changes are CBE-30."
+      }
+     }
+    }
+   }
+  }
+ },
+ "cc-polymer": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "ask": "productContactChange",
+     "on": {
+      "yes": {
+       "cat": "PAS",
+       "src": "gbio21",
+       "at": "Appendix, container closure",
+       "why": "A change in product-contact material needs prior approval."
+      },
+      "no": {
+       "cat": "CBE30",
+       "src": "gbio21",
+       "at": "Appendix, container closure",
+       "why": "A supplier change with no change in materials or dimensions is a CBE-30."
+      }
+     }
+    },
+    "no": {
+     "ask": "polymerNew",
+     "on": {
+      "yes": {
+       "cat": "PAS",
+       "src": "g04",
+       "at": "IX.B.1",
+       "why": "The polymer has never been used in an approved product of the same dosage form and route."
+      },
+      "no": {
+       "cat": "CBE30",
+       "src": "g04",
+       "at": "IX.C.1.a",
+       "why": "A container closure change not otherwise provided for, that does not affect quality, is a CBE-30."
+      }
+     }
+    }
+   }
+  }
+ },
+ "cc-sterile": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "ask": "productContactChange",
+     "on": {
+      "yes": {
+       "cat": "PAS",
+       "src": "gbio21",
+       "at": "Appendix, container closure",
+       "why": "Changes to product-contact materials or dimensions need prior approval."
+      },
+      "no": {
+       "cat": "CBE30",
+       "src": "gbio21",
+       "at": "Appendix, container closure",
+       "why": "A supplier change with no change in materials or dimensions is a CBE-30."
+      }
+     }
+    },
+    "no": {
+     "ask": "appliesToDS",
+     "on": {
+      "yes": {
+       "cat": "CBE30",
+       "src": "g04",
+       "at": "IX.C.1.b",
+       "why": "Size or shape changes to a sterile drug substance container are CBE-30."
+      },
+      "no": {
+       "cat": "PAS",
+       "src": "g04",
+       "at": "IX.B.4",
+       "why": "Container changes for a sterile drug product may affect sterility assurance."
+      }
+     }
+    }
+   }
+  }
+ },
+ "cc-dose-device": {
+  "tree": {
+   "cat": "PAS",
+   "src": "g04",
+   "at": "IX.B.3",
+   "why": "Primary packaging that controls the dose delivered needs prior approval to change."
+  }
+ },
+ "cc-closure-solid": {
+  "tree": {
+   "ask": "sameOrBetterProtection",
+   "on": {
+    "yes": {
+     "cat": "AR",
+     "src": "g04",
+     "at": "IX.D.4",
+     "why": "For solid oral products, closure changes that give the same or better protection are minor."
+    },
+    "no": {
+     "cat": "PAS",
+     "src": "g04",
+     "at": "IX.B.6",
+     "why": "A closure that gives less protection needs prior approval."
+    }
+   }
+  }
+ },
+ "cc-closure-liquid": {
+  "tree": {
+   "ask": "sameOrBetterProtection",
+   "on": {
+    "yes": {
+     "cat": "AR",
+     "src": "g04",
+     "at": "IX.D.5",
+     "why": "For non-sterile liquids, closure changes that give the same or better protection are minor."
+    },
+    "no": {
+     "cat": "PAS",
+     "src": "g04",
+     "at": "IX.B.6",
+     "why": "A closure that gives less protection needs prior approval."
+    }
+   }
+  }
+ },
+ "cc-size-shape": {
+  "tree": {
+   "ask": "sterile",
+   "on": {
+    "yes": {
+     "ask": "appliesToDS",
+     "on": {
+      "yes": {
+       "cat": "CBE30",
+       "src": "g04",
+       "at": "IX.C.1.b",
+       "why": "Size or shape changes to a sterile drug substance container are CBE-30."
+      },
+      "no": {
+       "cat": "PAS",
+       "src": "g04",
+       "at": "IX.B.4",
+       "why": "Size or shape changes to a sterile drug product container may affect sterility assurance."
+      }
+     }
+    },
+    "no": {
+     "ask": "solidOral",
+     "on": {
+      "yes": {
+       "cat": "AR",
+       "src": "g04",
+       "at": "IX.D.2",
+       "why": "Size or shape changes to a container for a non-sterile solid are minor."
+      },
+      "no": {
+       "cat": "CBE0",
+       "src": "g04",
+       "at": "IX.C.2.a",
+       "why": "Size or shape changes for a non-sterile, non-solid product, with no closure change, are a CBE supplement."
+      }
+     }
+    }
+   }
+  }
+ },
+ "cc-count": {
+  "tree": {
+   "ask": "sterile",
+   "on": {
+    "yes": {
+     "cat": "CBE30",
+     "src": "g04",
+     "at": "IX.C.1.a",
+     "why": "A container closure change not otherwise provided for is a CBE-30.",
+     "note": "Simplified: the guidance lists count changes only for non-sterile products."
+    },
+    "no": {
+     "ask": "unitOfUse",
+     "on": {
+      "yes": {
+       "cat": "CBE30",
+       "src": "g04",
+       "at": "IX.C.1.c",
+       "why": "Changing the number of units in a unit-of-use container is a CBE-30."
+      },
+      "no": {
+       "ask": "solidOral",
+       "on": {
+        "yes": {
+         "cat": "AR",
+         "src": "g04",
+         "at": "IX.D.3",
+         "why": "Changing the count of a non-sterile solid in a multiple-unit container is minor."
+        },
+        "no": {
+         "cat": "CBE0",
+         "src": "g04",
+         "at": "IX.C.2.b",
+         "why": "Changing the labeled amount of a non-sterile, non-solid product in a multiple-unit container is a CBE supplement."
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "cc-desiccant": {
+  "tree": {
+   "cat": "CBE0",
+   "src": "g04",
+   "at": "IX.C.2.c",
+   "why": "Changing, adding or deleting a desiccant is a CBE supplement."
+  }
+ },
+ "cc-blister": {
+  "tree": {
+   "ask": "blisterMaterialsApproved",
+   "on": {
+    "yes": {
+     "cat": "AR",
+     "src": "g04",
+     "at": "IX.D.6",
+     "why": "Blister materials already used in approved products of the same type make this minor."
+    },
+    "no": {
+     "cat": "CBE30",
+     "src": "g04",
+     "at": "IX.C.1.a",
+     "why": "Other container closure changes that do not affect quality are CBE-30.",
+     "note": "If the new blister gives less protection, it needs prior approval (IX.B.6)."
+    }
+   }
+  }
+ },
+ "cc-secondary-protective": {
+  "tree": {
+   "cat": "PAS",
+   "src": "g04",
+   "at": "IX.B.5",
+   "why": "Deleting secondary packaging that gives extra protection needs prior approval."
+  }
+ },
+ "cc-cap-colour": {
+  "tree": {
+   "cat": "AR",
+   "src": "g04",
+   "at": "IX.D.8",
+   "why": "A flip-seal cap colour change consistent with any colour coding is minor."
+  }
+ },
+ "shelf-life-extend": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "ask": "approvedProtocolFullData",
+     "on": {
+      "yes": {
+       "cat": "CBE30",
+       "src": "gbio21",
+       "at": "Appendix, stability",
+       "why": "For a biologic, an extension based on full commercial batch data under an approved protocol is a CBE-30."
+      },
+      "no": {
+       "cat": "PAS",
+       "src": "gbio21",
+       "at": "Appendix, stability",
+       "why": "An extension without an approved protocol needs prior approval."
+      }
+     }
+    },
+    "no": {
+     "ask": "approvedProtocolFullData",
+     "on": {
+      "yes": {
+       "cat": "AR",
+       "src": "g04",
+       "at": "XI.C.1",
+       "why": "Full shelf-life data on production batches under the approved protocol make this an annual report change."
+      },
+      "no": {
+       "cat": "PAS",
+       "src": "g04",
+       "at": "XI.A.4",
+       "why": "An extension based on a new or revised protocol, or without full data, needs prior approval."
+      }
+     }
+    }
+   }
+  }
+ },
+ "shelf-life-reduce": {
+  "tree": {
+   "cat": "CBE30",
+   "src": "g04",
+   "at": "XI.B.1",
+   "why": "Reducing the expiration dating period to give more assurance is a CBE-30."
+  }
+ },
+ "stability-protocol": {
+  "tree": {
+   "ask": "stabilityTimepointsOnly",
+   "on": {
+    "yes": {
+     "cat": "AR",
+     "src": "g04",
+     "at": "XI.C.2",
+     "why": "Adding time points, or deleting time points beyond expiry, is minor."
+    },
+    "no": {
+     "cat": "PAS",
+     "src": "g04",
+     "at": "XI.A.3",
+     "why": "Other changes to an approved stability protocol need prior approval."
+    }
+   }
+  }
+ },
+ "storage-conditions": {
+  "tree": {
+   "cat": "PAS",
+   "src": "g04",
+   "at": "X.B.7",
+   "why": "Changing the labeled storage conditions needs prior approval.",
+   "bioSrc": "cfr601",
+   "bioAt": "601.12(f)(1)"
+  }
+ },
+ "reference-standard": {
+  "tree": {
+   "cat": "AR",
+   "src": "g04",
+   "at": "XI.C.4",
+   "why": "Replacing an in-house reference standard under the approved protocol is minor."
+  }
+ },
+ "lab-new-indication": {
+  "tree": {
+   "cat": "PAS",
+   "src": "cfr314",
+   "at": "314.70(b)(2)(v)",
+   "bioSrc": "cfr601",
+   "bioAt": "601.12(f)(1)",
+   "why": "A new indication needs prior approval, as an efficacy supplement with clinical data."
+  }
+ },
+ "lab-population": {
+  "tree": {
+   "cat": "PAS",
+   "src": "g04",
+   "at": "X.B.5",
+   "why": "Expanding or contracting the population based on data needs prior approval.",
+   "bioSrc": "cfr601",
+   "bioAt": "601.12(f)(1)"
+  }
+ },
+ "lab-clinical-section": {
+  "tree": {
+   "cat": "PAS",
+   "src": "g04",
+   "at": "X.B.3",
+   "why": "Changes to clinical pharmacology or clinical study sections based on new data need prior approval.",
+   "bioSrc": "cfr601",
+   "bioAt": "601.12(f)(1)"
+  }
+ },
+ "lab-safety-add": {
+  "tree": {
+   "ask": "newlyAcquired",
+   "on": {
+    "yes": {
+     "cat": "CBE0",
+     "src": "cfr314",
+     "at": "314.70(c)(6)(iii)(A)",
+     "bioSrc": "cfr601",
+     "bioAt": "601.12(f)(2)(i)(A)",
+     "why": "Adding or strengthening safety information on newly acquired information may go in at once, as a CBE supplement."
+    },
+    "no": {
+     "cat": "PAS",
+     "src": "cfr314",
+     "at": "314.70(b)(2)(v)",
+     "bioSrc": "cfr601",
+     "bioAt": "601.12(f)(1)",
+     "why": "Without newly acquired information that meets the standard, a labeling change needs prior approval."
+    }
+   }
+  }
+ },
+ "lab-dosing-safety": {
+  "tree": {
+   "cat": "CBE0",
+   "src": "cfr314",
+   "at": "314.70(c)(6)(iii)(C)",
+   "bioSrc": "cfr601",
+   "bioAt": "601.12(f)(2)(i)(C)",
+   "why": "Adding or strengthening an instruction on dosage and administration for safer use is a CBE supplement."
+  }
+ },
+ "lab-delete-claim": {
+  "tree": {
+   "cat": "CBE0",
+   "src": "cfr314",
+   "at": "314.70(c)(6)(iii)(D)",
+   "bioSrc": "cfr601",
+   "bioAt": "601.12(f)(2)(i)(D)",
+   "why": "Deleting false, misleading or unsupported indications or claims is a CBE supplement."
+  }
+ },
+ "lab-505o4": {
+  "clock": "505o4",
+  "tree": {
+   "cat": "PAS",
+   "src": "g505o4",
+   "at": "IV",
+   "why": "Respond to FDA's notification within 30 days with a labeling supplement proposing the change, or a statement of why it is not warranted.",
+   "note": "Simplified: the app files the response as a prior approval labeling supplement; FDA's letter may ask for a different route. Read the notification."
+  }
+ },
+ "lab-rld-update": {
+  "tree": {
+   "ask": "anda",
+   "on": {
+    "yes": {
+     "cat": "CBE0",
+     "src": "cfr314",
+     "at": "314.70(c)(6)(iii), 314.97",
+     "why": "An ANDA must keep the same labeling as the reference listed drug; updates to match it are usually filed as a CBE supplement.",
+     "note": "This follows FDA's usual practice for generic labeling updates; check current Office of Generic Drugs advice for the change in hand."
+    },
+    "no": {
+     "cat": "PAS",
+     "src": "cfr314",
+     "at": "314.70(b)(2)(v)",
+     "why": "Only ANDAs follow a reference listed drug; for an NDA treat this as an ordinary labeling change."
+    }
+   }
+  }
+ },
+ "lab-editorial": {
+  "tree": {
+   "cat": "AR",
+   "src": "cfr314",
+   "at": "314.70(d)(2)(ix)",
+   "bioSrc": "cfr601",
+   "bioAt": "601.12(f)(3)",
+   "why": "Editorial or similar minor labeling changes go in the annual report."
+  }
+ },
+ "lab-layout": {
+  "tree": {
+   "cat": "AR",
+   "src": "g04",
+   "at": "X.D.1",
+   "why": "A label layout change with no content change is minor.",
+   "bioSrc": "cfr601",
+   "bioAt": "601.12(f)(3)"
+  }
+ },
+ "cp-submit": {
+  "tree": {
+   "cat": "PAS",
+   "src": "gcp22",
+   "at": "V",
+   "why": "A comparability protocol is submitted in a prior approval supplement (or in the original application); once approved it can lower the category of the change it covers."
+  }
+ },
+ "cp-use": {
+  "tree": {
+   "ask": "cpCategory",
+   "on": {
+    "CBE30": {
+     "cat": "CBE30",
+     "src": "gcp22",
+     "at": "VI",
+     "why": "The approved protocol set a CBE-30 for this change."
+    },
+    "CBE0": {
+     "cat": "CBE0",
+     "src": "gcp22",
+     "at": "VI",
+     "why": "The approved protocol set a CBE supplement for this change."
+    },
+    "AR": {
+     "cat": "AR",
+     "src": "gcp22",
+     "at": "VI",
+     "why": "The approved protocol set an annual report for this change."
+    }
+   }
+  }
+ },
+ "be-study-change": {
+  "tree": {
+   "cat": "PAS",
+   "src": "g04",
+   "at": "XI.A.1",
+   "why": "Changes that need in vivo bioequivalence studies need prior approval."
+  }
+ },
+ "bio-mcb": {
+  "tree": {
+   "cat": "PAS",
+   "src": "gbio21",
+   "at": "Appendix, cell banks",
+   "why": "A new master cell bank or master virus seed needs prior approval."
+  }
+ },
+ "bio-wcb": {
+  "tree": {
+   "ask": "wcbApprovedProtocol",
+   "on": {
+    "yes": {
+     "cat": "AR",
+     "src": "gbio21",
+     "at": "Appendix, cell banks",
+     "why": "A working cell bank made under an approved protocol falls in a lower category.",
+     "note": "Simplified: the app uses the annual report; check the guidance table for your product."
+    },
+    "no": {
+     "cat": "PAS",
+     "src": "gbio21",
+     "at": "Appendix, cell banks",
+     "why": "A working cell bank without an approved protocol needs prior approval."
+    }
+   }
+  }
+ },
+ "bio-purification": {
+  "tree": {
+   "ask": "bioResinMinor",
+   "on": {
+    "yes": {
+     "cat": "AR",
+     "src": "gbio21",
+     "at": "Appendix, purification",
+     "why": "Minor changes to purification parameters are annual report changes."
+    },
+    "no": {
+     "cat": "PAS",
+     "src": "gbio21",
+     "at": "Appendix, purification",
+     "why": "A new or revised purification step, resin, column size or loading scale needs prior approval."
+    }
+   }
+  }
+ },
+ "bio-viral": {
+  "tree": {
+   "cat": "PAS",
+   "src": "gbio21",
+   "at": "Appendix, viral safety",
+   "why": "Changing a virus removal or inactivation method needs prior approval."
+  }
+ },
+ "admin-ownership": {
+  "tree": {
+   "cat": "LETTER",
+   "src": "cfr31472",
+   "at": "314.72(a)",
+   "why": "The former owner and the new owner each send FDA a letter; the new owner commits to the application's conditions.",
+   "note": "For BLAs the licence is reissued to the new holder; the app keeps one route for both."
+  }
+ },
+ "admin-name-address": {
+  "tree": {
+   "cat": "LETTER",
+   "src": "cfr314",
+   "at": "314.70 (general)",
+   "why": "A name or address change without a change in ownership is notified by letter; labeling that shows the name is then updated.",
+   "note": "Simplified: the label update itself may be an annual report item."
+  }
+ }
+}
