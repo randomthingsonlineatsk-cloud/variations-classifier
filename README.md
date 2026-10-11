@@ -5,13 +5,16 @@ A browser-based practice tool for classifying post-approval changes to medicines
 - the reporting category, with a **reason trail** and the **rule behind every step** (regulation or guidance, section, version and date);
 - **what-if** toggles that show which answers would change the category, and the routes to a lower one;
 - the **filing plan**: related changes grouped in the most restrictive category, the documents and CTD sections each filing updates, the dates (earliest use, user-fee goal dates, annual report due date, the 505(o)(4) response clock) and a cover letter draft;
-- a **change package** (`change-package.json`, US or EU) that the [eCTD Dossier Builder](https://github.com/randomthingsonlineatsk-cloud/ectd-dossier-builder) imports to start a sequence of the right type.
+- a **change package** (`change-package.json`) that the [eCTD Dossier Builder](https://github.com/randomthingsonlineatsk-cloud/ectd-dossier-builder) imports to start a sequence of the right type (US, EU, India, Canada, Switzerland and Japan);
+- a **classification report** as a PDF, watermarked as training material.
+
+Seven rule sets: the **United States, the European Union, India, Canada, Switzerland, Japan and WHO prequalification**, plus **ICH Q12 lifecycle tools** and an **ICH Q5E comparability** check.
 
 Live site: https://randomthingsonlineatsk-cloud.github.io/variations-classifier/
 
 **Training only.** Every product, company and person is fictional, and application numbers are invented. Real regulation, guidance, category and form names are used so the practice is realistic; nothing here imitates an agency portal or form, and results are not regulatory advice.
 
-## What is in this release (Phases 1 to 3: United States, European Union and India)
+## What is in this release (Phases 1 to 4)
 
 **US pack, edition 2026.1.** Prior approval supplement, CBE-30, CBE-0, annual report and letters, for NDAs, ANDAs and BLAs, built from:
 
@@ -44,7 +47,50 @@ The annex conditions are shown as checklists (paraphrased; read the official tex
 
 **India pack, edition 2026.1, with the 2026 draft as a what-if.** Biological products follow CDSCO's guidance PAC/2024 (version 1.2, implemented 16 May 2024): Level I supplement, Level II notifiable change, Level III annual notification in the first quarter (shelf-life changes still need approval), Level IV record. Chemical new drugs have no codified categories in force, so the answer is a case-by-case application through SUGAM; new claims make a product a new drug again (NDCT Rules, rule 2(w)), with a decision within 90 working days. A per-case switch applies the draft G.S.R. 97(E) of 2 February 2026 (Levels I to III); because the draft gives definitions but no examples, levels for chemical drugs are inferred from the matching FDA entry, which uses the same three tests, and the result says so. Not every PAC/2024 table is modelled yet; uncovered biologic changes say so.
 
-**Labelling rollout.** One company core data sheet (CCDS) change tracked into the US prescribing information, the EU SmPC and leaflet and the Indian prescribing information: the label section, the classification in each region, a company target date, the lag and the status.
+**Canada pack, edition 2026.1.** Level I supplement (SNDS or SANDS), Level II supplement for safety labelling, Level II notifiable change (biologics only, after a No Objection Letter), Level III notice of change (pharmaceuticals at implementation, biologics within 12 months), Level III immediate notification (biologics, through a protocol), Level IV record and administrative submissions. Conditions from Appendix 1 are checklists; when one is not met the change moves up a level.
+
+| Source | Version |
+|---|---|
+| Post-NOC Changes: Framework Document (pharmaceutical drugs) | Revised 2020-03-30 |
+| Post-NOC Changes: Quality Document, Appendix 1 | Revision implemented 2019-07-31 |
+| Guidance on post-NOC changes: Framework for biologic and Schedule C drugs; Quality for biologics | 2026-05-15 |
+| Post-NOC Changes: Safety and Efficacy Document | 2020-04-01 |
+| Performance standards (review 1 targets: 180, 300 and 120 days; notifiable change 90 days) | Read 2026-10-11 |
+| Health Canada notice on ICH Q12 and Q14 (PACMPs for biologics from November 2026; no ECs yet) | 2026 |
+
+**Switzerland pack, edition 2026.1.** Swissmedic's revised list of variations (Annex 7 TPLRO, in force 1 February 2026) is harmonised as far as possible with the EU list, so the pack starts from the EU 2026.1 trees and conditions, then swaps the sources, Swiss wording and procedures: Type IA-IN within one month, Type IB tacitly accepted after 70 days, Type II up to 270 days of Swissmedic time, multiple applications on the longest time limit, no EU worksharing, and no Article 61(3) route.
+
+| Source | Version |
+|---|---|
+| TPLRO Annex 7, revised list of variations; TPO Articles 21 to 24 | In force 1 February 2026 |
+| Swissmedic questions and answers on variations and extensions HMP | 01.10.2026 |
+| Swissmedic guidance: Time limits for authorisation applications | Version 10.0, valid from 01.09.2025 |
+
+**Japan pack, edition 2026.1.** Japan has no list of change types: the approval form decides. Approved matters need a partial change approval (site changes on a rapid track of about 3 months); minor change items are notified within 30 days; items outside the form need no filing. Article 47 of the Enforcement Regulations keeps specification, indication, dosage, pathogen inactivation and quality-affecting process changes out of the minor route whatever the form says. Includes the 2024 moderate change trial, the 2025 annual report trial, change plans (PACMP, effective 40 working days after acceptance) and new approvals for new strengths, forms, routes and brand names.
+
+| Source | Version |
+|---|---|
+| PMD Act, Article 14; Enforcement Regulations, Article 47 | As amended |
+| MHLW notice 0927-4 (moderate change items, trial) | 27 September 2024 |
+| MHLW notice 0213-5 (annual report, trial) | 13 February 2025 |
+| MHLW Q&A on change plans (PACMP) | 3 October 2025 |
+| MHLW study group review-time survey (median 6 months chemical, 12 biologics; not a target) | 13 October 2023 |
+
+**WHO prequalification pack, edition 2026.1.** Variations to prequalified multisource finished products: annual notification, immediate notification, minor variation (implement if WHO starts no correspondence within 60 days of acknowledgement), major variation (letter of acceptance) and new applications. Unlisted changes are major by default unless justified as an unclassified minor (suffix u) or agreed with PQT. Vaccines and biotherapeutics are outside this pack.
+
+| Source | Version |
+|---|---|
+| WHO guidelines on variations to a prequalified product, TRS 981 Annex 3 | 2013 |
+| PQT frequently asked questions on variations | Revision 03, 15 December 2022 |
+| PQT variations approval mechanism and timeline table | October 2016 (prevails over the guideline) |
+
+**Lifecycle tools (ICH Q12 and Q5E).** For one product: an established conditions register with a risk-based suggestion (prior approval, moderate or low notification, or not an EC) mapped to the US, EU, Swiss and Japanese categories, with a link that classifies a change to that element; a PACMP builder (changes covered, studies and acceptance criteria, step 1 classified in every region, the step 2 category per region); a PLCM document compiled from them (preview, print, HTML download); and an ICH Q5E comparability checklist for biologics (physicochemical, biological activity, purity, stability and process attributes) with a verdict: highly similar, justified differences, bridging studies likely, or incomplete.
+
+**Certificate and reports.** A separate portfolio certificate for this app (every lesson check, every mission at 70 or more, a mixed quiz round, drills in four regions; distinction for 14 expert missions at 85 or more), with a verification code and a record of results, and a statement of progress at any time. Neither is an accreditation. Every case can be saved as a classification report PDF, watermarked as training material.
+
+**Classroom mode.** Uses the classroom server of the eCTD Dossier Builder (one Cloudflare Worker and D1 database, `vc_` tables, routes under `/vc/v1`). Instructors create a class, set missions with a level and a due date, see each student's case and score, re-score it in their own browser, comment, download results as CSV and see a leaderboard; students join with a code. Without a server the app stays browser-only.
+
+**Labelling rollout.** One company core data sheet (CCDS) change tracked into every regional label the product has (US prescribing information, EU SmPC and leaflet, Indian prescribing information, Canadian product monograph, Swiss information texts, Japanese package insert, WHO PQ SmPC): the label section, the classification in each region, a company target date, the lag and the status.
 
 **Change requests.** A training change request (present and proposed state, reason, planned date) that suggests catalogue changes from its description, writes a regulatory impact statement for every market, records the sign-off with the pack editions used, and moves across a status board.
 
@@ -52,30 +98,34 @@ The annex conditions are shown as checklists (paraphrased; read the official tex
 
 **Drills.** Timed sets of ten classification cases per region, generated from the decision trees so each has one right answer.
 
-**All regions at once.** A case can cover the US and the EU: shared questions are answered once and the answers sit side by side, with a filing plan per region. The Compare page lists every category each change can reach in each region.
+**All regions at once.** A case can cover any of the seven regions the product is registered in: shared questions are answered once and the answers sit side by side, with a filing plan per region. The Compare page lists every category each change can reach in each region.
 
 Where the app simplifies a rule, the result says so; the Sources page lists every simplification.
 
-**Change catalogue.** 73 region-neutral changes in ten groups (sites, process, composition, specifications and methods, container closure, stability, labeling and safety, protocols, biologics, administrative), each with a decision tree in the US pack, plain-language help and the supporting documents with their CTD sections.
+**Change catalogue.** 120 region-neutral changes in ten groups (sites, process, composition, specifications and methods, container closure, stability, labeling and safety, protocols and lifecycle tools, biologics, administrative), each with a decision tree in every pack, plain-language help and the supporting documents with their CTD sections.
 
-**Products.** Seven fictional products with US, EU and India registration profiles: six shared with the eCTD Dossier Builder (Ostrevia tablets, Talmisartan generic tablets, Talvera XR capsules, Nelvaprox injection, Arventa and Selvanta antibodies) and Brezovent, a metered-dose inhaler. A product can also be added from an eCTD Dossier Builder project file.
+**Products.** Eight fictional products with a registration profile for each region they are sold in: six shared with the eCTD Dossier Builder (Ostrevia tablets, Talmisartan generic tablets, Talvera XR capsules, Nelvaprox injection, Arventa and Selvanta antibodies), Brezovent, a metered-dose inhaler, and Malvaren, a WHO-prequalified dispersible antimalarial tablet. A product can also be added from an eCTD Dossier Builder project file.
 
-**Learning.** Eleven lessons with checks, twenty scored missions at three levels (guided, standard, expert) across the US, the EU and India, a 90-question quiz bank with flashcards, timed drills, a glossary and a progress page.
+**Learning.** Seventeen lessons with checks, twenty-eight scored missions at three levels (guided, standard, expert) across all seven regions, a 110-question quiz bank with flashcards, timed drills per region, a glossary and a progress page.
 
 **Data.** Everything stays in the browser (IndexedDB). Cases, attempts and products carry a user ID and a class ID; export and import the whole project as a `.vcproj.json` file.
 
-## Planned phases
+## Phases
 
-| Phase | Content |
-|---|---|
-| 4 | ICH Q12 tools (established conditions, PACMP builder, PLCM document), Q5E checklist; Canada, Switzerland, Japan and WHO PQ packs; certificate; classroom on the shared Cloudflare Worker |
+| Phase | Content | Status |
+|---|---|---|
+| 1 | US pack, engine, filing plan, change package, missions and lessons | Done |
+| 2 | EU pack (2025 and 2013 guidelines), condition checklists, grouping, worksharing, EU clocks, comparison | Done |
+| 3 | India pack with the 2026 draft as a what-if, labelling rollout, change requests, rollout planner, drills | Done |
+| 4 | Canada, Switzerland, Japan and WHO PQ packs; 120 changes; ICH Q12 and Q5E tools; certificate and report PDFs; classroom mode | Done |
 
 ## How it works
 
 - `src/data/catalogue.json`, `questions.json`, `evidence.json`: the region-neutral catalogue, the shared question bank and the supporting documents.
 - `src/packs/<region>/<edition>/`: a content pack. `pack.json` holds the sources (with versions and dates), the categories, clocks, Module 1 documents, eCTD submission types and the change log; `entries.json` holds one decision tree per change.
 - `src/engine/`: the classifier (tree walker, ranges for unanswered questions, what-if), filings and dates, the hand-off file, missions and storage. No UI code.
-- `tests/`: engine tests and a pack integrity test (every tree reaches an outcome, every outcome cites a known source).
+- `tools/packs/`: the Python generators that write the Phase 4 packs and entries (`p4_*.py`), so every tree can be reviewed and rebuilt; `tools/content_p4.py` adds the Phase 4 lessons, missions, quiz and glossary.
+- `tests/`: engine tests per phase and a pack integrity test (every tree reaches an outcome, every outcome cites a known source, every pack covers the catalogue).
 
 ## Run it locally
 
