@@ -5,6 +5,7 @@ import { STEPS, suggestChanges, impactStatement } from '../engine/intake.js';
 import { rolloutPlan } from '../engine/rollout.js';
 import { rolloutRows, kindOf, STATUSES } from '../engine/labelling.js';
 import { download } from '../engine/io.js';
+import { rolloutFile } from '../engine/labelhandoff.js';
 import { Cat, Range } from '../components/ui.jsx';
 
 // ---------------------------------------------------------------- Change request (intake)
@@ -148,6 +149,10 @@ export function LabellingTab({ k, product, mutate }) {
         <h2 style={{ fontSize: 'var(--step-1)' }}>CCDS {k.ccds.version}: {kd.label}</h2>
         <p style={{ margin: '.25rem 0' }}>{k.ccds.text}</p>
         <p className="small muted" style={{ margin: 0 }}>Core data sheet approved {k.ccds.date}. Company target to submit each region: {kd.safety ? 30 : 90} days (a training default, not a rule). Answer the classification questions on the Classify tab.</p>
+        <div className="row" style={{ marginTop: '.6rem' }}>
+          <button className="btn small" onClick={() => download(`${(product.brandName ?? 'product').toLowerCase()}-ccds-${k.ccds.version}-rollout.json`, JSON.stringify(rolloutFile(k, product), null, 1))}>Download rollout file for the Labelling Workbench</button>
+          {k.labellingLink && <span className="small muted">Started from a Labelling Workbench change request; import this file back there to update its tracker.</span>}
+        </div>
       </section>
       {rows.map((r) => (
         <section key={r.region} className={`filing${r.late ? ' late' : ''}`}>
