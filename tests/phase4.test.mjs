@@ -7,6 +7,8 @@ import { filingsFor, timelineFor, coverLetter, ectdFor, m1For } from '../src/eng
 import { BUILTIN_PRODUCTS, newCase, addChange } from '../src/engine/model.js';
 import { MISSIONS, missionTruth } from '../src/engine/missions.js';
 import { buildChangePackage } from '../src/engine/handoff.js';
+import { certificateStatus, verificationCode } from '../src/engine/certificate.js';
+import { certificatePdf, reportPdf, clean } from '../src/engine/pdf.js';
 import { suggestEC, regionCategory, newQ5e, q5eVerdict, pacmpStep1, newPlcm, newEc, plcmHtml } from '../src/engine/lifecycle.js';
 
 let n = 0;
@@ -167,4 +169,31 @@ t('ICH Q5E: verdicts', () => {
   assert.equal(q5eVerdict(d).level, 'bridging');
 });
 
+t('certificate: criteria, verification code and PDFs', () => {
+  const none = certificateStatus({ attempts: [], lessonsDone: {} });
+  assert.equal(none.eligible, false);
+  const attempts = [...MISSIONS.map((m) => ({ kind: 'mission', missionId: m.id, score: 90, difficulty: 'expert' })), { kind: 'quiz', topic: 'all', score: 85, right: 17, total: 20 },
+    ...['us', 'eu', 'jp', 'who'].map((r) => ({ kind: 'drill', region: r, score: 80 }))];
+  const lessonsDone = Object.fromEntries(Array.from({ length: 17 }, (_, i) => [i + 1, { best: 80 }]));
+  const s = certificateStatus({ attempts, lessonsDone });
+  assert.equal(s.eligible, true);
+  assert.equal(s.distinction, true);
+  const code = verificationCode({ name: ' Test Learner ', userId: 'u-1', status: s, date: '2026-10-11' });
+  assert.match(code, /^VC-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}$/);
+  assert.equal(code, verificationCode({ name: 'Test Learner', userId: 'u-1', status: s, date: '2026-10-11' }));
+  assert.equal(clean('Type IA\u2013IN \u2265 30\u00b0C'), 'Type IA-IN >= 30\u00b0C');
+});
+
+const pdfs = async () => {
+  const s = certificateStatus({ attempts: [], lessonsDone: {} });
+  const bytes = await certificatePdf({ name: 'Test Learner', userId: 'u-1', status: s, date: '2026-10-11' });
+  assert.equal(new TextDecoder().decode(bytes.slice(0, 5)), '%PDF-');
+  const p = P('mab-infusion');
+  const k = newCase({ product: p, regions: ['us', 'eu', 'ca', 'ch', 'jp'], submitDate: '2026-11-02' });
+  addChange(k, 'bio-wcb').answers = { wcbApprovedProtocol: 'yes', jpItem: 'minor' };
+  const r = await reportPdf({ kase: k, product: p, user: { userId: 'u-1' } });
+  assert.ok(r.length > 3000);
+  n += 1;
+};
+await pdfs();
 console.log(`phase 4 tests: ${n} passed`);
