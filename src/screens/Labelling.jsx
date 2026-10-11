@@ -1,11 +1,25 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { useApp, go } from '../ctx.js';
 import { READY, regionOf, regionsFor } from '../engine/packs.js';
 import { today } from '../engine/model.js';
 import { KINDS, newCcdsCase, rolloutRows } from '../engine/labelling.js';
+import { parseLabellingChange, caseFromLabellingChange } from '../engine/labelhandoff.js';
+import { readFile } from '../engine/io.js';
 
 export default function Labelling() {
-  const { cases, products, productById, user, saveCase } = useApp();
+  const { cases, products, productById, user, saveCase, toast } = useApp();
+  const fileRef = useRef(null);
+  const importLw = async (file) => {
+    try {
+      const d = parseLabellingChange(await readFile(file));
+      const product = productById(d.product.id);
+      if (!product) throw new Error(`This app has no product with the id "${d.product.id}".`);
+      const { kase, skipped } = caseFromLabellingChange(d, product, user, regionsFor(product));
+      await saveCase(kase);
+      toast(`Rollout started from the Labelling Workbench (${kase.regions.length} region(s)).${skipped.length ? ` Not set up here for this product: ${skipped.join(', ').toUpperCase()}.` : ''}`, skipped.length ? 'warn' : 'info');
+      go(`/case/${kase.id}`);
+    } catch (e) { toast(e.message, 'error'); }
+  };
   const [form, setForm] = useState({ productId: products[0].id, kind: 'adr', text: '', version: '', ccdsDate: today(), regions: READY });
   const items = cases.filter((c) => c.ccds);
   const create = async (e) => {
@@ -25,7 +39,10 @@ export default function Labelling() {
         <label className="field">CCDS version<input type="text" value={form.version} onChange={set('version')} placeholder="for example 4.0" /></label>
         <label className="field">CCDS approval date<input type="text" inputMode="numeric" value={form.ccdsDate} onChange={set('ccdsDate')} placeholder="yyyy-mm-dd" /></label>
         <label className="field" style={{ gridColumn: '1 / -1' }}>Core wording (fictional)<textarea value={form.text} onChange={set('text')} style={{ minHeight: '4rem', fontFamily: 'var(--font)' }} placeholder="for example: Photosensitivity reactions have been reported. Advise patients to avoid strong sunlight." /></label>
-        <div><button className="btn primary" type="submit">Start the rollout</button></div>
+        <div className="row"><button className="btn primary" type="submit">Start the rollout</button>
+          <button className="btn" type="button" onClick={() => fileRef.current?.click()}>Import a change from the Labelling Workbench</button>
+          <input ref={fileRef} type="file" accept=".json,application/json" hidden onChange={(e) => { if (e.target.files?.[0]) importLw(e.target.files[0]); e.target.value = ''; }} />
+        </div>
       </form>
       {items.length === 0 ? <p className="muted">No CCDS changes yet.</p> : (
         <div className="table-wrap" tabIndex={0}>
