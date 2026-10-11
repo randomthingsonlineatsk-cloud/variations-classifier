@@ -14,7 +14,7 @@ import { Cat, Range, Ladder, Cite, Badge } from '../components/ui.jsx';
 const short = (r) => regionOf(r)?.short ?? r.toUpperCase();
 
 export default function CaseView({ id }) {
-  const { cases, productById, saveCase } = useApp();
+  const { cases, productById, saveCase, user, toast } = useApp();
   const stored = cases.find((c) => c.id === id);
   const [k, setK] = useState(() => (stored ? structuredClone(stored) : null));
   const [tab, setTab] = useState(() => (stored?.intake ? 'intake' : stored?.ccds ? 'labelling' : 'classify'));
@@ -83,7 +83,14 @@ export default function CaseView({ id }) {
             </div>
           </div>
           <div className="row no-print">
-            <button className="btn small" onClick={() => window.print()}>Print or save as PDF</button>
+            <button className="btn small" onClick={async () => {
+              try {
+                const { reportPdf } = await import('../engine/pdf.js');
+                const bytes = await reportPdf({ kase: k, product, user });
+                download(`classification-report-${k.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').slice(0, 60)}.pdf`, bytes, 'application/pdf');
+              } catch (e) { toast(`Could not make the report: ${e.message}`, 'error'); }
+            }} disabled={!!mission && !submitted} title={mission && !submitted ? 'Available after you submit the mission' : undefined}>Classification report (PDF)</button>
+            <button className="btn small ghost" onClick={() => window.print()}>Print</button>
           </div>
         </div>
         <div className="tabs" role="tablist" aria-label="Case views">

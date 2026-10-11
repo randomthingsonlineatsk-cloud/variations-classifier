@@ -73,8 +73,9 @@ def outcome(o):
     o['src'] = SRC.get(o['src'], o['src'])
     o['why'] = swap_text(o['why'].replace('Article 3 of Regulation (EC) No 1234/2008', 'the default for other variations')
                          .replace('EMA', 'Swissmedic'))
+    o['at'] = o['at'].replace('EMA Q&A', 'Swissmedic Q&A')
     if o.get('note'):
-        o['note'] = swap_text(o['note'])
+        o['note'] = swap_text(o['note'].replace('EMA', 'Swissmedic'))
     return o
 
 
