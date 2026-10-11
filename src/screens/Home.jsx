@@ -7,7 +7,7 @@ import { exportProject, parseProjectFile, download, readFile } from '../engine/i
 import { Cat, Range } from '../components/ui.jsx';
 
 export default function Home() {
-  const { user, cases, attempts, products, lessons, saveCase, deleteCase, productById, importAll, toast } = useApp();
+  const { user, cases, attempts, products, lessons, lifecycle, saveCase, deleteCase, productById, importAll, toast } = useApp();
   const [productId, setProductId] = useState(products[0].id);
   const [q, setQ] = useState('');
   const [changeId, setChangeId] = useState('');
@@ -24,12 +24,12 @@ export default function Home() {
     go(`/case/${k.id}`);
   };
   const doExport = () => {
-    download(`variations-classifier-${new Date().toISOString().slice(0, 10)}.vcproj.json`, exportProject({ user, cases, attempts, products: products.filter((p) => p.custom), lessons }));
+    download(`variations-classifier-${new Date().toISOString().slice(0, 10)}.vcproj.json`, exportProject({ user, cases, attempts, products: products.filter((p) => p.custom), lessons, lifecycle }));
   };
   const doImport = async (file) => {
     try {
       const text = await readFile(file);
-      const data = parseProjectFile(text, user, { cases: new Set(cases.map((c) => c.id)), attempts: new Set(attempts.map((a) => a.id)), products: new Set() });
+      const data = parseProjectFile(text, user, { cases: new Set(cases.map((c) => c.id)), attempts: new Set(attempts.map((a) => a.id)), products: new Set(), lifecycle: new Set(lifecycle.map((d) => d.id)) });
       await importAll(data);
       toast(`Imported ${data.cases.length} case(s) and ${data.attempts.length} attempt(s).`);
     } catch (err) { toast(err.message, 'error'); }

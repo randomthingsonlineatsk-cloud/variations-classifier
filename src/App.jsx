@@ -17,6 +17,7 @@ import Compare from './screens/Compare.jsx';
 import Requests from './screens/Requests.jsx';
 import Labelling from './screens/Labelling.jsx';
 import Drills from './screens/Drills.jsx';
+import Lifecycle from './screens/Lifecycle.jsx';
 
 function useHashRoute() {
   const read = () => (window.location.hash.replace(/^#/, '') || '/').split('/').filter(Boolean);
@@ -30,7 +31,7 @@ function useHashRoute() {
 }
 
 const NAV = [
-  ['', 'Cases'], ['requests', 'Requests'], ['labelling', 'Labelling'], ['catalogue', 'Catalogue'], ['compare', 'Compare'], ['products', 'Products'], ['learn', 'Learn'],
+  ['', 'Cases'], ['requests', 'Requests'], ['labelling', 'Labelling'], ['catalogue', 'Catalogue'], ['compare', 'Compare'], ['lifecycle', 'Lifecycle'], ['products', 'Products'], ['learn', 'Learn'],
   ['missions', 'Missions'], ['quiz', 'Quiz'], ['progress', 'Progress'], ['sources', 'Sources'],
 ];
 
@@ -40,6 +41,7 @@ export default function App() {
   const [cases, setCases] = useState([]);
   const [attempts, setAttempts] = useState([]);
   const [custom, setCustom] = useState([]);
+  const [lifecycle, setLifecycle] = useState([]);
   const [lessons, setLessons] = useState({});
   const [theme, setTheme] = useState('system');
   const [toasts, setToasts] = useState([]);
@@ -52,10 +54,11 @@ export default function App() {
   }, []);
 
   const reload = useCallback(async () => {
-    const [c, a, p] = await Promise.all([db.all('cases'), db.all('attempts'), db.all('products')]);
+    const [c, a, p, l] = await Promise.all([db.all('cases'), db.all('attempts'), db.all('products'), db.all('lifecycle')]);
     c.forEach(migrateCase);
     c.sort((x, y) => y.updatedAt.localeCompare(x.updatedAt));
-    setCases(c); setAttempts(a); setCustom(p);
+    l.sort((x, y) => y.updatedAt.localeCompare(x.updatedAt));
+    setCases(c); setAttempts(a); setCustom(p); setLifecycle(l);
   }, []);
 
   useEffect(() => {
@@ -78,7 +81,9 @@ export default function App() {
 
   const products = useMemo(() => [...BUILTIN_PRODUCTS, ...custom], [custom]);
   const ctx = useMemo(() => ({
-    user, cases, attempts, products, lessons, toast, reload,
+    user, cases, attempts, products, lessons, lifecycle, toast, reload,
+    saveDoc: async (d) => { await db.put('lifecycle', { ...d, updatedAt: new Date().toISOString() }); await reload(); },
+    deleteDoc: async (id) => { await db.del('lifecycle', id); await reload(); },
     productById: (id) => products.find((p) => p.id === id),
     saveCase: async (k) => { await db.put('cases', touch(k)); await reload(); },
     deleteCase: async (id) => { await db.del('cases', id); await reload(); },
@@ -93,14 +98,15 @@ export default function App() {
       const next = { ...lessons, [id]: { best: Math.max(score, lessons[id]?.best ?? 0), at: new Date().toISOString(), userId: user?.userId, classId: user?.classId ?? null } };
       setLessons(next); await setMeta('lessons', next);
     },
-    importAll: async ({ cases: cs0, attempts: as, products: ps, lessons: ls }) => {
+    importAll: async ({ cases: cs0, attempts: as, products: ps, lessons: ls, lifecycle: lc = [] }) => {
       for (const c of cs0) await db.put('cases', migrateCase(c));
+      for (const d of lc) await db.put('lifecycle', d);
       for (const a of as) await db.put('attempts', a);
       for (const p of ps) await db.put('products', p);
       if (ls && Object.keys(ls).length) { const next = { ...ls, ...lessons }; setLessons(next); await setMeta('lessons', next); }
       await reload();
     },
-  }), [user, cases, attempts, products, lessons, toast, reload]);
+  }), [user, cases, attempts, products, lessons, lifecycle, toast, reload]);
 
   const [section, arg] = route;
   let screen;
@@ -119,6 +125,7 @@ export default function App() {
   else if (section === 'requests') screen = <Requests />;
   else if (section === 'labelling') screen = <Labelling />;
   else if (section === 'drills') screen = <Drills />;
+  else if (section === 'lifecycle') screen = <Lifecycle tab={arg} />;
   else screen = <div className="page"><h1>Page not found</h1><p><a href="#/">Go to your cases</a></p></div>;
 
   const cycleTheme = async () => {

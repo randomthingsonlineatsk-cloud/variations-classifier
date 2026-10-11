@@ -2,7 +2,7 @@ import React, { useMemo, useState } from 'react';
 import { useApp, go } from '../ctx.js';
 import data from '../data/lessons.json';
 import quiz from '../data/quiz.json';
-import { CHANGE } from '../engine/packs.js';
+import { CHANGE, regionsFor } from '../engine/packs.js';
 import { newCase, addChange } from '../engine/model.js';
 
 export default function Lesson({ id }) {
@@ -14,8 +14,9 @@ export default function Lesson({ id }) {
   const done = Object.keys(ans).length === qs.length;
   const right = qs.filter((q) => ans[q.id] === q.answer).length;
   const tryIt = async () => {
-    const product = products.find((p) => (CHANGE[l.tryChange].scope === 'bio' ? p.facts.bio : !p.facts.bio)) ?? products[0];
-    const k = newCase({ product, user, regions: [l.region ?? 'us'], name: `Lesson ${l.id}: ${CHANGE[l.tryChange].title}` });
+    const region = l.region ?? 'us';
+    const product = products.find((p) => regionsFor(p).includes(region) && (CHANGE[l.tryChange].scope === 'bio' ? p.facts.bio : !p.facts.bio)) ?? products[0];
+    const k = newCase({ product, user, regions: [region], name: `Lesson ${l.id}: ${CHANGE[l.tryChange].title}` });
     addChange(k, l.tryChange);
     await saveCase(k);
     go(`/case/${k.id}`);

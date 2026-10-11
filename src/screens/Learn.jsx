@@ -12,7 +12,7 @@ export default function Learn() {
       <section key={r} style={{ marginBottom: '1.5rem' }}>
       <h2 style={{ fontSize: 'var(--step-2)' }}>{label}</h2>
       <div className="lesson-grid">
-        {data.lessons.filter((l) => (l.region ?? 'us') === r).map((l) => (
+        {data.lessons.filter((l) => (l.section ?? l.region ?? 'us') === r).map((l) => (
           <a key={l.id} className="lesson-card" href={`#/learn/${l.id}`}>
             <span className="n">{l.id}</span>
             <strong>{l.title}</strong>
