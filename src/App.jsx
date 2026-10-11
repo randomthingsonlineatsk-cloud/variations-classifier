@@ -18,6 +18,7 @@ import Requests from './screens/Requests.jsx';
 import Labelling from './screens/Labelling.jsx';
 import Drills from './screens/Drills.jsx';
 import Lifecycle from './screens/Lifecycle.jsx';
+import Classroom from './screens/Classroom.jsx';
 
 function useHashRoute() {
   const read = () => (window.location.hash.replace(/^#/, '') || '/').split('/').filter(Boolean);
@@ -32,7 +33,7 @@ function useHashRoute() {
 
 const NAV = [
   ['', 'Cases'], ['requests', 'Requests'], ['labelling', 'Labelling'], ['catalogue', 'Catalogue'], ['compare', 'Compare'], ['lifecycle', 'Lifecycle'], ['products', 'Products'], ['learn', 'Learn'],
-  ['missions', 'Missions'], ['quiz', 'Quiz'], ['progress', 'Progress'], ['sources', 'Sources'],
+  ['missions', 'Missions'], ['quiz', 'Quiz'], ['progress', 'Progress'], ['classroom', 'Classroom'], ['sources', 'Sources'],
 ];
 
 export default function App() {
@@ -85,6 +86,7 @@ export default function App() {
     saveDoc: async (d) => { await db.put('lifecycle', { ...d, updatedAt: new Date().toISOString() }); await reload(); },
     deleteDoc: async (id) => { await db.del('lifecycle', id); await reload(); },
     productById: (id) => products.find((p) => p.id === id),
+    updateUser: async (fields) => { const next = { ...user, ...fields }; setUser(next); await setMeta('user', next); },
     saveCase: async (k) => { await db.put('cases', touch(k)); await reload(); },
     deleteCase: async (id) => { await db.del('cases', id); await reload(); },
     saveProduct: async (p) => { await db.put('products', { ...p, userId: user?.userId ?? null, classId: user?.classId ?? null }); await reload(); },
@@ -126,6 +128,7 @@ export default function App() {
   else if (section === 'labelling') screen = <Labelling />;
   else if (section === 'drills') screen = <Drills />;
   else if (section === 'lifecycle') screen = <Lifecycle tab={arg} />;
+  else if (section === 'classroom') screen = <Classroom />;
   else screen = <div className="page"><h1>Page not found</h1><p><a href="#/">Go to your cases</a></p></div>;
 
   const cycleTheme = async () => {

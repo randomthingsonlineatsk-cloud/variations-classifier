@@ -28,7 +28,7 @@ export default function Labelling() {
         <div><button className="btn primary" type="submit">Start the rollout</button></div>
       </form>
       {items.length === 0 ? <p className="muted">No CCDS changes yet.</p> : (
-        <div className="table-wrap">
+        <div className="table-wrap" tabIndex={0}>
           <table className="data">
             <thead><tr><th>CCDS change</th>{READY.map((r) => <th key={r}>{regionOf(r).label}</th>)}</tr></thead>
             <tbody>

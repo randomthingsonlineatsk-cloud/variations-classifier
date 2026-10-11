@@ -56,7 +56,7 @@ export function IntakeTab({ k, product, mutate, goClassify, setSel }) {
 
       <section className="panel">
         <h2 style={{ fontSize: 'var(--step-1)' }}>Regulatory impact statement</h2>
-        <div className="table-wrap">
+        <div className="table-wrap" tabIndex={0}>
           <table className="data">
             <thead><tr><th>Region</th><th>Filings</th><th>Earliest use</th></tr></thead>
             <tbody>

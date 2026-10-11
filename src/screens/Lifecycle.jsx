@@ -203,7 +203,7 @@ function PacmpTab({ doc, save, product, user, saveCase }) {
           </section>
           <section className="panel">
             <h2 style={{ fontSize: 'var(--step-1)' }}>Step 1: submitting the protocol</h2>
-            <div className="table-wrap"><table className="data"><thead><tr><th>Region</th><th>Category</th><th>Rule</th></tr></thead>
+            <div className="table-wrap" tabIndex={0}><table className="data"><thead><tr><th>Region</th><th>Category</th><th>Rule</th></tr></thead>
               <tbody>{step1.map((s) => <tr key={s.region}><td>{s.label}</td><td>{s.result.status === 'done' ? <Cat pack={s.pack} id={s.result.category} label="long" /> : <Range pack={s.pack} min={s.result.min} max={s.result.max} />}</td><td className="small">{s.result.outcome?.why ?? 'Depends on the product.'}</td></tr>)}</tbody></table></div>
           </section>
           <section className="panel">
@@ -264,7 +264,7 @@ function PlcmTab({ doc, save, product, stored, deleteDoc, toast }) {
             <h3 style={{ fontSize: 'var(--step-0)' }}>{s.h}</h3>
             {s.body?.map((b, i) => <p key={i} className="small">{b}</p>)}
             {s.table && (
-              <div className="table-wrap"><table className="data"><thead><tr>{s.table.head.map((h) => <th key={h}>{h}</th>)}</tr></thead>
+              <div className="table-wrap" tabIndex={0}><table className="data"><thead><tr>{s.table.head.map((h) => <th key={h}>{h}</th>)}</tr></thead>
                 <tbody>{s.table.rows.length ? s.table.rows.map((r, i) => <tr key={i}>{r.map((c, j) => <td key={j} className="small">{c}</td>)}</tr>) : <tr><td colSpan={s.table.head.length} className="muted">No established conditions yet: add them on the first tab.</td></tr>}</tbody></table></div>
             )}
           </section>

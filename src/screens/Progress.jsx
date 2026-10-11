@@ -51,7 +51,7 @@ export default function Progress() {
         <div className="panel"><div className="score-big">{cases.filter((c) => !c.missionId).length}</div><div className="small muted">own cases</div></div>
       </div>
       <h2 style={{ fontSize: 'var(--step-2)' }}>Missions</h2>
-      <div className="table-wrap">
+      <div className="table-wrap" tabIndex={0}>
         <table className="data">
           <thead><tr><th>Mission</th><th>Best score</th><th>Level of best</th><th>Attempts</th></tr></thead>
           <tbody>{ms.map(({ m, best, tries, level }) => <tr key={m.id}><td>{m.id}. {m.title}</td><td>{best ?? '-'}</td><td>{level ?? '-'}</td><td>{tries}</td></tr>)}</tbody>
