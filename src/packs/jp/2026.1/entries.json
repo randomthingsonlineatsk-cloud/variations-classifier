@@ -1,0 +1,3803 @@
+{
+ "dp-site-move": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCAR",
+     "src": "rapid",
+     "at": "Rapid partial change",
+     "why": "The manufacturing site is written as an approved matter, so it needs a partial change approval on the rapid track for site changes (about 3 months)."
+    },
+    "minor": {
+     "cat": "MCN",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The manufacturing site is marked as a minor change item in the approval form, so it is notified within 30 days after the change."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "The manufacturing site is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "The manufacturing site is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The manufacturing site is not in the approval form, so no filing is needed; manage it in the quality system."
+    }
+   }
+  }
+ },
+ "ds-site-move": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCAR",
+     "src": "rapid",
+     "at": "Rapid partial change",
+     "why": "The drug substance manufacturing site is written as an approved matter, so it needs a partial change approval on the rapid track for site changes (about 3 months)."
+    },
+    "minor": {
+     "cat": "MCN",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The drug substance manufacturing site is marked as a minor change item in the approval form, so it is notified within 30 days after the change."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "The drug substance manufacturing site is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "The drug substance manufacturing site is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The drug substance manufacturing site is not in the approval form, so no filing is needed; manage it in the quality system."
+    }
+   }
+  }
+ },
+ "ds-intermediate-site": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The intermediate manufacturing site is written as an approved matter, so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "MCN",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The intermediate manufacturing site is marked as a minor change item in the approval form, so it is notified within 30 days after the change."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "The intermediate manufacturing site is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "The intermediate manufacturing site is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The intermediate manufacturing site is not in the approval form, so no filing is needed; manage it in the quality system."
+    }
+   }
+  }
+ },
+ "primary-pack-site": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The packaging site is written as an approved matter, so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "MCN",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The packaging site is marked as a minor change item in the approval form, so it is notified within 30 days after the change."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "The packaging site is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "The packaging site is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The packaging site is not in the approval form, so no filing is needed; manage it in the quality system."
+    }
+   }
+  }
+ },
+ "secondary-pack-site": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The packaging site is written as an approved matter, so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "MCN",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The packaging site is marked as a minor change item in the approval form, so it is notified within 30 days after the change."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "The packaging site is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "The packaging site is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The packaging site is not in the approval form, so no filing is needed; manage it in the quality system."
+    }
+   }
+  }
+ },
+ "labeling-site": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The labelling site is written as an approved matter, so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "MCN",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The labelling site is marked as a minor change item in the approval form, so it is notified within 30 days after the change."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "The labelling site is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "The labelling site is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The labelling site is not in the approval form, so no filing is needed; manage it in the quality system."
+    }
+   }
+  }
+ },
+ "testing-site": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The testing site is written as an approved matter, so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "MCN",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The testing site is marked as a minor change item in the approval form, so it is notified within 30 days after the change."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "The testing site is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "The testing site is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The testing site is not in the approval form, so no filing is needed; manage it in the quality system."
+    }
+   }
+  }
+ },
+ "ink-imprint-site": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The site is written as an approved matter, so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "MCN",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The site is marked as a minor change item in the approval form, so it is notified within 30 days after the change."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "The site is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "The site is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The site is not in the approval form, so no filing is needed; manage it in the quality system."
+    }
+   }
+  }
+ },
+ "component-sterilization-site": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The component sterilisation arrangement is written as an approved matter, so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "MCN",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The component sterilisation arrangement is marked as a minor change item in the approval form, so it is notified within 30 days after the change."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "The component sterilisation arrangement is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "The component sterilisation arrangement is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The component sterilisation arrangement is not in the approval form, so no filing is needed; manage it in the quality system."
+    }
+   }
+  }
+ },
+ "fill-line-add": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "reg47",
+     "at": "Article 47(1)",
+     "why": "A filling line change that may affect sterility assurance is excluded from minor changes by Article 47(1), so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "PCA",
+     "src": "reg47",
+     "at": "Article 47(1)",
+     "why": "Even though the item is marked as minor, Article 47(1) excludes this kind of change from the minor route: partial change approval."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "A filling line change that may affect sterility assurance is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "A filling line change that may affect sterility assurance is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "A filling line change that may affect sterility assurance is not in the approval form, so no filing is needed."
+    }
+   }
+  }
+ },
+ "dp-equipment-same": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The equipment is written as an approved matter, so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "MCN",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The equipment is marked as a minor change item in the approval form, so it is notified within 30 days after the change."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "The equipment is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "The equipment is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The equipment is not in the approval form, so no filing is needed; manage it in the quality system."
+    }
+   }
+  }
+ },
+ "dp-process-change": {
+  "tree": {
+   "ask": "majorImpact",
+   "on": {
+    "yes": {
+     "ask": "jpItem",
+     "on": {
+      "pca": {
+       "cat": "PCA",
+       "src": "reg47",
+       "at": "Article 47(1)",
+       "why": "A process change that affects the nature, properties or safety of the product is excluded from minor changes by Article 47(1), so it needs a partial change approval."
+      },
+      "minor": {
+       "cat": "PCA",
+       "src": "reg47",
+       "at": "Article 47(1)",
+       "why": "Even though the item is marked as minor, Article 47(1) excludes this kind of change from the minor route: partial change approval."
+      },
+      "moderate": {
+       "cat": "MOD",
+       "src": "mod24",
+       "at": "Trial notice, Q1",
+       "why": "A process change that affects the nature, properties or safety of the product is designated as a moderate change item, so it goes through the rapid moderate change review."
+      },
+      "annual": {
+       "cat": "JPAR",
+       "src": "ar25",
+       "at": "Trial notice",
+       "why": "A process change that affects the nature, properties or safety of the product is designated as an annual report item, so it is reported in the yearly report."
+      },
+      "absent": {
+       "cat": "NONE",
+       "src": "pmd",
+       "at": "Article 14",
+       "why": "A process change that affects the nature, properties or safety of the product is not in the approval form, so no filing is needed."
+      }
+     }
+    },
+    "no": {
+     "ask": "jpItem",
+     "on": {
+      "pca": {
+       "cat": "PCA",
+       "src": "pmd",
+       "at": "Article 14",
+       "why": "The process parameter is written as an approved matter, so it needs a partial change approval."
+      },
+      "minor": {
+       "cat": "MCN",
+       "src": "pmd",
+       "at": "Article 14",
+       "why": "The process parameter is marked as a minor change item in the approval form, so it is notified within 30 days after the change."
+      },
+      "moderate": {
+       "cat": "MOD",
+       "src": "mod24",
+       "at": "Trial notice, Q1",
+       "why": "The process parameter is designated as a moderate change item, so it goes through the rapid moderate change review."
+      },
+      "annual": {
+       "cat": "JPAR",
+       "src": "ar25",
+       "at": "Trial notice",
+       "why": "The process parameter is designated as an annual report item, so it is reported in the yearly report."
+      },
+      "absent": {
+       "cat": "NONE",
+       "src": "pmd",
+       "at": "Article 14",
+       "why": "The process parameter is not in the approval form, so no filing is needed; manage it in the quality system."
+      }
+     }
+    }
+   }
+  }
+ },
+ "dp-scale": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The batch size is written as an approved matter, so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "MCN",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The batch size is marked as a minor change item in the approval form, so it is notified within 30 days after the change."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "The batch size is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "The batch size is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The batch size is not in the approval form, so no filing is needed; manage it in the quality system."
+    }
+   }
+  }
+ },
+ "ds-route-new": {
+  "tree": {
+   "cat": "PCA",
+   "src": "reg47",
+   "at": "Article 47(1)",
+   "why": "A new route of synthesis affects the drug substance: partial change approval."
+  }
+ },
+ "ds-process-change": {
+  "tree": {
+   "ask": "majorImpact",
+   "on": {
+    "yes": {
+     "ask": "jpItem",
+     "on": {
+      "pca": {
+       "cat": "PCA",
+       "src": "reg47",
+       "at": "Article 47(1)",
+       "why": "A drug substance process change that affects quality is excluded from minor changes by Article 47(1), so it needs a partial change approval."
+      },
+      "minor": {
+       "cat": "PCA",
+       "src": "reg47",
+       "at": "Article 47(1)",
+       "why": "Even though the item is marked as minor, Article 47(1) excludes this kind of change from the minor route: partial change approval."
+      },
+      "moderate": {
+       "cat": "MOD",
+       "src": "mod24",
+       "at": "Trial notice, Q1",
+       "why": "A drug substance process change that affects quality is designated as a moderate change item, so it goes through the rapid moderate change review."
+      },
+      "annual": {
+       "cat": "JPAR",
+       "src": "ar25",
+       "at": "Trial notice",
+       "why": "A drug substance process change that affects quality is designated as an annual report item, so it is reported in the yearly report."
+      },
+      "absent": {
+       "cat": "NONE",
+       "src": "pmd",
+       "at": "Article 14",
+       "why": "A drug substance process change that affects quality is not in the approval form, so no filing is needed."
+      }
+     }
+    },
+    "no": {
+     "ask": "jpItem",
+     "on": {
+      "pca": {
+       "cat": "PCA",
+       "src": "pmd",
+       "at": "Article 14",
+       "why": "The process parameter is written as an approved matter, so it needs a partial change approval."
+      },
+      "minor": {
+       "cat": "MCN",
+       "src": "pmd",
+       "at": "Article 14",
+       "why": "The process parameter is marked as a minor change item in the approval form, so it is notified within 30 days after the change."
+      },
+      "moderate": {
+       "cat": "MOD",
+       "src": "mod24",
+       "at": "Trial notice, Q1",
+       "why": "The process parameter is designated as a moderate change item, so it goes through the rapid moderate change review."
+      },
+      "annual": {
+       "cat": "JPAR",
+       "src": "ar25",
+       "at": "Trial notice",
+       "why": "The process parameter is designated as an annual report item, so it is reported in the yearly report."
+      },
+      "absent": {
+       "cat": "NONE",
+       "src": "pmd",
+       "at": "Article 14",
+       "why": "The process parameter is not in the approval form, so no filing is needed; manage it in the quality system."
+      }
+     }
+    }
+   }
+  }
+ },
+ "ds-starting-material": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "reg47",
+     "at": "Article 47(1)",
+     "why": "Redefining the starting material is excluded from minor changes by Article 47(1), so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "PCA",
+     "src": "reg47",
+     "at": "Article 47(1)",
+     "why": "Even though the item is marked as minor, Article 47(1) excludes this kind of change from the minor route: partial change approval."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "Redefining the starting material is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "Redefining the starting material is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "Redefining the starting material is not in the approval form, so no filing is needed."
+    }
+   }
+  }
+ },
+ "dp-reprocessing": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "reg47",
+     "at": "Article 47(1)",
+     "why": "Adding a reprocessing procedure is excluded from minor changes by Article 47(1), so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "PCA",
+     "src": "reg47",
+     "at": "Article 47(1)",
+     "why": "Even though the item is marked as minor, Article 47(1) excludes this kind of change from the minor route: partial change approval."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "Adding a reprocessing procedure is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "Adding a reprocessing procedure is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "Adding a reprocessing procedure is not in the approval form, so no filing is needed."
+    }
+   }
+  }
+ },
+ "dp-ink": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The ink is written as an approved matter, so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "MCN",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The ink is marked as a minor change item in the approval form, so it is notified within 30 days after the change."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "The ink is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "The ink is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The ink is not in the approval form, so no filing is needed; manage it in the quality system."
+    }
+   }
+  }
+ },
+ "dp-emboss": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The marking is written as an approved matter, so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "MCN",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The marking is marked as a minor change item in the approval form, so it is notified within 30 days after the change."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "The marking is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "The marking is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The marking is not in the approval form, so no filing is needed; manage it in the quality system."
+    }
+   }
+  }
+ },
+ "dp-order-addition": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The order of addition is written as an approved matter, so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "MCN",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The order of addition is marked as a minor change item in the approval form, so it is notified within 30 days after the change."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "The order of addition is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "The order of addition is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The order of addition is not in the approval form, so no filing is needed; manage it in the quality system."
+    }
+   }
+  }
+ },
+ "sterile-filter": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "reg47",
+     "at": "Article 47(1)",
+     "why": "A change to the sterilising filtration is excluded from minor changes by Article 47(1), so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "PCA",
+     "src": "reg47",
+     "at": "Article 47(1)",
+     "why": "Even though the item is marked as minor, Article 47(1) excludes this kind of change from the minor route: partial change approval."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "A change to the sterilising filtration is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "A change to the sterilising filtration is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "A change to the sterilising filtration is not in the approval form, so no filing is needed."
+    }
+   }
+  }
+ },
+ "sterilization-method": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "reg47",
+     "at": "Article 47(1)",
+     "why": "A change to the sterilisation method is excluded from minor changes by Article 47(1), so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "PCA",
+     "src": "reg47",
+     "at": "Article 47(1)",
+     "why": "Even though the item is marked as minor, Article 47(1) excludes this kind of change from the minor route: partial change approval."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "A change to the sterilisation method is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "A change to the sterilisation method is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "A change to the sterilisation method is not in the approval form, so no filing is needed."
+    }
+   }
+  }
+ },
+ "depyrogenation": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "reg47",
+     "at": "Article 47(1)",
+     "why": "A change to depyrogenation is excluded from minor changes by Article 47(1), so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "PCA",
+     "src": "reg47",
+     "at": "Article 47(1)",
+     "why": "Even though the item is marked as minor, Article 47(1) excludes this kind of change from the minor route: partial change approval."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "A change to depyrogenation is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "A change to depyrogenation is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "A change to depyrogenation is not in the approval form, so no filing is needed."
+    }
+   }
+  }
+ },
+ "inprocess-filtration-remove": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "reg47",
+     "at": "Article 47(1)",
+     "why": "Removing an in-process filtration is excluded from minor changes by Article 47(1), so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "PCA",
+     "src": "reg47",
+     "at": "Article 47(1)",
+     "why": "Even though the item is marked as minor, Article 47(1) excludes this kind of change from the minor route: partial change approval."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "Removing an in-process filtration is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "Removing an in-process filtration is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "Removing an in-process filtration is not in the approval form, so no filing is needed."
+    }
+   }
+  }
+ },
+ "control-increase": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The in-process control is written as an approved matter, so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "MCN",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The in-process control is marked as a minor change item in the approval form, so it is notified within 30 days after the change."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "The in-process control is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "The in-process control is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The in-process control is not in the approval form, so no filing is needed; manage it in the quality system."
+    }
+   }
+  }
+ },
+ "excipient-change": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "reg47",
+     "at": "Article 47(5)",
+     "why": "A composition change is excluded from minor changes by Article 47(5), so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "PCA",
+     "src": "reg47",
+     "at": "Article 47(5)",
+     "why": "Even though the item is marked as minor, Article 47(5) excludes this kind of change from the minor route: partial change approval."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "A composition change is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "A composition change is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "A composition change is not in the approval form, so no filing is needed."
+    }
+   }
+  }
+ },
+ "colour-flavour-delete": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "reg47",
+     "at": "Article 47(5)",
+     "why": "A composition change is excluded from minor changes by Article 47(5), so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "PCA",
+     "src": "reg47",
+     "at": "Article 47(5)",
+     "why": "Even though the item is marked as minor, Article 47(5) excludes this kind of change from the minor route: partial change approval."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "A composition change is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "A composition change is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "A composition change is not in the approval form, so no filing is needed."
+    }
+   }
+  }
+ },
+ "new-strength": {
+  "tree": {
+   "cat": "NEW",
+   "src": "pmd",
+   "at": "Article 14",
+   "why": "A new strength changes the quantity of the active ingredient, which cannot be done by partial change: new approval.",
+   "pi": true
+  }
+ },
+ "spec-tighten": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "reg47",
+     "at": "Article 47(2)",
+     "why": "A change to the specification is excluded from minor changes by Article 47(2), so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "PCA",
+     "src": "reg47",
+     "at": "Article 47(2)",
+     "why": "Even though the item is marked as minor, Article 47(2) excludes this kind of change from the minor route: partial change approval."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "A change to the specification is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "A change to the specification is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "A change to the specification is not in the approval form, so no filing is needed."
+    }
+   }
+  }
+ },
+ "spec-relax": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "reg47",
+     "at": "Article 47(2)",
+     "why": "A change to the specification is excluded from minor changes by Article 47(2), so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "PCA",
+     "src": "reg47",
+     "at": "Article 47(2)",
+     "why": "Even though the item is marked as minor, Article 47(2) excludes this kind of change from the minor route: partial change approval."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "A change to the specification is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "A change to the specification is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "A change to the specification is not in the approval form, so no filing is needed."
+    }
+   }
+  }
+ },
+ "spec-delete-test": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "reg47",
+     "at": "Article 47(2)",
+     "why": "Deleting a specification item is excluded from minor changes by Article 47(2), so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "PCA",
+     "src": "reg47",
+     "at": "Article 47(2)",
+     "why": "Even though the item is marked as minor, Article 47(2) excludes this kind of change from the minor route: partial change approval."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "Deleting a specification item is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "Deleting a specification item is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "Deleting a specification item is not in the approval form, so no filing is needed."
+    }
+   }
+  }
+ },
+ "spec-add-test": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The added test is written as an approved matter, so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "MCN",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The added test is marked as a minor change item in the approval form, so it is notified within 30 days after the change."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "The added test is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "The added test is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The added test is not in the approval form, so no filing is needed; manage it in the quality system."
+    }
+   }
+  }
+ },
+ "spec-compendial": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The test is written as an approved matter, so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "MCN",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The test is marked as a minor change item in the approval form, so it is notified within 30 days after the change."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "The test is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "The test is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The test is not in the approval form, so no filing is needed; manage it in the quality system."
+    }
+   }
+  }
+ },
+ "method-change": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The test method is written as an approved matter, so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "MCN",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The test method is marked as a minor change item in the approval form, so it is notified within 30 days after the change."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "The test method is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "The test method is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The test method is not in the approval form, so no filing is needed; manage it in the quality system."
+    }
+   }
+  }
+ },
+ "method-new-regulatory": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The test method is written as an approved matter, so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "MCN",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The test method is marked as a minor change item in the approval form, so it is notified within 30 days after the change."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "The test method is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "The test method is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The test method is not in the approval form, so no filing is needed; manage it in the quality system."
+    }
+   }
+  }
+ },
+ "method-alternative": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The alternative test method is written as an approved matter, so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "MCN",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The alternative test method is marked as a minor change item in the approval form, so it is notified within 30 days after the change."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "The alternative test method is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "The alternative test method is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The alternative test method is not in the approval form, so no filing is needed; manage it in the quality system."
+    }
+   }
+  }
+ },
+ "method-components": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The test method is written as an approved matter, so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "MCN",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The test method is marked as a minor change item in the approval form, so it is notified within 30 days after the change."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "The test method is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "The test method is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The test method is not in the approval form, so no filing is needed; manage it in the quality system."
+    }
+   }
+  }
+ },
+ "method-raw-material": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The test method is written as an approved matter, so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "MCN",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The test method is marked as a minor change item in the approval form, so it is notified within 30 days after the change."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "The test method is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "The test method is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The test method is not in the approval form, so no filing is needed; manage it in the quality system."
+    }
+   }
+  }
+ },
+ "cc-polymer": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The container material is written as an approved matter, so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "MCN",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The container material is marked as a minor change item in the approval form, so it is notified within 30 days after the change."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "The container material is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "The container material is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The container material is not in the approval form, so no filing is needed; manage it in the quality system."
+    }
+   }
+  }
+ },
+ "cc-sterile": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "reg47",
+     "at": "Article 47(5)",
+     "why": "A container change for a sterile product that may affect quality is excluded from minor changes by Article 47(5), so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "PCA",
+     "src": "reg47",
+     "at": "Article 47(5)",
+     "why": "Even though the item is marked as minor, Article 47(5) excludes this kind of change from the minor route: partial change approval."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "A container change for a sterile product that may affect quality is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "A container change for a sterile product that may affect quality is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "A container change for a sterile product that may affect quality is not in the approval form, so no filing is needed."
+    }
+   }
+  }
+ },
+ "cc-dose-device": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "reg47",
+     "at": "Article 47(5)",
+     "why": "A change to packaging that controls the dose is excluded from minor changes by Article 47(5), so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "PCA",
+     "src": "reg47",
+     "at": "Article 47(5)",
+     "why": "Even though the item is marked as minor, Article 47(5) excludes this kind of change from the minor route: partial change approval."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "A change to packaging that controls the dose is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "A change to packaging that controls the dose is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "A change to packaging that controls the dose is not in the approval form, so no filing is needed."
+    }
+   }
+  }
+ },
+ "cc-closure-solid": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The closure is written as an approved matter, so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "MCN",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The closure is marked as a minor change item in the approval form, so it is notified within 30 days after the change."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "The closure is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "The closure is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The closure is not in the approval form, so no filing is needed; manage it in the quality system."
+    }
+   }
+  }
+ },
+ "cc-closure-liquid": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The closure is written as an approved matter, so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "MCN",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The closure is marked as a minor change item in the approval form, so it is notified within 30 days after the change."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "The closure is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "The closure is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The closure is not in the approval form, so no filing is needed; manage it in the quality system."
+    }
+   }
+  }
+ },
+ "cc-size-shape": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The container size or shape is written as an approved matter, so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "MCN",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The container size or shape is marked as a minor change item in the approval form, so it is notified within 30 days after the change."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "The container size or shape is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "The container size or shape is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The container size or shape is not in the approval form, so no filing is needed; manage it in the quality system."
+    }
+   }
+  }
+ },
+ "cc-count": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The pack size is written as an approved matter, so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "MCN",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The pack size is marked as a minor change item in the approval form, so it is notified within 30 days after the change."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "The pack size is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "The pack size is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The pack size is not in the approval form, so no filing is needed; manage it in the quality system."
+    }
+   }
+  }
+ },
+ "cc-desiccant": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The desiccant is written as an approved matter, so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "MCN",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The desiccant is marked as a minor change item in the approval form, so it is notified within 30 days after the change."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "The desiccant is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "The desiccant is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The desiccant is not in the approval form, so no filing is needed; manage it in the quality system."
+    }
+   }
+  }
+ },
+ "cc-blister": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The blister is written as an approved matter, so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "MCN",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The blister is marked as a minor change item in the approval form, so it is notified within 30 days after the change."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "The blister is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "The blister is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The blister is not in the approval form, so no filing is needed; manage it in the quality system."
+    }
+   }
+  }
+ },
+ "cc-secondary-protective": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The secondary packaging is written as an approved matter, so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "MCN",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The secondary packaging is marked as a minor change item in the approval form, so it is notified within 30 days after the change."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "The secondary packaging is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "The secondary packaging is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The secondary packaging is not in the approval form, so no filing is needed; manage it in the quality system."
+    }
+   }
+  }
+ },
+ "cc-cap-colour": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The cap colour is written as an approved matter, so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "MCN",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The cap colour is marked as a minor change item in the approval form, so it is notified within 30 days after the change."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "The cap colour is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "The cap colour is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The cap colour is not in the approval form, so no filing is needed; manage it in the quality system."
+    }
+   }
+  }
+ },
+ "shelf-life-extend": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The shelf life is written as an approved matter, so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "MCN",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The shelf life is marked as a minor change item in the approval form, so it is notified within 30 days after the change."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "The shelf life is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "The shelf life is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The shelf life is not in the approval form, so no filing is needed; manage it in the quality system."
+    }
+   }
+  }
+ },
+ "shelf-life-reduce": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The shelf life is written as an approved matter, so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "MCN",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The shelf life is marked as a minor change item in the approval form, so it is notified within 30 days after the change."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "The shelf life is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "The shelf life is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The shelf life is not in the approval form, so no filing is needed; manage it in the quality system."
+    }
+   }
+  }
+ },
+ "stability-protocol": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The stability protocol is written as an approved matter, so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "MCN",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The stability protocol is marked as a minor change item in the approval form, so it is notified within 30 days after the change."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "The stability protocol is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "The stability protocol is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The stability protocol is not in the approval form, so no filing is needed; manage it in the quality system."
+    }
+   }
+  }
+ },
+ "storage-conditions": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "reg47",
+     "at": "Article 47(5)",
+     "why": "A change in storage method that may affect quality is excluded from minor changes by Article 47(5), so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "PCA",
+     "src": "reg47",
+     "at": "Article 47(5)",
+     "why": "Even though the item is marked as minor, Article 47(5) excludes this kind of change from the minor route: partial change approval."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "A change in storage method that may affect quality is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "A change in storage method that may affect quality is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "A change in storage method that may affect quality is not in the approval form, so no filing is needed."
+    }
+   }
+  }
+ },
+ "reference-standard": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The reference standard is written as an approved matter, so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "MCN",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The reference standard is marked as a minor change item in the approval form, so it is notified within 30 days after the change."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "The reference standard is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "The reference standard is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The reference standard is not in the approval form, so no filing is needed; manage it in the quality system."
+    }
+   }
+  }
+ },
+ "lab-new-indication": {
+  "tree": {
+   "cat": "PCA",
+   "src": "pmd",
+   "at": "Article 14 (partial change approval)",
+   "why": "A new indication changes efficacy and indications, excluded from minor changes by Article 47(4): partial change approval.",
+   "pi": true
+  }
+ },
+ "lab-population": {
+  "tree": {
+   "cat": "PCA",
+   "src": "pmd",
+   "at": "Article 14 (partial change approval)",
+   "why": "A change in dosage and administration is excluded from minor changes by Article 47(4): partial change approval.",
+   "pi": true
+  }
+ },
+ "lab-clinical-section": {
+  "tree": {
+   "cat": "NOTIFY",
+   "src": "pi",
+   "at": "Article 52-2",
+   "why": "Updating clinical sections of the package insert is notified to PMDA before distribution.",
+   "pi": true
+  }
+ },
+ "lab-safety-add": {
+  "tree": {
+   "cat": "NOTIFY",
+   "src": "pi",
+   "at": "Article 52-2",
+   "why": "Precaution revisions are made in the package insert and notified to PMDA; MHLW often instructs them.",
+   "pi": true
+  }
+ },
+ "lab-dosing-safety": {
+  "tree": {
+   "cat": "NOTIFY",
+   "src": "pi",
+   "at": "Article 52-2",
+   "why": "An instruction for safer use in the precautions is notified with the revised package insert.",
+   "note": "If it changes the approved dosage, it needs a partial change approval.",
+   "pi": true
+  }
+ },
+ "lab-delete-claim": {
+  "tree": {
+   "cat": "NOTIFY",
+   "src": "pi",
+   "at": "Article 52-2",
+   "why": "Removing unsupported text from the package insert is notified.",
+   "note": "Removing an approved indication needs a partial change approval.",
+   "pi": true
+  }
+ },
+ "lab-505o4": {
+  "tree": {
+   "cat": "NOTIFY",
+   "src": "pi",
+   "at": "Article 52-2",
+   "why": "When MHLW instructs a revision of the precautions, the holder revises the package insert and notifies it.",
+   "pi": true
+  }
+ },
+ "lab-rld-update": {
+  "tree": {
+   "cat": "NOTIFY",
+   "src": "pi",
+   "at": "Article 52-2",
+   "why": "A generic follows revisions of the originator's precautions by notifying its revised package insert.",
+   "pi": true
+  }
+ },
+ "lab-editorial": {
+  "tree": {
+   "cat": "NOTIFY",
+   "src": "pi",
+   "at": "Article 52-2",
+   "why": "An editorial revision of the package insert is notified.",
+   "pi": true
+  }
+ },
+ "lab-layout": {
+  "tree": {
+   "cat": "NONE",
+   "src": "pmd",
+   "at": "Article 14",
+   "why": "Label layout is not an approved matter: no filing.",
+   "note": "Labelling must still meet the PMD Act labelling rules."
+  }
+ },
+ "cp-submit": {
+  "tree": {
+   "cat": "PLAN",
+   "src": "pacmp",
+   "at": "PACMP step 1",
+   "why": "A change plan (PACMP) is submitted for confirmation; the general target is 12 months."
+  }
+ },
+ "cp-use": {
+  "tree": {
+   "ask": "jpProtocolNotice",
+   "on": {
+    "yes": {
+     "cat": "PACMPN",
+     "src": "pacmp",
+     "at": "Q&A Q7",
+     "why": "A change made under the confirmed plan is notified and becomes an approved matter 40 working days after acceptance (20 in special cases)."
+    },
+    "no": {
+     "cat": "PCA",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The change does not follow the confirmed plan, so it goes through the normal route.",
+     "note": "Classify the change itself in its own entry."
+    }
+   }
+  }
+ },
+ "be-study-change": {
+  "tree": {
+   "cat": "PCA",
+   "src": "reg47",
+   "at": "Article 47(5)",
+   "why": "A change needing a new bioequivalence study may affect efficacy: partial change approval."
+  }
+ },
+ "bio-mcb": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "reg47",
+     "at": "Article 47(1)",
+     "why": "A new master cell bank is excluded from minor changes by Article 47(1), so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "PCA",
+     "src": "reg47",
+     "at": "Article 47(1)",
+     "why": "Even though the item is marked as minor, Article 47(1) excludes this kind of change from the minor route: partial change approval."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "A new master cell bank is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "A new master cell bank is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "A new master cell bank is not in the approval form, so no filing is needed."
+    }
+   }
+  }
+ },
+ "bio-wcb": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The working cell bank is written as an approved matter, so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "MCN",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The working cell bank is marked as a minor change item in the approval form, so it is notified within 30 days after the change."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "The working cell bank is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "The working cell bank is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The working cell bank is not in the approval form, so no filing is needed; manage it in the quality system."
+    }
+   }
+  }
+ },
+ "bio-purification": {
+  "tree": {
+   "ask": "bioResinMinor",
+   "on": {
+    "yes": {
+     "ask": "jpItem",
+     "on": {
+      "pca": {
+       "cat": "PCA",
+       "src": "pmd",
+       "at": "Article 14",
+       "why": "The purification parameter is written as an approved matter, so it needs a partial change approval."
+      },
+      "minor": {
+       "cat": "MCN",
+       "src": "pmd",
+       "at": "Article 14",
+       "why": "The purification parameter is marked as a minor change item in the approval form, so it is notified within 30 days after the change."
+      },
+      "moderate": {
+       "cat": "MOD",
+       "src": "mod24",
+       "at": "Trial notice, Q1",
+       "why": "The purification parameter is designated as a moderate change item, so it goes through the rapid moderate change review."
+      },
+      "annual": {
+       "cat": "JPAR",
+       "src": "ar25",
+       "at": "Trial notice",
+       "why": "The purification parameter is designated as an annual report item, so it is reported in the yearly report."
+      },
+      "absent": {
+       "cat": "NONE",
+       "src": "pmd",
+       "at": "Article 14",
+       "why": "The purification parameter is not in the approval form, so no filing is needed; manage it in the quality system."
+      }
+     }
+    },
+    "no": {
+     "ask": "jpItem",
+     "on": {
+      "pca": {
+       "cat": "PCA",
+       "src": "reg47",
+       "at": "Article 47(1)",
+       "why": "A new purification step, resin or column is excluded from minor changes by Article 47(1), so it needs a partial change approval."
+      },
+      "minor": {
+       "cat": "PCA",
+       "src": "reg47",
+       "at": "Article 47(1)",
+       "why": "Even though the item is marked as minor, Article 47(1) excludes this kind of change from the minor route: partial change approval."
+      },
+      "moderate": {
+       "cat": "MOD",
+       "src": "mod24",
+       "at": "Trial notice, Q1",
+       "why": "A new purification step, resin or column is designated as a moderate change item, so it goes through the rapid moderate change review."
+      },
+      "annual": {
+       "cat": "JPAR",
+       "src": "ar25",
+       "at": "Trial notice",
+       "why": "A new purification step, resin or column is designated as an annual report item, so it is reported in the yearly report."
+      },
+      "absent": {
+       "cat": "NONE",
+       "src": "pmd",
+       "at": "Article 14",
+       "why": "A new purification step, resin or column is not in the approval form, so no filing is needed."
+      }
+     }
+    }
+   }
+  }
+ },
+ "bio-viral": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "reg47",
+     "at": "Article 47(3)",
+     "why": "A change to virus removal or inactivation is excluded from minor changes by Article 47(3), so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "PCA",
+     "src": "reg47",
+     "at": "Article 47(3)",
+     "why": "Even though the item is marked as minor, Article 47(3) excludes this kind of change from the minor route: partial change approval."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "A change to virus removal or inactivation is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "A change to virus removal or inactivation is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "A change to virus removal or inactivation is not in the approval form, so no filing is needed."
+    }
+   }
+  }
+ },
+ "admin-ownership": {
+  "tree": {
+   "cat": "NOTIFY",
+   "src": "pmd",
+   "at": "Article 14-8 (succession)",
+   "why": "A transfer of the approval is a succession, notified by the new holder.",
+   "note": "Simplified."
+  }
+ },
+ "admin-name-address": {
+  "tree": {
+   "cat": "NOTIFY",
+   "src": "pmd",
+   "at": "Licence change notification",
+   "why": "A change in the holder's name or address is notified as a change to the marketing licence.",
+   "note": "Simplified."
+  }
+ },
+ "ds-cep": {
+  "tree": {
+   "ask": "dsSameRoute",
+   "on": {
+    "yes": {
+     "ask": "jpItem",
+     "on": {
+      "pca": {
+       "cat": "PCAR",
+       "src": "rapid",
+       "at": "Rapid partial change",
+       "why": "The new drug substance manufacturer (registered in the Japanese master file) is written as an approved matter, so it needs a partial change approval on the rapid track for site changes (about 3 months)."
+      },
+      "minor": {
+       "cat": "MCN",
+       "src": "pmd",
+       "at": "Article 14",
+       "why": "The new drug substance manufacturer (registered in the Japanese master file) is marked as a minor change item in the approval form, so it is notified within 30 days after the change."
+      },
+      "moderate": {
+       "cat": "MOD",
+       "src": "mod24",
+       "at": "Trial notice, Q1",
+       "why": "The new drug substance manufacturer (registered in the Japanese master file) is designated as a moderate change item, so it goes through the rapid moderate change review."
+      },
+      "annual": {
+       "cat": "JPAR",
+       "src": "ar25",
+       "at": "Trial notice",
+       "why": "The new drug substance manufacturer (registered in the Japanese master file) is designated as an annual report item, so it is reported in the yearly report."
+      },
+      "absent": {
+       "cat": "NONE",
+       "src": "pmd",
+       "at": "Article 14",
+       "why": "The new drug substance manufacturer (registered in the Japanese master file) is not in the approval form, so no filing is needed; manage it in the quality system."
+      }
+     }
+    },
+    "no": {
+     "cat": "PCA",
+     "src": "reg47",
+     "at": "Article 47(1)",
+     "why": "A source with a different route affects the drug substance: partial change approval."
+    }
+   }
+  }
+ },
+ "batch-release-site": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The testing site is written as an approved matter, so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "MCN",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The testing site is marked as a minor change item in the approval form, so it is notified within 30 days after the change."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "The testing site is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "The testing site is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The testing site is not in the approval form, so no filing is needed; manage it in the quality system."
+    }
+   }
+  }
+ },
+ "site-delete": {
+  "tree": {
+   "cat": "MCN",
+   "src": "pmd",
+   "at": "Article 14",
+   "why": "Deleting a site from the approval form is a minor change notification.",
+   "note": "Simplified."
+  }
+ },
+ "ds-scale": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The batch size is written as an approved matter, so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "MCN",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The batch size is marked as a minor change item in the approval form, so it is notified within 30 days after the change."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "The batch size is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "The batch size is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The batch size is not in the approval form, so no filing is needed; manage it in the quality system."
+    }
+   }
+  }
+ },
+ "ipc-tighten": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The in-process limit is written as an approved matter, so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "MCN",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The in-process limit is marked as a minor change item in the approval form, so it is notified within 30 days after the change."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "The in-process limit is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "The in-process limit is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The in-process limit is not in the approval form, so no filing is needed; manage it in the quality system."
+    }
+   }
+  }
+ },
+ "ipc-relax": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "reg47",
+     "at": "Article 47(5)",
+     "why": "Widening an in-process limit that may affect quality is excluded from minor changes by Article 47(5), so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "PCA",
+     "src": "reg47",
+     "at": "Article 47(5)",
+     "why": "Even though the item is marked as minor, Article 47(5) excludes this kind of change from the minor route: partial change approval."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "Widening an in-process limit that may affect quality is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "Widening an in-process limit that may affect quality is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "Widening an in-process limit that may affect quality is not in the approval form, so no filing is needed."
+    }
+   }
+  }
+ },
+ "hold-time": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The hold time is written as an approved matter, so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "MCN",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The hold time is marked as a minor change item in the approval form, so it is notified within 30 days after the change."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "The hold time is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "The hold time is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The hold time is not in the approval form, so no filing is needed; manage it in the quality system."
+    }
+   }
+  }
+ },
+ "design-space-within": {
+  "tree": {
+   "cat": "NONE",
+   "src": "q8",
+   "at": "Design space",
+   "why": "Working within an approved design space is not a change."
+  }
+ },
+ "design-space-new": {
+  "tree": {
+   "cat": "PCA",
+   "src": "pmd",
+   "at": "Article 14",
+   "why": "A new or expanded design space is written into the approval: partial change approval."
+  }
+ },
+ "rtrt": {
+  "tree": {
+   "cat": "PCA",
+   "src": "reg47",
+   "at": "Article 47(2)",
+   "why": "Real-time release changes the specification and test methods: partial change approval."
+  }
+ },
+ "continuous-mfg": {
+  "tree": {
+   "cat": "PCA",
+   "src": "reg47",
+   "at": "Article 47(1)",
+   "why": "Converting to continuous manufacturing changes the manufacturing method: partial change approval."
+  }
+ },
+ "excipient-supplier": {
+  "tree": {
+   "cat": "NONE",
+   "src": "pmd",
+   "at": "Article 14",
+   "why": "Excipient suppliers are not approved matters: qualify the supplier under GMP."
+  }
+ },
+ "coating-weight": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "reg47",
+     "at": "Article 47(5)",
+     "why": "A composition change is excluded from minor changes by Article 47(5), so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "PCA",
+     "src": "reg47",
+     "at": "Article 47(5)",
+     "why": "Even though the item is marked as minor, Article 47(5) excludes this kind of change from the minor route: partial change approval."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "A composition change is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "A composition change is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "A composition change is not in the approval form, so no filing is needed."
+    }
+   }
+  }
+ },
+ "score-line": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "reg47",
+     "at": "Article 47(5)",
+     "why": "A change to the appearance and use of the tablet is excluded from minor changes by Article 47(5), so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "PCA",
+     "src": "reg47",
+     "at": "Article 47(5)",
+     "why": "Even though the item is marked as minor, Article 47(5) excludes this kind of change from the minor route: partial change approval."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "A change to the appearance and use of the tablet is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "A change to the appearance and use of the tablet is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "A change to the appearance and use of the tablet is not in the approval form, so no filing is needed."
+    }
+   }
+  }
+ },
+ "tablet-shape": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "reg47",
+     "at": "Article 47(2)",
+     "why": "A change to the product description in the specification is excluded from minor changes by Article 47(2), so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "PCA",
+     "src": "reg47",
+     "at": "Article 47(2)",
+     "why": "Even though the item is marked as minor, Article 47(2) excludes this kind of change from the minor route: partial change approval."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "A change to the product description in the specification is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "A change to the product description in the specification is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "A change to the product description in the specification is not in the approval form, so no filing is needed."
+    }
+   }
+  }
+ },
+ "tse-excipient": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The origin of the excipient is written as an approved matter, so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "MCN",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The origin of the excipient is marked as a minor change item in the approval form, so it is notified within 30 days after the change."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "The origin of the excipient is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "The origin of the excipient is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The origin of the excipient is not in the approval form, so no filing is needed; manage it in the quality system."
+    }
+   }
+  }
+ },
+ "dosage-form-new": {
+  "tree": {
+   "cat": "NEW",
+   "src": "pmd",
+   "at": "Article 14",
+   "why": "A new dosage form needs a new approval.",
+   "pi": true
+  }
+ },
+ "nitrosamine-control": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The added test is written as an approved matter, so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "MCN",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The added test is marked as a minor change item in the approval form, so it is notified within 30 days after the change."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "The added test is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "The added test is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The added test is not in the approval form, so no filing is needed; manage it in the quality system."
+    }
+   }
+  }
+ },
+ "excipient-spec": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The excipient specification is written as an approved matter, so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "MCN",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The excipient specification is marked as a minor change item in the approval form, so it is notified within 30 days after the change."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "The excipient specification is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "The excipient specification is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The excipient specification is not in the approval form, so no filing is needed; manage it in the quality system."
+    }
+   }
+  }
+ },
+ "skip-testing": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "reg47",
+     "at": "Article 47(2)",
+     "why": "Reduced testing of a specification item is excluded from minor changes by Article 47(2), so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "PCA",
+     "src": "reg47",
+     "at": "Article 47(2)",
+     "why": "Even though the item is marked as minor, Article 47(2) excludes this kind of change from the minor route: partial change approval."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "Reduced testing of a specification item is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "Reduced testing of a specification item is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "Reduced testing of a specification item is not in the approval form, so no filing is needed."
+    }
+   }
+  }
+ },
+ "method-minor": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The test method is written as an approved matter, so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "MCN",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The test method is marked as a minor change item in the approval form, so it is notified within 30 days after the change."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "The test method is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "The test method is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The test method is not in the approval form, so no filing is needed; manage it in the quality system."
+    }
+   }
+  }
+ },
+ "micro-rapid": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The microbiological test method is written as an approved matter, so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "MCN",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The microbiological test method is marked as a minor change item in the approval form, so it is notified within 30 days after the change."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "The microbiological test method is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "The microbiological test method is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The microbiological test method is not in the approval form, so no filing is needed; manage it in the quality system."
+    }
+   }
+  }
+ },
+ "cc-supplier": {
+  "tree": {
+   "cat": "NONE",
+   "src": "pmd",
+   "at": "Article 14",
+   "why": "Packaging suppliers are not approved matters: qualify the supplier under GMP."
+  }
+ },
+ "cc-device": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The device is written as an approved matter, so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "MCN",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The device is marked as a minor change item in the approval form, so it is notified within 30 days after the change."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "The device is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "The device is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The device is not in the approval form, so no filing is needed; manage it in the quality system."
+    }
+   }
+  }
+ },
+ "cc-noncontact": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The packaging part is written as an approved matter, so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "MCN",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The packaging part is marked as a minor change item in the approval form, so it is notified within 30 days after the change."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "The packaging part is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "The packaging part is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The packaging part is not in the approval form, so no filing is needed; manage it in the quality system."
+    }
+   }
+  }
+ },
+ "ds-retest": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The re-test period is written as an approved matter, so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "MCN",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The re-test period is marked as a minor change item in the approval form, so it is notified within 30 days after the change."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "The re-test period is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "The re-test period is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The re-test period is not in the approval form, so no filing is needed; manage it in the quality system."
+    }
+   }
+  }
+ },
+ "in-use-shelf-life": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The in-use period is written as an approved matter, so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "MCN",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The in-use period is marked as a minor change item in the approval form, so it is notified within 30 days after the change."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "The in-use period is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "The in-use period is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The in-use period is not in the approval form, so no filing is needed; manage it in the quality system."
+    }
+   }
+  }
+ },
+ "ds-storage": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The storage condition is written as an approved matter, so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "MCN",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The storage condition is marked as a minor change item in the approval form, so it is notified within 30 days after the change."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "The storage condition is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "The storage condition is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "The storage condition is not in the approval form, so no filing is needed; manage it in the quality system."
+    }
+   }
+  }
+ },
+ "lab-new-route": {
+  "tree": {
+   "cat": "NEW",
+   "src": "pmd",
+   "at": "Article 14",
+   "why": "A new route of administration needs a new approval.",
+   "pi": true
+  }
+ },
+ "lab-brand-name": {
+  "tree": {
+   "cat": "NEW",
+   "src": "pmd",
+   "at": "Article 14",
+   "why": "A brand name cannot be changed by partial change: file a replacement new application.",
+   "pi": true
+  }
+ },
+ "lab-rmp": {
+  "tree": {
+   "cat": "NOTIFY",
+   "src": "pi",
+   "at": "RMP submission",
+   "why": "An updated RMP is submitted to PMDA; there is no approval step.",
+   "note": "Simplified."
+  }
+ },
+ "lab-psusa": {
+  "tree": {
+   "cat": "NOTIFY",
+   "src": "pi",
+   "at": "Article 52-2",
+   "why": "Agreed safety wording is implemented by revising the package insert and notifying it.",
+   "pi": true
+  }
+ },
+ "lab-delete-indication": {
+  "tree": {
+   "cat": "PCA",
+   "src": "pmd",
+   "at": "Article 14 (partial change approval)",
+   "why": "Deleting an indication is excluded from minor changes by Article 47(4): partial change approval.",
+   "pi": true
+  }
+ },
+ "ec-define": {
+  "tree": {
+   "cat": "PCA",
+   "src": "pmd",
+   "at": "Article 14",
+   "why": "In Japan the approval form already plays the role of established conditions; adding detail to it is a partial change.",
+   "note": "Simplified."
+  }
+ },
+ "plcm-update": {
+  "tree": {
+   "cat": "NA",
+   "src": "q12",
+   "at": "ICH Q12",
+   "why": "Japan does not use a separate PLCM document: the approval form and change plans play that role."
+  }
+ },
+ "non-ec-change": {
+  "tree": {
+   "ask": "isEC",
+   "on": {
+    "yes": {
+     "ask": "plcmCategory",
+     "on": {
+      "prior": {
+       "cat": "PCA",
+       "src": "pmd",
+       "at": "Article 14",
+       "why": "An approved matter needing prior approval: partial change approval."
+      },
+      "moderate": {
+       "cat": "MOD",
+       "src": "mod24",
+       "at": "Trial notice, Q1",
+       "why": "A designated moderate change item: rapid moderate change review."
+      },
+      "low": {
+       "cat": "MCN",
+       "src": "pmd",
+       "at": "Article 14",
+       "why": "A minor change item: notify within 30 days."
+      }
+     }
+    },
+    "no": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "An element outside the approval form is managed in the quality system."
+    }
+   }
+  }
+ },
+ "pacmp-change": {
+  "tree": {
+   "ask": "pacmpAction",
+   "on": {
+    "delete": {
+     "cat": "NOTIFY",
+     "src": "pacmp",
+     "at": "Change plan",
+     "why": "Withdrawing a confirmed change plan is notified.",
+     "note": "Simplified."
+    },
+    "minor": {
+     "cat": "PLAN",
+     "src": "pacmp",
+     "at": "Change plan",
+     "why": "Changing a confirmed plan needs a new confirmation.",
+     "note": "Simplified."
+    },
+    "major": {
+     "cat": "PLAN",
+     "src": "pacmp",
+     "at": "Change plan",
+     "why": "Changing a confirmed plan needs a new confirmation."
+    }
+   }
+  }
+ },
+ "bio-scale": {
+  "tree": {
+   "ask": "bioScaleOnly",
+   "on": {
+    "yes": {
+     "ask": "jpItem",
+     "on": {
+      "pca": {
+       "cat": "PCA",
+       "src": "pmd",
+       "at": "Article 14",
+       "why": "The scale is written as an approved matter, so it needs a partial change approval."
+      },
+      "minor": {
+       "cat": "MCN",
+       "src": "pmd",
+       "at": "Article 14",
+       "why": "The scale is marked as a minor change item in the approval form, so it is notified within 30 days after the change."
+      },
+      "moderate": {
+       "cat": "MOD",
+       "src": "mod24",
+       "at": "Trial notice, Q1",
+       "why": "The scale is designated as a moderate change item, so it goes through the rapid moderate change review."
+      },
+      "annual": {
+       "cat": "JPAR",
+       "src": "ar25",
+       "at": "Trial notice",
+       "why": "The scale is designated as an annual report item, so it is reported in the yearly report."
+      },
+      "absent": {
+       "cat": "NONE",
+       "src": "pmd",
+       "at": "Article 14",
+       "why": "The scale is not in the approval form, so no filing is needed; manage it in the quality system."
+      }
+     }
+    },
+    "no": {
+     "ask": "jpItem",
+     "on": {
+      "pca": {
+       "cat": "PCA",
+       "src": "reg47",
+       "at": "Article 47(1)",
+       "why": "A scale-up with process changes is excluded from minor changes by Article 47(1), so it needs a partial change approval."
+      },
+      "minor": {
+       "cat": "PCA",
+       "src": "reg47",
+       "at": "Article 47(1)",
+       "why": "Even though the item is marked as minor, Article 47(1) excludes this kind of change from the minor route: partial change approval."
+      },
+      "moderate": {
+       "cat": "MOD",
+       "src": "mod24",
+       "at": "Trial notice, Q1",
+       "why": "A scale-up with process changes is designated as a moderate change item, so it goes through the rapid moderate change review."
+      },
+      "annual": {
+       "cat": "JPAR",
+       "src": "ar25",
+       "at": "Trial notice",
+       "why": "A scale-up with process changes is designated as an annual report item, so it is reported in the yearly report."
+      },
+      "absent": {
+       "cat": "NONE",
+       "src": "pmd",
+       "at": "Article 14",
+       "why": "A scale-up with process changes is not in the approval form, so no filing is needed."
+      }
+     }
+    }
+   }
+  }
+ },
+ "bio-media": {
+  "tree": {
+   "ask": "animalOrigin",
+   "on": {
+    "yes": {
+     "ask": "jpItem",
+     "on": {
+      "pca": {
+       "cat": "PCA",
+       "src": "reg47",
+       "at": "Article 47(5)",
+       "why": "Introducing a material of human or animal origin is excluded from minor changes by Article 47(5), so it needs a partial change approval."
+      },
+      "minor": {
+       "cat": "PCA",
+       "src": "reg47",
+       "at": "Article 47(5)",
+       "why": "Even though the item is marked as minor, Article 47(5) excludes this kind of change from the minor route: partial change approval."
+      },
+      "moderate": {
+       "cat": "MOD",
+       "src": "mod24",
+       "at": "Trial notice, Q1",
+       "why": "Introducing a material of human or animal origin is designated as a moderate change item, so it goes through the rapid moderate change review."
+      },
+      "annual": {
+       "cat": "JPAR",
+       "src": "ar25",
+       "at": "Trial notice",
+       "why": "Introducing a material of human or animal origin is designated as an annual report item, so it is reported in the yearly report."
+      },
+      "absent": {
+       "cat": "NONE",
+       "src": "pmd",
+       "at": "Article 14",
+       "why": "Introducing a material of human or animal origin is not in the approval form, so no filing is needed."
+      }
+     }
+    },
+    "no": {
+     "ask": "jpItem",
+     "on": {
+      "pca": {
+       "cat": "PCA",
+       "src": "pmd",
+       "at": "Article 14",
+       "why": "The raw material is written as an approved matter, so it needs a partial change approval."
+      },
+      "minor": {
+       "cat": "MCN",
+       "src": "pmd",
+       "at": "Article 14",
+       "why": "The raw material is marked as a minor change item in the approval form, so it is notified within 30 days after the change."
+      },
+      "moderate": {
+       "cat": "MOD",
+       "src": "mod24",
+       "at": "Trial notice, Q1",
+       "why": "The raw material is designated as a moderate change item, so it goes through the rapid moderate change review."
+      },
+      "annual": {
+       "cat": "JPAR",
+       "src": "ar25",
+       "at": "Trial notice",
+       "why": "The raw material is designated as an annual report item, so it is reported in the yearly report."
+      },
+      "absent": {
+       "cat": "NONE",
+       "src": "pmd",
+       "at": "Article 14",
+       "why": "The raw material is not in the approval form, so no filing is needed; manage it in the quality system."
+      }
+     }
+    }
+   }
+  }
+ },
+ "bio-resin": {
+  "tree": {
+   "ask": "resinChange",
+   "on": {
+    "lifetime": {
+     "ask": "jpItem",
+     "on": {
+      "pca": {
+       "cat": "PCA",
+       "src": "pmd",
+       "at": "Article 14",
+       "why": "The resin lifetime is written as an approved matter, so it needs a partial change approval."
+      },
+      "minor": {
+       "cat": "MCN",
+       "src": "pmd",
+       "at": "Article 14",
+       "why": "The resin lifetime is marked as a minor change item in the approval form, so it is notified within 30 days after the change."
+      },
+      "moderate": {
+       "cat": "MOD",
+       "src": "mod24",
+       "at": "Trial notice, Q1",
+       "why": "The resin lifetime is designated as a moderate change item, so it goes through the rapid moderate change review."
+      },
+      "annual": {
+       "cat": "JPAR",
+       "src": "ar25",
+       "at": "Trial notice",
+       "why": "The resin lifetime is designated as an annual report item, so it is reported in the yearly report."
+      },
+      "absent": {
+       "cat": "NONE",
+       "src": "pmd",
+       "at": "Article 14",
+       "why": "The resin lifetime is not in the approval form, so no filing is needed; manage it in the quality system."
+      }
+     }
+    },
+    "supplier": {
+     "ask": "jpItem",
+     "on": {
+      "pca": {
+       "cat": "PCA",
+       "src": "reg47",
+       "at": "Article 47(1)",
+       "why": "A different resin is excluded from minor changes by Article 47(1), so it needs a partial change approval."
+      },
+      "minor": {
+       "cat": "PCA",
+       "src": "reg47",
+       "at": "Article 47(1)",
+       "why": "Even though the item is marked as minor, Article 47(1) excludes this kind of change from the minor route: partial change approval."
+      },
+      "moderate": {
+       "cat": "MOD",
+       "src": "mod24",
+       "at": "Trial notice, Q1",
+       "why": "A different resin is designated as a moderate change item, so it goes through the rapid moderate change review."
+      },
+      "annual": {
+       "cat": "JPAR",
+       "src": "ar25",
+       "at": "Trial notice",
+       "why": "A different resin is designated as an annual report item, so it is reported in the yearly report."
+      },
+      "absent": {
+       "cat": "NONE",
+       "src": "pmd",
+       "at": "Article 14",
+       "why": "A different resin is not in the approval form, so no filing is needed."
+      }
+     }
+    }
+   }
+  }
+ },
+ "bio-potency": {
+  "tree": {
+   "ask": "potencyNewPrinciple",
+   "on": {
+    "yes": {
+     "ask": "jpItem",
+     "on": {
+      "pca": {
+       "cat": "PCA",
+       "src": "reg47",
+       "at": "Article 47(2)",
+       "why": "A new potency assay principle is excluded from minor changes by Article 47(2), so it needs a partial change approval."
+      },
+      "minor": {
+       "cat": "PCA",
+       "src": "reg47",
+       "at": "Article 47(2)",
+       "why": "Even though the item is marked as minor, Article 47(2) excludes this kind of change from the minor route: partial change approval."
+      },
+      "moderate": {
+       "cat": "MOD",
+       "src": "mod24",
+       "at": "Trial notice, Q1",
+       "why": "A new potency assay principle is designated as a moderate change item, so it goes through the rapid moderate change review."
+      },
+      "annual": {
+       "cat": "JPAR",
+       "src": "ar25",
+       "at": "Trial notice",
+       "why": "A new potency assay principle is designated as an annual report item, so it is reported in the yearly report."
+      },
+      "absent": {
+       "cat": "NONE",
+       "src": "pmd",
+       "at": "Article 14",
+       "why": "A new potency assay principle is not in the approval form, so no filing is needed."
+      }
+     }
+    },
+    "no": {
+     "ask": "jpItem",
+     "on": {
+      "pca": {
+       "cat": "PCA",
+       "src": "pmd",
+       "at": "Article 14",
+       "why": "The potency test method is written as an approved matter, so it needs a partial change approval."
+      },
+      "minor": {
+       "cat": "MCN",
+       "src": "pmd",
+       "at": "Article 14",
+       "why": "The potency test method is marked as a minor change item in the approval form, so it is notified within 30 days after the change."
+      },
+      "moderate": {
+       "cat": "MOD",
+       "src": "mod24",
+       "at": "Trial notice, Q1",
+       "why": "The potency test method is designated as a moderate change item, so it goes through the rapid moderate change review."
+      },
+      "annual": {
+       "cat": "JPAR",
+       "src": "ar25",
+       "at": "Trial notice",
+       "why": "The potency test method is designated as an annual report item, so it is reported in the yearly report."
+      },
+      "absent": {
+       "cat": "NONE",
+       "src": "pmd",
+       "at": "Article 14",
+       "why": "The potency test method is not in the approval form, so no filing is needed; manage it in the quality system."
+      }
+     }
+    }
+   }
+  }
+ },
+ "bio-formulation": {
+  "tree": {
+   "ask": "jpItem",
+   "on": {
+    "pca": {
+     "cat": "PCA",
+     "src": "reg47",
+     "at": "Article 47(5)",
+     "why": "A formulation change is excluded from minor changes by Article 47(5), so it needs a partial change approval."
+    },
+    "minor": {
+     "cat": "PCA",
+     "src": "reg47",
+     "at": "Article 47(5)",
+     "why": "Even though the item is marked as minor, Article 47(5) excludes this kind of change from the minor route: partial change approval."
+    },
+    "moderate": {
+     "cat": "MOD",
+     "src": "mod24",
+     "at": "Trial notice, Q1",
+     "why": "A formulation change is designated as a moderate change item, so it goes through the rapid moderate change review."
+    },
+    "annual": {
+     "cat": "JPAR",
+     "src": "ar25",
+     "at": "Trial notice",
+     "why": "A formulation change is designated as an annual report item, so it is reported in the yearly report."
+    },
+    "absent": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "A formulation change is not in the approval form, so no filing is needed."
+    }
+   }
+  }
+ },
+ "bio-adventitious": {
+  "tree": {
+   "ask": "adventRisk",
+   "on": {
+    "first": {
+     "ask": "jpItem",
+     "on": {
+      "pca": {
+       "cat": "PCA",
+       "src": "reg47",
+       "at": "Article 47(3)",
+       "why": "New viral clearance claims is excluded from minor changes by Article 47(3), so it needs a partial change approval."
+      },
+      "minor": {
+       "cat": "PCA",
+       "src": "reg47",
+       "at": "Article 47(3)",
+       "why": "Even though the item is marked as minor, Article 47(3) excludes this kind of change from the minor route: partial change approval."
+      },
+      "moderate": {
+       "cat": "MOD",
+       "src": "mod24",
+       "at": "Trial notice, Q1",
+       "why": "New viral clearance claims is designated as a moderate change item, so it goes through the rapid moderate change review."
+      },
+      "annual": {
+       "cat": "JPAR",
+       "src": "ar25",
+       "at": "Trial notice",
+       "why": "New viral clearance claims is designated as an annual report item, so it is reported in the yearly report."
+      },
+      "absent": {
+       "cat": "NONE",
+       "src": "pmd",
+       "at": "Article 14",
+       "why": "New viral clearance claims is not in the approval form, so no filing is needed."
+      }
+     }
+    },
+    "higher": {
+     "ask": "jpItem",
+     "on": {
+      "pca": {
+       "cat": "PCA",
+       "src": "reg47",
+       "at": "Article 47(3)",
+       "why": "A higher-risk viral safety evaluation is excluded from minor changes by Article 47(3), so it needs a partial change approval."
+      },
+      "minor": {
+       "cat": "PCA",
+       "src": "reg47",
+       "at": "Article 47(3)",
+       "why": "Even though the item is marked as minor, Article 47(3) excludes this kind of change from the minor route: partial change approval."
+      },
+      "moderate": {
+       "cat": "MOD",
+       "src": "mod24",
+       "at": "Trial notice, Q1",
+       "why": "A higher-risk viral safety evaluation is designated as a moderate change item, so it goes through the rapid moderate change review."
+      },
+      "annual": {
+       "cat": "JPAR",
+       "src": "ar25",
+       "at": "Trial notice",
+       "why": "A higher-risk viral safety evaluation is designated as an annual report item, so it is reported in the yearly report."
+      },
+      "absent": {
+       "cat": "NONE",
+       "src": "pmd",
+       "at": "Article 14",
+       "why": "A higher-risk viral safety evaluation is not in the approval form, so no filing is needed."
+      }
+     }
+    },
+    "same": {
+     "ask": "jpItem",
+     "on": {
+      "pca": {
+       "cat": "PCA",
+       "src": "pmd",
+       "at": "Article 14",
+       "why": "The viral safety data is written as an approved matter, so it needs a partial change approval."
+      },
+      "minor": {
+       "cat": "MCN",
+       "src": "pmd",
+       "at": "Article 14",
+       "why": "The viral safety data is marked as a minor change item in the approval form, so it is notified within 30 days after the change."
+      },
+      "moderate": {
+       "cat": "MOD",
+       "src": "mod24",
+       "at": "Trial notice, Q1",
+       "why": "The viral safety data is designated as a moderate change item, so it goes through the rapid moderate change review."
+      },
+      "annual": {
+       "cat": "JPAR",
+       "src": "ar25",
+       "at": "Trial notice",
+       "why": "The viral safety data is designated as an annual report item, so it is reported in the yearly report."
+      },
+      "absent": {
+       "cat": "NONE",
+       "src": "pmd",
+       "at": "Article 14",
+       "why": "The viral safety data is not in the approval form, so no filing is needed; manage it in the quality system."
+      }
+     }
+    }
+   }
+  }
+ },
+ "admin-manufacturer-name": {
+  "tree": {
+   "cat": "MCN",
+   "src": "pmd",
+   "at": "Article 14",
+   "why": "A change in a manufacturer's name in the approval form is a minor change notification."
+  }
+ },
+ "admin-local-rep": {
+  "tree": {
+   "cat": "NOTIFY",
+   "src": "pmd",
+   "at": "Licence change notification",
+   "why": "A change of the designated marketing authorisation holder for a foreign manufacturer, or of the safety manager, is notified.",
+   "note": "Simplified."
+  }
+ },
+ "admin-inn": {
+  "tree": {
+   "cat": "MCN",
+   "src": "pmd",
+   "at": "Article 14",
+   "why": "A new non-proprietary name (JAN) in the approval form is a minor change notification.",
+   "note": "Simplified.",
+   "pi": true
+  }
+ },
+ "admin-delete-presentation": {
+  "tree": {
+   "ask": "presentationKind",
+   "on": {
+    "strength": {
+     "cat": "NOTIFY",
+     "src": "pmd",
+     "at": "Approval withdrawal",
+     "why": "A strength is withdrawn by notifying the withdrawal of its approval.",
+     "note": "Each strength has its own approval in Japan."
+    },
+    "pack": {
+     "cat": "NONE",
+     "src": "pmd",
+     "at": "Article 14",
+     "why": "Pack sizes are not approved matters: no filing."
+    }
+   }
+  }
+ }
+}

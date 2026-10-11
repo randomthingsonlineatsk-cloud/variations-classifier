@@ -15,7 +15,7 @@ export function makeDrill(region, seed) {
   const r = rng(seed);
   const pack = packFor(region);
   for (let tries = 0; tries < 50; tries++) {
-    const product = pick(BUILTIN_PRODUCTS, r);
+    const product = pick(BUILTIN_PRODUCTS.filter((p) => !['ca', 'ch', 'jp', 'who'].includes(region) || p[region]), r);
     const change = pick(CHANGES.filter((c) => applies(c, product) && pack.entries[c.id]), r);
     if (!change) continue;
     const answers = { ...productAnswers(product) };

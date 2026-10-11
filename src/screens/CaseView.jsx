@@ -1,8 +1,9 @@
 import React, { useMemo, useState } from 'react';
 import { useApp } from '../ctx.js';
-import { CHANGE, GROUP, QUESTIONS, EVIDENCE, READY, changesFor, searchChanges, optionsFor, categoryOf, regionOf, questionText, conditionCode } from '../engine/packs.js';
+import { CHANGE, GROUP, QUESTIONS, EVIDENCE, READY, regionsFor, changesFor, searchChanges, optionsFor, categoryOf, regionOf, questionText, conditionCode, toneOf, noFiling } from '../engine/packs.js';
 import { classify, nextQuestion, whatIfs, lowerRoutes, pathItems, answerOf, isFromProduct, autoKey } from '../engine/classify.js';
 import { answersFor, filingsFor, impactFor, timelineFor, coverLetter, ectdFor, cmpCode, displayCode, packForCase, isEU, euRoute } from '../engine/filing.js';
+import { productRefs } from '../engine/model.js';
 import { buildChangePackage } from '../engine/handoff.js';
 import { addChange } from '../engine/model.js';
 import { download } from '../engine/io.js';
@@ -64,12 +65,12 @@ export default function CaseView({ id }) {
               )}
             </h1>
             <p className="small muted" style={{ margin: 0 }}>
-              {product.brandName} ({product.inn}) · {product.dosageForm} · US {product.appType.toUpperCase()} {product.applicationNumber}{product.eu ? ` · EU ${product.eu.maNumber} (${euRoute(product)})` : ''} · numbers fictional
+              {product.brandName} ({product.inn}) · {product.dosageForm} · {productRefs(product, k.regions).join(' · ')} · numbers fictional
             </p>
             <div className="row small" style={{ marginTop: '.35rem' }}>
               {mission ? k.regions.map((r) => <span key={r} className="pill">{regionOf(r).label}: edition {packs[r].edition}</span>) : READY.map((r) => (
                 <label key={r} className="row" style={{ gap: '.3rem' }}>
-                  <input type="checkbox" checked={k.regions.includes(r)} onChange={() => toggleRegion(r)} disabled={k.regions.includes(r) && k.regions.length === 1} />
+                  <input type="checkbox" checked={k.regions.includes(r)} onChange={() => toggleRegion(r)} disabled={(k.regions.includes(r) && k.regions.length === 1) || (!k.regions.includes(r) && !regionsFor(product).includes(r))} />
                   {regionOf(r).label}{packs[r] ? <span className="muted">(edition {packs[r].edition})</span> : null}
                 </label>
               ))}
@@ -330,7 +331,7 @@ function Result({ pack, r, showCites, product, region, multi }) {
   const o = r.outcome;
   const cat = categoryOf(pack, r.category);
   return (
-    <div className={`result cat-${r.category}`} aria-live="polite">
+    <div className={`result tone-${toneOf(pack, r.category)}`} aria-live="polite">
       {head}
       <div className="row" style={{ justifyContent: 'space-between' }}>
         <div className="row"><Cat pack={pack} id={r.category} big label="long" /><Badge pack={pack} id={r.category} /></div>
@@ -386,12 +387,15 @@ function PlanTab({ k, packs, product, mutate, reveal, mission }) {
   const pack = packs[r];
   const { filings, pending } = filingsFor(pack, product, k);
   const has505 = k.changes.some((c) => pack.entries[c.changeId]?.clock === '505o4');
-  const anyPAS = filings.some((f) => f.category === 'PAS');
-  const anyII = filings.some((f) => ['II', 'EXT'].includes(f.category));
+  const anyPAS = filings.some((f) => ['PAS', 'NEW'].includes(f.category)) || (r === 'jp' && filings.some((f) => ['PCA', 'NEW'].includes(f.category) && f.kind === 'efficacy'));
+  const anyII = filings.some((f) => categoryOf(pack, f.category)?.implement === 'wait-for-approval' && ['eu', 'ch', 'who', 'ca', 'jp'].includes(r) && !['ADMIN'].includes(f.category));
   const eu = isEU(pack);
+  const relatedText = { us: 'in the most restrictive category, guidance section XII', eu: 'a group follows its highest type', ch: 'a multiple application follows the longest time limit', in: 'one application, explained together', ca: 'the filing takes the highest level', jp: 'one partial change application covers them', who: 'a grouped variation takes the highest category' }[r];
+  const apartText = { us: 'annual report items share the annual report', eu: 'Type IA items share the annual update', ch: 'Type IA items can be collected over the year', in: 'Level III items share the annual notification', ca: 'Level III items can share an annual notification', jp: 'minor change notifications can be filed together', who: 'annual notifications are grouped once a year' }[r];
   const others = products.filter((p) => p.id !== product.id && p.eu);
   const exportPkg = (f) => {
     const pkg = buildChangePackage({ pack, product, kase: k, filing: f, user });
+    if (!pkg) { toast('This filing has no eCTD sequence in the eCTD Dossier Builder.'); return; }
     const slug = `${product.brandName}-${pack.region}-${f.category}-${k.submitDate}`.toLowerCase().replace(/[^a-z0-9]+/g, '-');
     download(`change-package-${slug}.json`, JSON.stringify(pkg, null, 2));
     toast('Change package saved. In the eCTD Dossier Builder, open the project for this product and region, then use "Import change package" on the Sequences tab.');
@@ -430,15 +434,15 @@ function PlanTab({ k, packs, product, mutate, reveal, mission }) {
         </div>
         {anyPAS && (
           <div className="row">
-            <label className="row small"><input type="checkbox" checked={!!k.options?.priority} onChange={(e) => mutate((x) => { x.options.priority = e.target.checked; })} /> Priority review (efficacy supplements)</label>
-            <label className="row small"><input type="checkbox" checked={!!k.options?.inspection} onChange={(e) => mutate((x) => { x.options.inspection = e.target.checked; })} /> Inspection needed (ANDA prior approval supplements)</label>
+            <label className="row small"><input type="checkbox" checked={!!k.options?.priority} onChange={(e) => mutate((x) => { x.options.priority = e.target.checked; })} /> Priority review (indications and new applications)</label>
+            {r === 'us' && <label className="row small"><input type="checkbox" checked={!!k.options?.inspection} onChange={(e) => mutate((x) => { x.options.inspection = e.target.checked; })} /> Inspection needed (ANDA prior approval supplements)</label>}
           </div>
         )}
         {k.changes.length > 1 && (
           <fieldset className="small" style={{ border: 0, padding: 0, margin: 0 }}>
             <legend style={{ fontWeight: 600 }}>Are the changes related?</legend>
-            <label className="row"><input type="radio" name="related" checked={!!k.related} onChange={() => mutate((x) => { x.related = true; })} /> Yes: file them together ({eu ? 'a group follows its highest type' : 'in the most restrictive category, guidance section XII'})</label>
-            <label className="row"><input type="radio" name="related" checked={!k.related} onChange={() => mutate((x) => { x.related = false; })} /> No: file each on its own; {eu ? 'Type IA items share the annual update' : 'annual report items share the annual report'}</label>
+            <label className="row"><input type="radio" name="related" checked={!!k.related} onChange={() => mutate((x) => { x.related = true; })} /> Yes: file them together ({relatedText})</label>
+            <label className="row"><input type="radio" name="related" checked={!k.related} onChange={() => mutate((x) => { x.related = false; })} /> No: file each on its own; {apartText}</label>
           </fieldset>
         )}
         {eu && !mission && others.length > 0 && (
@@ -477,15 +481,15 @@ const MODE_LABEL = { grouping: 'Group of variations', 'single-notification': 'Se
 
 function Filing({ f, k, pack, product, mutate, reveal, exportPkg, region }) {
   const cat = categoryOf(pack, f.category);
-  const ectd = ectdFor(pack, f);
+  const ectd = ectdFor(pack, f, product);
   const tl = timelineFor(pack, product, f, { submitDate: k.submitDate, priority: k.options?.priority, inspection: k.options?.inspection, notificationDate: k.options?.notificationDate, clockStop: k.options?.clockStop, plannedUse: k.plannedUse });
   const impact = impactFor(pack, f);
   const key = (code) => `${region}:${f.items.map((i) => i.change.id).join('+')}:${code}`;
   const done = impact.filter((e) => k.checks?.[key(e.code)]).length;
-  const label = FILING_LABEL[pack.region]?.(f) ?? cat.label;
-  const submits = !['NONE', 'REC'].includes(f.category);
+  const label = FILING_LABEL[pack.region]?.(f) ?? (noFiling(pack, f.category) ? 'No submission' : cat.label);
+  const submits = !noFiling(pack, f.category);
   return (
-    <section className={`filing cat-${f.category}`} aria-label={`${label}: ${cat.label}`}>
+    <section className={`filing tone-${toneOf(pack, f.category)}`} aria-label={`${label}: ${cat.label}`}>
       <div className="row" style={{ justifyContent: 'space-between' }}>
         <h2 style={{ fontSize: 'var(--step-1)', margin: 0 }}>{label} <Cat pack={pack} id={f.category} label="long" /></h2>
         <Badge pack={pack} id={f.category} />
@@ -493,7 +497,8 @@ function Filing({ f, k, pack, product, mutate, reveal, exportPkg, region }) {
       {MODE_LABEL[f.mode] && <p className="small" style={{ margin: '.4rem 0 0' }}><span className="pill">{MODE_LABEL[f.mode]}</span></p>}
       <ul className="small" style={{ margin: '.5rem 0' }}>{f.items.map((i) => <li key={i.change.id}>{i.def.title}{i.change.note ? `: ${i.change.note}` : ''} <Cat pack={pack} id={i.result.category} /> <span className="muted">{i.result.outcome?.at}</span></li>)}</ul>
       {f.warnings?.map((w) => <div key={w} className="note">{w}</div>)}
-      {submits && f.category !== 'OTHER' && <p className="small muted" style={{ margin: '.5rem 0 0' }}>eCTD: submission type <code>{ectd.submissionType}</code>, sub-type <code>{ectd.subType}</code>{ectd.submissionMode ? <>, mode <code>{ectd.submissionMode}</code></> : null}.</p>}
+      {submits && ectd && <p className="small muted" style={{ margin: '.5rem 0 0' }}>eCTD: submission type <code>{ectd.submissionType}</code>, sub-type <code>{ectd.subType}</code>{ectd.submissionMode ? <>, mode <code>{ectd.submissionMode}</code></> : null}.</p>}
+      {submits && !ectd && <p className="small muted" style={{ margin: '.5rem 0 0' }}>{region === 'who' ? 'WHO PQ variations are filed with the PQ variation form and documents, not as a sequence in the eCTD Dossier Builder.' : 'Filed as a notification outside an eCTD sequence.'}</p>}
 
       {reveal ? (
         <>
@@ -522,7 +527,7 @@ function Filing({ f, k, pack, product, mutate, reveal, exportPkg, region }) {
               <pre className="letter" style={{ whiteSpace: 'pre-wrap', fontFamily: 'var(--font)' }}>{coverLetter(pack, product, f, k)}</pre>
             </details>
           )}
-          {submits && f.category !== 'OTHER' && (
+          {submits && ectd && (
             <div className="row no-print" style={{ marginTop: '1rem' }}>
               <button className="btn primary" onClick={() => exportPkg(f)}>Export change package for the eCTD Dossier Builder</button>
             </div>
@@ -555,7 +560,7 @@ function MissionTab({ k, pack, product, mission, mutate }) {
     toast(`Mission ${mission.id}: ${res.score}/100.`);
   };
   const truth = sub ? scoreMission(mission, k).truth : null;
-  const dateLabel = mission.timeline === 'due505' ? 'Date the response is due' : mission.timeline === 'notify' ? 'Latest date to notify the change' : isEU(pack) ? 'Earliest date the change can be implemented' : 'Earliest date of use, or FDA goal date for a prior approval supplement';
+  const dateLabel = mission.timeline === 'due505' ? 'Date the response is due' : mission.timeline === 'notify' ? 'Latest date to notify the change' : pack.id === 'us' ? 'Earliest date of use, or FDA goal date for a prior approval supplement' : 'Earliest date the change can be implemented (or the review target date)';
   return (
     <div className="stack" style={{ maxWidth: 900 }}>
       <section className="panel">

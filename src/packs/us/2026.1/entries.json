@@ -1698,5 +1698,899 @@
    "why": "A name or address change without a change in ownership is notified by letter; labeling that shows the name is then updated.",
    "note": "Simplified: the label update itself may be an annual report item."
   }
+ },
+ "ds-cep": {
+  "tree": {
+   "ask": "dsSameRoute",
+   "on": {
+    "yes": {
+     "ask": "siteCgmp",
+     "on": {
+      "yes": {
+       "cat": "CBE30",
+       "src": "g04",
+       "at": "VI.C.1.a",
+       "why": "An alternative source using the same synthesis, at a site with satisfactory CGMP status, is handled like a move of drug substance manufacture to another site: a CBE-30.",
+       "note": "FDA reviews the drug master file with the supplement. Where the DMF has not been reviewed before, many holders file a prior approval supplement."
+      },
+      "no": {
+       "cat": "PAS",
+       "src": "g04",
+       "at": "VI.B.2",
+       "why": "The new source does not have a satisfactory CGMP inspection for this operation."
+      }
+     }
+    },
+    "no": {
+     "cat": "PAS",
+     "src": "g04",
+     "at": "VII.B.4",
+     "why": "A source with a different synthesis or new impurities is a change in the synthesis of the drug substance that may affect its impurity profile or properties: prior approval."
+    }
+   }
+  }
+ },
+ "batch-release-site": {
+  "tree": {
+   "ask": "testingConditions",
+   "on": {
+    "yes": {
+     "cat": "CBE30",
+     "src": "g04",
+     "at": "VI.C.1.d",
+     "why": "The new lab uses the approved procedures, commitments are met and it can do the testing, so the move is a CBE-30.",
+     "note": "The US has no separate batch release site (there is no qualified person). FDA treats a laboratory doing release testing as a testing site."
+    },
+    "no": {
+     "cat": "PAS",
+     "src": "g04",
+     "at": "VI.C.1.d",
+     "why": "The conditions for the CBE-30 route are not all met.",
+     "note": "The US has no separate batch release site (there is no qualified person). FDA treats a laboratory doing release testing as a testing site."
+    }
+   }
+  }
+ },
+ "site-delete": {
+  "tree": {
+   "cat": "AR",
+   "src": "g04",
+   "at": "VI.D",
+   "why": "Removing a site from the application, with an approved site doing the same work, has minimal potential to affect quality and is reported in the annual report.",
+   "note": "Not named in the 2004 guidance; this follows FDA practice for minor site changes."
+  }
+ },
+ "ds-scale": {
+  "tree": {
+   "ask": "scaleOnly",
+   "on": {
+    "yes": {
+     "cat": "AR",
+     "src": "g04",
+     "at": "VII.D.1",
+     "why": "A change in scale with equipment of the same design and operating principle, and no other process change, is a minor change."
+    },
+    "no": {
+     "cat": "CBE30",
+     "src": "g04",
+     "at": "VII.C.1.b",
+     "why": "A scale change that also changes the drug substance process is a moderate change.",
+     "note": "Simplified: if the change may affect the impurity profile or physical properties, it is major (VII.B.4)."
+    }
+   }
+  }
+ },
+ "ipc-tighten": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CBE30",
+     "src": "gbio21",
+     "at": "Appendix, specifications",
+     "why": "For a biologic, tightening a limit because the process improved is a CBE-30.",
+     "note": "The app applies the specification entry to in-process limits by analogy."
+    },
+    "no": {
+     "cat": "AR",
+     "src": "g04",
+     "at": "VIII.D.3",
+     "why": "Tightening an acceptance criterion, including an in-process one, is a minor change."
+    }
+   }
+  }
+ },
+ "ipc-relax": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "PAS",
+     "src": "gbio21",
+     "at": "Appendix, specifications",
+     "why": "Widening limits or deleting a test for a biologic needs prior approval.",
+     "note": "The app applies the specification entry to in-process controls by analogy."
+    },
+    "no": {
+     "cat": "PAS",
+     "src": "g04",
+     "at": "VIII.B.1 and B.2",
+     "why": "Relaxing an acceptance criterion or deleting any part of a specification (in-process controls included) is a major change."
+    }
+   }
+  }
+ },
+ "hold-time": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "ask": "holdData",
+     "on": {
+      "yes": {
+       "cat": "CBE30",
+       "src": "gbio21",
+       "at": "Appendix, manufacturing process",
+       "why": "For a biologic, a longer hold time supported by validated data is a CBE-30.",
+       "note": "Simplified: the app reads the hold-time cases in the 2021 guidance as moderate when data cover the full time."
+      },
+      "no": {
+       "cat": "PAS",
+       "src": "gbio21",
+       "at": "Appendix, manufacturing process",
+       "why": "A longer hold time without data covering it may affect product quality: prior approval."
+      }
+     }
+    },
+    "no": {
+     "ask": "sterile",
+     "on": {
+      "yes": {
+       "ask": "bulkHold50",
+       "on": {
+        "yes": {
+         "cat": "CBE30",
+         "src": "g04",
+         "at": "VII.C.1.d",
+         "why": "Bulk solution storage time rises by more than 50% beyond validated limits."
+        },
+        "no": {
+         "cat": "AR",
+         "src": "g04",
+         "at": "VII.D.6",
+         "why": "Bulk solution storage time rises by no more than 50%."
+        }
+       }
+      },
+      "no": {
+       "cat": "AR",
+       "src": "g04",
+       "at": "VII.D",
+       "why": "A longer hold time for a non-sterile intermediate, supported by data, has minimal potential to affect quality.",
+       "note": "Not named in the 2004 guidance for non-sterile products; supported under CGMP and reported in the annual report."
+      }
+     }
+    }
+   }
+  }
+ },
+ "design-space-within": {
+  "tree": {
+   "cat": "NONE",
+   "src": "q8",
+   "at": "Glossary, design space",
+   "why": "Working within the approved design space is not considered a change, so nothing is reported."
+  }
+ },
+ "design-space-new": {
+  "tree": {
+   "cat": "PAS",
+   "src": "q8",
+   "at": "Glossary, design space",
+   "why": "A design space is proposed by the applicant and approved by FDA. A new or expanded design space for an approved product is submitted in a prior approval supplement."
+  }
+ },
+ "rtrt": {
+  "tree": {
+   "cat": "PAS",
+   "src": "g04",
+   "at": "VIII.B.2 and B.3",
+   "why": "Real-time release testing deletes end-product tests and establishes new regulatory procedures (models, PAT): prior approval."
+  }
+ },
+ "continuous-mfg": {
+  "tree": {
+   "cat": "PAS",
+   "src": "q13",
+   "at": "Section 6 (regulatory considerations)",
+   "why": "Converting a batch process to continuous manufacturing changes the process, equipment and control strategy: prior approval.",
+   "note": "FDA encourages early meetings before converting; a comparability protocol can lower the category of later changes."
+  }
+ },
+ "excipient-supplier": {
+  "tree": {
+   "cat": "NONE",
+   "src": "cfr211",
+   "at": "211.84",
+   "why": "Applications do not usually name excipient suppliers. A new supplier of the same grade that meets the approved specification is qualified under CGMP, with no report.",
+   "note": "If the application names the supplier, or the excipient controls release or is novel, classify it as a composition or process change."
+  }
+ },
+ "coating-weight": {
+  "tree": {
+   "ask": "mr",
+   "on": {
+    "yes": {
+     "cat": "PAS",
+     "src": "g04",
+     "at": "VII.B.1",
+     "why": "For a modified-release product the coating may control release, so a coating weight change is major."
+    },
+    "no": {
+     "ask": "supacLevel",
+     "on": {
+      "1": {
+       "cat": "AR",
+       "src": "supacir",
+       "at": "III.A, Level 1",
+       "why": "SUPAC-IR Level 1 composition changes are reported in the annual report."
+      },
+      "2": {
+       "cat": "PAS",
+       "src": "supacir",
+       "at": "III.B, Level 2",
+       "why": "SUPAC-IR Level 2 composition changes need prior approval, with comparative dissolution data."
+      },
+      "3": {
+       "cat": "PAS",
+       "src": "supacir",
+       "at": "III.C, Level 3",
+       "why": "SUPAC-IR Level 3 changes need prior approval and an in vivo bioequivalence study unless waived."
+      }
+     }
+    }
+   }
+  }
+ },
+ "score-line": {
+  "tree": {
+   "cat": "PAS",
+   "src": "gscore",
+   "at": "Section IV",
+   "why": "Adding or removing a score line changes how the product can be used and is described in labeling: prior approval.",
+   "note": "Simplified: the app treats both directions as prior approval. Generic scoring must match the reference listed drug."
+  }
+ },
+ "tablet-shape": {
+  "tree": {
+   "ask": "mr",
+   "on": {
+    "yes": {
+     "cat": "PAS",
+     "src": "g04",
+     "at": "VII.B.1",
+     "why": "A shape change for a modified-release product may affect release."
+    },
+    "no": {
+     "cat": "CBE30",
+     "src": "g04",
+     "at": "VII.C.1",
+     "why": "A change in tablet shape or size with the same composition and mass is treated as a moderate change; dissolution and labeling (the description) change.",
+     "note": "Simplified: FDA practice varies; the app uses CBE-30 because the product description in labeling changes."
+    }
+   }
+  }
+ },
+ "tse-excipient": {
+  "tree": {
+   "cat": "AR",
+   "src": "g14",
+   "at": "Appendix A, components and composition",
+   "why": "Moving an inactive ingredient from an animal source to a vegetable or synthetic source with the same specification has minimal potential to affect quality.",
+   "note": "Simplified: the app reads this from the 2014 annual report guidance examples for component sources."
+  }
+ },
+ "dosage-form-new": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "PAS",
+     "src": "cfr601",
+     "at": "601.12(b)",
+     "why": "For a licensed biologic, a new dosage form is a prior approval supplement.",
+     "pi": true
+    },
+    "no": {
+     "cat": "NEW",
+     "src": "fdca505",
+     "at": "505(b)",
+     "why": "A new dosage form is a new drug product: it needs a new application (an NDA, or an ANDA for a generic), not a supplement.",
+     "pi": true
+    }
+   }
+  }
+ },
+ "nitrosamine-control": {
+  "tree": {
+   "cat": "CBE0",
+   "src": "g04",
+   "at": "VIII.C.2.a",
+   "why": "Adding a test and acceptance criterion that gives greater assurance is a CBE supplement.",
+   "note": "FDA guidance on control of nitrosamine impurities (Revision 2, 2024) asks for nitrosamine changes to be reported in the appropriate supplement; check it for limits."
+  }
+ },
+ "excipient-spec": {
+  "tree": {
+   "ask": "excipientSpecKind",
+   "on": {
+    "tighten": {
+     "cat": "AR",
+     "src": "g04",
+     "at": "VIII.D.3",
+     "why": "Tightening an acceptance criterion is a minor change."
+    },
+    "add": {
+     "cat": "CBE0",
+     "src": "g04",
+     "at": "VIII.C.2.a",
+     "why": "Adding a test that gives greater assurance is a CBE supplement."
+    },
+    "delete": {
+     "cat": "PAS",
+     "src": "g04",
+     "at": "VIII.B.2",
+     "why": "Deleting any part of a specification is a major change."
+    },
+    "relax": {
+     "cat": "PAS",
+     "src": "g04",
+     "at": "VIII.B.1",
+     "why": "Relaxing an acceptance criterion is a major change."
+    }
+   }
+  }
+ },
+ "skip-testing": {
+  "tree": {
+   "cat": "PAS",
+   "src": "g04",
+   "at": "VIII.B.2",
+   "why": "Testing only some batches removes the test from routine release, which FDA treats like deleting part of a specification: prior approval.",
+   "note": "Simplified. A comparability protocol can set a lower category."
+  }
+ },
+ "method-minor": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "AR",
+     "src": "gbio21",
+     "at": "Appendix, analytical procedures",
+     "why": "Minor modifications to a procedure are annual report changes."
+    },
+    "no": {
+     "cat": "AR",
+     "src": "g14",
+     "at": "Appendix A, specifications",
+     "why": "An adjustment within the limits the method allows (for example the system suitability ranges of USP <621>) gives the same assurance and is reported in the annual report.",
+     "note": "Simplified: changes outside allowed adjustments are CBE-30 (VIII.C.1.a)."
+    }
+   }
+  }
+ },
+ "micro-rapid": {
+  "tree": {
+   "ask": "sameOrBetter",
+   "on": {
+    "yes": {
+     "ask": "sterile",
+     "on": {
+      "yes": {
+       "cat": "PAS",
+       "src": "g04",
+       "at": "VIII.B.4",
+       "why": "FDA expects prior approval for an alternative sterility test, unless an approved comparability protocol covers it."
+      },
+      "no": {
+       "cat": "CBE30",
+       "src": "g04",
+       "at": "VIII.C.1.a",
+       "why": "Replacing a microbiological procedure with a validated method that gives the same or greater assurance is a CBE-30."
+      }
+     }
+    },
+    "no": {
+     "cat": "PAS",
+     "src": "g04",
+     "at": "VIII.B.4",
+     "why": "The new procedure does not give the same or greater assurance."
+    }
+   }
+  }
+ },
+ "cc-supplier": {
+  "tree": {
+   "ask": "sterile",
+   "on": {
+    "yes": {
+     "cat": "CBE30",
+     "src": "g04",
+     "at": "IX.C.1",
+     "why": "For a sterile product a new component supplier may affect sterility assurance and container integrity: a moderate change.",
+     "note": "Simplified."
+    },
+    "no": {
+     "cat": "AR",
+     "src": "g14",
+     "at": "Appendix A, container closure",
+     "why": "A new supplier of the same container closure component, same material and specification, is reported in the annual report."
+    }
+   }
+  }
+ },
+ "cc-device": {
+  "tree": {
+   "ask": "deviceSignificant",
+   "on": {
+    "yes": {
+     "cat": "PAS",
+     "src": "g04",
+     "at": "IX.B.3",
+     "why": "A change to packaging or a device that controls the dose delivered is a major change."
+    },
+    "no": {
+     "cat": "CBE30",
+     "src": "g04",
+     "at": "IX.C.1",
+     "why": "A change to a co-packaged measuring device that does not control the dose is treated as a moderate change.",
+     "note": "Simplified: device constituents can also bring combination product requirements."
+    }
+   }
+  }
+ },
+ "cc-noncontact": {
+  "tree": {
+   "cat": "AR",
+   "src": "g04",
+   "at": "IX.D",
+   "why": "A change to a component that does not touch the product and has no protective role has minimal potential to affect quality.",
+   "note": "Compare the cap colour entry (IX.D.8)."
+  }
+ },
+ "ds-retest": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "ask": "approvedProtocolFullData",
+     "on": {
+      "yes": {
+       "cat": "CBE30",
+       "src": "gbio21",
+       "at": "Appendix, stability",
+       "why": "For a biologic, an extension based on full commercial batch data under an approved protocol is a CBE-30.",
+       "note": "The app applies the drug product expiration dating entries to the drug substance re-test period by analogy."
+      },
+      "no": {
+       "cat": "PAS",
+       "src": "gbio21",
+       "at": "Appendix, stability",
+       "why": "An extension without an approved protocol needs prior approval.",
+       "note": "The app applies the drug product expiration dating entries to the drug substance re-test period by analogy."
+      }
+     }
+    },
+    "no": {
+     "ask": "approvedProtocolFullData",
+     "on": {
+      "yes": {
+       "cat": "AR",
+       "src": "g04",
+       "at": "XI.C.1",
+       "why": "Full shelf-life data on production batches under the approved protocol make this an annual report change.",
+       "note": "The app applies the drug product expiration dating entries to the drug substance re-test period by analogy."
+      },
+      "no": {
+       "cat": "PAS",
+       "src": "g04",
+       "at": "XI.A.4",
+       "why": "An extension based on a new or revised protocol, or without full data, needs prior approval.",
+       "note": "The app applies the drug product expiration dating entries to the drug substance re-test period by analogy."
+      }
+     }
+    }
+   }
+  }
+ },
+ "in-use-shelf-life": {
+  "tree": {
+   "ask": "inUseKind",
+   "on": {
+    "reduce": {
+     "cat": "CBE0",
+     "src": "cfr314",
+     "at": "314.70(c)(6)(iii)(C)",
+     "why": "A shorter in-use period strengthens an instruction for safe use: a CBE supplement.",
+     "pi": true
+    },
+    "extendReal": {
+     "cat": "PAS",
+     "src": "g04",
+     "at": "X.B.7",
+     "why": "A longer in-use period changes the labeled storage conditions: prior approval.",
+     "pi": true
+    },
+    "extendModel": {
+     "cat": "PAS",
+     "src": "g04",
+     "at": "X.B.7",
+     "why": "A longer in-use period changes the labeled storage conditions: prior approval.",
+     "pi": true
+    }
+   }
+  }
+ },
+ "ds-storage": {
+  "tree": {
+   "ask": "restrictive",
+   "on": {
+    "yes": {
+     "cat": "CBE30",
+     "src": "g04",
+     "at": "XI.B.1",
+     "why": "More restrictive storage is treated like a reduction in dating: a moderate change.",
+     "note": "By analogy: the guidance has no drug substance storage entry."
+    },
+    "no": {
+     "cat": "PAS",
+     "src": "g04",
+     "at": "X.B.7",
+     "why": "Less restrictive storage conditions need data and assessment: prior approval.",
+     "note": "By analogy with the drug product entry."
+    }
+   }
+  }
+ },
+ "lab-new-route": {
+  "tree": {
+   "cat": "PAS",
+   "src": "cfr314",
+   "at": "314.70(b)(2)(v)",
+   "why": "A new route of administration is an efficacy supplement that needs prior approval.",
+   "note": "If the new route needs a new dosage form, a new application may be needed instead.",
+   "pi": true
+  }
+ },
+ "lab-brand-name": {
+  "tree": {
+   "cat": "PAS",
+   "src": "g04",
+   "at": "X.B",
+   "why": "A new proprietary name is reviewed by FDA before use: prior approval.",
+   "note": "FDA reviews proprietary names for safety and promotional concerns.",
+   "pi": true
+  }
+ },
+ "lab-rmp": {
+  "tree": {
+   "ask": "rmpKind",
+   "on": {
+    "agreed": {
+     "cat": "CBE0",
+     "src": "grems",
+     "at": "REMS revisions",
+     "why": "A REMS revision (editorial changes, or updates already agreed with FDA) can be implemented when FDA receives it.",
+     "note": "The US has REMS, not EU-style risk management plans; most products have no REMS."
+    },
+    "minor": {
+     "cat": "CBE30",
+     "src": "grems",
+     "at": "REMS modifications",
+     "why": "A minor REMS modification is submitted as a CBE-30.",
+     "note": "The US has REMS, not EU-style risk management plans; most products have no REMS."
+    },
+    "new": {
+     "cat": "PAS",
+     "src": "grems",
+     "at": "REMS modifications",
+     "why": "A major REMS modification needs prior approval.",
+     "note": "The US has REMS, not EU-style risk management plans; most products have no REMS."
+    }
+   }
+  }
+ },
+ "lab-psusa": {
+  "tree": {
+   "cat": "CBE0",
+   "src": "cfr314",
+   "at": "314.70(c)(6)(iii)(A)",
+   "why": "Adding or strengthening safety wording is a CBE supplement.",
+   "note": "The US has no PSUSA procedure. Wording that FDA itself requests follows section 505(o)(4) (see that entry).",
+   "pi": true
+  }
+ },
+ "lab-delete-indication": {
+  "tree": {
+   "cat": "CBE0",
+   "src": "cfr314",
+   "at": "314.70(c)(6)(iii)(D)",
+   "why": "Deleting an indication that is not supported, or no longer pursued, from labeling is a CBE supplement.",
+   "note": "Simplified: deletions for other reasons may need prior approval; talk to the review division.",
+   "pi": true
+  }
+ },
+ "ec-define": {
+  "tree": {
+   "cat": "PAS",
+   "src": "gq12",
+   "at": "Chapter 3",
+   "why": "For an approved product, established conditions and their reporting categories are proposed in a prior approval supplement."
+  }
+ },
+ "plcm-update": {
+  "tree": {
+   "ask": "plcmMajor",
+   "on": {
+    "yes": {
+     "cat": "PAS",
+     "src": "gq12",
+     "at": "Chapter 5 (PLCM)",
+     "why": "Changing established conditions or lowering a reporting category needs prior approval."
+    },
+    "no": {
+     "cat": "AR",
+     "src": "gq12",
+     "at": "Chapter 5 (PLCM)",
+     "why": "An administrative update of the PLCM (for example recording a completed commitment) goes with the next annual report.",
+     "note": "Simplified."
+    }
+   }
+  }
+ },
+ "non-ec-change": {
+  "tree": {
+   "ask": "isEC",
+   "on": {
+    "yes": {
+     "ask": "plcmCategory",
+     "on": {
+      "prior": {
+       "cat": "PAS",
+       "src": "gq12",
+       "at": "Chapter 3",
+       "why": "The PLCM sets prior approval for this established condition."
+      },
+      "moderate": {
+       "cat": "CBE30",
+       "src": "gq12",
+       "at": "Chapter 3",
+       "why": "The PLCM sets a moderate notification (CBE-30) for this established condition."
+      },
+      "low": {
+       "cat": "AR",
+       "src": "gq12",
+       "at": "Chapter 3",
+       "why": "The PLCM sets a low notification (annual report) for this established condition."
+      }
+     }
+    },
+    "no": {
+     "cat": "NONE",
+     "src": "gq12",
+     "at": "Chapter 3",
+     "why": "Changes to elements that are not established conditions are managed in the quality system and need no report."
+    }
+   }
+  }
+ },
+ "pacmp-change": {
+  "tree": {
+   "ask": "pacmpAction",
+   "on": {
+    "delete": {
+     "cat": "AR",
+     "src": "gcp22",
+     "at": "VII",
+     "why": "Withdrawing an approved comparability protocol is reported in the annual report.",
+     "note": "Simplified."
+    },
+    "minor": {
+     "cat": "CBE30",
+     "src": "gcp22",
+     "at": "VII",
+     "why": "A minor modification of an approved protocol, not changing its strategy, is treated as a moderate change.",
+     "note": "Simplified."
+    },
+    "major": {
+     "cat": "PAS",
+     "src": "gcp22",
+     "at": "VII",
+     "why": "A major modification of an approved protocol needs prior approval."
+    }
+   }
+  }
+ },
+ "bio-scale": {
+  "tree": {
+   "ask": "bioScaleOnly",
+   "on": {
+    "yes": {
+     "cat": "CBE30",
+     "src": "gbio21",
+     "at": "Appendix, scale",
+     "why": "Adding identical bioreactors or duplicating a train, with no process change, is a CBE-30."
+    },
+    "no": {
+     "cat": "PAS",
+     "src": "gbio21",
+     "at": "Appendix, scale",
+     "why": "Scaling up with different equipment or changed parameters needs prior approval."
+    }
+   }
+  }
+ },
+ "bio-media": {
+  "tree": {
+   "ask": "animalOrigin",
+   "on": {
+    "yes": {
+     "cat": "PAS",
+     "src": "gbio21",
+     "at": "Appendix, raw materials",
+     "why": "Introducing a material of human or animal origin raises adventitious agent risk: prior approval."
+    },
+    "no": {
+     "ask": "majorImpact",
+     "on": {
+      "yes": {
+       "cat": "PAS",
+       "src": "gbio21",
+       "at": "Appendix, raw materials",
+       "why": "A raw material change that may affect product quality needs prior approval."
+      },
+      "no": {
+       "cat": "CBE30",
+       "src": "gbio21",
+       "at": "Appendix, raw materials",
+       "why": "A raw material change with low potential to affect quality is a CBE-30.",
+       "note": "Simplified."
+      }
+     }
+    }
+   }
+  }
+ },
+ "bio-resin": {
+  "tree": {
+   "ask": "resinChange",
+   "on": {
+    "lifetime": {
+     "cat": "AR",
+     "src": "gbio21",
+     "at": "Appendix, purification",
+     "why": "More resin cycles under an approved lifetime protocol is an annual report change."
+    },
+    "supplier": {
+     "cat": "PAS",
+     "src": "gbio21",
+     "at": "Appendix, purification",
+     "why": "A different resin or supplier changes the purification step: prior approval."
+    }
+   }
+  }
+ },
+ "bio-potency": {
+  "tree": {
+   "ask": "potencyNewPrinciple",
+   "on": {
+    "yes": {
+     "cat": "PAS",
+     "src": "gbio21",
+     "at": "Appendix, analytical procedures",
+     "why": "A potency assay on a new principle needs prior approval."
+    },
+    "no": {
+     "ask": "bioMethodMajor",
+     "on": {
+      "yes": {
+       "cat": "PAS",
+       "src": "gbio21",
+       "at": "Appendix, analytical procedures",
+       "why": "Changing the technique, acceptance criteria or performance of the potency assay needs prior approval."
+      },
+      "no": {
+       "cat": "AR",
+       "src": "gbio21",
+       "at": "Appendix, analytical procedures",
+       "why": "Minor modifications to the assay are annual report changes."
+      }
+     }
+    }
+   }
+  }
+ },
+ "bio-formulation": {
+  "tree": {
+   "cat": "PAS",
+   "src": "gbio21",
+   "at": "Appendix, formulation",
+   "why": "A formulation change for a biologic needs prior approval."
+  }
+ },
+ "bio-adventitious": {
+  "tree": {
+   "ask": "adventRisk",
+   "on": {
+    "first": {
+     "cat": "PAS",
+     "src": "gbio21",
+     "at": "Appendix, viral safety",
+     "why": "New viral clearance claims for steps not tested before need prior approval."
+    },
+    "higher": {
+     "cat": "PAS",
+     "src": "gbio21",
+     "at": "Appendix, viral safety",
+     "why": "Replacement studies showing a higher risk need prior approval."
+    },
+    "same": {
+     "cat": "CBE30",
+     "src": "gbio21",
+     "at": "Appendix, viral safety",
+     "why": "Replacement studies with the same or lower risk are treated as a moderate change.",
+     "note": "Simplified."
+    }
+   }
+  }
+ },
+ "admin-manufacturer-name": {
+  "tree": {
+   "cat": "AR",
+   "src": "g14",
+   "at": "Appendix A, manufacturing sites",
+   "why": "A change in the name or address of a site, with no move and no change to operations, is reported in the annual report.",
+   "note": "FDA also needs the establishment registration updated."
+  }
+ },
+ "admin-local-rep": {
+  "tree": {
+   "cat": "LETTER",
+   "src": "cfr31450",
+   "at": "314.50(a)(5)",
+   "why": "A foreign applicant tells FDA of a new US agent by letter.",
+   "note": "Pharmacovigilance contacts are not reported as a change to the application."
+  }
+ },
+ "admin-inn": {
+  "tree": {
+   "cat": "CBE0",
+   "src": "cfr314",
+   "at": "314.70(c)(6)(iii)",
+   "why": "Updating labeling for a new established name is filed as a CBE supplement.",
+   "note": "Simplified: such changes usually follow FDA or USP direction.",
+   "pi": true
+  }
+ },
+ "admin-delete-presentation": {
+  "tree": {
+   "ask": "presentationKind",
+   "on": {
+    "strength": {
+     "cat": "LETTER",
+     "src": "cfr314150",
+     "at": "314.150(c)",
+     "why": "To stop marketing a strength for good, ask FDA by letter to withdraw approval of it.",
+     "note": "A temporary stop is reported under section 506C or in the annual report instead."
+    },
+    "pack": {
+     "cat": "AR",
+     "src": "g04",
+     "at": "IX.D",
+     "why": "Deleting a container size, with the remaining sizes covering the dosing, is a minor change."
+    }
+   }
+  }
  }
 }

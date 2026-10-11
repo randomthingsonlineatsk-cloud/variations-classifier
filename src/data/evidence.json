@@ -1,45 +1,218 @@
 {
  "_about": "Region-neutral supporting documents, keyed by id, with the CTD section each one updates and the eCTD operation it usually needs. Regional Module 1 items live in the region packs.",
- "qos":        { "label": "Quality overall summary, updated sections", "ctd": "2.3", "op": "replace" },
- "clin-ov":    { "label": "Clinical overview (addendum)", "ctd": "2.5", "op": "new" },
- "clin-sum":   { "label": "Clinical summary", "ctd": "2.7", "op": "new" },
- "nonclin":    { "label": "Nonclinical study reports", "ctd": "4.2", "op": "new" },
- "be":         { "label": "Comparative bioavailability and bioequivalence study report", "ctd": "5.3.1.2", "op": "new" },
- "csr":        { "label": "Clinical study reports supporting the change", "ctd": "5.3.5", "op": "new" },
- "pm-exp":     { "label": "Postmarketing experience (case series, literature) supporting the change", "ctd": "5.3.6", "op": "new" },
- "ds-mfr":     { "label": "Drug substance manufacturer(s), names and addresses", "ctd": "3.2.S.2.1", "op": "replace" },
- "ds-proc":    { "label": "Drug substance manufacturing process and controls", "ctd": "3.2.S.2.2", "op": "replace" },
- "ds-mat":     { "label": "Control of materials (starting and raw materials)", "ctd": "3.2.S.2.3", "op": "replace" },
- "ds-crit":    { "label": "Controls of critical steps and intermediates", "ctd": "3.2.S.2.4", "op": "replace" },
- "ds-val":     { "label": "Drug substance process validation or evaluation", "ctd": "3.2.S.2.5", "op": "replace" },
- "ds-dev":     { "label": "Manufacturing process development and comparability", "ctd": "3.2.S.2.6", "op": "replace" },
- "ds-imp":     { "label": "Impurities (comparative impurity profile)", "ctd": "3.2.S.3.2", "op": "replace" },
- "ds-spec":    { "label": "Drug substance specification", "ctd": "3.2.S.4.1", "op": "replace" },
- "ds-meth":    { "label": "Drug substance analytical procedures", "ctd": "3.2.S.4.2", "op": "replace" },
- "ds-methval": { "label": "Validation of drug substance analytical procedures", "ctd": "3.2.S.4.3", "op": "replace" },
- "ds-batch":   { "label": "Drug substance batch analyses", "ctd": "3.2.S.4.4", "op": "replace" },
- "ds-just":    { "label": "Justification of the drug substance specification", "ctd": "3.2.S.4.5", "op": "replace" },
- "ds-ref":     { "label": "Drug substance reference standards", "ctd": "3.2.S.5", "op": "replace" },
- "ds-cc":      { "label": "Drug substance container closure system", "ctd": "3.2.S.6", "op": "replace" },
- "ds-stab":    { "label": "Drug substance stability data", "ctd": "3.2.S.7.3", "op": "append" },
- "dp-comp":    { "label": "Description and composition of the drug product", "ctd": "3.2.P.1", "op": "replace" },
- "dp-dev":     { "label": "Pharmaceutical development (including comparative dissolution profiles)", "ctd": "3.2.P.2", "op": "replace" },
- "dp-mfr":     { "label": "Drug product manufacturer(s), names and addresses", "ctd": "3.2.P.3.1", "op": "replace" },
- "dp-formula": { "label": "Batch formula", "ctd": "3.2.P.3.2", "op": "replace" },
- "dp-proc":    { "label": "Description of the manufacturing process and process controls", "ctd": "3.2.P.3.3", "op": "replace" },
- "dp-ctrl":    { "label": "Controls of critical steps and intermediates", "ctd": "3.2.P.3.4", "op": "replace" },
- "dp-val":     { "label": "Process validation or evaluation (including sterilization validation where relevant)", "ctd": "3.2.P.3.5", "op": "replace" },
- "dp-exc":     { "label": "Excipient specifications", "ctd": "3.2.P.4.1", "op": "replace" },
- "dp-spec":    { "label": "Drug product specification", "ctd": "3.2.P.5.1", "op": "replace" },
- "dp-meth":    { "label": "Drug product analytical procedures", "ctd": "3.2.P.5.2", "op": "replace" },
- "dp-methval": { "label": "Validation of drug product analytical procedures", "ctd": "3.2.P.5.3", "op": "replace" },
- "dp-batch":   { "label": "Drug product batch analyses", "ctd": "3.2.P.5.4", "op": "replace" },
- "dp-just":    { "label": "Justification of the drug product specification", "ctd": "3.2.P.5.6", "op": "replace" },
- "dp-ref":     { "label": "Drug product reference standards", "ctd": "3.2.P.6", "op": "replace" },
- "dp-cc":      { "label": "Container closure system", "ctd": "3.2.P.7", "op": "replace" },
- "dp-stabsum": { "label": "Stability summary and conclusion (shelf life, storage)", "ctd": "3.2.P.8.1", "op": "replace" },
- "dp-stabcom": { "label": "Post-approval stability protocol and commitment", "ctd": "3.2.P.8.2", "op": "replace" },
- "dp-stab":    { "label": "Drug product stability data", "ctd": "3.2.P.8.3", "op": "append" },
- "facilities": { "label": "Facilities and equipment", "ctd": "3.2.A.1", "op": "replace" },
- "advent":     { "label": "Adventitious agents safety evaluation", "ctd": "3.2.A.2", "op": "replace" }
+ "qos": {
+  "label": "Quality overall summary, updated sections",
+  "ctd": "2.3",
+  "op": "replace"
+ },
+ "clin-ov": {
+  "label": "Clinical overview (addendum)",
+  "ctd": "2.5",
+  "op": "new"
+ },
+ "clin-sum": {
+  "label": "Clinical summary",
+  "ctd": "2.7",
+  "op": "new"
+ },
+ "nonclin": {
+  "label": "Nonclinical study reports",
+  "ctd": "4.2",
+  "op": "new"
+ },
+ "be": {
+  "label": "Comparative bioavailability and bioequivalence study report",
+  "ctd": "5.3.1.2",
+  "op": "new"
+ },
+ "csr": {
+  "label": "Clinical study reports supporting the change",
+  "ctd": "5.3.5",
+  "op": "new"
+ },
+ "pm-exp": {
+  "label": "Postmarketing experience (case series, literature) supporting the change",
+  "ctd": "5.3.6",
+  "op": "new"
+ },
+ "ds-mfr": {
+  "label": "Drug substance manufacturer(s), names and addresses",
+  "ctd": "3.2.S.2.1",
+  "op": "replace"
+ },
+ "ds-proc": {
+  "label": "Drug substance manufacturing process and controls",
+  "ctd": "3.2.S.2.2",
+  "op": "replace"
+ },
+ "ds-mat": {
+  "label": "Control of materials (starting and raw materials)",
+  "ctd": "3.2.S.2.3",
+  "op": "replace"
+ },
+ "ds-crit": {
+  "label": "Controls of critical steps and intermediates",
+  "ctd": "3.2.S.2.4",
+  "op": "replace"
+ },
+ "ds-val": {
+  "label": "Drug substance process validation or evaluation",
+  "ctd": "3.2.S.2.5",
+  "op": "replace"
+ },
+ "ds-dev": {
+  "label": "Manufacturing process development and comparability",
+  "ctd": "3.2.S.2.6",
+  "op": "replace"
+ },
+ "ds-imp": {
+  "label": "Impurities (comparative impurity profile)",
+  "ctd": "3.2.S.3.2",
+  "op": "replace"
+ },
+ "ds-spec": {
+  "label": "Drug substance specification",
+  "ctd": "3.2.S.4.1",
+  "op": "replace"
+ },
+ "ds-meth": {
+  "label": "Drug substance analytical procedures",
+  "ctd": "3.2.S.4.2",
+  "op": "replace"
+ },
+ "ds-methval": {
+  "label": "Validation of drug substance analytical procedures",
+  "ctd": "3.2.S.4.3",
+  "op": "replace"
+ },
+ "ds-batch": {
+  "label": "Drug substance batch analyses",
+  "ctd": "3.2.S.4.4",
+  "op": "replace"
+ },
+ "ds-just": {
+  "label": "Justification of the drug substance specification",
+  "ctd": "3.2.S.4.5",
+  "op": "replace"
+ },
+ "ds-ref": {
+  "label": "Drug substance reference standards",
+  "ctd": "3.2.S.5",
+  "op": "replace"
+ },
+ "ds-cc": {
+  "label": "Drug substance container closure system",
+  "ctd": "3.2.S.6",
+  "op": "replace"
+ },
+ "ds-stab": {
+  "label": "Drug substance stability data",
+  "ctd": "3.2.S.7.3",
+  "op": "append"
+ },
+ "dp-comp": {
+  "label": "Description and composition of the drug product",
+  "ctd": "3.2.P.1",
+  "op": "replace"
+ },
+ "dp-dev": {
+  "label": "Pharmaceutical development (including comparative dissolution profiles)",
+  "ctd": "3.2.P.2",
+  "op": "replace"
+ },
+ "dp-mfr": {
+  "label": "Drug product manufacturer(s), names and addresses",
+  "ctd": "3.2.P.3.1",
+  "op": "replace"
+ },
+ "dp-formula": {
+  "label": "Batch formula",
+  "ctd": "3.2.P.3.2",
+  "op": "replace"
+ },
+ "dp-proc": {
+  "label": "Description of the manufacturing process and process controls",
+  "ctd": "3.2.P.3.3",
+  "op": "replace"
+ },
+ "dp-ctrl": {
+  "label": "Controls of critical steps and intermediates",
+  "ctd": "3.2.P.3.4",
+  "op": "replace"
+ },
+ "dp-val": {
+  "label": "Process validation or evaluation (including sterilization validation where relevant)",
+  "ctd": "3.2.P.3.5",
+  "op": "replace"
+ },
+ "dp-exc": {
+  "label": "Excipient specifications",
+  "ctd": "3.2.P.4.1",
+  "op": "replace"
+ },
+ "dp-spec": {
+  "label": "Drug product specification",
+  "ctd": "3.2.P.5.1",
+  "op": "replace"
+ },
+ "dp-meth": {
+  "label": "Drug product analytical procedures",
+  "ctd": "3.2.P.5.2",
+  "op": "replace"
+ },
+ "dp-methval": {
+  "label": "Validation of drug product analytical procedures",
+  "ctd": "3.2.P.5.3",
+  "op": "replace"
+ },
+ "dp-batch": {
+  "label": "Drug product batch analyses",
+  "ctd": "3.2.P.5.4",
+  "op": "replace"
+ },
+ "dp-just": {
+  "label": "Justification of the drug product specification",
+  "ctd": "3.2.P.5.6",
+  "op": "replace"
+ },
+ "dp-ref": {
+  "label": "Drug product reference standards",
+  "ctd": "3.2.P.6",
+  "op": "replace"
+ },
+ "dp-cc": {
+  "label": "Container closure system",
+  "ctd": "3.2.P.7",
+  "op": "replace"
+ },
+ "dp-stabsum": {
+  "label": "Stability summary and conclusion (shelf life, storage)",
+  "ctd": "3.2.P.8.1",
+  "op": "replace"
+ },
+ "dp-stabcom": {
+  "label": "Post-approval stability protocol and commitment",
+  "ctd": "3.2.P.8.2",
+  "op": "replace"
+ },
+ "dp-stab": {
+  "label": "Drug product stability data",
+  "ctd": "3.2.P.8.3",
+  "op": "append"
+ },
+ "facilities": {
+  "label": "Facilities and equipment",
+  "ctd": "3.2.A.1",
+  "op": "replace"
+ },
+ "advent": {
+  "label": "Adventitious agents safety evaluation",
+  "ctd": "3.2.A.2",
+  "op": "replace"
+ },
+ "plcm": {
+  "label": "Product lifecycle management (PLCM) document and established conditions",
+  "ctd": "3.2.R",
+  "op": "new"
+ }
 }

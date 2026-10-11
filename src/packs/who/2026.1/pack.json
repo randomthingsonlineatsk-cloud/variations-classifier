@@ -1,0 +1,287 @@
+{
+ "id": "who",
+ "region": "WHO",
+ "label": "WHO prequalification: multisource finished pharmaceutical products",
+ "edition": "2026.1",
+ "appliesFrom": "2016-10-01",
+ "appliesTo": null,
+ "status": "in force",
+ "summary": "Variations to WHO-prequalified multisource FPPs: annual notification, immediate notification, minor and major variations under TRS 981 Annex 3, with the PQT FAQ (2022) and the published timeline table, which prevails over the guideline.",
+ "sources": {
+  "trs981": {
+   "title": "WHO guidelines on variations to a prequalified product (WHO Technical Report Series No. 981, Annex 3)",
+   "version": "TRS 981",
+   "date": "2013",
+   "url": "https://www.who.int/publications/m/item/annex-3-trs-981",
+   "status": "final"
+  },
+  "faq22": {
+   "title": "WHO PQT: Frequently asked questions on variations, revision 03",
+   "version": "Rev. 03",
+   "date": "2022-12-15",
+   "url": "https://extranet.who.int/prequal/sites/default/files/document_files/FAQ_Variations-revision_15Dec2022.pdf",
+   "status": "final"
+  },
+  "tl16": {
+   "title": "WHO PQT: Variations approval mechanism and timeline table",
+   "version": "October 2016",
+   "date": "published timelines prevail over the guideline",
+   "url": "https://extranet.who.int/prequal/sites/default/files/document_files/127%20Variations%20table_Oct2016.pdf",
+   "status": "goal"
+  }
+ },
+ "categories": [
+  {
+   "id": "OUT",
+   "rank": 0,
+   "short": "Outside pack",
+   "label": "Outside this pack (vaccines and biotherapeutics)",
+   "implement": "other",
+   "badge": "Separate WHO guidance",
+   "rule": "Vaccines and biotherapeutic products follow separate WHO PQ variation guidance, which this pack does not model.",
+   "src": "trs981",
+   "at": "Scope",
+   "tone": "letter"
+  },
+  {
+   "id": "NA",
+   "rank": 0,
+   "short": "Not used",
+   "label": "Not used in WHO PQ",
+   "implement": "other",
+   "badge": "Route not used",
+   "rule": "WHO PQ has no such procedure; see the result.",
+   "src": "faq22",
+   "at": "Q8",
+   "tone": "letter"
+  },
+  {
+   "id": "OTHER",
+   "rank": 0,
+   "short": "Other procedure",
+   "label": "Separate procedure (not a variation)",
+   "implement": "other",
+   "badge": "Different procedure",
+   "rule": "Use the procedure named in the result.",
+   "src": "trs981",
+   "at": "Scope",
+   "tone": "letter"
+  },
+  {
+   "id": "NONE",
+   "rank": 0,
+   "short": "No variation",
+   "label": "No variation: GMP change control",
+   "implement": "do",
+   "badge": "Managed under GMP",
+   "rule": "No variation: manage the change under GMP change control and keep the data for inspection.",
+   "src": "faq22",
+   "at": "Appendix III",
+   "tone": "letter"
+  },
+  {
+   "id": "AN",
+   "rank": 1,
+   "short": "AN",
+   "label": "Annual notification",
+   "implement": "do-and-tell",
+   "badge": "Do, then notify within 12 months",
+   "rule": "Implement, then notify WHO within 12 months (grouped annual notifications are recommended). Keep the data available.",
+   "src": "trs981",
+   "at": "Section 2 (AN)",
+   "tone": "ar"
+  },
+  {
+   "id": "IN",
+   "rank": 2,
+   "short": "IN",
+   "label": "Immediate notification",
+   "implement": "do-and-tell",
+   "badge": "Do and notify at once",
+   "rule": "Implement and notify immediately; the change is accepted unless WHO objects within the review period.",
+   "src": "trs981",
+   "at": "Section 2 (IN)",
+   "tone": "cbe0"
+  },
+  {
+   "id": "VMIN",
+   "rank": 3,
+   "short": "Vmin",
+   "label": "Minor variation",
+   "implement": "tell-and-wait",
+   "badge": "Tell, wait, then do",
+   "rule": "Submit, then implement if WHO has not started correspondence within 60 days of acknowledging receipt.",
+   "src": "tl16",
+   "at": "Vmin",
+   "tone": "cbe30"
+  },
+  {
+   "id": "VMAJ",
+   "rank": 4,
+   "short": "Vmaj",
+   "label": "Major variation",
+   "implement": "wait-for-approval",
+   "badge": "Wait for the acceptance letter",
+   "rule": "Implement only after WHO issues a letter of acceptance.",
+   "src": "trs981",
+   "at": "Section 2 (Vmaj)",
+   "tone": "pas"
+  },
+  {
+   "id": "NEWAPP",
+   "rank": 5,
+   "short": "New application",
+   "label": "New application (Appendix 1 changes)",
+   "implement": "wait-for-approval",
+   "badge": "New application",
+   "rule": "Changes listed in Appendix 1 of the guideline (such as a new strength, dosage form or route) need a new application.",
+   "src": "trs981",
+   "at": "Appendix 1",
+   "tone": "ext"
+  }
+ ],
+ "conditions": {
+  "WHO-30a:1": {
+   "text": "The product is an immediate-release oral form or a non-sterile liquid."
+  },
+  "WHO-30a:2": {
+   "text": "Changes to the method are only those the new size needs, with similar equipment."
+  },
+  "WHO-30a:3": {
+   "text": "Validation is done or a validation protocol and commitment are in place."
+  },
+  "WHO-30a:4": {
+   "text": "Release and shelf-life specifications are unchanged."
+  },
+  "WHO-31a:1": {
+   "text": "The product is not sterile and not modified release."
+  },
+  "WHO-31a:2": {
+   "text": "The manufacturing principle is unchanged and specifications are unchanged."
+  },
+  "WHO-31a:3": {
+   "text": "The change does not come from stability problems or manufacturing failures."
+  },
+  "WHO-8e:1": {
+   "text": "Same route of synthesis, specifications and impurity profile."
+  },
+  "WHO-8e:2": {
+   "text": "The site has acceptable GMP status (inspected by WHO or a stringent authority, or evidence acceptable to PQT)."
+  },
+  "WHO-8e:3": {
+   "text": "Stability and validation commitments are given."
+  },
+  "WHO-5b:1": {
+   "text": "A valid Ph. Eur. CEP covers the new manufacturer."
+  },
+  "WHO-5b:2": {
+   "text": "The FPP manufacturer's specification for the API covers all CEP tests plus any extra tests needed."
+  },
+  "WHO-5b:3": {
+   "text": "No change to the API particle size or polymorph requirements."
+  }
+ },
+ "multipleChanges": {
+  "rule": "Changes can be grouped only if consequential, if they affect several FPPs of one applicant, or if all are annual notifications. A group is filed in one form and takes the highest category.",
+  "src": "faq22",
+  "at": "Q4"
+ },
+ "filing": {
+  "shared": [
+   "AN"
+  ],
+  "apart": [
+   "NONE",
+   "NA",
+   "OUT",
+   "OTHER"
+  ]
+ },
+ "clocks": {
+  "AN": {
+   "months": 12,
+   "ackDays": 45,
+   "label": "Notify within 12 months of implementation; WHO acknowledges within 45 days",
+   "src": "tl16"
+  },
+  "IN": {
+   "ackDays": 7,
+   "reviewDays": 45,
+   "label": "Acknowledgement within 7 days; accepted unless WHO objects within 45 days of acknowledgement (the 2013 guideline said 30)",
+   "src": "tl16"
+  },
+  "VMIN": {
+   "ackDays": 7,
+   "reviewDays": 60,
+   "label": "Implement if WHO has not started correspondence within 60 days of acknowledgement",
+   "src": "tl16"
+  },
+  "VMAJ": {
+   "ackDays": 7,
+   "reviewDays": 90,
+   "label": "Initial review within 90 days of acknowledgement; implement after the acceptance letter",
+   "src": "tl16"
+  },
+  "NEWAPP": {
+   "label": "Assessed as a new application; timing not modelled",
+   "src": "trs981"
+  }
+ },
+ "m1": {
+  "variation": [
+   {
+    "code": "who:1.0",
+    "label": "Cover letter"
+   },
+   {
+    "code": "who:1.2",
+    "label": "Variation application form with the summary of changes and implementation dates"
+   },
+   {
+    "code": "who:QIS",
+    "label": "Quality information summary, revised (tracked and clean), if affected"
+   }
+  ],
+  "annual": [
+   {
+    "code": "who:1.0",
+    "label": "Cover letter"
+   },
+   {
+    "code": "who:1.2",
+    "label": "Variation application form listing the annual notifications and their dates"
+   }
+  ],
+  "pi": [
+   {
+    "code": "who:1.3",
+    "label": "Product information (SmPC, patient leaflet, labels), tracked and clean"
+   }
+  ]
+ },
+ "m1map": {
+  "AN": [
+   "annual"
+  ],
+  "IN": [
+   "variation"
+  ],
+  "VMIN": [
+   "variation"
+  ],
+  "VMAJ": [
+   "variation"
+  ],
+  "NEWAPP": [
+   "variation"
+  ]
+ },
+ "ectd": {},
+ "changeLog": [
+  {
+   "edition": "2026.1",
+   "date": "2026-10-11",
+   "text": "First WHO PQ edition: TRS 981 Annex 3 categories, FAQ revision 03 and the 2016 timeline table."
+  }
+ ]
+}

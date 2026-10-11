@@ -1922,5 +1922,1211 @@
     "why": "A new legal entity is a transfer, not a variation."
    }
   }
+ },
+ "ds-cep": {
+  "tree": {
+   "ask": "cepCovers",
+   "on": {
+    "yes": {
+     "allOf": [
+      "Q.III.1:1",
+      "Q.III.1:2",
+      "Q.III.1:3",
+      "Q.III.1:4",
+      "Q.III.1:5",
+      "Q.III.1:6",
+      "Q.III.1:9"
+     ],
+     "pass": {
+      "cat": "IAIN",
+      "src": "gl25",
+      "at": "Q.III.1(a)1",
+      "why": "A new CEP for the active substance, with every condition met, is Type IA-IN."
+     },
+     "fail": {
+      "cat": "IB",
+      "src": "gl25",
+      "at": "Q.III.z",
+      "why": "A condition for Type IA-IN is not met. A change that is not Type IA or Type II is a Type IB by default (Article 3 of Regulation (EC) No 1234/2008)."
+     }
+    },
+    "no": {
+     "ask": "asmfNew",
+     "on": {
+      "yes": {
+       "cat": "II",
+       "src": "gl25",
+       "at": "Q.I.a.1(f)",
+       "why": "A new active substance site supported by an ASMF is Type II."
+      },
+      "no": {
+       "ask": "significantDossierUpdate",
+       "on": {
+        "yes": {
+         "cat": "II",
+         "src": "gl25",
+         "at": "Q.I.a.1(b)",
+         "why": "The new site needs a significant update of the active substance dossier: Type II."
+        },
+        "no": {
+         "allOf": [
+          "Q.I.a.1:1",
+          "Q.I.a.1:2",
+          "Q.I.a.1:3"
+         ],
+         "pass": {
+          "cat": "IAIN",
+          "src": "gl25",
+          "at": "Q.I.a.1(a)",
+          "why": "Adding or replacing an active substance site with the same route and specifications is Type IA-IN."
+         },
+         "fail": {
+          "cat": "IB",
+          "src": "gl25",
+          "at": "Q.I.a.z",
+          "why": "A condition for Type IA-IN is not met. A change that is not Type IA or Type II is a Type IB by default (Article 3 of Regulation (EC) No 1234/2008)."
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "batch-release-site": {
+  "tree": {
+   "ask": "releaseTesting",
+   "on": {
+    "none": {
+     "allOf": [
+      "Q.II.b.2:1",
+      "Q.II.b.2:2",
+      "Q.II.b.2:5"
+     ],
+     "pass": {
+      "cat": "IAIN",
+      "src": "gl25",
+      "at": "Q.II.b.2(c)1",
+      "why": "A new batch release site without batch control is Type IA-IN."
+     },
+     "fail": {
+      "cat": "IB",
+      "src": "gl25",
+      "at": "Q.II.b.z",
+      "why": "A condition for Type IA-IN is not met. A change that is not Type IA or Type II is a Type IB by default (Article 3 of Regulation (EC) No 1234/2008)."
+     }
+    },
+    "chem": {
+     "allOf": [
+      "Q.II.b.2:1",
+      "Q.II.b.2:2",
+      "Q.II.b.2:3",
+      "Q.II.b.2:4",
+      "Q.II.b.2:5"
+     ],
+     "pass": {
+      "cat": "IAIN",
+      "src": "gl25",
+      "at": "Q.II.b.2(c)2",
+      "why": "A new release site that also does physicochemical or microbiological testing is Type IA-IN."
+     },
+     "fail": {
+      "cat": "IB",
+      "src": "gl25",
+      "at": "Q.II.b.z",
+      "why": "A condition for Type IA-IN is not met. A change that is not Type IA or Type II is a Type IB by default (Article 3 of Regulation (EC) No 1234/2008)."
+     }
+    },
+    "bio": {
+     "cat": "IB",
+     "src": "gl25",
+     "at": "Q.II.b.2(c)3",
+     "why": "A new release site that also does biological testing is Type IB."
+    }
+   }
+  }
+ },
+ "site-delete": {
+  "tree": {
+   "allOf": [
+    "E.5:1",
+    "E.5:2"
+   ],
+   "pass": {
+    "cat": "IA",
+    "src": "gl25",
+    "at": "E.5",
+    "why": "Deleting a site, with another site keeping the same function, is Type IA."
+   },
+   "fail": {
+    "cat": "IB",
+    "src": "gl25",
+    "at": "E.z",
+    "why": "A condition for Type IA is not met. A change that is not Type IA or Type II is a Type IB by default (Article 3 of Regulation (EC) No 1234/2008)."
+   }
+  }
+ },
+ "ds-scale": {
+  "tree": {
+   "allOf": [
+    "Q.I.a.3:1",
+    "Q.I.a.3:2",
+    "Q.I.a.3:3",
+    "Q.I.a.3:4",
+    "Q.I.a.3:5",
+    "Q.I.a.3:6",
+    "Q.I.a.3:7",
+    "Q.I.a.3:8"
+   ],
+   "pass": {
+    "cat": "IA",
+    "src": "gl25",
+    "at": "Q.I.a.3(a) or (b)",
+    "why": "A scale change for the active substance that meets the conditions is Type IA."
+   },
+   "fail": {
+    "cat": "IB",
+    "src": "gl25",
+    "at": "Q.I.a.z",
+    "why": "A condition for Type IA is not met. A change that is not Type IA or Type II is a Type IB by default (Article 3 of Regulation (EC) No 1234/2008)."
+   }
+  }
+ },
+ "ipc-tighten": {
+  "tree": {
+   "allOf": [
+    "Q.II.b.5:1",
+    "Q.II.b.5:2",
+    "Q.II.b.5:3",
+    "Q.II.b.5:4"
+   ],
+   "pass": {
+    "cat": "IA",
+    "src": "gl25",
+    "at": "Q.II.b.5(a)",
+    "why": "A minor change within the approved in-process limits is Type IA."
+   },
+   "fail": {
+    "cat": "IB",
+    "src": "gl25",
+    "at": "Q.II.b.z",
+    "why": "A condition for Type IA is not met. A change that is not Type IA or Type II is a Type IB by default (Article 3 of Regulation (EC) No 1234/2008)."
+   }
+  }
+ },
+ "ipc-relax": {
+  "tree": {
+   "ask": "ipcCritical",
+   "on": {
+    "yes": {
+     "cat": "II",
+     "src": "gl25",
+     "at": "Q.II.b.5(d) or (e)",
+     "why": "Widening in-process limits, or deleting a control, with a possible significant effect on quality is Type II."
+    },
+    "no": {
+     "cat": "IB",
+     "src": "gl25",
+     "at": "Q.II.b.z",
+     "why": "Widening a non-critical in-process limit is not listed. (Deleting a non-significant or obsolete in-process test can be Type IA under Q.II.b.5(c).) A change that is not Type IA or Type II is a Type IB by default (Article 3 of Regulation (EC) No 1234/2008)."
+    }
+   }
+  }
+ },
+ "hold-time": {
+  "tree": {
+   "cat": "IB",
+   "src": "gl25",
+   "at": "Q.II.b.3(e)",
+   "why": "A change in the holding time or storage conditions of an intermediate or bulk product is Type IB."
+  }
+ },
+ "design-space-within": {
+  "tree": {
+   "cat": "NONE",
+   "src": "q8",
+   "at": "Glossary, design space",
+   "why": "Working within the approved design space is not considered a change, so no variation is needed."
+  }
+ },
+ "design-space-new": {
+  "tree": {
+   "ask": "dsScope",
+   "on": {
+    "unitop": {
+     "cat": "II",
+     "src": "gl25",
+     "at": "Q.II.g.1(a)",
+     "why": "A new design space for a unit operation is Type II."
+    },
+    "method": {
+     "cat": "IB",
+     "src": "gl25",
+     "at": "Q.II.g.1(b)",
+     "why": "A new design space for an analytical procedure, excipient or intermediate is Type IB."
+    },
+    "extend": {
+     "cat": "IB",
+     "src": "gl25",
+     "at": "Q.II.g.1(c)",
+     "why": "A change to, or extension of, an approved design space is Type IB."
+    }
+   }
+  }
+ },
+ "rtrt": {
+  "tree": {
+   "cat": "II",
+   "src": "gl25",
+   "at": "Q.II.d.3",
+   "why": "Introducing real-time release testing is Type II."
+  }
+ },
+ "continuous-mfg": {
+  "tree": {
+   "cat": "II",
+   "src": "gl25",
+   "at": "Q.II.b.3(b)",
+   "why": "A switch to continuous manufacturing is a major change to the process that may significantly affect quality: Type II."
+  }
+ },
+ "excipient-supplier": {
+  "tree": {
+   "cat": "NONE",
+   "src": "emaqa",
+   "at": "Q&A",
+   "why": "Excipient suppliers are not usually part of the authorisation; a new supplier of the same grade that meets the approved specification is qualified under GMP with no variation.",
+   "note": "A change of source for a TSE-risk excipient is a variation (Q.II.c.3), and so is any specification change."
+  }
+ },
+ "coating-weight": {
+  "tree": {
+   "ask": "mr",
+   "on": {
+    "yes": {
+     "cat": "II",
+     "src": "gl25",
+     "at": "Q.II.a.4(c)",
+     "why": "For a modified-release form where the coating is critical to release, a coating or shell weight change is Type II.",
+     "note": "For gastro-resistant forms it is Type IB (Q.II.a.4(b))."
+    },
+    "no": {
+     "allOf": [
+      "Q.II.a.4:1",
+      "Q.II.a.4:2",
+      "Q.II.a.4:3",
+      "Q.II.a.4:4"
+     ],
+     "pass": {
+      "cat": "IA",
+      "src": "gl25",
+      "at": "Q.II.a.4(a)",
+      "why": "A coating or shell weight change for a solid oral form that meets the conditions is Type IA."
+     },
+     "fail": {
+      "cat": "IB",
+      "src": "gl25",
+      "at": "Q.II.a.z",
+      "why": "A condition for Type IA is not met. A change that is not Type IA or Type II is a Type IB by default (Article 3 of Regulation (EC) No 1234/2008)."
+     }
+    }
+   }
+  }
+ },
+ "score-line": {
+  "tree": {
+   "ask": "scoredEqualDose",
+   "on": {
+    "yes": {
+     "cat": "IB",
+     "src": "gl25",
+     "at": "Q.II.a.1(b)",
+     "why": "A change in a score line meant to divide the tablet into equal doses is Type IB.",
+     "pi": true
+    },
+    "no": {
+     "allOf": [
+      "Q.II.a.1:1",
+      "Q.II.a.1:2",
+      "Q.II.a.1:4"
+     ],
+     "pass": {
+      "cat": "IAIN",
+      "src": "gl25",
+      "at": "Q.II.a.1(a)",
+      "why": "A score line that is only a marking (not for equal doses) is treated as a change in markings: Type IA-IN.",
+      "pi": true
+     },
+     "fail": {
+      "cat": "IB",
+      "src": "gl25",
+      "at": "Q.II.a.z",
+      "why": "A condition for Type IA-IN is not met. A change that is not Type IA or Type II is a Type IB by default (Article 3 of Regulation (EC) No 1234/2008)."
+     }
+    }
+   }
+  }
+ },
+ "tablet-shape": {
+  "tree": {
+   "ask": "mr",
+   "on": {
+    "yes": {
+     "cat": "IB",
+     "src": "gl25",
+     "at": "Q.II.a.2(b)",
+     "why": "A shape change for a gastro-resistant or modified-release form is Type IB.",
+     "pi": true
+    },
+    "no": {
+     "allOf": [
+      "Q.II.a.2:1",
+      "Q.II.a.2:2",
+      "Q.II.a.2:3",
+      "Q.II.a.2:4"
+     ],
+     "pass": {
+      "cat": "IAIN",
+      "src": "gl25",
+      "at": "Q.II.a.2(a)",
+      "why": "A shape or size change for an immediate-release form that meets the conditions is Type IA-IN.",
+      "pi": true
+     },
+     "fail": {
+      "cat": "IB",
+      "src": "gl25",
+      "at": "Q.II.a.z",
+      "why": "A condition for Type IA-IN is not met. A change that is not Type IA or Type II is a Type IB by default (Article 3 of Regulation (EC) No 1234/2008)."
+     }
+    }
+   }
+  }
+ },
+ "tse-excipient": {
+  "tree": {
+   "allOf": [
+    "Q.II.c.3:1"
+   ],
+   "pass": {
+    "cat": "IA",
+    "src": "gl25",
+    "at": "Q.II.c.3(a)",
+    "why": "Moving from a TSE-risk material to a vegetable or synthetic one is Type IA."
+   },
+   "fail": {
+    "cat": "IB",
+    "src": "gl25",
+    "at": "Q.II.c.z",
+    "why": "A condition for Type IA is not met. A change that is not Type IA or Type II is a Type IB by default (Article 3 of Regulation (EC) No 1234/2008)."
+   }
+  }
+ },
+ "dosage-form-new": {
+  "tree": {
+   "cat": "EXT",
+   "src": "reg",
+   "at": "Annex I, point 2(d)",
+   "why": "A new pharmaceutical form is an extension of the marketing authorisation, not a variation.",
+   "pi": true
+  }
+ },
+ "nitrosamine-control": {
+  "tree": {
+   "cat": "IB",
+   "src": "gl25",
+   "at": "Q.II.d.z",
+   "why": "A test for a nitrosamine is a test for a mutagenic impurity, so condition 6 of Q.II.d.1(c) is not met. A change that is not Type IA or Type II is a Type IB by default (Article 3 of Regulation (EC) No 1234/2008)."
+  }
+ },
+ "excipient-spec": {
+  "tree": {
+   "ask": "excipientSpecKind",
+   "on": {
+    "tighten": {
+     "allOf": [
+      "Q.II.c.1:1",
+      "Q.II.c.1:2",
+      "Q.II.c.1:4"
+     ],
+     "pass": {
+      "cat": "IA",
+      "src": "gl25",
+      "at": "Q.II.c.1(a)",
+      "why": "A change within the approved acceptance criteria is Type IA."
+     },
+     "fail": {
+      "cat": "IB",
+      "src": "gl25",
+      "at": "Q.II.c.z",
+      "why": "A condition for Type IA is not met. A change that is not Type IA or Type II is a Type IB by default (Article 3 of Regulation (EC) No 1234/2008)."
+     }
+    },
+    "add": {
+     "allOf": [
+      "Q.II.c.1:1",
+      "Q.II.c.1:2",
+      "Q.II.c.1:5",
+      "Q.II.c.1:6"
+     ],
+     "pass": {
+      "cat": "IA",
+      "src": "gl25",
+      "at": "Q.II.c.1(b)",
+      "why": "Adding an attribute with its procedure is Type IA."
+     },
+     "fail": {
+      "cat": "IB",
+      "src": "gl25",
+      "at": "Q.II.c.z",
+      "why": "A condition for Type IA is not met. A change that is not Type IA or Type II is a Type IB by default (Article 3 of Regulation (EC) No 1234/2008)."
+     }
+    },
+    "delete": {
+     "allOf": [
+      "Q.II.c.1:1",
+      "Q.II.c.1:2",
+      "Q.II.c.1:3",
+      "Q.II.c.1:7"
+     ],
+     "pass": {
+      "cat": "IA",
+      "src": "gl25",
+      "at": "Q.II.c.1(c)",
+      "why": "Deleting a non-significant or obsolete attribute is Type IA."
+     },
+     "fail": {
+      "cat": "IB",
+      "src": "gl25",
+      "at": "Q.II.c.z",
+      "why": "A condition for Type IA is not met. A change that is not Type IA or Type II is a Type IB by default (Article 3 of Regulation (EC) No 1234/2008)."
+     }
+    },
+    "relax": {
+     "cat": "II",
+     "src": "gl25",
+     "at": "Q.II.c.1(d) or (e)",
+     "why": "A change outside the approved criteria, or deleting a significant attribute, is Type II."
+    }
+   }
+  }
+ },
+ "skip-testing": {
+  "tree": {
+   "cat": "IB",
+   "src": "gl25",
+   "at": "Q.II.d.1(i)",
+   "why": "Moving a test between routine and skip or periodic testing is Type IB, justified by historical data showing the process is under control."
+  }
+ },
+ "method-minor": {
+  "tree": {
+   "ask": "bioProcedure",
+   "on": {
+    "yes": {
+     "cat": "IB",
+     "src": "gl25",
+     "at": "Q.II.d.2(d)",
+     "why": "For a biological procedure, other changes are Type IB."
+    },
+    "no": {
+     "allOf": [
+      "Q.II.d.2:1",
+      "Q.II.d.2:2",
+      "Q.II.d.2:3"
+     ],
+     "pass": {
+      "cat": "IA",
+      "src": "gl25",
+      "at": "Q.II.d.2(a)",
+      "why": "A minor change to an approved procedure that meets the conditions is Type IA."
+     },
+     "fail": {
+      "cat": "IB",
+      "src": "gl25",
+      "at": "Q.II.d.2(d)",
+      "why": "A condition for Type IA is not met, so it is an other change: Type IB."
+     }
+    }
+   }
+  }
+ },
+ "micro-rapid": {
+  "tree": {
+   "cat": "IB",
+   "src": "gl25",
+   "at": "Q.II.d.2(d)",
+   "why": "Replacing a compendial microbiological procedure with an alternative validated method is an other change to an analytical procedure: Type IB.",
+   "note": "For a sterility test the authority may ask for more and upgrade the change."
+  }
+ },
+ "cc-supplier": {
+  "tree": {
+   "allOf": [
+    "Q.II.e.7:1",
+    "Q.II.e.7:2",
+    "Q.II.e.7:3",
+    "Q.II.e.7:4"
+   ],
+   "pass": {
+    "cat": "IA",
+    "src": "gl25",
+    "at": "Q.II.e.7(a)",
+    "why": "A new manufacturer or supplier of a packaging component that meets the conditions is Type IA."
+   },
+   "fail": {
+    "cat": "IB",
+    "src": "gl25",
+    "at": "Q.II.e.7(b) or Q.II.e.z",
+    "why": "A condition for Type IA is not met (for example a new sterilisation site or process, which is Type IB)."
+   }
+  }
+ },
+ "cc-device": {
+  "tree": {
+   "ask": "deviceSignificant",
+   "on": {
+    "yes": {
+     "cat": "II",
+     "src": "gl25",
+     "at": "Q.IV.1(b)",
+     "why": "A device change that may significantly affect delivery, quality, safety or efficacy is Type II.",
+     "pi": true
+    },
+    "no": {
+     "allOf": [
+      "Q.IV.1:1",
+      "Q.IV.1:2",
+      "Q.IV.1:3",
+      "Q.IV.1:5"
+     ],
+     "pass": {
+      "cat": "IAIN",
+      "src": "gl25",
+      "at": "Q.IV.1(a)",
+      "why": "Adding or replacing a co-packaged device with the conditions met is Type IA-IN.",
+      "pi": true
+     },
+     "fail": {
+      "cat": "IB",
+      "src": "gl25",
+      "at": "Q.IV.z",
+      "why": "A condition for Type IA-IN is not met. A change that is not Type IA or Type II is a Type IB by default (Article 3 of Regulation (EC) No 1234/2008)."
+     }
+    }
+   }
+  }
+ },
+ "cc-noncontact": {
+  "tree": {
+   "ask": "piAffected",
+   "on": {
+    "yes": {
+     "allOf": [
+      "Q.II.e.3:1"
+     ],
+     "pass": {
+      "cat": "IAIN",
+      "src": "gl25",
+      "at": "Q.II.e.3(a)",
+      "why": "A non-contact packaging change that affects the product information is Type IA-IN.",
+      "pi": true
+     },
+     "fail": {
+      "cat": "IB",
+      "src": "gl25",
+      "at": "Q.II.e.z",
+      "why": "A condition for Type IA-IN is not met. A change that is not Type IA or Type II is a Type IB by default (Article 3 of Regulation (EC) No 1234/2008)."
+     }
+    },
+    "no": {
+     "allOf": [
+      "Q.II.e.3:1"
+     ],
+     "pass": {
+      "cat": "IA",
+      "src": "gl25",
+      "at": "Q.II.e.3(b)",
+      "why": "A non-contact packaging change that does not affect the product information is Type IA."
+     },
+     "fail": {
+      "cat": "IB",
+      "src": "gl25",
+      "at": "Q.II.e.z",
+      "why": "A condition for Type IA is not met. A change that is not Type IA or Type II is a Type IB by default (Article 3 of Regulation (EC) No 1234/2008)."
+     }
+    }
+   }
+  }
+ },
+ "ds-retest": {
+  "tree": {
+   "ask": "realTimeData",
+   "on": {
+    "yes": {
+     "allOf": [
+      "Q.I.d.1:2"
+     ],
+     "pass": {
+      "cat": "IA",
+      "src": "gl25",
+      "at": "Q.I.d.1(a)5",
+      "why": "An extension with real-time data fully in line with the approved protocol is Type IA."
+     },
+     "fail": {
+      "cat": "IB",
+      "src": "gl25",
+      "at": "Q.I.d.1(a)4",
+      "why": "Real-time data not fully in line with the approved protocol: Type IB."
+     }
+    },
+    "no": {
+     "ask": "extrapolationPerGuideline",
+     "on": {
+      "yes": {
+       "cat": "IB",
+       "src": "gl25",
+       "at": "Q.I.d.1(a)4",
+       "why": "An extension by extrapolation in line with the stability guidelines is Type IB."
+      },
+      "no": {
+       "cat": "II",
+       "src": "gl25",
+       "at": "Q.I.d.1(a)3",
+       "why": "An extension by extrapolation or modelling not in line with the guidelines is Type II."
+      }
+     }
+    }
+   }
+  }
+ },
+ "in-use-shelf-life": {
+  "tree": {
+   "ask": "inUseKind",
+   "on": {
+    "reduce": {
+     "allOf": [
+      "Q.II.f.1:1",
+      "Q.II.f.1:6"
+     ],
+     "pass": {
+      "cat": "IAIN",
+      "src": "gl25",
+      "at": "Q.II.f.1(a)2 or 3",
+      "why": "A shorter in-use period is Type IA-IN.",
+      "pi": true
+     },
+     "fail": {
+      "cat": "IB",
+      "src": "gl25",
+      "at": "Q.II.f.z",
+      "why": "A condition for Type IA-IN is not met. A change that is not Type IA or Type II is a Type IB by default (Article 3 of Regulation (EC) No 1234/2008)."
+     }
+    },
+    "extendReal": {
+     "cat": "IB",
+     "src": "gl25",
+     "at": "Q.II.f.1(b)2 or 3",
+     "why": "A longer in-use period based on real-time data is Type IB.",
+     "pi": true
+    },
+    "extendModel": {
+     "ask": "extrapolationPerGuideline",
+     "on": {
+      "yes": {
+       "cat": "IB",
+       "src": "gl25",
+       "at": "Q.II.f.1(b)5",
+       "why": "Extrapolation in line with the stability guidelines is Type IB.",
+       "pi": true
+      },
+      "no": {
+       "cat": "II",
+       "src": "gl25",
+       "at": "Q.II.f.1(b)4",
+       "why": "Extrapolation or modelling not in line with the guidelines is Type II.",
+       "pi": true
+      }
+     }
+    }
+   }
+  }
+ },
+ "ds-storage": {
+  "tree": {
+   "ask": "restrictive",
+   "on": {
+    "yes": {
+     "allOf": [
+      "Q.I.d.1:1",
+      "Q.I.d.1:3"
+     ],
+     "pass": {
+      "cat": "IA",
+      "src": "gl25",
+      "at": "Q.I.d.1(b)1",
+      "why": "More restrictive storage conditions for the active substance are Type IA."
+     },
+     "fail": {
+      "cat": "IB",
+      "src": "gl25",
+      "at": "Q.I.d.1(b)2",
+      "why": "A condition for Type IA is not met: Type IB."
+     }
+    },
+    "no": {
+     "cat": "IB",
+     "src": "gl25",
+     "at": "Q.I.d.1(b)2",
+     "why": "A change in the storage conditions of the active substance is Type IB."
+    }
+   }
+  }
+ },
+ "lab-new-route": {
+  "tree": {
+   "cat": "EXT",
+   "src": "reg",
+   "at": "Annex I, point 2(e)",
+   "why": "A new route of administration is an extension of the marketing authorisation.",
+   "pi": true
+  }
+ },
+ "lab-brand-name": {
+  "tree": {
+   "ask": "centralised",
+   "on": {
+    "yes": {
+     "allOf": [
+      "E.1:1"
+     ],
+     "pass": {
+      "cat": "IAIN",
+      "src": "gl25",
+      "at": "E.1(a)",
+      "why": "For a centrally authorised product, a new invented name that EMA has checked is Type IA-IN.",
+      "pi": true
+     },
+     "fail": {
+      "cat": "IB",
+      "src": "gl25",
+      "at": "E.z",
+      "why": "EMA has not finished a positive check of the name. A change that is not Type IA or Type II is a Type IB by default (Article 3 of Regulation (EC) No 1234/2008)."
+     }
+    },
+    "no": {
+     "cat": "IB",
+     "src": "gl25",
+     "at": "E.1(b)",
+     "why": "For a nationally authorised product, a new invented name is Type IB.",
+     "pi": true
+    }
+   }
+  }
+ },
+ "lab-rmp": {
+  "tree": {
+   "ask": "rmpKind",
+   "on": {
+    "agreed": {
+     "cat": "IAIN",
+     "src": "gl25",
+     "at": "C.9(a)",
+     "why": "Implementing an RMP change already assessed, with the exact agreed wording, is Type IA-IN."
+    },
+    "minor": {
+     "cat": "IB",
+     "src": "gl25",
+     "at": "C.9(b)",
+     "why": "An RMP change needing minor assessment (for example due dates or a template update) is Type IB."
+    },
+    "new": {
+     "cat": "II",
+     "src": "gl25",
+     "at": "C.9(c)",
+     "why": "An RMP change needing new data and significant assessment is Type II."
+    }
+   }
+  }
+ },
+ "lab-psusa": {
+  "tree": {
+   "ask": "newData",
+   "on": {
+    "yes": {
+     "cat": "II",
+     "src": "gl25",
+     "at": "C.3(c)",
+     "why": "Implementing the outcome needs new data: Type II.",
+     "pi": true
+    },
+    "no": {
+     "ask": "agreedExact",
+     "on": {
+      "yes": {
+       "cat": "IAIN",
+       "src": "gl25",
+       "at": "C.3(a)",
+       "why": "Implementing the agreed outcome with exactly the agreed wording is Type IA-IN.",
+       "pi": true
+      },
+      "no": {
+       "cat": "IB",
+       "src": "gl25",
+       "at": "C.3(b)",
+       "why": "Agreed wording that needs minor assessment is Type IB.",
+       "pi": true
+      }
+     }
+    }
+   }
+  }
+ },
+ "lab-delete-indication": {
+  "tree": {
+   "cat": "IB",
+   "src": "gl25",
+   "at": "C.6(b)",
+   "why": "Deleting an indication is Type IB.",
+   "pi": true
+  }
+ },
+ "ec-define": {
+  "tree": {
+   "cat": "II",
+   "src": "gl25",
+   "at": "Q.II.g.6",
+   "why": "In the EU, established conditions are agreed through a product lifecycle management (PLCM) document. Introducing one is Type II (Q.I.e.6 for the active substance)."
+  }
+ },
+ "plcm-update": {
+  "tree": {
+   "ask": "plcmMajor",
+   "on": {
+    "yes": {
+     "cat": "II",
+     "src": "gl25",
+     "at": "Q.II.g.8(a)",
+     "why": "A major change to an approved PLCM document is Type II."
+    },
+    "no": {
+     "cat": "IB",
+     "src": "gl25",
+     "at": "Q.II.g.8(b)",
+     "why": "A minor change to an approved PLCM document is Type IB."
+    }
+   }
+  }
+ },
+ "non-ec-change": {
+  "tree": {
+   "ask": "isEC",
+   "on": {
+    "yes": {
+     "ask": "plcmCategory",
+     "on": {
+      "prior": {
+       "cat": "II",
+       "src": "gl25",
+       "at": "Q.II.g.7(a)",
+       "why": "The PLCM sets prior approval: Type II."
+      },
+      "moderate": {
+       "cat": "IB",
+       "src": "gl25",
+       "at": "Q.II.g.7(d)",
+       "why": "The PLCM sets a moderate notification: Type IB."
+      },
+      "low": {
+       "cat": "IA",
+       "src": "gl25",
+       "at": "Q.II.g.7(b)",
+       "why": "The PLCM sets a low notification: Type IA (or IA-IN where the PLCM says so, Q.II.g.7(c))."
+      }
+     }
+    },
+    "no": {
+     "cat": "NONE",
+     "src": "q12",
+     "at": "Chapter 3.2.3",
+     "why": "Changes to elements that are not established conditions are managed in the quality system with no variation."
+    }
+   }
+  }
+ },
+ "pacmp-change": {
+  "tree": {
+   "ask": "pacmpAction",
+   "on": {
+    "delete": {
+     "allOf": [
+      "Q.II.g.3:1"
+     ],
+     "pass": {
+      "cat": "IA",
+      "src": "gl25",
+      "at": "Q.II.g.3",
+      "why": "Deleting an approved PACMP is Type IA."
+     },
+     "fail": {
+      "cat": "IB",
+      "src": "gl25",
+      "at": "Q.II.g.z",
+      "why": "A condition for Type IA is not met. A change that is not Type IA or Type II is a Type IB by default (Article 3 of Regulation (EC) No 1234/2008)."
+     }
+    },
+    "minor": {
+     "cat": "IB",
+     "src": "gl25",
+     "at": "Q.II.g.4(b)",
+     "why": "A minor change that does not alter the strategy of the PACMP is Type IB."
+    },
+    "major": {
+     "cat": "II",
+     "src": "gl25",
+     "at": "Q.II.g.4(a)",
+     "why": "A major change to an approved PACMP is Type II."
+    }
+   }
+  }
+ },
+ "bio-scale": {
+  "tree": {
+   "ask": "bioScaleOnly",
+   "on": {
+    "yes": {
+     "cat": "IB",
+     "src": "gl25",
+     "at": "Q.I.a.3(d)",
+     "why": "A scale change for a biological active substance without process change (for example duplicating a line) is Type IB."
+    },
+    "no": {
+     "cat": "II",
+     "src": "gl25",
+     "at": "Q.I.a.3(c)",
+     "why": "A batch size change for a biological active substance that needs a comparability assessment is Type II."
+    }
+   }
+  }
+ },
+ "bio-media": {
+  "tree": {
+   "ask": "animalOrigin",
+   "on": {
+    "yes": {
+     "cat": "II",
+     "src": "gl25",
+     "at": "Q.I.a.2(b)",
+     "why": "Introducing a material of human or animal origin that needs a viral safety or TSE assessment is a major change: Type II."
+    },
+    "no": {
+     "ask": "majorImpact",
+     "on": {
+      "yes": {
+       "cat": "II",
+       "src": "gl25",
+       "at": "Q.I.a.2(b)",
+       "why": "A raw material change that may significantly affect quality is Type II."
+      },
+      "no": {
+       "cat": "IB",
+       "src": "gl25",
+       "at": "Q.I.a.z",
+       "why": "A raw material change with no significant impact is not listed. A change that is not Type IA or Type II is a Type IB by default (Article 3 of Regulation (EC) No 1234/2008)."
+      }
+     }
+    }
+   }
+  }
+ },
+ "bio-resin": {
+  "tree": {
+   "ask": "resinChange",
+   "on": {
+    "lifetime": {
+     "allOf": [
+      "Q.I.a.2:1",
+      "Q.I.a.2:2",
+      "Q.I.a.2:3",
+      "Q.I.a.2:5"
+     ],
+     "pass": {
+      "cat": "IA",
+      "src": "gl25",
+      "at": "Q.I.a.2(a)",
+      "why": "A minor process change that meets the conditions is Type IA."
+     },
+     "fail": {
+      "cat": "IB",
+      "src": "gl25",
+      "at": "Q.I.a.z",
+      "why": "A condition for Type IA is not met. A change that is not Type IA or Type II is a Type IB by default (Article 3 of Regulation (EC) No 1234/2008)."
+     }
+    },
+    "supplier": {
+     "cat": "II",
+     "src": "gl25",
+     "at": "Q.I.a.2(b)",
+     "why": "A different resin or supplier changes a purification step of a biological active substance: Type II."
+    }
+   }
+  }
+ },
+ "bio-potency": {
+  "tree": {
+   "ask": "potencyNewPrinciple",
+   "on": {
+    "yes": {
+     "cat": "II",
+     "src": "gl25",
+     "at": "Q.II.d.2(c)",
+     "why": "Replacing a biological procedure such as a potency assay is Type II (Q.I.b.2 for the active substance)."
+    },
+    "no": {
+     "ask": "majorImpact",
+     "on": {
+      "yes": {
+       "cat": "II",
+       "src": "gl25",
+       "at": "Q.II.d.2(c)",
+       "why": "A substantial change to a biological procedure is Type II."
+      },
+      "no": {
+       "cat": "IB",
+       "src": "gl25",
+       "at": "Q.II.d.2(d)",
+       "why": "Other changes to the procedure are Type IB."
+      }
+     }
+    }
+   }
+  }
+ },
+ "bio-formulation": {
+  "tree": {
+   "cat": "II",
+   "src": "gl25",
+   "at": "Q.II.a.3(b)2",
+   "why": "A formulation change for a biological product may significantly affect quality, safety or efficacy: Type II."
+  }
+ },
+ "bio-adventitious": {
+  "tree": {
+   "ask": "adventRisk",
+   "on": {
+    "first": {
+     "cat": "II",
+     "src": "gl25",
+     "at": "Q.II.h.1(a)",
+     "why": "Studies on steps tested for the first time are Type II."
+    },
+    "higher": {
+     "cat": "II",
+     "src": "gl25",
+     "at": "Q.II.h.1(b)1",
+     "why": "Replacing studies with a higher-risk assessment is Type II."
+    },
+    "same": {
+     "cat": "IB",
+     "src": "gl25",
+     "at": "Q.II.h.1(b)2 or 3",
+     "why": "Replacing obsolete studies with the same or lower risk is Type IB."
+    }
+   }
+  }
+ },
+ "admin-manufacturer-name": {
+  "tree": {
+   "ask": "isReleaseSite",
+   "on": {
+    "yes": {
+     "allOf": [
+      "E.4:2"
+     ],
+     "pass": {
+      "cat": "IAIN",
+      "src": "gl25",
+      "at": "E.4(b)",
+      "why": "A new name or address for the batch release manufacturer is Type IA-IN.",
+      "pi": true
+     },
+     "fail": {
+      "cat": "IB",
+      "src": "gl25",
+      "at": "E.z",
+      "why": "A condition is not met. A change that is not Type IA or Type II is a Type IB by default (Article 3 of Regulation (EC) No 1234/2008)."
+     }
+    },
+    "no": {
+     "allOf": [
+      "E.4:2"
+     ],
+     "pass": {
+      "cat": "IA",
+      "src": "gl25",
+      "at": "E.4(c)",
+      "why": "A new name or address for another site is Type IA."
+     },
+     "fail": {
+      "cat": "IB",
+      "src": "gl25",
+      "at": "E.z",
+      "why": "A condition is not met. A change that is not Type IA or Type II is a Type IB by default (Article 3 of Regulation (EC) No 1234/2008)."
+     }
+    }
+   }
+  }
+ },
+ "admin-local-rep": {
+  "tree": {
+   "cat": "OTHER",
+   "src": "dir",
+   "at": "Article 61(3) of Directive 2001/83/EC",
+   "why": "A new local representative changes the package leaflet only, which is notified under Article 61(3), not as a variation.",
+   "note": "A new QPPV or pharmacovigilance contact is updated in the Article 57 database, with no variation.",
+   "pi": true
+  }
+ },
+ "admin-inn": {
+  "tree": {
+   "allOf": [
+    "E.2:1"
+   ],
+   "pass": {
+    "cat": "IAIN",
+    "src": "gl25",
+    "at": "E.2",
+    "why": "A new name for the active substance, with the substance unchanged, is Type IA-IN.",
+    "pi": true
+   },
+   "fail": {
+    "cat": "IB",
+    "src": "gl25",
+    "at": "E.z",
+    "why": "A condition is not met. A change that is not Type IA or Type II is a Type IB by default (Article 3 of Regulation (EC) No 1234/2008)."
+   }
+  }
+ },
+ "admin-delete-presentation": {
+  "tree": {
+   "ask": "presentationKind",
+   "on": {
+    "strength": {
+     "cat": "IB",
+     "src": "gl25",
+     "at": "C.7(b)",
+     "why": "Deleting a strength is Type IB.",
+     "pi": true
+    },
+    "pack": {
+     "cat": "IA",
+     "src": "gl25",
+     "at": "Q.II.e.6(b)",
+     "why": "Deleting a pack size, with the remaining sizes fitting the dosing, is Type IA.",
+     "note": "Check the sub-item letter in the guidelines.",
+     "pi": true
+    }
+   }
+  }
  }
 }

@@ -359,5 +359,303 @@
  "seriousWarning": {
   "text": "Is it a new contraindication or a serious new warning or precaution?",
   "help": "In India's biologics guidance these are Level I; adding or strengthening other risk-management text is Level II."
+ },
+ "centralised": {
+  "text": "Is the product authorised through the EU centralised procedure?",
+  "fromProduct": "centralised"
+ },
+ "dsSameRoute": {
+  "text": "Does the new source use the same route of synthesis and meet the same drug substance specification, including impurity limits?",
+  "help": "A different route or new impurities make the change a change to the drug substance process, which is classified more strictly."
+ },
+ "cepCovers": {
+  "text": "Is the new source covered by a valid Ph. Eur. certificate of suitability (CEP)?",
+  "help": "A CEP lets authorities rely on the EDQM assessment. Without one, the data come from a master file or the dossier."
+ },
+ "releaseTesting": {
+  "text": "What will the new site do?",
+  "type": "choice",
+  "options": [
+   {
+    "value": "none",
+    "label": "Batch release only (no testing)"
+   },
+   {
+    "value": "chem",
+    "label": "Release and physicochemical or microbiological testing"
+   },
+   {
+    "value": "bio",
+    "label": "Release and biological, immunological or immunochemical testing"
+   }
+  ]
+ },
+ "scaleOnly": {
+  "text": "Is it only a change of scale, with equipment of the same design and operating principle and no change to the process or specifications?"
+ },
+ "ipcCritical": {
+  "text": "Does the in-process control cover a critical attribute, or could the change significantly affect quality?",
+  "help": "Critical attributes include assay, impurities, dissolution and sterility-related controls."
+ },
+ "holdData": {
+  "text": "Is the longer hold time supported by data on batches held for the full proposed time, under an approved protocol?"
+ },
+ "dsScope": {
+  "text": "What does the design space change cover?",
+  "type": "choice",
+  "options": [
+   {
+    "value": "unitop",
+    "label": "A new design space for a unit operation of the process"
+   },
+   {
+    "value": "method",
+    "label": "A new design space for an analytical procedure, excipient or intermediate"
+   },
+   {
+    "value": "extend",
+    "label": "A change to, or extension of, an approved design space"
+   }
+  ]
+ },
+ "isEC": {
+  "text": "In the approved dossier, is the element you are changing an established condition?",
+  "help": "ICH Q12: only established conditions need a regulatory submission when they change. If no established conditions were agreed, treat the whole quality dossier as binding and classify the change in its own entry."
+ },
+ "plcmCategory": {
+  "text": "Which reporting category does the approved PLCM document set for changing this established condition?",
+  "type": "choice",
+  "options": [
+   {
+    "value": "prior",
+    "label": "Prior approval"
+   },
+   {
+    "value": "moderate",
+    "label": "Notification, moderate (wait before implementing)"
+   },
+   {
+    "value": "low",
+    "label": "Notification, low (implement, then tell)"
+   }
+  ],
+  "help": "ICH Q12 chapter 3 and Annex I: the PLCM lists each established condition with its reporting category."
+ },
+ "presentationKind": {
+  "text": "What is deleted?",
+  "type": "choice",
+  "options": [
+   {
+    "value": "strength",
+    "label": "A strength"
+   },
+   {
+    "value": "pack",
+    "label": "A pack size"
+   }
+  ]
+ },
+ "isReleaseSite": {
+  "text": "Is it the manufacturer responsible for batch release?"
+ },
+ "plcmMajor": {
+  "text": "Does the update raise risk, for example add or change established conditions or lower a reporting category?",
+  "help": "Lowering a reporting category or redefining established conditions needs assessment like a major change."
+ },
+ "pacmpAction": {
+  "text": "What happens to the protocol?",
+  "type": "choice",
+  "options": [
+   {
+    "value": "delete",
+    "label": "It is deleted"
+   },
+   {
+    "value": "minor",
+    "label": "A minor change that does not change its strategy"
+   },
+   {
+    "value": "major",
+    "label": "A major change, for example new studies, acceptance criteria or scope"
+   }
+  ]
+ },
+ "potencyNewPrinciple": {
+  "text": "Does the new potency assay use a different principle, for example a cell-based assay replacing a binding assay?"
+ },
+ "adventRisk": {
+  "text": "What do the new studies change?",
+  "type": "choice",
+  "options": [
+   {
+    "value": "first",
+    "label": "Steps are tested for the first time for one or more agents"
+   },
+   {
+    "value": "higher",
+    "label": "Obsolete studies are replaced and the risk is now higher"
+   },
+   {
+    "value": "same",
+    "label": "Obsolete studies are replaced and the risk is the same or lower"
+   }
+  ]
+ },
+ "deviceSignificant": {
+  "text": "Could the device change significantly affect the dose delivered, quality, safety or efficacy?"
+ },
+ "scoredEqualDose": {
+  "text": "Is the tablet scored so that it can be divided into equal doses?"
+ },
+ "scoreAction": {
+  "text": "Is the score line added or deleted?",
+  "type": "choice",
+  "options": [
+   {
+    "value": "add",
+    "label": "Added"
+   },
+   {
+    "value": "delete",
+    "label": "Deleted"
+   }
+  ]
+ },
+ "inUseKind": {
+  "text": "What is the change to the in-use period?",
+  "type": "choice",
+  "options": [
+   {
+    "value": "reduce",
+    "label": "It becomes shorter"
+   },
+   {
+    "value": "extendReal",
+    "label": "It becomes longer, based on real-time data"
+   },
+   {
+    "value": "extendModel",
+    "label": "It becomes longer, based on extrapolation or modelling"
+   }
+  ]
+ },
+ "restrictive": {
+  "text": "Are the new storage conditions more restrictive (for example a lower temperature)?"
+ },
+ "excipientSpecKind": {
+  "text": "What changes in the excipient specification?",
+  "type": "choice",
+  "options": [
+   {
+    "value": "tighten",
+    "label": "A limit is tightened"
+   },
+   {
+    "value": "add",
+    "label": "A test is added"
+   },
+   {
+    "value": "delete",
+    "label": "A non-significant test is deleted"
+   },
+   {
+    "value": "relax",
+    "label": "A limit is widened or a significant test deleted"
+   }
+  ]
+ },
+ "rmpKind": {
+  "text": "What kind of update is it?",
+  "type": "choice",
+  "options": [
+   {
+    "value": "agreed",
+    "label": "It implements an outcome already assessed, with the exact agreed wording"
+   },
+   {
+    "value": "minor",
+    "label": "A minor update (for example due dates or a template update)"
+   },
+   {
+    "value": "new",
+    "label": "It needs new data and a significant assessment"
+   }
+  ]
+ },
+ "bioScaleOnly": {
+  "text": "Is it a scale change with no change to the process (for example adding identical bioreactors or duplicating a line)?"
+ },
+ "animalOrigin": {
+  "text": "Does the change introduce a material of human or animal origin that needs a viral safety or TSE assessment?"
+ },
+ "resinChange": {
+  "text": "What changes for the resin?",
+  "type": "choice",
+  "options": [
+   {
+    "value": "lifetime",
+    "label": "More cycles, under an approved resin lifetime protocol"
+   },
+   {
+    "value": "supplier",
+    "label": "A different resin or supplier"
+   }
+  ]
+ },
+ "jpItem": {
+  "text": "How is the item you are changing described in the Japanese approval form?",
+  "type": "choice",
+  "options": [
+   {
+    "value": "pca",
+    "label": "As an approved matter (not marked as a minor change item)"
+   },
+   {
+    "value": "minor",
+    "label": "As a minor change item"
+   },
+   {
+    "value": "moderate",
+    "label": "As a moderate change item (2024 trial)"
+   },
+   {
+    "value": "annual",
+    "label": "As an annual report item (2025 trial)"
+   },
+   {
+    "value": "absent",
+    "label": "It is not in the approval form"
+   }
+  ],
+  "help": "In Japan the approval form (approved matters) is legally binding. The applicant proposes, and PMDA agrees, which entries are minor change items. Items not in the form are managed in the quality system."
+ },
+ "pqInspected": {
+  "text": "Was the new site inspected and found compliant by WHO or a stringent regulatory authority within the last three years?",
+  "help": "WHO PQ: a site without such an inspection makes a site addition a major variation."
+ },
+ "caProtocolLevel": {
+  "text": "Which reporting level did the approved PACMP set for this change?",
+  "type": "choice",
+  "options": [
+   {
+    "value": "NC",
+    "label": "Level II notifiable change"
+   },
+   {
+    "value": "L3IN",
+    "label": "Level III immediate notification"
+   },
+   {
+    "value": "L3",
+    "label": "Level III annual notification"
+   }
+  ]
+ },
+ "jpProtocolNotice": {
+  "text": "Is the change made fully as described in the approved PACMP, with all acceptance criteria met?"
+ },
+ "whoMinorU": {
+  "text": "Will you justify the change as an unclassified minor variation (suffix u), or have you agreed a lower category with PQT in advance?",
+  "help": "WHO PQ FAQ Q8: changes not listed in the guideline are major by default."
  }
 }

@@ -1,0 +1,2557 @@
+{
+ "dp-site-move": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "allOf": [
+      "HC-Q-bio.43:1",
+      "HC-Q-bio.43:2",
+      "HC-Q-bio.43:3"
+     ],
+     "pass": {
+      "cat": "NC",
+      "src": "qbio",
+      "at": "Drug product facility",
+      "why": "A drug product facility change meeting the conditions is a notifiable change."
+     },
+     "fail": {
+      "cat": "L1",
+      "src": "qbio",
+      "at": "Drug product facility",
+      "why": "A condition is not met: supplement."
+     }
+    },
+    "no": {
+     "allOf": [
+      "HC-A1.23:1",
+      "HC-A1.23:2",
+      "HC-A1.23:3",
+      "HC-A1.23:4",
+      "HC-A1.23:5"
+     ],
+     "pass": {
+      "cat": "L3",
+      "src": "qual",
+      "at": "A1 item 23",
+      "why": "A new or replacement site for drug product manufacture meeting the conditions is Level III."
+     },
+     "fail": {
+      "cat": "L1",
+      "src": "qual",
+      "at": "A1 item 23",
+      "why": "A condition for Level III is not met, so the site change is a supplement (Level I)."
+     }
+    }
+   }
+  }
+ },
+ "ds-site-move": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "allOf": [
+      "HC-Q-bio.2a:1",
+      "HC-Q-bio.2a:2",
+      "HC-Q-bio.2a:3",
+      "HC-Q-bio.2a:4",
+      "HC-Q-bio.2a:5"
+     ],
+     "pass": {
+      "cat": "NC",
+      "src": "qbio",
+      "at": "Table 2a",
+      "why": "A new or replacement drug substance facility meeting conditions 1 to 5 is a notifiable change."
+     },
+     "fail": {
+      "cat": "L1",
+      "src": "qbio",
+      "at": "Table 2a",
+      "why": "A condition is not met: supplement."
+     }
+    },
+    "no": {
+     "allOf": [
+      "HC-A1.2:1",
+      "HC-A1.2:2",
+      "HC-A1.2:3",
+      "HC-A1.2:4"
+     ],
+     "pass": {
+      "cat": "L3",
+      "src": "qual",
+      "at": "A1 item 2",
+      "why": "A new or replacement drug substance site meeting the conditions is Level III."
+     },
+     "fail": {
+      "cat": "L1",
+      "src": "qual",
+      "at": "A1 item 2",
+      "why": "A condition for Level III is not met: supplement (Level I)."
+     }
+    }
+   }
+  }
+ },
+ "ds-intermediate-site": {
+  "tree": {
+   "allOf": [
+    "HC-A1.2:1",
+    "HC-A1.2:2",
+    "HC-A1.2:3",
+    "HC-A1.2:4"
+   ],
+   "pass": {
+    "cat": "L3",
+    "src": "qual",
+    "at": "A1 item 2",
+    "why": "A new site for an intermediate meeting the conditions is Level III."
+   },
+   "fail": {
+    "cat": "L1",
+    "src": "qual",
+    "at": "A1 item 2",
+    "why": "A condition for Level III is not met: supplement."
+   }
+  }
+ },
+ "primary-pack-site": {
+  "tree": {
+   "allOf": [
+    "HC-A1.23:1",
+    "HC-A1.23:2",
+    "HC-A1.23:3",
+    "HC-A1.23:4",
+    "HC-A1.23:5"
+   ],
+   "pass": {
+    "cat": "L3",
+    "src": "qual",
+    "at": "A1 item 23",
+    "why": "A new primary packaging site meeting the conditions is Level III."
+   },
+   "fail": {
+    "cat": "L1",
+    "src": "qual",
+    "at": "A1 item 23",
+    "why": "A condition is not met: supplement."
+   }
+  }
+ },
+ "secondary-pack-site": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L3",
+     "src": "qbio",
+     "at": "Packaging facilities",
+     "why": "A secondary packaging facility change is an annual notification.",
+     "note": "Simplified."
+    },
+    "no": {
+     "cat": "REC",
+     "src": "fw",
+     "at": "2.1.5",
+     "why": "A secondary packaging site has no expected effect on quality: Level IV record.",
+     "note": "Simplified: the site must still hold or be on an establishment licence."
+    }
+   }
+  }
+ },
+ "labeling-site": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L3",
+     "src": "qbio",
+     "at": "Packaging facilities",
+     "why": "A labelling facility change is an annual notification.",
+     "note": "Simplified."
+    },
+    "no": {
+     "cat": "REC",
+     "src": "fw",
+     "at": "2.1.5",
+     "why": "A labelling site has no expected effect on quality: Level IV record.",
+     "note": "Simplified."
+    }
+   }
+  }
+ },
+ "testing-site": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L3",
+     "src": "qbio",
+     "at": "Testing facilities",
+     "why": "A new testing facility using approved procedures is an annual notification.",
+     "note": "Simplified: bioassay transfers may need more."
+    },
+    "no": {
+     "cat": "L3",
+     "src": "qual",
+     "at": "A1 item 2",
+     "why": "A change of testing site is an annual notification (Level III) with no conditions."
+    }
+   }
+  }
+ },
+ "ink-imprint-site": {
+  "tree": {
+   "cat": "L3",
+   "src": "qual",
+   "at": "A1 item 23",
+   "why": "A new site for a manufacturing step such as imprinting is Level III when the process is unchanged.",
+   "note": "Simplified."
+  }
+ },
+ "component-sterilization-site": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L3",
+     "src": "qbio",
+     "at": "Container closure",
+     "why": "A validated sterilisation site for components is an annual notification.",
+     "note": "Simplified."
+    },
+    "no": {
+     "ask": "affectsSterility",
+     "on": {
+      "yes": {
+       "cat": "L1",
+       "src": "qual",
+       "at": "A1 item 23",
+       "why": "A change that may affect sterility assurance is a supplement."
+      },
+      "no": {
+       "cat": "L3",
+       "src": "qual",
+       "at": "A1 item 23",
+       "why": "A validated contract sterilisation site with the same process is Level III."
+      }
+     }
+    }
+   }
+  }
+ },
+ "fill-line-add": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "ask": "lineDuplicate",
+     "on": {
+      "yes": {
+       "cat": "NC",
+       "src": "qbio",
+       "at": "Drug product facility",
+       "why": "A duplicate filling line with the same process is a notifiable change."
+      },
+      "no": {
+       "cat": "L1",
+       "src": "qbio",
+       "at": "Drug product facility",
+       "why": "A new or different filling line is a supplement."
+      }
+     }
+    },
+    "no": {
+     "ask": "lineDuplicate",
+     "on": {
+      "yes": {
+       "cat": "L3",
+       "src": "qual",
+       "at": "A1 item 25",
+       "why": "A duplicate of an approved line with the same validated process is Level III.",
+       "note": "Simplified."
+      },
+      "no": {
+       "cat": "L1",
+       "src": "qual",
+       "at": "A1 item 25",
+       "why": "A new or different filling line for a sterile product is a supplement."
+      }
+     }
+    }
+   }
+  }
+ },
+ "dp-equipment-same": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L3",
+     "src": "qbio",
+     "at": "Equipment",
+     "why": "Equipment of the same design and principle is an annual notification.",
+     "note": "Simplified."
+    },
+    "no": {
+     "cat": "REC",
+     "src": "fw",
+     "at": "2.1.5",
+     "why": "Equipment of the same design and operating principle is a Level IV record.",
+     "note": "Simplified: listed with the Level IV examples."
+    }
+   }
+  }
+ },
+ "dp-process-change": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "ask": "majorImpact",
+     "on": {
+      "yes": {
+       "cat": "L1",
+       "src": "qbio",
+       "at": "Manufacturing process",
+       "why": "A major process change needs a supplement."
+      },
+      "no": {
+       "cat": "NC",
+       "src": "qbio",
+       "at": "Manufacturing process",
+       "why": "Other process changes are notifiable changes.",
+       "note": "Simplified."
+      }
+     }
+    },
+    "no": {
+     "allOf": [
+      "HC-A1.25:1",
+      "HC-A1.25:2",
+      "HC-A1.25:3",
+      "HC-A1.25:4"
+     ],
+     "pass": {
+      "cat": "L3",
+      "src": "qual",
+      "at": "A1 item 25",
+      "why": "A process change meeting the conditions is Level III."
+     },
+     "fail": {
+      "cat": "L1",
+      "src": "qual",
+      "at": "A1 item 25",
+      "why": "A condition for Level III is not met: supplement."
+     }
+    }
+   }
+  }
+ },
+ "dp-scale": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "ask": "bioMinorParam",
+     "on": {
+      "yes": {
+       "cat": "NC",
+       "src": "qbio",
+       "at": "Table 6a",
+       "why": "A scale change with proportional materials and the same bioreactor type is a notifiable change."
+      },
+      "no": {
+       "cat": "L1",
+       "src": "qbio",
+       "at": "Table 6a",
+       "why": "A scale change with process changes is a supplement."
+      }
+     }
+    },
+    "no": {
+     "allOf": [
+      "HC-A1.24:1",
+      "HC-A1.24:2",
+      "HC-A1.24:3",
+      "HC-A1.24:4"
+     ],
+     "pass": {
+      "cat": "L3",
+      "src": "qual",
+      "at": "A1 item 24",
+      "why": "A batch size change meeting the conditions is Level III."
+     },
+     "fail": {
+      "cat": "L1",
+      "src": "qual",
+      "at": "A1 item 24",
+      "why": "A condition for Level III is not met: supplement."
+     }
+    }
+   }
+  }
+ },
+ "ds-route-new": {
+  "tree": {
+   "cat": "L1",
+   "src": "qual",
+   "at": "A1 item 4",
+   "why": "A new route of synthesis is a supplement (Level I)."
+  }
+ },
+ "ds-process-change": {
+  "tree": {
+   "allOf": [
+    "HC-A1.4:1",
+    "HC-A1.4:2",
+    "HC-A1.4:3",
+    "HC-A1.4:4",
+    "HC-A1.4:5"
+   ],
+   "pass": {
+    "cat": "L3",
+    "src": "qual",
+    "at": "A1 item 4",
+    "why": "A drug substance process change meeting conditions 1 to 8 is Level III."
+   },
+   "fail": {
+    "cat": "L1",
+    "src": "qual",
+    "at": "A1 item 4",
+    "why": "A condition for Level III is not met: supplement."
+   }
+  }
+ },
+ "ds-starting-material": {
+  "tree": {
+   "cat": "L1",
+   "src": "qual",
+   "at": "A1 item 4",
+   "why": "Redefining the starting material changes what is controlled under GMP: supplement.",
+   "note": "Simplified."
+  }
+ },
+ "dp-reprocessing": {
+  "tree": {
+   "cat": "L1",
+   "src": "qual",
+   "at": "A1 item 25",
+   "why": "Adding a reprocessing step is a supplement.",
+   "note": "Simplified."
+  }
+ },
+ "dp-ink": {
+  "tree": {
+   "allOf": [
+    "HC-A1.18:1",
+    "HC-A1.18:2"
+   ],
+   "pass": {
+    "cat": "L3",
+    "src": "qual",
+    "at": "A1 item 18",
+    "why": "A change in markings or ink meeting the conditions is Level III."
+   },
+   "fail": {
+    "cat": "L1",
+    "src": "qual",
+    "at": "A1 item 18",
+    "why": "A condition is not met: supplement."
+   }
+  }
+ },
+ "dp-emboss": {
+  "tree": {
+   "allOf": [
+    "HC-A1.18:1",
+    "HC-A1.18:2"
+   ],
+   "pass": {
+    "cat": "L3",
+    "src": "qual",
+    "at": "A1 item 18",
+    "why": "A change in embossing or debossing meeting the conditions is Level III."
+   },
+   "fail": {
+    "cat": "L1",
+    "src": "qual",
+    "at": "A1 item 18",
+    "why": "A condition is not met: supplement."
+   }
+  }
+ },
+ "dp-order-addition": {
+  "tree": {
+   "cat": "REC",
+   "src": "fw",
+   "at": "2.1.5",
+   "why": "A minor change in the order of addition, validated, is a Level IV record.",
+   "note": "Simplified."
+  }
+ },
+ "sterile-filter": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "ask": "filterMaterialPore",
+     "on": {
+      "yes": {
+       "cat": "L3",
+       "src": "qbio",
+       "at": "Manufacturing process",
+       "why": "Same filter material and pore size, validated, is an annual notification."
+      },
+      "no": {
+       "cat": "NC",
+       "src": "qbio",
+       "at": "Manufacturing process",
+       "why": "A different sterilising filter is a notifiable change."
+      }
+     }
+    },
+    "no": {
+     "ask": "filterMaterialPore",
+     "on": {
+      "yes": {
+       "cat": "L3",
+       "src": "qual",
+       "at": "A1 item 25",
+       "why": "Same filter material and pore size, validated: Level III."
+      },
+      "no": {
+       "cat": "L1",
+       "src": "qual",
+       "at": "A1 item 25",
+       "why": "A different filter material or pore size may affect sterility assurance: supplement."
+      }
+     }
+    }
+   }
+  }
+ },
+ "sterilization-method": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L1",
+     "src": "qbio",
+     "at": "Manufacturing process",
+     "why": "A new sterilisation method is a supplement."
+    },
+    "no": {
+     "cat": "L1",
+     "src": "qual",
+     "at": "A1 item 25",
+     "why": "A change in the sterilisation method is a supplement."
+    }
+   }
+  }
+ },
+ "depyrogenation": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "NC",
+     "src": "qbio",
+     "at": "Manufacturing process",
+     "why": "A change to depyrogenation is a notifiable change.",
+     "note": "Simplified."
+    },
+    "no": {
+     "cat": "L3",
+     "src": "qual",
+     "at": "A1 item 25",
+     "why": "A validated change to a depyrogenation process is Level III.",
+     "note": "Simplified."
+    }
+   }
+  }
+ },
+ "inprocess-filtration-remove": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "NC",
+     "src": "qbio",
+     "at": "Manufacturing process",
+     "why": "Removing an in-process filtration is a notifiable change.",
+     "note": "Simplified."
+    },
+    "no": {
+     "cat": "L3",
+     "src": "qual",
+     "at": "A1 item 26",
+     "why": "Removing a non-sterilising in-process filtration, with data, is Level III.",
+     "note": "Simplified."
+    }
+   }
+  }
+ },
+ "control-increase": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L3",
+     "src": "qbio",
+     "at": "Table 18",
+     "why": "Adding in-process controls is an annual notification.",
+     "note": "Simplified."
+    },
+    "no": {
+     "cat": "L3",
+     "src": "qual",
+     "at": "A1 item 26",
+     "why": "Adding in-process controls is Level III."
+    }
+   }
+  }
+ },
+ "excipient-change": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L1",
+     "src": "qbio",
+     "at": "Table 38a",
+     "why": "A formulation change is a supplement."
+    },
+    "no": {
+     "ask": "mr",
+     "on": {
+      "yes": {
+       "cat": "L1",
+       "src": "qual",
+       "at": "A1 item 17",
+       "why": "A composition change in a modified-release product is a supplement."
+      },
+      "no": {
+       "allOf": [
+        "HC-A1.16:1",
+        "HC-A1.16:2",
+        "HC-A1.16:3",
+        "HC-A1.16:4"
+       ],
+       "pass": {
+        "cat": "L3",
+        "src": "qual",
+        "at": "A1 item 16",
+        "why": "A composition change in an immediate-release form within the conditions is Level III."
+       },
+       "fail": {
+        "cat": "L1",
+        "src": "qual",
+        "at": "A1 item 16",
+        "why": "A condition for Level III is not met: supplement."
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "colour-flavour-delete": {
+  "tree": {
+   "allOf": [
+    "HC-A1.16:1",
+    "HC-A1.16:2",
+    "HC-A1.16:3",
+    "HC-A1.16:4"
+   ],
+   "pass": {
+    "cat": "L3",
+    "src": "qual",
+    "at": "A1 item 16",
+    "why": "Deleting or reducing a colour or flavour within the conditions is Level III."
+   },
+   "fail": {
+    "cat": "L1",
+    "src": "qual",
+    "at": "A1 item 16",
+    "why": "A condition is not met: supplement."
+   }
+  }
+ },
+ "new-strength": {
+  "tree": {
+   "cat": "L1",
+   "src": "qual",
+   "at": "A1 item 14",
+   "why": "A new strength is a supplement (Level I).",
+   "pi": true
+  }
+ },
+ "spec-tighten": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L3",
+     "src": "qbio",
+     "at": "Table 25g",
+     "why": "Tightening an acceptance criterion within the approved range is an annual notification."
+    },
+    "no": {
+     "cat": "L3",
+     "src": "qual",
+     "at": "A1 items 8 and 31",
+     "why": "Tightening an acceptance criterion is Level III."
+    }
+   }
+  }
+ },
+ "spec-relax": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "NC",
+     "src": "qbio",
+     "at": "Table 25f",
+     "why": "Relaxing an acceptance criterion is a notifiable change."
+    },
+    "no": {
+     "ask": "compendial",
+     "on": {
+      "yes": {
+       "cat": "L3",
+       "src": "qual",
+       "at": "A1 items 8 and 31",
+       "why": "Relaxing a limit to match compendial or ICH criteria is Level III."
+      },
+      "no": {
+       "cat": "L1",
+       "src": "qual",
+       "at": "A1 items 8 and 31",
+       "why": "Other relaxations are a supplement."
+      }
+     }
+    }
+   }
+  }
+ },
+ "spec-delete-test": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "NC",
+     "src": "qbio",
+     "at": "Table 25a",
+     "why": "Deleting a test is a notifiable change."
+    },
+    "no": {
+     "ask": "significantQuality",
+     "on": {
+      "yes": {
+       "cat": "L1",
+       "src": "qual",
+       "at": "A1 items 8 and 31",
+       "why": "Deleting a test that matters for quality is a supplement."
+      },
+      "no": {
+       "cat": "L3",
+       "src": "qual",
+       "at": "A1 items 8 and 31",
+       "why": "Deleting a redundant test (for example supported by at least 10 batches) not prompted by failures is Level III."
+      }
+     }
+    }
+   }
+  }
+ },
+ "spec-add-test": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L3",
+     "src": "qbio",
+     "at": "Specifications",
+     "why": "Adding a test is an annual notification.",
+     "note": "Simplified."
+    },
+    "no": {
+     "cat": "L3",
+     "src": "qual",
+     "at": "A1 items 8 and 31",
+     "why": "Adding a test and limit is Level III."
+    }
+   }
+  }
+ },
+ "spec-compendial": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L3",
+     "src": "qbio",
+     "at": "Specifications",
+     "why": "A change to meet the pharmacopoeia is an annual notification."
+    },
+    "no": {
+     "cat": "L3",
+     "src": "qual",
+     "at": "A1 item 7",
+     "why": "Updating a specification to an updated monograph is Level III."
+    }
+   }
+  }
+ },
+ "method-change": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "ask": "bioMethodMajor",
+     "on": {
+      "yes": {
+       "cat": "NC",
+       "src": "qbio",
+       "at": "Table 25c and 25d",
+       "why": "A procedure change affecting technique or performance is a notifiable change."
+      },
+      "no": {
+       "cat": "L3",
+       "src": "qbio",
+       "at": "Table 25d",
+       "why": "A minor change meeting conditions 3 to 7 is an annual notification."
+      }
+     }
+    },
+    "no": {
+     "ask": "sameOrBetter",
+     "on": {
+      "yes": {
+       "cat": "L3",
+       "src": "qual",
+       "at": "A1 items 9 and 32",
+       "why": "A replacement procedure that is validated and at least equivalent is Level III."
+      },
+      "no": {
+       "cat": "L1",
+       "src": "qual",
+       "at": "A1 items 9 and 32",
+       "why": "A procedure that gives less assurance is a supplement.",
+       "note": "Simplified."
+      }
+     }
+    }
+   }
+  }
+ },
+ "method-new-regulatory": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "NC",
+     "src": "qbio",
+     "at": "Table 25c",
+     "why": "A new regulatory procedure is a notifiable change.",
+     "note": "Simplified."
+    },
+    "no": {
+     "cat": "L3",
+     "src": "qual",
+     "at": "A1 items 9 and 32",
+     "why": "Adding an analytical procedure is Level III."
+    }
+   }
+  }
+ },
+ "method-alternative": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L3",
+     "src": "qbio",
+     "at": "Table 25c",
+     "why": "An alternative pharmacopoeial procedure is an annual notification."
+    },
+    "no": {
+     "cat": "L3",
+     "src": "qual",
+     "at": "A1 items 9 and 32",
+     "why": "Adding or changing an alternative procedure is Level III."
+    }
+   }
+  }
+ },
+ "method-components": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L3",
+     "src": "qbio",
+     "at": "Analytical procedures",
+     "why": "A change to a component test method is an annual notification.",
+     "note": "Simplified."
+    },
+    "no": {
+     "cat": "L3",
+     "src": "qual",
+     "at": "A1 item 32",
+     "why": "A change to a test method for components or in-process materials is Level III.",
+     "note": "Simplified."
+    }
+   }
+  }
+ },
+ "method-raw-material": {
+  "tree": {
+   "cat": "REC",
+   "src": "fw",
+   "at": "2.1.5",
+   "why": "A test method for raw materials used early in the synthesis is a Level IV record.",
+   "note": "Simplified."
+  }
+ },
+ "cc-polymer": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L1",
+     "src": "qbio",
+     "at": "Container closure",
+     "why": "A change to the primary container of a biologic drug product is a supplement.",
+     "note": "Simplified: for the drug substance container it is a notifiable change (Table 33)."
+    },
+    "no": {
+     "allOf": [
+      "HC-A1.33:1",
+      "HC-A1.33:2",
+      "HC-A1.33:3"
+     ],
+     "pass": {
+      "cat": "L3",
+      "src": "qual",
+      "at": "A1 item 33",
+      "why": "A new primary container material for a non-sterile product with equal protection is Level III."
+     },
+     "fail": {
+      "cat": "L1",
+      "src": "qual",
+      "at": "A1 item 33",
+      "why": "A condition is not met: supplement."
+     }
+    }
+   }
+  }
+ },
+ "cc-sterile": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L1",
+     "src": "qbio",
+     "at": "Container closure",
+     "why": "A change to the primary container of a sterile biologic is a supplement.",
+     "note": "Simplified."
+    },
+    "no": {
+     "cat": "L1",
+     "src": "qual",
+     "at": "A1 item 33",
+     "why": "A change to the container closure system of a sterile product is a supplement."
+    }
+   }
+  }
+ },
+ "cc-dose-device": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L1",
+     "src": "qbio",
+     "at": "Container closure",
+     "why": "A change to a dose-controlling device is a supplement."
+    },
+    "no": {
+     "cat": "L1",
+     "src": "qual",
+     "at": "A1 item 33",
+     "why": "A change to packaging that controls the dose is a supplement."
+    }
+   }
+  }
+ },
+ "cc-closure-solid": {
+  "tree": {
+   "allOf": [
+    "HC-A1.33:1",
+    "HC-A1.33:2",
+    "HC-A1.33:3"
+   ],
+   "pass": {
+    "cat": "L3",
+    "src": "qual",
+    "at": "A1 item 33",
+    "why": "A closure change for a solid oral product with equal protection is Level III."
+   },
+   "fail": {
+    "cat": "L1",
+    "src": "qual",
+    "at": "A1 item 33",
+    "why": "A condition is not met: supplement."
+   }
+  }
+ },
+ "cc-closure-liquid": {
+  "tree": {
+   "allOf": [
+    "HC-A1.33:1",
+    "HC-A1.33:2",
+    "HC-A1.33:3"
+   ],
+   "pass": {
+    "cat": "L3",
+    "src": "qual",
+    "at": "A1 item 33",
+    "why": "A closure change for a non-sterile liquid with equal protection is Level III."
+   },
+   "fail": {
+    "cat": "L1",
+    "src": "qual",
+    "at": "A1 item 33",
+    "why": "A condition is not met: supplement."
+   }
+  }
+ },
+ "cc-size-shape": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "NC",
+     "src": "qbio",
+     "at": "Container closure",
+     "why": "A container size or shape change is a notifiable change.",
+     "note": "Simplified."
+    },
+    "no": {
+     "ask": "sterile",
+     "on": {
+      "yes": {
+       "cat": "L1",
+       "src": "qual",
+       "at": "A1 item 33",
+       "why": "A size or shape change for a sterile container is a supplement.",
+       "note": "Simplified."
+      },
+      "no": {
+       "cat": "L3",
+       "src": "qual",
+       "at": "A1 item 33",
+       "why": "A size or shape change for a non-sterile container is Level III."
+      }
+     }
+    }
+   }
+  }
+ },
+ "cc-count": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L3",
+     "src": "qbio",
+     "at": "Packaging",
+     "why": "A change in the number of units per pack is an annual notification.",
+     "pi": true
+    },
+    "no": {
+     "cat": "L3",
+     "src": "qual",
+     "at": "A1 item 34",
+     "why": "A change in package size or fill is Level III.",
+     "pi": true
+    }
+   }
+  }
+ },
+ "cc-desiccant": {
+  "tree": {
+   "cat": "L3",
+   "src": "qual",
+   "at": "A1 item 33",
+   "why": "Adding, changing or removing a desiccant, with data, is Level III."
+  }
+ },
+ "cc-blister": {
+  "tree": {
+   "allOf": [
+    "HC-A1.33:1",
+    "HC-A1.33:2",
+    "HC-A1.33:3"
+   ],
+   "pass": {
+    "cat": "L3",
+    "src": "qual",
+    "at": "A1 item 33",
+    "why": "A blister change for a non-sterile solid with equal protection is Level III."
+   },
+   "fail": {
+    "cat": "L1",
+    "src": "qual",
+    "at": "A1 item 33",
+    "why": "A condition is not met: supplement."
+   }
+  }
+ },
+ "cc-secondary-protective": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "NC",
+     "src": "qbio",
+     "at": "Container closure",
+     "why": "Removing protective secondary packaging is a notifiable change.",
+     "note": "Simplified."
+    },
+    "no": {
+     "ask": "sameOrBetterProtection",
+     "on": {
+      "yes": {
+       "cat": "L3",
+       "src": "qual",
+       "at": "A1 item 33",
+       "why": "Deleting secondary packaging that gives no needed protection is Level III."
+      },
+      "no": {
+       "cat": "L1",
+       "src": "qual",
+       "at": "A1 item 33",
+       "why": "Removing protection the product needs is a supplement."
+      }
+     }
+    }
+   }
+  }
+ },
+ "cc-cap-colour": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "REC",
+     "src": "fwbio",
+     "at": "Level IV",
+     "why": "A cap colour change has no reported impact: managed under the quality system."
+    },
+    "no": {
+     "cat": "REC",
+     "src": "fw",
+     "at": "2.1.5",
+     "why": "A cap colour change is a Level IV record."
+    }
+   }
+  }
+ },
+ "shelf-life-extend": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "ask": "approvedProtocolFullData",
+     "on": {
+      "yes": {
+       "cat": "L3",
+       "src": "qbio",
+       "at": "Table 35a",
+       "why": "An extension under the approved stability protocol (conditions 1 to 5) is an annual notification."
+      },
+      "no": {
+       "cat": "NC",
+       "src": "qbio",
+       "at": "Table 35a",
+       "why": "Other extensions are notifiable changes."
+      }
+     }
+    },
+    "no": {
+     "ask": "approvedProtocolFullData",
+     "on": {
+      "yes": {
+       "cat": "L3",
+       "src": "qual",
+       "at": "A1 item 37",
+       "why": "An extension based on real-time data under the approved protocol is Level III."
+      },
+      "no": {
+       "cat": "L1",
+       "src": "qual",
+       "at": "A1 item 37",
+       "why": "An extension without full real-time data under the approved protocol is a supplement."
+      }
+     }
+    }
+   }
+  }
+ },
+ "shelf-life-reduce": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L3",
+     "src": "qbio",
+     "at": "Stability",
+     "why": "A shorter shelf life is an annual notification.",
+     "note": "Simplified.",
+     "pi": true
+    },
+    "no": {
+     "cat": "L3",
+     "src": "qual",
+     "at": "A1 item 37",
+     "why": "A shorter shelf life is Level III.",
+     "pi": true
+    }
+   }
+  }
+ },
+ "stability-protocol": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L3",
+     "src": "qbio",
+     "at": "Stability",
+     "why": "A change to the stability protocol is an annual notification.",
+     "note": "Simplified."
+    },
+    "no": {
+     "cat": "L3",
+     "src": "qual",
+     "at": "A1 item 13",
+     "why": "A change to the post-approval stability protocol or commitment is Level III."
+    }
+   }
+  }
+ },
+ "storage-conditions": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "NC",
+     "src": "qbio",
+     "at": "Stability",
+     "why": "A change in storage conditions is a notifiable change.",
+     "note": "Simplified.",
+     "pi": true
+    },
+    "no": {
+     "ask": "restrictive",
+     "on": {
+      "yes": {
+       "cat": "L3",
+       "src": "qual",
+       "at": "A1 item 38",
+       "why": "More restrictive storage conditions are Level III.",
+       "pi": true
+      },
+      "no": {
+       "cat": "L1",
+       "src": "qual",
+       "at": "A1 item 38",
+       "why": "Less restrictive storage conditions are a supplement.",
+       "pi": true
+      }
+     }
+    }
+   }
+  }
+ },
+ "reference-standard": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "NC",
+     "src": "qbio",
+     "at": "Reference standards",
+     "why": "A new in-house reference standard for a biologic is a notifiable change.",
+     "note": "Qualified under an approved protocol it may be an annual notification."
+    },
+    "no": {
+     "cat": "L3",
+     "src": "qual",
+     "at": "A1 item 9",
+     "why": "A new in-house reference standard qualified against the approved one is Level III.",
+     "note": "Simplified."
+    }
+   }
+  }
+ },
+ "lab-new-indication": {
+  "tree": {
+   "cat": "L1",
+   "src": "se",
+   "at": "Level I",
+   "why": "A new indication is a Level I supplement (SNDS).",
+   "pi": true
+  }
+ },
+ "lab-population": {
+  "tree": {
+   "cat": "L1",
+   "src": "se",
+   "at": "Level I",
+   "why": "A change in population or dosing based on new clinical data is a Level I supplement.",
+   "pi": true
+  }
+ },
+ "lab-clinical-section": {
+  "tree": {
+   "cat": "L1",
+   "src": "se",
+   "at": "Level I",
+   "why": "Product monograph changes based on new clinical data are a Level I supplement.",
+   "note": "Simplified.",
+   "pi": true
+  }
+ },
+ "lab-safety-add": {
+  "tree": {
+   "cat": "L2S",
+   "src": "se",
+   "at": "Level II supplement (safety)",
+   "why": "Adding or strengthening risk-management text is a Level II supplement (safety).",
+   "pi": true
+  }
+ },
+ "lab-dosing-safety": {
+  "tree": {
+   "cat": "L2S",
+   "src": "se",
+   "at": "Level II supplement (safety)",
+   "why": "A dosing instruction for safer use is a Level II supplement (safety).",
+   "pi": true
+  }
+ },
+ "lab-delete-claim": {
+  "tree": {
+   "cat": "L2S",
+   "src": "se",
+   "at": "Level II supplement (safety)",
+   "why": "Removing unsupported claims is filed as a Level II supplement.",
+   "note": "Simplified.",
+   "pi": true
+  }
+ },
+ "lab-505o4": {
+  "tree": {
+   "cat": "L2S",
+   "src": "se",
+   "at": "Level II supplement (safety)",
+   "why": "Health Canada can require a label change (section 21.2 of the Food and Drugs Act); the change is filed as a Level II supplement (safety).",
+   "note": "The US 505(o)(4) process has no exact Canadian twin.",
+   "pi": true
+  }
+ },
+ "lab-rld-update": {
+  "tree": {
+   "cat": "L2S",
+   "src": "se",
+   "at": "Level II supplement (safety)",
+   "why": "A generic following safety changes in the Canadian reference product files a Level II supplement.",
+   "note": "Simplified: non-safety updates can be Level III.",
+   "pi": true
+  }
+ },
+ "lab-editorial": {
+  "tree": {
+   "cat": "L3",
+   "src": "se",
+   "at": "Level III",
+   "why": "Editorial labelling changes are Level III.",
+   "pi": true
+  }
+ },
+ "lab-layout": {
+  "tree": {
+   "cat": "L3",
+   "src": "se",
+   "at": "Level III",
+   "why": "A change in label layout that does not change content is Level III.",
+   "note": "Simplified.",
+   "pi": true
+  }
+ },
+ "cp-submit": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "NC",
+     "src": "fwbio",
+     "at": "PACMP",
+     "why": "From November 2026 Health Canada accepts PACMPs for biologic and radiopharmaceutical products; the app treats a stand-alone protocol as a notifiable change.",
+     "note": "Simplified: the framework describes how protocols are filed. Submissions are accepted after a 90-day coming-into-effect period that started on 13 August 2026."
+    },
+    "no": {
+     "cat": "NA",
+     "src": "q12",
+     "at": "ICH Q12 notice",
+     "why": "Health Canada accepts PACMPs only for biologic and radiopharmaceutical products for now; implementation for pharmaceutical drugs is to be announced."
+    }
+   }
+  }
+ },
+ "cp-use": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "ask": "caProtocolLevel",
+     "on": {
+      "NC": {
+       "cat": "NC",
+       "src": "fwbio",
+       "at": "PACMP",
+       "why": "The approved protocol set a notifiable change."
+      },
+      "L3IN": {
+       "cat": "L3IN",
+       "src": "fwbio",
+       "at": "PACMP",
+       "why": "The approved protocol set an immediate notification (only when conditions are met and the agreed data are available)."
+      },
+      "L3": {
+       "cat": "L3",
+       "src": "fwbio",
+       "at": "PACMP",
+       "why": "The approved protocol set an annual notification."
+      }
+     }
+    },
+    "no": {
+     "cat": "NA",
+     "src": "q12",
+     "at": "ICH Q12 notice",
+     "why": "No PACMP route yet for pharmaceutical drugs; classify the change in its own entry."
+    }
+   }
+  }
+ },
+ "be-study-change": {
+  "tree": {
+   "cat": "L1",
+   "src": "qual",
+   "at": "A1 items 15 to 17",
+   "why": "A change that needs a new comparative bioavailability study is a supplement."
+  }
+ },
+ "bio-mcb": {
+  "tree": {
+   "cat": "L1",
+   "src": "qbio",
+   "at": "Table 12b",
+   "why": "A new master cell bank is a supplement; it is a notifiable change only when made from a pre-approved bank (condition 1)."
+  }
+ },
+ "bio-wcb": {
+  "tree": {
+   "ask": "wcbApprovedProtocol",
+   "on": {
+    "yes": {
+     "cat": "L3",
+     "src": "qbio",
+     "at": "Table 12d",
+     "why": "A new working cell bank from the approved master bank, at the approved passage level and under the approved protocol, is an annual notification."
+    },
+    "no": {
+     "cat": "NC",
+     "src": "qbio",
+     "at": "Table 12d",
+     "why": "A working cell bank not meeting conditions 2 to 4 is a notifiable change."
+    }
+   }
+  }
+ },
+ "bio-purification": {
+  "tree": {
+   "ask": "bioResinMinor",
+   "on": {
+    "yes": {
+     "cat": "NC",
+     "src": "qbio",
+     "at": "Purification",
+     "why": "A minor purification change is a notifiable change."
+    },
+    "no": {
+     "cat": "L1",
+     "src": "qbio",
+     "at": "Purification",
+     "why": "A new step, resin or column is a supplement."
+    }
+   }
+  }
+ },
+ "bio-viral": {
+  "tree": {
+   "cat": "L1",
+   "src": "qbio",
+   "at": "Viral clearance",
+   "why": "A change to a virus removal or inactivation step is a supplement."
+  }
+ },
+ "admin-ownership": {
+  "tree": {
+   "cat": "ADMIN",
+   "src": "mds",
+   "at": "Administrative submissions",
+   "why": "A change of sponsor is an administrative submission (no scientific review).",
+   "pi": true
+  }
+ },
+ "admin-name-address": {
+  "tree": {
+   "cat": "ADMIN",
+   "src": "mds",
+   "at": "Administrative submissions",
+   "why": "A change in the sponsor's name or address is an administrative submission.",
+   "pi": true
+  }
+ },
+ "ds-cep": {
+  "tree": {
+   "ask": "cepCovers",
+   "on": {
+    "yes": {
+     "allOf": [
+      "HC-A1.2c:1",
+      "HC-A1.2c:2",
+      "HC-A1.2c:3"
+     ],
+     "pass": {
+      "cat": "L3",
+      "src": "qual",
+      "at": "A1 item 2",
+      "why": "A CEP-supported source meeting the conditions is Level III."
+     },
+     "fail": {
+      "cat": "L1",
+      "src": "qual",
+      "at": "A1 item 2",
+      "why": "A condition is not met: supplement."
+     }
+    },
+    "no": {
+     "ask": "dsSameRoute",
+     "on": {
+      "yes": {
+       "allOf": [
+        "HC-A1.2:1",
+        "HC-A1.2:2",
+        "HC-A1.2:3",
+        "HC-A1.2:4"
+       ],
+       "pass": {
+        "cat": "L3",
+        "src": "qual",
+        "at": "A1 item 2",
+        "why": "A master-file-supported source with the same route, meeting the conditions, is Level III."
+       },
+       "fail": {
+        "cat": "L1",
+        "src": "qual",
+        "at": "A1 item 2",
+        "why": "A condition is not met: supplement."
+       }
+      },
+      "no": {
+       "cat": "L1",
+       "src": "qual",
+       "at": "A1 item 4",
+       "why": "A source with a different route of synthesis is a supplement."
+      }
+     }
+    }
+   }
+  }
+ },
+ "batch-release-site": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L3",
+     "src": "qbio",
+     "at": "Testing facilities",
+     "why": "A new release testing site with approved procedures is an annual notification.",
+     "note": "Simplified."
+    },
+    "no": {
+     "cat": "L3",
+     "src": "qual",
+     "at": "A1 item 2",
+     "why": "Canada has no batch release site as such; a new release testing site is Level III.",
+     "note": "Release in Canada rests with the importer or distributor under GMP (Division 2)."
+    }
+   }
+  }
+ },
+ "site-delete": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L3",
+     "src": "qbio",
+     "at": "Facilities",
+     "why": "Deleting a facility is an annual notification."
+    },
+    "no": {
+     "cat": "L3",
+     "src": "qual",
+     "at": "A1 item 3",
+     "why": "Deleting a manufacturing site or manufacturer is Level III."
+    }
+   }
+  }
+ },
+ "ds-scale": {
+  "tree": {
+   "allOf": [
+    "HC-A1.5:1",
+    "HC-A1.5:2",
+    "HC-A1.5:3"
+   ],
+   "pass": {
+    "cat": "L3",
+    "src": "qual",
+    "at": "A1 item 5",
+    "why": "A drug substance batch size change meeting the conditions is Level III."
+   },
+   "fail": {
+    "cat": "L1",
+    "src": "qual",
+    "at": "A1 item 5",
+    "why": "A condition is not met: supplement."
+   }
+  }
+ },
+ "ipc-tighten": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L3",
+     "src": "qbio",
+     "at": "Table 18d",
+     "why": "Tightening an in-process limit within the approved range is an annual notification."
+    },
+    "no": {
+     "cat": "L3",
+     "src": "qual",
+     "at": "A1 item 26",
+     "why": "Tightening an in-process limit is Level III."
+    }
+   }
+  }
+ },
+ "ipc-relax": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "NC",
+     "src": "qbio",
+     "at": "Table 18",
+     "why": "Relaxing an in-process limit is a notifiable change."
+    },
+    "no": {
+     "ask": "ipcCritical",
+     "on": {
+      "yes": {
+       "cat": "L1",
+       "src": "qual",
+       "at": "A1 item 26",
+       "why": "Widening a critical in-process limit or deleting a significant test is a supplement."
+      },
+      "no": {
+       "cat": "L3",
+       "src": "qual",
+       "at": "A1 item 26",
+       "why": "A non-critical in-process change is Level III.",
+       "note": "Simplified."
+      }
+     }
+    }
+   }
+  }
+ },
+ "hold-time": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "ask": "holdData",
+     "on": {
+      "yes": {
+       "cat": "L3",
+       "src": "qbio",
+       "at": "Manufacturing process",
+       "why": "A longer hold time validated with data is an annual notification.",
+       "note": "Simplified."
+      },
+      "no": {
+       "cat": "NC",
+       "src": "qbio",
+       "at": "Manufacturing process",
+       "why": "A longer hold time is a notifiable change."
+      }
+     }
+    },
+    "no": {
+     "ask": "holdData",
+     "on": {
+      "yes": {
+       "cat": "L3",
+       "src": "qual",
+       "at": "A1 item 25",
+       "why": "A longer hold time supported by data is Level III.",
+       "note": "Simplified."
+      },
+      "no": {
+       "cat": "L1",
+       "src": "qual",
+       "at": "A1 item 25",
+       "why": "A longer hold time without supporting data is a supplement."
+      }
+     }
+    }
+   }
+  }
+ },
+ "design-space-within": {
+  "tree": {
+   "cat": "REC",
+   "src": "q8",
+   "at": "Design space",
+   "why": "Working within an approved design space is not a change: record it in the quality system."
+  }
+ },
+ "design-space-new": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L1",
+     "src": "q8",
+     "at": "Design space",
+     "why": "A new or expanded design space is a supplement."
+    },
+    "no": {
+     "cat": "L1",
+     "src": "q8",
+     "at": "Design space",
+     "why": "A new or expanded design space is assessed by Health Canada: supplement."
+    }
+   }
+  }
+ },
+ "rtrt": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L1",
+     "src": "qbio",
+     "at": "Specifications",
+     "why": "Real-time release testing is a supplement."
+    },
+    "no": {
+     "cat": "L1",
+     "src": "qual",
+     "at": "A1 items 8 and 31",
+     "why": "Replacing end-product tests with real-time release (like parametric release) is a supplement."
+    }
+   }
+  }
+ },
+ "continuous-mfg": {
+  "tree": {
+   "cat": "L1",
+   "src": "qual",
+   "at": "A1 item 25",
+   "why": "Converting to continuous manufacturing is a supplement."
+  }
+ },
+ "excipient-supplier": {
+  "tree": {
+   "cat": "REC",
+   "src": "fw",
+   "at": "2.1.5",
+   "why": "A new supplier of the same excipient grade meeting the specification is a Level IV record.",
+   "note": "Simplified."
+  }
+ },
+ "coating-weight": {
+  "tree": {
+   "ask": "mr",
+   "on": {
+    "yes": {
+     "cat": "L1",
+     "src": "qual",
+     "at": "A1 item 17",
+     "why": "A coating change for a modified-release product is a supplement."
+    },
+    "no": {
+     "allOf": [
+      "HC-A1.16:1",
+      "HC-A1.16:2",
+      "HC-A1.16:3",
+      "HC-A1.16:4"
+     ],
+     "pass": {
+      "cat": "L3",
+      "src": "qual",
+      "at": "A1 item 16",
+      "why": "A film-coat or capsule shell change within the conditions is Level III."
+     },
+     "fail": {
+      "cat": "L1",
+      "src": "qual",
+      "at": "A1 item 16",
+      "why": "A condition is not met: supplement."
+     }
+    }
+   }
+  }
+ },
+ "score-line": {
+  "tree": {
+   "ask": "mr",
+   "on": {
+    "yes": {
+     "cat": "L1",
+     "src": "qual",
+     "at": "A1 item 19",
+     "why": "A score line on a modified-release product is a supplement."
+    },
+    "no": {
+     "ask": "scoreAction",
+     "on": {
+      "add": {
+       "cat": "L3",
+       "src": "qual",
+       "at": "A1 item 19.2",
+       "why": "Adding a score line meeting the conditions is Level III.",
+       "note": "For a generic, a score line that differs from the Canadian reference product is a supplement (19.1).",
+       "pi": true
+      },
+      "delete": {
+       "cat": "L3",
+       "src": "qual",
+       "at": "A1 item 19.3",
+       "why": "Deleting a score line meeting the conditions is Level III.",
+       "note": "For a generic, scoring must match the Canadian reference product.",
+       "pi": true
+      }
+     }
+    }
+   }
+  }
+ },
+ "tablet-shape": {
+  "tree": {
+   "allOf": [
+    "HC-A1.20:1",
+    "HC-A1.20:2",
+    "HC-A1.20:3"
+   ],
+   "pass": {
+    "cat": "L3",
+    "src": "qual",
+    "at": "A1 item 20",
+    "why": "A shape or dimension change meeting the conditions is Level III.",
+    "pi": true
+   },
+   "fail": {
+    "cat": "L1",
+    "src": "qual",
+    "at": "A1 item 20",
+    "why": "A condition is not met: supplement."
+   }
+  }
+ },
+ "tse-excipient": {
+  "tree": {
+   "cat": "L3",
+   "src": "qual",
+   "at": "A1 items 28 and 29",
+   "why": "Moving an excipient away from a TSE-risk source is Level III."
+  }
+ },
+ "dosage-form-new": {
+  "tree": {
+   "cat": "L1",
+   "src": "qual",
+   "at": "A1 item 14",
+   "why": "A new dosage form is a supplement (Level I).",
+   "pi": true
+  }
+ },
+ "nitrosamine-control": {
+  "tree": {
+   "cat": "L3",
+   "src": "qual",
+   "at": "A1 item 31",
+   "why": "Adding a test and limit is Level III.",
+   "note": "Check Health Canada's nitrosamine guidance for the expected limits and timing."
+  }
+ },
+ "excipient-spec": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "ask": "excipientSpecKind",
+     "on": {
+      "tighten": {
+       "cat": "L3",
+       "src": "qbio",
+       "at": "Excipients",
+       "why": "Tightening is an annual notification."
+      },
+      "add": {
+       "cat": "L3",
+       "src": "qbio",
+       "at": "Excipients",
+       "why": "Adding a test is an annual notification."
+      },
+      "delete": {
+       "cat": "NC",
+       "src": "qbio",
+       "at": "Excipients",
+       "why": "Deleting a test is a notifiable change."
+      },
+      "relax": {
+       "cat": "NC",
+       "src": "qbio",
+       "at": "Excipients",
+       "why": "Widening a limit is a notifiable change."
+      }
+     }
+    },
+    "no": {
+     "ask": "excipientSpecKind",
+     "on": {
+      "tighten": {
+       "cat": "L3",
+       "src": "qual",
+       "at": "A1 excipient items",
+       "why": "Tightening an excipient limit is Level III."
+      },
+      "add": {
+       "cat": "L3",
+       "src": "qual",
+       "at": "A1 excipient items",
+       "why": "Adding an excipient test is Level III."
+      },
+      "delete": {
+       "cat": "L3",
+       "src": "qual",
+       "at": "A1 excipient items",
+       "why": "Deleting a non-significant excipient test is Level III."
+      },
+      "relax": {
+       "cat": "L1",
+       "src": "qual",
+       "at": "A1 excipient items",
+       "why": "Widening an excipient limit is a supplement.",
+       "note": "Simplified."
+      }
+     }
+    }
+   }
+  }
+ },
+ "skip-testing": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "NC",
+     "src": "qbio",
+     "at": "Specifications",
+     "why": "Reduced testing is a notifiable change.",
+     "note": "Simplified."
+    },
+    "no": {
+     "cat": "L1",
+     "src": "qual",
+     "at": "A1 item 31",
+     "why": "Reduced testing of a release test changes the specification: supplement.",
+     "note": "Simplified."
+    }
+   }
+  }
+ },
+ "method-minor": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L3",
+     "src": "qbio",
+     "at": "Table 25d",
+     "why": "A minor procedure change meeting conditions 3 to 7 is an annual notification."
+    },
+    "no": {
+     "cat": "L3",
+     "src": "qual",
+     "at": "A1 items 9 and 32",
+     "why": "A minor change to an approved procedure is Level III.",
+     "note": "Adjustments within the method's allowed ranges may be Level IV."
+    }
+   }
+  }
+ },
+ "micro-rapid": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "NC",
+     "src": "qbio",
+     "at": "Analytical procedures",
+     "why": "An alternative microbiological method is a notifiable change.",
+     "note": "Simplified."
+    },
+    "no": {
+     "ask": "sterile",
+     "on": {
+      "yes": {
+       "cat": "L1",
+       "src": "qual",
+       "at": "A1 item 8",
+       "why": "Replacing the sterility test with an alternative microbiological method is a supplement."
+      },
+      "no": {
+       "cat": "L3",
+       "src": "qual",
+       "at": "A1 item 32",
+       "why": "A validated rapid method for a non-sterile product is Level III."
+      }
+     }
+    }
+   }
+  }
+ },
+ "cc-supplier": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L3",
+     "src": "qbio",
+     "at": "Container closure",
+     "why": "A new supplier of the same component is an annual notification.",
+     "note": "Simplified."
+    },
+    "no": {
+     "cat": "L3",
+     "src": "qual",
+     "at": "A1 item 33",
+     "why": "A new supplier of the same component, same material and specification, is Level III.",
+     "note": "Simplified."
+    }
+   }
+  }
+ },
+ "cc-device": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "ask": "deviceSignificant",
+     "on": {
+      "yes": {
+       "cat": "L1",
+       "src": "qbio",
+       "at": "Container closure",
+       "why": "A device change that affects dosing is a supplement.",
+       "pi": true
+      },
+      "no": {
+       "cat": "L3",
+       "src": "qbio",
+       "at": "Container closure",
+       "why": "Other device changes are annual notifications.",
+       "note": "Simplified.",
+       "pi": true
+      }
+     }
+    },
+    "no": {
+     "ask": "deviceSignificant",
+     "on": {
+      "yes": {
+       "cat": "L1",
+       "src": "qual",
+       "at": "A1 item 33",
+       "why": "A device change that affects dosing is a supplement.",
+       "pi": true
+      },
+      "no": {
+       "cat": "L3",
+       "src": "qual",
+       "at": "A1 item 33",
+       "why": "A change to a co-packaged measuring device that does not affect dosing is Level III.",
+       "pi": true
+      }
+     }
+    }
+   }
+  }
+ },
+ "cc-noncontact": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L3",
+     "src": "qbio",
+     "at": "Container closure",
+     "why": "A non-contact component change is an annual notification.",
+     "note": "Simplified."
+    },
+    "no": {
+     "cat": "L3",
+     "src": "qual",
+     "at": "A1 item 33",
+     "why": "A change to a packaging part that does not touch the product is Level III.",
+     "note": "Simplified."
+    }
+   }
+  }
+ },
+ "ds-retest": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "ask": "approvedProtocolFullData",
+     "on": {
+      "yes": {
+       "cat": "L3",
+       "src": "qbio",
+       "at": "Table 35a",
+       "why": "An extension under the approved protocol is an annual notification."
+      },
+      "no": {
+       "cat": "NC",
+       "src": "qbio",
+       "at": "Table 35a",
+       "why": "Other extensions are notifiable changes."
+      }
+     }
+    },
+    "no": {
+     "cat": "L3",
+     "src": "qual",
+     "at": "A1 item 11",
+     "why": "A change in the drug substance re-test period is Level III (with data on at least two batches)."
+    }
+   }
+  }
+ },
+ "in-use-shelf-life": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "ask": "inUseKind",
+     "on": {
+      "reduce": {
+       "cat": "L3",
+       "src": "qbio",
+       "at": "Stability",
+       "why": "A shorter in-use period is an annual notification.",
+       "pi": true
+      },
+      "extendReal": {
+       "cat": "NC",
+       "src": "qbio",
+       "at": "Stability",
+       "why": "A longer in-use period is a notifiable change.",
+       "pi": true
+      },
+      "extendModel": {
+       "cat": "NC",
+       "src": "qbio",
+       "at": "Stability",
+       "why": "A longer in-use period by extrapolation is a notifiable change.",
+       "pi": true
+      }
+     }
+    },
+    "no": {
+     "ask": "inUseKind",
+     "on": {
+      "reduce": {
+       "cat": "L3",
+       "src": "qual",
+       "at": "A1 item 37",
+       "why": "A shorter in-use period is Level III.",
+       "pi": true
+      },
+      "extendReal": {
+       "cat": "L3",
+       "src": "qual",
+       "at": "A1 item 37",
+       "why": "A longer in-use period based on real-time data is Level III.",
+       "pi": true
+      },
+      "extendModel": {
+       "cat": "L1",
+       "src": "qual",
+       "at": "A1 item 37",
+       "why": "An extension based on extrapolation is a supplement.",
+       "pi": true
+      }
+     }
+    }
+   }
+  }
+ },
+ "ds-storage": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "NC",
+     "src": "qbio",
+     "at": "Table 33 and stability",
+     "why": "A change in drug substance storage is a notifiable change.",
+     "note": "Simplified."
+    },
+    "no": {
+     "cat": "L3",
+     "src": "qual",
+     "at": "A1 item 12",
+     "why": "A change in drug substance storage conditions is Level III."
+    }
+   }
+  }
+ },
+ "lab-new-route": {
+  "tree": {
+   "cat": "L1",
+   "src": "se",
+   "at": "Level I",
+   "why": "A new route of administration is a Level I supplement.",
+   "pi": true
+  }
+ },
+ "lab-brand-name": {
+  "tree": {
+   "cat": "ADMIN",
+   "src": "mds",
+   "at": "Administrative submissions",
+   "why": "A new brand name alone is an administrative submission (with a look-alike sound-alike assessment).",
+   "pi": true
+  }
+ },
+ "lab-rmp": {
+  "tree": {
+   "ask": "rmpKind",
+   "on": {
+    "agreed": {
+     "cat": "L3",
+     "src": "se",
+     "at": "Level III",
+     "why": "Implementing agreed RMP wording is filed as Level III.",
+     "note": "Simplified: see Health Canada's RMP guidance."
+    },
+    "minor": {
+     "cat": "L3",
+     "src": "se",
+     "at": "Level III",
+     "why": "A minor RMP update is filed as Level III.",
+     "note": "Simplified."
+    },
+    "new": {
+     "cat": "L2S",
+     "src": "se",
+     "at": "Level II supplement (safety)",
+     "why": "An RMP change based on new safety data is filed with a Level II supplement.",
+     "note": "Simplified."
+    }
+   }
+  }
+ },
+ "lab-psusa": {
+  "tree": {
+   "cat": "L2S",
+   "src": "se",
+   "at": "Level II supplement (safety)",
+   "why": "Adding or strengthening agreed safety wording is a Level II supplement (safety).",
+   "pi": true
+  }
+ },
+ "lab-delete-indication": {
+  "tree": {
+   "cat": "L2S",
+   "src": "se",
+   "at": "Level II",
+   "why": "Deleting an indication is filed as a Level II supplement.",
+   "note": "Simplified.",
+   "pi": true
+  }
+ },
+ "ec-define": {
+  "tree": {
+   "cat": "NA",
+   "src": "q12",
+   "at": "ICH Q12 notice",
+   "why": "Health Canada has not implemented established conditions yet (details to follow)."
+  }
+ },
+ "plcm-update": {
+  "tree": {
+   "cat": "NA",
+   "src": "q12",
+   "at": "ICH Q12 notice",
+   "why": "Without established conditions there is no PLCM document to update in Canada yet."
+  }
+ },
+ "non-ec-change": {
+  "tree": {
+   "cat": "NA",
+   "src": "q12",
+   "at": "ICH Q12 notice",
+   "why": "Established conditions are not implemented in Canada yet, so every element of the dossier follows the normal levels: classify the change in its own entry."
+  }
+ },
+ "pacmp-change": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "ask": "pacmpAction",
+     "on": {
+      "delete": {
+       "cat": "L3",
+       "src": "fwbio",
+       "at": "PACMP",
+       "why": "Withdrawing an approved protocol is an annual notification.",
+       "note": "Simplified."
+      },
+      "minor": {
+       "cat": "NC",
+       "src": "fwbio",
+       "at": "PACMP",
+       "why": "A minor protocol change is a notifiable change.",
+       "note": "Simplified."
+      },
+      "major": {
+       "cat": "NC",
+       "src": "fwbio",
+       "at": "PACMP",
+       "why": "A major protocol change is filed like a new protocol.",
+       "note": "Simplified."
+      }
+     }
+    },
+    "no": {
+     "cat": "NA",
+     "src": "q12",
+     "at": "ICH Q12 notice",
+     "why": "No PACMP route yet for pharmaceutical drugs."
+    }
+   }
+  }
+ },
+ "bio-scale": {
+  "tree": {
+   "ask": "bioScaleOnly",
+   "on": {
+    "yes": {
+     "cat": "NC",
+     "src": "qbio",
+     "at": "Table 6a",
+     "why": "A scale change with proportional materials and the same bioreactor type is a notifiable change."
+    },
+    "no": {
+     "cat": "L1",
+     "src": "qbio",
+     "at": "Table 6a",
+     "why": "A scale-up with process changes is a supplement."
+    }
+   }
+  }
+ },
+ "bio-media": {
+  "tree": {
+   "ask": "animalOrigin",
+   "on": {
+    "yes": {
+     "cat": "L1",
+     "src": "qbio",
+     "at": "Raw materials",
+     "why": "Introducing a material of human or animal origin is a supplement."
+    },
+    "no": {
+     "cat": "NC",
+     "src": "qbio",
+     "at": "Raw materials",
+     "why": "Other raw material changes are notifiable changes.",
+     "note": "Simplified."
+    }
+   }
+  }
+ },
+ "bio-resin": {
+  "tree": {
+   "ask": "resinChange",
+   "on": {
+    "lifetime": {
+     "cat": "L3",
+     "src": "qbio",
+     "at": "Purification",
+     "why": "More resin cycles under an approved protocol is an annual notification."
+    },
+    "supplier": {
+     "cat": "L1",
+     "src": "qbio",
+     "at": "Purification",
+     "why": "A different resin is a supplement."
+    }
+   }
+  }
+ },
+ "bio-potency": {
+  "tree": {
+   "ask": "potencyNewPrinciple",
+   "on": {
+    "yes": {
+     "cat": "L1",
+     "src": "qbio",
+     "at": "Analytical procedures",
+     "why": "A potency assay on a new principle is a supplement."
+    },
+    "no": {
+     "ask": "bioMethodMajor",
+     "on": {
+      "yes": {
+       "cat": "NC",
+       "src": "qbio",
+       "at": "Analytical procedures",
+       "why": "A change to the assay's technique or performance is a notifiable change."
+      },
+      "no": {
+       "cat": "L3",
+       "src": "qbio",
+       "at": "Table 25d",
+       "why": "A minor assay change is an annual notification."
+      }
+     }
+    }
+   }
+  }
+ },
+ "bio-formulation": {
+  "tree": {
+   "cat": "L1",
+   "src": "qbio",
+   "at": "Table 38a",
+   "why": "A formulation change is a supplement."
+  }
+ },
+ "bio-adventitious": {
+  "tree": {
+   "ask": "adventRisk",
+   "on": {
+    "first": {
+     "cat": "L1",
+     "src": "qbio",
+     "at": "Adventitious agents",
+     "why": "New clearance claims are a supplement."
+    },
+    "higher": {
+     "cat": "L1",
+     "src": "qbio",
+     "at": "Adventitious agents",
+     "why": "A higher-risk assessment is a supplement."
+    },
+    "same": {
+     "cat": "NC",
+     "src": "qbio",
+     "at": "Adventitious agents",
+     "why": "Replacement studies with the same or lower risk are a notifiable change.",
+     "note": "Simplified."
+    }
+   }
+  }
+ },
+ "admin-manufacturer-name": {
+  "tree": {
+   "cat": "L3",
+   "src": "qual",
+   "at": "A1 item 1",
+   "why": "A change in a manufacturer's name, with no move, is Level III.",
+   "note": "Simplified."
+  }
+ },
+ "admin-local-rep": {
+  "tree": {
+   "cat": "REC",
+   "src": "fw",
+   "at": "2.1.5",
+   "why": "A new importer or contact is not a post-NOC change; update the establishment licence and contact details.",
+   "note": "Simplified."
+  }
+ },
+ "admin-inn": {
+  "tree": {
+   "cat": "L3",
+   "src": "se",
+   "at": "Level III",
+   "why": "Updating the labelling for a new proper name is Level III.",
+   "note": "Simplified.",
+   "pi": true
+  }
+ },
+ "admin-delete-presentation": {
+  "tree": {
+   "ask": "presentationKind",
+   "on": {
+    "strength": {
+     "cat": "ADMIN",
+     "src": "mds",
+     "at": "Administrative",
+     "why": "Stopping the sale of a strength is a discontinuation, reported to Health Canada within 30 days (section C.01.014.7).",
+     "note": "Not a post-NOC submission."
+    },
+    "pack": {
+     "cat": "L3",
+     "src": "qual",
+     "at": "A1 item 34",
+     "why": "Deleting a pack size is Level III."
+    }
+   }
+  }
+ }
+}

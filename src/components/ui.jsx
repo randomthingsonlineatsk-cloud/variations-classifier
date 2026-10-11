@@ -4,19 +4,20 @@ import { categoryOf, sourceOf } from '../engine/packs.js';
 export function Cat({ pack, id, big = false, label = 'short' }) {
   if (!id) return null;
   const c = categoryOf(pack, id);
-  return <span className={`cat cat-${id}${big ? ' big' : ''}`}>{label === 'long' ? c?.label : c?.short ?? id}</span>;
+  return <span className={`cat cat-${id} tone-${c?.tone ?? 'letter'}${big ? ' big' : ''}`}>{label === 'long' ? c?.label : c?.short ?? id}</span>;
 }
 
 export function Range({ pack, min, max }) {
   return <span className="row" style={{ gap: '.3rem' }}><Cat pack={pack} id={min} /><span className="small muted">to</span><Cat pack={pack} id={max} /></span>;
 }
 
-// Five-step ladder from letter to PAS, with the category's step lit.
+// A ladder of the pack's categories, lowest to highest, with the category's step lit.
 export function Ladder({ pack, id }) {
   const rank = categoryOf(pack, id)?.rank ?? -1;
+  const tone = categoryOf(pack, id)?.tone ?? 'letter';
   return (
-    <div className="ladder" aria-hidden="true">
-      {pack.categories.map((c) => <span key={c.id} className={c.rank <= rank ? `on cat-${id}` : ''} />)}
+    <div className="ladder" aria-hidden="true" style={{ gridTemplateColumns: `repeat(${pack.categories.length}, 1fr)` }}>
+      {pack.categories.map((c) => <span key={c.id} className={c.rank <= rank ? `on tone-${tone}` : ''} />)}
     </div>
   );
 }

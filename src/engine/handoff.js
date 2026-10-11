@@ -8,8 +8,9 @@ export const PACKAGE_SCHEMA = 1;
 
 export function buildChangePackage({ pack, product, kase, filing, user = null }) {
   const cat = categoryOf(pack, filing.category);
+  const ectd = ectdFor(pack, filing, product);
+  if (!ectd) return null;
   const tl = timelineFor(pack, product, filing, { submitDate: kase.submitDate, priority: kase.options?.priority, inspection: kase.options?.inspection, notificationDate: kase.options?.notificationDate, clockStop: kase.options?.clockStop });
-  const ectd = ectdFor(pack, filing);
   const description = filing.items.map((i) => i.def.title).join('; ');
   return {
     kind: PACKAGE_KIND,
@@ -25,6 +26,9 @@ export function buildChangePackage({ pack, product, kase, filing, user = null })
       appType: product.appType, applicationNumber: product.applicationNumber, holder: product.holder.name,
       in: pack.id === 'in' ? { route: product.in?.route ?? null, permission: product.in?.permission ?? null, agent: product.in?.agent ?? null, draftRules: !!pack.draft } : null,
       eu: pack.id === 'eu' ? { route: product.eu?.route ?? null, maNumber: product.eu?.maNumber ?? null, holder: (product.eu?.holder ?? product.holder).name } : null,
+      ca: pack.id === 'ca' ? { din: product.ca?.din ?? null, holder: product.ca?.holder?.name ?? product.holder.name } : null,
+      ch: pack.id === 'ch' ? { authNumber: product.ch?.authNumber ?? null, holder: product.ch?.holder?.name ?? product.holder.name } : null,
+      jp: pack.id === 'jp' ? { approvalNumber: product.jp?.approvalNumber ?? null, holder: product.jp?.holder?.name ?? product.holder.name } : null,
     },
     region: pack.region,
     pack: { id: pack.id, edition: pack.edition },

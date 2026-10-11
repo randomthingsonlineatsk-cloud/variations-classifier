@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useApp, go } from '../ctx.js';
 import { MISSIONS, LEVELS, missionCase } from '../engine/missions.js';
 import { regionOf } from '../engine/packs.js';
+import { productRefs } from '../engine/model.js';
 
 export default function Missions() {
   const { attempts, cases, user, saveCase, productById } = useApp();
@@ -37,7 +38,7 @@ export default function Missions() {
             <div key={m.id} className="list-item">
               <div style={{ minWidth: 0, flex: 1 }}>
                 <h3>{m.id}. {m.title}</h3>
-                <div className="small muted"><span className="pill">{regionOf(m.region).short}</span> {p.brandName} · {m.region === 'us' ? p.appType.toUpperCase() : p.eu?.route} · {m.changes.length} change(s){b >= 0 ? ` · best ${b}/100` : ''}</div>
+                <div className="small muted"><span className="pill">{regionOf(m.region).short}</span> {p.brandName} · {productRefs(p, [m.region])[0] ?? ''} · {m.changes.length} change(s){b >= 0 ? ` · best ${b}/100` : ''}</div>
               </div>
               <div className="row">
                 {o && <a className="btn small" href={`#/case/${o.id}`}>Continue</a>}

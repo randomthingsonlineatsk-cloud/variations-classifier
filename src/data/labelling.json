@@ -1,19 +1,107 @@
 {
  "_about": "How a company core data sheet (CCDS) change maps to each region's label sections, and which catalogue change carries it. Company targets are training defaults, not regulatory deadlines.",
  "kinds": [
-  { "id": "adr", "label": "New adverse reaction", "change": "lab-safety-add", "safety": true,
-    "sections": { "us": "Section 6 Adverse Reactions (and the Medication Guide or patient information if it lists side effects)", "eu": "SmPC section 4.8 Undesirable effects; package leaflet section 4", "in": "Adverse reactions section of the prescribing information and package insert" } },
-  { "id": "warning", "label": "New or strengthened warning or precaution", "change": "lab-safety-add", "safety": true,
-    "sections": { "us": "Section 5 Warnings and Precautions, and Highlights", "eu": "SmPC section 4.4; package leaflet section 2", "in": "Warnings and precautions section" } },
-  { "id": "contra", "label": "New contraindication", "change": "lab-safety-add", "safety": true, "serious": true,
-    "sections": { "us": "Section 4 Contraindications, and Highlights", "eu": "SmPC section 4.3; package leaflet section 2", "in": "Contraindications section" } },
-  { "id": "dosing", "label": "Dosing instruction for safer use", "change": "lab-dosing-safety", "safety": true,
-    "sections": { "us": "Section 2 Dosage and Administration", "eu": "SmPC section 4.2; package leaflet section 3", "in": "Dosage and administration section" } },
-  { "id": "indication", "label": "New indication", "change": "lab-new-indication", "safety": false,
-    "sections": { "us": "Section 1 Indications and Usage (and sections 2, 6, 14)", "eu": "SmPC sections 4.1, 4.2, 4.8, 5.1", "in": "Indications section (a new claim needs a new drug permission)" } },
-  { "id": "editorial", "label": "Editorial change", "change": "lab-editorial", "safety": false,
-    "sections": { "us": "Affected section only", "eu": "Affected section only (usually with the next procedure)", "in": "Affected section only" } }
+  {
+   "id": "adr",
+   "label": "New adverse reaction",
+   "change": "lab-safety-add",
+   "safety": true,
+   "sections": {
+    "us": "Section 6 Adverse Reactions (and the Medication Guide or patient information if it lists side effects)",
+    "eu": "SmPC section 4.8 Undesirable effects; package leaflet section 4",
+    "in": "Adverse reactions section of the prescribing information and package insert",
+    "ca": "Product monograph Part I, Adverse reactions; Part III patient medication information",
+    "ch": "Information for healthcare professionals, Undesirable effects; patient information",
+    "jp": "Package insert section 11, Adverse reactions",
+    "who": "SmPC section 4.8 Undesirable effects; patient information leaflet"
+   }
+  },
+  {
+   "id": "warning",
+   "label": "New or strengthened warning or precaution",
+   "change": "lab-safety-add",
+   "safety": true,
+   "sections": {
+    "us": "Section 5 Warnings and Precautions, and Highlights",
+    "eu": "SmPC section 4.4; package leaflet section 2",
+    "in": "Warnings and precautions section",
+    "ca": "Product monograph, Serious warnings box (if serious) and Warnings and precautions",
+    "ch": "Information for healthcare professionals, Warnings and precautions",
+    "jp": "Package insert section 1 (warning box, if serious) and sections 8 and 9, precautions",
+    "who": "SmPC section 4.4 Special warnings and precautions for use"
+   }
+  },
+  {
+   "id": "contra",
+   "label": "New contraindication",
+   "change": "lab-safety-add",
+   "safety": true,
+   "serious": true,
+   "sections": {
+    "us": "Section 4 Contraindications, and Highlights",
+    "eu": "SmPC section 4.3; package leaflet section 2",
+    "in": "Contraindications section",
+    "ca": "Product monograph, Contraindications",
+    "ch": "Information for healthcare professionals, Contraindications",
+    "jp": "Package insert section 2, Contraindications",
+    "who": "SmPC section 4.3 Contraindications"
+   }
+  },
+  {
+   "id": "dosing",
+   "label": "Dosing instruction for safer use",
+   "change": "lab-dosing-safety",
+   "safety": true,
+   "sections": {
+    "us": "Section 2 Dosage and Administration",
+    "eu": "SmPC section 4.2; package leaflet section 3",
+    "in": "Dosage and administration section",
+    "ca": "Product monograph, Dosage and administration",
+    "ch": "Information for healthcare professionals, Dosage/Administration",
+    "jp": "Package insert section 7, precautions related to dosage (section 6 if the approved dosage changes)",
+    "who": "SmPC section 4.2 Posology and method of administration"
+   }
+  },
+  {
+   "id": "indication",
+   "label": "New indication",
+   "change": "lab-new-indication",
+   "safety": false,
+   "sections": {
+    "us": "Section 1 Indications and Usage (and sections 2, 6, 14)",
+    "eu": "SmPC sections 4.1, 4.2, 4.8, 5.1",
+    "in": "Indications section (a new claim needs a new drug permission)",
+    "ca": "Product monograph, Indications",
+    "ch": "Information for healthcare professionals, Indications/Uses",
+    "jp": "Package insert section 4, Indications (an approved matter)",
+    "who": "SmPC section 4.1 Therapeutic indications"
+   }
+  },
+  {
+   "id": "editorial",
+   "label": "Editorial change",
+   "change": "lab-editorial",
+   "safety": false,
+   "sections": {
+    "us": "Affected section only",
+    "eu": "Affected section only (usually with the next procedure)",
+    "in": "Affected section only",
+    "ca": "Any part of the product monograph or labels",
+    "ch": "Any section of the information texts",
+    "jp": "Any section of the package insert",
+    "who": "Any section of the SmPC, leaflet or labels"
+   }
+  }
  ],
- "statuses": ["Not started", "Wording drafted", "Submitted", "Approved", "Implemented"],
- "targetDays": { "safety": 30, "other": 90 }
+ "statuses": [
+  "Not started",
+  "Wording drafted",
+  "Submitted",
+  "Approved",
+  "Implemented"
+ ],
+ "targetDays": {
+  "safety": 30,
+  "other": 90
+ }
 }

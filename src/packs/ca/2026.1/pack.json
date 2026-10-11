@@ -1,0 +1,489 @@
+{
+ "id": "ca",
+ "region": "CA",
+ "label": "Canada: Health Canada (Post-NOC changes)",
+ "edition": "2026.1",
+ "appliesFrom": "2026-05-15",
+ "appliesTo": null,
+ "status": "in force",
+ "summary": "Post-NOC quality, safety and efficacy changes: Level I supplement, Level II (notifiable change for biologics, supplement for safety labelling), Level III notice and Level IV record. Pharmaceuticals follow the 2019 Quality guidance; biologics the 2026 framework and quality guidance.",
+ "sources": {
+  "fw": {
+   "title": "Post-Notice of Compliance (NOC) Changes: Framework Document (pharmaceutical drugs for human use)",
+   "version": "Revised",
+   "date": "2020-03-30",
+   "url": "https://www.canada.ca/en/health-canada/services/drugs-health-products/drug-products/applications-submissions/guidance-documents/post-notice-compliance-changes/framework-2019/document.html",
+   "status": "final"
+  },
+  "qual": {
+   "title": "Post-Notice of Compliance (NOC) Changes: Quality Document, Appendix 1 (human pharmaceuticals)",
+   "version": "Revision implemented 2019-07-31",
+   "date": "page modified 2025-01-22",
+   "url": "https://www.canada.ca/en/health-canada/services/drugs-health-products/drug-products/applications-submissions/guidance-documents/post-notice-compliance-changes/quality-document.html",
+   "status": "final"
+  },
+  "fwbio": {
+   "title": "Guidance on post-notice of compliance changes: Framework for biologic and Schedule C drugs for human use",
+   "version": "Revised",
+   "date": "2026-05-15",
+   "url": "https://www.canada.ca/en/health-canada/services/drugs-health-products/drug-products/applications-submissions/guidance-documents/post-notice-compliance-changes/framework-biologic-schedule-c-drugs-human-use.html",
+   "status": "final"
+  },
+  "qbio": {
+   "title": "Guidance on post-notice of compliance changes: Quality for biologics",
+   "version": "Revised",
+   "date": "2026-05-15",
+   "url": "https://www.canada.ca/en/health-canada/services/drugs-health-products/drug-products/applications-submissions/guidance-documents/post-notice-compliance-changes/quality-biologics.html",
+   "status": "final"
+  },
+  "se": {
+   "title": "Post-NOC Changes: Safety and Efficacy Document (pharmaceutical, biologic and radiopharmaceutical drugs)",
+   "version": "Revised",
+   "date": "2020-04-01",
+   "url": "https://www.canada.ca/en/health-canada/services/drugs-health-products/drug-products/applications-submissions/guidance-documents/post-notice-compliance-changes/safety-efficacy-2019/document.html",
+   "status": "final"
+  },
+  "perf": {
+   "title": "Performance standards for the Fees in Respect of Drugs and Medical Devices Order (review 1 targets)",
+   "version": "Current",
+   "date": "read 2026-10-11",
+   "url": "https://www.canada.ca/en/health-canada/services/publications/drugs-health-products/performance-fees-drugs-medical-devices.html",
+   "status": "goal"
+  },
+  "q12": {
+   "title": "Health Canada: implementation of ICH Q12 and Q14 (notice on the post-NOC changes page)",
+   "version": "Notice",
+   "date": "2026",
+   "url": "https://www.canada.ca/en/health-canada/services/drugs-health-products/drug-products/applications-submissions/guidance-documents/post-notice-compliance-changes.html",
+   "status": "final"
+  },
+  "q8": {
+   "title": "ICH Q8(R2) Pharmaceutical Development, adopted by Health Canada",
+   "version": "R2",
+   "date": "adopted",
+   "url": "https://www.canada.ca/en/health-canada/services/drugs-health-products/drug-products/applications-submissions/guidance-documents/international-conference-harmonisation/quality.html",
+   "status": "final"
+  },
+  "mds": {
+   "title": "Guidance on management of drug submissions and applications",
+   "version": "Current",
+   "date": "read 2026-10-11",
+   "url": "https://www.canada.ca/en/health-canada/services/drugs-health-products/drug-products/applications-submissions/guidance-documents/management-drug-submissions-applications/review.html",
+   "status": "final"
+  }
+ },
+ "categories": [
+  {
+   "id": "NA",
+   "rank": 0,
+   "short": "Not available",
+   "label": "Not available in Canada yet",
+   "implement": "other",
+   "badge": "Route not available",
+   "rule": "This route is not available in Canada yet; classify the underlying change in its own entry.",
+   "src": "q12",
+   "at": "ICH Q12 notice",
+   "tone": "letter"
+  },
+  {
+   "id": "REC",
+   "rank": 0,
+   "short": "Level IV",
+   "label": "Level IV: record of change",
+   "implement": "do",
+   "badge": "Record under GMP",
+   "rule": "Implement without prior review; keep the record under GMP and annotate the documents in the next Level I or II filing.",
+   "src": "fw",
+   "at": "2.1.5",
+   "tone": "letter"
+  },
+  {
+   "id": "L3",
+   "rank": 1,
+   "short": "Level III",
+   "label": "Level III: notice of change (annual notification)",
+   "implement": "do-and-tell",
+   "badge": "Do, then notify",
+   "rule": "Implement without prior review, then file the Level III form: pharmaceuticals at implementation (recommended) or in the annual notification; biologics within 12 months. Data within 30 days if asked.",
+   "src": "fw",
+   "at": "2.1.4",
+   "tone": "ar"
+  },
+  {
+   "id": "L3IN",
+   "rank": 2,
+   "short": "Level III-IN",
+   "label": "Level III: immediate notification",
+   "implement": "do-and-tell",
+   "badge": "Notify around implementation",
+   "rule": "Notify Health Canada from 21 days before to 14 days after implementing; data within 30 days if asked.",
+   "src": "fwbio",
+   "at": "Level III immediate notification",
+   "tone": "cbe0"
+  },
+  {
+   "id": "ADMIN",
+   "rank": 2,
+   "short": "Admin",
+   "label": "Administrative submission",
+   "implement": "tell-and-wait",
+   "badge": "Administrative processing",
+   "rule": "File an administrative submission (no scientific review) and implement when Health Canada has processed it.",
+   "src": "mds",
+   "at": "Administrative submissions",
+   "tone": "cbe0"
+  },
+  {
+   "id": "NC",
+   "rank": 3,
+   "short": "Level II NC",
+   "label": "Level II: notifiable change (biologics)",
+   "implement": "wait-for-approval",
+   "badge": "Wait for a no objection letter",
+   "rule": "File a notifiable change; implement only after Health Canada issues a No Objection Letter. Review target 90 days.",
+   "src": "fwbio",
+   "at": "Level II notifiable change",
+   "tone": "cbe30"
+  },
+  {
+   "id": "L2S",
+   "rank": 3,
+   "short": "Level II-S",
+   "label": "Level II: supplement (safety)",
+   "implement": "wait-for-approval",
+   "badge": "Wait for approval",
+   "rule": "File a Level II supplement (safety) for risk-management labelling changes and implement once it is accepted.",
+   "src": "fw",
+   "at": "2.1.2",
+   "tone": "cbe30"
+  },
+  {
+   "id": "L1",
+   "rank": 4,
+   "short": "Level I",
+   "label": "Level I: supplement (SNDS or SANDS)",
+   "implement": "wait-for-approval",
+   "badge": "Wait for a NOC",
+   "rule": "File a supplement (SNDS, or SANDS for a generic) and implement only after the Notice of Compliance.",
+   "src": "fw",
+   "at": "2.1.1",
+   "tone": "pas"
+  }
+ ],
+ "conditions": {
+  "HC-A1.2:1": {
+   "text": "The drug substance is a discrete chemical entity."
+  },
+  "HC-A1.2:2": {
+   "text": "There is no Level I change to the route of synthesis or to the specification."
+  },
+  "HC-A1.2:3": {
+   "text": "Evidence of GMP compliance is available for the new site, and it is listed on the establishment licence where needed."
+  },
+  "HC-A1.2:4": {
+   "text": "The impurity profile and physical properties are unchanged."
+  },
+  "HC-A1.4:1": {
+   "text": "Same physical state, and the same polymorph and particle size where solubility matters."
+  },
+  "HC-A1.4:2": {
+   "text": "Same route of synthesis; no new impurity above 0.10% and no higher levels."
+  },
+  "HC-A1.4:3": {
+   "text": "Sterilisation of the drug substance is not affected."
+  },
+  "HC-A1.4:4": {
+   "text": "The drug substance is a discrete chemical entity."
+  },
+  "HC-A1.4:5": {
+   "text": "No Level I change to the specification."
+  },
+  "HC-A1.5:1": {
+   "text": "No Level I change to the specification."
+  },
+  "HC-A1.5:2": {
+   "text": "Sterilisation of the drug substance is not affected."
+  },
+  "HC-A1.5:3": {
+   "text": "The drug substance is a discrete chemical entity."
+  },
+  "HC-A1.23:1": {
+   "text": "The new site holds an establishment licence or is listed on one, with evidence of GMP compliance."
+  },
+  "HC-A1.23:2": {
+   "text": "The manufacturing process and controls are the same, with equipment of the same class and operating principle."
+  },
+  "HC-A1.23:3": {
+   "text": "The process is validated at the new site (or a validation protocol is in place)."
+  },
+  "HC-A1.23:4": {
+   "text": "No Level I change to the specification."
+  },
+  "HC-A1.23:5": {
+   "text": "The product is not sterile, or the new site already makes similar sterile products."
+  },
+  "HC-A1.24:1": {
+   "text": "Equipment of the same class and operating principle."
+  },
+  "HC-A1.24:2": {
+   "text": "The process is validated at the new scale."
+  },
+  "HC-A1.24:3": {
+   "text": "No Level I change to the specification."
+  },
+  "HC-A1.24:4": {
+   "text": "For a modified-release product, dissolution profiles are comparable."
+  },
+  "HC-A1.25:1": {
+   "text": "Same type of process and the same operating principle."
+  },
+  "HC-A1.25:2": {
+   "text": "No change to the specification apart from tightening."
+  },
+  "HC-A1.25:3": {
+   "text": "The process is validated."
+  },
+  "HC-A1.25:4": {
+   "text": "Release characteristics and sterility assurance are not affected."
+  },
+  "HC-A1.16:1": {
+   "text": "Excipients stay qualitatively the same (except colours or flavours not used for taste-masking)."
+  },
+  "HC-A1.16:2": {
+   "text": "Quantitative changes stay within the Appendix 6 ranges."
+  },
+  "HC-A1.16:3": {
+   "text": "Release rate and other performance characteristics are unaffected."
+  },
+  "HC-A1.16:4": {
+   "text": "Excipients do not affect absorption or solubility."
+  },
+  "HC-A1.18:1": {
+   "text": "Performance characteristics such as release rate are not affected."
+  },
+  "HC-A1.18:2": {
+   "text": "Safety and efficacy are not affected (strength identification is kept)."
+  },
+  "HC-A1.20:1": {
+   "text": "No change to the qualitative and quantitative composition or to the mean mass."
+  },
+  "HC-A1.20:2": {
+   "text": "Release characteristics are not affected."
+  },
+  "HC-A1.20:3": {
+   "text": "It is not a scored tablet."
+  },
+  "HC-A1.2c:1": {
+   "text": "A valid CEP covers the new source and its specification is met."
+  },
+  "HC-A1.2c:2": {
+   "text": "No Level I change to the drug substance specification."
+  },
+  "HC-A1.2c:3": {
+   "text": "The impurity profile and physical properties are unchanged."
+  },
+  "HC-A1.33:1": {
+   "text": "The product is not sterile."
+  },
+  "HC-A1.33:2": {
+   "text": "The new system gives the same or better protection."
+  },
+  "HC-A1.33:3": {
+   "text": "Functional packaging (dose delivery) is not affected."
+  },
+  "HC-Q-bio.2a:1": {
+   "text": "The new facility is in an existing approved site or under the same QA/QC oversight."
+  },
+  "HC-Q-bio.2a:2": {
+   "text": "Same process, equipment class and controls."
+  },
+  "HC-Q-bio.2a:3": {
+   "text": "Process validation done."
+  },
+  "HC-Q-bio.2a:4": {
+   "text": "Comparability shown for the batches made."
+  },
+  "HC-Q-bio.2a:5": {
+   "text": "No change to the specification."
+  },
+  "HC-Q-bio.43:1": {
+   "text": "Same filling process, equipment class and controls."
+  },
+  "HC-Q-bio.43:2": {
+   "text": "The new facility is under the same QA/QC oversight or already makes similar products."
+  },
+  "HC-Q-bio.43:3": {
+   "text": "Process validation and media fills done."
+  }
+ },
+ "multipleChanges": {
+  "rule": "Changes that are related may be filed together; a series of individually minor changes can together warrant a higher level (contact Health Canada). The filing takes the highest level.",
+  "src": "qual",
+  "at": "2.1"
+ },
+ "filing": {
+  "shared": [
+   "L3"
+  ],
+  "apart": [
+   "REC",
+   "NA"
+  ]
+ },
+ "clocks": {
+  "L1": {
+   "daysByKind": {
+    "cmc": 180,
+    "efficacy": 300,
+    "labeling": 120,
+    "admin": 180
+   },
+   "label": "Review 1 performance standard: 180 days (quality only), 300 days (clinical), 120 days (labelling only)",
+   "src": "perf"
+  },
+  "L2S": {
+   "days": 120,
+   "label": "Labelling-only review standard: 120 days",
+   "src": "perf"
+  },
+  "NC": {
+   "days": 90,
+   "label": "Notifiable change review target: 90 days, then a No Objection Letter",
+   "src": "perf"
+  },
+  "L3": {
+   "months": 12,
+   "label": "Pharmaceuticals: file at implementation (recommended) or in the annual notification. Biologics: within 12 months of implementation",
+   "src": "fw"
+  },
+  "L3IN": {
+   "daysBefore": 21,
+   "daysAfter": 14,
+   "label": "Notify from 21 days before to 14 days after implementation",
+   "src": "fwbio"
+  },
+  "ADMIN": {
+   "label": "Processed without scientific review; no fixed timing modelled",
+   "src": "mds"
+  }
+ },
+ "m1": {
+  "supplement": [
+   {
+    "code": "ca:1.0.1",
+    "label": "Cover letter naming the submission type and each change"
+   },
+   {
+    "code": "ca:1.0.2",
+    "label": "Life cycle management table"
+   },
+   {
+    "code": "ca:1.2.1",
+    "label": "Drug submission application form (HC/SC 3011)"
+   },
+   {
+    "code": "ca:1.2.2",
+    "label": "Fee form"
+   },
+   {
+    "code": "ca:1.2.5",
+    "label": "Compliance and site information (establishment licences, GMP evidence)"
+   }
+  ],
+  "notice": [
+   {
+    "code": "ca:1.0.1",
+    "label": "Cover letter"
+   },
+   {
+    "code": "ca:1.2.8",
+    "label": "Post-NOC changes: notices of change (Level III) form"
+   }
+  ],
+  "admin": [
+   {
+    "code": "ca:1.0.1",
+    "label": "Cover letter"
+   },
+   {
+    "code": "ca:1.2.1",
+    "label": "Application form (administrative submission)"
+   },
+   {
+    "code": "ca:1.2.9",
+    "label": "Supporting administrative documents"
+   }
+  ],
+  "pi": [
+   {
+    "code": "ca:1.3.1",
+    "label": "Product monograph, clean and annotated"
+   },
+   {
+    "code": "ca:1.3.2",
+    "label": "Inner and outer labels"
+   }
+  ],
+  "cpid": [
+   {
+    "code": "ca:1.3.6",
+    "label": "Certified product information document (CPID), updated"
+   }
+  ]
+ },
+ "m1map": {
+  "L1": [
+   "supplement"
+  ],
+  "L2S": [
+   "supplement"
+  ],
+  "NC": [
+   "supplement"
+  ],
+  "L3": [
+   "notice"
+  ],
+  "L3IN": [
+   "notice"
+  ],
+  "ADMIN": [
+   "admin"
+  ]
+ },
+ "ectd": {
+  "L1": {
+   "submissionType": "snds",
+   "subType": "initial"
+  },
+  "L2S": {
+   "submissionType": "snds",
+   "subType": "initial"
+  },
+  "NC": {
+   "submissionType": "nc",
+   "subType": "initial"
+  },
+  "L3": {
+   "submissionType": "level-iii",
+   "subType": "initial"
+  },
+  "L3IN": {
+   "submissionType": "level-iii",
+   "subType": "initial"
+  },
+  "ADMIN": {
+   "submissionType": "administrative",
+   "subType": "initial"
+  },
+  "REC": null,
+  "NA": null
+ },
+ "changeLog": [
+  {
+   "edition": "2026.1",
+   "date": "2026-10-11",
+   "text": "First Canada edition: 2019 Quality guidance for pharmaceuticals, May 2026 framework and quality guidance for biologics, Safety and Efficacy guidance for labelling."
+  }
+ ]
+}

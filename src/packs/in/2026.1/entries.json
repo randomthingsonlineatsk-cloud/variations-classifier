@@ -1589,5 +1589,1039 @@
     }
    }
   }
+ },
+ "ds-cep": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "cat": "CDSCO",
+     "src": "cdsco",
+     "at": "Case by case",
+     "why": "India has no codified classification of post-approval quality changes for chemical drugs in force in 2026; CDSCO decides case by case on a post-approval change application through SUGAM.",
+     "note": "Switch on the draft rules (G.S.R. 97(E)) to see the levels they propose."
+    }
+   }
+  }
+ },
+ "batch-release-site": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L3",
+     "src": "pac24",
+     "at": "3.2.P.3.1 (facilities)",
+     "why": "A new testing or release facility with approved methods is an annual notification (Level III).",
+     "note": "Simplified."
+    },
+    "no": {
+     "cat": "CDSCO",
+     "src": "cdsco",
+     "at": "Case by case",
+     "why": "India has no codified classification of post-approval quality changes for chemical drugs in force in 2026; CDSCO decides case by case on a post-approval change application through SUGAM.",
+     "note": "Switch on the draft rules (G.S.R. 97(E)) to see the levels they propose."
+    }
+   }
+  }
+ },
+ "site-delete": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L3",
+     "src": "pac24",
+     "at": "Facilities",
+     "why": "Deleting a facility is an annual notification (Level III)."
+    },
+    "no": {
+     "cat": "CDSCO",
+     "src": "cdsco",
+     "at": "Case by case",
+     "why": "India has no codified classification of post-approval quality changes for chemical drugs in force in 2026; CDSCO decides case by case on a post-approval change application through SUGAM.",
+     "note": "Switch on the draft rules (G.S.R. 97(E)) to see the levels they propose."
+    }
+   }
+  }
+ },
+ "ds-scale": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "cat": "CDSCO",
+     "src": "cdsco",
+     "at": "Case by case",
+     "why": "India has no codified classification of post-approval quality changes for chemical drugs in force in 2026; CDSCO decides case by case on a post-approval change application through SUGAM.",
+     "note": "Switch on the draft rules (G.S.R. 97(E)) to see the levels they propose."
+    }
+   }
+  }
+ },
+ "ipc-tighten": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L3",
+     "src": "pac24",
+     "at": "3.2.S.2.4 (controls)",
+     "why": "Tightening an in-process limit within the approved range is an annual notification (Level III)."
+    },
+    "no": {
+     "cat": "CDSCO",
+     "src": "cdsco",
+     "at": "Case by case",
+     "why": "India has no codified classification of post-approval quality changes for chemical drugs in force in 2026; CDSCO decides case by case on a post-approval change application through SUGAM.",
+     "note": "Switch on the draft rules (G.S.R. 97(E)) to see the levels they propose."
+    }
+   }
+  }
+ },
+ "ipc-relax": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L2",
+     "src": "pac24",
+     "at": "3.2.S.2.4 (controls)",
+     "why": "Widening an in-process limit or deleting a test is a notifiable change (Level II)."
+    },
+    "no": {
+     "cat": "CDSCO",
+     "src": "cdsco",
+     "at": "Case by case",
+     "why": "India has no codified classification of post-approval quality changes for chemical drugs in force in 2026; CDSCO decides case by case on a post-approval change application through SUGAM.",
+     "note": "Switch on the draft rules (G.S.R. 97(E)) to see the levels they propose."
+    }
+   }
+  }
+ },
+ "hold-time": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L2",
+     "src": "pac24",
+     "at": "3.2.S.2.2 (process)",
+     "why": "A longer hold time is a notifiable change (Level II).",
+     "note": "Simplified."
+    },
+    "no": {
+     "cat": "CDSCO",
+     "src": "cdsco",
+     "at": "Case by case",
+     "why": "India has no codified classification of post-approval quality changes for chemical drugs in force in 2026; CDSCO decides case by case on a post-approval change application through SUGAM.",
+     "note": "Switch on the draft rules (G.S.R. 97(E)) to see the levels they propose."
+    }
+   }
+  }
+ },
+ "design-space-within": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "REC",
+     "src": "pac24",
+     "at": "Lifecycle tools",
+     "why": "Working within an approved design space is not a change.",
+     "note": "By analogy with ICH Q8; PAC/2024 does not name it."
+    },
+    "no": {
+     "cat": "CDSCO",
+     "src": "cdsco",
+     "at": "Case by case",
+     "why": "India has no codified classification of post-approval quality changes for chemical drugs in force in 2026; CDSCO decides case by case on a post-approval change application through SUGAM.",
+     "note": "Switch on the draft rules (G.S.R. 97(E)) to see the levels they propose."
+    }
+   }
+  }
+ },
+ "design-space-new": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "cat": "CDSCO",
+     "src": "cdsco",
+     "at": "Case by case",
+     "why": "India has no codified classification of post-approval quality changes for chemical drugs in force in 2026; CDSCO decides case by case on a post-approval change application through SUGAM.",
+     "note": "Switch on the draft rules (G.S.R. 97(E)) to see the levels they propose."
+    }
+   }
+  }
+ },
+ "rtrt": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "cat": "CDSCO",
+     "src": "cdsco",
+     "at": "Case by case",
+     "why": "India has no codified classification of post-approval quality changes for chemical drugs in force in 2026; CDSCO decides case by case on a post-approval change application through SUGAM.",
+     "note": "Switch on the draft rules (G.S.R. 97(E)) to see the levels they propose."
+    }
+   }
+  }
+ },
+ "continuous-mfg": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "cat": "CDSCO",
+     "src": "cdsco",
+     "at": "Case by case",
+     "why": "India has no codified classification of post-approval quality changes for chemical drugs in force in 2026; CDSCO decides case by case on a post-approval change application through SUGAM.",
+     "note": "Switch on the draft rules (G.S.R. 97(E)) to see the levels they propose."
+    }
+   }
+  }
+ },
+ "excipient-supplier": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "REC",
+     "src": "pac24",
+     "at": "3.2.P.4 (excipients)",
+     "why": "A new supplier of the same excipient grade meeting the specification is a record of change (Level IV).",
+     "note": "Simplified."
+    },
+    "no": {
+     "cat": "CDSCO",
+     "src": "cdsco",
+     "at": "Case by case",
+     "why": "India has no codified classification of post-approval quality changes for chemical drugs in force in 2026; CDSCO decides case by case on a post-approval change application through SUGAM.",
+     "note": "Switch on the draft rules (G.S.R. 97(E)) to see the levels they propose."
+    }
+   }
+  }
+ },
+ "coating-weight": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "cat": "CDSCO",
+     "src": "cdsco",
+     "at": "Case by case",
+     "why": "India has no codified classification of post-approval quality changes for chemical drugs in force in 2026; CDSCO decides case by case on a post-approval change application through SUGAM.",
+     "note": "Switch on the draft rules (G.S.R. 97(E)) to see the levels they propose."
+    }
+   }
+  }
+ },
+ "score-line": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "cat": "CDSCO",
+     "src": "cdsco",
+     "at": "Case by case",
+     "why": "India has no codified classification of post-approval quality changes for chemical drugs in force in 2026; CDSCO decides case by case on a post-approval change application through SUGAM.",
+     "note": "Switch on the draft rules (G.S.R. 97(E)) to see the levels they propose."
+    }
+   }
+  }
+ },
+ "tablet-shape": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "cat": "CDSCO",
+     "src": "cdsco",
+     "at": "Case by case",
+     "why": "India has no codified classification of post-approval quality changes for chemical drugs in force in 2026; CDSCO decides case by case on a post-approval change application through SUGAM.",
+     "note": "Switch on the draft rules (G.S.R. 97(E)) to see the levels they propose."
+    }
+   }
+  }
+ },
+ "tse-excipient": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "cat": "CDSCO",
+     "src": "cdsco",
+     "at": "Case by case",
+     "why": "India has no codified classification of post-approval quality changes for chemical drugs in force in 2026; CDSCO decides case by case on a post-approval change application through SUGAM.",
+     "note": "Switch on the draft rules (G.S.R. 97(E)) to see the levels they propose."
+    }
+   }
+  }
+ },
+ "dosage-form-new": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L1",
+     "src": "pac24",
+     "at": "Safety and efficacy changes",
+     "why": "A new dosage form is a supplement (Level I) and may need a new permission.",
+     "pi": true
+    },
+    "no": {
+     "cat": "NEWDRUG",
+     "src": "ndct",
+     "at": "Rule 2(w)(ii)",
+     "why": "A new claim (indication, dosage, dosage form or route) makes the product a new drug again, so it needs a new permission (Form CT-18 to import, CT-21 to manufacture).",
+     "pi": true
+    }
+   }
+  }
+ },
+ "nitrosamine-control": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "cat": "CDSCO",
+     "src": "cdsco",
+     "at": "Case by case",
+     "why": "India has no codified classification of post-approval quality changes for chemical drugs in force in 2026; CDSCO decides case by case on a post-approval change application through SUGAM.",
+     "note": "Switch on the draft rules (G.S.R. 97(E)) to see the levels they propose."
+    }
+   }
+  }
+ },
+ "excipient-spec": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L3",
+     "src": "pac24",
+     "at": "3.2.P.4 (excipients)",
+     "why": "An excipient specification change is an annual notification (Level III) when the guidance conditions are met.",
+     "note": "Widening a limit is Level II."
+    },
+    "no": {
+     "cat": "CDSCO",
+     "src": "cdsco",
+     "at": "Case by case",
+     "why": "India has no codified classification of post-approval quality changes for chemical drugs in force in 2026; CDSCO decides case by case on a post-approval change application through SUGAM.",
+     "note": "Switch on the draft rules (G.S.R. 97(E)) to see the levels they propose."
+    }
+   }
+  }
+ },
+ "skip-testing": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "cat": "CDSCO",
+     "src": "cdsco",
+     "at": "Case by case",
+     "why": "India has no codified classification of post-approval quality changes for chemical drugs in force in 2026; CDSCO decides case by case on a post-approval change application through SUGAM.",
+     "note": "Switch on the draft rules (G.S.R. 97(E)) to see the levels they propose."
+    }
+   }
+  }
+ },
+ "method-minor": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L3",
+     "src": "pac24",
+     "at": "3.2.S.4.2 (procedures)",
+     "why": "A minor change to an approved procedure is an annual notification (Level III)."
+    },
+    "no": {
+     "cat": "CDSCO",
+     "src": "cdsco",
+     "at": "Case by case",
+     "why": "India has no codified classification of post-approval quality changes for chemical drugs in force in 2026; CDSCO decides case by case on a post-approval change application through SUGAM.",
+     "note": "Switch on the draft rules (G.S.R. 97(E)) to see the levels they propose."
+    }
+   }
+  }
+ },
+ "micro-rapid": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "cat": "CDSCO",
+     "src": "cdsco",
+     "at": "Case by case",
+     "why": "India has no codified classification of post-approval quality changes for chemical drugs in force in 2026; CDSCO decides case by case on a post-approval change application through SUGAM.",
+     "note": "Switch on the draft rules (G.S.R. 97(E)) to see the levels they propose."
+    }
+   }
+  }
+ },
+ "cc-supplier": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L3",
+     "src": "pac24",
+     "at": "3.2.P.7 (container closure)",
+     "why": "A new supplier of the same component is an annual notification (Level III)."
+    },
+    "no": {
+     "cat": "CDSCO",
+     "src": "cdsco",
+     "at": "Case by case",
+     "why": "India has no codified classification of post-approval quality changes for chemical drugs in force in 2026; CDSCO decides case by case on a post-approval change application through SUGAM.",
+     "note": "Switch on the draft rules (G.S.R. 97(E)) to see the levels they propose."
+    }
+   }
+  }
+ },
+ "cc-device": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "cat": "CDSCO",
+     "src": "cdsco",
+     "at": "Case by case",
+     "why": "India has no codified classification of post-approval quality changes for chemical drugs in force in 2026; CDSCO decides case by case on a post-approval change application through SUGAM.",
+     "note": "Switch on the draft rules (G.S.R. 97(E)) to see the levels they propose."
+    }
+   }
+  }
+ },
+ "cc-noncontact": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L3",
+     "src": "pac24",
+     "at": "3.2.P.7 (container closure)",
+     "why": "A change to a non-contact component is an annual notification (Level III)."
+    },
+    "no": {
+     "cat": "CDSCO",
+     "src": "cdsco",
+     "at": "Case by case",
+     "why": "India has no codified classification of post-approval quality changes for chemical drugs in force in 2026; CDSCO decides case by case on a post-approval change application through SUGAM.",
+     "note": "Switch on the draft rules (G.S.R. 97(E)) to see the levels they propose."
+    }
+   }
+  }
+ },
+ "ds-retest": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L3SL",
+     "src": "pac24",
+     "at": "General notes (shelf life)",
+     "why": "A re-test or shelf-life extension is a minor change but needs approval before it is used."
+    },
+    "no": {
+     "cat": "CDSCO",
+     "src": "cdsco",
+     "at": "Case by case",
+     "why": "India has no codified classification of post-approval quality changes for chemical drugs in force in 2026; CDSCO decides case by case on a post-approval change application through SUGAM.",
+     "note": "Switch on the draft rules (G.S.R. 97(E)) to see the levels they propose."
+    }
+   }
+  }
+ },
+ "in-use-shelf-life": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L3SL",
+     "src": "pac24",
+     "at": "General notes (shelf life)",
+     "why": "A shelf-life change needs a post-approval change application and approval before use.",
+     "pi": true
+    },
+    "no": {
+     "cat": "CDSCO",
+     "src": "cdsco",
+     "at": "Case by case",
+     "why": "India has no codified classification of post-approval quality changes for chemical drugs in force in 2026; CDSCO decides case by case on a post-approval change application through SUGAM.",
+     "note": "Switch on the draft rules (G.S.R. 97(E)) to see the levels they propose."
+    }
+   }
+  }
+ },
+ "ds-storage": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L2",
+     "src": "pac24",
+     "at": "3.2.S.7 (stability)",
+     "why": "A change in drug substance storage conditions is a notifiable change (Level II)."
+    },
+    "no": {
+     "cat": "CDSCO",
+     "src": "cdsco",
+     "at": "Case by case",
+     "why": "India has no codified classification of post-approval quality changes for chemical drugs in force in 2026; CDSCO decides case by case on a post-approval change application through SUGAM.",
+     "note": "Switch on the draft rules (G.S.R. 97(E)) to see the levels they propose."
+    }
+   }
+  }
+ },
+ "lab-new-route": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L1",
+     "src": "pac24",
+     "at": "Safety and efficacy changes",
+     "why": "A new route of administration is a supplement (Level I).",
+     "pi": true
+    },
+    "no": {
+     "cat": "NEWDRUG",
+     "src": "ndct",
+     "at": "Rule 2(w)(ii)",
+     "why": "A new claim (indication, dosage, dosage form or route) makes the product a new drug again, so it needs a new permission (Form CT-18 to import, CT-21 to manufacture).",
+     "pi": true
+    }
+   }
+  }
+ },
+ "lab-brand-name": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "ADMIN",
+     "src": "pac24",
+     "at": "Administrative changes",
+     "why": "A change in the brand name needs CDSCO approval; review takes about 30 days.",
+     "pi": true
+    },
+    "no": {
+     "cat": "CDSCO",
+     "src": "cdsco",
+     "at": "Case by case",
+     "why": "India has no codified classification of post-approval quality changes for chemical drugs in force in 2026; CDSCO decides case by case on a post-approval change application through SUGAM.",
+     "note": "Switch on the draft rules (G.S.R. 97(E)) to see the levels they propose."
+    }
+   }
+  }
+ },
+ "lab-rmp": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "cat": "CDSCO",
+     "src": "cdsco",
+     "at": "Case by case",
+     "why": "India has no codified classification of post-approval quality changes for chemical drugs in force in 2026; CDSCO decides case by case on a post-approval change application through SUGAM.",
+     "note": "Switch on the draft rules (G.S.R. 97(E)) to see the levels they propose."
+    }
+   }
+  }
+ },
+ "lab-psusa": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L2",
+     "src": "pac24",
+     "at": "Safety and efficacy changes",
+     "why": "Adding or strengthening safety text is a notifiable change (Level II).",
+     "pi": true
+    },
+    "no": {
+     "cat": "CDSCO",
+     "src": "cdsco",
+     "at": "Case by case",
+     "why": "India has no codified classification of post-approval quality changes for chemical drugs in force in 2026; CDSCO decides case by case on a post-approval change application through SUGAM.",
+     "note": "Switch on the draft rules (G.S.R. 97(E)) to see the levels they propose."
+    }
+   }
+  }
+ },
+ "lab-delete-indication": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L2",
+     "src": "pac24",
+     "at": "Safety and efficacy changes",
+     "why": "Deleting an indication is a notifiable change (Level II).",
+     "note": "Simplified.",
+     "pi": true
+    },
+    "no": {
+     "cat": "CDSCO",
+     "src": "cdsco",
+     "at": "Case by case",
+     "why": "India has no codified classification of post-approval quality changes for chemical drugs in force in 2026; CDSCO decides case by case on a post-approval change application through SUGAM.",
+     "note": "Switch on the draft rules (G.S.R. 97(E)) to see the levels they propose."
+    }
+   }
+  }
+ },
+ "ec-define": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "cat": "CDSCO",
+     "src": "cdsco",
+     "at": "Case by case",
+     "why": "India has no codified classification of post-approval quality changes for chemical drugs in force in 2026; CDSCO decides case by case on a post-approval change application through SUGAM.",
+     "note": "Switch on the draft rules (G.S.R. 97(E)) to see the levels they propose."
+    }
+   }
+  }
+ },
+ "plcm-update": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "cat": "CDSCO",
+     "src": "cdsco",
+     "at": "Case by case",
+     "why": "India has no codified classification of post-approval quality changes for chemical drugs in force in 2026; CDSCO decides case by case on a post-approval change application through SUGAM.",
+     "note": "Switch on the draft rules (G.S.R. 97(E)) to see the levels they propose."
+    }
+   }
+  }
+ },
+ "non-ec-change": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "cat": "CDSCO",
+     "src": "cdsco",
+     "at": "Case by case",
+     "why": "India has no codified classification of post-approval quality changes for chemical drugs in force in 2026; CDSCO decides case by case on a post-approval change application through SUGAM.",
+     "note": "Switch on the draft rules (G.S.R. 97(E)) to see the levels they propose."
+    }
+   }
+  }
+ },
+ "pacmp-change": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "CDSCO",
+     "src": "pac24",
+     "at": "Not modelled",
+     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
+     "note": "Coverage gap in this edition."
+    },
+    "no": {
+     "cat": "CDSCO",
+     "src": "cdsco",
+     "at": "Case by case",
+     "why": "India has no codified classification of post-approval quality changes for chemical drugs in force in 2026; CDSCO decides case by case on a post-approval change application through SUGAM.",
+     "note": "Switch on the draft rules (G.S.R. 97(E)) to see the levels they propose."
+    }
+   }
+  }
+ },
+ "bio-scale": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "ask": "bioScaleOnly",
+     "on": {
+      "yes": {
+       "cat": "L2",
+       "src": "pac24",
+       "at": "3.2.S.2.2 (scale)",
+       "why": "A scale change with no process change is a notifiable change (Level II)."
+      },
+      "no": {
+       "cat": "L1",
+       "src": "pac24",
+       "at": "3.2.S.2.2 (scale)",
+       "why": "A scale-up with process changes is a supplement (Level I)."
+      }
+     }
+    },
+    "no": {
+     "cat": "CDSCO",
+     "src": "cdsco",
+     "at": "Case by case",
+     "why": "India has no codified classification of post-approval quality changes for chemical drugs in force in 2026; CDSCO decides case by case on a post-approval change application through SUGAM.",
+     "note": "Switch on the draft rules (G.S.R. 97(E)) to see the levels they propose."
+    }
+   }
+  }
+ },
+ "bio-media": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "ask": "animalOrigin",
+     "on": {
+      "yes": {
+       "cat": "L1",
+       "src": "pac24",
+       "at": "3.2.S.2.3 (materials)",
+       "why": "Introducing a material of human or animal origin is a supplement (Level I)."
+      },
+      "no": {
+       "cat": "L2",
+       "src": "pac24",
+       "at": "3.2.S.2.3 (materials)",
+       "why": "Other raw material changes are a notifiable change (Level II)."
+      }
+     }
+    },
+    "no": {
+     "cat": "CDSCO",
+     "src": "cdsco",
+     "at": "Case by case",
+     "why": "India has no codified classification of post-approval quality changes for chemical drugs in force in 2026; CDSCO decides case by case on a post-approval change application through SUGAM.",
+     "note": "Switch on the draft rules (G.S.R. 97(E)) to see the levels they propose."
+    }
+   }
+  }
+ },
+ "bio-resin": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "ask": "resinChange",
+     "on": {
+      "lifetime": {
+       "cat": "L3",
+       "src": "pac24",
+       "at": "3.2.S.2.2 (purification)",
+       "why": "More resin cycles under an approved protocol is an annual notification (Level III)."
+      },
+      "supplier": {
+       "cat": "L1",
+       "src": "pac24",
+       "at": "3.2.S.2.2 (purification)",
+       "why": "A different resin changes the purification process: supplement (Level I)."
+      }
+     }
+    },
+    "no": {
+     "cat": "CDSCO",
+     "src": "cdsco",
+     "at": "Case by case",
+     "why": "India has no codified classification of post-approval quality changes for chemical drugs in force in 2026; CDSCO decides case by case on a post-approval change application through SUGAM.",
+     "note": "Switch on the draft rules (G.S.R. 97(E)) to see the levels they propose."
+    }
+   }
+  }
+ },
+ "bio-potency": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "ask": "potencyNewPrinciple",
+     "on": {
+      "yes": {
+       "cat": "L1",
+       "src": "pac24",
+       "at": "3.2.S.4.2 (procedures)",
+       "why": "A new potency assay principle is a supplement (Level I)."
+      },
+      "no": {
+       "cat": "L2",
+       "src": "pac24",
+       "at": "3.2.S.4.2 (procedures)",
+       "why": "Other changes to the potency assay are a notifiable change (Level II)."
+      }
+     }
+    },
+    "no": {
+     "cat": "CDSCO",
+     "src": "cdsco",
+     "at": "Case by case",
+     "why": "India has no codified classification of post-approval quality changes for chemical drugs in force in 2026; CDSCO decides case by case on a post-approval change application through SUGAM.",
+     "note": "Switch on the draft rules (G.S.R. 97(E)) to see the levels they propose."
+    }
+   }
+  }
+ },
+ "bio-formulation": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L1",
+     "src": "pac24",
+     "at": "3.2.P.1 (composition)",
+     "why": "A formulation change is a supplement (Level I)."
+    },
+    "no": {
+     "cat": "CDSCO",
+     "src": "cdsco",
+     "at": "Case by case",
+     "why": "India has no codified classification of post-approval quality changes for chemical drugs in force in 2026; CDSCO decides case by case on a post-approval change application through SUGAM.",
+     "note": "Switch on the draft rules (G.S.R. 97(E)) to see the levels they propose."
+    }
+   }
+  }
+ },
+ "bio-adventitious": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "ask": "adventRisk",
+     "on": {
+      "first": {
+       "cat": "L1",
+       "src": "pac24",
+       "at": "3.2.A.2 (adventitious agents)",
+       "why": "New viral clearance studies are a supplement (Level I)."
+      },
+      "higher": {
+       "cat": "L1",
+       "src": "pac24",
+       "at": "3.2.A.2 (adventitious agents)",
+       "why": "A higher-risk assessment is a supplement (Level I)."
+      },
+      "same": {
+       "cat": "L2",
+       "src": "pac24",
+       "at": "3.2.A.2 (adventitious agents)",
+       "why": "Replacement studies with the same or lower risk are a notifiable change (Level II)."
+      }
+     }
+    },
+    "no": {
+     "cat": "CDSCO",
+     "src": "cdsco",
+     "at": "Case by case",
+     "why": "India has no codified classification of post-approval quality changes for chemical drugs in force in 2026; CDSCO decides case by case on a post-approval change application through SUGAM.",
+     "note": "Switch on the draft rules (G.S.R. 97(E)) to see the levels they propose."
+    }
+   }
+  }
+ },
+ "admin-manufacturer-name": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "ADMIN",
+     "src": "pac24",
+     "at": "Administrative changes",
+     "why": "A change in a manufacturer's name needs CDSCO approval; review takes about 30 days."
+    },
+    "no": {
+     "cat": "CDSCO",
+     "src": "cdsco",
+     "at": "Case by case",
+     "why": "India has no codified classification of post-approval quality changes for chemical drugs in force in 2026; CDSCO decides case by case on a post-approval change application through SUGAM.",
+     "note": "Switch on the draft rules (G.S.R. 97(E)) to see the levels they propose."
+    }
+   }
+  }
+ },
+ "admin-local-rep": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "ADMIN",
+     "src": "pac24",
+     "at": "Administrative changes",
+     "why": "A new authorised agent needs CDSCO approval and an amended licence.",
+     "note": "Simplified."
+    },
+    "no": {
+     "cat": "CDSCO",
+     "src": "cdsco",
+     "at": "Case by case",
+     "why": "India has no codified classification of post-approval quality changes for chemical drugs in force in 2026; CDSCO decides case by case on a post-approval change application through SUGAM.",
+     "note": "Switch on the draft rules (G.S.R. 97(E)) to see the levels they propose."
+    }
+   }
+  }
+ },
+ "admin-inn": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "ADMIN",
+     "src": "pac24",
+     "at": "Administrative changes",
+     "why": "A change in the name of the substance needs CDSCO approval.",
+     "pi": true
+    },
+    "no": {
+     "cat": "CDSCO",
+     "src": "cdsco",
+     "at": "Case by case",
+     "why": "India has no codified classification of post-approval quality changes for chemical drugs in force in 2026; CDSCO decides case by case on a post-approval change application through SUGAM.",
+     "note": "Switch on the draft rules (G.S.R. 97(E)) to see the levels they propose."
+    }
+   }
+  }
+ },
+ "admin-delete-presentation": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "L3",
+     "src": "pac24",
+     "at": "Administrative changes",
+     "why": "Deleting a strength or pack size is an annual notification (Level III).",
+     "note": "Simplified."
+    },
+    "no": {
+     "cat": "CDSCO",
+     "src": "cdsco",
+     "at": "Case by case",
+     "why": "India has no codified classification of post-approval quality changes for chemical drugs in force in 2026; CDSCO decides case by case on a post-approval change application through SUGAM.",
+     "note": "Switch on the draft rules (G.S.R. 97(E)) to see the levels they propose."
+    }
+   }
+  }
  }
 }

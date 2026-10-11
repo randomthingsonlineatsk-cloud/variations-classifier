@@ -63,6 +63,20 @@
    "date": "current",
    "url": "https://eur-lex.europa.eu/eli/reg/1996/2141/oj",
    "status": "final"
+  },
+  "q8": {
+   "title": "ICH Q8(R2) Pharmaceutical development (EMA/CHMP/167068/2004)",
+   "version": "Step 5",
+   "date": "June 2017 (current)",
+   "url": "https://www.ema.europa.eu/en/ich-q8-r2-pharmaceutical-development-scientific-guideline",
+   "status": "final"
+  },
+  "q12": {
+   "title": "ICH Q12 Technical and regulatory considerations for pharmaceutical product lifecycle management (EMA/CHMP/ICH/804273/2017)",
+   "version": "Step 5",
+   "date": "March 2020",
+   "url": "https://www.ema.europa.eu/en/ich-q12-technical-regulatory-considerations-pharmaceutical-product-lifecycle-management-scientific-guideline",
+   "status": "final"
   }
  },
  "categories": [
@@ -75,7 +89,8 @@
    "badge": "Managed in the quality system",
    "rule": "No submission: the change is managed under the quality system (or an approved protocol).",
    "src": "emaqa",
-   "at": "Q&A"
+   "at": "Q&A",
+   "tone": "letter"
   },
   {
    "id": "OTHER",
@@ -86,7 +101,8 @@
    "badge": "Different procedure",
    "rule": "Use the procedure named in the result (for example a transfer or an Article 61(3) notification).",
    "src": "reg",
-   "at": "Article 2"
+   "at": "Article 2",
+   "tone": "letter"
   },
   {
    "id": "IA",
@@ -97,7 +113,8 @@
    "badge": "Do and tell within 12 months",
    "rule": "Implement, then notify within 12 months (for example in the Type IA annual update). The authority checks it within 30 days.",
    "src": "reg",
-   "at": "Articles 8 and 13a"
+   "at": "Articles 8 and 13a",
+   "tone": "ar"
   },
   {
    "id": "IAIN",
@@ -108,7 +125,8 @@
    "badge": "Do and tell at once",
    "rule": "Implement, then notify immediately. The authority checks it within 30 days.",
    "src": "reg",
-   "at": "Articles 8 and 13a"
+   "at": "Articles 8 and 13a",
+   "tone": "cbe0"
   },
   {
    "id": "IB",
@@ -119,7 +137,8 @@
    "badge": "Tell, wait 30 days, then do",
    "rule": "Notify before implementing; if the authority raises no objection within 30 days of a valid notification, the change is accepted.",
    "src": "reg",
-   "at": "Articles 9 and 13b"
+   "at": "Articles 9 and 13b",
+   "tone": "cbe30"
   },
   {
    "id": "II",
@@ -130,7 +149,8 @@
    "badge": "Wait for approval",
    "rule": "Implement only after approval: quality-only changes once the opinion or outcome is received; changes to the product information once the decision is amended.",
    "src": "reg",
-   "at": "Articles 10, 13c, 23 and 24"
+   "at": "Articles 10, 13c, 23 and 24",
+   "tone": "pas"
   },
   {
    "id": "EXT",
@@ -141,7 +161,8 @@
    "badge": "New application",
    "rule": "An extension is assessed like a new application and needs a decision before marketing.",
    "src": "reg",
-   "at": "Article 19 and Annex I"
+   "at": "Article 19 and Annex I",
+   "tone": "ext"
   }
  ],
  "conditions": {
@@ -416,6 +437,169 @@
   },
   "E.4:1": {
    "text": "The holder remains the same legal entity."
+  },
+  "Q.I.a.3:1": {
+   "text": "Any change to the manufacturing method is only what scale-up or downscaling needs (for example equipment size)."
+  },
+  "Q.I.a.3:2": {
+   "text": "Results of at least two batches at the proposed size meet the specification."
+  },
+  "Q.I.a.3:3": {
+   "text": "The active substance is not a biological substance.",
+   "auto": "notBio"
+  },
+  "Q.I.a.3:4": {
+   "text": "The change does not adversely affect the reproducibility of the process."
+  },
+  "Q.I.a.3:5": {
+   "text": "The change is fully described in the open part of the ASMF, if there is one."
+  },
+  "Q.I.a.3:6": {
+   "text": "Active substance and intermediate specifications stay the same, and the impurity control strategy remains appropriate."
+  },
+  "Q.I.a.3:7": {
+   "text": "The active substance is not sterile."
+  },
+  "Q.I.a.3:8": {
+   "text": "The change does not come from unexpected events during manufacture or from stability concerns."
+  },
+  "Q.I.d.1:1": {
+   "text": "The change does not come from unexpected events during manufacture or from stability concerns."
+  },
+  "Q.I.d.1:2": {
+   "text": "Studies follow the approved protocol, real-time data are submitted, all batches meet the specification and no unexpected trends appear."
+  },
+  "Q.I.d.1:3": {
+   "text": "The physical state of the active substance is unchanged."
+  },
+  "Q.II.a.2:1": {
+   "text": "Dissolution of the new product is comparable to the old one (disintegration for herbal products)."
+  },
+  "Q.II.a.2:2": {
+   "text": "Release and end-of-shelf-life specifications are unchanged apart from shape or dimensions."
+  },
+  "Q.II.a.2:3": {
+   "text": "Qualitative and quantitative composition and mean mass are unchanged."
+  },
+  "Q.II.a.2:4": {
+   "text": "It is not a scored tablet intended to divide into equal doses."
+  },
+  "Q.II.a.4:1": {
+   "text": "Dissolution of two batches is comparable to the old product (disintegration for herbal products)."
+  },
+  "Q.II.a.4:2": {
+   "text": "The coating or shell is not critical for release or other attributes."
+  },
+  "Q.II.a.4:3": {
+   "text": "The finished product specification changes only for weight and dimensions."
+  },
+  "Q.II.a.4:4": {
+   "text": "Stability studies have started on at least two pilot or industrial batches, with at least three months of data."
+  },
+  "Q.II.b.2:1": {
+   "text": "The batch release manufacturer is in the EU/EEA with a valid manufacturing authorisation, and one release site stays in the EU/EEA."
+  },
+  "Q.II.b.2:3": {
+   "text": "The analytical procedure is not biological, immunological or immunochemical."
+  },
+  "Q.II.b.5:3": {
+   "text": "Any change is within the range of the currently approved limits."
+  },
+  "Q.II.b.5:4": {
+   "text": "The analytical procedure stays the same, or changes only in minor ways."
+  },
+  "Q.II.b.5:6": {
+   "text": "The analytical procedure is not biological, immunological or immunochemical."
+  },
+  "Q.II.b.5:8": {
+   "text": "Studies in line with the relevant guidelines show the updated procedure is at least equivalent to the former one."
+  },
+  "Q.II.c.1:1": {
+   "text": "The change does not come from an earlier commitment to review acceptance criteria."
+  },
+  "Q.II.c.1:2": {
+   "text": "The change does not come from unexpected events during manufacture or from stability concerns."
+  },
+  "Q.II.c.1:3": {
+   "text": "The change is not part of a control strategy revision aimed at reducing redundant testing."
+  },
+  "Q.II.c.1:4": {
+   "text": "The analytical procedure stays the same, or changes only in minor ways."
+  },
+  "Q.II.c.1:5": {
+   "text": "A new analytical procedure is not a novel non-standard technique or a standard technique used in a novel way."
+  },
+  "Q.II.c.1:6": {
+   "text": "The change does not concern a genotoxic impurity."
+  },
+  "Q.II.c.1:7": {
+   "text": "The attribute does not control a critical attribute of the excipient."
+  },
+  "Q.II.c.3:1": {
+   "text": "Excipient and finished product release and shelf-life specifications are unchanged."
+  },
+  "Q.II.e.7:1": {
+   "text": "No packaging component is deleted."
+  },
+  "Q.II.e.7:2": {
+   "text": "The composition and design specifications of the component stay the same."
+  },
+  "Q.II.e.7:3": {
+   "text": "Specifications and quality control procedures are at least equivalent."
+  },
+  "Q.II.e.7:4": {
+   "text": "Any sterilisation method and conditions stay the same."
+  },
+  "Q.II.g.3:1": {
+   "text": "The deletion does not come from unexpected events or out-of-specification results during implementation and does not affect approved dossier information."
+  },
+  "Q.III.1:1": {
+   "text": "The impact of the new source is evaluated: no change to critical quality attributes or composition, and release and shelf-life specifications are unchanged."
+  },
+  "Q.III.1:2": {
+   "text": "Active substance impurity specifications are unchanged (tightening is allowed)."
+  },
+  "Q.III.1:3": {
+   "text": "Other relevant properties (for example polymorph, hydration state, particle size) are unchanged."
+  },
+  "Q.III.1:4": {
+   "text": "No material of human or animal origin needing viral safety data is used in the process."
+  },
+  "Q.III.1:5": {
+   "text": "The active substance is tested before use if the CEP has no re-test period and the dossier lacks supporting data."
+  },
+  "Q.III.1:6": {
+   "text": "The substance is not sterile."
+  },
+  "Q.III.1:9": {
+   "text": "For a non-sterile active substance used in a sterile product, no water is used in the last synthesis steps, or the water guideline is met."
+  },
+  "Q.IV.1:1": {
+   "text": "No significant impact on delivery, quality, safety, efficacy or usability."
+  },
+  "Q.IV.1:2": {
+   "text": "Compatibility studies are finished."
+  },
+  "Q.IV.1:3": {
+   "text": "No substantial amendment of the product information is needed."
+  },
+  "Q.IV.1:5": {
+   "text": "There is no impact on the risk management plan."
+  },
+  "E.1:1": {
+   "text": "EMA has finished its check of the new name, with a positive result."
+  },
+  "E.2:1": {
+   "text": "The substance, excipient, device part or component itself is unchanged."
+  },
+  "E.4:2": {
+   "text": "The physical location of the site and all manufacturing operations stay the same."
+  },
+  "E.5:1": {
+   "text": "At least one authorised site with the same function remains (with a release site able to certify in the EU/EEA, where relevant)."
+  },
+  "E.5:2": {
+   "text": "The deletion is not due to critical manufacturing deficiencies."
   }
  },
  "multipleChanges": {
@@ -520,5 +704,15 @@
    "date": "2026-10-11",
    "text": "First EU edition: 73 changes classified with the Commission guidelines C/2025/5045 (applying from 15 January 2026), with the annex conditions as checklists, grouping, the Type IA annual update, worksharing and super-grouping."
   }
- ]
+ ],
+ "filing": {
+  "shared": [
+   "IA",
+   "IAIN"
+  ],
+  "apart": [
+   "NONE",
+   "OTHER"
+  ]
+ }
 }
