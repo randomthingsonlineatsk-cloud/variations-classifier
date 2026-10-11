@@ -362,7 +362,7 @@ table.data tr.me td { font-weight: 600; }
 .brand-ladder span { height: 4px; border-radius: 2px; }
 .cat { display: inline-flex; align-items: center; gap: .35rem; padding: .1rem .55rem; border-radius: 999px; font-weight: 700; font-size: var(--step--1); white-space: nowrap; color: var(--cc); background: color-mix(in srgb, var(--cc) 14%, var(--surface)); border: 1px solid color-mix(in srgb, var(--cc) 40%, transparent); }
 .cat::before { content: ''; width: .55rem; height: .55rem; border-radius: 50%; background: var(--cc); }
-.cat.big { font-size: var(--step-1); padding: .3rem .8rem; }
+.cat.big { font-size: var(--step-1); padding: .3rem .8rem; white-space: normal; }
 .cat-range { --cc: var(--ink-3); }
 .ladder { display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; margin: .5rem 0; }
 .ladder span { height: 8px; border-radius: 4px; background: var(--surface-2); }
