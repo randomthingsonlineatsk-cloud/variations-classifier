@@ -50,6 +50,30 @@
     "route": "import",
     "permission": "CT-19 fictional 99/2023",
     "agent": "Halcyon Ridge India Pvt. Ltd."
+   },
+   "ca": {
+    "din": "09990101",
+    "holder": {
+     "name": "Halcyon Ridge Pharmaceuticals Canada ULC",
+     "address": "200 Maple Crescent, Suite 4, Fictionton, ON A1A 1A1, Canada",
+     "contact": "Claire Gauthier, Manager, Regulatory Affairs"
+    }
+   },
+   "ch": {
+    "authNumber": "99101",
+    "holder": {
+     "name": "Halcyon Ridge Pharma (Schweiz) AG",
+     "address": "Musterstrasse 12, 9999 Beispielstadt, Switzerland",
+     "contact": "Lukas Meier, Head of Regulatory Affairs"
+    }
+   },
+   "jp": {
+    "approvalNumber": "30500AMX00101000",
+    "holder": {
+     "name": "Halcyon Ridge Japan K.K.",
+     "address": "1-2-3 Fictional-cho, Example-ku, Tokyo 100-0000, Japan",
+     "contact": "Haruka Sato, Regulatory Affairs"
+    }
    }
   },
   {
@@ -107,6 +131,30 @@
     "route": "manufacture",
     "permission": "CT-23 fictional 98/2022",
     "agent": null
+   },
+   "ca": {
+    "din": "09990202",
+    "holder": {
+     "name": "Ashvale Generics Canada Inc.",
+     "address": "45 Birch Road, Exampleville, ON B2B 2B2, Canada",
+     "contact": "Amrit Gill, Regulatory Affairs Specialist"
+    }
+   },
+   "ch": {
+    "authNumber": "99202",
+    "holder": {
+     "name": "Ashvale Generika GmbH",
+     "address": "Beispielweg 5, 9998 Musterhausen, Switzerland",
+     "contact": "Sara Keller, Regulatory Affairs"
+    }
+   },
+   "jp": {
+    "approvalNumber": "30400AMX00202000",
+    "holder": {
+     "name": "Ashvale Japan G.K.",
+     "address": "4-5-6 Sample-dori, Fictional-shi, Osaka 500-0000, Japan",
+     "contact": "Kenji Mori, Regulatory Affairs"
+    }
    }
   },
   {
@@ -164,6 +212,30 @@
     "route": "import",
     "permission": "CT-19 fictional 97/2025",
     "agent": "Meridian Pharma Services Pvt. Ltd."
+   },
+   "ca": {
+    "din": "09990303",
+    "holder": {
+     "name": "Calderon Therapeutics Canada Ltd.",
+     "address": "9 Harbour Lane, Fictionburg, QC C3C 3C3, Canada",
+     "contact": "Julie Tremblay, Regulatory Affairs Lead"
+    }
+   },
+   "ch": {
+    "authNumber": "99303",
+    "holder": {
+     "name": "Calderon Therapeutics (Suisse) SA",
+     "address": "Rue de l'Exemple 7, 9997 Exempleville, Switzerland",
+     "contact": "Marc Dubois, Regulatory Affairs"
+    }
+   },
+   "jp": {
+    "approvalNumber": "30600AMX00303000",
+    "holder": {
+     "name": "Calderon Japan K.K.",
+     "address": "7-8-9 Example-machi, Fictional-ku, Tokyo 101-0000, Japan",
+     "contact": "Yui Tanaka, Regulatory Affairs"
+    }
    }
   },
   {
@@ -214,6 +286,30 @@
     "route": "import",
     "permission": "CT-19 fictional 96/2022",
     "agent": "Meridale India Pvt. Ltd."
+   },
+   "ca": {
+    "din": "09990404",
+    "holder": {
+     "name": "Meridale Therapeutics Canada Inc.",
+     "address": "300 Spruce Avenue, Fictionton, ON A1A 2B2, Canada",
+     "contact": "Owen Clarke, Regulatory Operations"
+    }
+   },
+   "ch": {
+    "authNumber": "99404",
+    "holder": {
+     "name": "Meridale Therapeutics (Schweiz) GmbH",
+     "address": "Exempelplatz 3, 9996 Beispielhofen, Switzerland",
+     "contact": "Nina Huber, Regulatory Affairs"
+    }
+   },
+   "jp": {
+    "approvalNumber": "30300AMX00404000",
+    "holder": {
+     "name": "Meridale Japan K.K.",
+     "address": "2-4-6 Sample-cho, Example-shi, Kanagawa 200-0000, Japan",
+     "contact": "Daiki Ito, Regulatory Affairs"
+    }
    }
   },
   {
@@ -269,6 +365,30 @@
     "route": "import",
     "permission": "CT-19 fictional 95/2023",
     "agent": "Lumenfield India Pvt. Ltd."
+   },
+   "ca": {
+    "din": "09990505",
+    "holder": {
+     "name": "Lumenfield Biologics Canada Inc.",
+     "address": "12 Aurora Drive, Fictionton, ON A1A 3C3, Canada",
+     "contact": "Priya Nair, Director, Regulatory Affairs"
+    }
+   },
+   "ch": {
+    "authNumber": "99505",
+    "holder": {
+     "name": "Lumenfield Biologics (Schweiz) AG",
+     "address": "Fiktivstrasse 20, 9995 Beispielberg, Switzerland",
+     "contact": "Andrea Frei, Regulatory Affairs"
+    }
+   },
+   "jp": {
+    "approvalNumber": "30400AMX00505000",
+    "holder": {
+     "name": "Lumenfield Japan K.K.",
+     "address": "3-6-9 Fictional-dori, Example-ku, Tokyo 102-0000, Japan",
+     "contact": "Sota Kobayashi, Regulatory Affairs"
+    }
    }
   },
   {
@@ -319,6 +439,30 @@
     "route": "import",
     "permission": "CT-19 fictional 94/2025",
     "agent": "Brightmere India Pvt. Ltd."
+   },
+   "ca": {
+    "din": "09990606",
+    "holder": {
+     "name": "Brightmere Biosimilars Canada Inc.",
+     "address": "77 Cedar Park, Exampleville, ON B2B 3C3, Canada",
+     "contact": "Leah Martin, Regulatory Affairs"
+    }
+   },
+   "ch": {
+    "authNumber": "99606",
+    "holder": {
+     "name": "Brightmere Biosimilars (Schweiz) AG",
+     "address": "Musterallee 8, 9994 Beispielsee, Switzerland",
+     "contact": "Jonas Weber, Regulatory Affairs"
+    }
+   },
+   "jp": {
+    "approvalNumber": "30700AMX00606000",
+    "holder": {
+     "name": "Brightmere Japan G.K.",
+     "address": "5-5-5 Example-cho, Fictional-shi, Aichi 400-0000, Japan",
+     "contact": "Mio Yamada, Regulatory Affairs"
+    }
    }
   },
   {
@@ -375,6 +519,86 @@
     "route": "import",
     "permission": "CT-19 fictional 93/2021",
     "agent": "Northvale India Pvt. Ltd."
+   },
+   "ca": {
+    "din": "09990707",
+    "holder": {
+     "name": "Northvale Respiratory Canada Inc.",
+     "address": "5 Willow Way, Fictionton, ON A1A 4D4, Canada",
+     "contact": "Grace Lee, Regulatory CMC"
+    }
+   },
+   "ch": {
+    "authNumber": "99707",
+    "holder": {
+     "name": "Northvale Respiratory (Schweiz) AG",
+     "address": "Beispielgasse 2, 9993 Musterdorf, Switzerland",
+     "contact": "Reto Schmid, Regulatory Affairs"
+    }
+   },
+   "jp": {
+    "approvalNumber": "30200AMX00707000",
+    "holder": {
+     "name": "Northvale Japan K.K.",
+     "address": "8-1-2 Sample-machi, Example-ku, Tokyo 103-0000, Japan",
+     "contact": "Riku Nakamura, Regulatory Affairs"
+    }
+   }
+  },
+  {
+   "id": "pq-antimalarial",
+   "ectdProductId": null,
+   "brandName": "Malvaren",
+   "inn": "arterolin and lumexantine",
+   "dosageForm": "tablet, dispersible",
+   "route": "oral",
+   "strengths": [
+    "20 mg/120 mg"
+   ],
+   "appType": "anda",
+   "applicationNumber": "999808",
+   "approvalDate": "2023-07-19",
+   "holder": {
+    "name": "Sunpath Essential Medicines Ltd.",
+    "address": "Plot 9, Fictional Industrial Estate, Example City, India",
+    "contact": "Meera Iyer, Head of Global Regulatory Affairs"
+   },
+   "sites": {
+    "drugSubstance": "Brindell Organics Pvt. Ltd., Example District, India",
+    "drugProduct": "Sunpath Essential Medicines Ltd., Unit I, Example City, India",
+    "packaging": "Sunpath Essential Medicines Ltd., Unit I, Example City, India"
+   },
+   "shelfLife": "24 months",
+   "storage": "Store below 30°C; protect from moisture",
+   "facts": {
+    "bio": false,
+    "sterile": false,
+    "aseptic": false,
+    "mr": false,
+    "solidOral": true,
+    "doseControl": false
+   },
+   "summary": "Fixed-dose dispersible tablet for children, prequalified by WHO and supplied to national malaria programmes. The US ANDA number is fictional and only lets the product appear in US exercises.",
+   "who": {
+    "pqRef": "MA999(a)",
+    "holder": {
+     "name": "Sunpath Essential Medicines Ltd.",
+     "address": "Plot 9, Fictional Industrial Estate, Example City, India",
+     "contact": "Meera Iyer, Head of Global Regulatory Affairs"
+    }
+   },
+   "in": {
+    "route": "manufacture",
+    "permission": "MFG/ND/2023/999",
+    "agent": null
+   },
+   "ca": {
+    "din": "09990808",
+    "holder": {
+     "name": "Sunpath Essential Medicines Ltd.",
+     "address": "Plot 9, Fictional Industrial Estate, Example City, India",
+     "contact": "Meera Iyer, Head of Global Regulatory Affairs"
+    }
    }
   }
  ]

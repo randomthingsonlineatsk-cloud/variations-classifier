@@ -1,6 +1,6 @@
 import React, { useMemo, useRef, useState } from 'react';
 import { useApp, go } from '../ctx.js';
-import { packFor, changesFor, searchChanges, GROUP, REGIONS, READY, regionOf } from '../engine/packs.js';
+import { packFor, changesFor, searchChanges, GROUP, REGIONS, READY, regionOf, regionsFor } from '../engine/packs.js';
 import { newCase, addChange } from '../engine/model.js';
 import { filingsFor, packForCase } from '../engine/filing.js';
 import { exportProject, parseProjectFile, download, readFile } from '../engine/io.js';
@@ -18,7 +18,7 @@ export default function Home() {
 
   const start = async (e) => {
     e.preventDefault();
-    const k = newCase({ product, user, regions });
+    const k = newCase({ product, user, regions: regions.filter((r) => regionsFor(product).includes(r)).length ? regions.filter((r) => regionsFor(product).includes(r)) : ['us'] });
     if (changeId) { addChange(k, changeId); k.name = `${product.brandName}: ${list.find((c) => c.id === changeId)?.title ?? 'change'}`; }
     await saveCase(k);
     go(`/case/${k.id}`);
@@ -42,7 +42,7 @@ export default function Home() {
         <div>
           <h1>Classify a post-approval change</h1>
           <p className="lede">Describe a change to an approved product and answer the questions the rules ask. You get the reporting category, every reason with the rule behind it, the documents, the CTD sections, the dates and a filing package for the eCTD Dossier Builder.</p>
-          <p className="small muted">This edition has the US pack (NDA, ANDA, BLA) and the EU pack on the 2025 classification guidelines, with the 2013 guidelines kept for earlier dates. India and other regions follow. Every product and company is fictional; results are for training, not regulatory advice.</p>
+          <p className="small muted">Seven rule sets: the US (NDA, ANDA, BLA), the EU (2025 guidelines, with the 2013 guidelines for earlier dates), India (rules in force, with the 2026 draft as a what-if), Canada, Switzerland, Japan and WHO prequalification. Every product and company is fictional; results are for training, not regulatory advice.</p>
         </div>
         <form className="panel stack" onSubmit={start} aria-label="Start a case">
           <h2 style={{ fontSize: 'var(--step-1)' }}>Start a case</h2>
@@ -57,7 +57,7 @@ export default function Home() {
             <div className="row">
               {REGIONS.map((r) => (
                 <label key={r.id} className="row small" style={{ gap: '.3rem', fontWeight: 400 }}>
-                  <input type="checkbox" disabled={!r.ready || (regions.includes(r.id) && regions.length === 1)} checked={regions.includes(r.id)}
+                  <input type="checkbox" disabled={!r.ready || !regionsFor(product).includes(r.id) || (regions.includes(r.id) && regions.length === 1)} checked={regions.includes(r.id) && regionsFor(product).includes(r.id)}
                     onChange={(e) => setRegions(READY.filter((x) => (x === r.id ? e.target.checked : regions.includes(x))))} />
                   {r.short}{r.ready ? '' : <span className="muted"> (phase {r.phase})</span>}
                 </label>

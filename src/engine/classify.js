@@ -16,6 +16,7 @@ export function productAnswers(product) {
     bio: yn(f.bio), anda: yn(product?.appType === 'anda'), sterile: yn(f.sterile), aseptic: yn(f.sterile && f.aseptic),
     mr: yn(f.mr), solidOral: yn(f.solidOral), doseControl: yn(f.doseControl),
     notSterile: yn(!f.sterile), notBio: yn(!f.bio), irOral: yn(irOral), irFct: yn(irOral && /film-coated/i.test(product?.dosageForm ?? '')),
+    centralised: yn((product?.eu?.route ?? 'centralised') === 'centralised'),
   };
 }
 export const FROM_PRODUCT = new Set(Object.entries(QUESTIONS).filter(([, q]) => q.fromProduct).map(([id]) => id));
@@ -181,6 +182,14 @@ export function whatIfs(pack, changeId, answers) {
   return out;
 }
 
+const PROTOCOL_ROUTE = {
+  us: 'Submit a comparability protocol first (itself a prior approval supplement). Once approved, this change and later ones like it can be filed in the lower category the protocol sets.',
+  eu: 'Submit a PACMP first (Type II, Q.II.g.2). Once approved, the change can be implemented in the lower category the protocol sets (Q.II.g.5).',
+  ch: 'Submit a PACMP first (Type II, Q.II.g.2 of the Swiss list). Once approved, the change can be implemented in the lower category the protocol sets (Q.II.g.5).',
+  jp: 'Apply for confirmation of a change plan (PACMP step 1). Once confirmed, the change is notified and takes effect 40 working days after acceptance (step 2).',
+  ca: 'From November 2026 Health Canada accepts PACMPs for biologics. An approved protocol can lower the change to a notifiable change or a Level III notice.',
+};
+
 // Routes to a lower category that the rules themselves offer.
 export function lowerRoutes(pack, changeId, answers) {
   const base = classify(pack, changeId, answers);
@@ -188,12 +197,10 @@ export function lowerRoutes(pack, changeId, answers) {
   const routes = whatIfs(pack, changeId, answers).filter((w) => w.lower && !w.fromProduct)
     .map((w) => ({ kind: 'answer', text: w.cond ? `If the condition "${w.text}" were met, the change would be ${categoryOf(pack, w.category).label}.` : `If "${w.text}" were "${w.toLabel}", the change would be ${categoryOf(pack, w.category).label}.`, category: w.category }));
   const change = CHANGE[changeId];
-  const high = rankOf(pack, base.category) >= rankOf(pack, pack.id === 'us' ? 'CBE30' : 'IB');
-  if (['us', 'eu'].includes(pack.id) && change?.kind === 'cmc' && high && !['cp-submit', 'cp-use'].includes(changeId) && pack.entries['cp-use']) {
-    routes.push({ kind: 'protocol', text: pack.id === 'us'
-      ? 'Submit a comparability protocol first (itself a prior approval supplement). Once approved, this change and later ones like it can be filed in the lower category the protocol sets.'
-      : 'Submit a PACMP first (Type II, Q.II.g.2). Once approved, the change can be implemented in the lower category the protocol sets (Q.II.g.5).', category: null });
-  }
+  const high = (categoryOf(pack, base.category)?.rank ?? 0) >= 3;
+  const text = PROTOCOL_ROUTE[pack.id];
+  const protocolOk = pack.id !== 'ca' || answers.bio === 'yes';
+  if (text && protocolOk && change?.kind === 'cmc' && high && !['cp-submit', 'cp-use', 'pacmp-change'].includes(changeId)) routes.push({ kind: 'protocol', text, category: null });
   return routes;
 }
 

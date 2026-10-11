@@ -7,8 +7,8 @@ export default function Learn() {
   return (
     <div className="page">
       <h1>Learn</h1>
-      <p>Short lessons on post-approval changes in the US and the EU. Each ends with a check and a link to try the classifier on a realistic case. See also the <a href="#/glossary">glossary</a> and the <a href="#/quiz">quiz bank</a>.</p>
-      {[['us', 'United States'], ['eu', 'European Union'], ['in', 'India and labelling']].map(([r, label]) => (
+      <p>Short lessons on post-approval changes in seven rule sets, and on the ICH lifecycle tools. Each ends with a check and a link to try the classifier on a realistic case. See also the <a href="#/glossary">glossary</a> and the <a href="#/quiz">quiz bank</a>.</p>
+      {[['us', 'United States'], ['eu', 'European Union'], ['in', 'India and labelling'], ['intl', 'Canada, Switzerland, Japan and WHO PQ'], ['lifecycle', 'ICH Q12 and Q5E lifecycle tools']].map(([r, label]) => (
       <section key={r} style={{ marginBottom: '1.5rem' }}>
       <h2 style={{ fontSize: 'var(--step-2)' }}>{label}</h2>
       <div className="lesson-grid">

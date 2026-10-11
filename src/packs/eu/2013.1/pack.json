@@ -75,7 +75,8 @@
    "badge": "Managed in the quality system",
    "rule": "No submission: the change is managed under the quality system (or an approved protocol).",
    "src": "emaqa",
-   "at": "Q&A"
+   "at": "Q&A",
+   "tone": "letter"
   },
   {
    "id": "OTHER",
@@ -86,7 +87,8 @@
    "badge": "Different procedure",
    "rule": "Use the procedure named in the result (for example a transfer or an Article 61(3) notification).",
    "src": "reg",
-   "at": "Article 2"
+   "at": "Article 2",
+   "tone": "letter"
   },
   {
    "id": "IA",
@@ -97,7 +99,8 @@
    "badge": "Do and tell within 12 months",
    "rule": "Implement, then notify within 12 months (for example in the Type IA annual update). The authority checks it within 30 days.",
    "src": "reg",
-   "at": "Articles 8 and 13a"
+   "at": "Articles 8 and 13a",
+   "tone": "ar"
   },
   {
    "id": "IAIN",
@@ -108,7 +111,8 @@
    "badge": "Do and tell at once",
    "rule": "Implement, then notify immediately. The authority checks it within 30 days.",
    "src": "reg",
-   "at": "Articles 8 and 13a"
+   "at": "Articles 8 and 13a",
+   "tone": "cbe0"
   },
   {
    "id": "IB",
@@ -119,7 +123,8 @@
    "badge": "Tell, wait 30 days, then do",
    "rule": "Notify before implementing; if the authority raises no objection within 30 days of a valid notification, the change is accepted.",
    "src": "reg",
-   "at": "Articles 9 and 13b"
+   "at": "Articles 9 and 13b",
+   "tone": "cbe30"
   },
   {
    "id": "II",
@@ -130,7 +135,8 @@
    "badge": "Wait for approval",
    "rule": "Implement only after approval: quality-only changes once the opinion or outcome is received; changes to the product information once the decision is amended.",
    "src": "reg",
-   "at": "Articles 10, 13c, 23 and 24"
+   "at": "Articles 10, 13c, 23 and 24",
+   "tone": "pas"
   },
   {
    "id": "EXT",
@@ -141,7 +147,8 @@
    "badge": "New application",
    "rule": "An extension is assessed like a new application and needs a decision before marketing.",
    "src": "reg",
-   "at": "Article 19 and Annex I"
+   "at": "Article 19 and Annex I",
+   "tone": "ext"
   }
  ],
  "conditions": {
@@ -456,5 +463,15 @@
    "date": "2026-10-11",
    "text": "Transition edition: about 50 common changes classified with the 2013 guidelines, so cases dated before 15 January 2026 get the answer of the rules then in force."
   }
- ]
+ ],
+ "filing": {
+  "shared": [
+   "IA",
+   "IAIN"
+  ],
+  "apart": [
+   "NONE",
+   "OTHER"
+  ]
+ }
 }

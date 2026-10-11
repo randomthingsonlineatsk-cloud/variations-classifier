@@ -44,7 +44,10 @@ export default function Sources() {
             <h3 style={{ marginTop: '1rem' }}>Simplifications and cautions ({notes.length})</h3>
             <ul className="small">{notes.map((n) => <li key={n.id + n.note}><strong>{CHANGES.find((c) => c.id === n.id)?.title}:</strong> {n.note}</li>)}</ul>
             {p.id === 'us' && <p className="small">Also: when a biologic reaches an outcome taken from FDA guidance written for NDAs and ANDAs, the result carries a caution to check the 2021 biologics guidance.</p>}
-            {p.id === 'eu' && <p className="small">Codes ending in .z (for example Q.II.b.z) mark changes that are Type IB by default because no listed condition set fits.</p>}
+            {(p.id === 'eu' || p.id === 'ch') && <p className="small">Codes ending in .z (for example Q.II.b.z) mark changes that are Type IB by default because no listed condition set fits.</p>}
+            {p.id === 'ch' && <p className="small">Built from the EU 2026.1 trees: Swissmedic's revised list (Annex 7 TPLRO, 1 February 2026) is harmonised as far as possible with the EU list. Swiss sources, wording, time limits and procedures replace the EU ones; check the Swiss form for Swiss-only variations (numbered from 100).</p>}
+            {(p.id === 'ca' || p.id === 'who') && <p className="small">Condition numbers shown as "{p.id === 'ca' ? 'HC' : 'WHO'} item condition n" are the app's own shorthand for the conditions in the guidance tables; read the guidance for the official numbering and wording.</p>}
+            {p.id === 'jp' && <p className="small">Japan has no list of categories by change type. The app asks how the item appears in the approval form, then applies the Article 47 exclusions. Moderate change items (2024) and annual report items (2025) are trials that apply only to items designated in the approval.</p>}
             <h3 style={{ marginTop: '1rem' }}>Change log</h3>
             <ul className="small">{p.changeLog.map((c) => <li key={c.edition}>{c.edition} ({c.date}): {c.text}</li>)}</ul>
           </section>

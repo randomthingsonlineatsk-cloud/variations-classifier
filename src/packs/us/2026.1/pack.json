@@ -8,78 +8,433 @@
  "status": "in force",
  "summary": "Post-approval changes to approved NDAs, ANDAs and BLAs: prior approval supplement, CBE-30, CBE-0 and annual report, with FDA guidance examples.",
  "sources": {
-  "cfr314": { "title": "21 CFR 314.70 Supplements and other changes to an approved NDA (applied to ANDAs by 314.97)", "version": "eCFR, current", "date": "read 2026-10-11", "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-D/part-314/subpart-B/section-314.70", "status": "final" },
-  "cfr601": { "title": "21 CFR 601.12 Changes to an approved application (biologics)", "version": "eCFR, current", "date": "read 2026-10-11", "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-F/part-601/subpart-C/section-601.12", "status": "final" },
-  "cfr31481": { "title": "21 CFR 314.81(b)(2) Annual report", "version": "eCFR, current", "date": "read 2026-10-11", "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-D/part-314/subpart-B/section-314.81", "status": "final" },
-  "cfr31472": { "title": "21 CFR 314.72 Change in ownership of an application", "version": "eCFR, current", "date": "read 2026-10-11", "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-D/part-314/subpart-B/section-314.72", "status": "final" },
-  "g04": { "title": "Guidance: Changes to an Approved NDA or ANDA", "version": "Revision 1", "date": "April 2004", "url": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/changes-approved-nda-or-anda", "status": "final" },
-  "g14": { "title": "Guidance: CMC Postapproval Manufacturing Changes To Be Documented in Annual Reports", "version": "Final", "date": "March 2014", "url": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/cmc-postapproval-manufacturing-changes-be-documented-annual-reports", "status": "final" },
-  "gbio21": { "title": "Guidance: Chemistry, Manufacturing, and Controls Changes to an Approved Application: Certain Biological Products", "version": "Final", "date": "June 2021", "url": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/chemistry-manufacturing-and-controls-changes-approved-application-certain-biological-products", "status": "final" },
-  "gcp22": { "title": "Guidance: Comparability Protocols for Postapproval Changes to the Chemistry, Manufacturing, and Controls Information in an NDA, ANDA, or BLA", "version": "Final", "date": "October 2022", "url": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/comparability-protocols-postapproval-changes-chemistry-manufacturing-and-controls-information-nda-anda", "status": "final" },
-  "supacir": { "title": "Guidance: Immediate Release Solid Oral Dosage Forms (SUPAC-IR)", "version": "Final", "date": "November 1995", "url": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/supac-ir-immediate-release-solid-oral-dosage-forms-scale-and-post-approval-changes-chemistry-manufacturing", "status": "final" },
-  "g505o4": { "title": "Guidance: Safety Labeling Changes, Implementation of Section 505(o)(4) of the FD&C Act", "version": "Final", "date": "July 2013", "url": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/safety-labeling-changes-implementation-section-505o4-federal-food-drug-and-cosmetic-act", "status": "final" },
-  "gq12": { "title": "ICH Q12 guidance, and ICH Q12: Implementation Considerations for FDA-Regulated Products", "version": "Final", "date": "May 2021", "url": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/ich-q12-implementation-considerations-fda-regulated-products", "status": "final" },
-  "pdufa7": { "title": "PDUFA VII performance goals and procedures, fiscal years 2023 to 2027", "version": "Commitment letter", "date": "2022", "url": "https://www.fda.gov/media/151712/download", "status": "goal" },
-  "gdufa3": { "title": "GDUFA III commitment letter, fiscal years 2023 to 2027", "version": "Commitment letter", "date": "2022", "url": "https://www.fda.gov/media/153631/download", "status": "goal" }
+  "cfr314": {
+   "title": "21 CFR 314.70 Supplements and other changes to an approved NDA (applied to ANDAs by 314.97)",
+   "version": "eCFR, current",
+   "date": "read 2026-10-11",
+   "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-D/part-314/subpart-B/section-314.70",
+   "status": "final"
+  },
+  "cfr601": {
+   "title": "21 CFR 601.12 Changes to an approved application (biologics)",
+   "version": "eCFR, current",
+   "date": "read 2026-10-11",
+   "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-F/part-601/subpart-C/section-601.12",
+   "status": "final"
+  },
+  "cfr31481": {
+   "title": "21 CFR 314.81(b)(2) Annual report",
+   "version": "eCFR, current",
+   "date": "read 2026-10-11",
+   "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-D/part-314/subpart-B/section-314.81",
+   "status": "final"
+  },
+  "cfr31472": {
+   "title": "21 CFR 314.72 Change in ownership of an application",
+   "version": "eCFR, current",
+   "date": "read 2026-10-11",
+   "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-D/part-314/subpart-B/section-314.72",
+   "status": "final"
+  },
+  "g04": {
+   "title": "Guidance: Changes to an Approved NDA or ANDA",
+   "version": "Revision 1",
+   "date": "April 2004",
+   "url": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/changes-approved-nda-or-anda",
+   "status": "final"
+  },
+  "g14": {
+   "title": "Guidance: CMC Postapproval Manufacturing Changes To Be Documented in Annual Reports",
+   "version": "Final",
+   "date": "March 2014",
+   "url": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/cmc-postapproval-manufacturing-changes-be-documented-annual-reports",
+   "status": "final"
+  },
+  "gbio21": {
+   "title": "Guidance: Chemistry, Manufacturing, and Controls Changes to an Approved Application: Certain Biological Products",
+   "version": "Final",
+   "date": "June 2021",
+   "url": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/chemistry-manufacturing-and-controls-changes-approved-application-certain-biological-products",
+   "status": "final"
+  },
+  "gcp22": {
+   "title": "Guidance: Comparability Protocols for Postapproval Changes to the Chemistry, Manufacturing, and Controls Information in an NDA, ANDA, or BLA",
+   "version": "Final",
+   "date": "October 2022",
+   "url": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/comparability-protocols-postapproval-changes-chemistry-manufacturing-and-controls-information-nda-anda",
+   "status": "final"
+  },
+  "supacir": {
+   "title": "Guidance: Immediate Release Solid Oral Dosage Forms (SUPAC-IR)",
+   "version": "Final",
+   "date": "November 1995",
+   "url": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/supac-ir-immediate-release-solid-oral-dosage-forms-scale-and-post-approval-changes-chemistry-manufacturing",
+   "status": "final"
+  },
+  "g505o4": {
+   "title": "Guidance: Safety Labeling Changes, Implementation of Section 505(o)(4) of the FD&C Act",
+   "version": "Final",
+   "date": "July 2013",
+   "url": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/safety-labeling-changes-implementation-section-505o4-federal-food-drug-and-cosmetic-act",
+   "status": "final"
+  },
+  "gq12": {
+   "title": "ICH Q12 guidance, and ICH Q12: Implementation Considerations for FDA-Regulated Products",
+   "version": "Final",
+   "date": "May 2021",
+   "url": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/ich-q12-implementation-considerations-fda-regulated-products",
+   "status": "final"
+  },
+  "pdufa7": {
+   "title": "PDUFA VII performance goals and procedures, fiscal years 2023 to 2027",
+   "version": "Commitment letter",
+   "date": "2022",
+   "url": "https://www.fda.gov/media/151712/download",
+   "status": "goal"
+  },
+  "gdufa3": {
+   "title": "GDUFA III commitment letter, fiscal years 2023 to 2027",
+   "version": "Commitment letter",
+   "date": "2022",
+   "url": "https://www.fda.gov/media/153631/download",
+   "status": "goal"
+  },
+  "q8": {
+   "title": "ICH Q8(R2) Pharmaceutical Development (FDA guidance)",
+   "version": "Revision 2",
+   "date": "November 2009",
+   "url": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/q8r2-pharmaceutical-development",
+   "status": "final"
+  },
+  "q13": {
+   "title": "ICH Q13 Continuous Manufacturing of Drug Substances and Drug Products (FDA guidance)",
+   "version": "Final",
+   "date": "March 2023",
+   "url": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/q13-continuous-manufacturing-drug-substances-and-drug-products",
+   "status": "final"
+  },
+  "cfr211": {
+   "title": "21 CFR 211.84 Testing and approval or rejection of components",
+   "version": "eCFR, current",
+   "date": "read 2026-10-11",
+   "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-C/part-211/subpart-E/section-211.84",
+   "status": "final"
+  },
+  "fdca505": {
+   "title": "FD&C Act section 505(b) and 21 CFR 314.50 (new drug applications)",
+   "version": "Current",
+   "date": "read 2026-10-11",
+   "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-D/part-314/subpart-D/section-314.50",
+   "status": "final"
+  },
+  "grems": {
+   "title": "Guidance: REMS: FDA's Application of Statutory Factors / Format and content; REMS modifications and revisions",
+   "version": "Final",
+   "date": "2019 to 2020",
+   "url": "https://www.fda.gov/drugs/drug-safety-and-availability/risk-evaluation-and-mitigation-strategies-rems",
+   "status": "final"
+  },
+  "cfr314150": {
+   "title": "21 CFR 314.150(c) Withdrawal of approval at the applicant's request",
+   "version": "eCFR, current",
+   "date": "read 2026-10-11",
+   "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-D/part-314/subpart-D/section-314.150",
+   "status": "final"
+  },
+  "cfr31450": {
+   "title": "21 CFR 314.50(a)(5) US agent for a foreign applicant",
+   "version": "eCFR, current",
+   "date": "read 2026-10-11",
+   "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-D/part-314/subpart-D/section-314.50",
+   "status": "final"
+  },
+  "gscore": {
+   "title": "Guidance: Tablet Scoring: Nomenclature, Labeling, and Data for Evaluation",
+   "version": "Final",
+   "date": "March 2013",
+   "url": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/tablet-scoring-nomenclature-labeling-and-data-evaluation",
+   "status": "final"
+  }
  },
  "categories": [
-  { "id": "LETTER", "rank": 0, "short": "Letter", "label": "Letter to the application (no supplement)", "implement": "do-and-tell", "badge": "Notify by letter",
-    "rule": "Tell FDA by letter; no supplement is needed.", "src": "cfr31472", "at": "314.72" },
-  { "id": "AR", "rank": 1, "short": "AR", "label": "Annual report", "implement": "do-and-tell", "badge": "Do and tell",
-    "rule": "Make the change, then describe it in the next annual report, due within 60 days of the anniversary of approval.", "src": "cfr314", "at": "314.70(d)", "bioSrc": "cfr601", "bioAt": "601.12(d)" },
-  { "id": "CBE0", "rank": 2, "short": "CBE-0", "label": "Supplement - Changes Being Effected", "implement": "tell-and-do", "badge": "Tell, then do at once",
-    "rule": "Distribute product made with the change when FDA receives the supplement.", "src": "cfr314", "at": "314.70(c)(6)", "bioSrc": "cfr601", "bioAt": "601.12(c)(5)" },
-  { "id": "CBE30", "rank": 3, "short": "CBE-30", "label": "Supplement - Changes Being Effected in 30 Days", "implement": "tell-and-wait", "badge": "Tell, wait 30 days, then do",
-    "rule": "Distribute product made with the change 30 days after FDA receives the supplement, unless FDA tells you within those 30 days that prior approval is needed or that information is missing.", "src": "cfr314", "at": "314.70(c)(3)", "bioSrc": "cfr601", "bioAt": "601.12(c)(1)" },
-  { "id": "PAS", "rank": 4, "short": "PAS", "label": "Prior approval supplement", "implement": "wait-for-approval", "badge": "Wait for approval",
-    "rule": "Distribute product made with the change only after FDA approves the supplement.", "src": "cfr314", "at": "314.70(b)(3)", "bioSrc": "cfr601", "bioAt": "601.12(b)(3)" }
+  {
+   "id": "NONE",
+   "rank": 0,
+   "short": "No report",
+   "label": "No report: managed in the quality system",
+   "implement": "do",
+   "badge": "Managed under CGMP",
+   "rule": "No submission: the change is managed and documented under CGMP and the quality system.",
+   "src": "gq12",
+   "at": "Chapter 3",
+   "tone": "letter"
+  },
+  {
+   "id": "LETTER",
+   "rank": 0,
+   "short": "Letter",
+   "label": "Letter to the application (no supplement)",
+   "implement": "do-and-tell",
+   "badge": "Notify by letter",
+   "rule": "Tell FDA by letter; no supplement is needed.",
+   "src": "cfr31472",
+   "at": "314.72",
+   "tone": "letter"
+  },
+  {
+   "id": "AR",
+   "rank": 1,
+   "short": "AR",
+   "label": "Annual report",
+   "implement": "do-and-tell",
+   "badge": "Do and tell",
+   "rule": "Make the change, then describe it in the next annual report, due within 60 days of the anniversary of approval.",
+   "src": "cfr314",
+   "at": "314.70(d)",
+   "bioSrc": "cfr601",
+   "bioAt": "601.12(d)",
+   "tone": "ar"
+  },
+  {
+   "id": "CBE0",
+   "rank": 2,
+   "short": "CBE-0",
+   "label": "Supplement - Changes Being Effected",
+   "implement": "tell-and-do",
+   "badge": "Tell, then do at once",
+   "rule": "Distribute product made with the change when FDA receives the supplement.",
+   "src": "cfr314",
+   "at": "314.70(c)(6)",
+   "bioSrc": "cfr601",
+   "bioAt": "601.12(c)(5)",
+   "tone": "cbe0"
+  },
+  {
+   "id": "CBE30",
+   "rank": 3,
+   "short": "CBE-30",
+   "label": "Supplement - Changes Being Effected in 30 Days",
+   "implement": "tell-and-wait",
+   "badge": "Tell, wait 30 days, then do",
+   "rule": "Distribute product made with the change 30 days after FDA receives the supplement, unless FDA tells you within those 30 days that prior approval is needed or that information is missing.",
+   "src": "cfr314",
+   "at": "314.70(c)(3)",
+   "bioSrc": "cfr601",
+   "bioAt": "601.12(c)(1)",
+   "tone": "cbe30"
+  },
+  {
+   "id": "PAS",
+   "rank": 4,
+   "short": "PAS",
+   "label": "Prior approval supplement",
+   "implement": "wait-for-approval",
+   "badge": "Wait for approval",
+   "rule": "Distribute product made with the change only after FDA approves the supplement.",
+   "src": "cfr314",
+   "at": "314.70(b)(3)",
+   "bioSrc": "cfr601",
+   "bioAt": "601.12(b)(3)",
+   "tone": "pas"
+  },
+  {
+   "id": "NEW",
+   "rank": 5,
+   "short": "New application",
+   "label": "New application",
+   "implement": "wait-for-approval",
+   "badge": "New application",
+   "rule": "File a new application (an NDA, or an ANDA for a generic) and market the new product only after approval.",
+   "src": "fdca505",
+   "at": "505(b)",
+   "tone": "ext"
+  }
  ],
- "multipleChanges": { "rule": "When related changes are filed together, use the most restrictive category of the individual changes.", "src": "g04", "at": "XII" },
+ "multipleChanges": {
+  "rule": "When related changes are filed together, use the most restrictive category of the individual changes.",
+  "src": "g04",
+  "at": "XII"
+ },
  "clocks": {
-  "PAS:cmc:nda": { "months": 4, "label": "PDUFA goal for prior approval manufacturing supplements", "src": "pdufa7" },
-  "PAS:cmc:bla": { "months": 4, "label": "PDUFA goal for prior approval manufacturing supplements", "src": "pdufa7" },
-  "PAS:cmc:anda": { "months": 6, "monthsInspection": 10, "label": "GDUFA goal for prior approval supplements (10 months if an inspection is needed)", "src": "gdufa3" },
-  "PAS:efficacy:nda": { "months": 10, "monthsPriority": 6, "label": "PDUFA goal for efficacy supplements (6 months if priority)", "src": "pdufa7" },
-  "PAS:efficacy:bla": { "months": 10, "monthsPriority": 6, "label": "PDUFA goal for efficacy supplements (6 months if priority)", "src": "pdufa7" },
-  "PAS:labeling:anda": { "months": 6, "label": "GDUFA goal for prior approval supplements", "src": "gdufa3" },
-  "CBE30": { "days": 30, "label": "Earliest distribution: 30 days after FDA receives the supplement", "src": "cfr314" },
-  "CBE0": { "days": 0, "label": "Distribution when FDA receives the supplement", "src": "cfr314" },
-  "AR": { "annual": 60, "label": "Annual report due within 60 days of the anniversary of approval", "src": "cfr31481" },
-  "505o4": { "days": 30, "label": "Respond within 30 days of FDA's notification, with a supplement or a statement of why the change is not warranted", "src": "g505o4" }
+  "PAS:cmc:nda": {
+   "months": 4,
+   "label": "PDUFA goal for prior approval manufacturing supplements",
+   "src": "pdufa7"
+  },
+  "PAS:cmc:bla": {
+   "months": 4,
+   "label": "PDUFA goal for prior approval manufacturing supplements",
+   "src": "pdufa7"
+  },
+  "PAS:cmc:anda": {
+   "months": 6,
+   "monthsInspection": 10,
+   "label": "GDUFA goal for prior approval supplements (10 months if an inspection is needed)",
+   "src": "gdufa3"
+  },
+  "PAS:efficacy:nda": {
+   "months": 10,
+   "monthsPriority": 6,
+   "label": "PDUFA goal for efficacy supplements (6 months if priority)",
+   "src": "pdufa7"
+  },
+  "PAS:efficacy:bla": {
+   "months": 10,
+   "monthsPriority": 6,
+   "label": "PDUFA goal for efficacy supplements (6 months if priority)",
+   "src": "pdufa7"
+  },
+  "PAS:labeling:anda": {
+   "months": 6,
+   "label": "GDUFA goal for prior approval supplements",
+   "src": "gdufa3"
+  },
+  "CBE30": {
+   "days": 30,
+   "label": "Earliest distribution: 30 days after FDA receives the supplement",
+   "src": "cfr314"
+  },
+  "CBE0": {
+   "days": 0,
+   "label": "Distribution when FDA receives the supplement",
+   "src": "cfr314"
+  },
+  "AR": {
+   "annual": 60,
+   "label": "Annual report due within 60 days of the anniversary of approval",
+   "src": "cfr31481"
+  },
+  "505o4": {
+   "days": 30,
+   "label": "Respond within 30 days of FDA's notification, with a supplement or a statement of why the change is not warranted",
+   "src": "g505o4"
+  },
+  "NEW": {
+   "months": 10,
+   "monthsPriority": 6,
+   "label": "PDUFA goal for a standard NDA (10 months; 6 if priority) or GDUFA goal for a standard ANDA (10 months)",
+   "src": "pdufa7"
+  }
  },
  "m1": {
   "supplement": [
-   { "code": "1.1", "label": "Form FDA 356h, with the supplement type and reporting category marked" },
-   { "code": "1.2", "label": "Cover letter naming the reporting category and describing each change" }
+   {
+    "code": "1.1",
+    "label": "Form FDA 356h, with the supplement type and reporting category marked"
+   },
+   {
+    "code": "1.2",
+    "label": "Cover letter naming the reporting category and describing each change"
+   }
   ],
   "labeling": [
-   { "code": "1.14.1.3", "label": "Draft labeling text, clean and with changes marked" },
-   { "code": "1.14.1.2", "label": "Annotated draft labeling text (where content changes)" }
+   {
+    "code": "1.14.1.3",
+    "label": "Draft labeling text, clean and with changes marked"
+   },
+   {
+    "code": "1.14.1.2",
+    "label": "Annotated draft labeling text (where content changes)"
+   }
   ],
   "rld": [
-   { "code": "1.14.3.1", "label": "Side-by-side comparison with the reference listed drug labeling" },
-   { "code": "1.14.3.3", "label": "Labeling text for the reference listed drug" }
+   {
+    "code": "1.14.3.1",
+    "label": "Side-by-side comparison with the reference listed drug labeling"
+   },
+   {
+    "code": "1.14.3.3",
+    "label": "Labeling text for the reference listed drug"
+   }
   ],
   "annual": [
-   { "code": "1.1", "label": "Form FDA 2252, transmittal of periodic reports" },
-   { "code": "1.2", "label": "Cover letter for the annual report" },
-   { "code": "1.13.5", "label": "Summary of manufacturing changes (CMC changes)", "kind": "cmc" },
-   { "code": "1.13.4", "label": "Summary of labeling changes, with the current labeling", "kind": "labeling" }
+   {
+    "code": "1.1",
+    "label": "Form FDA 2252, transmittal of periodic reports"
+   },
+   {
+    "code": "1.2",
+    "label": "Cover letter for the annual report"
+   },
+   {
+    "code": "1.13.5",
+    "label": "Summary of manufacturing changes (CMC changes)",
+    "kind": "cmc"
+   },
+   {
+    "code": "1.13.4",
+    "label": "Summary of labeling changes, with the current labeling",
+    "kind": "labeling"
+   }
   ],
   "letter": [
-   { "code": "1.2", "label": "Letter to the application" },
-   { "code": "1.3.1.5", "label": "Change in ownership: letters from the former and the new owner", "change": "admin-ownership" },
-   { "code": "1.3.1.1", "label": "Change of address or corporate name", "change": "admin-name-address" }
+   {
+    "code": "1.2",
+    "label": "Letter to the application"
+   },
+   {
+    "code": "1.3.1.5",
+    "label": "Change in ownership: letters from the former and the new owner",
+    "change": "admin-ownership"
+   },
+   {
+    "code": "1.3.1.1",
+    "label": "Change of address or corporate name",
+    "change": "admin-name-address"
+   }
+  ],
+  "new": [
+   {
+    "code": "1.1",
+    "label": "Form FDA 356h for a new application"
+   },
+   {
+    "code": "1.2",
+    "label": "Cover letter"
+   }
   ]
  },
  "ectd": {
-  "cmc": { "submissionType": "chemistry-manufacturing-controls-supplement", "subType": "application" },
-  "labeling": { "submissionType": "labeling-supplement", "subType": "application" },
-  "efficacy": { "submissionType": "efficacy-supplement", "subType": "application" },
-  "AR": { "submissionType": "annual-report", "subType": "report" },
-  "LETTER": { "submissionType": "product-correspondence", "subType": "correspondence" }
+  "cmc": {
+   "submissionType": "chemistry-manufacturing-controls-supplement",
+   "subType": "application"
+  },
+  "labeling": {
+   "submissionType": "labeling-supplement",
+   "subType": "application"
+  },
+  "efficacy": {
+   "submissionType": "efficacy-supplement",
+   "subType": "application"
+  },
+  "AR": {
+   "submissionType": "annual-report",
+   "subType": "report"
+  },
+  "LETTER": {
+   "submissionType": "product-correspondence",
+   "subType": "correspondence"
+  },
+  "NONE": null,
+  "NEW": {
+   "submissionType": "original-application",
+   "subType": "application"
+  }
  },
  "changeLog": [
-  { "edition": "2026.1", "date": "2026-10-11", "text": "First edition: 73 changes for NDAs, ANDAs and BLAs, from the 2004 guidance on changes to an NDA or ANDA, SUPAC-IR for composition, the 2021 biologics guidance, the 2022 comparability protocol guidance and the labeling rules in 314.70 and 601.12." }
- ]
+  {
+   "edition": "2026.1",
+   "date": "2026-10-11",
+   "text": "First edition: 73 changes for NDAs, ANDAs and BLAs, from the 2004 guidance on changes to an NDA or ANDA, SUPAC-IR for composition, the 2021 biologics guidance, the 2022 comparability protocol guidance and the labeling rules in 314.70 and 601.12."
+  }
+ ],
+ "filing": {
+  "shared": [
+   "AR",
+   "LETTER"
+  ],
+  "apart": [
+   "NONE"
+  ]
+ }
 }

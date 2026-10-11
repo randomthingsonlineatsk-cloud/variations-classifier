@@ -1,12 +1,14 @@
 // From classified changes to filings: grouping, worksharing, CTD impact, Module 1 documents,
 // clocks, the cover letter and the eCTD submission type. Region rules come from the pack.
-import { CHANGE, EVIDENCE, categoryOf, rankOf, sourceOf, packFor } from './packs.js';
+import { CHANGE, EVIDENCE, categoryOf, rankOf, sourceOf, packFor, noFiling } from './packs.js';
 import { classify, productAnswers, mostRestrictive } from './classify.js';
 
 const KIND_ORDER = { admin: 0, cmc: 1, labeling: 2, efficacy: 3 };
 const kindOf = (items) => items.map((i) => i.def.kind).sort((a, b) => KIND_ORDER[b] - KIND_ORDER[a])[0] ?? 'cmc';
 export const isEU = (pack) => pack?.id === 'eu';
 export const isIN = (pack) => pack?.id === 'in';
+export const isEUlike = (pack) => pack?.id === 'eu' || pack?.id === 'ch';
+export const isGeneric = (pack) => ['ca', 'ch', 'jp', 'who'].includes(pack?.id);
 
 export const answersFor = (product, change) => ({ ...productAnswers(product), ...(change.answers ?? {}) });
 
@@ -30,8 +32,8 @@ export function filingsFor(pack, product, kase) {
   const pending = rows.filter((r) => r.result.status !== 'done');
   const filings = [];
   const make = (items, category, extra = {}) => ({ id: '', category, kind: kindOf(items), items, mode: items.length > 1 ? 'grouping' : 'single', warnings: [], ...extra });
-  const shared = isEU(pack) ? ['IA', 'IAIN', 'NONE'] : isIN(pack) ? ['L3'] : ['AR', 'LETTER'];
-  const apart = isEU(pack) ? ['NONE', 'OTHER'] : isIN(pack) ? ['REC'] : [];
+  const shared = pack.filing?.shared ?? [];
+  const apart = pack.filing?.apart ?? [];
   const variations = done.filter((d) => !apart.includes(d.result.category));
   if (kase.related && variations.length > 1) {
     const f = make(variations, mostRestrictive(pack, variations.map((d) => d.result.category)));
@@ -44,18 +46,23 @@ export function filingsFor(pack, product, kase) {
       if (items.length) filings.push(make(items, cat, { mode: items.length > 1 ? 'single-notification' : 'single' }));
     }
   }
-  if (isIN(pack)) {
-    const rec = done.filter((d) => d.result.category === 'REC');
-    if (rec.length) filings.push(make(rec, 'REC', { mode: 'none' }));
-    filings.forEach((f) => { f.importRoute = product.in?.route === 'import'; });
+  // Items that need no filing, or another procedure, are listed apart.
+  for (const cat of apart) {
+    const items = done.filter((d) => d.result.category === cat);
+    if (!items.length) continue;
+    if (['OTHER', 'NA', 'OUT'].includes(cat)) for (const d of items) filings.push(make([d], cat, { mode: 'other' }));
+    else filings.push(make(items, cat, { mode: 'none' }));
   }
+  if (isIN(pack)) filings.forEach((f) => { f.importRoute = product.in?.route === 'import'; });
   if (isEU(pack)) {
-    const none = done.filter((d) => d.result.category === 'NONE');
-    if (none.length) filings.push(make(none, 'NONE', { mode: 'none' }));
-    for (const d of done.filter((x) => x.result.category === 'OTHER')) filings.push(make([d], 'OTHER', { mode: 'other' }));
     const also = (kase.alsoProducts ?? []).filter(Boolean);
     if (also.length) for (const f of filings) applyWorksharing(f, also);
   }
+  if (pack.id === 'ch') for (const f of filings) {
+    if (f.items.length > 1 && f.items.some((i) => i.def.kind === 'labeling' && /C\.3|C\.4/.test(i.result.outcome?.at ?? ''))) f.warnings.push('Safety-related variations cannot be part of a multiple application in Switzerland; file them on their own.');
+    if (f.items.length > 1 && !noFiling(pack, f.category)) f.warnings.push('A multiple application is processed on the longest time limit, and all its variations are completed together.');
+  }
+  if (pack.id === 'who' && f0Grouping(filings)) for (const f of filings) if (f.items.length > 1 && f.category !== 'AN') f.warnings.push('WHO PQ allows grouping only for consequential changes, the same change to several FPPs, or annual notifications (FAQ Q4).');
   filings.sort((a, b) => rankOf(pack, b.category) - rankOf(pack, a.category));
   filings.forEach((f, i) => { f.id = `f${i + 1}`; });
   return { filings, pending, rows };
@@ -76,6 +83,8 @@ function groupWarnings(items, category) {
   return w;
 }
 
+const f0Grouping = (filings) => filings.some((f) => f.items.length > 1);
+
 function applyWorksharing(f, also) {
   if (['NONE', 'OTHER'].includes(f.category)) return;
   f.alsoProducts = also;
@@ -89,7 +98,17 @@ function applyWorksharing(f, also) {
   }
 }
 
-export function ectdFor(pack, filing) {
+export function ectdFor(pack, filing, product = null) {
+  if (isGeneric(pack)) {
+    let base = pack.ectd?.[filing.category] ?? null;
+    if (!base) return null;
+    if (pack.id === 'ca' && base.submissionType === 'snds' && product?.appType === 'anda') base = { ...base, submissionType: 'sands' };
+    if (pack.id === 'ch') {
+      const submissionMode = filing.items.length > 1 ? 'grouping' : 'single';
+      return { ...base, submissionMode };
+    }
+    return base;
+  }
   if (isIN(pack)) {
     if (filing.category === 'NEWDRUG') return { submissionType: filing.importRoute ? 'new-drug-import' : 'new-drug-manufacture', subType: 'application' };
     return pack.ectd[filing.category] ?? pack.ectd.CDSCO;
@@ -99,7 +118,8 @@ export function ectdFor(pack, filing) {
     const submissionMode = filing.mode === 'worksharing' ? 'worksharing' : ['grouping', 'super-grouping', 'single-notification'].includes(filing.mode) && filing.items.length > 1 ? 'grouping' : 'single';
     return { ...base, submissionMode };
   }
-  if (filing.category === 'AR' || filing.category === 'LETTER') return pack.ectd[filing.category];
+  if (noFiling(pack, filing.category)) return null;
+  if (['AR', 'LETTER', 'NEW'].includes(filing.category)) return pack.ectd[filing.category];
   return pack.ectd[filing.kind] ?? pack.ectd.cmc;
 }
 
@@ -107,6 +127,12 @@ export const changesProductInfo = (filing) => filing.items.some((i) => i.result.
 
 export function m1For(pack, filing) {
   const ids = filing.items.map((i) => i.change.changeId);
+  if (isGeneric(pack)) {
+    const sets = pack.m1map?.[filing.category] ?? [];
+    const out = sets.flatMap((s) => pack.m1[s] ?? []);
+    if (sets.length && changesProductInfo(filing) && pack.m1.pi) out.push(...pack.m1.pi);
+    return out.filter((d, i, a) => a.findIndex((x) => x.code === d.code) === i);
+  }
   if (isIN(pack)) {
     if (filing.category === 'REC') return [];
     if (filing.category === 'L3') return pack.m1.annual;
@@ -120,6 +146,8 @@ export function m1For(pack, filing) {
     if (changesProductInfo(filing)) out.push(...pack.m1.pi);
     return out;
   }
+  if (noFiling(pack, filing.category)) return [];
+  if (filing.category === 'NEW') return [...pack.m1.new, ...pack.m1.labeling];
   if (filing.category === 'LETTER') return pack.m1.letter.filter((d) => !d.change || ids.includes(d.change));
   if (filing.category === 'AR') {
     const kinds = new Set(filing.items.map((i) => (i.def.kind === 'cmc' ? 'cmc' : 'labeling')));
@@ -149,14 +177,14 @@ export function cmpCode(a, b) {
 
 // Sections a filing touches: the Module 1 documents plus the evidence for each change.
 export function impactFor(pack, filing) {
-  if (['NONE', 'OTHER', 'REC'].includes(filing.category)) return m1For(pack, filing).map((d) => ({ code: d.code, label: d.label, op: 'new', why: ['Regional Module 1'] }));
+  if (noFiling(pack, filing.category)) return m1For(pack, filing).map((d) => ({ code: d.code, label: d.label, op: 'new', why: ['Regional Module 1'] }));
   const map = new Map();
   const add = (code, label, op, why) => {
     const e = map.get(code) ?? { code, label, op, why: [] };
     if (why && !e.why.includes(why)) e.why.push(why);
     map.set(code, e);
   };
-  for (const d of m1For(pack, filing)) add(d.code, d.label, d.code === 'eu:1.3.1' ? 'replace' : 'new', 'Regional Module 1');
+  for (const d of m1For(pack, filing)) add(d.code, d.label, ['eu:1.3.1', 'ca:1.3.1', 'ch:1.3.1', 'jp:1.8', 'who:1.3', 'who:QIS'].includes(d.code) ? 'replace' : 'new', 'Regional Module 1');
   for (const it of filing.items) for (const id of it.def.evidence ?? []) {
     const ev = EVIDENCE[id];
     if (ev) add(ev.ctd, ev.label, ev.op, it.def.title);
@@ -190,6 +218,7 @@ export const appKey = (product) => (product.appType === 'anda' ? 'anda' : produc
 // Dates for one filing. US goal dates are user-fee goals, not legal deadlines; EU clocks leave
 // out validation and fixed start dates, and add any clock stop the learner enters.
 export function timelineFor(pack, product, filing, opts = {}) {
+  if (isGeneric(pack)) return timelineGeneric(pack, product, filing, opts);
   if (isIN(pack)) return timelineIN(pack, product, filing, opts);
   return isEU(pack) ? timelineEU(pack, product, filing, opts) : timelineUS(pack, product, filing, opts);
 }
@@ -246,6 +275,19 @@ function timelineUS(pack, product, filing, opts) {
   let earliestUse = null;
   const cat = filing.category;
   const has505 = filing.items.some((i) => i.result.clock === '505o4');
+  if (noFiling(pack, cat)) {
+    events.push({ date: submit, label: 'Change made under CGMP and the quality system (no report)', kind: 'implement' });
+    return finish(events, submit, notes, opts);
+  }
+  if (cat === 'NEW') {
+    const c = pack.clocks.NEW;
+    events.push({ date: submit, label: 'New application received by FDA', kind: 'submit' });
+    const months = opts.priority && c.monthsPriority ? c.monthsPriority : c.months;
+    earliestUse = addMonths(submit, months);
+    events.push({ date: earliestUse, label: `Goal date (${months} months): ${c.label}`, kind: 'goal', src: c.src });
+    notes.push('A goal date is a user-fee performance goal, not a legal deadline. New molecular entities add a 60-day filing period under the PDUFA program.');
+    return finish(events, earliestUse, notes, opts);
+  }
   if (has505 && opts.notificationDate) {
     const c = pack.clocks['505o4'];
     events.push({ date: opts.notificationDate, label: 'FDA safety labeling change notification received', kind: 'start' });
@@ -344,6 +386,7 @@ export function euAuthority(product) {
 
 // ---------- cover letter ----------
 export function coverLetter(pack, product, filing, kase) {
+  if (isGeneric(pack)) return coverLetterGeneric(pack, product, filing, kase);
   if (isIN(pack)) return coverLetterIN(pack, product, filing, kase);
   return isEU(pack) ? coverLetterEU(pack, product, filing, kase) : coverLetterUS(pack, product, filing, kase);
 }
@@ -368,6 +411,7 @@ function coverLetterIN(pack, product, filing, kase) {
 
 function coverLetterUS(pack, product, filing, kase) {
   const cat = categoryOf(pack, filing.category);
+  if (noFiling(pack, filing.category)) return [product.holder.name, '', 'No submission is needed for these changes; they are managed under CGMP and the quality system.', '', 'Training material. Fictional company and product.'].join('\n');
   const app = `${product.appType.toUpperCase()} ${product.applicationNumber}`;
   const at = `21 CFR ${product.facts?.bio && cat.bioAt ? cat.bioAt : cat.at}`;
   const today = kase.submitDate || iso(new Date());
@@ -424,6 +468,127 @@ function coverLetterEU(pack, product, filing, kase) {
   if (filing.category === 'IB') lines.push('We will implement the change(s) only after the 30-day period, if no objection is raised.');
   if (filing.category === 'II') lines.push('We will implement the change(s) only after a positive outcome.');
   if (changesProductInfo(filing)) lines.push('Revised product information is provided in Module 1.3.1.');
+  lines.push('', `Contact: ${holder.contact}`, '', 'Training material. Fictional company and product.');
+  return lines.join('\n');
+}
+
+// ---------- Canada, Switzerland, Japan, WHO PQ: driven by the pack's clocks ----------
+export const AUTHORITY = {
+  ca: (p) => (p.facts?.bio ? 'Health Canada, Biologic and Radiopharmaceutical Drugs Directorate' : 'Health Canada, Pharmaceutical Drugs Directorate'),
+  ch: () => 'Swissmedic',
+  jp: () => 'the Ministry of Health, Labour and Welfare and PMDA',
+  who: () => 'WHO Prequalification Unit (PQT)',
+};
+export const authorityFor = (pack, product) => (AUTHORITY[pack.id] ? AUTHORITY[pack.id](product) : pack.label);
+
+function timelineGeneric(pack, product, filing, opts) {
+  const d0 = opts.submitDate || iso(new Date());
+  const events = [];
+  const notes = [];
+  let earliestUse = null;
+  const cat = filing.category;
+  const c = pack.clocks?.[cat] ?? {};
+  const def = categoryOf(pack, cat);
+  const who = authorityFor(pack, product);
+  const stop = Number(opts.clockStop) || 0;
+  const bio = !!product.facts?.bio;
+  if (noFiling(pack, cat)) {
+    if (['OTHER', 'NA', 'OUT'].includes(cat)) {
+      events.push({ date: d0, label: 'Follow the procedure or entry named in the result', kind: 'submit' });
+      notes.push('The timing depends on that procedure; it is not modelled here.');
+      return finish(events, null, notes, opts);
+    }
+    events.push({ date: d0, label: 'Change made under the quality system (no submission)', kind: 'implement' });
+    return finish(events, d0, notes, opts);
+  }
+  if (def?.implement === 'do-and-tell') {
+    events.push({ date: d0, label: 'Change implemented', kind: 'implement' });
+    earliestUse = d0;
+    if (pack.id === 'ca' && cat === 'L3') {
+      const due = bio ? addMonths(d0, 12) : d0;
+      events.push({ date: due, label: bio ? 'Level III notice due within 12 months of implementation (biologics)' : 'File the Level III form at implementation (recommended for pharmaceutical quality changes)', kind: 'due', src: c.src });
+      if (!bio) notes.push('Pharmaceutical Level III changes may instead be filed in the annual notification; Health Canada recommends filing at implementation.');
+      notes.push('If Health Canada asks for the supporting data, they are due within 30 days.');
+    } else if (pack.id === 'ca' && cat === 'L3IN') {
+      events.push({ date: addDays(d0, -c.daysBefore), label: 'Earliest date to notify (21 days before implementation)', kind: 'milestone', src: c.src });
+      events.push({ date: addDays(d0, c.daysAfter), label: 'Latest date to notify (14 days after implementation)', kind: 'due', src: c.src });
+    } else if (c.ackDays && c.reviewDays) {
+      events.push({ date: d0, label: `Notify ${who} immediately`, kind: 'due', src: c.src });
+      events.push({ date: addDays(d0, c.ackDays + c.reviewDays), label: `Accepted unless ${who} objects (${c.ackDays} days to acknowledge, ${c.reviewDays} days to review)`, kind: 'milestone', src: c.src });
+    } else {
+      const due = c.months ? addMonths(d0, c.months) : addDays(d0, c.daysAfter ?? 0);
+      events.push({ date: due, label: c.label, kind: 'due', src: c.src });
+      if (c.reviewDays) events.push({ date: addDays(due, c.reviewDays), label: `${who} accepts tacitly if it does not object within ${c.reviewDays} days of the notification`, kind: 'milestone' });
+      if (c.ackDays) events.push({ date: addDays(due, c.ackDays), label: `${who} acknowledges within ${c.ackDays} days`, kind: 'milestone' });
+    }
+    if (pack.id === 'ch' && cat === 'IA') notes.push('Type IA changes can be collected and notified together within the year.');
+    return finish(events, earliestUse, notes, opts);
+  }
+  events.push({ date: d0, label: `${def?.label ?? cat} submitted to ${who}`, kind: 'submit' });
+  if (def?.implement === 'tell-and-do') {
+    earliestUse = d0;
+    events.push({ date: d0, label: c.label ?? 'Implement once notified', kind: 'implement', src: c.src });
+    return finish(events, earliestUse, notes, opts);
+  }
+  if (c.workingDays) {
+    earliestUse = addWorkingDays(d0, c.workingDays);
+    events.push({ date: earliestUse, label: c.approx ? `About ${c.workingDays} working days: ${c.label}` : c.label, kind: def?.implement === 'tell-and-wait' ? 'implement' : 'goal', src: c.src });
+    if (c.approx) notes.push('An approximate date for training: the trial sets no fixed review time.');
+    notes.push('Working days skip weekends only; Japanese public holidays are not counted here.');
+    return finish(events, earliestUse, notes, opts);
+  }
+  let days = null; let months = null;
+  if (c.ackDays && c.reviewDays) days = c.ackDays + c.reviewDays;
+  else if (c.daysByKind) days = c.daysByKind[filing.kind] ?? c.daysByKind.cmc;
+  else if (c.monthsByKind) months = (opts.priority && c.monthsPriority && filing.kind === 'efficacy') ? c.monthsPriority : bio && filing.kind === 'cmc' && c.monthsBio ? c.monthsBio : (c.monthsByKind[filing.kind] ?? c.monthsByKind.cmc);
+  else if (c.days) days = pack.id === 'ch' && cat === 'II' && filing.items.every((i) => /C\.3/.test(i.result.outcome?.at ?? '')) && c.daysSafety ? c.daysSafety : c.days;
+  else if (c.months) months = opts.priority && c.monthsPriority ? c.monthsPriority : c.months;
+  if (days == null && months == null) {
+    notes.push(c.label ?? 'No fixed timing is modelled for this procedure.');
+    return finish(events, null, notes, opts);
+  }
+  const waitOnly = def?.implement === 'tell-and-wait';
+  const end = days != null ? addDays(d0, days + (waitOnly ? 0 : stop)) : addDays(addMonths(d0, months), waitOnly ? 0 : stop);
+  earliestUse = end;
+  const span = days != null ? `${days} days` : `${months} months`;
+  events.push({ date: end, label: waitOnly ? `${span}: ${c.label}` : `${span}${stop && !waitOnly ? ` plus a ${stop}-day clock stop` : ''}: ${c.label}`, kind: waitOnly ? 'implement' : 'goal', src: c.src });
+  if (!waitOnly) notes.push('Review targets and time limits are goals or maxima, not guaranteed dates; implement only after approval.');
+  if (stop && !waitOnly) notes.push(`Includes a clock stop of ${stop} days for responses.`);
+  return finish(events, earliestUse, notes, opts);
+}
+
+const PRODUCT_REF = {
+  ca: (p) => `DIN ${p.ca?.din ?? '[DIN]'}`,
+  ch: (p) => `Swissmedic authorisation No. ${p.ch?.authNumber ?? '[number]'}`,
+  jp: (p) => `approval No. ${p.jp?.approvalNumber ?? '[number]'}`,
+  who: (p) => `WHO PQ reference ${p.who?.pqRef ?? '[reference]'}`,
+};
+const HOLDER = { ca: (p) => p.ca?.holder, ch: (p) => p.ch?.holder, jp: (p) => p.jp?.holder, who: (p) => p.who?.holder };
+
+function coverLetterGeneric(pack, product, filing, kase) {
+  const cat = categoryOf(pack, filing.category);
+  const today = kase.submitDate || iso(new Date());
+  const holder = HOLDER[pack.id]?.(product) ?? product.holder;
+  const who = authorityFor(pack, product);
+  const lines = [holder.name, holder.address, '', today, '', `To: ${who} (training letter; not for submission)`, ''];
+  if (noFiling(pack, filing.category)) return [...lines, 'No submission is needed for these changes; they are managed and recorded in the quality system, or follow the procedure named in the result.', '', 'Training material. Fictional company and product.'].join('\n');
+  lines.push(`Re: ${product.brandName} (${product.inn}), ${PRODUCT_REF[pack.id]?.(product) ?? ''}`.trim());
+  lines.push(`${cat.label.toUpperCase()}${filing.items.length > 1 ? ' - SEVERAL CHANGES' : ''}`, '');
+  lines.push(`${holder.name} submits the following change${filing.items.length > 1 ? 's' : ''}:`);
+  lines.push('');
+  filing.items.forEach((it, i) => {
+    const o = it.result.outcome;
+    lines.push(`${i + 1}. ${it.def.title}${it.change.note ? `: ${it.change.note}` : ''} (${categoryOf(pack, it.result.category).label}; ${sourceOf(pack, o.src).title.split(':')[0]}, ${o.at})`);
+  });
+  lines.push('');
+  const imp = cat.implement;
+  if (imp === 'do-and-tell') lines.push(`The change${filing.items.length > 1 ? 's have' : ' has'} been implemented on ${today}. Supporting data are available on request.`);
+  if (imp === 'tell-and-do') lines.push('We notify the revised information; it applies from the date of this notification.');
+  if (imp === 'tell-and-wait') lines.push(`We will implement the change${filing.items.length > 1 ? 's' : ''} only after the waiting period, unless ${who} objects.`);
+  if (imp === 'wait-for-approval') lines.push(`We will implement the change${filing.items.length > 1 ? 's' : ''} only after approval.`);
+  if (changesProductInfo(filing)) lines.push('Revised product information is enclosed (clean and with changes marked).');
+  if (pack.id === 'jp') lines.push('A comparison of the current and proposed approval form entries is enclosed.');
+  if (pack.id === 'who') lines.push('The quality information summary is updated where affected (tracked and clean versions).');
   lines.push('', `Contact: ${holder.contact}`, '', 'Training material. Fictional company and product.');
   return lines.join('\n');
 }

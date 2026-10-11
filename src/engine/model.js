@@ -66,3 +66,18 @@ export function productFromEctdFile(text) {
     label: `${base.brandName} (from eCTD project "${p.name}")`,
   };
 }
+
+// Short reference numbers of a product for the regions of a case.
+export function productRefs(p, regions) {
+  const out = [];
+  for (const r of regions) {
+    if (r === 'us') out.push(`US ${p.appType.toUpperCase()} ${p.applicationNumber}`);
+    if (r === 'eu' && p.eu) out.push(`EU ${p.eu.maNumber} (${p.eu.route})`);
+    if (r === 'in' && p.in) out.push(`India ${p.in.permission}`);
+    if (r === 'ca' && p.ca) out.push(`Canada DIN ${p.ca.din}`);
+    if (r === 'ch' && p.ch) out.push(`Swissmedic No. ${p.ch.authNumber}`);
+    if (r === 'jp' && p.jp) out.push(`Japan approval ${p.jp.approvalNumber}`);
+    if (r === 'who' && p.who) out.push(`WHO PQ ${p.who.pqRef}`);
+  }
+  return out;
+}

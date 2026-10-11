@@ -1,0 +1,2679 @@
+{
+ "dp-site-move": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "ask": "pqInspected",
+     "on": {
+      "yes": {
+       "cat": "VMIN",
+       "src": "faq22",
+       "at": "28c",
+       "why": "A new site for manufacturing operations, inspected by WHO or a stringent authority in the last three years, is a minor variation."
+      },
+      "no": {
+       "cat": "VMAJ",
+       "src": "faq22",
+       "at": "Appendix I, item 3",
+       "why": "A new site not satisfactorily inspected by WHO or a stringent authority makes the change major."
+      }
+     }
+    }
+   }
+  }
+ },
+ "ds-site-move": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "ask": "dsSameRoute",
+     "on": {
+      "yes": {
+       "allOf": [
+        "WHO-8e:1",
+        "WHO-8e:2",
+        "WHO-8e:3"
+       ],
+       "pass": {
+        "cat": "IN",
+        "src": "trs981",
+        "at": "8e.1",
+        "why": "A new API site with the same route, specifications and impurity profile is an immediate notification."
+       },
+       "fail": {
+        "cat": "VMAJ",
+        "src": "trs981",
+        "at": "8e.2",
+        "why": "A condition is not met: major variation."
+       }
+      },
+      "no": {
+       "cat": "VMAJ",
+       "src": "trs981",
+       "at": "8e.2",
+       "why": "A new API site with a different route needs full assessment: major variation."
+      }
+     }
+    }
+   }
+  }
+ },
+ "ds-intermediate-site": {
+  "tree": {
+   "cat": "IN",
+   "src": "trs981",
+   "at": "8c.2",
+   "why": "A new site for an API intermediate is an immediate notification when the conditions are met.",
+   "note": "Under the APIMF procedure the APIMF holder files an amendment instead (8c.1)."
+  }
+ },
+ "primary-pack-site": {
+  "tree": {
+   "cat": "IN",
+   "src": "trs981",
+   "at": "28b",
+   "why": "A new primary packaging site for a solid or semi-solid FPP is an immediate notification."
+  }
+ },
+ "secondary-pack-site": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "cat": "IN",
+     "src": "trs981",
+     "at": "28a",
+     "why": "A new secondary packaging site is an immediate notification."
+    }
+   }
+  }
+ },
+ "labeling-site": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "cat": "IN",
+     "src": "trs981",
+     "at": "28a",
+     "why": "Labelling is a secondary packaging operation: immediate notification."
+    }
+   }
+  }
+ },
+ "testing-site": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "cat": "AN",
+     "src": "trs981",
+     "at": "29",
+     "why": "A new or replacement site for batch control testing is an annual notification."
+    }
+   }
+  }
+ },
+ "ink-imprint-site": {
+  "tree": {
+   "ask": "pqInspected",
+   "on": {
+    "yes": {
+     "cat": "VMIN",
+     "src": "trs981",
+     "at": "28c",
+     "why": "A new site for a manufacturing operation, recently inspected, is a minor variation."
+    },
+    "no": {
+     "cat": "VMAJ",
+     "src": "faq22",
+     "at": "Appendix I, item 3",
+     "why": "A new site without a recent satisfactory inspection is major."
+    }
+   }
+  }
+ },
+ "component-sterilization-site": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "ask": "whoMinorU",
+     "on": {
+      "yes": {
+       "cat": "VMIN",
+       "src": "faq22",
+       "at": "Q8",
+       "why": "A new component sterilisation site is not listed; filed as an unclassified minor variation (u) with a justification PQT accepts.",
+       "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8)."
+      },
+      "no": {
+       "cat": "VMAJ",
+       "src": "faq22",
+       "at": "Q8",
+       "why": "A new component sterilisation site is not listed, so it is a major variation by default.",
+       "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8)."
+      }
+     }
+    }
+   }
+  }
+ },
+ "fill-line-add": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "ask": "whoMinorU",
+     "on": {
+      "yes": {
+       "cat": "VMIN",
+       "src": "faq22",
+       "at": "Q8",
+       "why": "A new filling line is not listed; filed as an unclassified minor variation (u) with a justification PQT accepts.",
+       "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8)."
+      },
+      "no": {
+       "cat": "VMAJ",
+       "src": "faq22",
+       "at": "Q8",
+       "why": "A new filling line is not listed, so it is a major variation by default.",
+       "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8)."
+      }
+     }
+    }
+   }
+  }
+ },
+ "dp-equipment-same": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "cat": "NONE",
+     "src": "faq22",
+     "at": "Appendix III",
+     "why": "Equipment of the same design and operating principle is managed under GMP change control.",
+     "note": "Simplified."
+    }
+   }
+  }
+ },
+ "dp-process-change": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "ask": "majorImpact",
+     "on": {
+      "yes": {
+       "ask": "whoMinorU",
+       "on": {
+        "yes": {
+         "cat": "VMIN",
+         "src": "faq22",
+         "at": "Q8",
+         "why": "A major process change is not listed; filed as an unclassified minor variation (u) with a justification PQT accepts.",
+         "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8)."
+        },
+        "no": {
+         "cat": "VMAJ",
+         "src": "faq22",
+         "at": "Q8",
+         "why": "A major process change is not listed, so it is a major variation by default.",
+         "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8)."
+        }
+       }
+      },
+      "no": {
+       "allOf": [
+        "WHO-31a:1",
+        "WHO-31a:2",
+        "WHO-31a:3"
+       ],
+       "pass": {
+        "cat": "AN",
+        "src": "trs981",
+        "at": "31a",
+        "why": "A minor process change meeting the conditions is an annual notification."
+       },
+       "fail": {
+        "cat": "VMIN",
+        "src": "trs981",
+        "at": "31b",
+        "why": "A condition is not met: minor variation."
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "dp-scale": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "ask": "scaleWithin10",
+     "on": {
+      "yes": {
+       "allOf": [
+        "WHO-30a:1",
+        "WHO-30a:2",
+        "WHO-30a:3",
+        "WHO-30a:4"
+       ],
+       "pass": {
+        "cat": "IN",
+        "src": "trs981",
+        "at": "30a",
+        "why": "A batch size change up to ten times, meeting the conditions, is an immediate notification."
+       },
+       "fail": {
+        "cat": "VMIN",
+        "src": "trs981",
+        "at": "30c",
+        "why": "A condition is not met: minor variation."
+       }
+      },
+      "no": {
+       "cat": "VMIN",
+       "src": "trs981",
+       "at": "30c",
+       "why": "Other batch size changes are minor variations."
+      }
+     }
+    }
+   }
+  }
+ },
+ "ds-route-new": {
+  "tree": {
+   "cat": "VMAJ",
+   "src": "trs981",
+   "at": "10d",
+   "why": "A new route of synthesis is a major variation."
+  }
+ },
+ "ds-process-change": {
+  "tree": {
+   "ask": "majorImpact",
+   "on": {
+    "yes": {
+     "cat": "VMAJ",
+     "src": "trs981",
+     "at": "10d",
+     "why": "An API process change that may affect quality is a major variation."
+    },
+    "no": {
+     "cat": "VMIN",
+     "src": "trs981",
+     "at": "10c",
+     "why": "Other API process changes are minor variations.",
+     "note": "Some low-risk changes are AN or IN (10a, 10b)."
+    }
+   }
+  }
+ },
+ "ds-starting-material": {
+  "tree": {
+   "cat": "VMAJ",
+   "src": "trs981",
+   "at": "10d",
+   "why": "Redefining the starting material changes the API process description: major variation.",
+   "note": "Simplified."
+  }
+ },
+ "dp-reprocessing": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "ask": "whoMinorU",
+     "on": {
+      "yes": {
+       "cat": "VMIN",
+       "src": "faq22",
+       "at": "Q8",
+       "why": "A reprocessing procedure is not listed; filed as an unclassified minor variation (u) with a justification PQT accepts.",
+       "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8)."
+      },
+      "no": {
+       "cat": "VMAJ",
+       "src": "faq22",
+       "at": "Q8",
+       "why": "A reprocessing procedure is not listed, so it is a major variation by default.",
+       "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8)."
+      }
+     }
+    }
+   }
+  }
+ },
+ "dp-ink": {
+  "tree": {
+   "cat": "IN",
+   "src": "trs981",
+   "at": "26a",
+   "why": "A change in imprints or markings is an immediate notification."
+  }
+ },
+ "dp-emboss": {
+  "tree": {
+   "cat": "IN",
+   "src": "trs981",
+   "at": "26a",
+   "why": "A change in embossing or other markings is an immediate notification."
+  }
+ },
+ "dp-order-addition": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "allOf": [
+      "WHO-31a:1",
+      "WHO-31a:2",
+      "WHO-31a:3"
+     ],
+     "pass": {
+      "cat": "AN",
+      "src": "trs981",
+      "at": "31a",
+      "why": "A minor process change meeting the conditions is an annual notification."
+     },
+     "fail": {
+      "cat": "VMIN",
+      "src": "trs981",
+      "at": "31b",
+      "why": "A condition is not met: minor variation."
+     }
+    }
+   }
+  }
+ },
+ "sterile-filter": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "ask": "whoMinorU",
+     "on": {
+      "yes": {
+       "cat": "VMIN",
+       "src": "faq22",
+       "at": "Q8",
+       "why": "A change to the sterilising filtration is not listed; filed as an unclassified minor variation (u) with a justification PQT accepts.",
+       "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8)."
+      },
+      "no": {
+       "cat": "VMAJ",
+       "src": "faq22",
+       "at": "Q8",
+       "why": "A change to the sterilising filtration is not listed, so it is a major variation by default.",
+       "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8)."
+      }
+     }
+    }
+   }
+  }
+ },
+ "sterilization-method": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "cat": "VMAJ",
+     "src": "trs981",
+     "at": "31",
+     "why": "A change in the sterilisation method is a major change.",
+     "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8)."
+    }
+   }
+  }
+ },
+ "depyrogenation": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "ask": "whoMinorU",
+     "on": {
+      "yes": {
+       "cat": "VMIN",
+       "src": "faq22",
+       "at": "Q8",
+       "why": "A change to depyrogenation is not listed; filed as an unclassified minor variation (u) with a justification PQT accepts.",
+       "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8)."
+      },
+      "no": {
+       "cat": "VMAJ",
+       "src": "faq22",
+       "at": "Q8",
+       "why": "A change to depyrogenation is not listed, so it is a major variation by default.",
+       "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8)."
+      }
+     }
+    }
+   }
+  }
+ },
+ "inprocess-filtration-remove": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "ask": "whoMinorU",
+     "on": {
+      "yes": {
+       "cat": "VMIN",
+       "src": "faq22",
+       "at": "Q8",
+       "why": "Removing an in-process filtration is not listed; filed as an unclassified minor variation (u) with a justification PQT accepts.",
+       "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8)."
+      },
+      "no": {
+       "cat": "VMAJ",
+       "src": "faq22",
+       "at": "Q8",
+       "why": "Removing an in-process filtration is not listed, so it is a major variation by default.",
+       "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8)."
+      }
+     }
+    }
+   }
+  }
+ },
+ "control-increase": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "cat": "AN",
+     "src": "trs981",
+     "at": "32c",
+     "why": "Adding in-process tests and limits is an annual notification."
+    }
+   }
+  }
+ },
+ "excipient-change": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "ask": "comparabilityNeeded",
+     "on": {
+      "yes": {
+       "cat": "VMAJ",
+       "src": "trs981",
+       "at": "25a.2 / 25b.2",
+       "why": "A composition change that needs a bioequivalence study is a major variation."
+      },
+      "no": {
+       "ask": "excipientKind",
+       "on": {
+        "minor-quant": {
+         "cat": "VMIN",
+         "src": "trs981",
+         "at": "25b.1",
+         "why": "A change in excipient amounts for an immediate-release solid oral form, within Appendix 2 limits, is a minor variation."
+        },
+        "comparable": {
+         "cat": "VMIN",
+         "src": "trs981",
+         "at": "25a.1",
+         "why": "Replacing one excipient with a comparable one is a minor variation."
+        },
+        "other": {
+         "cat": "VMAJ",
+         "src": "trs981",
+         "at": "25b.2",
+         "why": "Other composition changes are major variations."
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "colour-flavour-delete": {
+  "tree": {
+   "cat": "IN",
+   "src": "trs981",
+   "at": "23b",
+   "why": "Deleting or replacing a colouring or flavouring is an immediate notification (a reduction alone is an annual notification, 23a)."
+  }
+ },
+ "new-strength": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "cat": "NEWAPP",
+     "src": "trs981",
+     "at": "Appendix 1",
+     "why": "A new strength needs a new application.",
+     "pi": true
+    }
+   }
+  }
+ },
+ "spec-tighten": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "cat": "AN",
+     "src": "trs981",
+     "at": "37c",
+     "why": "Tightening an FPP acceptance criterion is an annual notification."
+    }
+   }
+  }
+ },
+ "spec-relax": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "cat": "IN",
+     "src": "trs981",
+     "at": "37d",
+     "why": "Relaxing an FPP acceptance criterion is an immediate notification when the conditions are met.",
+     "note": "For API criteria, relaxation can be IN, Vmin or Vmaj (15f)."
+    }
+   }
+  }
+ },
+ "spec-delete-test": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "ask": "significantQuality",
+     "on": {
+      "yes": {
+       "ask": "whoMinorU",
+       "on": {
+        "yes": {
+         "cat": "VMIN",
+         "src": "faq22",
+         "at": "Q8",
+         "why": "Deleting a significant test is not listed; filed as an unclassified minor variation (u) with a justification PQT accepts.",
+         "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8)."
+        },
+        "no": {
+         "cat": "VMAJ",
+         "src": "faq22",
+         "at": "Q8",
+         "why": "Deleting a significant test is not listed, so it is a major variation by default.",
+         "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8)."
+        }
+       }
+      },
+      "no": {
+       "cat": "AN",
+       "src": "trs981",
+       "at": "37a",
+       "why": "Deleting a non-significant FPP test parameter is an annual notification."
+      }
+     }
+    }
+   }
+  }
+ },
+ "spec-add-test": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "cat": "AN",
+     "src": "trs981",
+     "at": "37b",
+     "why": "Adding an FPP test parameter is an annual notification."
+    }
+   }
+  }
+ },
+ "spec-compendial": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "cat": "AN",
+     "src": "trs981",
+     "at": "36b",
+     "why": "Updating to a revised pharmacopoeial monograph is an annual notification."
+    }
+   }
+  }
+ },
+ "method-change": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "ask": "minorMethodChange",
+     "on": {
+      "yes": {
+       "cat": "AN",
+       "src": "trs981",
+       "at": "38c.1",
+       "why": "A minor change to an FPP procedure is an annual notification."
+      },
+      "no": {
+       "cat": "VMIN",
+       "src": "trs981",
+       "at": "38c.2",
+       "why": "Other changes to an FPP procedure are minor variations."
+      }
+     }
+    }
+   }
+  }
+ },
+ "method-new-regulatory": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "cat": "AN",
+     "src": "trs981",
+     "at": "38b",
+     "why": "Adding an FPP analytical procedure is an annual notification."
+    }
+   }
+  }
+ },
+ "method-alternative": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "cat": "AN",
+     "src": "trs981",
+     "at": "38b",
+     "why": "Adding an alternative procedure is an annual notification."
+    }
+   }
+  }
+ },
+ "method-components": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "cat": "AN",
+     "src": "trs981",
+     "at": "44b",
+     "why": "A change to a packaging test procedure is an annual notification.",
+     "note": "For excipient procedures it is a minor variation (34d)."
+    }
+   }
+  }
+ },
+ "method-raw-material": {
+  "tree": {
+   "cat": "AN",
+   "src": "trs981",
+   "at": "13c",
+   "why": "A minor change to a procedure for API materials is an annual notification."
+  }
+ },
+ "cc-polymer": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "ask": "sterile",
+     "on": {
+      "yes": {
+       "cat": "VMAJ",
+       "src": "trs981",
+       "at": "39b",
+       "why": "A new primary packaging type for a sterile product is a major variation."
+      },
+      "no": {
+       "cat": "VMIN",
+       "src": "trs981",
+       "at": "39a",
+       "why": "A new primary packaging type for a non-sterile product, with equal protection, is a minor variation."
+      }
+     }
+    }
+   }
+  }
+ },
+ "cc-sterile": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "cat": "VMAJ",
+     "src": "trs981",
+     "at": "39b",
+     "why": "A primary packaging change for a sterile product is a major variation."
+    }
+   }
+  }
+ },
+ "cc-dose-device": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "cat": "VMAJ",
+     "src": "trs981",
+     "at": "39b",
+     "why": "A change to functional packaging that controls the dose is a major variation."
+    }
+   }
+  }
+ },
+ "cc-closure-solid": {
+  "tree": {
+   "cat": "IN",
+   "src": "trs981",
+   "at": "42a",
+   "why": "A packaging material change for a solid FPP, same packaging type, is an immediate notification."
+  }
+ },
+ "cc-closure-liquid": {
+  "tree": {
+   "cat": "VMIN",
+   "src": "trs981",
+   "at": "42b",
+   "why": "A packaging material change for other FPPs is a minor variation."
+  }
+ },
+ "cc-size-shape": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "ask": "sterile",
+     "on": {
+      "yes": {
+       "cat": "VMIN",
+       "src": "trs981",
+       "at": "41b",
+       "why": "A container shape or size change for a sterile FPP is a minor variation."
+      },
+      "no": {
+       "cat": "AN",
+       "src": "trs981",
+       "at": "41a",
+       "why": "A container shape or size change for a non-sterile FPP is an annual notification."
+      }
+     }
+    }
+   }
+  }
+ },
+ "cc-count": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "cat": "IN",
+     "src": "trs981",
+     "at": "40a",
+     "why": "A change in the number of units per pack, consistent with the posology, is an immediate notification.",
+     "pi": true
+    }
+   }
+  }
+ },
+ "cc-desiccant": {
+  "tree": {
+   "cat": "IN",
+   "src": "trs981",
+   "at": "42a",
+   "why": "A packaging material change for a solid FPP is an immediate notification.",
+   "note": "Simplified: desiccants are treated as part of the packaging material."
+  }
+ },
+ "cc-blister": {
+  "tree": {
+   "cat": "IN",
+   "src": "trs981",
+   "at": "42a",
+   "why": "A blister-to-blister material change for a solid FPP is an immediate notification."
+  }
+ },
+ "cc-secondary-protective": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "ask": "whoMinorU",
+     "on": {
+      "yes": {
+       "cat": "VMIN",
+       "src": "faq22",
+       "at": "Q8",
+       "why": "Removing protective secondary packaging is not listed; filed as an unclassified minor variation (u) with a justification PQT accepts.",
+       "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8)."
+      },
+      "no": {
+       "cat": "VMAJ",
+       "src": "faq22",
+       "at": "Q8",
+       "why": "Removing protective secondary packaging is not listed, so it is a major variation by default.",
+       "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8)."
+      }
+     }
+    }
+   }
+  }
+ },
+ "cc-cap-colour": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "cat": "IN",
+     "src": "trs981",
+     "at": "45",
+     "why": "A change to a primary packaging part not in contact with the product is an immediate notification."
+    }
+   }
+  }
+ },
+ "shelf-life-extend": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "cat": "VMIN",
+     "src": "trs981",
+     "at": "47b",
+     "why": "A shelf-life extension, with long-term data on at least two pilot or production batches, is a minor variation.",
+     "pi": true
+    }
+   }
+  }
+ },
+ "shelf-life-reduce": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "cat": "IN",
+     "src": "trs981",
+     "at": "47a",
+     "why": "A shelf-life reduction is an immediate notification.",
+     "pi": true
+    }
+   }
+  }
+ },
+ "stability-protocol": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "ask": "whoMinorU",
+     "on": {
+      "yes": {
+       "cat": "VMIN",
+       "src": "faq22",
+       "at": "Q8",
+       "why": "A change to the stability protocol is not listed; filed as an unclassified minor variation (u) with a justification PQT accepts.",
+       "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8)."
+      },
+      "no": {
+       "cat": "VMAJ",
+       "src": "faq22",
+       "at": "Q8",
+       "why": "A change to the stability protocol is not listed, so it is a major variation by default.",
+       "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8)."
+      }
+     }
+    }
+   }
+  }
+ },
+ "storage-conditions": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "cat": "VMIN",
+     "src": "trs981",
+     "at": "49",
+     "why": "A change in labelled storage conditions is a minor variation.",
+     "pi": true
+    }
+   }
+  }
+ },
+ "reference-standard": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "cat": "NONE",
+     "src": "faq22",
+     "at": "Appendix III",
+     "why": "Replacing an in-house working standard, qualified against the primary standard, is managed under GMP.",
+     "note": "Simplified."
+    }
+   }
+  }
+ },
+ "lab-new-indication": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "cat": "VMAJ",
+     "src": "faq22",
+     "at": "Product information",
+     "why": "A new indication needs assessment: major variation.",
+     "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8).",
+     "pi": true
+    }
+   }
+  }
+ },
+ "lab-population": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "cat": "VMAJ",
+     "src": "faq22",
+     "at": "Product information",
+     "why": "A change in population or dosing needs assessment: major variation.",
+     "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8).",
+     "pi": true
+    }
+   }
+  }
+ },
+ "lab-clinical-section": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "ask": "whoMinorU",
+     "on": {
+      "yes": {
+       "cat": "VMIN",
+       "src": "faq22",
+       "at": "Q8",
+       "why": "A product information update with new clinical data is not listed; filed as an unclassified minor variation (u) with a justification PQT accepts.",
+       "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8)."
+      },
+      "no": {
+       "cat": "VMAJ",
+       "src": "faq22",
+       "at": "Q8",
+       "why": "A product information update with new clinical data is not listed, so it is a major variation by default.",
+       "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8)."
+      }
+     }
+    }
+   }
+  }
+ },
+ "lab-safety-add": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "ask": "whoMinorU",
+     "on": {
+      "yes": {
+       "cat": "VMIN",
+       "src": "faq22",
+       "at": "Q8",
+       "why": "A safety update to the product information is not listed; filed as an unclassified minor variation (u) with a justification PQT accepts.",
+       "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8)."
+      },
+      "no": {
+       "cat": "VMAJ",
+       "src": "faq22",
+       "at": "Q8",
+       "why": "A safety update to the product information is not listed, so it is a major variation by default.",
+       "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8)."
+      }
+     }
+    }
+   }
+  }
+ },
+ "lab-dosing-safety": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "ask": "whoMinorU",
+     "on": {
+      "yes": {
+       "cat": "VMIN",
+       "src": "faq22",
+       "at": "Q8",
+       "why": "A dosing instruction for safer use is not listed; filed as an unclassified minor variation (u) with a justification PQT accepts.",
+       "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8)."
+      },
+      "no": {
+       "cat": "VMAJ",
+       "src": "faq22",
+       "at": "Q8",
+       "why": "A dosing instruction for safer use is not listed, so it is a major variation by default.",
+       "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8)."
+      }
+     }
+    }
+   }
+  }
+ },
+ "lab-delete-claim": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "ask": "whoMinorU",
+     "on": {
+      "yes": {
+       "cat": "VMIN",
+       "src": "faq22",
+       "at": "Q8",
+       "why": "Removing unsupported claims is not listed; filed as an unclassified minor variation (u) with a justification PQT accepts.",
+       "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8)."
+      },
+      "no": {
+       "cat": "VMAJ",
+       "src": "faq22",
+       "at": "Q8",
+       "why": "Removing unsupported claims is not listed, so it is a major variation by default.",
+       "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8)."
+      }
+     }
+    }
+   }
+  }
+ },
+ "lab-505o4": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "ask": "whoMinorU",
+     "on": {
+      "yes": {
+       "cat": "VMIN",
+       "src": "faq22",
+       "at": "Q8",
+       "why": "A product information change requested by an authority is not listed; filed as an unclassified minor variation (u) with a justification PQT accepts.",
+       "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8)."
+      },
+      "no": {
+       "cat": "VMAJ",
+       "src": "faq22",
+       "at": "Q8",
+       "why": "A product information change requested by an authority is not listed, so it is a major variation by default.",
+       "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8)."
+      }
+     }
+    }
+   }
+  }
+ },
+ "lab-rld-update": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "ask": "whoMinorU",
+     "on": {
+      "yes": {
+       "cat": "VMIN",
+       "src": "faq22",
+       "at": "Q8",
+       "why": "Following the reference product information is not listed; filed as an unclassified minor variation (u) with a justification PQT accepts.",
+       "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8)."
+      },
+      "no": {
+       "cat": "VMAJ",
+       "src": "faq22",
+       "at": "Q8",
+       "why": "Following the reference product information is not listed, so it is a major variation by default.",
+       "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8)."
+      }
+     }
+    }
+   }
+  }
+ },
+ "lab-editorial": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "ask": "whoMinorU",
+     "on": {
+      "yes": {
+       "cat": "VMIN",
+       "src": "faq22",
+       "at": "Q8",
+       "why": "An editorial product information change is not listed; filed as an unclassified minor variation (u) with a justification PQT accepts.",
+       "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8)."
+      },
+      "no": {
+       "cat": "VMAJ",
+       "src": "faq22",
+       "at": "Q8",
+       "why": "An editorial product information change is not listed, so it is a major variation by default.",
+       "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8)."
+      }
+     }
+    }
+   }
+  }
+ },
+ "lab-layout": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "ask": "whoMinorU",
+     "on": {
+      "yes": {
+       "cat": "VMIN",
+       "src": "faq22",
+       "at": "Q8",
+       "why": "A change in label layout is not listed; filed as an unclassified minor variation (u) with a justification PQT accepts.",
+       "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8)."
+      },
+      "no": {
+       "cat": "VMAJ",
+       "src": "faq22",
+       "at": "Q8",
+       "why": "A change in label layout is not listed, so it is a major variation by default.",
+       "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8)."
+      }
+     }
+    }
+   }
+  }
+ },
+ "cp-submit": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "cat": "NA",
+     "src": "faq22",
+     "at": "Q8",
+     "why": "WHO PQ has no PACMP procedure. Unlisted changes can be agreed with PQT by email consultation, with a recommendation within 30 days."
+    }
+   }
+  }
+ },
+ "cp-use": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "cat": "NA",
+     "src": "faq22",
+     "at": "Q8",
+     "why": "No PACMP route: classify the change in its own entry."
+    }
+   }
+  }
+ },
+ "be-study-change": {
+  "tree": {
+   "cat": "VMAJ",
+   "src": "trs981",
+   "at": "25",
+   "why": "A change that needs a new bioequivalence study is a major variation."
+  }
+ },
+ "bio-mcb": {
+  "tree": {
+   "cat": "OUT",
+   "src": "trs981",
+   "at": "Scope",
+   "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+  }
+ },
+ "bio-wcb": {
+  "tree": {
+   "cat": "OUT",
+   "src": "trs981",
+   "at": "Scope",
+   "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+  }
+ },
+ "bio-purification": {
+  "tree": {
+   "cat": "OUT",
+   "src": "trs981",
+   "at": "Scope",
+   "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+  }
+ },
+ "bio-viral": {
+  "tree": {
+   "cat": "OUT",
+   "src": "trs981",
+   "at": "Scope",
+   "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+  }
+ },
+ "admin-ownership": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "cat": "OTHER",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "A transfer to a new applicant is handled by PQT as a separate procedure, not a variation.",
+     "note": "Simplified."
+    }
+   }
+  }
+ },
+ "admin-name-address": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "cat": "IN",
+     "src": "trs981",
+     "at": "1",
+     "why": "A change in the name or address of the FPP supplier is an immediate notification.",
+     "pi": true
+    }
+   }
+  }
+ },
+ "ds-cep": {
+  "tree": {
+   "ask": "cepCovers",
+   "on": {
+    "yes": {
+     "allOf": [
+      "WHO-5b:1",
+      "WHO-5b:2",
+      "WHO-5b:3"
+     ],
+     "pass": {
+      "cat": "IN",
+      "src": "trs981",
+      "at": "5b.1",
+      "why": "A new or updated CEP from a new manufacturer, meeting the conditions, is an immediate notification."
+     },
+     "fail": {
+      "cat": "VMIN",
+      "src": "trs981",
+      "at": "5b.2",
+      "why": "A condition is not met: minor variation."
+     }
+    },
+    "no": {
+     "ask": "dsSameRoute",
+     "on": {
+      "yes": {
+       "cat": "IN",
+       "src": "trs981",
+       "at": "8d.1",
+       "why": "A new API manufacturer under the APIMF procedure (or already prequalified) is an immediate notification when the conditions are met.",
+       "note": "Otherwise a minor variation (8d.2)."
+      },
+      "no": {
+       "cat": "VMAJ",
+       "src": "trs981",
+       "at": "8e.2",
+       "why": "A new API manufacturer with a different route needs full assessment: major variation."
+      }
+     }
+    }
+   }
+  }
+ },
+ "batch-release-site": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "cat": "AN",
+     "src": "trs981",
+     "at": "29",
+     "why": "WHO PQ has no batch release site as such; a new batch control testing site is an annual notification."
+    }
+   }
+  }
+ },
+ "site-delete": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "cat": "IN",
+     "src": "trs981",
+     "at": "4c",
+     "why": "Deleting a site for FPP production, packaging or testing is an immediate notification.",
+     "note": "Deleting an API starting material site is an annual notification (4a)."
+    }
+   }
+  }
+ },
+ "ds-scale": {
+  "tree": {
+   "ask": "scaleWithin10",
+   "on": {
+    "yes": {
+     "cat": "AN",
+     "src": "trs981",
+     "at": "12a",
+     "why": "An API batch size change up to ten times is an annual notification."
+    },
+    "no": {
+     "cat": "VMIN",
+     "src": "trs981",
+     "at": "12d",
+     "why": "An increase of more than ten times is a minor variation."
+    }
+   }
+  }
+ },
+ "ipc-tighten": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "cat": "AN",
+     "src": "trs981",
+     "at": "32a",
+     "why": "Tightening FPP in-process limits is an annual notification."
+    }
+   }
+  }
+ },
+ "ipc-relax": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "ask": "ipcCritical",
+     "on": {
+      "yes": {
+       "cat": "VMAJ",
+       "src": "trs981",
+       "at": "11f (by analogy)",
+       "why": "Relaxing a critical in-process limit is treated as major.",
+       "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8)."
+      },
+      "no": {
+       "ask": "whoMinorU",
+       "on": {
+        "yes": {
+         "cat": "VMIN",
+         "src": "faq22",
+         "at": "Q8",
+         "why": "Widening a non-critical in-process limit is not listed; filed as an unclassified minor variation (u) with a justification PQT accepts.",
+         "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8)."
+        },
+        "no": {
+         "cat": "VMAJ",
+         "src": "faq22",
+         "at": "Q8",
+         "why": "Widening a non-critical in-process limit is not listed, so it is a major variation by default.",
+         "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8)."
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "hold-time": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "ask": "whoMinorU",
+     "on": {
+      "yes": {
+       "cat": "VMIN",
+       "src": "faq22",
+       "at": "Q8",
+       "why": "A longer hold time is not listed; filed as an unclassified minor variation (u) with a justification PQT accepts.",
+       "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8)."
+      },
+      "no": {
+       "cat": "VMAJ",
+       "src": "faq22",
+       "at": "Q8",
+       "why": "A longer hold time is not listed, so it is a major variation by default.",
+       "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8)."
+      }
+     }
+    }
+   }
+  }
+ },
+ "design-space-within": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "cat": "NONE",
+     "src": "faq22",
+     "at": "Appendix III",
+     "why": "Working within an approved design space is not a change.",
+     "note": "By analogy with ICH Q8; the guideline does not mention design space."
+    }
+   }
+  }
+ },
+ "design-space-new": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "ask": "whoMinorU",
+     "on": {
+      "yes": {
+       "cat": "VMIN",
+       "src": "faq22",
+       "at": "Q8",
+       "why": "A new design space is not listed; filed as an unclassified minor variation (u) with a justification PQT accepts.",
+       "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8)."
+      },
+      "no": {
+       "cat": "VMAJ",
+       "src": "faq22",
+       "at": "Q8",
+       "why": "A new design space is not listed, so it is a major variation by default.",
+       "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8)."
+      }
+     }
+    }
+   }
+  }
+ },
+ "rtrt": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "ask": "whoMinorU",
+     "on": {
+      "yes": {
+       "cat": "VMIN",
+       "src": "faq22",
+       "at": "Q8",
+       "why": "Real-time release testing is not listed; filed as an unclassified minor variation (u) with a justification PQT accepts.",
+       "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8)."
+      },
+      "no": {
+       "cat": "VMAJ",
+       "src": "faq22",
+       "at": "Q8",
+       "why": "Real-time release testing is not listed, so it is a major variation by default.",
+       "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8)."
+      }
+     }
+    }
+   }
+  }
+ },
+ "continuous-mfg": {
+  "tree": {
+   "cat": "VMAJ",
+   "src": "trs981",
+   "at": "31",
+   "why": "Converting to continuous manufacturing is a major change.",
+   "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8)."
+  }
+ },
+ "excipient-supplier": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "cat": "NONE",
+     "src": "faq22",
+     "at": "Appendix III",
+     "why": "A new supplier of the same excipient grade and specification is managed under GMP.",
+     "note": "Simplified."
+    }
+   }
+  }
+ },
+ "coating-weight": {
+  "tree": {
+   "ask": "mr",
+   "on": {
+    "yes": {
+     "cat": "VMAJ",
+     "src": "trs981",
+     "at": "24b",
+     "why": "A coating weight change for a modified-release form is a major variation."
+    },
+    "no": {
+     "cat": "AN",
+     "src": "trs981",
+     "at": "24a",
+     "why": "A coating or shell weight change for an immediate-release form is an annual notification."
+    }
+   }
+  }
+ },
+ "score-line": {
+  "tree": {
+   "ask": "scoreAction",
+   "on": {
+    "add": {
+     "cat": "VMIN",
+     "src": "trs981",
+     "at": "26c.1",
+     "why": "Adding a score line, meeting the conditions, is a minor variation.",
+     "note": "Otherwise major (26c.2).",
+     "pi": true
+    },
+    "delete": {
+     "cat": "IN",
+     "src": "trs981",
+     "at": "26b",
+     "why": "Deleting a score line is an immediate notification.",
+     "pi": true
+    }
+   }
+  }
+ },
+ "tablet-shape": {
+  "tree": {
+   "ask": "mr",
+   "on": {
+    "yes": {
+     "cat": "VMIN",
+     "src": "trs981",
+     "at": "27b",
+     "why": "A shape change for a modified-release or scored tablet is a minor variation.",
+     "pi": true
+    },
+    "no": {
+     "ask": "scoredEqualDose",
+     "on": {
+      "yes": {
+       "cat": "VMIN",
+       "src": "trs981",
+       "at": "27b",
+       "why": "A shape change for a scored tablet is a minor variation.",
+       "pi": true
+      },
+      "no": {
+       "cat": "IN",
+       "src": "trs981",
+       "at": "27a",
+       "why": "A shape or dimension change for an immediate-release form is an immediate notification.",
+       "pi": true
+      }
+     }
+    }
+   }
+  }
+ },
+ "tse-excipient": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "cat": "AN",
+     "src": "trs981",
+     "at": "33",
+     "why": "Moving an excipient from a TSE-risk material to a vegetable or synthetic one is an annual notification."
+    }
+   }
+  }
+ },
+ "dosage-form-new": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "cat": "NEWAPP",
+     "src": "trs981",
+     "at": "Appendix 1",
+     "why": "A new dosage form needs a new application.",
+     "pi": true
+    }
+   }
+  }
+ },
+ "nitrosamine-control": {
+  "tree": {
+   "cat": "IN",
+   "src": "faq22",
+   "at": "Section 10.1",
+   "why": "Adding nitrosamine controls should be submitted as an immediate notification, with a declaration on nitrosamine risk."
+  }
+ },
+ "excipient-spec": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "ask": "excipientSpecKind",
+     "on": {
+      "tighten": {
+       "cat": "AN",
+       "src": "trs981",
+       "at": "34c",
+       "why": "Tightening an excipient limit is an annual notification."
+      },
+      "add": {
+       "cat": "AN",
+       "src": "trs981",
+       "at": "34b",
+       "why": "Adding an excipient test is an annual notification."
+      },
+      "delete": {
+       "cat": "AN",
+       "src": "trs981",
+       "at": "34a",
+       "why": "Deleting a non-significant in-house excipient test is an annual notification."
+      },
+      "relax": {
+       "ask": "whoMinorU",
+       "on": {
+        "yes": {
+         "cat": "VMIN",
+         "src": "faq22",
+         "at": "Q8",
+         "why": "Widening an excipient limit is not listed; filed as an unclassified minor variation (u) with a justification PQT accepts.",
+         "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8)."
+        },
+        "no": {
+         "cat": "VMAJ",
+         "src": "faq22",
+         "at": "Q8",
+         "why": "Widening an excipient limit is not listed, so it is a major variation by default.",
+         "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8)."
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "skip-testing": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "cat": "AN",
+     "src": "faq22",
+     "at": "Appendix II, item 3",
+     "why": "Skip testing (for example of microbial limits) is accepted as an unclassified annual notification (37u-AN) when the conditions are met.",
+     "note": "Reducing how often incoming materials are tested is a GMP matter with no variation (Appendix III)."
+    }
+   }
+  }
+ },
+ "method-minor": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "cat": "AN",
+     "src": "trs981",
+     "at": "38c.1",
+     "why": "A minor change to an FPP procedure is an annual notification."
+    }
+   }
+  }
+ },
+ "micro-rapid": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "cat": "VMIN",
+     "src": "trs981",
+     "at": "38c.2",
+     "why": "Replacing a procedure with an alternative method is a minor variation."
+    }
+   }
+  }
+ },
+ "cc-supplier": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "cat": "NONE",
+     "src": "faq22",
+     "at": "Appendix III",
+     "why": "A new supplier of the same component, same material and specification, is managed under GMP.",
+     "note": "Simplified."
+    }
+   }
+  }
+ },
+ "cc-device": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "cat": "IN",
+     "src": "trs981",
+     "at": "46a",
+     "why": "Adding or replacing an administration or measuring device that is not part of the primary packaging is an immediate notification.",
+     "pi": true
+    }
+   }
+  }
+ },
+ "cc-noncontact": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "cat": "IN",
+     "src": "trs981",
+     "at": "45",
+     "why": "A change to primary packaging parts not in contact with the product is an immediate notification."
+    }
+   }
+  }
+ },
+ "ds-retest": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "cat": "VMIN",
+     "src": "trs981",
+     "at": "20c",
+     "why": "Extending the API re-test period is a minor variation."
+    }
+   }
+  }
+ },
+ "in-use-shelf-life": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "ask": "inUseKind",
+     "on": {
+      "reduce": {
+       "cat": "IN",
+       "src": "trs981",
+       "at": "48a",
+       "why": "Reducing the in-use period is an immediate notification.",
+       "pi": true
+      },
+      "extendReal": {
+       "cat": "VMIN",
+       "src": "trs981",
+       "at": "48b",
+       "why": "Extending the in-use period is a minor variation.",
+       "pi": true
+      },
+      "extendModel": {
+       "cat": "VMIN",
+       "src": "trs981",
+       "at": "48b",
+       "why": "Extending the in-use period is a minor variation.",
+       "pi": true
+      }
+     }
+    }
+   }
+  }
+ },
+ "ds-storage": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "cat": "VMIN",
+     "src": "trs981",
+     "at": "21b",
+     "why": "A change in API labelled storage conditions is a minor variation."
+    }
+   }
+  }
+ },
+ "lab-new-route": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "cat": "NEWAPP",
+     "src": "trs981",
+     "at": "Appendix 1",
+     "why": "A new route of administration needs a new application.",
+     "pi": true
+    }
+   }
+  }
+ },
+ "lab-brand-name": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "ask": "whoMinorU",
+     "on": {
+      "yes": {
+       "cat": "VMIN",
+       "src": "faq22",
+       "at": "Q8",
+       "why": "A new trade name is not listed; filed as an unclassified minor variation (u) with a justification PQT accepts.",
+       "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8)."
+      },
+      "no": {
+       "cat": "VMAJ",
+       "src": "faq22",
+       "at": "Q8",
+       "why": "A new trade name is not listed, so it is a major variation by default.",
+       "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8)."
+      }
+     }
+    }
+   }
+  }
+ },
+ "lab-rmp": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "cat": "NA",
+     "src": "faq22",
+     "at": "Scope",
+     "why": "The WHO PQ variation guideline has no risk management plan procedure."
+    }
+   }
+  }
+ },
+ "lab-psusa": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "ask": "whoMinorU",
+     "on": {
+      "yes": {
+       "cat": "VMIN",
+       "src": "faq22",
+       "at": "Q8",
+       "why": "Implementing agreed safety wording is not listed; filed as an unclassified minor variation (u) with a justification PQT accepts.",
+       "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8)."
+      },
+      "no": {
+       "cat": "VMAJ",
+       "src": "faq22",
+       "at": "Q8",
+       "why": "Implementing agreed safety wording is not listed, so it is a major variation by default.",
+       "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8)."
+      }
+     }
+    }
+   }
+  }
+ },
+ "lab-delete-indication": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "ask": "whoMinorU",
+     "on": {
+      "yes": {
+       "cat": "VMIN",
+       "src": "faq22",
+       "at": "Q8",
+       "why": "Deleting an indication is not listed; filed as an unclassified minor variation (u) with a justification PQT accepts.",
+       "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8)."
+      },
+      "no": {
+       "cat": "VMAJ",
+       "src": "faq22",
+       "at": "Q8",
+       "why": "Deleting an indication is not listed, so it is a major variation by default.",
+       "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8)."
+      }
+     }
+    }
+   }
+  }
+ },
+ "ec-define": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "cat": "NA",
+     "src": "faq22",
+     "at": "Q8",
+     "why": "WHO PQ has no established conditions procedure."
+    }
+   }
+  }
+ },
+ "plcm-update": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "cat": "NA",
+     "src": "faq22",
+     "at": "Q8",
+     "why": "WHO PQ has no PLCM document."
+    }
+   }
+  }
+ },
+ "non-ec-change": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "cat": "NA",
+     "src": "faq22",
+     "at": "Q8",
+     "why": "WHO PQ has not adopted established conditions: classify the change in its own entry."
+    }
+   }
+  }
+ },
+ "pacmp-change": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "cat": "NA",
+     "src": "faq22",
+     "at": "Q8",
+     "why": "WHO PQ has no PACMP procedure."
+    }
+   }
+  }
+ },
+ "bio-scale": {
+  "tree": {
+   "cat": "OUT",
+   "src": "trs981",
+   "at": "Scope",
+   "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+  }
+ },
+ "bio-media": {
+  "tree": {
+   "cat": "OUT",
+   "src": "trs981",
+   "at": "Scope",
+   "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+  }
+ },
+ "bio-resin": {
+  "tree": {
+   "cat": "OUT",
+   "src": "trs981",
+   "at": "Scope",
+   "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+  }
+ },
+ "bio-potency": {
+  "tree": {
+   "cat": "OUT",
+   "src": "trs981",
+   "at": "Scope",
+   "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+  }
+ },
+ "bio-formulation": {
+  "tree": {
+   "cat": "OUT",
+   "src": "trs981",
+   "at": "Scope",
+   "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+  }
+ },
+ "bio-adventitious": {
+  "tree": {
+   "cat": "OUT",
+   "src": "trs981",
+   "at": "Scope",
+   "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+  }
+ },
+ "admin-manufacturer-name": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "cat": "IN",
+     "src": "trs981",
+     "at": "3",
+     "why": "A change in the name or address of the FPP manufacturer is an immediate notification.",
+     "note": "For a non-supplier API manufacturer it is item 2, also IN."
+    }
+   }
+  }
+ },
+ "admin-local-rep": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "cat": "NA",
+     "src": "faq22",
+     "at": "Scope",
+     "why": "WHO PQ has no local representative; national registration of the prequalified product is handled country by country."
+    }
+   }
+  }
+ },
+ "admin-inn": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "ask": "whoMinorU",
+     "on": {
+      "yes": {
+       "cat": "VMIN",
+       "src": "faq22",
+       "at": "Q8",
+       "why": "A change in the name of the active substance is not listed; filed as an unclassified minor variation (u) with a justification PQT accepts.",
+       "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8)."
+      },
+      "no": {
+       "cat": "VMAJ",
+       "src": "faq22",
+       "at": "Q8",
+       "why": "A change in the name of the active substance is not listed, so it is a major variation by default.",
+       "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8)."
+      }
+     }
+    }
+   }
+  }
+ },
+ "admin-delete-presentation": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "OUT",
+     "src": "trs981",
+     "at": "Scope",
+     "why": "This pack covers multisource finished pharmaceutical products. Vaccines and biotherapeutics follow separate WHO PQ variation guidance."
+    },
+    "no": {
+     "ask": "presentationKind",
+     "on": {
+      "strength": {
+       "ask": "whoMinorU",
+       "on": {
+        "yes": {
+         "cat": "VMIN",
+         "src": "faq22",
+         "at": "Q8",
+         "why": "Withdrawing a strength is not listed; filed as an unclassified minor variation (u) with a justification PQT accepts.",
+         "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8)."
+        },
+        "no": {
+         "cat": "VMAJ",
+         "src": "faq22",
+         "at": "Q8",
+         "why": "Withdrawing a strength is not listed, so it is a major variation by default.",
+         "note": "Not listed in the guideline: an unclassified change is major by default, unless justified as an unclassified minor variation (suffix u) or agreed with PQT in advance (FAQ Q8)."
+        }
+       }
+      },
+      "pack": {
+       "cat": "IN",
+       "src": "trs981",
+       "at": "40a",
+       "why": "A change in the number of units per pack is an immediate notification.",
+       "note": "Simplified: deletion of a pack size."
+      }
+     }
+    }
+   }
+  }
+ }
+}

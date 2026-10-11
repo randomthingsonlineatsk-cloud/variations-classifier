@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useApp, go } from '../ctx.js';
-import { READY, regionOf } from '../engine/packs.js';
+import { READY, regionOf, regionsFor } from '../engine/packs.js';
 import { today } from '../engine/model.js';
 import { KINDS, newCcdsCase, rolloutRows } from '../engine/labelling.js';
 
@@ -10,7 +10,7 @@ export default function Labelling() {
   const items = cases.filter((c) => c.ccds);
   const create = async (e) => {
     e.preventDefault();
-    const k = newCcdsCase({ product: productById(form.productId), user, kind: form.kind, text: form.text || KINDS.find((x) => x.id === form.kind).label, version: form.version || '1.0', ccdsDate: form.ccdsDate, regions: form.regions });
+    const k = newCcdsCase({ product: productById(form.productId), user, kind: form.kind, text: form.text || KINDS.find((x) => x.id === form.kind).label, version: form.version || '1.0', ccdsDate: form.ccdsDate, regions: regionsFor(productById(form.productId)) });
     await saveCase(k);
     go(`/case/${k.id}`);
   };
@@ -18,7 +18,7 @@ export default function Labelling() {
   return (
     <div className="page" style={{ maxWidth: 1200 }}>
       <h1>Labelling rollout</h1>
-      <p>A change to the company core data sheet (CCDS) has to reach every regional label. Track one CCDS change across the US prescribing information, the EU SmPC and leaflet, and the Indian prescribing information: where it goes, how it is classified, the deadline and how far each region lags.</p>
+      <p>A change to the company core data sheet (CCDS) has to reach every regional label. Track one CCDS change across every regional label the product has (US prescribing information, EU SmPC, Indian prescribing information, Canadian product monograph, Swiss information texts, Japanese package insert, WHO PQ SmPC): where it goes, how it is classified, the deadline and how far each region lags.</p>
       <form className="panel grid-2" onSubmit={create} aria-label="New CCDS change" style={{ marginBottom: '1.5rem' }}>
         <label className="field">Product<select value={form.productId} onChange={set('productId')}>{products.map((p) => <option key={p.id} value={p.id}>{p.label ?? p.brandName}</option>)}</select></label>
         <label className="field">Kind of change<select value={form.kind} onChange={set('kind')}>{KINDS.map((x) => <option key={x.id} value={x.id}>{x.label}</option>)}</select></label>

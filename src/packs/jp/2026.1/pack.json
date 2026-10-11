@@ -1,0 +1,419 @@
+{
+ "id": "jp",
+ "region": "JP",
+ "label": "Japan: MHLW and PMDA (PMD Act)",
+ "edition": "2026.1",
+ "appliesFrom": "2025-02-13",
+ "appliesTo": null,
+ "status": "in force",
+ "summary": "The approval form decides: approved matters need a partial change approval, minor change items a notification within 30 days, and items outside the form no filing. Article 47 keeps some changes out of the minor route. Includes the 2024 moderate change and 2025 annual report trials and the change plan (PACMP) system.",
+ "sources": {
+  "pmd": {
+   "title": "Act on Securing Quality, Efficacy and Safety of Products Including Pharmaceuticals and Medical Devices (PMD Act), Article 14 (partial change approval and minor change notification)",
+   "version": "As amended",
+   "date": "current",
+   "url": "https://www.japaneselawtranslation.go.jp/en/laws/view/3213",
+   "status": "final"
+  },
+  "reg47": {
+   "title": "Enforcement Regulations of the PMD Act, Article 47 (scope of minor changes)",
+   "version": "As amended",
+   "date": "current",
+   "url": "https://www.pmda.go.jp/files/000215552.pdf",
+   "status": "final"
+  },
+  "mod24": {
+   "title": "MHLW notice of 27 September 2024 (PSEHB/PED 0927-4): trial of a change procedure for moderate change items, with Q&A",
+   "version": "Trial",
+   "date": "2024-09-27",
+   "url": "https://www.japal.org/dom/notice/2024093049.html",
+   "status": "final"
+  },
+  "ar25": {
+   "title": "MHLW notice of 13 February 2025 (PSEHB/PED 0213-5): trial of an annual report procedure",
+   "version": "Trial",
+   "date": "2025-02-13",
+   "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc8941&dataType=1&pageNo=1",
+   "status": "final"
+  },
+  "pacmp": {
+   "title": "PMD Act post-approval change management protocol (change plan) system, and MHLW Q&A of 3 October 2025",
+   "version": "In force since 2021",
+   "date": "Q&A 2025-10-03",
+   "url": "https://www.pmda.go.jp/files/000278426.pdf",
+   "status": "final"
+  },
+  "rapid": {
+   "title": "Rapid review of partial change applications for manufacturing site changes (summary in JGA News 165, 2022)",
+   "version": "Secondary summary",
+   "date": "2022",
+   "url": "https://www.jga.gr.jp/assets/uploads/2022/JGA-NEWS165-1%20%284%29.pdf",
+   "status": "secondary"
+  },
+  "survey": {
+   "title": "MHLW study group on change management procedures (4th meeting, 13 October 2023): review time survey",
+   "version": "Meeting document",
+   "date": "2023-10-13",
+   "url": "https://www.mhlw.go.jp/content/11121000/001155992.pdf",
+   "status": "secondary"
+  },
+  "pmdaTarget": {
+   "title": "PMDA performance targets for new drug review (total review time, 80th percentile)",
+   "version": "Mid-term plan",
+   "date": "current",
+   "url": "https://www.pmda.go.jp/english/",
+   "status": "goal"
+  },
+  "pi": {
+   "title": "PMD Act Article 52-2 (notification of package insert information) and MHLW revision instructions for precautions",
+   "version": "As amended",
+   "date": "current",
+   "url": "https://www.pmda.go.jp/english/",
+   "status": "final"
+  },
+  "q12": {
+   "title": "ICH Q12 (adopted in Japan)",
+   "version": "Step 5",
+   "date": "2021",
+   "url": "https://www.pmda.go.jp/english/int-activities/int-harmony/ich/0014.html",
+   "status": "final"
+  },
+  "q8": {
+   "title": "ICH Q8(R2) Pharmaceutical development (adopted in Japan)",
+   "version": "R2",
+   "date": "adopted",
+   "url": "https://www.pmda.go.jp/english/int-activities/int-harmony/ich/0014.html",
+   "status": "final"
+  }
+ },
+ "categories": [
+  {
+   "id": "NA",
+   "rank": 0,
+   "short": "Not used",
+   "label": "Not used in Japan",
+   "implement": "other",
+   "badge": "Route not used",
+   "rule": "Japan does not use this tool; see the result for what applies instead.",
+   "src": "q12",
+   "at": "ICH Q12",
+   "tone": "letter"
+  },
+  {
+   "id": "NONE",
+   "rank": 0,
+   "short": "No filing",
+   "label": "Not an approved matter: managed in the quality system",
+   "implement": "do",
+   "badge": "Managed in the quality system",
+   "rule": "The item is not in the approval form, so no filing is needed; manage it under GMP and the quality system.",
+   "src": "pmd",
+   "at": "Article 14",
+   "tone": "letter"
+  },
+  {
+   "id": "MCN",
+   "rank": 1,
+   "short": "MCN",
+   "label": "Minor change notification",
+   "implement": "do-and-tell",
+   "badge": "Do, then notify within 30 days",
+   "rule": "Make the change, then notify within 30 days. PMDA reviews the notification afterwards, with the next partial change application.",
+   "src": "pmd",
+   "at": "Article 14 (minor change notification)",
+   "tone": "ar"
+  },
+  {
+   "id": "JPAR",
+   "rank": 1,
+   "short": "Annual report",
+   "label": "Annual report item (2025 trial)",
+   "implement": "do-and-tell",
+   "badge": "Do, then report yearly",
+   "rule": "For items the approval designates as annual report items: make the change and report it once a year through a PMDA consultation.",
+   "src": "ar25",
+   "at": "Trial notice",
+   "tone": "ar"
+  },
+  {
+   "id": "NOTIFY",
+   "rank": 2,
+   "short": "Notify",
+   "label": "Notification to the authorities (no approval)",
+   "implement": "tell-and-do",
+   "badge": "Notify",
+   "rule": "Notify the revised document or fact (for example the package insert, the RMP or a succession); no approval step.",
+   "src": "pi",
+   "at": "Article 52-2",
+   "tone": "cbe0"
+  },
+  {
+   "id": "PACMPN",
+   "rank": 2,
+   "short": "PACMP notice",
+   "label": "Notification under an approved change plan (PACMP step 2)",
+   "implement": "tell-and-wait",
+   "badge": "Notify, wait 40 working days",
+   "rule": "Notify the change made under the confirmed plan; it becomes an approved matter 40 working days after acceptance (20 in special cases) unless PMDA raises questions.",
+   "src": "pacmp",
+   "at": "Q&A Q7",
+   "tone": "cbe0"
+  },
+  {
+   "id": "MOD",
+   "rank": 3,
+   "short": "Moderate",
+   "label": "Moderate change: rapid review (2024 trial)",
+   "implement": "wait-for-approval",
+   "badge": "Short review, then do",
+   "rule": "For items designated as moderate change items: a form of partial change application with a short review; implement after approval.",
+   "src": "mod24",
+   "at": "Trial notice, Q1",
+   "tone": "cbe30"
+  },
+  {
+   "id": "PCAR",
+   "rank": 3,
+   "short": "PCA (rapid)",
+   "label": "Partial change application, rapid review (site changes)",
+   "implement": "wait-for-approval",
+   "badge": "Wait for approval (about 3 months)",
+   "rule": "A partial change application for a site change with an unchanged method, reviewed on a rapid track (standard processing time about 3 months).",
+   "src": "rapid",
+   "at": "Rapid partial change",
+   "tone": "cbe30"
+  },
+  {
+   "id": "PCA",
+   "rank": 4,
+   "short": "PCA",
+   "label": "Partial change approval application",
+   "implement": "wait-for-approval",
+   "badge": "Wait for approval",
+   "rule": "Apply for partial change approval and implement only after approval.",
+   "src": "pmd",
+   "at": "Article 14 (partial change approval)",
+   "tone": "pas"
+  },
+  {
+   "id": "PLAN",
+   "rank": 4,
+   "short": "Change plan",
+   "label": "Change plan confirmation application (PACMP step 1)",
+   "implement": "wait-for-approval",
+   "badge": "Wait for confirmation",
+   "rule": "Apply for confirmation of the change plan; once confirmed, changes made under it are notified (step 2).",
+   "src": "pacmp",
+   "at": "PACMP step 1",
+   "tone": "pas"
+  },
+  {
+   "id": "NEW",
+   "rank": 5,
+   "short": "New approval",
+   "label": "New marketing approval application",
+   "implement": "wait-for-approval",
+   "badge": "New application",
+   "rule": "The change cannot be made by partial change: apply for a new approval (including a replacement application for a new brand name).",
+   "src": "pmd",
+   "at": "Article 14",
+   "tone": "ext"
+  }
+ ],
+ "conditions": {},
+ "multipleChanges": {
+  "rule": "Related changes to one approval are made in one partial change application; minor change items can be notified together. The filing takes the highest category.",
+  "src": "pmd",
+  "at": "Article 14"
+ },
+ "filing": {
+  "shared": [
+   "MCN",
+   "JPAR",
+   "NOTIFY"
+  ],
+  "apart": [
+   "NONE",
+   "NA"
+  ]
+ },
+ "clocks": {
+  "MCN": {
+   "daysAfter": 30,
+   "label": "Notify within 30 days after the change",
+   "src": "pmd"
+  },
+  "JPAR": {
+   "months": 12,
+   "label": "Report once a year from the reference date",
+   "src": "ar25"
+  },
+  "NOTIFY": {
+   "label": "Notify the revised document (for a package insert, before distributing it)",
+   "src": "pi"
+  },
+  "PACMPN": {
+   "workingDays": 40,
+   "label": "Becomes an approved matter 40 working days after acceptance (20 in special cases)",
+   "src": "pacmp"
+  },
+  "MOD": {
+   "workingDays": 30,
+   "approx": true,
+   "label": "Short review: the 2023 proposal aimed at about 30 working days after acceptance (trial; not a fixed rule)",
+   "src": "survey"
+  },
+  "PCAR": {
+   "months": 3,
+   "label": "Rapid partial change: standard processing time about 3 months",
+   "src": "rapid"
+  },
+  "PCA": {
+   "monthsByKind": {
+    "cmc": 6,
+    "efficacy": 12,
+    "labeling": 12,
+    "admin": 6
+   },
+   "monthsBio": 12,
+   "monthsPriority": 9,
+   "label": "Quality changes: median about 6 months (chemical) or 12 months (biologics) in the 2023 survey, not a target. Indications and dosage: 12-month standard target (9 if priority)",
+   "src": "survey"
+  },
+  "PLAN": {
+   "months": 12,
+   "label": "Change plan confirmation: 12-month target",
+   "src": "pacmp"
+  },
+  "NEW": {
+   "months": 12,
+   "monthsPriority": 9,
+   "label": "New approval: 12-month standard target (9 if priority)",
+   "src": "pmdaTarget"
+  }
+ },
+ "m1": {
+  "pca": [
+   {
+    "code": "jp:cover",
+    "label": "Cover letter"
+   },
+   {
+    "code": "jp:1.2",
+    "label": "Copy of the partial change approval application form (new and old comparison)"
+   },
+   {
+    "code": "jp:1.12",
+    "label": "List of attached documents"
+   },
+   {
+    "code": "jp:1.13.1",
+    "label": "Documents for the approved product (current approval form)"
+   }
+  ],
+  "new": [
+   {
+    "code": "jp:cover",
+    "label": "Cover letter"
+   },
+   {
+    "code": "jp:1.2",
+    "label": "Copy of the application form"
+   },
+   {
+    "code": "jp:1.6",
+    "label": "Information on use in foreign countries"
+   }
+  ],
+  "plan": [
+   {
+    "code": "jp:cover",
+    "label": "Cover letter"
+   },
+   {
+    "code": "jp:1.2",
+    "label": "Copy of the change plan confirmation application"
+   },
+   {
+    "code": "jp:1.13.4",
+    "label": "The change plan (PACMP)"
+   }
+  ],
+  "pi": [
+   {
+    "code": "jp:1.8",
+    "label": "Draft package insert"
+   }
+  ],
+  "notice": [
+   {
+    "code": "jp:1.2",
+    "label": "Notification form (filed electronically, not as an eCTD sequence)"
+   }
+  ]
+ },
+ "m1map": {
+  "PCA": [
+   "pca"
+  ],
+  "PCAR": [
+   "pca"
+  ],
+  "MOD": [
+   "pca"
+  ],
+  "PLAN": [
+   "plan"
+  ],
+  "NEW": [
+   "new"
+  ],
+  "MCN": [
+   "notice"
+  ],
+  "JPAR": [
+   "notice"
+  ],
+  "NOTIFY": [
+   "notice"
+  ],
+  "PACMPN": [
+   "notice"
+  ]
+ },
+ "ectd": {
+  "PCA": {
+   "submissionType": "jp_partial-change",
+   "subType": "jp_ctd"
+  },
+  "PCAR": {
+   "submissionType": "jp_partial-change",
+   "subType": "jp_ctd"
+  },
+  "MOD": {
+   "submissionType": "jp_partial-change",
+   "subType": "jp_ctd"
+  },
+  "PLAN": {
+   "submissionType": "jp_change-plan",
+   "subType": "jp_ctd"
+  },
+  "NEW": {
+   "submissionType": "jp_original",
+   "subType": "jp_ctd"
+  },
+  "MCN": null,
+  "JPAR": null,
+  "NOTIFY": null,
+  "PACMPN": null,
+  "NONE": null,
+  "NA": null
+ },
+ "changeLog": [
+  {
+   "edition": "2026.1",
+   "date": "2026-10-11",
+   "text": "First Japan edition: approval-form logic with Article 47 exclusions, the 2024 moderate change and 2025 annual report trials, and change plans (PACMP)."
+  }
+ ]
+}

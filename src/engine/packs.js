@@ -13,6 +13,14 @@ import inPack from '../packs/in/2026.1/pack.json' with { type: 'json' };
 import inEntries from '../packs/in/2026.1/entries.json' with { type: 'json' };
 import inDraftPack from '../packs/in/2026.1-draft/pack.json' with { type: 'json' };
 import inDraftEntries from '../packs/in/2026.1-draft/entries.json' with { type: 'json' };
+import caPack from '../packs/ca/2026.1/pack.json' with { type: 'json' };
+import caEntries from '../packs/ca/2026.1/entries.json' with { type: 'json' };
+import chPack from '../packs/ch/2026.1/pack.json' with { type: 'json' };
+import chEntries from '../packs/ch/2026.1/entries.json' with { type: 'json' };
+import jpPack from '../packs/jp/2026.1/pack.json' with { type: 'json' };
+import jpEntries from '../packs/jp/2026.1/entries.json' with { type: 'json' };
+import whoPack from '../packs/who/2026.1/pack.json' with { type: 'json' };
+import whoEntries from '../packs/who/2026.1/entries.json' with { type: 'json' };
 
 const strip = (o) => Object.fromEntries(Object.entries(o).filter(([k]) => !k.startsWith('_')));
 
@@ -28,16 +36,20 @@ export const PACKS = {
   us: [{ ...usPack, entries: strip(usEntries), conditions: {} }],
   eu: [{ ...eu13Pack, entries: strip(eu13Entries) }, { ...eu26Pack, entries: strip(eu26Entries) }],
   in: [{ ...inPack, entries: strip(inEntries) }, { ...inDraftPack, entries: strip(inDraftEntries) }],
+  ca: [{ ...caPack, entries: strip(caEntries) }],
+  ch: [{ ...chPack, entries: strip(chEntries) }],
+  jp: [{ ...jpPack, entries: strip(jpEntries) }],
+  who: [{ ...whoPack, entries: strip(whoEntries) }],
 };
 
 export const REGIONS = [
   { id: 'us', label: 'United States', short: 'US', ready: true },
   { id: 'eu', label: 'European Union', short: 'EU', ready: true },
   { id: 'in', label: 'India', short: 'India', ready: true },
-  { id: 'ca', label: 'Canada', short: 'Canada', ready: false, phase: 4 },
-  { id: 'ch', label: 'Switzerland', short: 'Switzerland', ready: false, phase: 4 },
-  { id: 'jp', label: 'Japan', short: 'Japan', ready: false, phase: 4 },
-  { id: 'who', label: 'WHO prequalification', short: 'WHO PQ', ready: false, phase: 4 },
+  { id: 'ca', label: 'Canada', short: 'Canada', ready: true },
+  { id: 'ch', label: 'Switzerland', short: 'Switzerland', ready: true },
+  { id: 'jp', label: 'Japan', short: 'Japan', ready: true },
+  { id: 'who', label: 'WHO prequalification', short: 'WHO PQ', ready: true },
 ];
 
 // The edition in force on a date (ISO yyyy-mm-dd), or the newest one.
@@ -55,6 +67,9 @@ export function packFor(id, { edition = null, date = null, draft = false } = {})
 }
 
 export const categoryOf = (pack, id) => pack.categories.find((c) => c.id === id) ?? null;
+export const toneOf = (pack, id) => categoryOf(pack, id)?.tone ?? 'letter';
+// Categories that need no filing (quality system, record, other procedure, not available).
+export const noFiling = (pack, id) => (pack.filing?.apart ?? []).includes(id);
 export const rankOf = (pack, id) => categoryOf(pack, id)?.rank ?? -1;
 export const sourceOf = (pack, id) => pack.sources[id] ?? { title: id };
 
@@ -63,7 +78,7 @@ export const READY = REGIONS.filter((r) => r.ready).map((r) => r.id);
 
 // Condition ids (from a pack's annex conditions) look like "Q.II.b.1:2" or "13:B.II.b.1:2".
 export const isCondition = (qid) => /:\d+$/.test(qid);
-export const conditionCode = (qid) => qid.replace(/^13:/, '').replace(/:(\d+)$/, ' condition $1');
+export const conditionCode = (qid) => qid.replace(/^13:/, '').replace(/^(HC|WHO)-/, '$1 ').replace(/:(\d+)$/, ' condition $1');
 export function questionText(pack, qid) {
   if (QUESTIONS[qid]) return QUESTIONS[qid].text;
   const c = pack?.conditions?.[qid];
@@ -100,4 +115,9 @@ export function searchChanges(list, text) {
     const hay = `${c.title} ${c.help} ${c.keywords}`.toLowerCase();
     return words.every((w) => hay.includes(w));
   });
+}
+
+// Regions a product has a profile for (the US and EU profiles are part of every built-in product).
+export function regionsFor(product) {
+  return READY.filter((r) => ['us', 'eu', 'in'].includes(r) || !!product?.[r]);
 }

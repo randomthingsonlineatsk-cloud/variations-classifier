@@ -1,6 +1,6 @@
 // Global rollout: when each market can take the change, which markets hold it back, and
 // what would shorten the rollout.
-import { regionOf, rankOf } from './packs.js';
+import { regionOf, rankOf, noFiling } from './packs.js';
 import { filingsFor, timelineFor, packForCase } from './filing.js';
 import { lowerRoutes } from './classify.js';
 import { answersFor } from './filing.js';
@@ -11,7 +11,7 @@ export function rolloutPlan(kase, product) {
     const { filings, pending } = filingsFor(pack, product, kase);
     const lines = filings.map((f) => ({ f, tl: timelineFor(pack, product, f, { submitDate: kase.submitDate, clockStop: kase.options?.clockStop, notificationDate: kase.options?.notificationDate, priority: kase.options?.priority, inspection: kase.options?.inspection }) }));
     const known = lines.map((l) => l.tl.earliestUse).filter(Boolean).sort();
-    const unknown = lines.some((l) => !l.tl.earliestUse && !['NONE', 'REC', 'OTHER'].includes(l.f.category)) || pending.length > 0;
+    const unknown = lines.some((l) => !l.tl.earliestUse && !noFiling(pack, l.f.category)) || pending.length > 0;
     const ready = unknown ? null : known.pop() ?? kase.submitDate;
     const heaviest = filings.slice().sort((a, b) => rankOf(pack, b.category) - rankOf(pack, a.category))[0];
     const shorten = [];

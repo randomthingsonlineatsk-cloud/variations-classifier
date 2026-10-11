@@ -1048,6 +1048,635 @@
    "help": "The company changes its name or moves its registered address, with no change in ownership.",
    "keywords": "company name address applicant",
    "evidence": []
+  },
+  {
+   "id": "ds-cep",
+   "group": "site",
+   "kind": "cmc",
+   "scope": "small",
+   "title": "Add or replace a drug substance source supported by a CEP or drug master file",
+   "help": "A new or alternative manufacturer of the drug substance whose data sit in a Ph. Eur. certificate of suitability (CEP), a drug master file (DMF, ASMF) or a WHO APIMF.",
+   "keywords": "API supplier source vendor CEP DMF ASMF APIMF alternate second source",
+   "evidence": [
+    "ds-mfr",
+    "ds-spec",
+    "ds-imp",
+    "ds-batch",
+    "ds-stab",
+    "qos"
+   ]
+  },
+  {
+   "id": "batch-release-site",
+   "group": "site",
+   "kind": "cmc",
+   "scope": "all",
+   "title": "Add or change the site responsible for batch release or batch control testing",
+   "help": "The site that certifies or tests batches before they are released to a market, for example an importer with a qualified person or a local release laboratory.",
+   "keywords": "QP release importer batch certification control testing laboratory",
+   "evidence": [
+    "dp-mfr",
+    "dp-meth",
+    "qos"
+   ]
+  },
+  {
+   "id": "site-delete",
+   "group": "site",
+   "kind": "admin",
+   "scope": "all",
+   "title": "Delete a manufacturing, testing or packaging site",
+   "help": "A site is no longer used and is removed from the dossier; another approved site does the same work.",
+   "keywords": "remove withdraw site deletion delist manufacturer",
+   "evidence": [
+    "dp-mfr"
+   ]
+  },
+  {
+   "id": "ds-scale",
+   "group": "process",
+   "kind": "cmc",
+   "scope": "small",
+   "title": "Change the drug substance batch size",
+   "help": "Scale up or scale down manufacture of the drug substance with the same process.",
+   "keywords": "API batch size scale up down synthesis",
+   "evidence": [
+    "ds-proc",
+    "ds-batch",
+    "qos"
+   ]
+  },
+  {
+   "id": "ipc-tighten",
+   "group": "process",
+   "kind": "cmc",
+   "scope": "all",
+   "title": "Tighten an in-process control limit",
+   "help": "An in-process acceptance limit becomes narrower, within the approved range.",
+   "keywords": "IPC in-process limit narrower tighten",
+   "evidence": [
+    "dp-ctrl"
+   ]
+  },
+  {
+   "id": "ipc-relax",
+   "group": "process",
+   "kind": "cmc",
+   "scope": "all",
+   "title": "Widen an in-process control limit or delete an in-process test",
+   "help": "An in-process limit becomes wider, or an in-process test is removed.",
+   "keywords": "IPC in-process widen relax delete remove test",
+   "evidence": [
+    "dp-ctrl",
+    "dp-proc",
+    "dp-batch",
+    "qos"
+   ]
+  },
+  {
+   "id": "hold-time",
+   "group": "process",
+   "kind": "cmc",
+   "scope": "all",
+   "title": "Extend a hold time for an intermediate or bulk product",
+   "help": "A longer approved holding period between manufacturing steps, supported by hold-time data.",
+   "keywords": "hold time holding bulk intermediate storage period",
+   "evidence": [
+    "dp-proc",
+    "dp-ctrl",
+    "dp-stab"
+   ]
+  },
+  {
+   "id": "design-space-within",
+   "group": "process",
+   "kind": "cmc",
+   "scope": "all",
+   "title": "Move a process parameter within an approved design space",
+   "help": "ICH Q8: working within an approved design space is not regarded as a change. The move is managed in the quality system.",
+   "keywords": "design space QbD ICH Q8 parameter range operating",
+   "evidence": []
+  },
+  {
+   "id": "design-space-new",
+   "group": "process",
+   "kind": "cmc",
+   "scope": "all",
+   "title": "Introduce a new design space or expand an approved one",
+   "help": "A new multivariate range for a unit operation or an analytical procedure, or an extension of an approved one.",
+   "keywords": "design space QbD ICH Q8 MODR new expand",
+   "evidence": [
+    "dp-dev",
+    "dp-proc",
+    "dp-ctrl",
+    "qos"
+   ]
+  },
+  {
+   "id": "rtrt",
+   "group": "process",
+   "kind": "cmc",
+   "scope": "all",
+   "title": "Introduce real-time release testing in place of end-product testing",
+   "help": "Release decisions based on in-process data (for example NIR or a process model) instead of testing the finished batch.",
+   "keywords": "RTRT PAT real time release NIR model",
+   "evidence": [
+    "dp-dev",
+    "dp-ctrl",
+    "dp-spec",
+    "dp-meth",
+    "dp-methval",
+    "qos"
+   ]
+  },
+  {
+   "id": "continuous-mfg",
+   "group": "process",
+   "kind": "cmc",
+   "scope": "small",
+   "title": "Switch from batch to continuous manufacturing (ICH Q13)",
+   "help": "The drug product moves from a batch process to a continuous process with new control strategy and equipment.",
+   "keywords": "continuous manufacturing ICH Q13 CM line",
+   "evidence": [
+    "dp-dev",
+    "dp-proc",
+    "dp-ctrl",
+    "dp-val",
+    "dp-batch",
+    "dp-stab",
+    "facilities",
+    "qos"
+   ]
+  },
+  {
+   "id": "excipient-supplier",
+   "group": "composition",
+   "kind": "cmc",
+   "scope": "all",
+   "title": "Change the supplier of an excipient (same grade and specification)",
+   "help": "A new supplier of the same excipient grade, meeting the same specification.",
+   "keywords": "excipient vendor supplier source grade",
+   "evidence": [
+    "dp-exc"
+   ]
+  },
+  {
+   "id": "coating-weight",
+   "group": "composition",
+   "kind": "cmc",
+   "scope": "small",
+   "title": "Change the coating weight of tablets or the weight of the capsule shell",
+   "help": "More or less film coat, or a heavier or lighter capsule shell, with no other composition change.",
+   "keywords": "film coat coating weight capsule shell",
+   "evidence": [
+    "dp-comp",
+    "dp-formula",
+    "dp-dev",
+    "dp-spec",
+    "dp-stab"
+   ]
+  },
+  {
+   "id": "score-line",
+   "group": "composition",
+   "kind": "cmc",
+   "scope": "small",
+   "title": "Add or delete a score line on tablets",
+   "help": "A break line is added or removed. A functional score line lets patients split the tablet into equal doses.",
+   "keywords": "score line break mark split tablet",
+   "evidence": [
+    "dp-comp",
+    "dp-dev",
+    "dp-spec",
+    "dp-batch"
+   ]
+  },
+  {
+   "id": "tablet-shape",
+   "group": "composition",
+   "kind": "cmc",
+   "scope": "small",
+   "title": "Change the shape or dimensions of tablets or capsules (same composition and mass)",
+   "help": "A new tablet shape or size with the same composition and mean mass.",
+   "keywords": "shape dimensions size tooling punch",
+   "evidence": [
+    "dp-comp",
+    "dp-dev",
+    "dp-spec"
+   ]
+  },
+  {
+   "id": "tse-excipient",
+   "group": "composition",
+   "kind": "cmc",
+   "scope": "all",
+   "title": "Replace an excipient of animal origin with one of vegetable or synthetic origin",
+   "help": "For example animal-derived magnesium stearate or gelatin replaced by a non-animal grade, removing a TSE risk.",
+   "keywords": "TSE BSE animal origin vegetable synthetic gelatin stearate",
+   "evidence": [
+    "dp-exc",
+    "advent"
+   ]
+  },
+  {
+   "id": "dosage-form-new",
+   "group": "composition",
+   "kind": "efficacy",
+   "scope": "all",
+   "title": "Add a new pharmaceutical form (for example an oral solution next to tablets)",
+   "help": "A new dosage form of the same active substance under the same product name.",
+   "keywords": "new dosage form pharmaceutical form line extension",
+   "evidence": [
+    "dp-comp",
+    "dp-dev",
+    "dp-proc",
+    "dp-spec",
+    "dp-stab",
+    "be",
+    "clin-ov"
+   ]
+  },
+  {
+   "id": "nitrosamine-control",
+   "group": "spec",
+   "kind": "cmc",
+   "scope": "small",
+   "title": "Add a test and limit for a nitrosamine impurity",
+   "help": "A new specification test for an N-nitrosamine, for example after a risk assessment found a risk.",
+   "keywords": "nitrosamine NDSRI NDMA impurity mutagenic limit",
+   "evidence": [
+    "ds-spec",
+    "dp-spec",
+    "dp-meth",
+    "dp-methval",
+    "dp-batch",
+    "dp-just"
+   ]
+  },
+  {
+   "id": "excipient-spec",
+   "group": "spec",
+   "kind": "cmc",
+   "scope": "all",
+   "title": "Change an excipient specification",
+   "help": "Tighten, add, delete or widen a test or limit in an excipient specification.",
+   "keywords": "excipient specification limit test",
+   "evidence": [
+    "dp-exc"
+   ]
+  },
+  {
+   "id": "skip-testing",
+   "group": "spec",
+   "kind": "cmc",
+   "scope": "all",
+   "title": "Introduce periodic (skip-lot) testing for a specification test",
+   "help": "A test is done on selected batches only, justified by data, instead of on every batch.",
+   "keywords": "skip lot periodic testing reduced testing frequency",
+   "evidence": [
+    "dp-spec",
+    "dp-just",
+    "dp-batch"
+   ]
+  },
+  {
+   "id": "method-minor",
+   "group": "spec",
+   "kind": "cmc",
+   "scope": "all",
+   "title": "Make a minor adjustment to an approved analytical procedure",
+   "help": "Parameters within allowed adjustments, such as column length or temperature; same technique and principle.",
+   "keywords": "method adjustment column temperature flow minor analytical",
+   "evidence": [
+    "dp-meth",
+    "dp-methval"
+   ]
+  },
+  {
+   "id": "micro-rapid",
+   "group": "spec",
+   "kind": "cmc",
+   "scope": "all",
+   "title": "Replace a compendial microbiological test with a rapid microbiological method",
+   "help": "An alternative, validated rapid method (for example ATP bioluminescence) replaces the compendial test.",
+   "keywords": "rapid microbiological method RMM sterility bioburden alternative",
+   "evidence": [
+    "dp-meth",
+    "dp-methval",
+    "dp-spec"
+   ]
+  },
+  {
+   "id": "cc-supplier",
+   "group": "container",
+   "kind": "cmc",
+   "scope": "all",
+   "title": "Add or change the supplier of a primary packaging component (same material and specification)",
+   "help": "A new manufacturer of the same bottle, stopper or blister foil, meeting the same specification.",
+   "keywords": "packaging supplier vendor component bottle stopper foil",
+   "evidence": [
+    "dp-cc"
+   ]
+  },
+  {
+   "id": "cc-device",
+   "group": "container",
+   "kind": "cmc",
+   "scope": "all",
+   "title": "Add or change a measuring or administration device supplied with the product",
+   "help": "A co-packaged spoon, oral syringe, cup or pen needle that is not part of the primary container.",
+   "keywords": "measuring device spoon syringe cup co-packaged device",
+   "evidence": [
+    "dp-cc",
+    "dp-dev"
+   ]
+  },
+  {
+   "id": "cc-noncontact",
+   "group": "container",
+   "kind": "cmc",
+   "scope": "all",
+   "title": "Change a primary packaging part that does not touch the product",
+   "help": "For example a code ring, a flip-off seal or a needle shield.",
+   "keywords": "non-contact flip-off seal code ring needle shield",
+   "evidence": [
+    "dp-cc"
+   ]
+  },
+  {
+   "id": "ds-retest",
+   "group": "stability",
+   "kind": "cmc",
+   "scope": "all",
+   "title": "Extend the drug substance re-test period",
+   "help": "A longer re-test period (or shelf life) for the drug substance, supported by stability data.",
+   "keywords": "retest period API drug substance shelf life extension",
+   "evidence": [
+    "ds-stab",
+    "qos"
+   ]
+  },
+  {
+   "id": "in-use-shelf-life",
+   "group": "stability",
+   "kind": "labeling",
+   "scope": "all",
+   "title": "Change the shelf life after first opening, dilution or reconstitution",
+   "help": "The in-use period on the label changes, for example from 28 days to 56 days after opening.",
+   "keywords": "in-use after opening reconstitution dilution period",
+   "evidence": [
+    "dp-stabsum",
+    "dp-stab"
+   ]
+  },
+  {
+   "id": "ds-storage",
+   "group": "stability",
+   "kind": "cmc",
+   "scope": "all",
+   "title": "Change the storage conditions of the drug substance",
+   "help": "The drug substance gets different storage conditions, for example a lower temperature.",
+   "keywords": "API storage temperature drug substance",
+   "evidence": [
+    "ds-stab"
+   ]
+  },
+  {
+   "id": "lab-new-route",
+   "group": "labeling",
+   "kind": "efficacy",
+   "scope": "all",
+   "title": "Add a new route of administration",
+   "help": "For example subcutaneous use for a product approved for intravenous use.",
+   "keywords": "route administration subcutaneous intramuscular new route",
+   "evidence": [
+    "dp-dev",
+    "clin-ov",
+    "clin-sum",
+    "csr"
+   ]
+  },
+  {
+   "id": "lab-brand-name",
+   "group": "labeling",
+   "kind": "admin",
+   "scope": "all",
+   "title": "Change the product's brand (invented) name",
+   "help": "The product keeps everything else but gets a new trade name.",
+   "keywords": "brand name trade name invented name rename",
+   "evidence": []
+  },
+  {
+   "id": "lab-rmp",
+   "group": "labeling",
+   "kind": "labeling",
+   "scope": "all",
+   "title": "Update the risk management plan or additional risk-minimisation measures",
+   "help": "Changes to the RMP, or to educational material and other additional measures.",
+   "keywords": "RMP risk management plan REMS educational material",
+   "evidence": []
+  },
+  {
+   "id": "lab-psusa",
+   "group": "labeling",
+   "kind": "labeling",
+   "scope": "all",
+   "title": "Implement safety wording agreed after a periodic safety report or signal assessment",
+   "help": "Wording the authority has already agreed, for example after a PSUR or PSUSA, or a signal recommendation.",
+   "keywords": "PSUR PSUSA PRAC signal agreed wording class labelling",
+   "evidence": [
+    "clin-ov"
+   ]
+  },
+  {
+   "id": "lab-delete-indication",
+   "group": "labeling",
+   "kind": "labeling",
+   "scope": "all",
+   "title": "Delete an indication",
+   "help": "An approved indication is removed from the product information.",
+   "keywords": "delete remove indication withdraw",
+   "evidence": []
+  },
+  {
+   "id": "ec-define",
+   "group": "protocol",
+   "kind": "cmc",
+   "scope": "all",
+   "title": "Define established conditions for an approved product (ICH Q12)",
+   "help": "Propose which elements of the dossier are established conditions and how changes to them will be reported.",
+   "keywords": "established conditions EC ICH Q12 PLCM lifecycle",
+   "evidence": [
+    "plcm",
+    "qos"
+   ]
+  },
+  {
+   "id": "plcm-update",
+   "group": "protocol",
+   "kind": "cmc",
+   "scope": "all",
+   "title": "Update the product lifecycle management (PLCM) document",
+   "help": "Change the PLCM: for example lower the reporting category of an established condition, or add a commitment.",
+   "keywords": "PLCM product lifecycle management ICH Q12",
+   "evidence": [
+    "plcm"
+   ]
+  },
+  {
+   "id": "non-ec-change",
+   "group": "protocol",
+   "kind": "cmc",
+   "scope": "all",
+   "title": "Change something that is not an established condition",
+   "help": "Under ICH Q12, changes to elements that are not established conditions are managed in the quality system without reporting.",
+   "keywords": "not established condition supportive information PQS ICH Q12",
+   "evidence": []
+  },
+  {
+   "id": "pacmp-change",
+   "group": "protocol",
+   "kind": "cmc",
+   "scope": "all",
+   "title": "Change or delete an approved comparability protocol (PACMP)",
+   "help": "Revise the studies or acceptance criteria of an approved protocol, or delete it.",
+   "keywords": "PACMP comparability protocol change delete revise",
+   "evidence": [
+    "qos"
+   ]
+  },
+  {
+   "id": "bio-scale",
+   "group": "biologics",
+   "kind": "cmc",
+   "scope": "bio",
+   "title": "Scale up cell culture or fermentation of a biological drug substance",
+   "help": "A larger bioreactor, more bioreactors or a longer run for the same process.",
+   "keywords": "bioreactor scale up upstream cell culture fermentation",
+   "evidence": [
+    "ds-proc",
+    "ds-crit",
+    "ds-val",
+    "ds-dev",
+    "ds-batch",
+    "ds-stab"
+   ]
+  },
+  {
+   "id": "bio-media",
+   "group": "biologics",
+   "kind": "cmc",
+   "scope": "bio",
+   "title": "Change a raw material or cell culture medium component",
+   "help": "For example a new medium supplier, a chemically defined medium, or removing serum.",
+   "keywords": "media raw material serum supplement feed upstream",
+   "evidence": [
+    "ds-mat",
+    "ds-dev",
+    "ds-batch",
+    "advent"
+   ]
+  },
+  {
+   "id": "bio-resin",
+   "group": "biologics",
+   "kind": "cmc",
+   "scope": "bio",
+   "title": "Change the lifetime or supplier of a chromatography resin",
+   "help": "Extend the number of cycles a resin may be used, or move to a resin from another supplier.",
+   "keywords": "resin lifetime cycles chromatography supplier downstream",
+   "evidence": [
+    "ds-proc",
+    "ds-val",
+    "ds-dev"
+   ]
+  },
+  {
+   "id": "bio-potency",
+   "group": "biologics",
+   "kind": "cmc",
+   "scope": "bio",
+   "title": "Change the potency assay of a biological product",
+   "help": "Replace or change the bioassay used to measure biological activity.",
+   "keywords": "potency bioassay cell-based binding assay biological activity",
+   "evidence": [
+    "ds-meth",
+    "ds-methval",
+    "dp-meth",
+    "dp-methval",
+    "ds-ref"
+   ]
+  },
+  {
+   "id": "bio-formulation",
+   "group": "biologics",
+   "kind": "cmc",
+   "scope": "bio",
+   "title": "Change the formulation of a biological product",
+   "help": "A new buffer, excipient or concentration for the biological drug product.",
+   "keywords": "formulation buffer excipient concentration biologic",
+   "evidence": [
+    "dp-comp",
+    "dp-dev",
+    "dp-spec",
+    "dp-batch",
+    "dp-stab",
+    "ds-dev"
+   ]
+  },
+  {
+   "id": "bio-adventitious",
+   "group": "biologics",
+   "kind": "cmc",
+   "scope": "bio",
+   "title": "Update the adventitious agents safety evaluation",
+   "help": "New or replacement viral clearance or TSE studies in section 3.2.A.2.",
+   "keywords": "adventitious agents viral safety TSE clearance studies 3.2.A.2",
+   "evidence": [
+    "advent"
+   ]
+  },
+  {
+   "id": "admin-manufacturer-name",
+   "group": "admin",
+   "kind": "admin",
+   "scope": "all",
+   "title": "Change the name or address of a manufacturer (no move)",
+   "help": "The site stays where it is; only its name or postal address changes.",
+   "keywords": "manufacturer name address rename postal",
+   "evidence": [
+    "dp-mfr"
+   ]
+  },
+  {
+   "id": "admin-local-rep",
+   "group": "admin",
+   "kind": "admin",
+   "scope": "all",
+   "title": "Change the local representative, agent or pharmacovigilance contact",
+   "help": "For example a new local representative in a country, a new authorised agent or a new safety contact person.",
+   "keywords": "local representative agent QPPV contact person importer",
+   "evidence": []
+  },
+  {
+   "id": "admin-inn",
+   "group": "admin",
+   "kind": "admin",
+   "scope": "all",
+   "title": "Change the name of the active substance (for example a new INN)",
+   "help": "The substance itself is unchanged; its name changes.",
+   "keywords": "INN name active substance rename",
+   "evidence": []
+  },
+  {
+   "id": "admin-delete-presentation",
+   "group": "admin",
+   "kind": "admin",
+   "scope": "all",
+   "title": "Delete a strength or pack size",
+   "help": "A strength or pack size is withdrawn; others remain.",
+   "keywords": "delete strength pack size withdraw presentation",
+   "evidence": []
   }
  ]
 }

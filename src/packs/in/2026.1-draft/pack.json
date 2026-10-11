@@ -14,7 +14,8 @@
    "badge": "Record under GMP",
    "rule": "Implement and keep the record under GMP; mention it in the next submission.",
    "src": "pac24",
-   "at": "Reporting categories"
+   "at": "Reporting categories",
+   "tone": "letter"
   },
   {
    "id": "L3",
@@ -25,7 +26,8 @@
    "badge": "Do, then report in Q1",
    "rule": "Implement, then report in the annual notification in the first quarter of the next calendar year; supply data within 30 days if asked.",
    "src": "pac24",
-   "at": "Reporting categories"
+   "at": "Reporting categories",
+   "tone": "ar"
   },
   {
    "id": "CDSCO",
@@ -36,7 +38,8 @@
    "badge": "Ask CDSCO first",
    "rule": "Apply to CDSCO through SUGAM and implement only when CDSCO agrees.",
    "src": "cdsco",
-   "at": "Practice"
+   "at": "Practice",
+   "tone": "cbe30"
   },
   {
    "id": "L3SL",
@@ -47,7 +50,8 @@
    "badge": "Wait for approval",
    "rule": "A minor change, but shelf-life changes need a post-approval change application and approval before use.",
    "src": "pac24",
-   "at": "General notes"
+   "at": "General notes",
+   "tone": "cbe0"
   },
   {
    "id": "ADMIN",
@@ -58,7 +62,8 @@
    "badge": "Wait for approval",
    "rule": "Needs CDSCO approval before implementation; review takes about 30 days.",
    "src": "pac24",
-   "at": "Administrative changes"
+   "at": "Administrative changes",
+   "tone": "cbe0"
   },
   {
    "id": "L2",
@@ -69,7 +74,8 @@
    "badge": "Wait for approval",
    "rule": "Submit with supporting data; do not implement commercially before CDSCO approves.",
    "src": "pac24",
-   "at": "Reporting categories"
+   "at": "Reporting categories",
+   "tone": "cbe30"
   },
   {
    "id": "L1",
@@ -80,7 +86,8 @@
    "badge": "Wait for approval",
    "rule": "Submit a supplement with supporting data and the fee; implement only after CDSCO approves.",
    "src": "pac24",
-   "at": "Reporting categories"
+   "at": "Reporting categories",
+   "tone": "pas"
   },
   {
    "id": "NEWDRUG",
@@ -91,7 +98,8 @@
    "badge": "New application",
    "rule": "Apply for permission as a new drug (Form CT-18 or CT-21); CDSCO decides within 90 working days.",
    "src": "ndct",
-   "at": "Rules 2(w), 75 to 82"
+   "at": "Rules 2(w), 75 to 82",
+   "tone": "ext"
   }
  ],
  "conditions": {},
@@ -250,5 +258,13 @@
    "date": "2026-10-11",
    "text": "Draft what-if: levels for chemical drugs inferred from the FDA guidance, which uses the same three tests as the draft."
   }
- ]
+ ],
+ "filing": {
+  "shared": [
+   "L3"
+  ],
+  "apart": [
+   "REC"
+  ]
+ }
 }

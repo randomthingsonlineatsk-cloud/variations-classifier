@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import { useApp, go } from '../ctx.js';
-import { packFor, GROUP, CHANGES, READY, regionOf, searchChanges, categoryOf } from '../engine/packs.js';
+import { packFor, GROUP, CHANGES, READY, regionOf, searchChanges, categoryOf, regionsFor } from '../engine/packs.js';
 import { reachable } from '../engine/classify.js';
 import { newCase, addChange } from '../engine/model.js';
 import { Cat } from '../components/ui.jsx';
@@ -27,7 +27,8 @@ export default function Compare() {
   const list = useMemo(() => searchChanges(CHANGES, q).filter((c) => !group || c.group === group)
     .filter((c) => !diffOnly || new Set(READY.map((r) => lightest(r, c.id)?.implement)).size > 1), [q, group, diffOnly]);
   const open = async (c) => {
-    const k = newCase({ product, user, regions: READY, name: `${product.brandName}: ${c.title} (${READY.map((r) => regionOf(r).short).join(' vs ')})` });
+    const rs = regionsFor(product);
+    const k = newCase({ product, user, regions: rs, name: `${product.brandName}: ${c.title} (${rs.length > 3 ? `${rs.length} regions` : rs.map((r) => regionOf(r).short).join(' vs ')})` });
     addChange(k, c.id);
     await saveCase(k);
     go(`/case/${k.id}`);
@@ -35,7 +36,7 @@ export default function Compare() {
   return (
     <div className="page" style={{ maxWidth: 1200 }}>
       <h1>Compare regions</h1>
-      <p>The same change can be a notification in one region and need approval in another. This table shows every category each change can reach; open a change to answer the questions once and see both answers side by side.</p>
+      <p>The same change can be a notification in one region and need approval in another. This table shows every category each change can reach in the seven rule sets; open a change to answer the questions once and see every answer side by side.</p>
       <section className="panel" style={{ marginBottom: '1rem' }}>
         <h2 style={{ fontSize: 'var(--step-1)' }}>How the categories line up</h2>
         <div className="table-wrap">
@@ -51,7 +52,7 @@ export default function Compare() {
             </tbody>
           </table>
         </div>
-        <p className="small muted" style={{ marginBottom: 0 }}>India's "Ask CDSCO" means no codified category for chemical drugs in force. The US CBE-0 lets you distribute on receipt; the EU has no exact match (Type IA-IN is implemented before it is notified). The EU also has extensions and changes that need no variation at all.</p>
+        <p className="small muted" style={{ marginBottom: 0 }}>India's "Ask CDSCO" means no codified category for chemical drugs in force. The US CBE-0 lets you distribute on receipt; the EU has no exact match (Type IA-IN is implemented before it is notified). Switzerland mirrors the EU list with its own time limits (IA-IN within a month, IB after about 70 days). Canada's notifiable change exists only for biologics. Japan decides by what the approval form says, not by a list. WHO PQ defaults unlisted changes to major.</p>
       </section>
       <div className="grid-2 panel" style={{ marginBottom: '1rem' }}>
         <label className="field">Search<input type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="words such as site, shelf life" /></label>

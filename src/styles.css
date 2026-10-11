@@ -362,7 +362,7 @@ table.data tr.me td { font-weight: 600; }
 .cat { display: inline-flex; align-items: center; gap: .35rem; padding: .1rem .55rem; border-radius: 999px; font-weight: 700; font-size: var(--step--1); white-space: nowrap; color: var(--cc); background: color-mix(in srgb, var(--cc) 14%, var(--surface)); border: 1px solid color-mix(in srgb, var(--cc) 40%, transparent); }
 .cat::before { content: ''; width: .55rem; height: .55rem; border-radius: 50%; background: var(--cc); }
 .cat.big { font-size: var(--step-1); padding: .3rem .8rem; }
-.cat-LETTER { --cc: var(--c-letter); } .cat-AR { --cc: var(--c-ar); } .cat-CBE0 { --cc: var(--c-cbe0); } .cat-CBE30 { --cc: var(--c-cbe30); } .cat-PAS { --cc: var(--c-pas); } .cat-range { --cc: var(--ink-3); }
+.cat-range { --cc: var(--ink-3); }
 .ladder { display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; margin: .5rem 0; }
 .ladder span { height: 8px; border-radius: 4px; background: var(--surface-2); }
 .ladder span.on { background: var(--cc); }
@@ -413,9 +413,10 @@ table.data tr.me td { font-weight: 600; }
 .conditions .cond { padding: .45rem 0; border-top: 1px dashed var(--line); }
 .conditions .cond:first-of-type { border-top: 0; }
 .conditions .cond.next > p:first-child::before { content: 'Next: '; color: var(--accent); font-weight: 700; }
-.cat-NONE { --cc: var(--c-letter); } .cat-OTHER { --cc: var(--c-letter); } .cat-IA { --cc: var(--c-ar); } .cat-IAIN { --cc: var(--c-cbe0); } .cat-IB { --cc: var(--c-cbe30); } .cat-II { --cc: var(--c-pas); } .cat-EXT { --cc: #6b3fa0; }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .cat-EXT { --cc: #c3a3ee; } }
-:root[data-theme="dark"] .cat-EXT { --cc: #c3a3ee; }
+.tone-letter { --cc: var(--c-letter); } .tone-ar { --cc: var(--c-ar); } .tone-cbe0 { --cc: var(--c-cbe0); } .tone-cbe30 { --cc: var(--c-cbe30); } .tone-pas { --cc: var(--c-pas); } .tone-ext { --cc: var(--c-ext); }
+:root { --c-ext: #6b3fa0; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --c-ext: #c3a3ee; } }
+:root[data-theme="dark"] { --c-ext: #c3a3ee; }
 
 .steps { display: flex; flex-wrap: wrap; gap: .25rem; list-style: none; padding: 0; margin: 0; counter-reset: st; }
 .steps li { font-size: var(--step--1); padding: .15rem .55rem; border-radius: 999px; border: 1px solid var(--line); color: var(--ink-3); }
