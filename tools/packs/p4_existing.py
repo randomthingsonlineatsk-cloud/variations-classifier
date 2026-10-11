@@ -351,7 +351,7 @@ def eu_entries(old):
                              prior=O('II', gl, 'Q.II.g.7(a)', 'The PLCM sets prior approval: Type II.'),
                              moderate=O('IB', gl, 'Q.II.g.7(d)', 'The PLCM sets a moderate notification: Type IB.'),
                              low=O('IA', gl, 'Q.II.g.7(b)', 'The PLCM sets a low notification: Type IA (or IA-IN where the PLCM says so, Q.II.g.7(c)).')),
-                           O('NONE', 'q12', 'Chapter 3.2.3', 'Changes to elements that are not established conditions are managed in the quality system with no variation.'))
+                           O('NONE', 'q12', 'Chapter 3', 'Changes to elements that are not established conditions are managed in the quality system with no variation.'))
     E['pacmp-change'] = C('pacmpAction',
                           delete=A(['Q.II.g.3:1'], O('IA', gl, 'Q.II.g.3', 'Deleting an approved PACMP is Type IA.'), z('Q.II.g.z', 'A condition for Type IA is not met.')),
                           minor=O('IB', gl, 'Q.II.g.4(b)', 'A minor change that does not alter the strategy of the PACMP is Type IB.'),

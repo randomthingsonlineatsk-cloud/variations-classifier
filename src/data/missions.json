@@ -467,6 +467,173 @@
     }
    ],
    "debrief": "Under the draft, a change with minimal potential to affect quality is Level III: implement, then report it in the annual submission in the first quarter of the next calendar year. The app reads the potential from the FDA entry, because the draft uses the same three tests; final rules may differ."
+  },
+  {
+   "id": 21,
+   "region": "ca",
+   "title": "A second tablet site for Canada",
+   "product": "nce-tablet",
+   "submitDate": "2026-11-16",
+   "timeline": "notify",
+   "brief": "Halcyon Ridge adds a second site to make Ostrevia tablets for Canada. The site holds a Canadian establishment licence listing, uses the same process and equipment class, has completed process validation, and no specification changes. Ostrevia is not sterile. The change is implemented on 16 November 2026.",
+   "goal": "Classify the change under Health Canada's quality guidance, list the sections and give the date the Level III form should be filed.",
+   "changes": [
+    {
+     "changeId": "dp-site-move",
+     "note": "Second drug product site",
+     "facts": {
+      "HC-A1.23:1": "yes",
+      "HC-A1.23:2": "yes",
+      "HC-A1.23:3": "yes",
+      "HC-A1.23:4": "yes",
+      "HC-A1.23:5": "yes"
+     }
+    }
+   ],
+   "debrief": "Every condition for Level III is met, so the site change is a Level III notice of change. For pharmaceutical quality changes Health Canada recommends filing the Level III form at implementation, so the date is the implementation date. If one condition failed, the change would move up to a Level I supplement."
+  },
+  {
+   "id": 22,
+   "region": "ca",
+   "title": "Biologic: a wider specification limit",
+   "product": "mab-infusion",
+   "submitDate": "2026-11-23",
+   "timeline": "earliestUse",
+   "brief": "Lumenfield wants to widen the acceptance criterion for charge variants of Arventa drug substance, based on clinical experience. The filing goes to Health Canada on 23 November 2026.",
+   "goal": "Classify the change for a biologic in Canada and give the earliest date of use if Health Canada meets its review target.",
+   "changes": [
+    {
+     "changeId": "spec-relax",
+     "note": "Wider acceptance criterion for charge variants",
+     "facts": {}
+    }
+   ],
+   "debrief": "For biologics, relaxing an acceptance criterion is a Level II notifiable change (quality guidance for biologics, Table 25f). Health Canada's review target is 90 days, after which it issues a No Objection Letter. Pharmaceuticals have no notifiable change: there, relaxing a limit is a Level I supplement unless it matches compendial or ICH criteria."
+  },
+  {
+   "id": 23,
+   "region": "ch",
+   "title": "Swiss shelf life for an injection",
+   "product": "sterile-injectable",
+   "submitDate": "2026-11-30",
+   "timeline": "earliestUse",
+   "brief": "Meridale has 36 months of real-time data, under the approved protocol, supporting a longer shelf life for Nelvaprox vials in Switzerland. All batches meet the specification and there are no unexpected trends. The notification goes to Swissmedic on 30 November 2026.",
+   "goal": "Classify the change on the Swiss list, list the sections and give the earliest implementation date.",
+   "changes": [
+    {
+     "changeId": "shelf-life-extend",
+     "note": "Shelf life from 24 to 36 months",
+     "facts": {
+      "realTimeData": "yes",
+      "Q.II.f.1:3": "yes"
+     }
+    }
+   ],
+   "debrief": "The Swiss list follows the EU: a real-time extension is Type IA-IN only for an immediate-release film-coated tablet. Nelvaprox is a solution for injection, so it is Type IB. In Switzerland a Type IB is accepted if Swissmedic does not object within 70 days, not 30 as in the EU."
+  },
+  {
+   "id": 24,
+   "region": "ch",
+   "title": "A new company name in Switzerland",
+   "product": "nce-tablet",
+   "submitDate": "2026-12-01",
+   "timeline": "notify",
+   "brief": "Halcyon Ridge Pharma (Schweiz) AG renames itself on 1 December 2026. It stays the same legal entity at the same address.",
+   "goal": "Classify the change and give the latest date to notify Swissmedic.",
+   "changes": [
+    {
+     "changeId": "admin-name-address",
+     "note": "New company name, same legal entity",
+     "facts": {
+      "E.4:1": "yes"
+     }
+    }
+   ],
+   "debrief": "A new name for the same legal entity is Type IA-IN (E.4(a)). In the EU that means notifying immediately; in Switzerland a Type IA-IN is notified no later than one month after implementation (Swissmedic Q&A 1.3)."
+  },
+  {
+   "id": 25,
+   "region": "jp",
+   "title": "Japan: a batch size marked as minor",
+   "product": "nce-tablet",
+   "submitDate": "2026-12-07",
+   "timeline": "notify",
+   "brief": "Halcyon Ridge Japan increases the Ostrevia batch size from 300,000 to 600,000 tablets with the same equipment. In the approval form, the batch size is written as a minor change item. The change is made on 7 December 2026.",
+   "goal": "Classify the change in Japan and give the latest date to file.",
+   "changes": [
+    {
+     "changeId": "dp-scale",
+     "note": "Batch size 300,000 to 600,000 tablets",
+     "facts": {
+      "jpItem": "minor"
+     }
+    }
+   ],
+   "debrief": "The approval form decides: the batch size is a minor change item, so the change is a minor change notification, filed within 30 days after the change. Had the batch size been written as an approved matter, it would need a partial change approval."
+  },
+  {
+   "id": 26,
+   "region": "jp",
+   "title": "Japan: a wider dissolution limit",
+   "product": "nce-tablet",
+   "submitDate": "2026-12-14",
+   "timeline": "earliestUse",
+   "brief": "Halcyon Ridge Japan wants to widen the dissolution acceptance criterion of Ostrevia. A colleague points out that the specification line is marked as a minor change item in the approval form. The application goes in on 14 December 2026.",
+   "goal": "Classify the change and give the date to plan around (the typical review time from the 2023 survey).",
+   "changes": [
+    {
+     "changeId": "spec-relax",
+     "note": "Dissolution Q from 80% to 75% at 30 minutes",
+     "facts": {
+      "jpItem": "minor"
+     }
+    }
+   ],
+   "debrief": "Article 47(2) of the Enforcement Regulations excludes deleting or changing specifications from the minor route, whatever the form marks. The change needs a partial change approval. The 2023 MHLW survey found a median of about 6 months for chemical drugs; it is not a target."
+  },
+  {
+   "id": 27,
+   "region": "who",
+   "title": "WHO PQ: a second manufacturing site",
+   "product": "pq-antimalarial",
+   "submitDate": "2026-12-01",
+   "timeline": "earliestUse",
+   "brief": "Sunpath adds a second site for manufacturing Malvaren dispersible tablets. A stringent regulatory authority inspected the site 18 months ago with a satisfactory outcome. The variation goes to PQT on 1 December 2026.",
+   "goal": "Classify the change under the WHO guideline and give the earliest implementation date.",
+   "changes": [
+    {
+     "changeId": "dp-site-move",
+     "note": "Second manufacturing site, Unit III",
+     "facts": {
+      "pqInspected": "yes"
+     }
+    }
+   ],
+   "debrief": "A new manufacturing site inspected by WHO or a stringent authority in the last three years is a minor variation (28c). WHO acknowledges within 7 days; the change can be implemented if WHO has not started correspondence within 60 days of the acknowledgement. Without a recent inspection the change would be major."
+  },
+  {
+   "id": 28,
+   "region": "who",
+   "title": "WHO PQ: nitrosamines and a tighter limit",
+   "product": "pq-antimalarial",
+   "submitDate": "2026-12-08",
+   "timeline": "earliestUse",
+   "related": false,
+   "brief": "After a nitrosamine risk assessment, Sunpath adds an NDSRI test and limit to the Malvaren specification on 8 December 2026. Separately, it tightens the limit for water content. The two changes are not related.",
+   "goal": "Classify both changes, plan the filings and give the earliest date for the main filing.",
+   "changes": [
+    {
+     "changeId": "nitrosamine-control",
+     "note": "NDSRI test and limit",
+     "facts": {}
+    },
+    {
+     "changeId": "spec-tighten",
+     "note": "Water content from 5.0% to 4.0%",
+     "facts": {}
+    }
+   ],
+   "debrief": "PQT asks for nitrosamine controls as an immediate notification, with a declaration on nitrosamine risk; the change is implemented as it is notified. Tightening an FPP limit is an annual notification (37c), which goes in the yearly group. The main filing is the immediate notification."
   }
  ]
 }

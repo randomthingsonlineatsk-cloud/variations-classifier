@@ -3,16 +3,16 @@ import { SCHEMA_VERSION, uid } from './model.js';
 
 export const FILE_KIND = 'variations-classifier/project';
 
-export function exportProject({ user, cases, attempts, products, lessons }) {
+export function exportProject({ user, cases, attempts, products, lessons, lifecycle = [] }) {
   return JSON.stringify({
     kind: FILE_KIND, schema: SCHEMA_VERSION, exportedAt: new Date().toISOString(),
     notice: 'Training only. Fictional products and companies; not regulatory advice.',
     user: { userId: user?.userId ?? null, classId: user?.classId ?? null, displayName: user?.displayName ?? '' },
-    cases, attempts, products, lessons: lessons ?? {},
+    cases, attempts, products, lessons: lessons ?? {}, lifecycle,
   }, null, 2);
 }
 
-export function parseProjectFile(text, user, existing = { cases: new Set(), attempts: new Set(), products: new Set() }) {
+export function parseProjectFile(text, user, existing = { cases: new Set(), attempts: new Set(), products: new Set(), lifecycle: new Set() }) {
   let d;
   try { d = JSON.parse(text); } catch { throw new Error('This file is not valid JSON.'); }
   if (d?.kind !== FILE_KIND) throw new Error('This is not a Variations Classifier project file.');
@@ -24,6 +24,7 @@ export function parseProjectFile(text, user, existing = { cases: new Set(), atte
     attempts: (d.attempts ?? []).map((a) => own(fresh(a, existing.attempts, 'a'))),
     products: (d.products ?? []).map((p) => own(p)),
     lessons: d.lessons ?? {},
+    lifecycle: (d.lifecycle ?? []).map((x) => own(fresh(x, existing.lifecycle ?? new Set(), x.kind ?? 'doc'))),
   };
 }
 

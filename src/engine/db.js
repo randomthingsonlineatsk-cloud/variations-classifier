@@ -1,7 +1,7 @@
 // Minimal IndexedDB wrapper. Everything stays in the user's browser.
 const DB_NAME = 'variations-classifier';
-const DB_VERSION = 1;
-const STORES = { cases: 'id', attempts: 'id', products: 'id', meta: 'key' };
+const DB_VERSION = 2;
+const STORES = { cases: 'id', attempts: 'id', products: 'id', meta: 'key', lifecycle: 'id' };
 
 let dbPromise = null;
 function open() {
@@ -46,7 +46,7 @@ export async function getMeta(key, fallback = null) {
 }
 export const setMeta = (key, value) => db.put('meta', { key, value });
 
-// Local identity. classId stays null until classroom mode (Phase 4).
+// Local identity. classId is set when the learner joins a class (classroom mode).
 export async function getUser() {
   let u = await getMeta('user');
   if (!u) {

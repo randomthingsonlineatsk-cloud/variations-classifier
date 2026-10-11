@@ -6,6 +6,16 @@
    "def": "Abbreviated new drug application, for a generic. Changes follow 314.70 through 314.97; labeling follows the reference listed drug."
   },
   {
+   "term": "Annex 7 TPLRO",
+   "region": "Switzerland",
+   "def": "The Swiss list of variations, revised from 1 February 2026 and harmonised as far as possible with the EU list."
+  },
+  {
+   "term": "Annual notification (AN)",
+   "region": "WHO PQ",
+   "def": "A change notified within 12 months of implementation, usually in a yearly group."
+  },
+  {
    "term": "Annual report (AR)",
    "region": "US",
    "def": "The yearly report to an approved application. Minor changes are made first and described in it; it is due within 60 days of the anniversary of approval (21 CFR 314.81(b)(2))."
@@ -14,6 +24,11 @@
    "term": "Annual update",
    "region": "EU",
    "def": "One notification of the Type IA changes made over up to 12 months."
+  },
+  {
+   "term": "Approved matters",
+   "region": "Japan",
+   "def": "The legally binding entries of the Japanese approval form (Module 1.2)."
   },
   {
    "term": "Article 61(3) notification",
@@ -46,9 +61,19 @@
    "def": "FDA's inspection of a site against current good manufacturing practice. Whether a new site has a satisfactory one for the operation drives the category of a site move."
   },
   {
+   "term": "Change plan",
+   "region": "Japan",
+   "def": "Japan's post-approval change management protocol: confirmed in step 1, then changes are notified in step 2."
+  },
+  {
    "term": "Clock stop",
    "region": "EU",
    "def": "The pause in an assessment while the holder answers the authority's questions."
+  },
+  {
+   "term": "Comparability exercise",
+   "region": "ICH",
+   "def": "The comparison of a biological product before and after a manufacturing change (ICH Q5E)."
   },
   {
    "term": "Comparability protocol",
@@ -64,6 +89,11 @@
    "term": "Efficacy supplement",
    "region": "US",
    "def": "A supplement with clinical data, for example a new indication or population."
+  },
+  {
+   "term": "Established condition (EC)",
+   "region": "ICH",
+   "def": "A legally binding element of the dossier; changing it needs a regulatory submission in the category set by its risk (ICH Q12)."
   },
   {
    "term": "Established conditions (ECs)",
@@ -111,9 +141,24 @@
    "def": "Several related variations to one authorisation in one submission; the group follows its highest type (Article 7)."
   },
   {
+   "term": "Immediate notification (IN)",
+   "region": "WHO PQ",
+   "def": "A change implemented and notified at once; accepted unless WHO objects."
+  },
+  {
+   "term": "Level I supplement (Canada)",
+   "region": "Canada",
+   "def": "A change with substantial potential to affect the product, filed as an SNDS or SANDS; implemented only after a new Notice of Compliance."
+  },
+  {
    "term": "Level I, II, III, IV",
    "region": "India",
    "def": "PAC/2024 levels: supplement and notifiable change need approval; annual notification is reported in the first quarter; record of change is kept under GMP."
+  },
+  {
+   "term": "Level III notice of change",
+   "region": "Canada",
+   "def": "A minor change implemented without prior review and then reported with the Level III form."
   },
   {
    "term": "Major change",
@@ -121,9 +166,24 @@
    "def": "A change with substantial potential to have an adverse effect on the product; needs a prior approval supplement."
   },
   {
+   "term": "Major variation (Vmaj)",
+   "region": "WHO PQ",
+   "def": "Needs WHO's letter of acceptance before implementation."
+  },
+  {
    "term": "Minor change",
    "region": "US",
    "def": "A change with minimal potential for an adverse effect; reported in the annual report."
+  },
+  {
+   "term": "Minor change notification",
+   "region": "Japan",
+   "def": "Notification within 30 days after changing an item marked as a minor change item in the approval form."
+  },
+  {
+   "term": "Minor variation (Vmin)",
+   "region": "WHO PQ",
+   "def": "Implemented if WHO has not started correspondence within 60 days of acknowledging it."
   },
   {
    "term": "Moderate change",
@@ -141,9 +201,24 @@
    "def": "When related changes are filed together, they take the category of the strictest one (guidance section XII)."
   },
   {
+   "term": "Multiple application",
+   "region": "Switzerland",
+   "def": "Several variations for one product filed together and processed on the longest time limit."
+  },
+  {
    "term": "NDA",
    "region": "US",
    "def": "New drug application, including 505(b)(2) applications. Changes follow 21 CFR 314.70."
+  },
+  {
+   "term": "No Objection Letter (NOL)",
+   "region": "Canada",
+   "def": "Health Canada's letter that allows a notifiable change to be implemented."
+  },
+  {
+   "term": "Notifiable change (NC)",
+   "region": "Canada",
+   "def": "A Level II quality change for biologics and radiopharmaceuticals, implemented after a No Objection Letter; review target 90 days."
   },
   {
    "term": "PAC/2024",
@@ -154,6 +229,11 @@
    "term": "PACMP",
    "region": "ICH",
    "def": "Post-approval change management protocol (ICH Q12). In the US, a comparability protocol."
+  },
+  {
+   "term": "Partial change approval",
+   "region": "Japan",
+   "def": "Approval needed before changing an approved matter in the Japanese approval form."
   },
   {
    "term": "PDUFA",
@@ -199,6 +279,11 @@
    "term": "Super-grouping",
    "region": "EU",
    "def": "The same Type IA or IA-IN change for several authorisations of the same holder in one notification (Article 7a)."
+  },
+  {
+   "term": "Supportive information",
+   "region": "ICH",
+   "def": "Dossier content that is not an established condition; changes are managed in the quality system."
   },
   {
    "term": "Tell and do",
