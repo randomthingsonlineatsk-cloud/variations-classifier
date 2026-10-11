@@ -39,7 +39,7 @@ export default function Compare() {
       <p>The same change can be a notification in one region and need approval in another. This table shows every category each change can reach in the seven rule sets; open a change to answer the questions once and see every answer side by side.</p>
       <section className="panel" style={{ marginBottom: '1rem' }}>
         <h2 style={{ fontSize: 'var(--step-1)' }}>How the categories line up</h2>
-        <div className="table-wrap">
+        <div className="table-wrap" tabIndex={0}>
           <table className="data">
             <thead><tr><th>When you can use the change</th>{READY.map((r) => <th key={r}>{regionOf(r).label}</th>)}</tr></thead>
             <tbody>
@@ -69,7 +69,7 @@ export default function Compare() {
         <label className="row small" style={{ alignSelf: 'end' }}><input type="checkbox" checked={diffOnly} onChange={(e) => setDiffOnly(e.target.checked)} /> Only changes whose lightest route differs in timing</label>
       </div>
       <p className="small muted" aria-live="polite">{list.length} change(s).</p>
-      <div className="table-wrap">
+      <div className="table-wrap" tabIndex={0}>
         <table className="data compare">
           <thead><tr><th>Change</th>{READY.map((r) => <th key={r}>{regionOf(r).label}</th>)}<th /></tr></thead>
           <tbody>
