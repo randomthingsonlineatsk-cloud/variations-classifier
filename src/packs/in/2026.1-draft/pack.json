@@ -257,6 +257,11 @@
    "edition": "2026.1-draft",
    "date": "2026-10-11",
    "text": "Draft what-if: levels for chemical drugs inferred from the FDA guidance, which uses the same three tests as the draft."
+  },
+  {
+   "edition": "2026.1-draft",
+   "date": "2026-11-09",
+   "text": "Biologics: every change now has its PAC/2024 (v1.2) row, with the lower category when the row conditions are met; changes that only exist for chemical drugs say that PAC/2024 has no row. Corrected drug product process changes (DP 40: notifiable, not supplement) and in-process limits (DS 15)."
   }
  ],
  "filing": {

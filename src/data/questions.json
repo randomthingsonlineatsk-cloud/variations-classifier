@@ -657,5 +657,54 @@
  "whoMinorU": {
   "text": "Will you justify the change as an unclassified minor variation (suffix u), or have you agreed a lower category with PQT in advance?",
   "help": "WHO PQ FAQ Q8: changes not listed in the guideline are major by default."
+ },
+ "pacConds": {
+  "text": "Does the change meet every condition PAC/2024 lists for the lower category in that row?",
+  "help": "The tables print a higher category with a lower one \"if conditions ... met\". If any one condition is not met, the higher category applies."
+ },
+ "pacImpact": {
+  "text": "How much could the process change affect the product?",
+  "type": "choice",
+  "options": [
+   {
+    "value": "critical",
+    "label": "Critical (for example viral clearance or the impurity profile)"
+   },
+   {
+    "value": "moderate",
+    "label": "Moderate (for example a different type of chromatography)"
+   },
+   {
+    "value": "noncritical",
+    "label": "Non-critical (for example an added identical bioreactor)"
+   }
+  ]
+ },
+ "pacCritical": {
+  "text": "Does the change affect a critical process step or parameter?"
+ },
+ "pacScaleUp": {
+  "text": "Is it a scale-up beyond the approved scales (not a scale within them or a scale-down)?"
+ },
+ "pacQualityIssue": {
+  "text": "Is the in-process test added or replaced because of a quality or safety issue?"
+ },
+ "pacNonCriticalExcipient": {
+  "text": "Is it a non-critical excipient?",
+  "help": "PAC/2024 Appendix 1 lists a supplier change for non-critical excipients as Level IV."
+ },
+ "pacCountKind": {
+  "text": "What changes?",
+  "type": "choice",
+  "options": [
+   {
+    "value": "pack",
+    "label": "The number of units in the pack"
+   },
+   {
+    "value": "fill",
+    "label": "The fill volume or labelled amount per container"
+   }
+  ]
  }
 }

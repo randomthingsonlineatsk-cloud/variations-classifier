@@ -8,18 +8,40 @@
      "ask": "existingSite",
      "on": {
       "yes": {
-       "cat": "L2",
-       "src": "pac24",
-       "at": "3.2.S.2.1 (facilities)",
-       "why": "A new facility within an existing approved site is a notifiable change (Level II).",
-       "note": "The app applies the drug substance entry of the guidance to the drug product by analogy; check the drug product tables."
+       "ask": "pacConds",
+       "on": {
+        "yes": {
+         "cat": "L2",
+         "src": "pac24",
+         "at": "DP 38(b)",
+         "why": "Replacing the formulation or filling suite: notifiable change (Level II), because every condition for the lower level is met.",
+         "note": "If any one condition in the row is not met, the change stays at the higher level."
+        },
+        "no": {
+         "cat": "L1",
+         "src": "pac24",
+         "at": "DP 38(b)",
+         "why": "Replacing the formulation or filling suite: supplement (Level I)."
+        }
+       }
       },
       "no": {
-       "cat": "L1",
-       "src": "pac24",
-       "at": "3.2.S.2.1 (facilities)",
-       "why": "A facility at a new geographic site is a supplement (Level I) and needs an application in Form CT-21 or CT-18.",
-       "note": "The app applies the drug substance entry of the guidance to the drug product by analogy; check the drug product tables."
+       "ask": "pacConds",
+       "on": {
+        "yes": {
+         "cat": "L2",
+         "src": "pac24",
+         "at": "DP 38(a)",
+         "why": "Replacing or adding a drug product manufacturing facility at a new site: notifiable change (Level II), because every condition for the lower level is met.",
+         "note": "If any one condition in the row is not met, the change stays at the higher level."
+        },
+        "no": {
+         "cat": "L1",
+         "src": "pac24",
+         "at": "DP 38(a)",
+         "why": "Replacing or adding a drug product manufacturing facility at a new site: supplement (Level I)."
+        }
+       }
       }
      }
     },
@@ -149,16 +171,28 @@
      "ask": "existingSite",
      "on": {
       "yes": {
-       "cat": "L2",
-       "src": "pac24",
-       "at": "3.2.S.2.1 (facilities)",
-       "why": "Adding a facility within an existing site is a notifiable change (Level II); Level III if the guidance conditions are met."
+       "ask": "pacConds",
+       "on": {
+        "yes": {
+         "cat": "L3",
+         "src": "pac24",
+         "at": "DS 2(b)",
+         "why": "A new or replacement drug substance facility or suite within an existing site: annual notification (Level III), because every condition for the lower level is met.",
+         "note": "If any one condition in the row is not met, the change stays at the higher level."
+        },
+        "no": {
+         "cat": "L2",
+         "src": "pac24",
+         "at": "DS 2(b)",
+         "why": "A new or replacement drug substance facility or suite within an existing site: notifiable change (Level II)."
+        }
+       }
       },
       "no": {
        "cat": "L1",
        "src": "pac24",
-       "at": "3.2.S.2.1 (facilities)",
-       "why": "A new geographic site or a new manufacturer is a supplement (Level I) and needs an application in Form CT-21 or CT-18."
+       "at": "DS 2(a)",
+       "why": "A new or replacement drug substance facility at a new site, or a new manufacturer, is a supplement (Level I)."
       }
      }
     },
@@ -201,11 +235,33 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "CDSCO",
-     "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "ask": "existingSite",
+     "on": {
+      "yes": {
+       "ask": "pacConds",
+       "on": {
+        "yes": {
+         "cat": "L3",
+         "src": "pac24",
+         "at": "DS 2(b)",
+         "why": "A new or replacement facility for an intermediate within an existing site: annual notification (Level III), because every condition for the lower level is met.",
+         "note": "If any one condition in the row is not met, the change stays at the higher level."
+        },
+        "no": {
+         "cat": "L2",
+         "src": "pac24",
+         "at": "DS 2(b)",
+         "why": "A new or replacement facility for an intermediate within an existing site: notifiable change (Level II)."
+        }
+       }
+      },
+      "no": {
+       "cat": "L1",
+       "src": "pac24",
+       "at": "DS 2(a)",
+       "why": "A new facility at a new site for a starting material, intermediate or drug substance is a supplement (Level I)."
+      }
+     }
     },
     "no": {
      "ask": "finalIntermediate",
@@ -234,11 +290,45 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "CDSCO",
-     "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "ask": "existingSite",
+     "on": {
+      "yes": {
+       "ask": "pacConds",
+       "on": {
+        "yes": {
+         "cat": "L2",
+         "src": "pac24",
+         "at": "DP 38(b)",
+         "why": "Filling into the primary container is part of drug product manufacture; replacing the filling suite: notifiable change (Level II), because every condition for the lower level is met.",
+         "note": "If any one condition in the row is not met, the change stays at the higher level."
+        },
+        "no": {
+         "cat": "L1",
+         "src": "pac24",
+         "at": "DP 38(b)",
+         "why": "Filling into the primary container is part of drug product manufacture; replacing the filling suite: supplement (Level I)."
+        }
+       }
+      },
+      "no": {
+       "ask": "pacConds",
+       "on": {
+        "yes": {
+         "cat": "L2",
+         "src": "pac24",
+         "at": "DP 38(a)",
+         "why": "Filling into the primary container is part of drug product manufacture; a facility at a new site: notifiable change (Level II), because every condition for the lower level is met.",
+         "note": "If any one condition in the row is not met, the change stays at the higher level."
+        },
+        "no": {
+         "cat": "L1",
+         "src": "pac24",
+         "at": "DP 38(a)",
+         "why": "Filling into the primary container is part of drug product manufacture; a facility at a new site: supplement (Level I)."
+        }
+       }
+      }
+     }
     },
     "no": {
      "ask": "siteNeverInspected",
@@ -291,11 +381,10 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "CDSCO",
+     "cat": "L3",
      "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "at": "DP 38(d)",
+     "why": "Replacing or adding a secondary packaging, storage or distribution facility is an annual notification (Level III)."
     },
     "no": {
      "cat": "L3",
@@ -312,11 +401,10 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "CDSCO",
+     "cat": "L3",
      "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "at": "DP 38(d)",
+     "why": "Labelling is a secondary packaging operation; a new secondary packaging facility is an annual notification (Level III)."
     },
     "no": {
      "cat": "L3",
@@ -333,10 +421,22 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "L2",
-     "src": "pac24",
-     "at": "3.2.S.4 (QC testing transfer)",
-     "why": "Transferring QC testing to another site is a notifiable change (Level II); Level III with conditions, but never for potency or bioassays."
+     "ask": "pacConds",
+     "on": {
+      "yes": {
+       "cat": "L3",
+       "src": "pac24",
+       "at": "DS 20(a), DP 50(a)",
+       "why": "Transferring QC testing of a non-pharmacopoeial assay to a new site or company: annual notification (Level III), because every condition for the lower level is met.",
+       "note": "If any one condition in the row is not met, the change stays at the higher level."
+      },
+      "no": {
+       "cat": "L2",
+       "src": "pac24",
+       "at": "DS 20(a), DP 50(a)",
+       "why": "Transferring QC testing of a non-pharmacopoeial assay to a new site or company: notifiable change (Level II)."
+      }
+     }
     },
     "no": {
      "ask": "testingConditions",
@@ -367,9 +467,9 @@
     "yes": {
      "cat": "CDSCO",
      "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "at": "No matching row",
+     "why": "This change is specific to chemical (small-molecule) products, and PAC/2024 has no row for it. Classify it with the level definitions in PAC/2024 (potential to affect quality, safety or efficacy) and confirm with CDSCO.",
+     "note": "PAC/2024 has no row for this change."
     },
     "no": {
      "cat": "L3",
@@ -386,11 +486,22 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "CDSCO",
-     "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "ask": "pacConds",
+     "on": {
+      "yes": {
+       "cat": "L3",
+       "src": "pac24",
+       "at": "DP 58(a)",
+       "why": "A new source of sterilised components is treated as a new container closure supplier: annual notification (Level III), because every condition for the lower level is met.",
+       "note": "If any one condition in the row is not met, the change stays at the higher level."
+      },
+      "no": {
+       "cat": "L2",
+       "src": "pac24",
+       "at": "DP 58(a)",
+       "why": "A new source of sterilised components is treated as a new container closure supplier: notifiable change (Level II)."
+      }
+     }
     },
     "no": {
      "ask": "componentSterilizationSame",
@@ -436,16 +547,26 @@
       "yes": {
        "cat": "L2",
        "src": "pac24",
-       "at": "3.2.S.2.1 (facilities)",
-       "why": "A new line or suite within an existing approved site is a notifiable change (Level II).",
-       "note": "The app applies the drug substance entry of the guidance to the drug product by analogy; check the drug product tables."
+       "at": "DP 38(c)",
+       "why": "Adding an equivalent formulation or filling suite is a notifiable change (Level II)."
       },
       "no": {
-       "cat": "L1",
-       "src": "pac24",
-       "at": "3.2.S.2.1 (facilities)",
-       "why": "A new site is a supplement (Level I).",
-       "note": "The app applies the drug substance entry of the guidance to the drug product by analogy; check the drug product tables."
+       "ask": "pacConds",
+       "on": {
+        "yes": {
+         "cat": "L2",
+         "src": "pac24",
+         "at": "DP 38(a)",
+         "why": "Adding a drug product manufacturing facility at a new site: notifiable change (Level II), because every condition for the lower level is met.",
+         "note": "If any one condition in the row is not met, the change stays at the higher level."
+        },
+        "no": {
+         "cat": "L1",
+         "src": "pac24",
+         "at": "DP 38(a)",
+         "why": "Adding a drug product manufacturing facility at a new site: supplement (Level I)."
+        }
+       }
       }
      }
     },
@@ -514,9 +635,9 @@
     "yes": {
      "cat": "L3",
      "src": "pac24",
-     "at": "3.2.S.2.2 (equipment)",
-     "why": "Like-for-like equipment replacement is an annual notification (Level III).",
-     "note": "The app applies the drug substance entry of the guidance to the drug product by analogy; check the drug product tables."
+     "at": "DS 13(d)",
+     "why": "Replacing equipment with identical or equivalent product-contact equipment is an annual notification (Level III).",
+     "note": "Identical non-product-contact equipment is Level IV (Appendix 1)."
     },
     "no": {
      "ask": "sterile",
@@ -557,21 +678,19 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "ask": "majorImpact",
+     "ask": "pacCritical",
      "on": {
       "yes": {
-       "cat": "L1",
-       "src": "pac24",
-       "at": "3.2.S.2.2 (process)",
-       "why": "A critical process change is a supplement (Level I).",
-       "note": "The app applies the drug substance entry of the guidance to the drug product by analogy; check the drug product tables."
-      },
-      "no": {
        "cat": "L2",
        "src": "pac24",
-       "at": "3.2.S.2.2 (process)",
-       "why": "A moderate process change is a notifiable change (Level II).",
-       "note": "The app applies the drug substance entry of the guidance to the drug product by analogy; check the drug product tables."
+       "at": "DP 40(a)",
+       "why": "A critical drug product manufacturing process change is a notifiable change (Level II)."
+      },
+      "no": {
+       "cat": "L3",
+       "src": "pac24",
+       "at": "DP 40(b)",
+       "why": "A non-critical process change is an annual notification (Level III)."
       }
      }
     },
@@ -650,11 +769,21 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "L2",
-     "src": "pac24",
-     "at": "3.2.S.2.2 (scale)",
-     "why": "A scale change is a notifiable change (Level II); Level III when the guidance conditions are met.",
-     "note": "The app does not model the Level III conditions; read the guidance."
+     "ask": "pacScaleUp",
+     "on": {
+      "yes": {
+       "cat": "L2",
+       "src": "pac24",
+       "at": "DP 40(d)",
+       "why": "A scale-up at the formulation or filling stage is a notifiable change (Level II)."
+      },
+      "no": {
+       "cat": "L3",
+       "src": "pac24",
+       "at": "DP 40(e)",
+       "why": "A scale within the approved scales, or a scale-down, is an annual notification (Level III)."
+      }
+     }
     },
     "no": {
      "ask": "sterile",
@@ -743,11 +872,11 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "CDSCO",
+     "cat": "L1",
      "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "at": "DS 4(a), 5(a)",
+     "why": "For a biological product a new route means a new cell culture or purification process, which is a critical change: supplement (Level I).",
+     "note": "Closest row."
     },
     "no": {
      "cat": "L1",
@@ -764,11 +893,39 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "CDSCO",
-     "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "ask": "pacImpact",
+     "on": {
+      "critical": {
+       "cat": "L1",
+       "src": "pac24",
+       "at": "DS 4(a), 5(a)",
+       "why": "A critical change to cell culture or purification (for example one that affects viral clearance or the impurity profile) is a supplement (Level I)."
+      },
+      "moderate": {
+       "ask": "pacConds",
+       "on": {
+        "yes": {
+         "cat": "L3",
+         "src": "pac24",
+         "at": "DS 4(b), 5(b)",
+         "why": "A change with moderate potential impact (for example a different type of chromatography): annual notification (Level III), because every condition for the lower level is met.",
+         "note": "If any one condition in the row is not met, the change stays at the higher level."
+        },
+        "no": {
+         "cat": "L2",
+         "src": "pac24",
+         "at": "DS 4(b), 5(b)",
+         "why": "A change with moderate potential impact (for example a different type of chromatography): notifiable change (Level II)."
+        }
+       }
+      },
+      "noncritical": {
+       "cat": "L3",
+       "src": "pac24",
+       "at": "DS 4(c), 5(c)",
+       "why": "A non-critical change (for example harvest pooling, an added identical bioreactor or an equivalent in-line filter) is an annual notification (Level III)."
+      }
+     }
     },
     "no": {
      "ask": "dsAfterFinalOrImpurity",
@@ -799,9 +956,9 @@
     "yes": {
      "cat": "CDSCO",
      "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "at": "No matching row",
+     "why": "Redefining starting materials is a chemical-synthesis concept; for a biological product the cell bank system is the start of the process. Classify it with the level definitions in PAC/2024 (potential to affect quality, safety or efficacy) and confirm with CDSCO.",
+     "note": "PAC/2024 has no row for this change."
     },
     "no": {
      "ask": "finalIntermediate",
@@ -830,11 +987,11 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "CDSCO",
+     "cat": "L2",
      "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "at": "DP 40(c)",
+     "why": "A reprocessing procedure adds a process step, which is a notifiable change (Level II).",
+     "note": "Closest row."
     },
     "no": {
      "cat": "L1",
@@ -853,9 +1010,9 @@
     "yes": {
      "cat": "CDSCO",
      "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "at": "No matching row",
+     "why": "This change is specific to chemical (small-molecule) products, and PAC/2024 has no row for it. Classify it with the level definitions in PAC/2024 (potential to affect quality, safety or efficacy) and confirm with CDSCO.",
+     "note": "PAC/2024 has no row for this change."
     },
     "no": {
      "ask": "inkApproved",
@@ -886,9 +1043,9 @@
     "yes": {
      "cat": "CDSCO",
      "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "at": "No matching row",
+     "why": "This change is specific to chemical (small-molecule) products, and PAC/2024 has no row for it. Classify it with the level definitions in PAC/2024 (potential to affect quality, safety or efficacy) and confirm with CDSCO.",
+     "note": "PAC/2024 has no row for this change."
     },
     "no": {
      "ask": "mr",
@@ -917,11 +1074,21 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "CDSCO",
-     "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "ask": "pacCritical",
+     "on": {
+      "yes": {
+       "cat": "L2",
+       "src": "pac24",
+       "at": "DP 40(a)",
+       "why": "A critical process change is a notifiable change (Level II)."
+      },
+      "no": {
+       "cat": "L3",
+       "src": "pac24",
+       "at": "DP 40(b)",
+       "why": "A non-critical process change is an annual notification (Level III)."
+      }
+     }
     },
     "no": {
      "cat": "L3",
@@ -938,11 +1105,10 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "CDSCO",
+     "cat": "L2",
      "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "at": "DP 40(a)",
+     "why": "Sterilising filtration is a critical step, so a change to it is a notifiable change (Level II)."
     },
     "no": {
      "ask": "filterMaterialPore",
@@ -971,11 +1137,11 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "CDSCO",
+     "cat": "L2",
      "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "at": "DP 40(a)",
+     "why": "A change to the sterilisation method is a critical process change: notifiable change (Level II).",
+     "note": "Replacing the sterility test with parametric release is a supplement (DP 48(a))."
     },
     "no": {
      "cat": "L1",
@@ -992,11 +1158,11 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "CDSCO",
+     "cat": "L2",
      "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "at": "DP 40(a)",
+     "why": "Depyrogenation of components is a critical step for a sterile product: notifiable change (Level II).",
+     "note": "Closest row."
     },
     "no": {
      "cat": "L2",
@@ -1013,11 +1179,21 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "CDSCO",
-     "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "ask": "pacCritical",
+     "on": {
+      "yes": {
+       "cat": "L2",
+       "src": "pac24",
+       "at": "DP 40(a)",
+       "why": "Removing a filtration step that is critical is a notifiable change (Level II)."
+      },
+      "no": {
+       "cat": "L3",
+       "src": "pac24",
+       "at": "DP 40(b)",
+       "why": "Removing a non-critical filtration is an annual notification (Level III)."
+      }
+     }
     },
     "no": {
      "cat": "L2",
@@ -1034,11 +1210,21 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "CDSCO",
-     "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "ask": "pacQualityIssue",
+     "on": {
+      "yes": {
+       "cat": "L2",
+       "src": "pac24",
+       "at": "DS 15(f), DP 42(f)",
+       "why": "An in-process test added or replaced because of a quality or safety issue is a notifiable change (Level II)."
+      },
+      "no": {
+       "cat": "L3",
+       "src": "pac24",
+       "at": "DS 15(b), DP 42(c)",
+       "why": "Adding or replacing an in-process test is an annual notification (Level III)."
+      }
+     }
     },
     "no": {
      "cat": "L2",
@@ -1096,9 +1282,9 @@
     "yes": {
      "cat": "CDSCO",
      "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "at": "No matching row",
+     "why": "This change is specific to chemical (small-molecule) products, and PAC/2024 has no row for it. Classify it with the level definitions in PAC/2024 (potential to affect quality, safety or efficacy) and confirm with CDSCO.",
+     "note": "PAC/2024 has no row for this change."
     },
     "no": {
      "cat": "L3",
@@ -1115,10 +1301,22 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "L1",
-     "src": "pac24",
-     "at": "3.2.P.1 (composition)",
-     "why": "A new strength is a supplement (Level I); some cases can be a notifiable change when the conditions are met."
+     "ask": "pacConds",
+     "on": {
+      "yes": {
+       "cat": "L2",
+       "src": "pac24",
+       "at": "DP 33(b)",
+       "why": "A new strength or a change in the concentration of the active: notifiable change (Level II), because every condition for the lower level is met.",
+       "note": "If any one condition in the row is not met, the change stays at the higher level."
+      },
+      "no": {
+       "cat": "L1",
+       "src": "pac24",
+       "at": "DP 33(b)",
+       "why": "A new strength or a change in the concentration of the active: supplement (Level I)."
+      }
+     }
     },
     "no": {
      "cat": "NEWDRUG",
@@ -1137,7 +1335,7 @@
     "yes": {
      "cat": "L3",
      "src": "pac24",
-     "at": "3.2.S.4 (specifications)",
+     "at": "DS 21(d), DP 48(f)",
      "why": "Tightening an acceptance criterion is an annual notification (Level III)."
     },
     "no": {
@@ -1155,10 +1353,33 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "L2",
-     "src": "pac24",
-     "at": "3.2.S.4 (specifications)",
-     "why": "Relaxing an acceptance criterion is a notifiable change (Level II)."
+     "ask": "appliesToDS",
+     "on": {
+      "yes": {
+       "cat": "L2",
+       "src": "pac24",
+       "at": "DS 21(c)",
+       "why": "Relaxing a drug substance acceptance criterion is a notifiable change (Level II)."
+      },
+      "no": {
+       "ask": "pacConds",
+       "on": {
+        "yes": {
+         "cat": "L3",
+         "src": "pac24",
+         "at": "DP 48(e)",
+         "why": "Relaxing a drug product acceptance criterion: annual notification (Level III), because every condition for the lower level is met.",
+         "note": "If any one condition in the row is not met, the change stays at the higher level."
+        },
+        "no": {
+         "cat": "L2",
+         "src": "pac24",
+         "at": "DP 48(e)",
+         "why": "Relaxing a drug product acceptance criterion: notifiable change (Level II)."
+        }
+       }
+      }
+     }
     },
     "no": {
      "ask": "adventitious",
@@ -1223,10 +1444,22 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "L2",
-     "src": "pac24",
-     "at": "3.2.S.4 (specifications)",
-     "why": "Deleting a test is a notifiable change (Level II); Level III if it is redundant with the remaining tests."
+     "ask": "pacConds",
+     "on": {
+      "yes": {
+       "cat": "L3",
+       "src": "pac24",
+       "at": "DS 21(a), DP 48(b)",
+       "why": "Deleting a release or shelf-life test: annual notification (Level III), because every condition for the lower level is met.",
+       "note": "If any one condition in the row is not met, the change stays at the higher level."
+      },
+      "no": {
+       "cat": "L2",
+       "src": "pac24",
+       "at": "DS 21(a), DP 48(b)",
+       "why": "Deleting a release or shelf-life test: notifiable change (Level II)."
+      }
+     }
     },
     "no": {
      "ask": "adventitious",
@@ -1279,10 +1512,22 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "L2",
-     "src": "pac24",
-     "at": "3.2.S.4 (specifications)",
-     "why": "Adding a test is a notifiable change (Level II); Level III when the guidance conditions are met."
+     "ask": "pacConds",
+     "on": {
+      "yes": {
+       "cat": "L3",
+       "src": "pac24",
+       "at": "DS 21(b), DP 48(c)",
+       "why": "Replacing or adding a release or shelf-life test: annual notification (Level III), because every condition for the lower level is met.",
+       "note": "If any one condition in the row is not met, the change stays at the higher level."
+      },
+      "no": {
+       "cat": "L2",
+       "src": "pac24",
+       "at": "DS 21(b), DP 48(c)",
+       "why": "Replacing or adding a release or shelf-life test: notifiable change (Level II)."
+      }
+     }
     },
     "no": {
      "cat": "L2",
@@ -1301,8 +1546,9 @@
     "yes": {
      "cat": "L3",
      "src": "pac24",
-     "at": "3.2.S.4 (specifications)",
-     "why": "An update to an updated pharmacopoeial monograph is an annual notification (Level III)."
+     "at": "DS 18(c), DP 47(c)",
+     "why": "Updating a specification to an updated pharmacopoeial monograph is an annual notification (Level III).",
+     "note": "Level IV if done within six months of the update."
     },
     "no": {
      "cat": "L3",
@@ -1319,11 +1565,33 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "CDSCO",
-     "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "ask": "minorMethodChange",
+     "on": {
+      "yes": {
+       "cat": "L3",
+       "src": "pac24",
+       "at": "DS 22(c), DP 49(c)",
+       "why": "A minor change to an approved analytical procedure is an annual notification (Level III)."
+      },
+      "no": {
+       "ask": "pacConds",
+       "on": {
+        "yes": {
+         "cat": "L3",
+         "src": "pac24",
+         "at": "DS 22(b), DP 49(b)",
+         "why": "Replacing an analytical procedure: annual notification (Level III), because every condition for the lower level is met.",
+         "note": "If any one condition in the row is not met, the change stays at the higher level."
+        },
+        "no": {
+         "cat": "L2",
+         "src": "pac24",
+         "at": "DS 22(b), DP 49(b)",
+         "why": "Replacing an analytical procedure: notifiable change (Level II)."
+        }
+       }
+      }
+     }
     },
     "no": {
      "ask": "editorialOnly",
@@ -1364,11 +1632,22 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "CDSCO",
-     "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "ask": "pacConds",
+     "on": {
+      "yes": {
+       "cat": "L3",
+       "src": "pac24",
+       "at": "DS 22(b), DP 49(b)",
+       "why": "Adding an analytical procedure: annual notification (Level III), because every condition for the lower level is met.",
+       "note": "If any one condition in the row is not met, the change stays at the higher level."
+      },
+      "no": {
+       "cat": "L2",
+       "src": "pac24",
+       "at": "DS 22(b), DP 49(b)",
+       "why": "Adding an analytical procedure: notifiable change (Level II)."
+      }
+     }
     },
     "no": {
      "cat": "L1",
@@ -1385,11 +1664,45 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "CDSCO",
-     "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "ask": "altAction",
+     "on": {
+      "add": {
+       "ask": "pacConds",
+       "on": {
+        "yes": {
+         "cat": "L3",
+         "src": "pac24",
+         "at": "DS 22(b), DP 49(b)",
+         "why": "Adding an alternative analytical procedure: annual notification (Level III), because every condition for the lower level is met.",
+         "note": "If any one condition in the row is not met, the change stays at the higher level."
+        },
+        "no": {
+         "cat": "L2",
+         "src": "pac24",
+         "at": "DS 22(b), DP 49(b)",
+         "why": "Adding an alternative analytical procedure: notifiable change (Level II)."
+        }
+       }
+      },
+      "delete": {
+       "ask": "pacConds",
+       "on": {
+        "yes": {
+         "cat": "L3",
+         "src": "pac24",
+         "at": "DS 22(a), DP 49(a)",
+         "why": "Deleting an analytical procedure: annual notification (Level III), because every condition for the lower level is met.",
+         "note": "If any one condition in the row is not met, the change stays at the higher level."
+        },
+        "no": {
+         "cat": "L2",
+         "src": "pac24",
+         "at": "DS 22(a), DP 49(a)",
+         "why": "Deleting an analytical procedure: notifiable change (Level II)."
+        }
+       }
+      }
+     }
     },
     "no": {
      "ask": "sameOrBetter",
@@ -1418,11 +1731,22 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "CDSCO",
-     "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "ask": "pacConds",
+     "on": {
+      "yes": {
+       "cat": "L3",
+       "src": "pac24",
+       "at": "DP 60(a)",
+       "why": "Replacing or adding a procedure for container closure components: annual notification (Level III), because every condition for the lower level is met.",
+       "note": "If any one condition in the row is not met, the change stays at the higher level."
+      },
+      "no": {
+       "cat": "L2",
+       "src": "pac24",
+       "at": "DP 60(a)",
+       "why": "Replacing or adding a procedure for container closure components: notifiable change (Level II)."
+      }
+     }
     },
     "no": {
      "ask": "sameOrBetter",
@@ -1453,9 +1777,9 @@
     "yes": {
      "cat": "CDSCO",
      "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "at": "No matching row",
+     "why": "Raw materials for chemical synthesis are not part of a biological process; DS 14 covers biologically derived materials and reagents. Classify it with the level definitions in PAC/2024 (potential to affect quality, safety or efficacy) and confirm with CDSCO.",
+     "note": "PAC/2024 has no row for this change."
     },
     "no": {
      "ask": "sameOrBetter",
@@ -1496,11 +1820,22 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "CDSCO",
-     "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "ask": "pacConds",
+     "on": {
+      "yes": {
+       "cat": "L3",
+       "src": "pac24",
+       "at": "DP 57(a)",
+       "why": "Modifying the container closure system: annual notification (Level III), because every condition for the lower level is met.",
+       "note": "If any one condition in the row is not met, the change stays at the higher level."
+      },
+      "no": {
+       "cat": "L2",
+       "src": "pac24",
+       "at": "DP 57(a)",
+       "why": "Modifying the container closure system: notifiable change (Level II)."
+      }
+     }
     },
     "no": {
      "ask": "polymerNew",
@@ -1529,11 +1864,33 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "CDSCO",
-     "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "ask": "containerTypeChange",
+     "on": {
+      "yes": {
+       "cat": "L2",
+       "src": "pac24",
+       "at": "DP 33(c)",
+       "why": "A new container type is a new presentation: notifiable change (Level II)."
+      },
+      "no": {
+       "ask": "pacConds",
+       "on": {
+        "yes": {
+         "cat": "L3",
+         "src": "pac24",
+         "at": "DP 57(a)",
+         "why": "Modifying the container closure system: annual notification (Level III), because every condition for the lower level is met.",
+         "note": "If any one condition in the row is not met, the change stays at the higher level."
+        },
+        "no": {
+         "cat": "L2",
+         "src": "pac24",
+         "at": "DP 57(a)",
+         "why": "Modifying the container closure system: notifiable change (Level II)."
+        }
+       }
+      }
+     }
     },
     "no": {
      "ask": "appliesToDS",
@@ -1562,11 +1919,33 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "CDSCO",
-     "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "ask": "deviceSignificant",
+     "on": {
+      "yes": {
+       "cat": "L1",
+       "src": "pac24",
+       "at": "Safety and efficacy, row 3(e)",
+       "why": "A new device for administration is a supplement (Level I)."
+      },
+      "no": {
+       "ask": "pacConds",
+       "on": {
+        "yes": {
+         "cat": "L3",
+         "src": "pac24",
+         "at": "DP 57(a)",
+         "why": "Modifying the container closure system: annual notification (Level III), because every condition for the lower level is met.",
+         "note": "If any one condition in the row is not met, the change stays at the higher level."
+        },
+        "no": {
+         "cat": "L2",
+         "src": "pac24",
+         "at": "DP 57(a)",
+         "why": "Modifying the container closure system: notifiable change (Level II)."
+        }
+       }
+      }
+     }
     },
     "no": {
      "cat": "L1",
@@ -1585,9 +1964,9 @@
     "yes": {
      "cat": "CDSCO",
      "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "at": "No matching row",
+     "why": "This change is specific to chemical (small-molecule) products, and PAC/2024 has no row for it. Classify it with the level definitions in PAC/2024 (potential to affect quality, safety or efficacy) and confirm with CDSCO.",
+     "note": "PAC/2024 has no row for this change."
     },
     "no": {
      "ask": "sameOrBetterProtection",
@@ -1616,11 +1995,22 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "CDSCO",
-     "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "ask": "pacConds",
+     "on": {
+      "yes": {
+       "cat": "L3",
+       "src": "pac24",
+       "at": "DP 57(a)",
+       "why": "Modifying the container closure system: annual notification (Level III), because every condition for the lower level is met.",
+       "note": "If any one condition in the row is not met, the change stays at the higher level."
+      },
+      "no": {
+       "cat": "L2",
+       "src": "pac24",
+       "at": "DP 57(a)",
+       "why": "Modifying the container closure system: notifiable change (Level II)."
+      }
+     }
     },
     "no": {
      "ask": "sameOrBetterProtection",
@@ -1649,11 +2039,22 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "CDSCO",
-     "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "ask": "pacConds",
+     "on": {
+      "yes": {
+       "cat": "L3",
+       "src": "pac24",
+       "at": "DP 57(a)",
+       "why": "Modifying the container closure system: annual notification (Level III), because every condition for the lower level is met.",
+       "note": "If any one condition in the row is not met, the change stays at the higher level."
+      },
+      "no": {
+       "cat": "L2",
+       "src": "pac24",
+       "at": "DP 57(a)",
+       "why": "Modifying the container closure system: notifiable change (Level II)."
+      }
+     }
     },
     "no": {
      "ask": "sterile",
@@ -1706,11 +2107,33 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "CDSCO",
-     "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "ask": "pacCountKind",
+     "on": {
+      "pack": {
+       "cat": "L2",
+       "src": "pac24",
+       "at": "DP 33(c)",
+       "why": "A new pack count is a new presentation: notifiable change (Level II)."
+      },
+      "fill": {
+       "ask": "pacConds",
+       "on": {
+        "yes": {
+         "cat": "L3",
+         "src": "pac24",
+         "at": "DP 33(d)",
+         "why": "A fill volume change at the same concentration is an annual notification (Level III) when conditions 1, 4 and 5 are met; notifiable (Level II) when only 1 and 4 are met.",
+         "note": "If any one condition in the row is not met, the change stays at the higher level."
+        },
+        "no": {
+         "cat": "L1",
+         "src": "pac24",
+         "at": "DP 33(d)",
+         "why": "A fill volume change at the same concentration is a supplement (Level I) unless the conditions for a lower level are met."
+        }
+       }
+      }
+     }
     },
     "no": {
      "ask": "sterile",
@@ -1765,9 +2188,9 @@
     "yes": {
      "cat": "CDSCO",
      "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "at": "No matching row",
+     "why": "This change is specific to chemical (small-molecule) products, and PAC/2024 has no row for it. Classify it with the level definitions in PAC/2024 (potential to affect quality, safety or efficacy) and confirm with CDSCO.",
+     "note": "PAC/2024 has no row for this change."
     },
     "no": {
      "cat": "L2",
@@ -1786,9 +2209,9 @@
     "yes": {
      "cat": "CDSCO",
      "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "at": "No matching row",
+     "why": "This change is specific to chemical (small-molecule) products, and PAC/2024 has no row for it. Classify it with the level definitions in PAC/2024 (potential to affect quality, safety or efficacy) and confirm with CDSCO.",
+     "note": "PAC/2024 has no row for this change."
     },
     "no": {
      "ask": "blisterMaterialsApproved",
@@ -1817,11 +2240,22 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "CDSCO",
-     "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "ask": "pacConds",
+     "on": {
+      "yes": {
+       "cat": "L3",
+       "src": "pac24",
+       "at": "DP 57(a)",
+       "why": "Removing protective packaging modifies the container closure system: annual notification (Level III), because every condition for the lower level is met.",
+       "note": "If any one condition in the row is not met, the change stays at the higher level."
+      },
+      "no": {
+       "cat": "L2",
+       "src": "pac24",
+       "at": "DP 57(a)",
+       "why": "Removing protective packaging modifies the container closure system: notifiable change (Level II)."
+      }
+     }
     },
     "no": {
      "cat": "L1",
@@ -1838,11 +2272,10 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "CDSCO",
+     "cat": "REC",
      "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "at": "Appendix 1",
+     "why": "Changing the colour of the stopper cap of an injectable is a Level IV change: record it under GMP."
     },
     "no": {
      "cat": "L3",
@@ -1859,10 +2292,22 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "L3SL",
-     "src": "pac24",
-     "at": "General notes (shelf life)",
-     "why": "A shelf-life extension is a minor change but needs a post-approval change application and approval before it is used."
+     "ask": "pacConds",
+     "on": {
+      "yes": {
+       "cat": "L3SL",
+       "src": "pac24",
+       "at": "DS 30(a), DP 61(a)",
+       "why": "A shelf-life extension is an annual-level change when conditions 1 to 5 are met, but shelf-life changes need approval before use.",
+       "note": "If any one condition in the row is not met, the change stays at the higher level."
+      },
+      "no": {
+       "cat": "L2",
+       "src": "pac24",
+       "at": "DS 30(a), DP 61(a)",
+       "why": "A shelf-life extension is a notifiable change (Level II)."
+      }
+     }
     },
     "no": {
      "ask": "approvedProtocolFullData",
@@ -1891,11 +2336,22 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "CDSCO",
-     "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "ask": "pacConds",
+     "on": {
+      "yes": {
+       "cat": "L3",
+       "src": "pac24",
+       "at": "DS 30(b), DP 61(b)",
+       "why": "Reducing the shelf life: annual notification (Level III), because every condition for the lower level is met.",
+       "note": "If any one condition in the row is not met, the change stays at the higher level."
+      },
+      "no": {
+       "cat": "L2",
+       "src": "pac24",
+       "at": "DS 30(b), DP 61(b)",
+       "why": "Reducing the shelf life: notifiable change (Level II)."
+      }
+     }
     },
     "no": {
      "cat": "L2",
@@ -1912,11 +2368,33 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "CDSCO",
-     "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "ask": "stabilityTimepointsOnly",
+     "on": {
+      "yes": {
+       "cat": "L3",
+       "src": "pac24",
+       "at": "DS 32(b)-(e), DP 63(b)-(e)",
+       "why": "Adding time points or tests, or deleting time points, is an annual notification (Level III)."
+      },
+      "no": {
+       "ask": "pacConds",
+       "on": {
+        "yes": {
+         "cat": "L3",
+         "src": "pac24",
+         "at": "DS 32(a), DP 63(a)",
+         "why": "A major change to the post-approval stability protocol: annual notification (Level III), because every condition for the lower level is met.",
+         "note": "If any one condition in the row is not met, the change stays at the higher level."
+        },
+        "no": {
+         "cat": "L2",
+         "src": "pac24",
+         "at": "DS 32(a), DP 63(a)",
+         "why": "A major change to the post-approval stability protocol: notifiable change (Level II)."
+        }
+       }
+      }
+     }
     },
     "no": {
      "ask": "stabilityTimepointsOnly",
@@ -1945,11 +2423,22 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "CDSCO",
-     "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "ask": "pacConds",
+     "on": {
+      "yes": {
+       "cat": "L3",
+       "src": "pac24",
+       "at": "DP 62(c)",
+       "why": "Adding or changing a drug product storage condition: annual notification (Level III), because every condition for the lower level is met.",
+       "note": "If any one condition in the row is not met, the change stays at the higher level."
+      },
+      "no": {
+       "cat": "L2",
+       "src": "pac24",
+       "at": "DP 62(c)",
+       "why": "Adding or changing a drug product storage condition: notifiable change (Level II)."
+      }
+     }
     },
     "no": {
      "cat": "CDSCO",
@@ -1966,11 +2455,22 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "CDSCO",
-     "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "ask": "refStdProtocol",
+     "on": {
+      "yes": {
+       "cat": "L3",
+       "src": "pac24",
+       "at": "DS 23(d), DP 52(d)",
+       "why": "Qualifying a new lot of the reference standard is an annual notification (Level III).",
+       "note": "For vaccines and toxins, see DS 24 and DP 53."
+      },
+      "no": {
+       "cat": "L2",
+       "src": "pac24",
+       "at": "DS 23(a), DP 52(a)",
+       "why": "Qualifying a new reference standard is a notifiable change (Level II)."
+      }
+     }
     },
     "no": {
      "cat": "L3",
@@ -2029,11 +2529,12 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "CDSCO",
+     "cat": "L2",
      "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "at": "Section 8",
+     "why": "Labelling changes need approval before they are implemented; a change that alters a claim is a supplement (safety and efficacy, row 1(c)).",
+     "note": "The app shows the common case.",
+     "pi": true
     },
     "no": {
      "cat": "CDSCO",
@@ -2104,11 +2605,11 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "CDSCO",
+     "cat": "L2",
      "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "at": "Safety and efficacy, row 1(b)",
+     "why": "Deleting an indication or claim is a notifiable change (Level II).",
+     "pi": true
     },
     "no": {
      "cat": "CDSCO",
@@ -2125,11 +2626,11 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "CDSCO",
+     "cat": "L2",
      "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "at": "Section 8",
+     "why": "Safety labelling needs approval before it is implemented; mark urgent changes \"Urgent Product Labelling Information Changes\" so CDSCO processes them quickly.",
+     "pi": true
     },
     "no": {
      "cat": "CDSCO",
@@ -2146,11 +2647,12 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "CDSCO",
+     "cat": "L2",
      "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "at": "Section 8",
+     "why": "Aligning with the reference product's updated labelling is a labelling change that needs approval before it is implemented.",
+     "note": "Biological products have a reference product, not a reference listed drug.",
+     "pi": true
     },
     "no": {
      "cat": "CDSCO",
@@ -2188,11 +2690,22 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "CDSCO",
-     "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "ask": "editorialOnly",
+     "on": {
+      "yes": {
+       "cat": "REC",
+       "src": "pac24",
+       "at": "Appendix 1",
+       "why": "A minor layout change or typo correction that does not alter label content is Level IV."
+      },
+      "no": {
+       "cat": "L2",
+       "src": "pac24",
+       "at": "Section 8",
+       "why": "A label change that alters content needs approval before it is implemented.",
+       "pi": true
+      }
+     }
     },
     "no": {
      "cat": "CDSCO",
@@ -2209,11 +2722,10 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "CDSCO",
+     "cat": "L2",
      "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "at": "Section 5(a)",
+     "why": "Introducing a post-approval change management protocol is a notifiable change (Level II)."
     },
     "no": {
      "cat": "L1",
@@ -2230,11 +2742,11 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "CDSCO",
+     "cat": "L3",
      "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "at": "Section 5",
+     "why": "A change made under an approved protocol is reported at the lower level the protocol set; the app shows the usual case.",
+     "note": "Use the level in your approved protocol."
     },
     "no": {
      "ask": "cpCategory",
@@ -2272,9 +2784,9 @@
     "yes": {
      "cat": "CDSCO",
      "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "at": "No matching row",
+     "why": "Biological products show comparability rather than bioequivalence; the row for the underlying change decides the level. Classify it with the level definitions in PAC/2024 (potential to affect quality, safety or efficacy) and confirm with CDSCO.",
+     "note": "PAC/2024 has no row for this change."
     },
     "no": {
      "cat": "L1",
@@ -2449,11 +2961,10 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "CDSCO",
+     "cat": "L1",
      "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "at": "DS 2(a)",
+     "why": "A new drug substance manufacturer is a supplement (Level I). Certificates of suitability do not cover biological substances."
     },
     "no": {
      "ask": "dsSameRoute",
@@ -2496,9 +3007,8 @@
     "yes": {
      "cat": "L3",
      "src": "pac24",
-     "at": "3.2.P.3.1 (facilities)",
-     "why": "A new testing or release facility with approved methods is an annual notification (Level III).",
-     "note": "Simplified."
+     "at": "DP 50(c), 50(d)",
+     "why": "Transferring drug product QC testing to a different site, or adding a laboratory, is an annual notification (Level III)."
     },
     "no": {
      "ask": "testingConditions",
@@ -2529,8 +3039,8 @@
     "yes": {
      "cat": "L3",
      "src": "pac24",
-     "at": "Facilities",
-     "why": "Deleting a facility is an annual notification (Level III)."
+     "at": "DS 2(i), DP 38(f)",
+     "why": "Deleting a facility, manufacturer or site is an annual notification (Level III)."
     },
     "no": {
      "cat": "CDSCO",
@@ -2547,11 +3057,10 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "CDSCO",
+     "cat": "L2",
      "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "at": "DS 6(a), 6(b)",
+     "why": "A scale change at the fermentation or purification stage is a notifiable change (Level II)."
     },
     "no": {
      "ask": "scaleOnly",
@@ -2580,10 +3089,33 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "L3",
-     "src": "pac24",
-     "at": "3.2.S.2.4 (controls)",
-     "why": "Tightening an in-process limit within the approved range is an annual notification (Level III)."
+     "ask": "appliesToDS",
+     "on": {
+      "yes": {
+       "ask": "pacConds",
+       "on": {
+        "yes": {
+         "cat": "L3",
+         "src": "pac24",
+         "at": "DS 15(a)",
+         "why": "Narrowing a drug substance in-process limit: annual notification (Level III), because every condition for the lower level is met.",
+         "note": "If any one condition in the row is not met, the change stays at the higher level."
+        },
+        "no": {
+         "cat": "L2",
+         "src": "pac24",
+         "at": "DS 15(a)",
+         "why": "Narrowing a drug substance in-process limit: notifiable change (Level II)."
+        }
+       }
+      },
+      "no": {
+       "cat": "L3",
+       "src": "pac24",
+       "at": "DP 42(e)",
+       "why": "Tightening a drug product in-process acceptance criterion is an annual notification (Level III)."
+      }
+     }
     },
     "no": {
      "ask": "bio",
@@ -2612,10 +3144,22 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "L2",
-     "src": "pac24",
-     "at": "3.2.S.2.4 (controls)",
-     "why": "Widening an in-process limit or deleting a test is a notifiable change (Level II)."
+     "ask": "pacConds",
+     "on": {
+      "yes": {
+       "cat": "L3",
+       "src": "pac24",
+       "at": "DS 15(d), DP 42(d)",
+       "why": "Widening an in-process limit: annual notification (Level III), because every condition for the lower level is met.",
+       "note": "If any one condition in the row is not met, the change stays at the higher level."
+      },
+      "no": {
+       "cat": "L2",
+       "src": "pac24",
+       "at": "DS 15(d), DP 42(d)",
+       "why": "Widening an in-process limit: notifiable change (Level II)."
+      }
+     }
     },
     "no": {
      "ask": "bio",
@@ -2646,9 +3190,9 @@
     "yes": {
      "cat": "L2",
      "src": "pac24",
-     "at": "3.2.S.2.2 (process)",
-     "why": "A longer hold time is a notifiable change (Level II).",
-     "note": "Simplified."
+     "at": "DS 7",
+     "why": "Changing the parameters of an approved holding step, or adding one, is a notifiable change (Level II).",
+     "note": "A drug product hold time is extended under DP 61(a)."
     },
     "no": {
      "ask": "bio",
@@ -2734,11 +3278,10 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "CDSCO",
+     "cat": "L1",
      "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "at": "DS 17(a), 17(b); DP 37(a), 37(b)",
+     "why": "Establishing a new design space or expanding an approved one is a supplement (Level I)."
     },
     "no": {
      "cat": "L1",
@@ -2755,11 +3298,10 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "CDSCO",
+     "cat": "L1",
      "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "at": "DS 19(a), DP 51(a)",
+     "why": "Changing from end-product testing to upstream controls (real-time release, PAT) is a supplement (Level I)."
     },
     "no": {
      "cat": "L1",
@@ -2776,11 +3318,11 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "CDSCO",
+     "cat": "L1",
      "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "at": "DS 4(a), 5(a)",
+     "why": "Moving to continuous processing is a critical change to the process: supplement (Level I).",
+     "note": "Closest row."
     },
     "no": {
      "cat": "L1",
@@ -2797,11 +3339,33 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "REC",
-     "src": "pac24",
-     "at": "3.2.P.4 (excipients)",
-     "why": "A new supplier of the same excipient grade meeting the specification is a record of change (Level IV).",
-     "note": "Simplified."
+     "ask": "pacNonCriticalExcipient",
+     "on": {
+      "yes": {
+       "cat": "REC",
+       "src": "pac24",
+       "at": "Appendix 1",
+       "why": "A new supplier of a non-critical excipient is a Level IV change: record it under GMP."
+      },
+      "no": {
+       "ask": "pacConds",
+       "on": {
+        "yes": {
+         "cat": "L3",
+         "src": "pac24",
+         "at": "DP 46(f)",
+         "why": "A new supplier of a non-plasma excipient: annual notification (Level III), because every condition for the lower level is met.",
+         "note": "If any one condition in the row is not met, the change stays at the higher level."
+        },
+        "no": {
+         "cat": "L2",
+         "src": "pac24",
+         "at": "DP 46(f)",
+         "why": "A new supplier of a non-plasma excipient: notifiable change (Level II)."
+        }
+       }
+      }
+     }
     },
     "no": {
      "cat": "REC",
@@ -2820,9 +3384,9 @@
     "yes": {
      "cat": "CDSCO",
      "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "at": "No matching row",
+     "why": "This change is specific to chemical (small-molecule) products, and PAC/2024 has no row for it. Classify it with the level definitions in PAC/2024 (potential to affect quality, safety or efficacy) and confirm with CDSCO.",
+     "note": "PAC/2024 has no row for this change."
     },
     "no": {
      "ask": "mr",
@@ -2872,9 +3436,9 @@
     "yes": {
      "cat": "CDSCO",
      "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "at": "No matching row",
+     "why": "This change is specific to chemical (small-molecule) products, and PAC/2024 has no row for it. Classify it with the level definitions in PAC/2024 (potential to affect quality, safety or efficacy) and confirm with CDSCO.",
+     "note": "PAC/2024 has no row for this change."
     },
     "no": {
      "cat": "L1",
@@ -2893,9 +3457,9 @@
     "yes": {
      "cat": "CDSCO",
      "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "at": "No matching row",
+     "why": "This change is specific to chemical (small-molecule) products, and PAC/2024 has no row for it. Classify it with the level definitions in PAC/2024 (potential to affect quality, safety or efficacy) and confirm with CDSCO.",
+     "note": "PAC/2024 has no row for this change."
     },
     "no": {
      "ask": "mr",
@@ -2924,11 +3488,10 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "CDSCO",
+     "cat": "L2",
      "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "at": "DP 46(b)",
+     "why": "Changing an excipient source from one with a TSE risk to a vegetable or synthetic one is a notifiable change (Level II)."
     },
     "no": {
      "cat": "L3",
@@ -2978,11 +3541,22 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "CDSCO",
-     "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "ask": "pacConds",
+     "on": {
+      "yes": {
+       "cat": "L3",
+       "src": "pac24",
+       "at": "DS 21(b), DP 48(c)",
+       "why": "Adding a test and limit: annual notification (Level III), because every condition for the lower level is met.",
+       "note": "If any one condition in the row is not met, the change stays at the higher level."
+      },
+      "no": {
+       "cat": "L2",
+       "src": "pac24",
+       "at": "DS 21(b), DP 48(c)",
+       "why": "Adding a test and limit: notifiable change (Level II)."
+      }
+     }
     },
     "no": {
      "cat": "L2",
@@ -2999,11 +3573,69 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "L3",
-     "src": "pac24",
-     "at": "3.2.P.4 (excipients)",
-     "why": "An excipient specification change is an annual notification (Level III) when the guidance conditions are met.",
-     "note": "Widening a limit is Level II."
+     "ask": "excipientSpecKind",
+     "on": {
+      "tighten": {
+       "cat": "L3",
+       "src": "pac24",
+       "at": "DP 44(e)",
+       "why": "Tightening an excipient acceptance criterion is an annual notification (Level III)."
+      },
+      "add": {
+       "ask": "pacConds",
+       "on": {
+        "yes": {
+         "cat": "L3",
+         "src": "pac24",
+         "at": "DP 44(c)",
+         "why": "Adding an excipient release test: annual notification (Level III), because every condition for the lower level is met.",
+         "note": "If any one condition in the row is not met, the change stays at the higher level."
+        },
+        "no": {
+         "cat": "L2",
+         "src": "pac24",
+         "at": "DP 44(c)",
+         "why": "Adding an excipient release test: notifiable change (Level II)."
+        }
+       }
+      },
+      "delete": {
+       "ask": "pacConds",
+       "on": {
+        "yes": {
+         "cat": "L3",
+         "src": "pac24",
+         "at": "DP 44(a)",
+         "why": "Deleting an excipient release test: annual notification (Level III), because every condition for the lower level is met.",
+         "note": "If any one condition in the row is not met, the change stays at the higher level."
+        },
+        "no": {
+         "cat": "L2",
+         "src": "pac24",
+         "at": "DP 44(a)",
+         "why": "Deleting an excipient release test: notifiable change (Level II)."
+        }
+       }
+      },
+      "relax": {
+       "ask": "pacConds",
+       "on": {
+        "yes": {
+         "cat": "L3",
+         "src": "pac24",
+         "at": "DP 44(d)",
+         "why": "Relaxing an excipient acceptance criterion: annual notification (Level III), because every condition for the lower level is met.",
+         "note": "If any one condition in the row is not met, the change stays at the higher level."
+        },
+        "no": {
+         "cat": "L2",
+         "src": "pac24",
+         "at": "DP 44(d)",
+         "why": "Relaxing an excipient acceptance criterion: notifiable change (Level II)."
+        }
+       }
+      }
+     }
     },
     "no": {
      "ask": "excipientSpecKind",
@@ -3046,11 +3678,22 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "CDSCO",
-     "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "ask": "pacConds",
+     "on": {
+      "yes": {
+       "cat": "L3",
+       "src": "pac24",
+       "at": "DS 21(a), DP 48(b)",
+       "why": "Testing less often is treated as deleting a routine release test: annual notification (Level III), because every condition for the lower level is met.",
+       "note": "If any one condition in the row is not met, the change stays at the higher level."
+      },
+      "no": {
+       "cat": "L2",
+       "src": "pac24",
+       "at": "DS 21(a), DP 48(b)",
+       "why": "Testing less often is treated as deleting a routine release test: notifiable change (Level II)."
+      }
+     }
     },
     "no": {
      "cat": "L1",
@@ -3069,8 +3712,8 @@
     "yes": {
      "cat": "L3",
      "src": "pac24",
-     "at": "3.2.S.4.2 (procedures)",
-     "why": "A minor change to an approved procedure is an annual notification (Level III)."
+     "at": "DS 22(c), DP 49(c)",
+     "why": "A minor change to an approved analytical procedure is an annual notification (Level III)."
     },
     "no": {
      "ask": "bio",
@@ -3099,11 +3742,22 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "CDSCO",
-     "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "ask": "pacConds",
+     "on": {
+      "yes": {
+       "cat": "L3",
+       "src": "pac24",
+       "at": "DP 49(b)",
+       "why": "Replacing a pharmacopoeial procedure with a rapid microbiological method: annual notification (Level III), because every condition for the lower level is met.",
+       "note": "If any one condition in the row is not met, the change stays at the higher level."
+      },
+      "no": {
+       "cat": "L2",
+       "src": "pac24",
+       "at": "DP 49(b)",
+       "why": "Replacing a pharmacopoeial procedure with a rapid microbiological method: notifiable change (Level II)."
+      }
+     }
     },
     "no": {
      "ask": "sameOrBetter",
@@ -3144,10 +3798,22 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "L3",
-     "src": "pac24",
-     "at": "3.2.P.7 (container closure)",
-     "why": "A new supplier of the same component is an annual notification (Level III)."
+     "ask": "pacConds",
+     "on": {
+      "yes": {
+       "cat": "L3",
+       "src": "pac24",
+       "at": "DS 28(a), DP 58(a)",
+       "why": "Replacing or adding a container closure supplier: annual notification (Level III), because every condition for the lower level is met.",
+       "note": "If any one condition in the row is not met, the change stays at the higher level."
+      },
+      "no": {
+       "cat": "L2",
+       "src": "pac24",
+       "at": "DS 28(a), DP 58(a)",
+       "why": "Replacing or adding a container closure supplier: notifiable change (Level II)."
+      }
+     }
     },
     "no": {
      "ask": "sterile",
@@ -3176,11 +3842,33 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "CDSCO",
-     "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "ask": "deviceSignificant",
+     "on": {
+      "yes": {
+       "cat": "L1",
+       "src": "pac24",
+       "at": "Safety and efficacy, row 3(e)",
+       "why": "A new device for administration is a supplement (Level I)."
+      },
+      "no": {
+       "ask": "pacConds",
+       "on": {
+        "yes": {
+         "cat": "L3",
+         "src": "pac24",
+         "at": "DP 57(a)",
+         "why": "Modifying the container closure system: annual notification (Level III), because every condition for the lower level is met.",
+         "note": "If any one condition in the row is not met, the change stays at the higher level."
+        },
+        "no": {
+         "cat": "L2",
+         "src": "pac24",
+         "at": "DP 57(a)",
+         "why": "Modifying the container closure system: notifiable change (Level II)."
+        }
+       }
+      }
+     }
     },
     "no": {
      "ask": "deviceSignificant",
@@ -3211,8 +3899,9 @@
     "yes": {
      "cat": "L3",
      "src": "pac24",
-     "at": "3.2.P.7 (container closure)",
-     "why": "A change to a non-contact component is an annual notification (Level III)."
+     "at": "DP 57(a)",
+     "why": "A change to a non-contact component is an annual notification (Level III).",
+     "note": "Tertiary packaging that does not affect stability is Level IV (Appendix 1)."
     },
     "no": {
      "cat": "L3",
@@ -3229,10 +3918,22 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "L3SL",
-     "src": "pac24",
-     "at": "General notes (shelf life)",
-     "why": "A re-test or shelf-life extension is a minor change but needs approval before it is used."
+     "ask": "pacConds",
+     "on": {
+      "yes": {
+       "cat": "L3SL",
+       "src": "pac24",
+       "at": "DS 30(a)",
+       "why": "A drug substance shelf-life extension is an annual-level change when conditions 1 to 5 are met, but shelf-life changes need approval before use.",
+       "note": "If any one condition in the row is not met, the change stays at the higher level."
+      },
+      "no": {
+       "cat": "L2",
+       "src": "pac24",
+       "at": "DS 30(a)",
+       "why": "A drug substance shelf-life extension is a notifiable change (Level II)."
+      }
+     }
     },
     "no": {
      "ask": "bio",
@@ -3325,10 +4026,22 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "L2",
-     "src": "pac24",
-     "at": "3.2.S.7 (stability)",
-     "why": "A change in drug substance storage conditions is a notifiable change (Level II)."
+     "ask": "pacConds",
+     "on": {
+      "yes": {
+       "cat": "L3",
+       "src": "pac24",
+       "at": "DS 31(c)",
+       "why": "Adding or changing a drug substance storage condition: annual notification (Level III), because every condition for the lower level is met.",
+       "note": "If any one condition in the row is not met, the change stays at the higher level."
+      },
+      "no": {
+       "cat": "L2",
+       "src": "pac24",
+       "at": "DS 31(c)",
+       "why": "Adding or changing a drug substance storage condition: notifiable change (Level II)."
+      }
+     }
     },
     "no": {
      "ask": "restrictive",
@@ -3399,11 +4112,10 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "CDSCO",
+     "cat": "L2",
      "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "at": "Safety and efficacy, row 3(f)",
+     "why": "A change to risk management is a notifiable change (Level II)."
     },
     "no": {
      "ask": "rmpKind",
@@ -3484,9 +4196,9 @@
     "yes": {
      "cat": "CDSCO",
      "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "at": "No matching row",
+     "why": "PAC/2024 does not use ICH Q12 established conditions or a PLCM document. Classify it with the level definitions in PAC/2024 (potential to affect quality, safety or efficacy) and confirm with CDSCO.",
+     "note": "PAC/2024 has no row for this change."
     },
     "no": {
      "cat": "L1",
@@ -3505,9 +4217,9 @@
     "yes": {
      "cat": "CDSCO",
      "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "at": "No matching row",
+     "why": "PAC/2024 does not use ICH Q12 established conditions or a PLCM document. Classify it with the level definitions in PAC/2024 (potential to affect quality, safety or efficacy) and confirm with CDSCO.",
+     "note": "PAC/2024 has no row for this change."
     },
     "no": {
      "ask": "plcmMajor",
@@ -3538,9 +4250,9 @@
     "yes": {
      "cat": "CDSCO",
      "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "at": "No matching row",
+     "why": "PAC/2024 does not use ICH Q12 established conditions, so the row for the change itself decides the level. Classify it with the level definitions in PAC/2024 (potential to affect quality, safety or efficacy) and confirm with CDSCO.",
+     "note": "PAC/2024 has no row for this change."
     },
     "no": {
      "ask": "isEC",
@@ -3588,11 +4300,28 @@
    "ask": "bio",
    "on": {
     "yes": {
-     "cat": "CDSCO",
-     "src": "pac24",
-     "at": "Not modelled",
-     "why": "The biologics guidance covers this area in tables the app does not model yet; ask CDSCO or read PAC/2024 for the level.",
-     "note": "Coverage gap in this edition."
+     "ask": "pacmpAction",
+     "on": {
+      "delete": {
+       "cat": "L3",
+       "src": "pac24",
+       "at": "Section 5(b)",
+       "why": "Deleting an approved change management protocol is an annual notification (Level III)."
+      },
+      "minor": {
+       "cat": "L2",
+       "src": "pac24",
+       "at": "Section 5(c)",
+       "why": "A minor change to an approved protocol is a notifiable change (Level II)."
+      },
+      "major": {
+       "cat": "L2",
+       "src": "pac24",
+       "at": "Section 5(a)",
+       "why": "A major change is in effect a new protocol: notifiable change (Level II).",
+       "note": "Closest row."
+      }
+     }
     },
     "no": {
      "ask": "pacmpAction",

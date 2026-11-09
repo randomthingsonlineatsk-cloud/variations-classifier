@@ -1,0 +1,78 @@
+{
+ "_about": "Rules that are announced or in draft but not yet in force. The monthly rules check reads each item against its source; when an item becomes final, its pack gets a new edition or answer and the item leaves this list.",
+ "checked": "2026-11-09",
+ "items": [
+  {
+   "id": "eu-pharma-reform",
+   "region": "eu",
+   "title": "EU pharmaceutical legislation reform (new Directive on the Union code for medicinal products for human use, and new Regulation on Union procedures and the EMA)",
+   "status": "Adopted by the Council at first reading on 28 September 2026; the European Parliament's second-reading approval is still to come, then publication in the Official Journal.",
+   "expected": "Entry into force 20 days after publication in the Official Journal; most provisions apply about 24 months later. The Commission is to adopt delegated acts on variations under the new law.",
+   "app": "The EU pack stays on the variations framework in force (Regulation (EC) No 1234/2008 as amended by Delegated Regulation (EU) 2024/1701, and the guidelines that apply from 15 January 2026). A new EU edition is added when the delegated acts on variations are published.",
+   "trigger": "Publication of the delegated acts on variations",
+   "sources": [
+    {
+     "title": "LexisNexis news, 28 September 2026: Council of the EU adopts pharmaceutical reform package",
+     "url": "https://www.lexisnexis.co.uk/legal/news/council-of-the-eu-adopts-pharmaceutical-reform-package"
+    },
+    {
+     "title": "Matheson, 30 September 2026: EU Council adopts new EU Pharma Package",
+     "url": "https://www.matheson.com/insights/eu-pharma-package-eu-council-adopts-new-rules/"
+    }
+   ]
+  },
+  {
+   "id": "in-gsr97",
+   "region": "in",
+   "title": "India: draft G.S.R. 97(E) of 2 February 2026 (post-approval changes under the New Drugs and Clinical Trials Rules, 2019)",
+   "status": "Draft. No final notification found as of the check date.",
+   "expected": "Levels I to III for quality changes to new drugs once notified as final.",
+   "app": "Shown only as a what-if: switch on the draft rules in a case. When it is notified as final, the India answer for chemical drugs moves from case by case to the rule.",
+   "trigger": "Final notification in the Gazette of India",
+   "sources": [
+    {
+     "title": "CDSCO (notifications and the SUGAM portal)",
+     "url": "https://cdsco.gov.in/"
+    },
+    {
+     "title": "Medical Dialogues: Centre proposes risk-based approval system for post-approval drug changes under NDCT Rules",
+     "url": "https://medicaldialogues.in/news/industry/pharma/pharma-firms-may-need-prior-approval-for-major-drug-changes-under-ndct-draft-amendment-164193"
+    }
+   ]
+  },
+  {
+   "id": "in-drugs-rules-draft",
+   "region": "in",
+   "title": "India: similar draft of 9 March 2026 for licences under the Drugs Rules, 1945",
+   "status": "Draft.",
+   "expected": "The same levels for products licensed under the Drugs Rules, 1945.",
+   "app": "Not modelled separately; the what-if follows G.S.R. 97(E).",
+   "trigger": "Final notification in the Gazette of India",
+   "sources": [
+    {
+     "title": "CDSCO (notifications and the SUGAM portal)",
+     "url": "https://cdsco.gov.in/"
+    },
+    {
+     "title": "Medical Dialogues: Centre proposes risk-based approval system for post-approval drug changes under NDCT Rules",
+     "url": "https://medicaldialogues.in/news/industry/pharma/pharma-firms-may-need-prior-approval-for-major-drug-changes-under-ndct-draft-amendment-164193"
+    }
+   ]
+  },
+  {
+   "id": "ca-q12-pdd",
+   "region": "ca",
+   "title": "Canada: ICH Q12 for pharmaceutical drugs (Pharmaceutical Drugs Directorate) and established conditions",
+   "status": "Announced. PACMPs for biologic and radiopharmaceutical products are accepted since 13 August 2026; the date for pharmaceutical drugs is to be communicated in 2026, and established conditions later.",
+   "expected": "PACMPs for pharmaceutical drugs, then established conditions.",
+   "app": "Pharmaceutical drugs have no PACMP route in the Canada pack; biologics do.",
+   "trigger": "Health Canada notice with an implementation date",
+   "sources": [
+    {
+     "title": "Health Canada: Post-notice of compliance changes (ICH Q12 and Q14 notice)",
+     "url": "https://www.canada.ca/en/health-canada/services/drugs-health-products/drug-products/applications-submissions/guidance-documents/post-notice-compliance-changes.html"
+    }
+   ]
+  }
+ ]
+}

@@ -31,6 +31,18 @@ t('biologics follow PAC/2024', () => {
   assert.equal(cls(inForce, 'mab-infusion', 'lab-safety-add', { seriousWarning: 'yes' }).category, 'L1');
   assert.equal(cls(inDraft, 'mab-infusion', 'bio-mcb').category, 'L2');
 });
+t('PAC/2024 rows: every biologic change has an answer, with lower levels when the row conditions are met', () => {
+  for (const pack of [inForce, inDraft]) for (const [id, e] of Object.entries(pack.entries)) assert.ok(!JSON.stringify(e.tree).includes('Not modelled'), `${pack.edition} ${id}`);
+  assert.equal(cls(inForce, 'mab-infusion', 'dp-process-change', { pacCritical: 'yes' }).category, 'L2');
+  assert.equal(cls(inForce, 'mab-infusion', 'dp-scale', { pacScaleUp: 'no' }).category, 'L3');
+  assert.equal(cls(inForce, 'mab-infusion', 'shelf-life-reduce', { pacConds: 'yes' }).category, 'L3');
+  assert.equal(cls(inForce, 'mab-infusion', 'shelf-life-reduce', { pacConds: 'no' }).category, 'L2');
+  assert.equal(cls(inForce, 'mab-infusion', 'cc-cap-colour').category, 'REC');
+  assert.equal(cls(inForce, 'mab-infusion', 'rtrt').category, 'L1');
+  assert.equal(cls(inForce, 'mab-infusion', 'pacmp-change', { pacmpAction: 'delete' }).category, 'L3');
+  const r = cls(inForce, 'mab-infusion', 'tablet-shape');
+  assert.equal(r.category, 'CDSCO'); assert.equal(r.outcome.at, 'No matching row');
+});
 t('case option switches to the draft', () => {
   const k = newCase({ product: P['nce-tablet'], regions: ['in'] });
   assert.equal(packForCase(k, 'in').edition, '2026.1');
