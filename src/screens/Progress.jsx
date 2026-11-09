@@ -20,6 +20,13 @@ export default function Progress() {
     } catch (e) { toast(`Could not make the PDF: ${e.message}`, 'error'); }
     setBusy(false);
   };
+  const record = async () => {
+    if (!name.trim()) { toast('Type the name to print on the certificate.', 'warn'); return; }
+    const { vcRecord } = await import('../engine/passport.js');
+    const date = new Date().toISOString().slice(0, 10);
+    download(`variations-classifier-passport-${date}.json`, JSON.stringify(vcRecord({ name, userId: user?.userId, status, date }), null, 2));
+    toast('Passport record saved. Add it to your Skills Passport on the pharmolecule site.');
+  };
   const ms = MISSIONS.map((m) => {
     const a = attempts.filter((x) => x.kind === 'mission' && x.missionId === m.id);
     return { m, best: a.length ? Math.max(...a.map((x) => x.score)) : null, tries: a.length, level: a.sort((x, y) => y.score - x.score)[0]?.difficulty };
@@ -40,7 +47,9 @@ export default function Progress() {
         <div className="row">
           <button className="btn primary" disabled={!status.eligible || busy} onClick={() => make('cert')}>{busy ? 'Making…' : 'Download certificate (PDF)'}</button>
           <button className="btn" disabled={busy} onClick={() => make('progress')}>Statement of progress (PDF)</button>
+          <button className="btn" disabled={!status.eligible || busy} onClick={record}>Passport record (JSON)</button>
         </div>
+        {status.eligible && <p className="small muted" style={{ margin: 0 }}>The passport record carries this certificate to the <a href="https://randomthingsonlineatsk-cloud.github.io/pharmolecule/passport.html" target="_blank" rel="noopener">Regulatory Skills Passport</a>, which checks it and puts it on one page with your certificates from the other apps.</p>}
         {!status.eligible && <p className="small muted" style={{ margin: 0 }}>The statement of progress is available any time and claims no completion.</p>}
         {status.distinction && <p className="small" style={{ margin: 0 }}><strong>Distinction:</strong> {status.expertCount} missions at expert level.</p>}
       </section>
