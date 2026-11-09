@@ -27,6 +27,7 @@ export function buildChangePackage({ pack, product, kase, filing, user = null })
       in: pack.id === 'in' ? { route: product.in?.route ?? null, permission: product.in?.permission ?? null, agent: product.in?.agent ?? null, draftRules: !!pack.draft } : null,
       eu: pack.id === 'eu' ? { route: product.eu?.route ?? null, maNumber: product.eu?.maNumber ?? null, holder: (product.eu?.holder ?? product.holder).name } : null,
       ca: pack.id === 'ca' ? { din: product.ca?.din ?? null, holder: product.ca?.holder?.name ?? product.holder.name } : null,
+      uk: pack.id === 'uk' ? { plNumber: product.uk?.plNumber ?? null, holder: product.uk?.holder?.name ?? product.holder.name } : null,
       ch: pack.id === 'ch' ? { authNumber: product.ch?.authNumber ?? null, holder: product.ch?.holder?.name ?? product.holder.name } : null,
       jp: pack.id === 'jp' ? { approvalNumber: product.jp?.approvalNumber ?? null, holder: product.jp?.holder?.name ?? product.holder.name } : null,
     },

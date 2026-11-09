@@ -1,3 +1,4 @@
+import { IRP_REFERENCE_REGULATORS } from '../engine/reliance.js';
 import React, { useMemo, useState } from 'react';
 import { useApp } from '../ctx.js';
 import { CHANGE, GROUP, QUESTIONS, EVIDENCE, READY, regionsFor, changesFor, searchChanges, optionsFor, categoryOf, regionOf, questionText, conditionCode, toneOf, noFiling } from '../engine/packs.js';
@@ -395,10 +396,10 @@ function PlanTab({ k, packs, product, mutate, reveal, mission }) {
   const { filings, pending } = filingsFor(pack, product, k);
   const has505 = k.changes.some((c) => pack.entries[c.changeId]?.clock === '505o4');
   const anyPAS = filings.some((f) => ['PAS', 'NEW'].includes(f.category)) || (r === 'jp' && filings.some((f) => ['PCA', 'NEW'].includes(f.category) && f.kind === 'efficacy'));
-  const anyII = filings.some((f) => categoryOf(pack, f.category)?.implement === 'wait-for-approval' && ['eu', 'ch', 'who', 'ca', 'jp'].includes(r) && !['ADMIN'].includes(f.category));
+  const anyII = filings.some((f) => categoryOf(pack, f.category)?.implement === 'wait-for-approval' && ['eu', 'uk', 'ch', 'who', 'ca', 'jp'].includes(r) && !['ADMIN'].includes(f.category));
   const eu = isEU(pack);
-  const relatedText = { us: 'in the most restrictive category, guidance section XII', eu: 'a group follows its highest type', ch: 'a multiple application follows the longest time limit', in: 'one application, explained together', ca: 'the filing takes the highest level', jp: 'one partial change application covers them', who: 'a grouped variation takes the highest category' }[r];
-  const apartText = { us: 'annual report items share the annual report', eu: 'Type IA items share the annual update', ch: 'Type IA items can be collected over the year', in: 'Level III items share the annual notification', ca: 'Level III items can share an annual notification', jp: 'minor change notifications can be filed together', who: 'annual notifications are grouped once a year' }[r];
+  const relatedText = { us: 'in the most restrictive category, guidance section XII', eu: 'a group follows its highest type', uk: 'a group follows its highest type', ch: 'a multiple application follows the longest time limit', in: 'one application, explained together', ca: 'the filing takes the highest level', jp: 'one partial change application covers them', who: 'a grouped variation takes the highest category' }[r];
+  const apartText = { us: 'annual report items share the annual report', eu: 'Type IA items share the annual update', uk: 'Type IA items share the annual update', ch: 'Type IA items can be collected over the year', in: 'Level III items share the annual notification', ca: 'Level III items can share an annual notification', jp: 'minor change notifications can be filed together', who: 'annual notifications are grouped once a year' }[r];
   const others = products.filter((p) => p.id !== product.id && p.eu);
   const exportPkg = (f) => {
     const pkg = buildChangePackage({ pack, product, kase: k, filing: f, user });
@@ -451,6 +452,15 @@ function PlanTab({ k, packs, product, mutate, reveal, mission }) {
             <label className="row"><input type="radio" name="related" checked={!!k.related} onChange={() => mutate((x) => { x.related = true; })} /> Yes: file them together ({relatedText})</label>
             <label className="row"><input type="radio" name="related" checked={!k.related} onChange={() => mutate((x) => { x.related = false; })} /> No: file each on its own; {apartText}</label>
           </fieldset>
+        )}
+        {r === 'uk' && !mission && (
+          <label className="field">Reliance: International Recognition Procedure
+            <select value={k.options?.irp ?? ''} onChange={(e) => mutate((x) => { x.options.irp = e.target.value; })}>
+              <option value="">No: national route</option>
+              {IRP_REFERENCE_REGULATORS.map((x) => { const short = x.startsWith('EU/EEA') ? 'EU/EEA (EMA or a national authority)' : x; return <option key={x} value={short}>{short}</option>; })}
+            </select>
+            <small>Type IB and II variations already approved by a reference regulator can go through the IRP (Type IA only grouped with them). The cover letter then names the reference regulator. See the <a href="#/divergence">Divergence map</a>.</small>
+          </label>
         )}
         {eu && !mission && others.length > 0 && (
           <fieldset className="small" style={{ border: 0, padding: 0, margin: 0 }}>

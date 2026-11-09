@@ -36,7 +36,7 @@ export default function Compare() {
   return (
     <div className="page" style={{ maxWidth: 1200 }}>
       <h1>Compare regions</h1>
-      <p>The same change can be a notification in one region and need approval in another. This table shows every category each change can reach in the seven rule sets; open a change to answer the questions once and see every answer side by side.</p>
+      <p>The same change can be a notification in one region and need approval in another. This table shows every category each change can reach in the eight rule sets; open a change to answer the questions once and see every answer side by side.</p>
       <section className="panel" style={{ marginBottom: '1rem' }}>
         <h2 style={{ fontSize: 'var(--step-1)' }}>How the categories line up</h2>
         <div className="table-wrap" tabIndex={0}>
@@ -52,7 +52,7 @@ export default function Compare() {
             </tbody>
           </table>
         </div>
-        <p className="small muted" style={{ marginBottom: 0 }}>India's "Ask CDSCO" means no codified category for chemical drugs in force. The US CBE-0 lets you distribute on receipt; the EU has no exact match (Type IA-IN is implemented before it is notified). Switzerland mirrors the EU list with its own time limits (IA-IN within a month, IB after about 70 days). Canada's notifiable change exists only for biologics. Japan decides by what the approval form says, not by a list. WHO PQ defaults unlisted changes to major.</p>
+        <p className="small muted" style={{ marginBottom: 0 }}>India's "Ask CDSCO" means no codified category for chemical drugs in force. The US CBE-0 lets you distribute on receipt; the EU has no exact match (Type IA-IN is implemented before it is notified). The UK keeps the EU's 2013 categories (see the Divergence page for where they now differ from the EU). Switzerland mirrors the EU list with its own time limits (IA-IN within a month, IB after about 70 days). Canada's notifiable change exists only for biologics. Japan decides by what the approval form says, not by a list. WHO PQ defaults unlisted changes to major.</p>
       </section>
       <div className="grid-2 panel" style={{ marginBottom: '1rem' }}>
         <label className="field">Search<input type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="words such as site, shelf life" /></label>

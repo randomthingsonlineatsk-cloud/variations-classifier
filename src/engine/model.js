@@ -76,6 +76,7 @@ export function productRefs(p, regions) {
     if (r === 'in' && p.in) out.push(`India ${p.in.permission}`);
     if (r === 'ca' && p.ca) out.push(`Canada DIN ${p.ca.din}`);
     if (r === 'ch' && p.ch) out.push(`Swissmedic No. ${p.ch.authNumber}`);
+    if (r === 'uk' && p.uk) out.push(`UK ${p.uk.plNumber}`);
     if (r === 'jp' && p.jp) out.push(`Japan approval ${p.jp.approvalNumber}`);
     if (r === 'who' && p.who) out.push(`WHO PQ ${p.who.pqRef}`);
   }

@@ -98,7 +98,9 @@ The annex conditions are shown as checklists (paraphrased; read the official tex
 
 **Drills.** Timed sets of ten classification cases per region, generated from the decision trees so each has one right answer.
 
-**All regions at once.** A case can cover any of the seven regions the product is registered in: shared questions are answered once and the answers sit side by side, with a filing plan per region. The Compare page lists every category each change can reach in each region.
+**United Kingdom pack and the Divergence and Reliance Map.** MHRA still classifies variations with the EU guidelines of 2013 (2013/C 223/01) until it issues its own, while the EU moved to its 2025 guidelines on 15 January 2026, so the same change can now take a different route in each. The UK pack (2026.1) covers all 120 changes with the 2013 categories, UK-wide marketing authorisations (Windsor Framework, from 1 January 2025), UK sources and wording, MHRA as the authority, a UK Module 1, and the International Recognition Procedure as a reliance option on the Plan tab (the cover letter then names the reference regulator). The **Divergence** page lists every change whose categories differ between the EU, the UK and Switzerland (20 between the UK and the EU in this edition: heavier in the UK, lighter in the UK, both ways, or with no UK procedure, such as the ICH Q12 product lifecycle management document), and, for any change, the reliance routes that can carry one agency's decision to another: the UK International Recognition Procedure (with its reference regulators), Swiss Article 13 TPA, Access Consortium work-sharing for new indications, and EU worksharing. Change packages for the UK are not yet read by the eCTD Dossier Builder, which has no UK region.
+
+**All regions at once.** A case can cover any of the eight regions the product is registered in: shared questions are answered once and the answers sit side by side, with a filing plan per region. The Compare page lists every category each change can reach in each region.
 
 Where the app simplifies a rule, the result says so; the Sources page lists every simplification.
 
@@ -106,7 +108,7 @@ Where the app simplifies a rule, the result says so; the Sources page lists ever
 
 **Products.** Eight fictional products with a registration profile for each region they are sold in: six shared with the eCTD Dossier Builder (Ostrevia tablets, Talmisartan generic tablets, Talvera XR capsules, Nelvaprox injection, Arventa and Selvanta antibodies), Brezovent, a metered-dose inhaler, and Malvaren, a WHO-prequalified dispersible antimalarial tablet. A product can also be added from an eCTD Dossier Builder project file.
 
-**Learning.** Seventeen lessons with checks, twenty-eight scored missions at three levels (guided, standard, expert) across all seven regions, a 110-question quiz bank with flashcards, timed drills per region, a glossary and a progress page.
+**Learning.** Seventeen lessons with checks, twenty-eight scored missions at three levels (guided, standard, expert) across the regions, a 110-question quiz bank with flashcards, timed drills per region, a glossary and a progress page.
 
 **Data.** Everything stays in the browser (IndexedDB). Cases, attempts and products carry a user ID and a class ID; export and import the whole project as a `.vcproj.json` file.
 
@@ -118,6 +120,7 @@ Where the app simplifies a rule, the result says so; the Sources page lists ever
 | 2 | EU pack (2025 and 2013 guidelines), condition checklists, grouping, worksharing, EU clocks, comparison | Done |
 | 3 | India pack with the 2026 draft as a what-if, labelling rollout, change requests, rollout planner, drills | Done |
 | 4 | Canada, Switzerland, Japan and WHO PQ packs; 120 changes; ICH Q12 and Q5E tools; certificate and report PDFs; classroom mode | Done |
+| 5 | United Kingdom pack (2013 guidelines as MHRA applies them); Divergence and Reliance Map; International Recognition Procedure | Done |
 
 ## How it works
 
@@ -140,6 +143,14 @@ npm run dev
 ## Accessibility
 
 Every control works from the keyboard, form fields have labels, results are announced with live regions, colour is never the only signal (category pills carry their names), and every screen works at 360 px width.
+
+## Sources for the UK pack and the reliance routes
+
+- MHRA, Variations to marketing authorisations: https://www.gov.uk/guidance/variations-to-marketing-authorisations-mas
+- MHRA, International Recognition Procedure (updated 6 November 2026): https://www.gov.uk/government/publications/international-recognition-procedure/international-recognition-procedure
+- MHRA, International Recognition Procedure for product lifecycle: https://www.gov.uk/government/publications/international-recognition-procedure/international-recognition-procedure-for-product-lifecycle
+- Swissmedic, FAQ on Article 13 TPA: https://swissmedic.ch/swissmedic/en/home/services/documents/faq-art-13.html
+- Access NASWSI operational procedures v1.2: https://assets.publishing.service.gov.uk/media/6842f47fe5a089417c8060e3/Access_NASWSI_-_Operational_Procedures_-_v1.2.pdf
 
 ## Licence
 

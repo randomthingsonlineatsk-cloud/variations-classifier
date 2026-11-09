@@ -1,5 +1,5 @@
 {
- "_about": "Fictional products. Six share their id, names and companies with the eCTD Dossier Builder, so a change package can go straight into a dossier project for the same product. Application numbers are invented and marked as such. EU authorisation numbers are invented too.",
+ "_about": "Fictional products. Six share their id, names and companies with the eCTD Dossier Builder, so a change package can go straight into a dossier project for the same product. Application numbers are invented and marked as such. EU authorisation numbers are invented too. UK PL numbers are invented too.",
  "products": [
   {
    "id": "nce-tablet",
@@ -73,6 +73,14 @@
      "name": "Halcyon Ridge Japan K.K.",
      "address": "1-2-3 Fictional-cho, Example-ku, Tokyo 100-0000, Japan",
      "contact": "Haruka Sato, Regulatory Affairs"
+    }
+   },
+   "uk": {
+    "plNumber": "PL 99101/0001",
+    "holder": {
+     "name": "Halcyon Ridge Pharmaceuticals UK Ltd",
+     "address": "10 Example Street, Sampletown, AB1 2CD, United Kingdom",
+     "contact": "Head of Regulatory Affairs, UK"
     }
    }
   },
@@ -155,6 +163,14 @@
      "address": "4-5-6 Sample-dori, Fictional-shi, Osaka 500-0000, Japan",
      "contact": "Kenji Mori, Regulatory Affairs"
     }
+   },
+   "uk": {
+    "plNumber": "PL 99102/0002",
+    "holder": {
+     "name": "Ashvale Generics UK Ltd",
+     "address": "11 Example Street, Sampletown, AB2 2CD, United Kingdom",
+     "contact": "Head of Regulatory Affairs, UK"
+    }
    }
   },
   {
@@ -236,6 +252,14 @@
      "address": "7-8-9 Example-machi, Fictional-ku, Tokyo 101-0000, Japan",
      "contact": "Yui Tanaka, Regulatory Affairs"
     }
+   },
+   "uk": {
+    "plNumber": "PL 99103/0003",
+    "holder": {
+     "name": "Calderon Therapeutics UK Ltd",
+     "address": "12 Example Street, Sampletown, AB3 2CD, United Kingdom",
+     "contact": "Head of Regulatory Affairs, UK"
+    }
    }
   },
   {
@@ -309,6 +333,14 @@
      "name": "Meridale Japan K.K.",
      "address": "2-4-6 Sample-cho, Example-shi, Kanagawa 200-0000, Japan",
      "contact": "Daiki Ito, Regulatory Affairs"
+    }
+   },
+   "uk": {
+    "plNumber": "PL 99104/0001",
+    "holder": {
+     "name": "Meridale Therapeutics UK Ltd",
+     "address": "13 Example Street, Sampletown, AB4 2CD, United Kingdom",
+     "contact": "Head of Regulatory Affairs, UK"
     }
    }
   },
@@ -389,6 +421,14 @@
      "address": "3-6-9 Fictional-dori, Example-ku, Tokyo 102-0000, Japan",
      "contact": "Sota Kobayashi, Regulatory Affairs"
     }
+   },
+   "uk": {
+    "plNumber": "PL 99105/0002",
+    "holder": {
+     "name": "Lumenfield Biologics UK Ltd",
+     "address": "14 Example Street, Sampletown, AB5 2CD, United Kingdom",
+     "contact": "Head of Regulatory Affairs, UK"
+    }
    }
   },
   {
@@ -462,6 +502,14 @@
      "name": "Brightmere Japan G.K.",
      "address": "5-5-5 Example-cho, Fictional-shi, Aichi 400-0000, Japan",
      "contact": "Mio Yamada, Regulatory Affairs"
+    }
+   },
+   "uk": {
+    "plNumber": "PL 99106/0003",
+    "holder": {
+     "name": "Brightmere Biosimilars UK Ltd",
+     "address": "15 Example Street, Sampletown, AB6 2CD, United Kingdom",
+     "contact": "Head of Regulatory Affairs, UK"
     }
    }
   },
@@ -542,6 +590,14 @@
      "name": "Northvale Japan K.K.",
      "address": "8-1-2 Sample-machi, Example-ku, Tokyo 103-0000, Japan",
      "contact": "Riku Nakamura, Regulatory Affairs"
+    }
+   },
+   "uk": {
+    "plNumber": "PL 99107/0001",
+    "holder": {
+     "name": "Northvale Respiratory UK Ltd",
+     "address": "16 Example Street, Sampletown, AB7 2CD, United Kingdom",
+     "contact": "Head of Regulatory Affairs, UK"
     }
    }
   },
