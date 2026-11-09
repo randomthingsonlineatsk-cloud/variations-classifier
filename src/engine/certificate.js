@@ -26,8 +26,8 @@ export function certificateStatus({ attempts, lessonsDone }) {
   return { criteria, eligible, missionScores, lessonScores, quiz, drillRegions, expertCount: expert, distinction: eligible && expert >= RULES.distinctionMissions };
 }
 
+export const verificationBasis = ({ name, userId, status, date }) => JSON.stringify({ app: 'variations-classifier', name: name.trim(), userId, date, missions: status.missionScores.map((m) => [m.id, m.score]), quiz: status.quiz?.score ?? null });
 export function verificationCode({ name, userId, status, date }) {
-  const basis = JSON.stringify({ app: 'variations-classifier', name: name.trim(), userId, date, missions: status.missionScores.map((m) => [m.id, m.score]), quiz: status.quiz?.score ?? null });
-  const h = sha256(basis).toUpperCase();
+  const h = sha256(verificationBasis({ name, userId, status, date })).toUpperCase();
   return `VC-${h.slice(0, 4)}-${h.slice(4, 8)}-${h.slice(8, 12)}`;
 }
