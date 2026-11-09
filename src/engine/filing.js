@@ -8,7 +8,7 @@ const kindOf = (items) => items.map((i) => i.def.kind).sort((a, b) => KIND_ORDER
 export const isEU = (pack) => pack?.id === 'eu';
 export const isIN = (pack) => pack?.id === 'in';
 export const isEUlike = (pack) => pack?.id === 'eu' || pack?.id === 'ch';
-export const isGeneric = (pack) => ['ca', 'ch', 'jp', 'who'].includes(pack?.id);
+export const isGeneric = (pack) => ['ca', 'ch', 'jp', 'who', 'uk'].includes(pack?.id);
 
 export const answersFor = (product, change) => ({ ...productAnswers(product), ...(change.answers ?? {}) });
 
@@ -184,7 +184,7 @@ export function impactFor(pack, filing) {
     if (why && !e.why.includes(why)) e.why.push(why);
     map.set(code, e);
   };
-  for (const d of m1For(pack, filing)) add(d.code, d.label, ['eu:1.3.1', 'ca:1.3.1', 'ch:1.3.1', 'jp:1.8', 'who:1.3', 'who:QIS'].includes(d.code) ? 'replace' : 'new', 'Regional Module 1');
+  for (const d of m1For(pack, filing)) add(d.code, d.label, ['eu:1.3.1', 'uk:1.3.1', 'ca:1.3.1', 'ch:1.3.1', 'jp:1.8', 'who:1.3', 'who:QIS'].includes(d.code) ? 'replace' : 'new', 'Regional Module 1');
   for (const it of filing.items) for (const id of it.def.evidence ?? []) {
     const ev = EVIDENCE[id];
     if (ev) add(ev.ctd, ev.label, ev.op, it.def.title);
@@ -476,6 +476,7 @@ function coverLetterEU(pack, product, filing, kase) {
 export const AUTHORITY = {
   ca: (p) => (p.facts?.bio ? 'Health Canada, Biologic and Radiopharmaceutical Drugs Directorate' : 'Health Canada, Pharmaceutical Drugs Directorate'),
   ch: () => 'Swissmedic',
+  uk: () => 'the MHRA',
   jp: () => 'the Ministry of Health, Labour and Welfare and PMDA',
   who: () => 'WHO Prequalification Unit (PQT)',
 };
@@ -522,6 +523,7 @@ function timelineGeneric(pack, product, filing, opts) {
       if (c.ackDays) events.push({ date: addDays(due, c.ackDays), label: `${who} acknowledges within ${c.ackDays} days`, kind: 'milestone' });
     }
     if (pack.id === 'ch' && cat === 'IA') notes.push('Type IA changes can be collected and notified together within the year.');
+    if (pack.id === 'uk' && cat === 'IA') notes.push('Type IA changes can be collected in an annual update to MHRA.');
     return finish(events, earliestUse, notes, opts);
   }
   events.push({ date: d0, label: `${def?.label ?? cat} submitted to ${who}`, kind: 'submit' });
@@ -560,10 +562,11 @@ function timelineGeneric(pack, product, filing, opts) {
 const PRODUCT_REF = {
   ca: (p) => `DIN ${p.ca?.din ?? '[DIN]'}`,
   ch: (p) => `Swissmedic authorisation No. ${p.ch?.authNumber ?? '[number]'}`,
+  uk: (p) => `UK marketing authorisation ${p.uk?.plNumber ?? '[PL number]'}`,
   jp: (p) => `approval No. ${p.jp?.approvalNumber ?? '[number]'}`,
   who: (p) => `WHO PQ reference ${p.who?.pqRef ?? '[reference]'}`,
 };
-const HOLDER = { ca: (p) => p.ca?.holder, ch: (p) => p.ch?.holder, jp: (p) => p.jp?.holder, who: (p) => p.who?.holder };
+const HOLDER = { ca: (p) => p.ca?.holder, ch: (p) => p.ch?.holder, uk: (p) => p.uk?.holder, jp: (p) => p.jp?.holder, who: (p) => p.who?.holder };
 
 function coverLetterGeneric(pack, product, filing, kase) {
   const cat = categoryOf(pack, filing.category);
@@ -588,6 +591,7 @@ function coverLetterGeneric(pack, product, filing, kase) {
   if (imp === 'wait-for-approval') lines.push(`We will implement the change${filing.items.length > 1 ? 's' : ''} only after approval.`);
   if (changesProductInfo(filing)) lines.push('Revised product information is enclosed (clean and with changes marked).');
   if (pack.id === 'jp') lines.push('A comparison of the current and proposed approval form entries is enclosed.');
+  if (pack.id === 'uk' && kase.options?.irp) lines.push(`Submitted through the International Recognition Procedure, relying on the approval of the same change by ${kase.options.irp}; the reference regulator's decision is enclosed.`);
   if (pack.id === 'who') lines.push('The quality information summary is updated where affected (tracked and clean versions).');
   lines.push('', `Contact: ${holder.contact}`, '', 'Training material. Fictional company and product.');
   return lines.join('\n');

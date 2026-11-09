@@ -185,6 +185,7 @@ export function whatIfs(pack, changeId, answers) {
 const PROTOCOL_ROUTE = {
   us: 'Submit a comparability protocol first (itself a prior approval supplement). Once approved, this change and later ones like it can be filed in the lower category the protocol sets.',
   eu: 'Submit a PACMP first (Type II, Q.II.g.2). Once approved, the change can be implemented in the lower category the protocol sets (Q.II.g.5).',
+  uk: 'Submit a PACMP first (Type II, B.II.g.2 of the 2013 guidelines MHRA applies). Once approved, the change is notified as Type IA-IN, or Type IB if it needs further data (B.II.g.5).',
   ch: 'Submit a PACMP first (Type II, Q.II.g.2 of the Swiss list). Once approved, the change can be implemented in the lower category the protocol sets (Q.II.g.5).',
   jp: 'Apply for confirmation of a change plan (PACMP step 1). Once confirmed, the change is notified and takes effect 40 working days after acceptance (step 2).',
   ca: 'From November 2026 Health Canada accepts PACMPs for biologics. An approved protocol can lower the change to a notifiable change or a Level III notice.',
