@@ -249,6 +249,11 @@
    "edition": "2026.1",
    "date": "2026-10-11",
    "text": "First India edition: PAC/2024 levels for biologicals, case-by-case for chemical drugs, new drug permission for new claims."
+  },
+  {
+   "edition": "2026.1",
+   "date": "2026-11-09",
+   "text": "Biologics: every change now has its PAC/2024 (v1.2) row, with the lower category when the row conditions are met; changes that only exist for chemical drugs say that PAC/2024 has no row. Corrected drug product process changes (DP 40: notifiable, not supplement) and in-process limits (DS 15)."
   }
  ],
  "filing": {

@@ -1,6 +1,19 @@
 import React from 'react';
 import { PACKS, REGIONS, CHANGES } from '../engine/packs.js';
 import { Cat } from '../components/ui.jsx';
+import watch from '../data/watch.json' with { type: 'json' };
+
+function WatchItem({ w }) {
+  return (
+    <li style={{ marginBottom: '0.75rem' }}>
+      <strong>{w.title}</strong>
+      <div className="small">Status: {w.status}</div>
+      <div className="small">Expected: {w.expected}</div>
+      <div className="small">In the app: {w.app} Trigger for a change: {w.trigger}.</div>
+      <div className="small">{w.sources.map((s, i) => <span key={s.url}>{i ? ' · ' : ''}<a href={s.url} target="_blank" rel="noreferrer">{s.title}</a></span>)}</div>
+    </li>
+  );
+}
 
 function notesOf(pack) {
   const out = [];
@@ -21,7 +34,11 @@ export default function Sources() {
           <tbody>{REGIONS.map((r) => <tr key={r.id}><td>{r.label}</td><td>{r.ready ? 'Available' : `Planned, phase ${r.phase}`}</td></tr>)}</tbody>
         </table>
       </div>
+      <h2 style={{ fontSize: 'var(--step-2)', marginTop: '1.5rem' }}>Watch list</h2>
+      <p className="small">Rules announced or in draft that are not yet in force (checked {watch.checked}). The app's answers do not use them, except the India draft what-if.</p>
+      <ul>{watch.items.map((w) => <WatchItem key={w.id} w={w} />)}</ul>
       {Object.values(PACKS).flat().map((p) => {
+        const watching = watch.items.filter((w) => w.region === p.id && !p.draft);
         const notes = notesOf(p);
         return (
           <section key={`${p.id}-${p.edition}`} style={{ marginTop: '2rem' }}>
@@ -49,8 +66,9 @@ export default function Sources() {
             {p.id === 'ch' && <p className="small">Built from the EU 2026.1 trees: Swissmedic's revised list (Annex 7 TPLRO, 1 February 2026) is harmonised as far as possible with the EU list. Swiss sources, wording, time limits and procedures replace the EU ones; check the Swiss form for Swiss-only variations (numbered from 100).</p>}
             {(p.id === 'ca' || p.id === 'who') && <p className="small">Condition numbers shown as "{p.id === 'ca' ? 'HC' : 'WHO'} item condition n" are the app's own shorthand for the conditions in the guidance tables; read the guidance for the official numbering and wording.</p>}
             {p.id === 'jp' && <p className="small">Japan has no list of categories by change type. The app asks how the item appears in the approval form, then applies the Article 47 exclusions. Moderate change items (2024) and annual report items (2025) are trials that apply only to items designated in the approval.</p>}
+            {watching.length > 0 && <p className="small"><strong>Watching:</strong> {watching.map((w) => w.title).join('; ')} (see the watch list above).</p>}
             <h3 style={{ marginTop: '1rem' }}>Change log</h3>
-            <ul className="small">{p.changeLog.map((c) => <li key={c.edition}>{c.edition} ({c.date}): {c.text}</li>)}</ul>
+            <ul className="small">{p.changeLog.map((c, i) => <li key={`${c.edition}-${c.date}-${i}`}>{c.edition} ({c.date}): {c.text}</li>)}</ul>
           </section>
         );
       })}

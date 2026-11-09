@@ -53,7 +53,7 @@
   "q12": {
    "title": "Health Canada: implementation of ICH Q12 and Q14 (notice on the post-NOC changes page)",
    "version": "Notice",
-   "date": "2026",
+   "date": "page modified 2026-05-15, read 2026-11-09",
    "url": "https://www.canada.ca/en/health-canada/services/drugs-health-products/drug-products/applications-submissions/guidance-documents/post-notice-compliance-changes.html",
    "status": "final"
   },
@@ -484,6 +484,11 @@
    "edition": "2026.1",
    "date": "2026-10-11",
    "text": "First Canada edition: 2019 Quality guidance for pharmaceuticals, May 2026 framework and quality guidance for biologics, Safety and Efficacy guidance for labelling."
+  },
+  {
+   "edition": "2026.1",
+   "date": "2026-11-09",
+   "text": "PACMPs for biologic and radiopharmaceutical products: in force since 13 August 2026 (90 days after the 15 May 2026 guidance revisions), checked against the Health Canada post-NOC changes page."
   }
  ]
 }

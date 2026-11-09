@@ -1404,8 +1404,8 @@
      "cat": "NC",
      "src": "fwbio",
      "at": "PACMP",
-     "why": "From November 2026 Health Canada accepts PACMPs for biologic and radiopharmaceutical products; the app treats a stand-alone protocol as a notifiable change.",
-     "note": "Simplified: the framework describes how protocols are filed. Submissions are accepted after a 90-day coming-into-effect period that started on 13 August 2026."
+     "why": "Since 13 August 2026, the end of a 90-day coming-into-effect period after the guidance revisions of 15 May 2026, Health Canada accepts PACMPs for biologic and radiopharmaceutical products; the app treats a stand-alone protocol as a notifiable change.",
+     "note": "Simplified: the framework describes how protocols are filed. Established conditions are not part of this first step."
     },
     "no": {
      "cat": "NA",
