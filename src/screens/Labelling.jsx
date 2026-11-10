@@ -32,7 +32,7 @@ export default function Labelling() {
   return (
     <div className="page" style={{ maxWidth: 1200 }}>
       <h1>Labelling rollout</h1>
-      <p>A change to the company core data sheet (CCDS) has to reach every regional label. Track one CCDS change across every regional label the product has (US prescribing information, EU SmPC, Indian prescribing information, Canadian product monograph, Swiss information texts, Japanese package insert, WHO PQ SmPC): where it goes, how it is classified, the deadline and how far each region lags.</p>
+      <p>A change to the company core data sheet (CCDS) has to reach every regional label. Track one CCDS change across every regional label the product has (US prescribing information, EU SmPC, Indian prescribing information, Canadian product monograph, Swiss information texts, Japanese package insert, Chinese package insert, WHO PQ SmPC): where it goes, how it is classified, the deadline and how far each region lags.</p>
       <form className="panel grid-2" onSubmit={create} aria-label="New CCDS change" style={{ marginBottom: '1.5rem' }}>
         <label className="field">Product<select value={form.productId} onChange={set('productId')}>{products.map((p) => <option key={p.id} value={p.id}>{p.label ?? p.brandName}</option>)}</select></label>
         <label className="field">Kind of change<select value={form.kind} onChange={set('kind')}>{KINDS.map((x) => <option key={x.id} value={x.id}>{x.label}</option>)}</select></label>

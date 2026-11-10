@@ -1,0 +1,2310 @@
+{
+ "dp-site-move": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "ask": "cnSameQaLine",
+     "on": {
+      "yes": {
+       "cat": "FILE",
+       "src": "bio",
+       "at": "Site and equipment",
+       "why": "The new site is already approved for a similar product under the same quality system, with a replicated line: a moderate change.",
+       "note": "For a domestic drug the production licence change comes first."
+      },
+      "no": {
+       "cat": "SUPP",
+       "src": "bio",
+       "at": "Site and equipment",
+       "why": "Moving drug product manufacture for a biological product is a major change: supplementary application.",
+       "note": "For a domestic drug the production licence change comes first (Article 16)."
+      }
+     }
+    },
+    "no": {
+     "ask": "cnImported",
+     "on": {
+      "yes": {
+       "ask": "sterile",
+       "on": {
+        "yes": {
+         "cat": "SUPP",
+         "src": "pac",
+         "at": "Article 15",
+         "why": "Moving drug product manufacture abroad for a sterile imported drug: supplementary application.",
+         "note": "Simplified."
+        },
+        "no": {
+         "cat": "FILE",
+         "src": "pac",
+         "at": "Article 15",
+         "why": "Moving drug product manufacture abroad for an imported drug: filing with CDE, with the study data the chemical guideline asks for (1 to 3 batches, 3 to 6 months of stability).",
+         "note": "Simplified."
+        }
+       }
+      },
+      "no": {
+       "cat": "LICENCE",
+       "src": "pac",
+       "at": "Articles 12 to 14",
+       "why": "Moving drug product manufacture for a domestic drug: apply to the provincial MPA to change the production licence; after inspection and technical review the registration record is updated.",
+       "note": "If the formulation, process or standards also change, classify those changes too."
+      }
+     }
+    }
+   }
+  }
+ },
+ "ds-site-move": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "ask": "bio",
+     "on": {
+      "yes": {
+       "ask": "cnSameQaLine",
+       "on": {
+        "yes": {
+         "cat": "FILE",
+         "src": "bio",
+         "at": "Site and equipment",
+         "why": "The new site is already approved for a similar product under the same quality system, with a replicated line: a moderate change.",
+         "note": "For a domestic drug the production licence change comes first."
+        },
+        "no": {
+         "cat": "SUPP",
+         "src": "bio",
+         "at": "Site and equipment",
+         "why": "Moving drug substance manufacture for a biological product is a major change: supplementary application.",
+         "note": "For a domestic drug the production licence change comes first (Article 16)."
+        }
+       }
+      },
+      "no": {
+       "ask": "cnImported",
+       "on": {
+        "yes": {
+         "ask": "sterile",
+         "on": {
+          "yes": {
+           "cat": "SUPP",
+           "src": "pac",
+           "at": "Article 15",
+           "why": "Moving drug substance manufacture abroad for a sterile imported drug: supplementary application.",
+           "note": "Simplified."
+          },
+          "no": {
+           "cat": "FILE",
+           "src": "pac",
+           "at": "Article 15",
+           "why": "Moving drug substance manufacture abroad for an imported drug: filing with CDE, with the study data the chemical guideline asks for (1 to 3 batches, 3 to 6 months of stability).",
+           "note": "Simplified."
+          }
+         }
+        },
+        "no": {
+         "cat": "LICENCE",
+         "src": "pac",
+         "at": "Articles 12 to 14",
+         "why": "Moving drug substance manufacture for a domestic drug: apply to the provincial MPA to change the production licence; after inspection and technical review the registration record is updated.",
+         "note": "If the formulation, process or standards also change, classify those changes too."
+        }
+       }
+      }
+     }
+    },
+    "no": {
+     "ask": "cnImported",
+     "on": {
+      "yes": {
+       "ask": "sterile",
+       "on": {
+        "yes": {
+         "cat": "SUPP",
+         "src": "chem",
+         "at": "Site (drug substance)",
+         "why": "Moving a sterile drug substance step abroad: supplementary application.",
+         "note": "Simplified."
+        },
+        "no": {
+         "cat": "FILE",
+         "src": "chem",
+         "at": "Site (drug substance)",
+         "why": "Moving drug substance manufacture abroad: filing, with 3 batches tested and 3 months of stability; the drug substance record on the registration platform is updated.",
+         "note": "Simplified."
+        }
+       }
+      },
+      "no": {
+       "cat": "LICENCE",
+       "src": "pac",
+       "at": "Articles 12, 14 and 19",
+       "why": "A domestic drug substance site change goes through the production licence; the drug substance record is then updated and the formulation holders are told."
+      }
+     }
+    }
+   }
+  }
+ },
+ "ds-intermediate-site": {
+  "tree": {
+   "ask": "sameSiteBuilding",
+   "on": {
+    "yes": {
+     "cat": "REPORT",
+     "src": "chem",
+     "at": "Site (drug substance)",
+     "why": "Same address, same equipment and procedures, non-sterile step: test 1 batch and report the first batch's stability in the annual report."
+    },
+    "no": {
+     "cat": "FILE",
+     "src": "chem",
+     "at": "Site (drug substance)",
+     "why": "A different address: validate, compare quality and impurity profile, test 3 batches: moderate change.",
+     "note": "Simplified."
+    }
+   }
+  }
+ },
+ "primary-pack-site": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "ask": "cnSameQaLine",
+     "on": {
+      "yes": {
+       "cat": "FILE",
+       "src": "bio",
+       "at": "Site and equipment",
+       "why": "The new site is already approved for a similar product under the same quality system, with a replicated line: a moderate change.",
+       "note": "For a domestic drug the production licence change comes first."
+      },
+      "no": {
+       "cat": "SUPP",
+       "src": "bio",
+       "at": "Site and equipment",
+       "why": "Moving primary packaging for a biological product is a major change: supplementary application.",
+       "note": "For a domestic drug the production licence change comes first (Article 16)."
+      }
+     }
+    },
+    "no": {
+     "ask": "cnImported",
+     "on": {
+      "yes": {
+       "ask": "sterile",
+       "on": {
+        "yes": {
+         "cat": "SUPP",
+         "src": "pac",
+         "at": "Article 15",
+         "why": "Moving primary packaging abroad for a sterile imported drug: supplementary application.",
+         "note": "Simplified."
+        },
+        "no": {
+         "cat": "FILE",
+         "src": "pac",
+         "at": "Article 15",
+         "why": "Moving primary packaging abroad for an imported drug: filing with CDE, with the study data the chemical guideline asks for (1 to 3 batches, 3 to 6 months of stability).",
+         "note": "Simplified."
+        }
+       }
+      },
+      "no": {
+       "cat": "LICENCE",
+       "src": "pac",
+       "at": "Articles 12 to 14",
+       "why": "Moving primary packaging for a domestic drug: apply to the provincial MPA to change the production licence; after inspection and technical review the registration record is updated.",
+       "note": "If the formulation, process or standards also change, classify those changes too."
+      }
+     }
+    }
+   }
+  }
+ },
+ "secondary-pack-site": {
+  "tree": {
+   "cat": "REPORT",
+   "src": "chem",
+   "at": "Site (drug product)",
+   "why": "A secondary packaging site: validate, test 1 batch and report in the annual report.",
+   "note": "A new address on a domestic production licence needs a licence change."
+  }
+ },
+ "labeling-site": {
+  "tree": {
+   "cat": "REPORT",
+   "src": "chem",
+   "at": "Site (drug product)",
+   "why": "A labelling site: validate, test 1 batch and report in the annual report.",
+   "note": "A new address on a domestic production licence needs a licence change."
+  }
+ },
+ "testing-site": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "ask": "bioProcedure",
+     "on": {
+      "yes": {
+       "cat": "FILE",
+       "src": "bio",
+       "at": "Analytical methods",
+       "why": "Moving a bioassay to another site is a moderate change (major if the assay uses animals)."
+      },
+      "no": {
+       "cat": "REPORT",
+       "src": "bio",
+       "at": "Analytical methods",
+       "why": "Moving physicochemical testing: report.",
+       "note": "Simplified."
+      }
+     }
+    },
+    "no": {
+     "cat": "REPORT",
+     "src": "pac",
+     "at": "Article 17",
+     "why": "The chemical guideline has no example for a testing site; holders usually classify it as a report change.",
+     "note": "Simplified."
+    }
+   }
+  }
+ },
+ "ink-imprint-site": {
+  "tree": {
+   "cat": "REPORT",
+   "src": "chem",
+   "at": "Site (drug product)",
+   "why": "A printing site for oral solids: validate, test 1 batch and report in the annual report."
+  }
+ },
+ "component-sterilization-site": {
+  "tree": {
+   "cat": "REPORT",
+   "src": "chem",
+   "at": "Site (drug product)",
+   "why": "A packaging material sterilisation site: validate, test 1 batch and report in the annual report."
+  }
+ },
+ "fill-line-add": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "ask": "cnSameQaLine",
+     "on": {
+      "yes": {
+       "cat": "FILE",
+       "src": "bio",
+       "at": "Site and equipment",
+       "why": "A replicated line at an approved site under the same quality system: moderate change."
+      },
+      "no": {
+       "cat": "SUPP",
+       "src": "bio",
+       "at": "Site and equipment",
+       "why": "A new production line for a biological product is a major change."
+      }
+     }
+    },
+    "no": {
+     "ask": "lineDuplicate",
+     "on": {
+      "yes": {
+       "cat": "FILE",
+       "src": "chem",
+       "at": "Site (drug product)",
+       "why": "A duplicate filling line with an unchanged process: moderate change with validation, including sterility assurance.",
+       "note": "Simplified."
+      },
+      "no": {
+       "cat": "SUPP",
+       "src": "chem",
+       "at": "Drug product process",
+       "why": "A new line that changes the process or sterility assurance: major change."
+      }
+     }
+    }
+   }
+  }
+ },
+ "dp-equipment-same": {
+  "tree": {
+   "cat": "REPORT",
+   "src": "chem",
+   "at": "Drug product process",
+   "why": "Equipment of the same design and principle: minor change."
+  }
+ },
+ "dp-process-change": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "ask": "majorImpact",
+     "on": {
+      "yes": {
+       "cat": "SUPP",
+       "src": "bio",
+       "at": "Drug product process",
+       "why": "Changing process steps (compounding, filling, lyophilisation) or loosening controls: major change."
+      },
+      "no": {
+       "cat": "FILE",
+       "src": "bio",
+       "at": "Drug product process",
+       "why": "A step change that does not affect critical quality: moderate change."
+      }
+     }
+    },
+    "no": {
+     "ask": "fundamentalTech",
+     "on": {
+      "yes": {
+       "cat": "SUPP",
+       "src": "chem",
+       "at": "Drug product process",
+       "why": "A fundamental change (for example wet to dry granulation, or oven to fluid-bed drying): major change."
+      },
+      "no": {
+       "ask": "affectsRelease",
+       "on": {
+        "yes": {
+         "cat": "SUPP",
+         "src": "chem",
+         "at": "Drug product process",
+         "why": "A change that could affect release, absorption (for example inhalation) or another critical quality attribute: major change."
+        },
+        "no": {
+         "ask": "bioMinorParam",
+         "on": {
+          "yes": {
+           "cat": "REPORT",
+           "src": "chem",
+           "at": "Drug product process",
+           "why": "A minor parameter change (for example mixing or drying time, tablet hardness with unchanged dissolution): minor change."
+          },
+          "no": {
+           "cat": "FILE",
+           "src": "chem",
+           "at": "Drug product process",
+           "why": "A process parameter or different-principle equipment change that does not affect critical quality attributes: moderate change."
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "dp-scale": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "ask": "scaleOnly",
+     "on": {
+      "yes": {
+       "cat": "FILE",
+       "src": "bio",
+       "at": "Scale",
+       "why": "A scale change on equivalent equipment, only for batch size: moderate change."
+      },
+      "no": {
+       "cat": "SUPP",
+       "src": "bio",
+       "at": "Scale",
+       "why": "A scale change outside those conditions: major change."
+      }
+     }
+    },
+    "no": {
+     "ask": "cnComplexForm",
+     "on": {
+      "yes": {
+       "cat": "SUPP",
+       "src": "chem",
+       "at": "Batch size",
+       "why": "A batch size change for a special dosage form (complex modified release, enteric, transdermal, liposome, long-acting): major change."
+      },
+      "no": {
+       "ask": "aseptic",
+       "on": {
+        "yes": {
+         "cat": "FILE",
+         "src": "chem",
+         "at": "Batch size",
+         "why": "A batch size change for an aseptically made product with longer sterility-relevant steps: moderate change."
+        },
+        "no": {
+         "ask": "scaleWithin10",
+         "on": {
+          "yes": {
+           "cat": "REPORT",
+           "src": "chem",
+           "at": "Batch size",
+           "why": "Within ten times the pivotal clinical or bioequivalence batch (oral solids and non-sterile semisolids): minor change."
+          },
+          "no": {
+           "cat": "FILE",
+           "src": "chem",
+           "at": "Batch size",
+           "why": "More than ten times the pivotal batch: moderate change."
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "ds-route-new": {
+  "tree": {
+   "cat": "SUPP",
+   "src": "chem",
+   "at": "Drug substance process",
+   "why": "A new route of synthesis: major change."
+  }
+ },
+ "ds-process-change": {
+  "tree": {
+   "ask": "dsAfterFinalOrImpurity",
+   "on": {
+    "yes": {
+     "cat": "SUPP",
+     "src": "chem",
+     "at": "Drug substance process",
+     "why": "A change from the final step onward, or one that could change the impurity profile or key physicochemical properties: major change."
+    },
+    "no": {
+     "ask": "cnMinorDs",
+     "on": {
+      "yes": {
+       "cat": "REPORT",
+       "src": "chem",
+       "at": "Drug substance process",
+       "why": "New or tighter in-process controls, a higher grade of reagent or solvent, or equipment before the final step: minor change."
+      },
+      "no": {
+       "cat": "FILE",
+       "src": "chem",
+       "at": "Drug substance process",
+       "why": "Reagents, solvents or conditions before the final step changed with the same impurity profile: moderate change."
+      }
+     }
+    }
+   }
+  }
+ },
+ "ds-starting-material": {
+  "tree": {
+   "cat": "FILE",
+   "src": "chem",
+   "at": "Drug substance process",
+   "why": "Extending the route so the old starting material becomes an intermediate: moderate change."
+  }
+ },
+ "dp-reprocessing": {
+  "tree": {
+   "cat": "SUPP",
+   "src": "chem",
+   "at": "Drug substance process",
+   "why": "Adding a reprocessing procedure to the registered process: major change.",
+   "note": "Making an existing rework a fixed step is moderate."
+  }
+ },
+ "dp-ink": {
+  "tree": {
+   "ask": "inkApproved",
+   "on": {
+    "yes": {
+     "cat": "REPORT",
+     "src": "chem",
+     "at": "Excipients",
+     "why": "An ink of components already used in approved drugs: minor change."
+    },
+    "no": {
+     "cat": "FILE",
+     "src": "chem",
+     "at": "Excipients",
+     "why": "Another ink is a moderate change.",
+     "note": "Simplified."
+    }
+   }
+  }
+ },
+ "dp-emboss": {
+  "tree": {
+   "ask": "mr",
+   "on": {
+    "yes": {
+     "cat": "SUPP",
+     "src": "chem",
+     "at": "Drug product process",
+     "why": "A marking change on a modified-release product: major change."
+    },
+    "no": {
+     "cat": "REPORT",
+     "src": "chem",
+     "at": "Drug product process",
+     "why": "A non-functional marking change on an oral solid: minor change."
+    }
+   }
+  }
+ },
+ "dp-order-addition": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "FILE",
+     "src": "bio",
+     "at": "Drug product process",
+     "why": "A change in the order of operations is a moderate change (not for vaccine liquid formulations)."
+    },
+    "no": {
+     "cat": "REPORT",
+     "src": "chem",
+     "at": "Drug product process",
+     "why": "Changing the order of adding components (not the drug substance) to a solution: minor change."
+    }
+   }
+  }
+ },
+ "sterile-filter": {
+  "tree": {
+   "ask": "filterMaterialPore",
+   "on": {
+    "yes": {
+     "cat": "SUPP",
+     "src": "chem",
+     "at": "Drug product process",
+     "why": "Changing the sterilising filter pore size: major change."
+    },
+    "no": {
+     "cat": "FILE",
+     "src": "chem",
+     "at": "Drug product process",
+     "why": "Filtration parameters beyond the approved range (same pore size), or one filter replaced by two in series: moderate change."
+    }
+   }
+  }
+ },
+ "sterilization-method": {
+  "tree": {
+   "cat": "SUPP",
+   "src": "chem",
+   "at": "Drug product process",
+   "why": "Changing the sterilisation method (filtration and terminal sterilisation, overkill and bioburden-based, dry heat and radiation): major change."
+  }
+ },
+ "depyrogenation": {
+  "tree": {
+   "ask": "majorImpact",
+   "on": {
+    "yes": {
+     "cat": "SUPP",
+     "src": "chem",
+     "at": "Drug product process",
+     "why": "A change that could affect sterility assurance: major change.",
+     "note": "Simplified."
+    },
+    "no": {
+     "cat": "FILE",
+     "src": "chem",
+     "at": "Drug product process",
+     "why": "A depyrogenation change with equivalent assurance: moderate change.",
+     "note": "Simplified."
+    }
+   }
+  }
+ },
+ "inprocess-filtration-remove": {
+  "tree": {
+   "ask": "aseptic",
+   "on": {
+    "yes": {
+     "cat": "SUPP",
+     "src": "chem",
+     "at": "Drug product process",
+     "why": "Removing a filtration in an aseptic process: major change.",
+     "note": "Simplified."
+    },
+    "no": {
+     "cat": "FILE",
+     "src": "chem",
+     "at": "Drug product process",
+     "why": "Removing an intermediate filtration in a terminally sterilised product: moderate change."
+    }
+   }
+  }
+ },
+ "control-increase": {
+  "tree": {
+   "ask": "pacQualityIssue",
+   "on": {
+    "yes": {
+     "cat": "SUPP",
+     "src": "chem",
+     "at": "Drug product process",
+     "why": "A control added because of a process defect or stability problem is a major change."
+    },
+    "no": {
+     "cat": "REPORT",
+     "src": "chem",
+     "at": "Drug product process",
+     "why": "Adding an in-process control or tightening one: minor change."
+    }
+   }
+  }
+ },
+ "excipient-change": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "SUPP",
+     "src": "bio",
+     "at": "Formulation",
+     "why": "Changing the excipient composition or concentration of a biological product: major change."
+    },
+    "no": {
+     "ask": "cnExcipient",
+     "on": {
+      "minor": {
+       "cat": "REPORT",
+       "src": "chem",
+       "at": "Excipients",
+       "why": "An excipient amount change within the minor limits (for oral solids, each excipient and the total within 5 percent, unit weight unchanged): minor change."
+      },
+      "moderate": {
+       "cat": "FILE",
+       "src": "chem",
+       "at": "Excipients",
+       "why": "An excipient amount change beyond the minor limits but within the moderate ones (total within 10 percent, unit weight within 10 percent), or a change of excipient grade: moderate change."
+      },
+      "major": {
+       "cat": "SUPP",
+       "src": "chem",
+       "at": "Excipients",
+       "why": "An excipient amount change beyond the moderate limits, a narrow therapeutic index or BCS class IV drug beyond the minor limits, or a change in excipient type: major change."
+      }
+     }
+    }
+   }
+  }
+ },
+ "colour-flavour-delete": {
+  "tree": {
+   "cat": "REPORT",
+   "src": "chem",
+   "at": "Excipients",
+   "why": "Removing or reducing a colourant or flavour: minor change."
+  }
+ },
+ "new-strength": {
+  "tree": {
+   "cat": "SUPP",
+   "src": "chem",
+   "at": "New strength",
+   "why": "Every new strength is a major change: supplementary application, within the approved dosing range.",
+   "pi": true
+  }
+ },
+ "spec-tighten": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "ask": "cnForDs",
+     "on": {
+      "yes": {
+       "cat": "FILE",
+       "src": "bio",
+       "at": "Specifications",
+       "why": "Tightening a drug substance limit: moderate change."
+      },
+      "no": {
+       "cat": "REPORT",
+       "src": "bio",
+       "at": "Specifications",
+       "why": "Tightening a drug product limit: minor change."
+      }
+     }
+    },
+    "no": {
+     "cat": "FILE",
+     "src": "chem",
+     "at": "Specifications",
+     "why": "Tightening a limit within the approved range: moderate change."
+    }
+   }
+  }
+ },
+ "spec-relax": {
+  "tree": {
+   "cat": "SUPP",
+   "src": "chem",
+   "at": "Specifications",
+   "why": "Relaxing a limit is a major change."
+  }
+ },
+ "spec-delete-test": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "ask": "significantQuality",
+     "on": {
+      "yes": {
+       "cat": "SUPP",
+       "src": "bio",
+       "at": "Specifications",
+       "why": "Deleting a test is a major change."
+      },
+      "no": {
+       "cat": "REPORT",
+       "src": "bio",
+       "at": "Specifications",
+       "why": "Deleting a redundant test when the product is unchanged: minor change."
+      }
+     }
+    },
+    "no": {
+     "cat": "SUPP",
+     "src": "chem",
+     "at": "Specifications",
+     "why": "Deleting any item from the registered specification is a major change."
+    }
+   }
+  }
+ },
+ "spec-add-test": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "ask": "cnForDs",
+     "on": {
+      "yes": {
+       "cat": "FILE",
+       "src": "bio",
+       "at": "Specifications",
+       "why": "Adding a drug substance test with a limit: moderate change."
+      },
+      "no": {
+       "cat": "REPORT",
+       "src": "bio",
+       "at": "Specifications",
+       "why": "Adding a drug product test: minor change."
+      }
+     }
+    },
+    "no": {
+     "cat": "FILE",
+     "src": "chem",
+     "at": "Specifications",
+     "why": "Adding a test that is not needed for safety or because of a process change: moderate change."
+    }
+   }
+  }
+ },
+ "spec-compendial": {
+  "tree": {
+   "cat": "FILE",
+   "src": "impl",
+   "at": "Article 19",
+   "why": "Updating the registration standard to a revised national standard (Chinese Pharmacopoeia): file or report as the guidelines say; usually a moderate change.",
+   "note": "Simplified."
+  }
+ },
+ "method-change": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "ask": "sameOrBetter",
+     "on": {
+      "yes": {
+       "cat": "FILE",
+       "src": "bio",
+       "at": "Analytical methods",
+       "why": "A method change with the same principle, or equal or better performance: moderate change."
+      },
+      "no": {
+       "cat": "SUPP",
+       "src": "bio",
+       "at": "Analytical methods",
+       "why": "Replacing an analytical method: major change."
+      }
+     }
+    },
+    "no": {
+     "cat": "SUPP",
+     "src": "chem",
+     "at": "Specifications",
+     "why": "Changing a test method in the registered specification is a major change."
+    }
+   }
+  }
+ },
+ "method-new-regulatory": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "ask": "sameOrBetter",
+     "on": {
+      "yes": {
+       "cat": "FILE",
+       "src": "bio",
+       "at": "Analytical methods",
+       "why": "A new method with equal or better performance: moderate change."
+      },
+      "no": {
+       "cat": "SUPP",
+       "src": "bio",
+       "at": "Analytical methods",
+       "why": "A new method principle: major change."
+      }
+     }
+    },
+    "no": {
+     "cat": "SUPP",
+     "src": "chem",
+     "at": "Specifications",
+     "why": "A new method in the registered specification is a major change."
+    }
+   }
+  }
+ },
+ "method-alternative": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "ask": "sameOrBetter",
+     "on": {
+      "yes": {
+       "cat": "FILE",
+       "src": "bio",
+       "at": "Analytical methods",
+       "why": "An alternative method with equal or better performance: moderate change."
+      },
+      "no": {
+       "cat": "SUPP",
+       "src": "bio",
+       "at": "Analytical methods",
+       "why": "Replacing an analytical method: major change."
+      }
+     }
+    },
+    "no": {
+     "cat": "SUPP",
+     "src": "chem",
+     "at": "Specifications",
+     "why": "Adding or deleting a method in the registered specification is a major change.",
+     "note": "Simplified."
+    }
+   }
+  }
+ },
+ "method-components": {
+  "tree": {
+   "cat": "FILE",
+   "src": "chem",
+   "at": "Drug product process",
+   "why": "Changing an analytical method for in-process or component control without lowering control: moderate change."
+  }
+ },
+ "method-raw-material": {
+  "tree": {
+   "cat": "REPORT",
+   "src": "chem",
+   "at": "Drug substance process",
+   "why": "Changing the standard or grade of reagents or solvents without lowering quality: minor change.",
+   "note": "Simplified."
+  }
+ },
+ "cc-polymer": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "SUPP",
+     "src": "bio",
+     "at": "Packaging",
+     "why": "A change in direct-contact packaging material is a major change."
+    },
+    "no": {
+     "ask": "sterile",
+     "on": {
+      "yes": {
+       "cat": "SUPP",
+       "src": "chem",
+       "at": "Packaging",
+       "why": "A material or type change for an injection, inhalation or ophthalmic container: major change."
+      },
+      "no": {
+       "cat": "FILE",
+       "src": "chem",
+       "at": "Packaging",
+       "why": "A material or type change for a liquid or semisolid container (not injection, inhalation or ophthalmic): moderate change."
+      }
+     }
+    }
+   }
+  }
+ },
+ "cc-sterile": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "ask": "productContactChange",
+     "on": {
+      "yes": {
+       "cat": "SUPP",
+       "src": "bio",
+       "at": "Packaging",
+       "why": "A change in direct-contact material, shape or size: major change."
+      },
+      "no": {
+       "cat": "REPORT",
+       "src": "bio",
+       "at": "Packaging",
+       "why": "A new supplier of the same component, approved or with status A: minor change."
+      }
+     }
+    },
+    "no": {
+     "ask": "productContactChange",
+     "on": {
+      "yes": {
+       "cat": "SUPP",
+       "src": "chem",
+       "at": "Packaging",
+       "why": "A material or type change for an injection container: major change."
+      },
+      "no": {
+       "cat": "FILE",
+       "src": "chem",
+       "at": "Packaging",
+       "why": "A new supplier, size or shape of an injection container: moderate change."
+      }
+     }
+    }
+   }
+  }
+ },
+ "cc-dose-device": {
+  "tree": {
+   "cat": "SUPP",
+   "src": "chem",
+   "at": "Packaging",
+   "why": "A change in supplier, size or shape of a metered-dose device: major change."
+  }
+ },
+ "cc-closure-solid": {
+  "tree": {
+   "ask": "containerTypeChange",
+   "on": {
+    "yes": {
+     "cat": "FILE",
+     "src": "chem",
+     "at": "Packaging",
+     "why": "Changing the type of packaging for a non-sterile solid (blister, bottle, bag): moderate change."
+    },
+    "no": {
+     "cat": "REPORT",
+     "src": "chem",
+     "at": "Packaging",
+     "why": "A supplier, size or shape change, or a material already used for the same route with equal or better performance: minor change."
+    }
+   }
+  }
+ },
+ "cc-closure-liquid": {
+  "tree": {
+   "cat": "FILE",
+   "src": "chem",
+   "at": "Packaging",
+   "why": "A material or type change for a non-sterile liquid: moderate change."
+  }
+ },
+ "cc-size-shape": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "ask": "productContactChange",
+     "on": {
+      "yes": {
+       "cat": "SUPP",
+       "src": "bio",
+       "at": "Packaging",
+       "why": "A shape or size change with different internal dimensions: major change."
+      },
+      "no": {
+       "cat": "REPORT",
+       "src": "bio",
+       "at": "Packaging",
+       "why": "A shape or size change with equivalent internal dimensions and the same material: minor change."
+      }
+     }
+    },
+    "no": {
+     "ask": "sterile",
+     "on": {
+      "yes": {
+       "cat": "FILE",
+       "src": "chem",
+       "at": "Packaging",
+       "why": "A size or shape change of an injection container: moderate change."
+      },
+      "no": {
+       "cat": "REPORT",
+       "src": "chem",
+       "at": "Packaging",
+       "why": "A size or shape change not otherwise listed: minor change."
+      }
+     }
+    }
+   }
+  }
+ },
+ "cc-count": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "REPORT",
+     "src": "bio",
+     "at": "Packaging",
+     "why": "A pack size change: minor change."
+    },
+    "no": {
+     "ask": "unitOfUse",
+     "on": {
+      "yes": {
+       "cat": "REPORT",
+       "src": "chem",
+       "at": "Packaging",
+       "why": "A count change for unit-dose packs (tablets per blister, vials per box): minor change."
+      },
+      "no": {
+       "cat": "FILE",
+       "src": "chem",
+       "at": "Packaging",
+       "why": "A count change for multi-dose packs (tablets per bottle, grams per tube): moderate change."
+      }
+     }
+    }
+   }
+  }
+ },
+ "cc-desiccant": {
+  "tree": {
+   "cat": "FILE",
+   "src": "chem",
+   "at": "Packaging",
+   "why": "Adding, changing or removing a desiccant changes the protection: moderate change.",
+   "note": "Simplified."
+  }
+ },
+ "cc-blister": {
+  "tree": {
+   "ask": "containerTypeChange",
+   "on": {
+    "yes": {
+     "cat": "FILE",
+     "src": "chem",
+     "at": "Packaging",
+     "why": "A blister type change (for example alu-alu to alu-PVC): moderate change."
+    },
+    "no": {
+     "cat": "REPORT",
+     "src": "chem",
+     "at": "Packaging",
+     "why": "A blister supplier, size or shape change: minor change."
+    }
+   }
+  }
+ },
+ "cc-secondary-protective": {
+  "tree": {
+   "cat": "SUPP",
+   "src": "chem",
+   "at": "Packaging",
+   "why": "Removing secondary packaging that gives extra protection: major change."
+  }
+ },
+ "cc-cap-colour": {
+  "tree": {
+   "cat": "REPORT",
+   "src": "bio",
+   "at": "Packaging",
+   "why": "A non-contact packaging change that does not affect stability, transport or safety: minor change."
+  }
+ },
+ "shelf-life-extend": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "ask": "approvedProtocolFullData",
+     "on": {
+      "yes": {
+       "cat": "FILE",
+       "src": "bio",
+       "at": "Shelf life",
+       "why": "Extending the shelf life on at least three commercial batches under the approved stability protocol: moderate change."
+      },
+      "no": {
+       "cat": "SUPP",
+       "src": "bio",
+       "at": "Shelf life",
+       "why": "Extending the shelf life on other data: major change."
+      }
+     }
+    },
+    "no": {
+     "cat": "FILE",
+     "src": "chem",
+     "at": "Shelf life",
+     "why": "Extending the shelf life within the long-term stability data already completed: moderate change."
+    }
+   }
+  }
+ },
+ "shelf-life-reduce": {
+  "tree": {
+   "ask": "cnStabilityIssue",
+   "on": {
+    "yes": {
+     "cat": "SUPP",
+     "src": "chem",
+     "at": "Shelf life",
+     "why": "Shortening the shelf life because of a manufacturing or stability problem is a major change."
+    },
+    "no": {
+     "cat": "FILE",
+     "src": "chem",
+     "at": "Shelf life",
+     "why": "Shortening the shelf life for other reasons: moderate change."
+    }
+   }
+  }
+ },
+ "stability-protocol": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "ask": "stabilityTimepointsOnly",
+     "on": {
+      "yes": {
+       "cat": "REPORT",
+       "src": "bio",
+       "at": "Shelf life",
+       "why": "A tighter stability protocol (for example more time points): minor change."
+      },
+      "no": {
+       "cat": "FILE",
+       "src": "bio",
+       "at": "Shelf life",
+       "why": "Another stability protocol change: moderate change."
+      }
+     }
+    },
+    "no": {
+     "cat": "FILE",
+     "src": "pac",
+     "at": "Article 17",
+     "why": "The chemical guideline has no example; a protocol change is usually filed.",
+     "note": "Simplified."
+    }
+   }
+  }
+ },
+ "storage-conditions": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "ask": "restrictive",
+     "on": {
+      "yes": {
+       "cat": "REPORT",
+       "src": "bio",
+       "at": "Shelf life",
+       "why": "Tightening the storage conditions within the approved range: minor change."
+      },
+      "no": {
+       "cat": "SUPP",
+       "src": "bio",
+       "at": "Shelf life",
+       "why": "Relaxing the storage conditions: major change."
+      }
+     }
+    },
+    "no": {
+     "cat": "SUPP",
+     "src": "chem",
+     "at": "Shelf life",
+     "why": "Changing the storage conditions is a major change.",
+     "pi": true
+    }
+   }
+  }
+ },
+ "reference-standard": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "ask": "refStdProtocol",
+     "on": {
+      "yes": {
+       "cat": "REPORT",
+       "src": "bio",
+       "at": "Reference standards",
+       "why": "A new reference lot confirmed under the approved protocol: minor change."
+      },
+      "no": {
+       "cat": "FILE",
+       "src": "bio",
+       "at": "Reference standards",
+       "why": "A new reference lot confirmed against an approved reference, or a new protocol: moderate change."
+      }
+     }
+    },
+    "no": {
+     "cat": "REPORT",
+     "src": "pac",
+     "at": "Article 17",
+     "why": "The chemical guideline has no example; a new working standard qualified against the primary standard is usually a report change.",
+     "note": "Simplified."
+    }
+   }
+  }
+ },
+ "lab-new-indication": {
+  "tree": {
+   "cat": "SUPP",
+   "src": "reg",
+   "at": "Article 78(2)",
+   "why": "A new indication changes efficacy content of the package insert: supplementary application.",
+   "pi": true
+  }
+ },
+ "lab-population": {
+  "tree": {
+   "cat": "SUPP",
+   "src": "reg",
+   "at": "Article 78(2)",
+   "why": "Changing the population or dosage changes efficacy content: supplementary application.",
+   "pi": true
+  }
+ },
+ "lab-clinical-section": {
+  "tree": {
+   "cat": "SUPP",
+   "src": "reg",
+   "at": "Article 78(2)",
+   "why": "Clinical study results are efficacy content of the package insert: supplementary application.",
+   "pi": true
+  }
+ },
+ "lab-safety-add": {
+  "tree": {
+   "cat": "FILE",
+   "src": "reg",
+   "at": "Article 79",
+   "why": "Adding or strengthening safety information does not increase risk, so it is filed.",
+   "note": "A change that weakens safety information increases risk and needs approval.",
+   "pi": true
+  }
+ },
+ "lab-dosing-safety": {
+  "tree": {
+   "ask": "cnEfficacyContent",
+   "on": {
+    "yes": {
+     "cat": "SUPP",
+     "src": "reg",
+     "at": "Article 78(2)",
+     "why": "An instruction about dosage and administration touches efficacy content or could increase safety risk: supplementary application.",
+     "pi": true
+    },
+    "no": {
+     "cat": "FILE",
+     "src": "reg",
+     "at": "Article 79",
+     "why": "An instruction about dosage and administration: a package insert change that does not touch efficacy content and does not increase risk is filed.",
+     "note": "Simplified.",
+     "pi": true
+    }
+   }
+  }
+ },
+ "lab-delete-claim": {
+  "tree": {
+   "ask": "cnEfficacyContent",
+   "on": {
+    "yes": {
+     "cat": "SUPP",
+     "src": "reg",
+     "at": "Article 78(2)",
+     "why": "Deleting unsupported text touches efficacy content or could increase safety risk: supplementary application.",
+     "pi": true
+    },
+    "no": {
+     "cat": "FILE",
+     "src": "reg",
+     "at": "Article 79",
+     "why": "Deleting unsupported text: a package insert change that does not touch efficacy content and does not increase risk is filed.",
+     "note": "Simplified.",
+     "pi": true
+    }
+   }
+  }
+ },
+ "lab-505o4": {
+  "tree": {
+   "cat": "FILE",
+   "src": "reg",
+   "at": "Article 79",
+   "why": "When NMPA announces a unified revision of package inserts, each holder files its revised insert by the date in the announcement.",
+   "pi": true
+  }
+ },
+ "lab-rld-update": {
+  "tree": {
+   "ask": "cnEfficacyContent",
+   "on": {
+    "yes": {
+     "cat": "SUPP",
+     "src": "reg",
+     "at": "Article 78(2)",
+     "why": "Aligning a generic's package insert with the reference drug touches efficacy content or could increase safety risk: supplementary application.",
+     "pi": true
+    },
+    "no": {
+     "cat": "FILE",
+     "src": "reg",
+     "at": "Article 79",
+     "why": "Aligning a generic's package insert with the reference drug: a package insert change that does not touch efficacy content and does not increase risk is filed.",
+     "note": "Simplified.",
+     "pi": true
+    }
+   }
+  }
+ },
+ "lab-editorial": {
+  "tree": {
+   "cat": "FILE",
+   "src": "reg",
+   "at": "Article 79",
+   "why": "An editorial change to the package insert or labels is filed.",
+   "note": "Simplified.",
+   "pi": true
+  }
+ },
+ "lab-layout": {
+  "tree": {
+   "cat": "FILE",
+   "src": "reg",
+   "at": "Article 79",
+   "why": "A change to the content or layout of package labels is a filing change (Article 79).",
+   "pi": true
+  }
+ },
+ "cp-submit": {
+  "tree": {
+   "cat": "NA",
+   "src": "q12",
+   "at": "Draft guideline",
+   "why": "China has no post-approval change management protocol route in force; CDE consulted on a draft guideline for chemical drugs in 2025."
+  }
+ },
+ "cp-use": {
+  "tree": {
+   "cat": "NA",
+   "src": "q12",
+   "at": "Draft guideline",
+   "why": "There is no approved protocol route yet; classify the change itself in its own entry."
+  }
+ },
+ "be-study-change": {
+  "tree": {
+   "cat": "SUPP",
+   "src": "chem",
+   "at": "Drug substance supplier",
+   "why": "A change that needs a bioequivalence study is a major change."
+  }
+ },
+ "bio-mcb": {
+  "tree": {
+   "ask": "cnFromApprovedMcb",
+   "on": {
+    "yes": {
+     "cat": "FILE",
+     "src": "bio",
+     "at": "Cell banks",
+     "why": "A new master cell bank from the original or an approved master bank, prepared the same way with the same or tighter specifications: moderate change."
+    },
+    "no": {
+     "cat": "SUPP",
+     "src": "bio",
+     "at": "Cell banks",
+     "why": "A master cell bank not derived from the original or an approved master bank, or a new expression vector: major change."
+    }
+   }
+  }
+ },
+ "bio-wcb": {
+  "tree": {
+   "ask": "wcbApprovedProtocol",
+   "on": {
+    "yes": {
+     "cat": "FILE",
+     "src": "bio",
+     "at": "Cell banks",
+     "why": "A new working cell bank from an approved master bank within the approved passage limit: moderate change."
+    },
+    "no": {
+     "cat": "SUPP",
+     "src": "bio",
+     "at": "Cell banks",
+     "why": "A working cell bank outside those conditions: major change.",
+     "note": "Simplified."
+    }
+   }
+  }
+ },
+ "bio-purification": {
+  "tree": {
+   "ask": "majorImpact",
+   "on": {
+    "yes": {
+     "cat": "SUPP",
+     "src": "bio",
+     "at": "Purification",
+     "why": "A critical change (for example one that affects virus clearance or the impurity profile): major change."
+    },
+    "no": {
+     "ask": "bioResinMinor",
+     "on": {
+      "yes": {
+       "cat": "REPORT",
+       "src": "bio",
+       "at": "Purification",
+       "why": "A non-critical change that also meets the stricter conditions: minor change."
+      },
+      "no": {
+       "cat": "FILE",
+       "src": "bio",
+       "at": "Purification",
+       "why": "A non-critical change with no new impurity and no effect on virus clearance: moderate change."
+      }
+     }
+    }
+   }
+  }
+ },
+ "bio-viral": {
+  "tree": {
+   "ask": "majorImpact",
+   "on": {
+    "yes": {
+     "cat": "SUPP",
+     "src": "bio",
+     "at": "Purification",
+     "why": "A change that significantly affects virus clearance is a major change."
+    },
+    "no": {
+     "cat": "FILE",
+     "src": "bio",
+     "at": "Purification",
+     "why": "Another change to a virus inactivation or removal step: moderate, with its own validation."
+    }
+   }
+  }
+ },
+ "admin-ownership": {
+  "tree": {
+   "cat": "SUPP",
+   "src": "pac",
+   "at": "Articles 8 and 9",
+   "why": "Transferring the marketing authorisation is a supplementary application to CDE; for a domestic transfer, the new holder first gets a production licence."
+  }
+ },
+ "admin-name-address": {
+  "tree": {
+   "cat": "FILE",
+   "src": "pac",
+   "at": "Article 11",
+   "why": "A change in the holder's name or registered address name: for a domestic holder, change the licence first, then file; for an imported drug, file with CDE."
+  }
+ },
+ "ds-cep": {
+  "tree": {
+   "ask": "cnApprovedApi",
+   "on": {
+    "yes": {
+     "cat": "FILE",
+     "src": "chem",
+     "at": "Drug substance supplier",
+     "why": "Switching to a drug substance that is already approved (status A on the registration platform): moderate change.",
+     "note": "If dissolution or key properties of the product differ, a bioequivalence study may be needed."
+    },
+    "no": {
+     "cat": "SUPP",
+     "src": "chem",
+     "at": "Drug substance supplier",
+     "why": "Switching to a drug substance that is not yet approved: major change."
+    }
+   }
+  }
+ },
+ "batch-release-site": {
+  "tree": {
+   "cat": "REPORT",
+   "src": "pac",
+   "at": "Article 17",
+   "why": "The holder releases batches under GMP; a new quality control laboratory is usually a report change.",
+   "note": "Simplified."
+  }
+ },
+ "site-delete": {
+  "tree": {
+   "cat": "REPORT",
+   "src": "chem",
+   "at": "Drug substance supplier",
+   "why": "Removing a supplier or site: minor change.",
+   "note": "A domestic production licence is updated if an address goes."
+  }
+ },
+ "ds-scale": {
+  "tree": {
+   "ask": "scaleWithin10",
+   "on": {
+    "yes": {
+     "cat": "REPORT",
+     "src": "chem",
+     "at": "Batch size",
+     "why": "Within ten times the approved drug substance batch: minor change."
+    },
+    "no": {
+     "cat": "FILE",
+     "src": "chem",
+     "at": "Batch size",
+     "why": "More than ten times the approved batch: moderate change."
+    }
+   }
+  }
+ },
+ "ipc-tighten": {
+  "tree": {
+   "cat": "REPORT",
+   "src": "chem",
+   "at": "Drug product process",
+   "why": "Tightening an in-process limit: minor change."
+  }
+ },
+ "ipc-relax": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "FILE",
+     "src": "bio",
+     "at": "Drug product process",
+     "why": "Relaxing a control range with supporting data: moderate change."
+    },
+    "no": {
+     "cat": "SUPP",
+     "src": "chem",
+     "at": "Drug product process",
+     "why": "Relaxing or deleting an approved control is a major change."
+    }
+   }
+  }
+ },
+ "hold-time": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "FILE",
+     "src": "bio",
+     "at": "Drug product process",
+     "why": "A longer hold with supporting data: moderate change.",
+     "note": "Simplified."
+    },
+    "no": {
+     "ask": "bulkHold50",
+     "on": {
+      "yes": {
+       "cat": "FILE",
+       "src": "chem",
+       "at": "Batch size",
+       "why": "A bulk solution hold more than 50 percent longer (terminally sterilised): moderate change."
+      },
+      "no": {
+       "cat": "REPORT",
+       "src": "chem",
+       "at": "Batch size",
+       "why": "A bulk solution hold up to 50 percent longer with the same bioburden: minor change."
+      }
+     }
+    }
+   }
+  }
+ },
+ "design-space-within": {
+  "tree": {
+   "cat": "NONE",
+   "src": "pac",
+   "at": "Article 4",
+   "why": "Working within an approved design space is not a change."
+  }
+ },
+ "design-space-new": {
+  "tree": {
+   "cat": "SUPP",
+   "src": "bio",
+   "at": "Drug product process",
+   "why": "Establishing or expanding a design space is a major change."
+  }
+ },
+ "rtrt": {
+  "tree": {
+   "cat": "SUPP",
+   "src": "bio",
+   "at": "Drug product process",
+   "why": "Using a design space for parametric or real-time release is a major change."
+  }
+ },
+ "continuous-mfg": {
+  "tree": {
+   "cat": "SUPP",
+   "src": "chem",
+   "at": "Drug product process",
+   "why": "Converting to continuous manufacturing is a fundamental process change: major change.",
+   "note": "Simplified."
+  }
+ },
+ "excipient-supplier": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "ask": "pacNonCriticalExcipient",
+     "on": {
+      "yes": {
+       "cat": "REPORT",
+       "src": "bio",
+       "at": "Formulation",
+       "why": "A simple, stable excipient (for example an inorganic salt or sucrose) from a new supplier with status A: minor change."
+      },
+      "no": {
+       "cat": "FILE",
+       "src": "bio",
+       "at": "Formulation",
+       "why": "A new excipient supplier that is approved or registered with status A: moderate change."
+      }
+     }
+    },
+    "no": {
+     "cat": "REPORT",
+     "src": "chem",
+     "at": "Excipients",
+     "why": "A new supplier of the same grade with no lower quality: minor change."
+    }
+   }
+  }
+ },
+ "coating-weight": {
+  "tree": {
+   "ask": "cnExcipient",
+   "on": {
+    "minor": {
+     "cat": "REPORT",
+     "src": "chem",
+     "at": "Excipients",
+     "why": "A coating or shell weight change within the minor limits (for oral solids, each excipient and the total within 5 percent, unit weight unchanged): minor change."
+    },
+    "moderate": {
+     "cat": "FILE",
+     "src": "chem",
+     "at": "Excipients",
+     "why": "A coating or shell weight change beyond the minor limits but within the moderate ones (total within 10 percent, unit weight within 10 percent), or a change of excipient grade: moderate change."
+    },
+    "major": {
+     "cat": "SUPP",
+     "src": "chem",
+     "at": "Excipients",
+     "why": "A coating or shell weight change beyond the moderate limits, a narrow therapeutic index or BCS class IV drug beyond the minor limits, or a change in excipient type: major change."
+    }
+   }
+  }
+ },
+ "score-line": {
+  "tree": {
+   "cat": "SUPP",
+   "src": "chem",
+   "at": "Drug product process",
+   "why": "Adding or deleting a functional score line: major change.",
+   "pi": true
+  }
+ },
+ "tablet-shape": {
+  "tree": {
+   "ask": "mr",
+   "on": {
+    "yes": {
+     "cat": "SUPP",
+     "src": "chem",
+     "at": "Drug product process",
+     "why": "A shape or size change of a modified-release product: major change."
+    },
+    "no": {
+     "ask": "cnShapeSignificant",
+     "on": {
+      "yes": {
+       "cat": "FILE",
+       "src": "chem",
+       "at": "Drug product process",
+       "why": "A significant shape change (for example round to an irregular shape) with unchanged dissolution: moderate change."
+      },
+      "no": {
+       "cat": "REPORT",
+       "src": "chem",
+       "at": "Drug product process",
+       "why": "A slight shape or size adjustment with unchanged dissolution: minor change."
+      }
+     }
+    }
+   }
+  }
+ },
+ "tse-excipient": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "FILE",
+     "src": "bio",
+     "at": "Raw materials",
+     "why": "Replacing an animal-derived material with a non-animal one: moderate change."
+    },
+    "no": {
+     "cat": "FILE",
+     "src": "chem",
+     "at": "Excipients",
+     "why": "Replacing an excipient of animal origin with the same excipient of another origin is a moderate change.",
+     "note": "Simplified."
+    }
+   }
+  }
+ },
+ "dosage-form-new": {
+  "tree": {
+   "cat": "NEW",
+   "src": "reg",
+   "at": "Provisions for Drug Registration",
+   "why": "A new dosage form is a new registration (an improved new drug or a generic of that form).",
+   "pi": true
+  }
+ },
+ "nitrosamine-control": {
+  "tree": {
+   "cat": "FILE",
+   "src": "chem",
+   "at": "Specifications",
+   "why": "Adding a test and limit is a moderate change.",
+   "note": "Simplified."
+  }
+ },
+ "excipient-spec": {
+  "tree": {
+   "ask": "excipientSpecKind",
+   "on": {
+    "tighten": {
+     "cat": "REPORT",
+     "src": "chem",
+     "at": "Excipients",
+     "why": "Raising an excipient standard: minor change."
+    },
+    "add": {
+     "cat": "REPORT",
+     "src": "chem",
+     "at": "Excipients",
+     "why": "Adding an excipient test raises the standard: minor change."
+    },
+    "delete": {
+     "cat": "SUPP",
+     "src": "chem",
+     "at": "Excipients",
+     "why": "Deleting an excipient test lowers control: major change.",
+     "note": "Simplified."
+    },
+    "relax": {
+     "cat": "SUPP",
+     "src": "chem",
+     "at": "Excipients",
+     "why": "Relaxing an excipient standard lowers control: major change.",
+     "note": "Simplified."
+    }
+   }
+  }
+ },
+ "skip-testing": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "FILE",
+     "src": "bio",
+     "at": "Specifications",
+     "why": "Moving routine testing into in-process control under approved conditions: moderate change."
+    },
+    "no": {
+     "cat": "SUPP",
+     "src": "chem",
+     "at": "Specifications",
+     "why": "Testing less than every batch removes an item from routine release: major change.",
+     "note": "Simplified."
+    }
+   }
+  }
+ },
+ "method-minor": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "REPORT",
+     "src": "bio",
+     "at": "Analytical methods",
+     "why": "A minor method change with equal or better performance: minor change."
+    },
+    "no": {
+     "cat": "FILE",
+     "src": "chem",
+     "at": "Specifications",
+     "why": "An adjustment within the approved method is filed when it changes the registered text.",
+     "note": "Simplified."
+    }
+   }
+  }
+ },
+ "micro-rapid": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "ask": "sameOrBetter",
+     "on": {
+      "yes": {
+       "cat": "FILE",
+       "src": "bio",
+       "at": "Analytical methods",
+       "why": "An equal-or-better method: moderate change."
+      },
+      "no": {
+       "cat": "SUPP",
+       "src": "bio",
+       "at": "Analytical methods",
+       "why": "Replacing a method: major change."
+      }
+     }
+    },
+    "no": {
+     "cat": "SUPP",
+     "src": "chem",
+     "at": "Specifications",
+     "why": "Changing a test method in the registered specification is a major change."
+    }
+   }
+  }
+ },
+ "cc-supplier": {
+  "tree": {
+   "ask": "bio",
+   "on": {
+    "yes": {
+     "cat": "REPORT",
+     "src": "bio",
+     "at": "Packaging",
+     "why": "A new supplier of a direct-contact item, approved or with status A: minor change."
+    },
+    "no": {
+     "ask": "sterile",
+     "on": {
+      "yes": {
+       "cat": "FILE",
+       "src": "chem",
+       "at": "Packaging",
+       "why": "A new supplier of an injection container: moderate change."
+      },
+      "no": {
+       "cat": "REPORT",
+       "src": "chem",
+       "at": "Packaging",
+       "why": "A new supplier not otherwise listed: minor change."
+      }
+     }
+    }
+   }
+  }
+ },
+ "cc-device": {
+  "tree": {
+   "ask": "deviceSignificant",
+   "on": {
+    "yes": {
+     "cat": "SUPP",
+     "src": "chem",
+     "at": "Packaging",
+     "why": "A device change that could change the dose delivered: major change.",
+     "note": "Simplified."
+    },
+    "no": {
+     "cat": "FILE",
+     "src": "chem",
+     "at": "Packaging",
+     "why": "A measuring or administration device supplied with the product: moderate change.",
+     "note": "Simplified."
+    }
+   }
+  }
+ },
+ "cc-noncontact": {
+  "tree": {
+   "cat": "REPORT",
+   "src": "bio",
+   "at": "Packaging",
+   "why": "A non-contact packaging part that does not affect stability, transport or safety: minor change."
+  }
+ },
+ "ds-retest": {
+  "tree": {
+   "cat": "FILE",
+   "src": "chem",
+   "at": "Shelf life",
+   "why": "Extending the drug substance re-test period within completed long-term data: moderate change.",
+   "note": "Simplified."
+  }
+ },
+ "in-use-shelf-life": {
+  "tree": {
+   "cat": "FILE",
+   "src": "bio",
+   "at": "Shelf life",
+   "why": "Changing the storage after reconstitution or dilution: moderate change.",
+   "pi": true
+  }
+ },
+ "ds-storage": {
+  "tree": {
+   "ask": "restrictive",
+   "on": {
+    "yes": {
+     "cat": "FILE",
+     "src": "chem",
+     "at": "Shelf life",
+     "why": "Tightening drug substance storage conditions: moderate change.",
+     "note": "Simplified."
+    },
+    "no": {
+     "cat": "SUPP",
+     "src": "chem",
+     "at": "Shelf life",
+     "why": "Changing the storage conditions is a major change."
+    }
+   }
+  }
+ },
+ "lab-new-route": {
+  "tree": {
+   "cat": "NEW",
+   "src": "reg",
+   "at": "Provisions for Drug Registration",
+   "why": "A new route of administration is a new registration.",
+   "pi": true
+  }
+ },
+ "lab-brand-name": {
+  "tree": {
+   "cat": "SUPP",
+   "src": "reg",
+   "at": "Article 78",
+   "why": "A trade name change needs a supplementary application.",
+   "note": "Simplified.",
+   "pi": true
+  }
+ },
+ "lab-rmp": {
+  "tree": {
+   "cat": "NONE",
+   "src": "pac",
+   "at": "Article 4",
+   "why": "China has no separate filing for a risk management plan update; the plan is kept in the pharmacovigilance system and summarised in periodic safety reports.",
+   "note": "Simplified."
+  }
+ },
+ "lab-psusa": {
+  "tree": {
+   "ask": "cnEfficacyContent",
+   "on": {
+    "yes": {
+     "cat": "SUPP",
+     "src": "reg",
+     "at": "Article 78(2)",
+     "why": "Safety wording after a periodic safety report or signal assessment touches efficacy content or could increase safety risk: supplementary application.",
+     "pi": true
+    },
+    "no": {
+     "cat": "FILE",
+     "src": "reg",
+     "at": "Article 79",
+     "why": "Safety wording after a periodic safety report or signal assessment: a package insert change that does not touch efficacy content and does not increase risk is filed.",
+     "note": "Simplified.",
+     "pi": true
+    }
+   }
+  }
+ },
+ "lab-delete-indication": {
+  "tree": {
+   "cat": "SUPP",
+   "src": "reg",
+   "at": "Article 78(2)",
+   "why": "Deleting an indication changes efficacy content: supplementary application.",
+   "pi": true
+  }
+ },
+ "ec-define": {
+  "tree": {
+   "cat": "NA",
+   "src": "q12",
+   "at": "ICH Q12",
+   "why": "Established conditions are not part of the Chinese change rules yet; the registration dossier and the holder's change list play that role."
+  }
+ },
+ "plcm-update": {
+  "tree": {
+   "cat": "NA",
+   "src": "q12",
+   "at": "ICH Q12",
+   "why": "China does not use a PLCM document."
+  }
+ },
+ "non-ec-change": {
+  "tree": {
+   "cat": "NA",
+   "src": "q12",
+   "at": "ICH Q12",
+   "why": "Without established conditions, the change is classified by the technical guidelines: see its own entry."
+  }
+ },
+ "pacmp-change": {
+  "tree": {
+   "cat": "NA",
+   "src": "q12",
+   "at": "Draft guideline",
+   "why": "There is no approved protocol route yet."
+  }
+ },
+ "bio-scale": {
+  "tree": {
+   "ask": "bioScaleOnly",
+   "on": {
+    "yes": {
+     "cat": "FILE",
+     "src": "bio",
+     "at": "Scale",
+     "why": "A culture scale change on the same bioreactor type with linear scaling within approved ranges: moderate change."
+    },
+    "no": {
+     "cat": "SUPP",
+     "src": "bio",
+     "at": "Scale",
+     "why": "A scale change outside those conditions: major change."
+    }
+   }
+  }
+ },
+ "bio-media": {
+  "tree": {
+   "ask": "cnMedia",
+   "on": {
+    "key": {
+     "cat": "SUPP",
+     "src": "bio",
+     "at": "Raw materials",
+     "why": "Adding, removing or replacing a key medium component, or changing the source of an animal-derived material: major change."
+    },
+    "keyNoImpact": {
+     "cat": "FILE",
+     "src": "bio",
+     "at": "Raw materials",
+     "why": "A key component change with no effect on key quality attributes, or replacing an animal-derived material with a non-animal one: moderate change."
+    },
+    "nonkey": {
+     "cat": "REPORT",
+     "src": "bio",
+     "at": "Raw materials",
+     "why": "A non-key component change: minor change."
+    }
+   }
+  }
+ },
+ "bio-resin": {
+  "tree": {
+   "ask": "resinChange",
+   "on": {
+    "lifetime": {
+     "cat": "FILE",
+     "src": "bio",
+     "at": "Purification",
+     "why": "Extending the resin lifetime is a non-critical purification change: moderate change.",
+     "note": "Simplified."
+    },
+    "supplier": {
+     "ask": "majorImpact",
+     "on": {
+      "yes": {
+       "cat": "SUPP",
+       "src": "bio",
+       "at": "Purification",
+       "why": "A different resin that could affect clearance or impurities: major change."
+      },
+      "no": {
+       "cat": "FILE",
+       "src": "bio",
+       "at": "Purification",
+       "why": "An equivalent resin from another supplier: moderate change.",
+       "note": "Simplified."
+      }
+     }
+    }
+   }
+  }
+ },
+ "bio-potency": {
+  "tree": {
+   "ask": "potencyNewPrinciple",
+   "on": {
+    "yes": {
+     "cat": "SUPP",
+     "src": "bio",
+     "at": "Analytical methods",
+     "why": "A potency assay with a new principle is a major change."
+    },
+    "no": {
+     "cat": "FILE",
+     "src": "bio",
+     "at": "Analytical methods",
+     "why": "A potency method change with the same principle, equal or better: moderate change."
+    }
+   }
+  }
+ },
+ "bio-formulation": {
+  "tree": {
+   "cat": "SUPP",
+   "src": "bio",
+   "at": "Formulation",
+   "why": "A change in excipient composition or concentration, or removing an excipient, is a major change."
+  }
+ },
+ "bio-adventitious": {
+  "tree": {
+   "ask": "adventRisk",
+   "on": {
+    "first": {
+     "cat": "SUPP",
+     "src": "bio",
+     "at": "Raw materials",
+     "why": "New viral safety claims need the purification and clearance data reviewed: major change.",
+     "note": "Simplified."
+    },
+    "higher": {
+     "cat": "SUPP",
+     "src": "bio",
+     "at": "Raw materials",
+     "why": "A higher-risk evaluation is a major change.",
+     "note": "Simplified."
+    },
+    "same": {
+     "cat": "FILE",
+     "src": "bio",
+     "at": "Raw materials",
+     "why": "Updated data with the same risk: moderate change.",
+     "note": "Simplified."
+    }
+   }
+  }
+ },
+ "admin-manufacturer-name": {
+  "tree": {
+   "cat": "FILE",
+   "src": "pac",
+   "at": "Article 11",
+   "why": "A change in the manufacturer's name or address name (no move) is filed, after the licence change for a domestic manufacturer."
+  }
+ },
+ "admin-local-rep": {
+  "tree": {
+   "cat": "FILE",
+   "src": "reg",
+   "at": "Article 79",
+   "why": "Changing the domestic agent named by an overseas holder is filed with CDE.",
+   "note": "Simplified."
+  }
+ },
+ "admin-inn": {
+  "tree": {
+   "cat": "FILE",
+   "src": "reg",
+   "at": "Article 79",
+   "why": "Changing the common name to a new national name is filed.",
+   "note": "Simplified.",
+   "pi": true
+  }
+ },
+ "admin-delete-presentation": {
+  "tree": {
+   "ask": "presentationKind",
+   "on": {
+    "strength": {
+     "cat": "OTHER",
+     "src": "reg",
+     "at": "Cancellation of the registration certificate",
+     "why": "Each strength has its own approval number: apply to cancel that registration certificate.",
+     "note": "Simplified."
+    },
+    "pack": {
+     "cat": "REPORT",
+     "src": "chem",
+     "at": "Packaging",
+     "why": "Removing a pack size: minor change.",
+     "note": "Simplified."
+    }
+   }
+  }
+ }
+}

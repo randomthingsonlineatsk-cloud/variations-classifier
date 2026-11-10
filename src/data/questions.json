@@ -706,5 +706,73 @@
     "label": "The fill volume or labelled amount per container"
    }
   ]
+ },
+ "cnImported": {
+  "text": "Is the product an imported drug (made outside China by an overseas holder)?",
+  "fromProduct": "cnImported",
+  "help": "Imported drugs file with CDE; domestic drugs file with the provincial medical products administration, and a domestic site change goes through the production licence."
+ },
+ "cnSameQaLine": {
+  "text": "Is the new site already approved for a similar product, under the same quality system, with a replicated production line?"
+ },
+ "cnComplexForm": {
+  "text": "Is it a special dosage form (complex modified release, enteric, transdermal, liposome or long-acting)?"
+ },
+ "cnMinorDs": {
+  "text": "Is it only a new or tighter in-process control, a higher grade of reagent or solvent, or an equipment change before the final step?"
+ },
+ "cnExcipient": {
+  "text": "How large is the excipient change, by the limits in the NMPA chemical guideline?",
+  "type": "choice",
+  "options": [
+   {
+    "value": "minor",
+    "label": "Within the minor limits (oral solids: total 5 percent or less, unit weight unchanged)"
+   },
+   {
+    "value": "moderate",
+    "label": "Beyond minor but within the moderate limits (total 10 percent or less), or a grade change"
+   },
+   {
+    "value": "major",
+    "label": "Beyond the moderate limits, a narrow therapeutic index or BCS class IV drug beyond minor, or a new excipient type"
+   }
+  ]
+ },
+ "cnShapeSignificant": {
+  "text": "Is it a significant shape change (for example round to an irregular shape), not a slight adjustment?"
+ },
+ "cnForDs": {
+  "text": "Is the specification for the drug substance (not the drug product)?"
+ },
+ "cnStabilityIssue": {
+  "text": "Is the change caused by a manufacturing or stability problem?"
+ },
+ "cnApprovedApi": {
+  "text": "Is the new drug substance already approved (status A on the NMPA registration platform)?"
+ },
+ "cnFromApprovedMcb": {
+  "text": "Is the new master cell bank derived from the original or an approved master cell bank, prepared the same way, with the same or tighter specifications?"
+ },
+ "cnMedia": {
+  "text": "What changes in the medium or raw material?",
+  "type": "choice",
+  "options": [
+   {
+    "value": "key",
+    "label": "A key component is added, removed or replaced, or an animal-derived source changes"
+   },
+   {
+    "value": "keyNoImpact",
+    "label": "A key component changes with no effect on key quality attributes, or an animal-derived material is replaced by a non-animal one"
+   },
+   {
+    "value": "nonkey",
+    "label": "A non-key component changes"
+   }
+  ]
+ },
+ "cnEfficacyContent": {
+  "text": "Does the package insert change touch efficacy content (indications, dosage and administration, clinical results) or could it increase safety risk?"
  }
 }

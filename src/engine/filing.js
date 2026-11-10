@@ -8,7 +8,7 @@ const kindOf = (items) => items.map((i) => i.def.kind).sort((a, b) => KIND_ORDER
 export const isEU = (pack) => pack?.id === 'eu';
 export const isIN = (pack) => pack?.id === 'in';
 export const isEUlike = (pack) => pack?.id === 'eu' || pack?.id === 'ch';
-export const isGeneric = (pack) => ['ca', 'ch', 'jp', 'who', 'uk'].includes(pack?.id);
+export const isGeneric = (pack) => ['ca', 'ch', 'jp', 'who', 'uk', 'cn'].includes(pack?.id);
 
 export const answersFor = (product, change) => ({ ...productAnswers(product), ...(change.answers ?? {}) });
 
@@ -184,7 +184,7 @@ export function impactFor(pack, filing) {
     if (why && !e.why.includes(why)) e.why.push(why);
     map.set(code, e);
   };
-  for (const d of m1For(pack, filing)) add(d.code, d.label, ['eu:1.3.1', 'uk:1.3.1', 'ca:1.3.1', 'ch:1.3.1', 'jp:1.8', 'who:1.3', 'who:QIS'].includes(d.code) ? 'replace' : 'new', 'Regional Module 1');
+  for (const d of m1For(pack, filing)) add(d.code, d.label, ['eu:1.3.1', 'uk:1.3.1', 'ca:1.3.1', 'ch:1.3.1', 'jp:1.8', 'cn:1.3.1', 'cn:1.3.2', 'who:1.3', 'who:QIS'].includes(d.code) ? 'replace' : 'new', 'Regional Module 1');
   for (const it of filing.items) for (const id of it.def.evidence ?? []) {
     const ev = EVIDENCE[id];
     if (ev) add(ev.ctd, ev.label, ev.op, it.def.title);
@@ -478,6 +478,7 @@ export const AUTHORITY = {
   ch: () => 'Swissmedic',
   uk: () => 'the MHRA',
   jp: () => 'the Ministry of Health, Labour and Welfare and PMDA',
+  cn: (p) => (p.cn?.imported === false ? 'the NMPA (CDE for supplementary applications; the provincial MPA for filings and licences)' : 'the NMPA Center for Drug Evaluation (CDE)'),
   who: () => 'WHO Prequalification Unit (PQT)',
 };
 export const authorityFor = (pack, product) => (AUTHORITY[pack.id] ? AUTHORITY[pack.id](product) : pack.label);
@@ -536,7 +537,7 @@ function timelineGeneric(pack, product, filing, opts) {
     earliestUse = addWorkingDays(d0, c.workingDays);
     events.push({ date: earliestUse, label: c.approx ? `About ${c.workingDays} working days: ${c.label}` : c.label, kind: def?.implement === 'tell-and-wait' ? 'implement' : 'goal', src: c.src });
     if (c.approx) notes.push('An approximate date for training: the trial sets no fixed review time.');
-    notes.push('Working days skip weekends only; Japanese public holidays are not counted here.');
+    notes.push('Working days skip weekends only; public holidays are not counted here.');
     return finish(events, earliestUse, notes, opts);
   }
   let days = null; let months = null;
@@ -564,9 +565,10 @@ const PRODUCT_REF = {
   ch: (p) => `Swissmedic authorisation No. ${p.ch?.authNumber ?? '[number]'}`,
   uk: (p) => `UK marketing authorisation ${p.uk?.plNumber ?? '[PL number]'}`,
   jp: (p) => `approval No. ${p.jp?.approvalNumber ?? '[number]'}`,
+  cn: (p) => `registration certificate ${p.cn?.regNumber ?? '[approval number]'}`,
   who: (p) => `WHO PQ reference ${p.who?.pqRef ?? '[reference]'}`,
 };
-const HOLDER = { ca: (p) => p.ca?.holder, ch: (p) => p.ch?.holder, uk: (p) => p.uk?.holder, jp: (p) => p.jp?.holder, who: (p) => p.who?.holder };
+const HOLDER = { ca: (p) => p.ca?.holder, ch: (p) => p.ch?.holder, uk: (p) => p.uk?.holder, jp: (p) => p.jp?.holder, cn: (p) => p.cn?.holder, who: (p) => p.who?.holder };
 
 function coverLetterGeneric(pack, product, filing, kase) {
   const cat = categoryOf(pack, filing.category);
@@ -591,6 +593,7 @@ function coverLetterGeneric(pack, product, filing, kase) {
   if (imp === 'wait-for-approval') lines.push(`We will implement the change${filing.items.length > 1 ? 's' : ''} only after approval.`);
   if (changesProductInfo(filing)) lines.push('Revised product information is enclosed (clean and with changes marked).');
   if (pack.id === 'jp') lines.push('A comparison of the current and proposed approval form entries is enclosed.');
+  if (pack.id === 'cn') lines.push(`The change classification, its basis in the NMPA technical guideline and the supporting studies are enclosed.${product.cn?.agent ? ` Domestic agent: ${product.cn.agent.name}.` : ''}`);
   if (pack.id === 'uk' && kase.options?.irp) lines.push(`Submitted through the International Recognition Procedure, relying on the approval of the same change by ${kase.options.irp}; the reference regulator's decision is enclosed.`);
   if (pack.id === 'who') lines.push('The quality information summary is updated where affected (tracked and clean versions).');
   lines.push('', `Contact: ${holder.contact}`, '', 'Training material. Fictional company and product.');

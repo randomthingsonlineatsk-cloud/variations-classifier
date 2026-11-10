@@ -82,6 +82,20 @@
      "address": "10 Example Street, Sampletown, AB1 2CD, United Kingdom",
      "contact": "Head of Regulatory Affairs, UK"
     }
+   },
+   "cn": {
+    "regNumber": "Guoyao Zhunzi HJ20260101 (fictional)",
+    "imported": true,
+    "holder": {
+     "name": "Halcyon Ridge Pharmaceuticals, Inc.",
+     "address": "400 Larkspur Way, Suite 12, Fictionville, NJ 08000, USA",
+     "contact": "Dana Okafor, Director, Regulatory Affairs"
+    },
+    "agent": {
+     "name": "Ostrevia (Shanghai) Regulatory Services Co., Ltd. (fictional)",
+     "address": "Room 101, 1 Example Road, Pudong New Area, Shanghai 200000, China",
+     "contact": "Regulatory Affairs, China agent"
+    }
    }
   },
   {
@@ -170,6 +184,20 @@
      "name": "Ashvale Generics UK Ltd",
      "address": "11 Example Street, Sampletown, AB2 2CD, United Kingdom",
      "contact": "Head of Regulatory Affairs, UK"
+    }
+   },
+   "cn": {
+    "regNumber": "Guoyao Zhunzi HJ20260102 (fictional)",
+    "imported": true,
+    "holder": {
+     "name": "Ashvale Generics Ltd.",
+     "address": "Plot 21, Fictional Pharma Park, Example Town, India",
+     "contact": "Ritu Sathe, Head of Regulatory Affairs"
+    },
+    "agent": {
+     "name": "Talmisartan Tablets (Shanghai) Regulatory Services Co., Ltd. (fictional)",
+     "address": "Room 101, 1 Example Road, Pudong New Area, Shanghai 200000, China",
+     "contact": "Regulatory Affairs, China agent"
     }
    }
   },
@@ -260,6 +288,20 @@
      "address": "12 Example Street, Sampletown, AB3 2CD, United Kingdom",
      "contact": "Head of Regulatory Affairs, UK"
     }
+   },
+   "cn": {
+    "regNumber": "Guoyao Zhunzi HJ20260103 (fictional)",
+    "imported": true,
+    "holder": {
+     "name": "Calderon Therapeutics Inc.",
+     "address": "77 Meridian Court, Fictionburg, MA 02000, USA",
+     "contact": "Priya Menon, Senior Director, Regulatory Affairs"
+    },
+    "agent": {
+     "name": "Talvera XR (Shanghai) Regulatory Services Co., Ltd. (fictional)",
+     "address": "Room 101, 1 Example Road, Pudong New Area, Shanghai 200000, China",
+     "contact": "Regulatory Affairs, China agent"
+    }
    }
   },
   {
@@ -341,6 +383,20 @@
      "name": "Meridale Therapeutics UK Ltd",
      "address": "13 Example Street, Sampletown, AB4 2CD, United Kingdom",
      "contact": "Head of Regulatory Affairs, UK"
+    }
+   },
+   "cn": {
+    "regNumber": "Guoyao Zhunzi HJ20260104 (fictional)",
+    "imported": true,
+    "holder": {
+     "name": "Meridale Therapeutics Inc.",
+     "address": "77 Harbor View Road, Fictionville, MA 02000, USA",
+     "contact": "Lena Marsh, Senior Director, Regulatory Operations"
+    },
+    "agent": {
+     "name": "Nelvaprox (Shanghai) Regulatory Services Co., Ltd. (fictional)",
+     "address": "Room 101, 1 Example Road, Pudong New Area, Shanghai 200000, China",
+     "contact": "Regulatory Affairs, China agent"
     }
    }
   },
@@ -429,6 +485,20 @@
      "address": "14 Example Street, Sampletown, AB5 2CD, United Kingdom",
      "contact": "Head of Regulatory Affairs, UK"
     }
+   },
+   "cn": {
+    "regNumber": "Guoyao Zhunzi SJ20260105 (fictional)",
+    "imported": true,
+    "holder": {
+     "name": "Lumenfield Biologics Inc.",
+     "address": "9 Brightwater Parkway, Fictionville, NC 27000, USA",
+     "contact": "Imani Clarke, Vice President, Regulatory Affairs"
+    },
+    "agent": {
+     "name": "Arventa (Shanghai) Regulatory Services Co., Ltd. (fictional)",
+     "address": "Room 101, 1 Example Road, Pudong New Area, Shanghai 200000, China",
+     "contact": "Regulatory Affairs, China agent"
+    }
    }
   },
   {
@@ -510,6 +580,20 @@
      "name": "Brightmere Biosimilars UK Ltd",
      "address": "15 Example Street, Sampletown, AB6 2CD, United Kingdom",
      "contact": "Head of Regulatory Affairs, UK"
+    }
+   },
+   "cn": {
+    "regNumber": "Guoyao Zhunzi SJ20260106 (fictional)",
+    "imported": true,
+    "holder": {
+     "name": "Brightmere Biosimilars Ltd.",
+     "address": "3 Orchard Science Park, Exampletown, Ireland",
+     "contact": "Niamh Doyle, Head of Regulatory Operations"
+    },
+    "agent": {
+     "name": "Selvanta (Shanghai) Regulatory Services Co., Ltd. (fictional)",
+     "address": "Room 101, 1 Example Road, Pudong New Area, Shanghai 200000, China",
+     "contact": "Regulatory Affairs, China agent"
     }
    }
   },
@@ -598,6 +682,20 @@
      "name": "Northvale Respiratory UK Ltd",
      "address": "16 Example Street, Sampletown, AB7 2CD, United Kingdom",
      "contact": "Head of Regulatory Affairs, UK"
+    }
+   },
+   "cn": {
+    "regNumber": "Guoyao Zhunzi HJ20260107 (fictional)",
+    "imported": true,
+    "holder": {
+     "name": "Northvale Respiratory Inc.",
+     "address": "12 Cedar Mill Lane, Fictionton, PA 19000, USA",
+     "contact": "Marcus Lee, Director, Regulatory CMC"
+    },
+    "agent": {
+     "name": "Brezovent (Shanghai) Regulatory Services Co., Ltd. (fictional)",
+     "address": "Room 101, 1 Example Road, Pudong New Area, Shanghai 200000, China",
+     "contact": "Regulatory Affairs, China agent"
     }
    }
   },

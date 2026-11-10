@@ -13,7 +13,9 @@
     "ca": "Product monograph Part I, Adverse reactions; Part III patient medication information",
     "ch": "Information for healthcare professionals, Undesirable effects; patient information",
     "jp": "Package insert section 11, Adverse reactions",
-    "who": "SmPC section 4.8 Undesirable effects; patient information leaflet"
+    "who": "SmPC section 4.8 Undesirable effects; patient information leaflet",
+    "cn": "Package insert (说明书) section 【不良反应】 Adverse reactions",
+    "uk": "SmPC section 4.8 Undesirable effects; patient information leaflet section 4"
    }
   },
   {
@@ -28,7 +30,9 @@
     "ca": "Product monograph, Serious warnings box (if serious) and Warnings and precautions",
     "ch": "Information for healthcare professionals, Warnings and precautions",
     "jp": "Package insert section 1 (warning box, if serious) and sections 8 and 9, precautions",
-    "who": "SmPC section 4.4 Special warnings and precautions for use"
+    "who": "SmPC section 4.4 Special warnings and precautions for use",
+    "cn": "Package insert 【警示语】 boxed warning (if serious) and 【注意事项】 Precautions",
+    "uk": "SmPC section 4.4; patient information leaflet section 2"
    }
   },
   {
@@ -44,7 +48,9 @@
     "ca": "Product monograph, Contraindications",
     "ch": "Information for healthcare professionals, Contraindications",
     "jp": "Package insert section 2, Contraindications",
-    "who": "SmPC section 4.3 Contraindications"
+    "who": "SmPC section 4.3 Contraindications",
+    "cn": "Package insert 【禁忌】 Contraindications",
+    "uk": "SmPC section 4.3; patient information leaflet section 2"
    }
   },
   {
@@ -59,7 +65,9 @@
     "ca": "Product monograph, Dosage and administration",
     "ch": "Information for healthcare professionals, Dosage/Administration",
     "jp": "Package insert section 7, precautions related to dosage (section 6 if the approved dosage changes)",
-    "who": "SmPC section 4.2 Posology and method of administration"
+    "who": "SmPC section 4.2 Posology and method of administration",
+    "cn": "Package insert 【用法用量】 Dosage and administration",
+    "uk": "SmPC section 4.2; patient information leaflet section 3"
    }
   },
   {
@@ -74,7 +82,9 @@
     "ca": "Product monograph, Indications",
     "ch": "Information for healthcare professionals, Indications/Uses",
     "jp": "Package insert section 4, Indications (an approved matter)",
-    "who": "SmPC section 4.1 Therapeutic indications"
+    "who": "SmPC section 4.1 Therapeutic indications",
+    "cn": "Package insert 【适应症】 Indications (a supplementary application)",
+    "uk": "SmPC sections 4.1, 4.2, 4.8, 5.1"
    }
   },
   {
@@ -89,7 +99,9 @@
     "ca": "Any part of the product monograph or labels",
     "ch": "Any section of the information texts",
     "jp": "Any section of the package insert",
-    "who": "Any section of the SmPC, leaflet or labels"
+    "who": "Any section of the SmPC, leaflet or labels",
+    "uk": "Affected section only (usually with the next procedure)",
+    "cn": "Package insert or labels, wherever the wording appears"
    }
   }
  ],

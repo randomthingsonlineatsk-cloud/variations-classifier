@@ -29,6 +29,7 @@ export function buildChangePackage({ pack, product, kase, filing, user = null })
       ca: pack.id === 'ca' ? { din: product.ca?.din ?? null, holder: product.ca?.holder?.name ?? product.holder.name } : null,
       uk: pack.id === 'uk' ? { plNumber: product.uk?.plNumber ?? null, holder: product.uk?.holder?.name ?? product.holder.name } : null,
       ch: pack.id === 'ch' ? { authNumber: product.ch?.authNumber ?? null, holder: product.ch?.holder?.name ?? product.holder.name } : null,
+      cn: pack.id === 'cn' ? { regNumber: product.cn?.regNumber ?? null, imported: product.cn?.imported ?? null, holder: product.cn?.holder?.name ?? product.holder.name, agent: product.cn?.agent?.name ?? null } : null,
       jp: pack.id === 'jp' ? { approvalNumber: product.jp?.approvalNumber ?? null, holder: product.jp?.holder?.name ?? product.holder.name } : null,
     },
     region: pack.region,

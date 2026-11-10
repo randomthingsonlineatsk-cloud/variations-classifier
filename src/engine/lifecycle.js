@@ -56,8 +56,9 @@ export const REGION_NOTE = {
   eu: 'ECs are agreed through a PLCM document (Q.II.g.6); changes then follow Q.II.g.7.',
   ch: 'Swissmedic follows the EU structure (Q.II.g.6 and Q.II.g.7 of the Swiss list).',
   jp: 'The approval form plays the role of ECs. The moderate change route is a 2024 trial for designated items.',
-  ca: 'Health Canada has not implemented established conditions yet (PACMPs for biologics only, from November 2026).',
+  ca: 'Health Canada has not implemented established conditions yet (PACMPs for biologic and radiopharmaceutical products only, accepted since 13 August 2026).',
   in: 'India has no established conditions procedure; changes follow the levels or case-by-case review.',
+  cn: 'China has no established conditions procedure; changes follow the approval, filing and report classes of the NMPA technical guidelines.',
   who: 'WHO PQ has no established conditions procedure.',
 };
 export function regionCategory(region, q12cat) {

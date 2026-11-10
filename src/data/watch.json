@@ -1,6 +1,6 @@
 {
  "_about": "Rules that are announced or in draft but not yet in force. The monthly rules check reads each item against its source; when an item becomes final, its pack gets a new edition or answer and the item leaves this list.",
- "checked": "2026-11-09",
+ "checked": "2026-11-10",
  "items": [
   {
    "id": "eu-pharma-reform",
@@ -71,6 +71,21 @@
     {
      "title": "Health Canada: Post-notice of compliance changes (ICH Q12 and Q14 notice)",
      "url": "https://www.canada.ca/en/health-canada/services/drugs-health-products/drug-products/applications-submissions/guidance-documents/post-notice-compliance-changes.html"
+    }
+   ]
+  },
+  {
+   "id": "cn-pacmp-draft",
+   "region": "cn",
+   "title": "China: CDE draft Technical Guideline for Post-approval Change Management Protocols for Chemical Drugs",
+   "status": "Draft, published for consultation in 2025. No final version found as of the check date.",
+   "expected": "A protocol route for chemical drugs: agree the studies and acceptance criteria first, then make the change at a lower category.",
+   "app": "The China pack has no PACMP route; protocol changes show \"Not used in China yet\".",
+   "trigger": "Final guideline published by CDE",
+   "sources": [
+    {
+     "title": "Summary of the 2025 draft (Shandong University Zibo pharmaceutical news)",
+     "url": "https://www.sdu-zbpharm.com/news/news/2025-06-10/1936.html"
     }
    ]
   }
