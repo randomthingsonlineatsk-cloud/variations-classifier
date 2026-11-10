@@ -62,7 +62,7 @@ t('filing plan, timeline, cover letter and change package', () => {
   assert.ok(tl.events.some((e) => /60 working days/.test(e.label)));
   const letter = coverLetter(cn, p, filings[0], k);
   assert.match(letter, /Center for Drug Evaluation/);
-  assert.match(letter, /Guoyao Zhunzi/);
+  assert.match(letter, /国药准字HJ20260101/);
   assert.match(letter, /Domestic agent/);
   const pkg = buildChangePackage({ pack: cn, product: p, kase: k, filing: filings[0] });
   assert.equal(pkg, null); // no eCTD hand-off: the Dossier Builder has no China region

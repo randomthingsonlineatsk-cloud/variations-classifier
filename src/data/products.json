@@ -1,5 +1,5 @@
 {
- "_about": "Fictional products. Six share their id, names and companies with the eCTD Dossier Builder, so a change package can go straight into a dossier project for the same product. Application numbers are invented and marked as such. EU authorisation numbers are invented too. UK PL numbers are invented too.",
+ "_about": "Fictional products. Six share their id, names and companies with the eCTD Dossier Builder, so a change package can go straight into a dossier project for the same product. Application numbers are invented and marked as such. EU authorisation numbers are invented too. UK PL numbers are invented too. China approval numbers (国药准字HJ/SJ plus eight digits) are invented and match the Labelling Workbench.",
  "products": [
   {
    "id": "nce-tablet",
@@ -84,7 +84,7 @@
     }
    },
    "cn": {
-    "regNumber": "Guoyao Zhunzi HJ20260101 (fictional)",
+    "regNumber": "国药准字HJ20260101",
     "imported": true,
     "holder": {
      "name": "Halcyon Ridge Pharmaceuticals, Inc.",
@@ -92,7 +92,7 @@
      "contact": "Dana Okafor, Director, Regulatory Affairs"
     },
     "agent": {
-     "name": "Ostrevia (Shanghai) Regulatory Services Co., Ltd. (fictional)",
+     "name": "Ostrevia (Shanghai) Regulatory Services Co., Ltd.",
      "address": "Room 101, 1 Example Road, Pudong New Area, Shanghai 200000, China",
      "contact": "Regulatory Affairs, China agent"
     }
@@ -187,7 +187,7 @@
     }
    },
    "cn": {
-    "regNumber": "Guoyao Zhunzi HJ20260102 (fictional)",
+    "regNumber": "国药准字HJ20260102",
     "imported": true,
     "holder": {
      "name": "Ashvale Generics Ltd.",
@@ -195,7 +195,7 @@
      "contact": "Ritu Sathe, Head of Regulatory Affairs"
     },
     "agent": {
-     "name": "Talmisartan Tablets (Shanghai) Regulatory Services Co., Ltd. (fictional)",
+     "name": "Talmisartan Tablets (Shanghai) Regulatory Services Co., Ltd.",
      "address": "Room 101, 1 Example Road, Pudong New Area, Shanghai 200000, China",
      "contact": "Regulatory Affairs, China agent"
     }
@@ -290,7 +290,7 @@
     }
    },
    "cn": {
-    "regNumber": "Guoyao Zhunzi HJ20260103 (fictional)",
+    "regNumber": "国药准字HJ20260103",
     "imported": true,
     "holder": {
      "name": "Calderon Therapeutics Inc.",
@@ -298,7 +298,7 @@
      "contact": "Priya Menon, Senior Director, Regulatory Affairs"
     },
     "agent": {
-     "name": "Talvera XR (Shanghai) Regulatory Services Co., Ltd. (fictional)",
+     "name": "Talvera XR (Shanghai) Regulatory Services Co., Ltd.",
      "address": "Room 101, 1 Example Road, Pudong New Area, Shanghai 200000, China",
      "contact": "Regulatory Affairs, China agent"
     }
@@ -386,7 +386,7 @@
     }
    },
    "cn": {
-    "regNumber": "Guoyao Zhunzi HJ20260104 (fictional)",
+    "regNumber": "国药准字HJ20260104",
     "imported": true,
     "holder": {
      "name": "Meridale Therapeutics Inc.",
@@ -394,7 +394,7 @@
      "contact": "Lena Marsh, Senior Director, Regulatory Operations"
     },
     "agent": {
-     "name": "Nelvaprox (Shanghai) Regulatory Services Co., Ltd. (fictional)",
+     "name": "Nelvaprox (Shanghai) Regulatory Services Co., Ltd.",
      "address": "Room 101, 1 Example Road, Pudong New Area, Shanghai 200000, China",
      "contact": "Regulatory Affairs, China agent"
     }
@@ -487,7 +487,7 @@
     }
    },
    "cn": {
-    "regNumber": "Guoyao Zhunzi SJ20260105 (fictional)",
+    "regNumber": "国药准字SJ20260105",
     "imported": true,
     "holder": {
      "name": "Lumenfield Biologics Inc.",
@@ -495,7 +495,7 @@
      "contact": "Imani Clarke, Vice President, Regulatory Affairs"
     },
     "agent": {
-     "name": "Arventa (Shanghai) Regulatory Services Co., Ltd. (fictional)",
+     "name": "Arventa (Shanghai) Regulatory Services Co., Ltd.",
      "address": "Room 101, 1 Example Road, Pudong New Area, Shanghai 200000, China",
      "contact": "Regulatory Affairs, China agent"
     }
@@ -583,7 +583,7 @@
     }
    },
    "cn": {
-    "regNumber": "Guoyao Zhunzi SJ20260106 (fictional)",
+    "regNumber": "国药准字SJ20260106",
     "imported": true,
     "holder": {
      "name": "Brightmere Biosimilars Ltd.",
@@ -591,7 +591,7 @@
      "contact": "Niamh Doyle, Head of Regulatory Operations"
     },
     "agent": {
-     "name": "Selvanta (Shanghai) Regulatory Services Co., Ltd. (fictional)",
+     "name": "Selvanta (Shanghai) Regulatory Services Co., Ltd.",
      "address": "Room 101, 1 Example Road, Pudong New Area, Shanghai 200000, China",
      "contact": "Regulatory Affairs, China agent"
     }
@@ -685,7 +685,7 @@
     }
    },
    "cn": {
-    "regNumber": "Guoyao Zhunzi HJ20260107 (fictional)",
+    "regNumber": "国药准字HJ20260107",
     "imported": true,
     "holder": {
      "name": "Northvale Respiratory Inc.",
@@ -693,7 +693,7 @@
      "contact": "Marcus Lee, Director, Regulatory CMC"
     },
     "agent": {
-     "name": "Brezovent (Shanghai) Regulatory Services Co., Ltd. (fictional)",
+     "name": "Brezovent (Shanghai) Regulatory Services Co., Ltd.",
      "address": "Room 101, 1 Example Road, Pudong New Area, Shanghai 200000, China",
      "contact": "Regulatory Affairs, China agent"
     }
