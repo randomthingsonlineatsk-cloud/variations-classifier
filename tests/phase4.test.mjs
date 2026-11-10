@@ -23,8 +23,8 @@ const one = (region, pid, cid, answers = {}, date = '2026-11-02') => {
   return { p, k, pack, f: filings[0], res: classify(pack, cid, { ...productAnswers(p), ...answers }) };
 };
 
-t('eight regions ready, every pack covers all 120 changes', () => {
-  assert.equal(READY.length, 8);
+t('nine regions ready, every pack covers all 120 changes', () => {
+  assert.equal(READY.length, 9);
   assert.equal(CHANGES.length, 120);
   for (const r of READY) for (const c of CHANGES) assert.ok(packFor(r).entries[c.id], `${r} ${c.id}`);
 });

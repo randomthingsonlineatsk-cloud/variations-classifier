@@ -1,0 +1,316 @@
+{
+ "id": "cn",
+ "region": "CN",
+ "label": "China: NMPA (Drug Administration Law)",
+ "edition": "2026.1",
+ "appliesFrom": "2026-05-15",
+ "appliesTo": null,
+ "status": "in force",
+ "summary": "Changes are classed by risk: approval (a supplementary application to CDE), filing (before implementing) and report (in the annual report). The holder classifies each change with the NMPA technical guidelines for chemical drugs and biological products. A domestic site change goes through the production licence first.",
+ "sources": {
+  "dal": {
+   "title": "Drug Administration Law of the People's Republic of China (2019), Article 79 (changes classified by risk)",
+   "version": "2019 revision",
+   "date": "in force since 1 December 2019",
+   "url": "https://english.nmpa.gov.cn/",
+   "status": "final"
+  },
+  "impl": {
+   "title": "Regulations for the Implementation of the Drug Administration Law (State Council Order No. 828), Article 27 (holders assess changes, then apply, file or report)",
+   "version": "2026 revision",
+   "date": "published 27 January 2026, in force since 15 May 2026",
+   "url": "https://www.mee.gov.cn/zcwj/gwywj/202601/t20260128_1142757.shtml",
+   "status": "final"
+  },
+  "reg": {
+   "title": "Provisions for Drug Registration (SAMR Order No. 27), Articles 77 to 80 (approval, filing and report changes) and review time limits",
+   "version": "2020",
+   "date": "in force since 1 July 2020",
+   "url": "https://english.nmpa.gov.cn/",
+   "status": "final"
+  },
+  "pac": {
+   "title": "NMPA: Provisions for Post-approval Changes of Drugs (Interim), NMPA Announcement 2021 No. 8",
+   "version": "Interim",
+   "date": "in force since 12 January 2021",
+   "url": "https://www.zyqjg.com/article-7590-1.html",
+   "status": "final"
+  },
+  "chem": {
+   "title": "CDE: Technical Guideline for Pharmaceutical Changes to Marketed Chemical Drugs (Interim)",
+   "version": "Interim",
+   "date": "February 2021 (Q&A on drug substance changes, June 2024)",
+   "url": "https://news.qq.com/rain/a/20220505A0DBQL00",
+   "status": "final"
+  },
+  "bio": {
+   "title": "CDE: Technical Guideline for Pharmaceutical Changes to Marketed Biological Products (Interim), CDE Announcement 2021 No. 31",
+   "version": "Interim",
+   "date": "25 June 2021",
+   "url": "https://vaccine.vip/technical-guiding-principles-for-research-on-pharmaceutical-changes-of-listed-biological-products-trial-implementation/",
+   "status": "final"
+  },
+  "accept": {
+   "title": "CDE: Acceptance Review Guide for Chemical Drug Changes (2026), CDE Announcement 2026 No. 34",
+   "version": "2026",
+   "date": "May 2026",
+   "url": "https://www.unionclin.com/News/536.html",
+   "status": "secondary"
+  },
+  "annual": {
+   "title": "NMPA: Provisions for Drug Annual Reports",
+   "version": "2022",
+   "date": "annual report due by 30 April for the previous year",
+   "url": "https://english.nmpa.gov.cn/",
+   "status": "final"
+  },
+  "label": {
+   "title": "Provisions for Drug Package Inserts and Labels (SFDA Order No. 24)",
+   "version": "2006",
+   "date": "in force since 1 June 2006",
+   "url": "https://english.nmpa.gov.cn/",
+   "status": "final"
+  },
+  "q12": {
+   "title": "ICH Q12 and the 2025 CDE draft guideline on post-approval change management protocols for chemical drugs (draft only)",
+   "version": "Draft",
+   "date": "2025 (consultation)",
+   "url": "https://www.sdu-zbpharm.com/news/news/2025-06-10/1936.html",
+   "status": "draft"
+  }
+ },
+ "categories": [
+  {
+   "id": "NA",
+   "rank": 0,
+   "short": "Not used",
+   "label": "Not used in China yet",
+   "implement": "other",
+   "badge": "Route not used",
+   "rule": "China has no post-approval change management protocol or established conditions route in force; see the result.",
+   "src": "q12",
+   "at": "Draft guideline",
+   "tone": "letter"
+  },
+  {
+   "id": "OTHER",
+   "rank": 0,
+   "short": "Other procedure",
+   "label": "Another procedure (not a change filing)",
+   "implement": "other",
+   "badge": "Other procedure",
+   "rule": "The change goes through another procedure named in the result.",
+   "src": "reg",
+   "at": "Provisions for Drug Registration",
+   "tone": "letter"
+  },
+  {
+   "id": "NONE",
+   "rank": 0,
+   "short": "No filing",
+   "label": "Not a registration change: managed in the quality system",
+   "implement": "do",
+   "badge": "Managed in the quality system",
+   "rule": "Nothing in the registration changes, so no filing is needed; manage it under GMP and change control.",
+   "src": "pac",
+   "at": "Article 4",
+   "tone": "letter"
+  },
+  {
+   "id": "REPORT",
+   "rank": 1,
+   "short": "Report",
+   "label": "Report change (minor): annual report",
+   "implement": "do-and-tell",
+   "badge": "Do, then report in the annual report",
+   "rule": "A minor change: make it under change control and report it in the annual report.",
+   "src": "reg",
+   "at": "Article 80",
+   "tone": "ar"
+  },
+  {
+   "id": "FILE",
+   "rank": 2,
+   "short": "Filing",
+   "label": "Filing change (moderate): file before implementing",
+   "implement": "tell-and-do",
+   "badge": "File, then do",
+   "rule": "A moderate change: file it before implementing (with the provincial MPA for a domestic drug, with CDE for an imported drug). The filing is published within 5 working days and reviewed within 30.",
+   "src": "reg",
+   "at": "Article 79",
+   "tone": "cbe0"
+  },
+  {
+   "id": "LICENCE",
+   "rank": 3,
+   "short": "Licence change",
+   "label": "Production licence change, then registration update (domestic site change)",
+   "implement": "wait-for-approval",
+   "badge": "Licence change first",
+   "rule": "A domestic site change goes to the provincial MPA as a production licence change with inspection and technical review; the registration record is updated afterwards.",
+   "src": "pac",
+   "at": "Article 14",
+   "tone": "cbe30"
+  },
+  {
+   "id": "SUPP",
+   "rank": 4,
+   "short": "Supplementary",
+   "label": "Approval change (major): supplementary application",
+   "implement": "wait-for-approval",
+   "badge": "Wait for approval",
+   "rule": "A major change: submit a supplementary application to CDE and implement only after approval, within 6 months of it.",
+   "src": "reg",
+   "at": "Article 78",
+   "tone": "pas"
+  },
+  {
+   "id": "NEW",
+   "rank": 5,
+   "short": "New registration",
+   "label": "New registration application",
+   "implement": "wait-for-approval",
+   "badge": "New application",
+   "rule": "The change makes a new product (for example a new dosage form or route): apply for a new registration.",
+   "src": "reg",
+   "at": "Provisions for Drug Registration",
+   "tone": "ext"
+  }
+ ],
+ "conditions": {},
+ "multipleChanges": {
+  "rule": "Related changes can be submitted together; the submission follows the highest category, and a combined supplementary application has a longer review time limit (80 working days).",
+  "src": "reg",
+  "at": "Article 96"
+ },
+ "filing": {
+  "shared": [
+   "REPORT",
+   "FILE"
+  ],
+  "apart": [
+   "NONE",
+   "NA",
+   "OTHER"
+  ]
+ },
+ "clocks": {
+  "REPORT": {
+   "months": 12,
+   "label": "Report in the annual report (due by 30 April for the previous year)",
+   "src": "annual"
+  },
+  "FILE": {
+   "label": "File before implementing; the filing is published within 5 working days and the regulator reviews it within 30",
+   "src": "pac"
+  },
+  "LICENCE": {
+   "workingDays": 15,
+   "approx": true,
+   "label": "production licence change by the provincial MPA (15 working days, plus inspection and technical review)",
+   "src": "impl"
+  },
+  "SUPP": {
+   "workingDays": 60,
+   "label": "CDE review time limit of 60 working days (80 for a combined application, 200 with an inspection or clinical data review), then the approval decision; implement within 6 months of approval",
+   "src": "reg"
+  },
+  "NEW": {
+   "months": 12,
+   "approx": true,
+   "label": "New registration: about a year of review",
+   "src": "reg"
+  }
+ },
+ "m1": {
+  "supp": [
+   {
+    "code": "cn:1.0",
+    "label": "Cover letter"
+   },
+   {
+    "code": "cn:1.2",
+    "label": "Supplementary application form"
+   },
+   {
+    "code": "cn:1.4",
+    "label": "Change description, classification and risk assessment"
+   },
+   {
+    "code": "cn:1.5",
+    "label": "Copy of the registration certificate and earlier approvals"
+   }
+  ],
+  "file": [
+   {
+    "code": "cn:1.0",
+    "label": "Cover letter"
+   },
+   {
+    "code": "cn:1.2",
+    "label": "Filing form"
+   },
+   {
+    "code": "cn:1.4",
+    "label": "Change description, classification and risk assessment"
+   }
+  ],
+  "new": [
+   {
+    "code": "cn:1.0",
+    "label": "Cover letter"
+   },
+   {
+    "code": "cn:1.2",
+    "label": "Registration application form"
+   }
+  ],
+  "pi": [
+   {
+    "code": "cn:1.3.1",
+    "label": "Revised package insert (说明书), with a comparison of old and new text"
+   },
+   {
+    "code": "cn:1.3.2",
+    "label": "Revised labels (标签)"
+   }
+  ],
+  "licence": [
+   {
+    "code": "cn:licence",
+    "label": "Production licence change application to the provincial MPA (outside the dossier)"
+   }
+  ]
+ },
+ "m1map": {
+  "SUPP": [
+   "supp"
+  ],
+  "FILE": [
+   "file"
+  ],
+  "NEW": [
+   "new"
+  ],
+  "LICENCE": [
+   "licence"
+  ]
+ },
+ "ectd": {
+  "SUPP": null,
+  "FILE": null,
+  "NEW": null,
+  "LICENCE": null,
+  "REPORT": null,
+  "NONE": null,
+  "NA": null,
+  "OTHER": null
+ },
+ "changeLog": [
+  {
+   "edition": "2026.1",
+   "date": "2026-11-10",
+   "text": "First China edition: approval, filing and report changes under the Provisions for Drug Registration and the 2021 Provisions for Post-approval Changes, with the NMPA chemical and biological technical guidelines; the 2026 Implementing Regulations (in force 15 May 2026)."
+  }
+ ]
+}

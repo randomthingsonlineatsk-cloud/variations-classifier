@@ -68,6 +68,10 @@
   {
    "id": "q5e",
    "label": "ICH Q5E comparability"
+  },
+  {
+   "id": "china",
+   "label": "China (NMPA)"
   }
  ],
  "questions": [
@@ -1610,6 +1614,76 @@
    "answer": 0,
    "why": "Without such an inspection, the site change is major.",
    "cite": "PQT FAQ, Q5 and Appendix I"
+  },
+  {
+   "id": "cn1",
+   "topic": "china",
+   "q": "In China, when must a moderate (filing) change be filed?",
+   "options": [
+    "Before it is implemented",
+    "Within 30 days after it is implemented",
+    "In the annual report",
+    "Only if NMPA asks"
+   ],
+   "answer": 0,
+   "why": "Filing changes are filed before implementation: with the provincial MPA for a domestic drug, with CDE for an imported drug.",
+   "cite": "Provisions for Drug Registration, Article 79"
+  },
+  {
+   "id": "cn2",
+   "topic": "china",
+   "q": "A generic tablet's batch size goes to 15 times the pivotal bioequivalence batch. Under the NMPA chemical guideline this is:",
+   "options": [
+    "A minor change (report)",
+    "A moderate change (filing)",
+    "A major change (supplementary application)",
+    "Not a change"
+   ],
+   "answer": 1,
+   "why": "Up to ten times is minor; beyond ten times is moderate for oral solids and non-sterile semisolids.",
+   "cite": "NMPA chemical guideline, batch size"
+  },
+  {
+   "id": "cn3",
+   "topic": "china",
+   "q": "A domestic company moves tablet manufacture to a new address. What comes first?",
+   "options": [
+    "A supplementary application to CDE",
+    "A production licence change with the provincial MPA",
+    "A note in the annual report",
+    "A new registration"
+   ],
+   "answer": 1,
+   "why": "Site changes for domestic drugs go through the production licence change, with inspection and technical review; the registration record is updated afterwards.",
+   "cite": "Provisions for Post-approval Changes (2021), Article 14"
+  },
+  {
+   "id": "cn4",
+   "topic": "china",
+   "q": "If a holder cannot tell whether a change is an approval or a filing change, and the province does not agree to the lower one, the change is treated as:",
+   "options": [
+    "A filing change",
+    "An approval change",
+    "A report change",
+    "A new registration"
+   ],
+   "answer": 1,
+   "why": "Disputes between approval and filing are resolved as approval; between filing and report, as filing.",
+   "cite": "Provisions for Post-approval Changes (2021), Article 21"
+  },
+  {
+   "id": "cn5",
+   "topic": "china",
+   "q": "Which package insert change needs a supplementary application in China?",
+   "options": [
+    "Adding a new adverse reaction",
+    "A new indication",
+    "A label layout change",
+    "Changing the domestic agent"
+   ],
+   "answer": 1,
+   "why": "Changes to efficacy content, or ones that increase safety risk, need approval; adding safety information and label changes are filed.",
+   "cite": "Provisions for Drug Registration, Articles 78 and 79"
   }
  ]
 }

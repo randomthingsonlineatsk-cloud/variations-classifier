@@ -8,7 +8,7 @@ A browser-based practice tool for classifying post-approval changes to medicines
 - a **change package** (`change-package.json`) that the [eCTD Dossier Builder](https://github.com/randomthingsonlineatsk-cloud/ectd-dossier-builder) imports to start a sequence of the right type (US, EU, India, Canada, Switzerland and Japan);
 - a **classification report** as a PDF, watermarked as training material.
 
-Seven rule sets: the **United States, the European Union, India, Canada, Switzerland, Japan and WHO prequalification**, plus **ICH Q12 lifecycle tools** and an **ICH Q5E comparability** check.
+Nine rule sets: the **United States, the European Union, the United Kingdom, India, Canada, Switzerland, Japan, China and WHO prequalification**, plus **ICH Q12 lifecycle tools** and an **ICH Q5E comparability** check.
 
 Live site: https://randomthingsonlineatsk-cloud.github.io/variations-classifier/
 
@@ -84,13 +84,15 @@ The annex conditions are shown as checklists (paraphrased; read the official tex
 | PQT frequently asked questions on variations | Revision 03, 15 December 2022 |
 | PQT variations approval mechanism and timeline table | October 2016 (prevails over the guideline) |
 
+**China pack, edition 2026.1.** Approval, filing and report changes under the Provisions for Drug Registration (Articles 77 to 80) and NMPA's 2021 Provisions for Post-approval Changes, with the 2026 Implementing Regulations (in force 15 May 2026). The trees follow the examples in the NMPA technical guidelines for marketed chemical drugs and biological products: excipient limits (5 and 10 percent), batch size within ten times, container type by route, shelf life within completed data, cell banks, media and purification. Imported drugs file with CDE; a domestic site change goes through the production licence first. Supplementary applications have a 60-working-day review time limit (80 when combined) and are implemented within 6 months of approval; report changes go in the annual report due by 30 April. China has no PACMP or established conditions route in force (a 2025 draft for chemical drugs is on the watch list). There is no eCTD hand-off for China.
+
 **Lifecycle tools (ICH Q12 and Q5E).** For one product: an established conditions register with a risk-based suggestion (prior approval, moderate or low notification, or not an EC) mapped to the US, EU, Swiss and Japanese categories, with a link that classifies a change to that element; a PACMP builder (changes covered, studies and acceptance criteria, step 1 classified in every region, the step 2 category per region); a PLCM document compiled from them (preview, print, HTML download); and an ICH Q5E comparability checklist for biologics (physicochemical, biological activity, purity, stability and process attributes) with a verdict: highly similar, justified differences, bridging studies likely, or incomplete.
 
 **Certificate and reports.** A separate portfolio certificate for this app (every lesson check, every mission at 70 or more, a mixed quiz round, drills in four regions; distinction for 14 expert missions at 85 or more), with a verification code and a record of results, and a statement of progress at any time. Neither is an accreditation. Every case can be saved as a classification report PDF, watermarked as training material.
 
 **Classroom mode.** Uses the classroom server of the eCTD Dossier Builder (one Cloudflare Worker and D1 database, `vc_` tables, routes under `/vc/v1`). Instructors create a class, set missions with a level and a due date, see each student's case and score, re-score it in their own browser, comment, download results as CSV and see a leaderboard; students join with a code. Without a server the app stays browser-only.
 
-**Labelling rollout.** One company core data sheet (CCDS) change tracked into every regional label the product has (US prescribing information, EU SmPC and leaflet, Indian prescribing information, Canadian product monograph, Swiss information texts, Japanese package insert, WHO PQ SmPC): the label section, the classification in each region, a company target date, the lag and the status.
+**Labelling rollout.** One company core data sheet (CCDS) change tracked into every regional label the product has (US prescribing information, EU SmPC and leaflet, Indian prescribing information, Canadian product monograph, Swiss information texts, Japanese package insert, Chinese package insert, WHO PQ SmPC): the label section, the classification in each region, a company target date, the lag and the status.
 
 **Change requests.** A training change request (present and proposed state, reason, planned date) that suggests catalogue changes from its description, writes a regulatory impact statement for every market, records the sign-off with the pack editions used, and moves across a status board.
 
@@ -100,7 +102,7 @@ The annex conditions are shown as checklists (paraphrased; read the official tex
 
 **United Kingdom pack and the Divergence and Reliance Map.** MHRA still classifies variations with the EU guidelines of 2013 (2013/C 223/01) until it issues its own, while the EU moved to its 2025 guidelines on 15 January 2026, so the same change can now take a different route in each. The UK pack (2026.1) covers all 120 changes with the 2013 categories, UK-wide marketing authorisations (Windsor Framework, from 1 January 2025), UK sources and wording, MHRA as the authority, a UK Module 1, and the International Recognition Procedure as a reliance option on the Plan tab (the cover letter then names the reference regulator). The **Divergence** page lists every change whose categories differ between the EU, the UK and Switzerland (20 between the UK and the EU in this edition: heavier in the UK, lighter in the UK, both ways, or with no UK procedure, such as the ICH Q12 product lifecycle management document), and, for any change, the reliance routes that can carry one agency's decision to another: the UK International Recognition Procedure (with its reference regulators), Swiss Article 13 TPA, Access Consortium work-sharing for new indications, and EU worksharing. Change packages for the UK are not yet read by the eCTD Dossier Builder, which has no UK region.
 
-**All regions at once.** A case can cover any of the eight regions the product is registered in: shared questions are answered once and the answers sit side by side, with a filing plan per region. The Compare page lists every category each change can reach in each region.
+**All regions at once.** A case can cover any of the nine regions the product is registered in: shared questions are answered once and the answers sit side by side, with a filing plan per region. The Compare page lists every category each change can reach in each region.
 
 Where the app simplifies a rule, the result says so; the Sources page lists every simplification.
 
@@ -108,7 +110,7 @@ Where the app simplifies a rule, the result says so; the Sources page lists ever
 
 **Products.** Eight fictional products with a registration profile for each region they are sold in: six shared with the eCTD Dossier Builder (Ostrevia tablets, Talmisartan generic tablets, Talvera XR capsules, Nelvaprox injection, Arventa and Selvanta antibodies), Brezovent, a metered-dose inhaler, and Malvaren, a WHO-prequalified dispersible antimalarial tablet. A product can also be added from an eCTD Dossier Builder project file.
 
-**Learning.** Seventeen lessons with checks, twenty-eight scored missions at three levels (guided, standard, expert) across the regions, a 110-question quiz bank with flashcards, timed drills per region, a glossary and a progress page.
+**Learning.** Seventeen lessons with checks, twenty-eight scored missions at three levels (guided, standard, expert) across the regions, a 115-question quiz bank with flashcards, timed drills per region, a glossary and a progress page.
 
 **Data.** Everything stays in the browser (IndexedDB). Cases, attempts and products carry a user ID and a class ID; export and import the whole project as a `.vcproj.json` file.
 

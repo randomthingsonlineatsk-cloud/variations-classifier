@@ -21,6 +21,8 @@ import jpPack from '../packs/jp/2026.1/pack.json' with { type: 'json' };
 import jpEntries from '../packs/jp/2026.1/entries.json' with { type: 'json' };
 import ukPack from '../packs/uk/2026.1/pack.json' with { type: 'json' };
 import ukEntries from '../packs/uk/2026.1/entries.json' with { type: 'json' };
+import cnPack from '../packs/cn/2026.1/pack.json' with { type: 'json' };
+import cnEntries from '../packs/cn/2026.1/entries.json' with { type: 'json' };
 import whoPack from '../packs/who/2026.1/pack.json' with { type: 'json' };
 import whoEntries from '../packs/who/2026.1/entries.json' with { type: 'json' };
 
@@ -42,6 +44,7 @@ export const PACKS = {
   ch: [{ ...chPack, entries: strip(chEntries) }],
   jp: [{ ...jpPack, entries: strip(jpEntries) }],
   uk: [{ ...ukPack, entries: strip(ukEntries) }],
+  cn: [{ ...cnPack, entries: strip(cnEntries) }],
   who: [{ ...whoPack, entries: strip(whoEntries) }],
 };
 
@@ -53,6 +56,7 @@ export const REGIONS = [
   { id: 'uk', label: 'United Kingdom', short: 'UK', ready: true },
   { id: 'ch', label: 'Switzerland', short: 'Switzerland', ready: true },
   { id: 'jp', label: 'Japan', short: 'Japan', ready: true },
+  { id: 'cn', label: 'China', short: 'China', ready: true },
   { id: 'who', label: 'WHO prequalification', short: 'WHO PQ', ready: true },
 ];
 
