@@ -515,7 +515,7 @@ function Filing({ f, k, pack, product, mutate, reveal, exportPkg, region }) {
       <ul className="small" style={{ margin: '.5rem 0' }}>{f.items.map((i) => <li key={i.change.id}>{i.def.title}{i.change.note ? `: ${i.change.note}` : ''} <Cat pack={pack} id={i.result.category} /> <span className="muted">{i.result.outcome?.at}</span></li>)}</ul>
       {f.warnings?.map((w) => <div key={w} className="note">{w}</div>)}
       {submits && ectd && <p className="small muted" style={{ margin: '.5rem 0 0' }}>eCTD: submission type <code>{ectd.submissionType}</code>, sub-type <code>{ectd.subType}</code>{ectd.submissionMode ? <>, mode <code>{ectd.submissionMode}</code></> : null}.</p>}
-      {submits && !ectd && <p className="small muted" style={{ margin: '.5rem 0 0' }}>{region === 'who' ? 'WHO PQ variations are filed with the PQ variation form and documents, not as a sequence in the eCTD Dossier Builder.' : 'Filed as a notification outside an eCTD sequence.'}</p>}
+      {submits && !ectd && <p className="small muted" style={{ margin: '.5rem 0 0' }}>{region === 'who' ? 'WHO PQ variations are filed with the PQ variation form and documents, not as a sequence in the eCTD Dossier Builder.' : region === 'cn' ? 'Not an eCTD sequence of this application: a production licence change goes to the provincial MPA, and a new registration is a separate application.' : 'Filed as a notification outside an eCTD sequence.'}</p>}
 
       {reveal ? (
         <>
