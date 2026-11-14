@@ -1,4 +1,4 @@
-// Writes real change packages for Canada, Switzerland and Japan into the eCTD Dossier Builder's
+// Writes real change packages for Canada, Switzerland, Japan and China into the eCTD Dossier Builder's
 // test fixtures (run from this repo with the eCTD repo checked out next to it).
 import { writeFileSync, mkdirSync } from 'node:fs';
 import { packFor } from '../src/engine/packs.js';
@@ -23,3 +23,4 @@ const make = (region, pid, cid, answers, file) => {
 make('ca', 'nce-tablet', 'dp-site-move', Object.fromEntries([1, 2, 3, 4, 5].map((i) => [`HC-A1.23:${i}`, 'yes'])), 'change-package-ca.json');
 make('ch', 'nce-tablet', 'shelf-life-extend', { realTimeData: 'no', extrapolationPerGuideline: 'yes' }, 'change-package-ch.json');
 make('jp', 'nce-tablet', 'spec-relax', { jpItem: 'pca' }, 'change-package-jp.json');
+make('cn', 'nce-tablet', 'spec-relax', {}, 'change-package-cn.json');

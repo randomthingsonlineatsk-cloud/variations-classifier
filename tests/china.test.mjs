@@ -65,7 +65,10 @@ t('filing plan, timeline, cover letter and change package', () => {
   assert.match(letter, /国药准字HJ20260101/);
   assert.match(letter, /Domestic agent/);
   const pkg = buildChangePackage({ pack: cn, product: p, kase: k, filing: filings[0] });
-  assert.equal(pkg, null); // no eCTD hand-off: the Dossier Builder has no China region
+  assert.equal(pkg.region, 'CN');
+  assert.deepEqual(pkg.submission.ectd, { submissionType: 'supplemental', subType: 'initial', submissionMode: 'single' });
+  assert.deepEqual(pkg.module1.map((m) => m.code), ['cn:1.0', 'cn:1.2', 'cn:1.3.8', 'cn:1.4.1']);
+  assert.equal(pkg.product.cn.regNumber, '国药准字HJ20260101');
   const k2 = newCase({ product: p, regions: ['cn'], name: 'China report' });
   const c2 = addChange(k2, 'ipc-tighten'); c2.answers = {};
   const f2 = filingsFor(cn, p, k2).filings[0];
